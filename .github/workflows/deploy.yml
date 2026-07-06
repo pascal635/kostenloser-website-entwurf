@@ -28,4 +28,4 @@ jobs:
         run: |
           umask 077
           printf 'machine %s login %s password %s\n' "$FTP_HOST" "$FTP_USER" "$FTP_PASSWORD" > ~/.netrc
-          lftp -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; set net:timeout 15; set net:max-retries 3; mirror -R --verbose ./sites/ $FTP_SERVER_DIR; bye" "ftp://$FTP_HOST"
+          lftp -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; set net:timeout 15; set net:max-retries 3; open ftp://$FTP_HOST; mirror -R --verbose ./sites/ $FTP_SERVER_DIR; bye"
