@@ -27,5 +27,16 @@ jobs:
           FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
         run: |
           umask 077
-          printf 'machine %s login %s password %s\n' "$FTP_HOST" "$FTP_USER" "$FTP_PASSWORD" > ~/.netrc
-          lftp -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; set net:timeout 15; set net:max-retries 3; open ftp://$FTP_HOST; mirror -R --verbose ./sites/ $FTP_SERVER_DIR; bye"
+          {
+            echo 'set ftp:ssl-force true'
+            echo 'set ftp:ssl-protect-data true'
+            echo 'set ssl:verify-certificate no'
+            echo 'set net:timeout 15'
+            echo 'set net:max-retries 3'
+            printf 'open ftp://%s\n' "$FTP_HOST"
+            printf 'user "%s" "%s"\n' "$FTP_USER" "$FTP_PASSWORD"
+            printf 'mirror -R --verbose ./sites/ %s\n' "$FTP_SERVER_DIR"
+            echo 'bye'
+          } > deploy.lftp
+          lftp -f deploy.lftp
+          rm -f deploy.lftp
