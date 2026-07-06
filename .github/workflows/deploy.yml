@@ -1,8 +1,9 @@
 name: Deploy Entwürfe (FTP)
 
-# Deployt bei jedem Push den Inhalt von sites/ per FTP auf dev.likovo.de.
+# Deployt sites/ per FTPS (lftp) auf dev.likovo.de.
 # sites/<kunde>/ landet unter <FTP_SERVER_DIR>/<kunde>/ = dev.likovo.de/<kunde>/
-# Nur geänderte Dateien werden übertragen (inkrementell).
+# Kein --delete: es wird nur hochgeladen/aktualisiert, nie serverseitig gelöscht
+# (schützt andere Kundenordner, die evtl. schon dort liegen).
 
 on:
   push:
@@ -15,12 +16,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ${{ secrets.FTP_PROTOCOL || 'ftps' }}
-          local-dir: ./sites/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+      - name: lftp installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y lftp
+
+      - name: FTPS Deploy (lftp)
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+        run: |
+          lftp -e "
+          set ftp:ssl-force true;
+          set ftp:ssl-protect-data true;
+          set ssl:verify-certificate no;
+          set net:timeout 15;
+          set net:max-retries 3;
+          set net:reconnect-interval-base 5;
+          open ftp://$FTP_HOST;
+          user \"$FTP_USER\" \"$FTP_PASSWORD\";
+          mirror -R --verbose --exclude ^\.git/ ./sites/ $FTP_SERVER_DIR;
+          bye
+          "
