@@ -1,14 +1,17 @@
 name: Deploy Entwürfe (FTP)
 
-# Deployt sites/ per FTPS (lftp) auf dev.likovo.de.
-# sites/<kunde>/ landet unter <FTP_SERVER_DIR>/<kunde>/ = dev.likovo.de/<kunde>/
-# Kein --delete: es wird nur hochgeladen/aktualisiert, nie serverseitig gelöscht
-# (schützt andere Kundenordner, die evtl. schon dort liegen).
+# Laedt sites/ per FTPS (lftp) auf den dev-Webspace (dedi1145, gleicher Zugang wie beta-plus).
+# sites/<kunde>/ landet unter /<kunde>/ = dev.likovo.de/<kunde>/
+# KEIN --delete: nur hochladen/aktualisieren, damit andere Kundenordner im Docroot unangetastet bleiben.
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -16,27 +19,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: lftp installieren
-        run: sudo apt-get update -qq && sudo apt-get install -y lftp
-
       - name: FTPS Deploy (lftp)
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
         run: |
-          umask 077
-          {
-            echo 'set ftp:ssl-force true'
-            echo 'set ftp:ssl-protect-data true'
-            echo 'set ssl:verify-certificate no'
-            echo 'set net:timeout 15'
-            echo 'set net:max-retries 3'
-            printf 'open ftp://%s\n' "$FTP_HOST"
-            printf 'user "%s" "%s"\n' "$FTP_USER" "$FTP_PASSWORD"
-            printf 'mirror -R --verbose ./sites/ %s\n' "$FTP_SERVER_DIR"
-            echo 'bye'
-          } > deploy.lftp
-          lftp -f deploy.lftp
-          rm -f deploy.lftp
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            set net:max-retries 2;
+            set net:timeout 20;
+            open -u \"$FTP_USER\",\"$FTP_PASSWORD\" \"$FTP_HOST\";
+            mirror -R --verbose --exclude-glob .git* ./sites/ ./;
+          "
