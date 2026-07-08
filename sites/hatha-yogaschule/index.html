@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yoga Regensburg | Hatha-Yogaschule in der Altstadt | Kurse für jedes Level</title>
+<meta name="description" content="Yoga in Regensburg, mitten in der Altstadt am St.-Kassians-Platz. Hatha-Yoga-Kurse für Einsteiger, Schwangere, 50+ und Fortgeschrittene. Sieben erfahrene Lehrkräfte. Jetzt Platz sichern.">
+<meta name="keywords" content="Yoga Regensburg, Yogakurse Regensburg, Hatha Yoga Regensburg, Yogastudio Regensburg Altstadt, Schwangerenyoga Regensburg, Yoga 50+ Regensburg, Personal Yoga Regensburg, Business Yoga Regensburg">
+<link rel="canonical" href="https://www.hatha-yogaschule.de/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Yoga Regensburg | Hatha-Yogaschule in der Altstadt">
+<meta property="og:description" content="Hatha-Yoga-Kurse für jedes Level, mitten in der Regensburger Altstadt. Sieben erfahrene Lehrkräfte. Jetzt Platz sichern.">
+<meta property="og:image" content="bilder/yoga-regensburg-hero-startseite.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#C00000; --red-hover:#A00000;
+  --aubergine:#402020; --aubergine-2:#5A2A2A; --aubergine-3:#341A1A;
+  --terracotta:#A85E5E; --terracotta-2:#B87070;
+  --cream:#F5F0E8; --cream-2:#FBF7F0; --cream-3:#EFE7DA; --card:#ffffff;
+  --border:#E7DCCC; --field-border:#DCCFBD;
+  --text:#2B2320; --muted:#6E6058; --muted-2:#7A6C63;
+  --label:#B08F80; --label-strong:#8A7C74;
+  --pill-bg:#F0E1DA; --pill-text:#8F4A4A;
+  --on-dark:#F5F0E8; --on-dark-muted:#E0C7C2; --on-dark-rose:#F0A0A0; --on-dark-rose-2:#D3B7B2;
+  --r-field:12px; --r-card:18px; --r-card-lg:22px; --r-block:28px;
+  --maxw:1200px;
+  --shadow-sm:0 4px 18px rgba(64,32,32,.06);
+  --shadow-md:0 18px 50px rgba(64,32,32,.14);
+  --shadow-lg:0 30px 70px rgba(64,32,32,.20);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Archivo',system-ui,sans-serif;letter-spacing:-0.02em;line-height:1.05}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* Kicker (eyebrow with rule) */
+.kicker{display:inline-flex;align-items:center;gap:12px;font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--label)}
+.kicker::before{content:"";width:28px;height:2px;background:var(--red);border-radius:2px}
+.kicker.on-dark{color:var(--on-dark-rose)}
+.kicker.center{justify-content:center}
+
+.section{padding:96px 0;position:relative}
+.section-tight{padding:72px 0}
+.section-title{font-weight:800;font-size:clamp(30px,4.6vw,48px);text-transform:uppercase;line-height:1.02}
+.lead{font-size:18px;color:var(--muted);max-width:60ch;margin-top:16px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter';font-weight:600;font-size:15px;padding:15px 30px;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .18s,background .2s,color .2s,border-color .2s,box-shadow .2s}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(192,0,0,.26)}
+.btn-primary:hover{background:var(--red-hover);transform:translateY(-2px);box-shadow:0 14px 32px rgba(192,0,0,.34)}
+.btn-ghost{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-ghost:hover{background:var(--text);color:var(--cream);transform:translateY(-2px)}
+.link-more{display:inline-flex;align-items:center;gap:6px;font-family:'Inter';font-weight:600;font-size:14px;color:var(--red)}
+.link-more .arw{transition:transform .2s}
+.link-more:hover .arw{transform:translateX(4px)}
+
+/* Decorative Y watermark */
+.ymark{position:absolute;pointer-events:none;opacity:.05;z-index:0}
+.ymark svg{width:100%;height:100%;display:block}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(245,240,232,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+.nav-logo img{height:80px;width:auto;display:block}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:#4A3F39}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:2px;background:var(--red);transition:right .25s}
+.nav-links a:hover{color:var(--red)}
+.nav-links a:hover::after{right:0}
+.nav-cta{font-family:'Inter';font-weight:600;font-size:14px;padding:11px 24px;border-radius:999px;background:var(--red);color:#fff;transition:background .2s,transform .18s}
+.nav-cta:hover{background:var(--red-hover);transform:translateY(-2px)}
+.nav-toggle,.nav-check{display:none}
+
+/* HERO */
+.hero{position:relative;padding:56px 0 40px;background:
+  radial-gradient(1100px 520px at 82% -6%, #F2E3DC 0%, rgba(242,227,220,0) 60%),
+  radial-gradient(760px 420px at -8% 12%, #EFE7DA 0%, rgba(239,231,218,0) 55%);
+  overflow:hidden}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{font-family:'Inter';font-weight:600;font-size:12px;letter-spacing:.05em;text-transform:uppercase;padding:8px 15px;border-radius:999px;background:var(--pill-bg);color:var(--pill-text)}
+.chip.red{background:var(--red);color:#fff}
+.hero h1{font-weight:900;font-size:clamp(38px,6vw,68px);text-transform:uppercase;letter-spacing:-0.02em;line-height:.98;margin:0 0 22px}
+.hero h1 .accent{color:var(--red)}
+.hero p{font-size:18px;line-height:1.65;color:#5A4C45;max-width:46ch}
+.hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.hero-main{border-radius:var(--r-block);overflow:hidden;height:620px;box-shadow:var(--shadow-md)}
+.hero-main img{width:100%;height:100%;object-fit:cover}
+.hero-inset{position:absolute;left:-40px;bottom:-34px;width:250px;background:#fff;border-radius:var(--r-card);padding:12px;box-shadow:var(--shadow-lg)}
+.hero-inset img{width:100%;height:158px;object-fit:cover;border-radius:12px}
+.hero-inset .cap{font-family:'Archivo';font-weight:700;font-size:14px;padding:10px 6px 4px;text-transform:uppercase;letter-spacing:.01em}
+.hero-badge{position:absolute;right:-18px;top:26px;width:96px;height:96px;border-radius:50%;background:var(--red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow-md);transform:rotate(-8deg)}
+.hero-badge b{font-family:'Archivo';font-weight:900;font-size:26px;line-height:1}
+.hero-badge span{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+
+/* STATS band */
+.stats{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:var(--maxw);margin:0 auto}
+.stat{padding:34px 24px;text-align:center;border-left:1px solid var(--border)}
+.stat:first-child{border-left:none}
+.stat b{display:block;font-family:'Archivo';font-weight:900;font-size:clamp(34px,4.4vw,50px);color:var(--red);line-height:1}
+.stat span{display:block;font-size:13px;color:var(--muted-2);margin-top:8px;letter-spacing:.02em}
+
+/* PROBLEM */
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:32px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.pcard::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--terracotta);opacity:.55}
+.pcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.pcard .pnum{font-family:'Archivo';font-weight:900;font-size:15px;color:var(--terracotta);letter-spacing:.1em}
+.pcard h3{font-weight:700;font-size:20px;margin:10px 0 8px}
+.pcard p{font-size:14.5px;color:var(--muted)}
+
+/* WISSENSCHAFT */
+.science{background:var(--cream-3)}
+.science-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.factblock{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:26px 28px;margin-bottom:16px;box-shadow:var(--shadow-sm)}
+.factblock p{font-size:15px;color:var(--muted);margin:0}
+.factblock b{color:var(--text);font-weight:600}
+.science-visual{position:relative}
+.science-visual .simg{border-radius:var(--r-block);overflow:hidden;height:560px;box-shadow:var(--shadow-md)}
+.science-visual .simg img{width:100%;height:100%;object-fit:cover}
+.science-stat{position:absolute;right:-24px;bottom:-24px;background:var(--aubergine);color:var(--on-dark);border-radius:var(--r-card);padding:22px 26px;box-shadow:var(--shadow-lg);max-width:220px}
+.science-stat b{font-family:'Archivo';font-weight:900;font-size:38px;display:block;line-height:1}
+.science-stat span{font-size:13px;color:var(--on-dark-rose-2);margin-top:6px;display:block}
+
+/* LEISTUNGEN dark */
+.leist{background:var(--aubergine);color:var(--on-dark);position:relative;overflow:hidden}
+.leist .kicker{color:var(--on-dark-rose)}
+.leist h2{font-weight:800;font-size:clamp(30px,4.4vw,46px);text-transform:uppercase;margin-top:10px}
+.leist .lead{color:var(--on-dark-muted);max-width:56ch}
+.kurse{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;position:relative;z-index:1}
+.kurs{background:var(--aubergine-2);border-radius:var(--r-card-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s;border:1px solid rgba(245,240,232,.06)}
+.kurs:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(0,0,0,.32)}
+.kurs .kimg{overflow:hidden;height:250px}
+.kurs .kimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.kurs:hover .kimg img{transform:scale(1.06)}
+.kurs-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.kurs .cat{align-self:flex-start;font-family:'Inter';font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dark-rose);background:rgba(240,160,160,.12);padding:5px 11px;border-radius:999px}
+.kurs h3{font-weight:700;font-size:20px;margin:14px 0 8px}
+.kurs p{font-size:14px;color:var(--on-dark-muted);flex:1}
+.kurs .kurs-foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid rgba(245,240,232,.12)}
+.kurs .price{font-size:13px;color:var(--on-dark-rose-2)}
+.kurs .more{font-family:'Inter';font-weight:600;font-size:13px;color:var(--on-dark-rose);display:inline-flex;gap:5px;align-items:center}
+.kurs:hover .more .arw{transform:translateX(4px)}
+.kurs .arw{transition:transform .2s}
+
+/* BIG typo band */
+.band{position:relative;background:var(--aubergine-3);color:var(--on-dark);overflow:hidden;padding:0}
+.band-img{position:absolute;inset:0;z-index:0}
+.band-img img{width:100%;height:100%;object-fit:cover;opacity:.42}
+.band-inner{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:130px 24px;text-align:center}
+.band .big{font-family:'Archivo';font-weight:900;font-size:clamp(80px,20vw,240px);line-height:.82;letter-spacing:-0.03em;text-transform:uppercase;color:transparent;-webkit-text-stroke:2px rgba(245,240,232,.5)}
+.band .sub{font-family:'Archivo';font-weight:800;font-size:clamp(20px,3vw,30px);text-transform:uppercase;margin-top:18px}
+.band .subline{color:var(--on-dark-rose-2);margin-top:12px;max-width:52ch;margin-left:auto;margin-right:auto}
+
+/* ABLAUF */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:34px 30px;box-shadow:var(--shadow-sm);position:relative;transition:transform .2s,box-shadow .2s}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.step .num{font-family:'Archivo';font-weight:900;font-size:52px;color:var(--cream-3);line-height:.8;-webkit-text-stroke:1.5px var(--terracotta)}
+.step h3{font-weight:700;font-size:19px;margin:16px 0 8px}
+.step p{font-size:14.5px;color:var(--muted)}
+.sorglos{margin-top:28px;display:flex;align-items:center;gap:14px;background:var(--pill-bg);color:var(--pill-text);border-radius:var(--r-card);padding:18px 24px;font-size:15px;font-weight:500}
+.sorglos .ic{width:26px;height:26px;border:2.5px solid var(--pill-text);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+.center-cta{text-align:center;margin-top:34px}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}
+.team-visual{position:relative}
+.team-visual .timg{border-radius:var(--r-block);overflow:hidden;box-shadow:var(--shadow-md)}
+.team-visual .timg img{width:100%;height:100%;object-fit:cover;min-height:560px;max-height:640px}
+.team-quote{position:absolute;right:-20px;top:-20px;font-family:'Archivo';font-weight:900;font-size:120px;color:var(--terracotta);opacity:.22;line-height:1}
+.team-txt p{margin-bottom:18px;color:var(--muted);font-size:16.5px}
+.team-txt .safety{background:var(--cream-2);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:var(--r-card);padding:20px 22px;color:var(--text);font-size:15px}
+
+/* TESTIMONIALS */
+.testi{background:var(--cream-3)}
+.tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card-lg);padding:32px;box-shadow:var(--shadow-sm);position:relative}
+.tcard .mark{font-family:'Archivo';font-weight:900;font-size:64px;color:var(--pill-bg);line-height:.7;height:34px}
+.stars{color:var(--red);font-size:15px;letter-spacing:.12em;margin-bottom:8px}
+.tcard p{font-family:'Inter';font-size:16px;line-height:1.62;color:#4A3F39;font-style:italic;margin:6px 0 20px}
+.tperson{display:flex;align-items:center;gap:12px}
+.tavatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#E2CFC5,#C79B9B);flex-shrink:0}
+.tname{font-weight:600;font-size:14px}
+.tmeta{font-size:12px;color:var(--label-strong)}
+.testi-foot{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:26px}
+.badge-dummy{font-size:13px;color:var(--label-strong)}
+.placeholder-note{font-size:12px;color:var(--label);margin-top:8px}
+
+/* FAQ */
+.faq-list{max-width:840px;margin:36px auto 0}
+details.faq{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:2px 26px;margin-bottom:12px;box-shadow:var(--shadow-sm);transition:box-shadow .2s}
+details.faq[open]{box-shadow:var(--shadow-md)}
+details.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;padding:20px 0;list-style:none;font-family:'Archivo';font-weight:700;font-size:16.5px}
+details.faq summary::-webkit-details-marker{display:none}
+.faq-plus{font-size:24px;color:var(--red);transition:transform .25s;line-height:1;flex-shrink:0}
+details.faq[open] .faq-plus{transform:rotate(45deg)}
+details.faq p{font-size:14.5px;line-height:1.7;color:var(--muted);padding:0 0 22px}
+
+/* CTA */
+.cta{padding:96px 0}
+.cta-box{position:relative;background:var(--aubergine);color:var(--on-dark);border-radius:var(--r-block);padding:60px 56px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;overflow:hidden;box-shadow:var(--shadow-lg)}
+.cta-box h2{font-weight:800;font-size:clamp(28px,3.8vw,40px);text-transform:uppercase;margin-bottom:16px;position:relative;z-index:1}
+.cta-box p{color:var(--on-dark-muted);position:relative;z-index:1}
+.cta-contact{margin-top:22px;font-size:15px;line-height:1.7;position:relative;z-index:1}
+.cta-contact a{color:var(--on-dark-rose);font-weight:600}
+.form{display:grid;gap:14px;position:relative;z-index:1}
+.form label{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dark-rose-2);margin-bottom:6px}
+.form input{width:100%;border:1.5px solid rgba(245,240,232,.22);background:rgba(245,240,232,.06);border-radius:var(--r-field);padding:14px 16px;font-size:15px;color:var(--on-dark);font-family:'Inter'}
+.form input::placeholder{color:rgba(245,240,232,.5)}
+.form input:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(192,0,0,.3)}
+.form button{margin-top:4px;width:100%;justify-content:center}
+.micro{font-size:13px;color:var(--on-dark-rose-2);margin-top:14px;position:relative;z-index:1}
+
+/* FOOTER */
+.footer{background:var(--aubergine);color:var(--on-dark);overflow:hidden}
+.footer-top{display:flex;justify-content:space-between;gap:40px;padding:56px 24px 32px;flex-wrap:wrap;max-width:var(--maxw);margin:0 auto;width:100%}
+.footer-top img{height:80px;width:auto;margin-bottom:18px}
+.footer-top address{font-style:normal;font-size:14px;line-height:1.8;color:var(--on-dark-rose-2)}
+.footer-top address a{color:var(--on-dark-rose)}
+.footer-cols{display:flex;gap:60px;font-size:14px;color:var(--on-dark-muted);line-height:2.1}
+.footer-cols h4{color:var(--on-dark-rose);font-weight:600;font-size:14px;margin-bottom:8px;font-family:'Inter'}
+.footer-cols a:hover{color:#fff}
+.typo-band{font-family:'Archivo';font-weight:900;font-size:clamp(26px,7.4vw,94px);line-height:.9;text-transform:uppercase;letter-spacing:-0.03em;color:transparent;-webkit-text-stroke:1.5px var(--aubergine-2);padding:10px 24px 0;white-space:nowrap;max-width:var(--maxw);margin:0 auto;width:100%}
+.footer-bottom{border-top:1px solid rgba(245,240,232,.14);padding:18px 24px;font-size:12px;color:#B08080;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;max-width:var(--maxw);margin:0 auto;width:100%}
+
+/* Responsive */
+@media(max-width:900px){
+  .section{padding:64px 0}
+  .hero{padding:32px 0}
+  .hero-grid,.science-grid,.team-grid,.cta-box{grid-template-columns:1fr;gap:40px;padding-left:0;padding-right:0}
+  .cta-box{padding:40px 28px}
+  .hero-visual{order:-1}
+  .hero-main{height:440px}
+  .hero-inset{width:172px;left:8px;bottom:-20px}
+  .hero-inset img{height:106px}
+  .hero-badge{width:82px;height:82px;right:6px}
+  .science-visual .simg{height:400px}
+  .team-visual .timg img{min-height:380px;max-height:480px}
+  .kurs .kimg{height:220px}
+  .kurse,.cols3,.steps,.tcards{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--border)}
+  .team-quote{font-size:80px;right:0}
+  .science-stat{right:12px;bottom:-16px}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--border);padding:8px 24px;display:none}
+  .nav-links a{padding:13px 0;border-bottom:1px solid var(--border)}
+  .nav-links a::after{display:none}
+  .nav-check:checked ~ .nav-links{display:flex}
+  .nav-toggle{display:block;background:none;border:none;font-size:26px;cursor:pointer;color:var(--text);line-height:1}
+}
+@media(max-width:560px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .nav-cta{display:none}
+  .hero h1{font-size:clamp(34px,10vw,46px)}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"HealthAndBeautyBusiness","@id":"https://www.hatha-yogaschule.de/#studio",
+  "name":"Hatha-Yogaschule Regensburg",
+  "description":"Yoga- und Meditationsschule in der Regensburger Altstadt. Hatha-Yoga-Kurse für alle Level, geleitet von Brigitte Krause mit einem Team aus sieben Lehrkräften.",
+  "url":"https://www.hatha-yogaschule.de/","telephone":"+4916096771545",
+  "address":{"@type":"PostalAddress","streetAddress":"St.-Kassians-Platz 6","addressLocality":"Regensburg","postalCode":"93047","addressCountry":"DE"},
+  "geo":{"@type":"GeoCoordinates","latitude":49.0189,"longitude":12.0972},
+  "areaServed":"Regensburg","founder":{"@type":"Person","name":"Brigitte Krause"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Wo finde ich Yogakurse in Regensburg?","acceptedAnswer":{"@type":"Answer","text":"Die Hatha-Yogaschule Regensburg bietet Yogakurse am St.-Kassians-Platz 6 mitten in der Altstadt an. Ein Team aus sieben Lehrerinnen und Lehrern unterrichtet Kurse für jedes Level."}},
+    {"@type":"Question","name":"Ich bin unbeweglich und habe noch nie Yoga gemacht. Kann ich mitmachen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Es gibt eigene Einsteigerkurse, in denen du Schritt für Schritt und ohne Leistungsdruck angeleitet wirst. Riskante Übungen wie den Kopfstand gibt es bei uns nicht."}},
+    {"@type":"Question","name":"Übernimmt meine Krankenkasse die Kosten für den Yogakurs?","acceptedAnswer":{"@type":"Answer","text":"Unsere Kurse sind für die Krankenkassen-Einreichung zertifiziert. Wie viel erstattet wird, klärst du am besten direkt mit deiner Kasse."}},
+    {"@type":"Question","name":"Was passiert, wenn ich eine Stunde verpasse?","acceptedAnswer":{"@type":"Answer","text":"Verpasste Stunden holst du innerhalb des Kurszeitraums nach. So bleibst du flexibel, auch wenn mal etwas dazwischenkommt."}},
+    {"@type":"Question","name":"Kann ich mitten im laufenden Kurs einsteigen?","acceptedAnswer":{"@type":"Answer","text":"Ja, jederzeit. Die Kursgebühr wird dann anteilig reduziert."}},
+    {"@type":"Question","name":"Gibt es Yoga für Schwangere oder für Menschen ab 50?","acceptedAnswer":{"@type":"Answer","text":"Ja. Es gibt eigene Kurse für Schwangere, für Mütter mit Kind und mit Sanftes Yoga 50+ auch ein ruhiges Angebot für Menschen ab 50."}},
+    {"@type":"Question","name":"Bietet die Hatha-Yogaschule auch Einzelunterricht?","acceptedAnswer":{"@type":"Answer","text":"Ja, mit Personal Yoga übst du allein mit deiner Lehrerin oder deinem Lehrer, ganz in deinem Tempo. Eine Einzelstunde dauert 60 Minuten und kostet 95 Euro."}},
+    {"@type":"Question","name":"Muss ich eine eigene Matte mitbringen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Matte, Kissen und Decke liegen im Studio für dich bereit."}}
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero" aria-label="Hatha-Yogaschule Regensburg, Startseite">
+      <img src="bilder/logo-header.png" alt="Hatha-Yogaschule Regensburg Logo">
+    </a>
+    <input type="checkbox" id="navcheck" class="nav-check" hidden>
+    <label class="nav-toggle" for="navcheck" aria-label="Menü öffnen">☰</label>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#leistungen">Kurse</a>
+      <a href="#team">Über uns</a>
+      <a href="#leistungen">Preise</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="#cta">Platz sichern</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="ymark" style="top:-80px;right:-60px;width:420px;height:520px" aria-hidden="true">
+    <svg viewBox="0 0 260 320"><path d="M40 40 L110 40 L130 150 L150 40 L220 40 L150 300 L90 300 Z" fill="#C00000"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-chips">
+          <span class="chip red">Yoga · Regensburg</span>
+          <span class="chip">Hatha</span>
+          <span class="chip">Für jedes Level</span>
+        </div>
+        <h1>Raus aus dem <span class="accent">Hamsterrad.</span> Zurück zu dir.</h1>
+        <p>Du funktionierst den ganzen Tag für alle anderen und findest abends den Ausschaltknopf nicht mehr? In unserer Hatha-Yogaschule mitten in Regensburg darfst du einfach mal nichts müssen. Klassisches Yoga für jedes Level, begleitet von sieben erfahrenen Lehrerinnen und Lehrern.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#leistungen">Kursplan ansehen</a>
+          <a class="btn btn-ghost" href="#cta">Unverbindlich anfragen</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-main">
+          <img src="bilder/yoga-regensburg-hero-startseite.jpg" alt="Yoga Regensburg, Frau in ruhiger Dehnung vor warmer Terracotta-Wand" width="1600" height="1068">
+        </div>
+        <div class="hero-badge" aria-hidden="true"><b>7</b><span>Lehrkräfte</span></div>
+        <div class="hero-inset">
+          <img src="bilder/yoga-regensburg-studio-team-1.jpg" alt="Meditationskissen im Yogastudio Regensburg">
+          <div class="cap">Ankommen, nicht leisten</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats" aria-label="Auf einen Blick">
+  <div class="stats-grid">
+    <div class="stat"><b>7</b><span>erfahrene Lehrkräfte</span></div>
+    <div class="stat"><b>6</b><span>Kursarten für jede Lebenslage</span></div>
+    <div class="stat"><b>12</b><span>Einheiten pro Kursblock</span></div>
+    <div class="stat"><b>90</b><span>Minuten pro Stunde</span></div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <span class="kicker">Kennst du das?</span>
+    <h2 class="section-title" style="margin-top:16px">Nur noch funktionieren,<br>nie ankommen</h2>
+    <p class="lead">Dein Tag besteht aus To-do-Listen. Du bist für die Familie da, für den Job, für alle. Nur für dich bleibt nichts übrig. Und wenn du abends endlich liegst, springt sofort das Gedankenkarussell an.</p>
+    <div class="cols3">
+      <div class="pcard"><div class="pnum">01</div><h3>Bleiern müde, nie ruhig</h3><p>Der Körper ist erschöpft, der Kopf kommt trotzdem nicht runter.</p></div>
+      <div class="pcard"><div class="pnum">02</div><h3>Steinharter Nacken</h3><p>Stunden am Schreibtisch haben sich festgesetzt, die Verspannung ist zum Dauerzustand geworden.</p></div>
+      <div class="pcard"><div class="pnum">03</div><h3>Nur noch funktionieren</h3><p>Du erledigst, statt zu leben, und hast fast vergessen, wie sich echtes Abschalten anfühlt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WISSENSCHAFT ================= -->
+<section class="section science" id="wissenschaft">
+  <div class="wrap">
+    <div class="science-grid">
+      <div>
+        <span class="kicker">Warum das wirkt</span>
+        <h2 class="section-title" style="margin:16px 0 24px">Warum Yoga bei Dauerstress messbar hilft</h2>
+        <div class="factblock"><p><b>Dein Nervensystem im Daueralarm.</b> Chronischer Stress lässt den Körper vermehrt Cortisol ausschütten, der beruhigende Botenstoff GABA sinkt. Regelmäßiges Hatha Yoga, bewusste Atmung und Meditation aktivieren nachweislich den Parasympathikus, den Teil des Nervensystems, der für Erholung zuständig ist.</p></div>
+        <div class="factblock"><p><b>Schon eine Stunde wirkt.</b> Studien an Frauen in der Lebensmitte zeigen, dass bereits eine einzelne 90-minütige Hatha-Yoga-Einheit das subjektive Stressempfinden senkt. Es geht nicht um Perfektion in der Pose, sondern darum, deinem Körper regelmäßig das Signal zu geben: Jetzt ist Ruhe.</p></div>
+        <a class="link-more" href="#team">So unterrichten wir <span class="arw">›</span></a>
+      </div>
+      <div class="science-visual">
+        <div class="simg"><img src="bilder/yoga-regensburg-studio-team-2.jpg" alt="Klangschalen im Yogastudio Regensburg, ruhige Atmosphäre" width="1000" height="532"></div>
+        <div class="science-stat"><b>90 Min</b><span>reichen, um dein Stresslevel spürbar zu senken</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEISTUNGEN (dunkel) ================= -->
+<section class="section leist" id="leistungen">
+  <div class="ymark" style="bottom:-120px;left:-80px;width:460px;height:560px;opacity:.06" aria-hidden="true">
+    <svg viewBox="0 0 260 320"><path d="M40 40 L110 40 L130 150 L150 40 L220 40 L150 300 L90 300 Z" fill="#F0A0A0"/></svg>
+  </div>
+  <div class="wrap">
+    <span class="kicker">Unsere Kurse</span>
+    <h2>Der passende Kurs für deine Lebenslage</h2>
+    <p class="lead">Klassisches Hatha Yoga in Regensburg, für jedes Level und jede Phase.</p>
+    <div class="kurse">
+
+      <article class="kurs">
+        <div class="kimg"><img src="bilder/yoga-regensburg-studio-team-3.jpg" alt="Kursraum der Yogaschule Regensburg mit Matten"></div>
+        <div class="kurs-body">
+          <span class="cat">Wochenkurs</span>
+          <h3>Hatha Yoga für Einsteiger &amp; Fortgeschrittene</h3>
+          <p>Sanfte Mobilisierung, klare Anleitung, kein Leistungsdruck, kein Kopfstand-Zwang. Für jedes Level.</p>
+          <div class="kurs-foot"><span class="more">Kurs ansehen <span class="arw">›</span></span><span class="price">12 × 90 Min · 200 €</span></div>
+        </div>
+      </article>
+
+      <article class="kurs">
+        <div class="kimg"><img src="bilder/yoga-regensburg-studio-team-1.jpg" alt="Meditationskissen im Yogastudio Regensburg"></div>
+        <div class="kurs-body">
+          <span class="cat">Ab 50</span>
+          <h3>Sanftes Yoga 50+</h3>
+          <p>Ruhiges Yoga für Menschen ab 50. Behutsames Tempo, Rücksicht auf Rücken, Gelenke und Tagesform.</p>
+          <div class="kurs-foot"><span class="more">Kurs ansehen <span class="arw">›</span></span><span class="price">8 × 75 Min · 110 €</span></div>
+        </div>
+      </article>
+
+      <article class="kurs">
+        <div class="kimg"><img src="bilder/yoga-regensburg-hero-startseite.jpg" alt="Yoga für Schwangere und Mütter in Regensburg"></div>
+        <div class="kurs-body">
+          <span class="cat">Schwangere &amp; Mütter</span>
+          <h3>Schwangeren- und Mutter-Kind-Yoga</h3>
+          <p>Eigene Kurse für Schwangere und für Mütter mit Kind, achtsam auf diese besondere Zeit abgestimmt.</p>
+          <div class="kurs-foot"><span class="more">Kurs ansehen <span class="arw">›</span></span><span class="price">Auf Anfrage</span></div>
+        </div>
+      </article>
+
+      <article class="kurs">
+        <div class="kimg"><img src="bilder/yoga-regensburg-portrait-brigitte.jpg" alt="Personal Yoga Einzelunterricht in Regensburg"></div>
+        <div class="kurs-body">
+          <span class="cat">Einzelunterricht</span>
+          <h3>Personal Yoga</h3>
+          <p>Ganz auf dich abgestimmt, wenn du lieber allein und in deinem Tempo üben willst.</p>
+          <div class="kurs-foot"><span class="more">Termin anfragen <span class="arw">›</span></span><span class="price">60 Min · 95 €</span></div>
+        </div>
+      </article>
+
+      <article class="kurs">
+        <div class="kimg"><img src="bilder/yoga-regensburg-studio-team-2.jpg" alt="Business Yoga für Unternehmen in Regensburg"></div>
+        <div class="kurs-body">
+          <span class="cat">Für Unternehmen</span>
+          <h3>Business Yoga Regensburg</h3>
+          <p>Yoga für dein Team, in euren Räumen oder bei uns. Als betriebliche Gesundheitsförderung nach § 3 Nr. 34 EStG bis zu 600 Euro pro Mitarbeiter und Jahr steuer- und sozialabgabenfrei.</p>
+          <div class="kurs-foot"><span class="more">Angebot anfordern <span class="arw">›</span></span><span class="price">B2B</span></div>
+        </div>
+      </article>
+
+      <article class="kurs">
+        <div class="kimg"><img src="bilder/yoga-regensburg-retreat-griechenland.jpg" alt="Yoga-Retreat am Meer, Angebot der Yogaschule Regensburg"></div>
+        <div class="kurs-body">
+          <span class="cat">Auszeit</span>
+          <h3>Yoga-Retreats</h3>
+          <p>Auszeiten am Meer: Retreats in Griechenland, auf Ibiza und auf Schloss Tunzenberg.</p>
+          <div class="kurs-foot"><span class="more">Retreats entdecken <span class="arw">›</span></span><span class="price">Termine folgen</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIG TYPO BAND ================= -->
+<section class="band" aria-label="Finde deine Ruhe">
+  <div class="band-img" aria-hidden="true"><img src="bilder/yoga-regensburg-retreat-ibiza.jpg" alt=""></div>
+  <div class="band-inner">
+    <div class="big">Yoga</div>
+    <div class="sub">Finde deine Ruhe</div>
+    <p class="subline">Ein fester Termin pro Woche, an dem du wirklich abschalten kannst. Mitten in der Regensburger Altstadt.</p>
+  </div>
+</section>
+
+<!-- ================= ABLAUF ================= -->
+<section class="section" id="ablauf">
+  <div class="wrap">
+    <span class="kicker">So einfach fängst du an</span>
+    <h2 class="section-title" style="margin-top:16px">In drei Schritten auf die Matte</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Kurs wählen</h3><p>Such dir im Kursplan den Kurs, der zu deinem Level und deiner Zeit passt.</p></div>
+      <div class="step"><div class="num">2</div><h3>Kurz anfragen</h3><p>Unverbindlich per Telefon oder Nachricht. Wir melden uns und klären alle Fragen.</p></div>
+      <div class="step"><div class="num">3</div><h3>Matte ausrollen</h3><p>Komm zur ersten Stunde. Matte, Kissen und Decke liegen für dich bereit.</p></div>
+    </div>
+    <div class="sorglos"><span class="ic">✓</span><span>Verpasste Stunden holst du innerhalb des Kurszeitraums nach. Einstieg mitten im Kurs ist jederzeit möglich, die Gebühr wird dann anteilig reduziert.</span></div>
+    <div class="center-cta"><a class="btn btn-primary" href="#cta">Jetzt Platz sichern</a></div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="team-grid">
+      <div class="team-visual">
+        <div class="timg"><img src="bilder/yoga-regensburg-portrait-brigitte-om-wand.jpg" alt="Brigitte Krause, Leiterin der Hatha-Yogaschule Regensburg" width="1400" height="777"></div>
+        <div class="team-quote" aria-hidden="true">”</div>
+      </div>
+      <div class="team-txt">
+        <span class="kicker">Ein Team, das dich sieht</span>
+        <h2 class="section-title" style="margin:16px 0 22px">Bei uns turnt niemand stumm vor</h2>
+        <p>Wir wissen, wie es sich anfühlt, ständig die eigenen Bedürfnisse hintanzustellen. Genau dafür gibt es diesen Ort. Brigitte Krause leitet die Hatha-Yogaschule Regensburg und unterrichtet gemeinsam mit sechs weiteren Lehrerinnen und Lehrern. Im Team stecken Zusatzqualifikationen in Atemtherapie, Klangschalen, Kinderyoga und Meditation, jede Stunde wird von jemandem gehalten, der sein Handwerk versteht.</p>
+        <div class="safety">Du wirst angeleitet, sanft korrigiert und bekommst Alternativen, wenn eine Haltung heute nicht passt. Kein Zwang, kein Vergleich, kein Leistungsdruck.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS (Dummy) ================= -->
+<!-- HINWEIS: Dummy-Inhalt (Lorem ipsum). Vor Livegang durch echte Stimmen/Google-Bewertungen ersetzen oder Sektion entfernen. -->
+<section class="section testi" id="testimonials">
+  <div class="wrap">
+    <span class="kicker">Was Teilnehmerinnen sagen</span>
+    <h2 class="section-title" style="margin-top:16px">Stimmen aus den Kursen</h2>
+    <p class="placeholder-note">Platzhalter-Inhalt (Lorem ipsum), wird vor Livegang durch echte Teilnehmerstimmen ersetzt.</p>
+    <div class="tcards">
+      <div class="tcard">
+        <div class="mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nach Jahren am Schreibtisch war mein Nacken steinhart, sed do eiusmod tempor. Heute komme ich zum ersten Mal seit Langem wirklich zur Ruhe.</p>
+        <div class="tperson"><div class="tavatar"></div><div><div class="tname">Sabine M. <span style="font-weight:400;color:var(--label)">[Platzhalter]</span></div><div class="tmeta">52, Regensburg-Stadtamhof</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Lorem ipsum dolor sit amet, ich hatte Angst, mich zu blamieren, ut enim ad minim veniam. Man hat mich ganz ohne Druck abgeholt und mir Alternativen gezeigt.</p>
+        <div class="tperson"><div class="tavatar"></div><div><div class="tname">Andrea K. <span style="font-weight:400;color:var(--label)">[Platzhalter]</span></div><div class="tmeta">47, Regensburg</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="mark">“</div>
+        <div class="stars">★★★★★</div>
+        <p>Lorem ipsum dolor sit amet, duis aute irure dolor in reprehenderit. Der eine feste Termin pro Woche ist zu meinem Anker geworden.</p>
+        <div class="tperson"><div class="tavatar"></div><div><div class="tname">Petra L. <span style="font-weight:400;color:var(--label)">[Platzhalter]</span></div><div class="tmeta">58, Regensburg-Kumpfmühl</div></div></div>
+      </div>
+    </div>
+    <div class="testi-foot"><span class="badge-dummy">★ 4,X von 5 · XX Bewertungen bei Google (Platzhalter)</span></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="kicker center">Häufige Fragen</span>
+      <h2 class="section-title" style="margin-top:16px">Gut zu wissen</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq" open><summary>Wo finde ich Yogakurse in Regensburg?<span class="faq-plus">+</span></summary><p>Die Hatha-Yogaschule Regensburg bietet Yogakurse am St.-Kassians-Platz 6 mitten in der Altstadt an. Ein Team aus sieben Lehrerinnen und Lehrern unterrichtet Kurse für jedes Level.</p></details>
+      <details class="faq"><summary>Ich bin unbeweglich und habe noch nie Yoga gemacht. Kann ich mitmachen?<span class="faq-plus">+</span></summary><p>Ja. Es gibt eigene Einsteigerkurse, in denen du Schritt für Schritt und ohne Leistungsdruck angeleitet wirst. Riskante Übungen wie den Kopfstand gibt es bei uns nicht.</p></details>
+      <details class="faq"><summary>Übernimmt meine Krankenkasse die Kosten für den Yogakurs?<span class="faq-plus">+</span></summary><p>Unsere Kurse sind für die Krankenkassen-Einreichung zertifiziert. Wie viel erstattet wird, klärst du am besten direkt mit deiner Kasse.</p></details>
+      <details class="faq"><summary>Was passiert, wenn ich eine Stunde verpasse?<span class="faq-plus">+</span></summary><p>Verpasste Stunden holst du innerhalb des Kurszeitraums nach. So bleibst du flexibel, auch wenn mal etwas dazwischenkommt.</p></details>
+      <details class="faq"><summary>Kann ich mitten im laufenden Kurs einsteigen?<span class="faq-plus">+</span></summary><p>Ja, jederzeit. Die Kursgebühr wird dann anteilig reduziert.</p></details>
+      <details class="faq"><summary>Gibt es Yoga für Schwangere oder für Menschen ab 50?<span class="faq-plus">+</span></summary><p>Ja. Es gibt eigene Kurse für Schwangere, für Mütter mit Kind und mit „Sanftes Yoga 50+" auch ein ruhiges Angebot für Menschen ab 50.</p></details>
+      <details class="faq"><summary>Bietet die Hatha-Yogaschule auch Einzelunterricht?<span class="faq-plus">+</span></summary><p>Ja, mit Personal Yoga übst du allein mit deiner Lehrerin oder deinem Lehrer, ganz in deinem Tempo. Eine Einzelstunde dauert 60 Minuten und kostet 95 Euro.</p></details>
+      <details class="faq"><summary>Muss ich eine eigene Matte mitbringen?<span class="faq-plus">+</span></summary><p>Nein. Matte, Kissen und Decke liegen im Studio für dich bereit.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABSCHLUSS-CTA ================= -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="ymark" style="top:-60px;right:-40px;width:300px;height:380px;opacity:.07" aria-hidden="true">
+        <svg viewBox="0 0 260 320"><path d="M40 40 L110 40 L130 150 L150 40 L220 40 L150 300 L90 300 Z" fill="#F0A0A0"/></svg>
+      </div>
+      <div>
+        <h2>Bereit für deine erste Stunde?</h2>
+        <p>Schreib uns oder ruf an. Wir finden gemeinsam den Kurs, der zu dir passt. Unverbindlich, ohne Verkaufsgespräch.</p>
+        <div class="cta-contact">St.-Kassians-Platz 6, 93047 Regensburg<br>Tel. <a href="tel:+4916096771545">0160 9677 15 45</a></div>
+        <p class="micro">Kurse für die Krankenkassen-Einreichung zertifiziert. Verpasste Stunden nachholbar. Matte liegt bereit.</p>
+      </div>
+      <!-- HINWEIS: Formular braucht vor Livegang ein Mail-/Backend-Ziel (action). Aktuell Platzhalter. -->
+      <form class="form" action="#" method="post" onsubmit="return false">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Vorname Nachname" required></div>
+        <div><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" placeholder="name@mail.de" required></div>
+        <div><label for="f-tel">Telefon</label><input id="f-tel" name="tel" type="tel" placeholder="Für Rückfragen"></div>
+        <button class="btn btn-primary" type="submit">Jetzt Platz sichern</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div>
+      <img src="bilder/logo.png" alt="Hatha-Yogaschule Regensburg Logo">
+      <address>
+        Hatha-Yogaschule Regensburg<br>
+        St.-Kassians-Platz 6, 93047 Regensburg<br>
+        Tel. <a href="tel:+4916096771545">0160 9677 15 45</a>
+      </address>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Angebot</h4>
+        <a href="#leistungen">Kursplan</a><br>
+        <a href="#leistungen">Preise</a><br>
+        <a href="#leistungen">Retreats</a>
+      </div>
+      <div>
+        <h4>Schule</h4>
+        <a href="#team">Team</a><br>
+        <a href="#cta">Kontakt</a><br>
+        <a href="#">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <div class="typo-band">Hatha-Yogaschule</div>
+  <div class="footer-bottom">
+    <span>© 2026 Hatha-Yogaschule Regensburg</span>
+    <span>Zuletzt aktualisiert: Juli 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
