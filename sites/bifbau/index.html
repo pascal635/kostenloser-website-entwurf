@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ausschreibungsberatung Hoch- und Tiefbau | BIFbau International</title>
+<meta name="description" id="metaDesc" content="Öffentliche Ausschreibungen im Hoch- und Tiefbau sicher gewinnen. BIFbau begleitet Bauunternehmen europaweit: fehlerfreie Angebote, geprüfte Formalien, EU-Fördermittel. Kostenfreie Erstprüfung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1319; --bg2:#161c24; --bg3:#0b0e13; --line:#2a313b; --line-soft:#3a424e;
+  --cream:#f4f1ea; --cream2:#ede8dc; --white:#fff; --ink:#14181e; --ink-soft:#4a525c; --ink-mute:#6b7480;
+  --on-dark:#f5f5f3; --on-dark-soft:#9aa4b0;
+  --gold:#d99a2b; --gold-hover:#c4861d; --gold-dark:#b67e17; --gold-light:#f0c56b;
+  --green:#1f8a5b; --red:#c0392b;
+  --display:'Space Grotesk',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --maxw:1180px; --radius:14px; --headh:132px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--on-dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:inline-block}
+.gold{color:var(--gold)}
+.lead{font-size:19px;color:var(--on-dark-soft);max-width:60ch}
+
+/* language visibility handled by i18n JS (innerHTML swap) */
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:600;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:.18s;white-space:nowrap}
+.btn-primary{background:linear-gradient(180deg,var(--gold),var(--gold-dark));color:#1a1206;box-shadow:0 8px 24px rgba(217,154,43,.3)}
+.btn-primary:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:var(--line-soft);color:var(--on-dark)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
+.btn-ghost.on-light{border-color:#d8d3c7;color:var(--ink)}
+.btn-ghost.on-light:hover{border-color:var(--gold-dark);color:var(--gold-dark)}
+.btn-block{width:100%;justify-content:center}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(15,19,25,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:background .25s ease}
+header.scrolled{--headh:76px;background:rgba(15,19,25,.94)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:var(--headh);transition:height .28s cubic-bezier(.4,0,.2,1)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:100px;width:auto;transition:height .28s cubic-bezier(.4,0,.2,1)}
+header.scrolled .brand img{height:52px}
+[id]{scroll-margin-top:88px}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:14.5px;color:var(--on-dark-soft);font-weight:500;transition:.15s}
+.nav-links a:hover{color:var(--on-dark)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang{display:flex;border:1px solid var(--line-soft);border-radius:999px;overflow:hidden}
+.lang button{background:transparent;border:0;color:var(--on-dark-soft);font-family:var(--body);font-weight:600;font-size:13px;padding:7px 12px;cursor:pointer;transition:.15s}
+.lang button.active{background:var(--gold);color:#1a1206}
+.menu-toggle{display:none;background:transparent;border:0;color:var(--on-dark);cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - var(--headh));display:flex;align-items:center;padding:80px 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,19,25,.94) 0%,rgba(15,19,25,.8) 42%,rgba(15,19,25,.45) 100%),linear-gradient(180deg,rgba(15,19,25,.6),rgba(15,19,25,.2) 40%,rgba(15,19,25,.75))}
+.hero-inner{position:relative;z-index:2;max-width:760px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--gold-light);background:rgba(217,154,43,.14);border:1px solid rgba(217,154,43,.4);padding:8px 15px;border-radius:999px;margin-bottom:26px}
+.hero h1{font-size:clamp(38px,6vw,68px);margin-bottom:24px}
+.hero .lead{font-size:clamp(17px,2.2vw,21px);margin-bottom:34px;color:#c6cdd6}
+.hero-cta{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.micro{font-size:13.5px;color:var(--on-dark-soft);margin-top:16px;display:flex;align-items:center;gap:8px}
+
+/* trust */
+.trust{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.stat .num{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,44px);color:var(--gold);letter-spacing:-.02em}
+.stat .lab{font-size:13px;color:var(--on-dark-soft);margin-top:6px;line-height:1.4}
+.trust-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 26px;margin-top:40px;padding-top:34px;border-top:1px solid var(--line)}
+.trust-badges span{font-size:13px;color:var(--on-dark-soft);display:flex;align-items:center;gap:9px;font-weight:500}
+.trust-badges span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+
+/* light sections */
+.light{background:var(--cream);color:var(--ink)}
+.light .lead{color:var(--ink-soft)}
+.light .eyebrow{color:var(--gold-dark)}
+.sec-head{max-width:720px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(30px,4.4vw,46px);color:inherit}
+.light .sec-head h2{color:var(--ink)}
+
+/* problem cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard{background:var(--white);border:1px solid #e4dfd3;border-radius:var(--radius);padding:32px;box-shadow:0 12px 30px rgba(20,24,30,.06)}
+.pcard .ic{width:46px;height:46px;border-radius:12px;background:rgba(192,57,43,.1);color:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px}
+.pcard h3{font-size:20px;color:var(--ink);margin-bottom:12px}
+.pcard p{font-size:15px;color:var(--ink-soft)}
+.close-line{margin-top:44px;font-family:var(--display);font-weight:600;font-size:clamp(20px,2.6vw,28px);color:var(--ink);letter-spacing:-.02em;max-width:760px}
+.close-line b{color:var(--gold-dark)}
+
+/* solution steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:12px}
+.step{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px}
+.step .n{font-family:var(--display);font-weight:700;font-size:15px;color:#1a1206;background:var(--gold);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.step h3{font-size:18px;margin-bottom:10px}
+.step p{font-size:14.5px;color:var(--on-dark-soft)}
+.solution-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.solution-media img{border-radius:var(--radius);height:100%;object-fit:cover;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+
+/* bereiche + intake */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tile{position:relative;border-radius:var(--radius);overflow:hidden;min-height:340px;display:flex;align-items:flex-end;cursor:pointer;border:1px solid #e4dfd3;box-shadow:0 12px 30px rgba(20,24,30,.06);transition:.2s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(20,24,30,.14)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:.4s}
+.tile:hover img{transform:scale(1.05)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(15,19,25,.85));z-index:1}
+.tile-body{position:relative;z-index:2;padding:24px;color:#fff;width:100%}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);background:rgba(217,154,43,.16);border:1px solid rgba(217,154,43,.4);padding:5px 11px;border-radius:999px;margin-bottom:12px}
+.tile h3{font-size:20px;margin-bottom:6px}
+.tile p{font-size:13.5px;color:#c6cdd6}
+.tile .req{margin-top:16px;font-size:13.5px;font-weight:600;color:var(--gold-light);display:flex;align-items:center;gap:7px}
+
+/* intake form */
+.intake{margin-top:48px;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:40px;color:var(--on-dark);position:relative;scroll-margin-top:90px}
+.intake-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.intake-head h3{font-size:24px}
+.progress{display:flex;gap:8px;margin:24px 0 30px}
+.progress .p{flex:1;height:5px;border-radius:999px;background:var(--line)}
+.progress .p.on{background:var(--gold)}
+.q{display:none}
+.q.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q label.qlabel{display:block;font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:18px;letter-spacing:-.01em}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.opt{border:1px solid var(--line-soft);border-radius:12px;padding:16px 18px;cursor:pointer;font-size:15px;font-weight:500;transition:.15s;background:var(--bg2)}
+.opt:hover{border-color:var(--gold)}
+.opt.sel{border-color:var(--gold);background:rgba(217,154,43,.14);color:var(--gold-light)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--on-dark-soft);margin-bottom:7px;letter-spacing:.02em}
+.field input,.field textarea,.field select{width:100%;background:var(--bg2);border:1px solid var(--line-soft);border-radius:10px;padding:13px 15px;color:var(--on-dark);font-family:var(--body);font-size:15px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,154,43,.18)}
+.upload{border:1px dashed var(--line-soft);border-radius:12px;padding:22px;text-align:center;color:var(--on-dark-soft);font-size:14px;cursor:pointer;transition:.15s}
+.upload:hover{border-color:var(--gold);color:var(--gold-light)}
+.intake-nav{display:flex;justify-content:space-between;gap:14px;margin-top:28px}
+.intake-foot{margin-top:18px;font-size:12.5px;color:var(--on-dark-soft);display:flex;align-items:center;gap:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.intake-done{display:none;text-align:center;padding:30px 0}
+.intake-done .ok{width:64px;height:64px;border-radius:50%;background:rgba(31,138,91,.14);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 20px}
+.intake-done h3{font-size:24px;margin-bottom:10px}
+.intake-done p{color:var(--on-dark-soft)}
+
+/* matrix */
+.matrix-wrap{overflow-x:auto}
+table.matrix{width:100%;border-collapse:collapse;min-width:640px;background:var(--bg2);border-radius:var(--radius);overflow:hidden}
+table.matrix th,table.matrix td{padding:18px 22px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+table.matrix thead th{font-family:var(--display);font-size:16px;font-weight:600}
+table.matrix thead th:nth-child(2){color:var(--red)}
+table.matrix thead th:nth-child(3){color:var(--gold-light)}
+table.matrix td:first-child{color:var(--on-dark-soft);font-weight:500}
+table.matrix td.neg::before{content:"✕ ";color:var(--red);font-weight:700}
+table.matrix td.pos::before{content:"✓ ";color:var(--green);font-weight:700}
+table.matrix tr:last-child td{border-bottom:0}
+.roi{margin-top:26px;font-size:16px;color:var(--on-dark-soft);max-width:70ch}
+.roi b{color:var(--gold-light)}
+
+/* referenzen */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.case{background:var(--white);border:1px solid #e4dfd3;border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 30px rgba(20,24,30,.06);display:flex;flex-direction:column}
+.case img{height:220px;width:100%;object-fit:cover}
+.case-body{padding:28px;display:flex;flex-direction:column;flex:1}
+.case .tag{color:var(--gold-dark);background:rgba(217,154,43,.12);border-color:rgba(217,154,43,.35)}
+.case h3{color:var(--ink);font-size:21px;margin-bottom:14px}
+.case dl{margin-bottom:20px}
+.case dt{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-dark);margin-top:12px}
+.case dd{font-size:14.5px;color:var(--ink-soft);margin-top:2px}
+.case .btn{margin-top:auto}
+
+/* faq */
+.faq-list{max-width:860px;margin:0 auto}
+.acc{border-bottom:1px solid #d8d3c7}
+.acc button{width:100%;text-align:left;background:transparent;border:0;padding:22px 44px 22px 0;font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);cursor:pointer;position:relative;letter-spacing:-.01em}
+.acc button::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:26px;color:var(--gold-dark);font-family:var(--body);transition:.2s}
+.acc.open button::after{content:"–"}
+.acc .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.acc .ans p{padding:0 0 24px;font-size:15.5px;color:var(--ink-soft);max-width:74ch}
+.faq-more{text-align:center;margin-top:40px;font-size:15px;color:var(--ink-soft)}
+.faq-more a{color:var(--gold-dark);font-weight:600;border-bottom:1px solid currentColor}
+
+/* final cta */
+.cta-final{position:relative;overflow:hidden}
+.cta-final .bg{position:absolute;inset:0;z-index:0}
+.cta-final .bg img{width:100%;height:100%;object-fit:cover}
+.cta-final .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,14,19,.95),rgba(11,14,19,.72))}
+.cta-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.cta-form{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:34px}
+.cta-note{font-size:12.5px;color:var(--on-dark-soft);margin-top:14px;display:flex;align-items:center;gap:8px}
+
+/* footer */
+footer{background:var(--bg3);border-top:1px solid var(--line);padding:70px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:50px}
+.foot-brand img{height:100px;margin-bottom:20px}
+.foot-brand p{font-size:14px;color:var(--on-dark-soft);max-width:34ch}
+.foot-col h4{font-family:var(--display);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--on-dark);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:14px;color:var(--on-dark-soft);margin-bottom:9px}
+.foot-col a:hover{color:var(--gold-light)}
+.wordmark{font-family:var(--display);font-weight:700;font-size:clamp(60px,17vw,220px);color:#141a22;letter-spacing:-.03em;line-height:.9;padding:10px 0 0;user-select:none}
+.foot-bottom{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--ink-mute)}
+
+/* draft ribbon */
+.draft{position:fixed;bottom:16px;right:16px;z-index:80;background:rgba(217,154,43,.16);border:1px solid rgba(217,154,43,.5);color:var(--gold-light);font-size:12px;font-weight:600;padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+
+@media(max-width:960px){
+  .nav-links{display:none}
+  .menu-toggle{display:block}
+  .stats{grid-template-columns:repeat(2,1fr);gap:28px 20px}
+  .cards3,.steps,.tiles{grid-template-columns:1fr 1fr}
+  .solution-grid,.cta-grid,.cases{grid-template-columns:1fr;gap:32px}
+  .solution-media{order:-1}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  :root{--headh:124px}
+  section{padding:64px 0}
+  .cards3,.steps,.tiles,.opts,.two{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .intake{padding:26px 20px}
+  .hero{min-height:auto}
+}
+</style>
+</head>
+<body data-lang="de">
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/img/logo.png" alt="BIFbau International"></a>
+    <nav class="nav-links">
+      <a href="#solution" data-i18n="nav.ablauf"></a>
+      <a href="#bereiche" data-i18n="nav.bereiche"></a>
+      <a href="#referenzen" data-i18n="nav.ref"></a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button data-set="de" class="active">DE</button>
+        <button data-set="en">EN</button>
+      </div>
+      <a href="#cta" class="btn btn-primary" data-i18n="nav.cta"></a>
+    </div>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/img/ki-hero-gleisbau-daemmerung.jpg" alt="Gleisbau-Großbaustelle in der Dämmerung"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="badge" data-i18n="hero.badge"></span>
+      <h1 data-i18n="hero.h1"></h1>
+      <p class="lead" data-i18n="hero.sub"></p>
+      <div class="hero-cta">
+        <a href="#bereiche" class="btn btn-primary" data-i18n="hero.cta"></a>
+        <a href="#solution" class="btn btn-ghost" data-i18n="hero.cta2"></a>
+      </div>
+      <div class="micro">◆ <span data-i18n="hero.micro"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="trust" style="padding:54px 0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="num">500 Mio. €+</div><div class="lab" data-i18n="trust.s1"></div></div>
+      <div class="stat"><div class="num">90 %+</div><div class="lab" data-i18n="trust.s2"></div></div>
+      <div class="stat"><div class="num">0</div><div class="lab" data-i18n="trust.s3"></div></div>
+      <div class="stat"><div class="num">4</div><div class="lab" data-i18n="trust.s4"></div></div>
+    </div>
+    <div class="trust-badges">
+      <span data-i18n="trust.b1"></span>
+      <span data-i18n="trust.b2"></span>
+      <span data-i18n="trust.b3"></span>
+      <span data-i18n="trust.b4"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="light" id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="problem.eyebrow"></span>
+      <h2 data-i18n="problem.h2"></h2>
+      <p class="lead" data-i18n="problem.intro" style="margin-top:18px"></p>
+    </div>
+    <div class="cards3">
+      <div class="pcard"><div class="ic">⚠</div><h3 data-i18n="problem.c1t"></h3><p data-i18n="problem.c1b"></p></div>
+      <div class="pcard"><div class="ic">⏱</div><h3 data-i18n="problem.c2t"></h3><p data-i18n="problem.c2b"></p></div>
+      <div class="pcard"><div class="ic">€</div><h3 data-i18n="problem.c3t"></h3><p data-i18n="problem.c3b"></p></div>
+    </div>
+    <p class="close-line" data-i18n="problem.close"></p>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section id="solution">
+  <div class="wrap">
+    <div class="solution-grid">
+      <div>
+        <span class="eyebrow" data-i18n="sol.eyebrow"></span>
+        <h2 style="font-size:clamp(30px,4.4vw,46px)" data-i18n="sol.h2"></h2>
+        <p class="lead" data-i18n="sol.intro" style="margin:18px 0 34px"></p>
+        <a href="#bereiche" class="btn btn-primary" data-i18n="sol.cta"></a>
+      </div>
+      <div class="solution-media"><img src="assets/img/ki-team-ingenieure-plan.jpg" alt="Ingenieure prüfen Baupläne"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3 data-i18n="sol.s1t"></h3><p data-i18n="sol.s1b"></p></div>
+      <div class="step"><div class="n">2</div><h3 data-i18n="sol.s2t"></h3><p data-i18n="sol.s2b"></p></div>
+      <div class="step"><div class="n">3</div><h3 data-i18n="sol.s3t"></h3><p data-i18n="sol.s3b"></p></div>
+      <div class="step"><div class="n">4</div><h3 data-i18n="sol.s4t"></h3><p data-i18n="sol.s4b"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEREICHE + INTAKE (Kernstück) ============ -->
+<section class="light" id="bereiche">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="ber.eyebrow"></span>
+      <h2 data-i18n="ber.h2"></h2>
+      <p class="lead" data-i18n="ber.sub" style="margin-top:18px"></p>
+    </div>
+    <div class="tiles">
+      <div class="tile" data-area="Tiefbau">
+        <img src="assets/img/ki-bereich-tiefbau.jpg" alt="Tiefbau">
+        <div class="tile-body"><span class="tag" data-i18n="ber.t1tag"></span><h3 data-i18n="ber.t1h"></h3><p data-i18n="ber.t1p"></p><div class="req">→ <span data-i18n="ber.req"></span></div></div>
+      </div>
+      <div class="tile" data-area="Hochbau">
+        <img src="assets/img/ki-bereich-hochbau.jpg" alt="Hochbau">
+        <div class="tile-body"><span class="tag" data-i18n="ber.t2tag"></span><h3 data-i18n="ber.t2h"></h3><p data-i18n="ber.t2p"></p><div class="req">→ <span data-i18n="ber.req"></span></div></div>
+      </div>
+      <div class="tile" data-area="Verkehrsinfrastruktur">
+        <img src="assets/img/ki-bereich-verkehr.jpg" alt="Verkehrsinfrastruktur">
+        <div class="tile-body"><span class="tag" data-i18n="ber.t3tag"></span><h3 data-i18n="ber.t3h"></h3><p data-i18n="ber.t3p"></p><div class="req">→ <span data-i18n="ber.req"></span></div></div>
+      </div>
+      <div class="tile" data-area="Industrie- und Anlagenbau">
+        <img src="assets/img/ki-bereich-industrie.jpg" alt="Industrie- und Anlagenbau">
+        <div class="tile-body"><span class="tag" data-i18n="ber.t4tag"></span><h3 data-i18n="ber.t4h"></h3><p data-i18n="ber.t4p"></p><div class="req">→ <span data-i18n="ber.req"></span></div></div>
+      </div>
+    </div>
+
+    <!-- Intake -->
+    <div class="intake" id="intake">
+      <form id="intakeForm">
+        <div class="intake-head">
+          <h3 data-i18n="ik.title"></h3>
+          <div class="micro" style="color:var(--on-dark-soft)"><span data-i18n="ik.step"></span> <span id="stepNo">1</span>/4</div>
+        </div>
+        <div class="progress"><div class="p on"></div><div class="p"></div><div class="p"></div><div class="p"></div></div>
+
+        <!-- step 1 -->
+        <div class="q on" data-step="1">
+          <label class="qlabel" data-i18n="ik.q1"></label>
+          <div class="opts" id="areaOpts">
+            <div class="opt" data-val="Tiefbau" data-i18n="ber.t1h"></div>
+            <div class="opt" data-val="Hochbau" data-i18n="ber.t2h"></div>
+            <div class="opt" data-val="Verkehrsinfrastruktur" data-i18n="ber.t3h"></div>
+            <div class="opt" data-val="Industrie- und Anlagenbau" data-i18n="ber.t4h"></div>
+          </div>
+        </div>
+        <!-- step 2 -->
+        <div class="q" data-step="2">
+          <label class="qlabel" data-i18n="ik.q2"></label>
+          <div class="opts">
+            <div class="opt" data-group="timing" data-i18n="ik.q2a"></div>
+            <div class="opt" data-group="timing" data-i18n="ik.q2b"></div>
+            <div class="opt" data-group="timing" data-i18n="ik.q2c"></div>
+          </div>
+        </div>
+        <!-- step 3 -->
+        <div class="q" data-step="3">
+          <label class="qlabel" data-i18n="ik.q3"></label>
+          <div class="field"><textarea rows="3" data-i18n-ph="ik.q3ph"></textarea></div>
+          <div class="upload" id="uploadBox">⬆ <span data-i18n="ik.upload"></span></div>
+        </div>
+        <!-- step 4 -->
+        <div class="q" data-step="4">
+          <label class="qlabel" data-i18n="ik.q4"></label>
+          <div class="two">
+            <div class="field"><label data-i18n="f.company"></label><input type="text"></div>
+            <div class="field"><label data-i18n="f.name"></label><input type="text"></div>
+          </div>
+          <div class="field"><label data-i18n="f.contact"></label><input type="text" data-i18n-ph="f.contactph"></div>
+        </div>
+
+        <div class="intake-nav">
+          <button type="button" class="btn btn-ghost" id="prevBtn" style="visibility:hidden" data-i18n="ik.back"></button>
+          <button type="button" class="btn btn-primary" id="nextBtn" data-i18n="ik.next"></button>
+        </div>
+        <div class="intake-foot">🔒 <span data-i18n="ik.foot"></span></div>
+      </form>
+      <div class="intake-done" id="intakeDone">
+        <div class="ok">✓</div>
+        <h3 data-i18n="ik.donet"></h3>
+        <p data-i18n="ik.doneb"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATRIX ============ -->
+<section id="matrix">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="mtx.eyebrow"></span>
+      <h2 style="font-size:clamp(30px,4.4vw,46px)" data-i18n="mtx.h2"></h2>
+    </div>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead><tr><th></th><th data-i18n="mtx.colA"></th><th data-i18n="mtx.colB"></th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="mtx.r1"></td><td class="neg" data-i18n="mtx.r1a"></td><td class="pos" data-i18n="mtx.r1b"></td></tr>
+          <tr><td data-i18n="mtx.r2"></td><td class="neg" data-i18n="mtx.r2a"></td><td class="pos" data-i18n="mtx.r2b"></td></tr>
+          <tr><td data-i18n="mtx.r3"></td><td class="neg" data-i18n="mtx.r3a"></td><td class="pos" data-i18n="mtx.r3b"></td></tr>
+          <tr><td data-i18n="mtx.r4"></td><td class="neg" data-i18n="mtx.r4a"></td><td class="pos" data-i18n="mtx.r4b"></td></tr>
+          <tr><td data-i18n="mtx.r5"></td><td class="neg" data-i18n="mtx.r5a"></td><td class="pos" data-i18n="mtx.r5b"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="roi" data-i18n="mtx.roi"></p>
+    <div style="margin-top:30px"><a href="#cta" class="btn btn-primary" data-i18n="mtx.cta"></a></div>
+  </div>
+</section>
+
+<!-- ============ REFERENZEN ============ -->
+<section class="light" id="referenzen">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="ref.eyebrow"></span>
+      <h2 data-i18n="ref.h2"></h2>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <img src="assets/img/ki-referenz-gleisbau-strecke.jpg" alt="Gleisbau Referenzprojekt">
+        <div class="case-body">
+          <span class="tag" data-i18n="ref.c1tag"></span>
+          <h3 data-i18n="ref.c1h"></h3>
+          <dl>
+            <dt data-i18n="ref.lVol"></dt><dd data-i18n="ref.c1vol"></dd>
+            <dt data-i18n="ref.lSit"></dt><dd data-i18n="ref.c1sit"></dd>
+            <dt data-i18n="ref.lDo"></dt><dd data-i18n="ref.c1do"></dd>
+            <dt data-i18n="ref.lRes"></dt><dd data-i18n="ref.c1res"></dd>
+          </dl>
+          <a href="#cta" class="btn btn-ghost on-light" data-i18n="ref.btn"></a>
+        </div>
+      </div>
+      <div class="case">
+        <img src="assets/img/ki-referenz-autobahn.jpg" alt="Autobahn Referenzprojekt">
+        <div class="case-body">
+          <span class="tag" data-i18n="ref.c2tag"></span>
+          <h3 data-i18n="ref.c2h"></h3>
+          <dl>
+            <dt data-i18n="ref.lVol"></dt><dd data-i18n="ref.c2vol"></dd>
+            <dt data-i18n="ref.lSit"></dt><dd data-i18n="ref.c2sit"></dd>
+            <dt data-i18n="ref.lDo"></dt><dd data-i18n="ref.c2do"></dd>
+            <dt data-i18n="ref.lRes"></dt><dd data-i18n="ref.c2res"></dd>
+          </dl>
+          <a href="#cta" class="btn btn-ghost on-light" data-i18n="ref.btn"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="light" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;margin:0 auto 48px">
+      <span class="eyebrow" data-i18n="faq.eyebrow"></span>
+      <h2 data-i18n="faq.h2"></h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+    <p class="faq-more"><span data-i18n="faq.more"></span> <a href="#cta" data-i18n="faq.morelink"></a></p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final" id="cta">
+  <div class="bg"><img src="assets/img/ki-cta-planung-detail.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <span class="eyebrow" data-i18n="cta.eyebrow"></span>
+        <h2 style="font-size:clamp(30px,4.4vw,46px)" data-i18n="cta.h2"></h2>
+        <p class="lead" data-i18n="cta.sub" style="margin-top:18px"></p>
+      </div>
+      <div class="cta-form">
+        <form id="ctaForm">
+          <div class="two">
+            <div class="field"><label data-i18n="f.company"></label><input type="text"></div>
+            <div class="field"><label data-i18n="f.name"></label><input type="text"></div>
+          </div>
+          <div class="field"><label data-i18n="f.contact"></label><input type="text" data-i18n-ph="f.contactph"></div>
+          <div class="two">
+            <div class="field"><label data-i18n="f.area"></label>
+              <select><option data-i18n="ber.t1h"></option><option data-i18n="ber.t2h"></option><option data-i18n="ber.t3h"></option><option data-i18n="ber.t4h"></option></select>
+            </div>
+            <div class="field"><label data-i18n="f.vol"></label><input type="text" data-i18n-ph="f.volph"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="cta.btn"></button>
+          <div class="cta-note">🔒 <span data-i18n="cta.note"></span></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/img/logo.png" alt="BIFbau International">
+        <p data-i18n="foot.about"></p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot.contact"></h4>
+        <p>BIF visoko i niskogradnja d.o.o.</p>
+        <p>Ulica Grgura Ćevapovića 35 D<br>31000 Osijek, <span data-i18n="foot.hr"></span></p>
+        <a href="mailto:info@bifbau.com">info@bifbau.com</a>
+        <p>+385 99 7556458<br>+49 15906790185<br>+90 552 7395434</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot.nav"></h4>
+        <a href="#solution" data-i18n="nav.ablauf"></a>
+        <a href="#bereiche" data-i18n="nav.bereiche"></a>
+        <a href="#referenzen" data-i18n="nav.ref"></a>
+        <a href="#faq">FAQ</a>
+        <a href="#" data-i18n="foot.imprint"></a>
+        <a href="#" data-i18n="foot.privacy"></a>
+      </div>
+    </div>
+    <div class="wordmark">BIFbau</div>
+    <div class="foot-bottom">
+      <span>© 2026 BIF visoko i niskogradnja d.o.o.</span>
+      <span>OIB 43900487239 · VAT HR43900487239</span>
+    </div>
+  </div>
+</footer>
+
+<div class="draft" data-i18n="draft"></div>
+
+<script>
+const T={
+ de:{
+  "nav.ablauf":"Ablauf","nav.bereiche":"Bereiche","nav.ref":"Referenzen","nav.cta":"Kostenfreie Erstprüfung",
+  "hero.badge":"Spezialisiert auf öffentliche Vergabeverfahren im Hoch- und Tiefbau",
+  "hero.h1":"Öffentliche Großaufträge gewinnen. <span class='gold'>Ohne Formfehler.</span> Ohne Ihr Team zu blockieren.",
+  "hero.sub":"Ihr nächstes Millionenprojekt darf nicht am bürokratischen Zufall scheitern. BIFbau steuert Ihre Angebote fehlerfrei durch das Vergabeverfahren, von der Potenzialanalyse bis zur finalen Einreichung. Ingenieure und Ausschreibungsprofis, die den Baustellenalltag genauso kennen wie die Vergaberegeln.",
+  "hero.cta":"Kostenfreie Erstprüfung anfordern","hero.cta2":"Wie wir arbeiten",
+  "hero.micro":"Wir prüfen Ihre nächste oder letzte Ausschreibung auf versteckte Fehlerquellen. Unverbindlich und vertraulich.",
+  "trust.s1":"begleitetes Ausschreibungsvolumen","trust.s2":"Zuschlagsquote bei begleiteten Verfahren","trust.s3":"Formfehler bei begleiteten Einreichungen","trust.s4":"Länder: Kroatien, Deutschland, Serbien, Türkei",
+  "trust.b1":"Team aus Bauingenieuren und Vergabeexperten","trust.b2":"Erfahrung mit EU-geförderten Großprojekten","trust.b3":"Qualitätsmanagement nach ISO 9001","trust.b4":"Präqualifizierte Vergabebegleitung",
+  "problem.eyebrow":"Das Problem","problem.h2":"Woran gute Angebote im öffentlichen Bau wirklich scheitern",
+  "problem.intro":"Sie kennen die Gratwanderung. Bieten Sie auskömmlich an, zieht das Projekt an Ihnen vorbei. Bieten Sie zu knapp, verbrennen Sie Ihre eigene Marge. Und selbst das beste Angebot ist wertlos, wenn ein einziger Formfehler es aus dem Verfahren wirft.",
+  "problem.c1t":"Der Formfehler-Tod","problem.c1b":"Wochenlange Kalkulation, jeder Kubikmeter dreimal nachgerechnet, und am Ende der Ausschluss: falsches Portal-Konto, fehlende Referenz im Formblatt, ein vergessener Haken. Mehr als ein Drittel aller Angebote im öffentlichen Bau wird allein wegen formaler Fehler ausgeschlossen.",
+  "problem.c2t":"Der Kapazitätsengpass","problem.c2b":"Ihre besten Bauleiter füllen bürokratische Teilnahmebedingungen aus, statt auf der Baustelle Margen zu sichern. Die Ausschreibung läuft nebenbei, und genau da entstehen die teuren Fehler.",
+  "problem.c3t":"Das Preisprüfungs-Risiko","problem.c3b":"Ein zu niedriger Einheitspreis, und plötzlich steht der Verdacht des ungewöhnlich niedrigen Angebots im Raum. Sie müssen Ihre Kalkulation offenlegen oder fliegen raus.",
+  "problem.close":"Das Problem ist selten die Bauleistung. <b>Das Problem ist das Verfahren.</b>",
+  "sol.eyebrow":"Die Lösung","sol.h2":"Ein System, das Ihr Angebot sicher ins Ziel bringt",
+  "sol.intro":"Sie brauchen keinen weiteren Berater, der Ihnen Paragrafen vorliest. Sie brauchen einen Partner, der die Fehler der Vergabestelle findet, bevor sie zu Ihren werden. In vier Schritten.",
+  "sol.cta":"Bereich wählen und anfragen",
+  "sol.s1t":"Potenzialanalyse","sol.s1b":"Wir prüfen die Ausschreibung auf Match und echte Erfolgsaussichten. Bid oder No-Bid, mit klarer Begründung, bevor Sie Kalkulationsstunden investieren.",
+  "sol.s2t":"Bid-Orchestrierung","sol.s2b":"Wir strukturieren Nachweise, Formblätter, Fristen und, falls sinnvoll, die Bietergemeinschaft. Alles läuft über die richtige Plattform und das richtige Konto.",
+  "sol.s3t":"Preis-Sicherung","sol.s3b":"Wir sichern Ihre Einheitspreise vergaberechtlich ab und bereiten die Argumentation gegen eine Preisprüfung vor. Ihre Marge bleibt geschützt.",
+  "sol.s4t":"Finaler Formalien-Check","sol.s4b":"Vor der Abgabe prüfen wir im Vier-Augen-Prinzip lückenlos gegen die Originalanforderungen. Erst dann geht Ihr Angebot raus.",
+  "ber.eyebrow":"Ihre Anfrage","ber.h2":"In welchem Bereich wollen Sie den nächsten Zuschlag holen?",
+  "ber.sub":"Wählen Sie Ihren Bereich. Danach vier kurze Fragen, dann meldet sich unser Team. Ein Klick genügt zum Start.",
+  "ber.req":"Begleitung anfragen",
+  "ber.t1tag":"Tiefbau","ber.t1h":"Tiefbau","ber.t1p":"Erdbau, Kanal, Spezialtiefbau, Gründung",
+  "ber.t2tag":"Hochbau","ber.t2h":"Hochbau","ber.t2p":"Wohn-, Gewerbe- und öffentliche Gebäude",
+  "ber.t3tag":"Verkehr","ber.t3h":"Verkehrsinfrastruktur","ber.t3p":"Gleisbau, Autobahn, Landstraßen, Brücken",
+  "ber.t4tag":"Industrie","ber.t4h":"Industrie- und Anlagenbau","ber.t4p":"Werke, Tanks, technische Anlagen",
+  "ik.title":"Ihre Ausschreibung, in 4 Schritten","ik.step":"Schritt",
+  "ik.q1":"Um welchen Bereich geht es?",
+  "ik.q2":"Steht schon eine konkrete Ausschreibung an?","ik.q2a":"Ja, mit Termin","ik.q2b":"In Vorbereitung","ik.q2c":"Wir sondieren noch",
+  "ik.q3":"Was haben Sie in den letzten fünf Jahren umgesetzt?","ik.q3ph":"Kurz Ihre wichtigsten Referenzprojekte, Volumen, Rolle …",
+  "ik.upload":"Expertise oder Nachweise hochladen (optional)",
+  "ik.q4":"Wohin dürfen wir antworten?",
+  "f.company":"Firmenname","f.name":"Ansprechpartner","f.contact":"E-Mail oder Telefon","f.contactph":"z. B. name@firma.de",
+  "ik.back":"Zurück","ik.next":"Weiter","ik.foot":"Ihre Angaben behandeln wir streng vertraulich. Kein Newsletter, kein Weiterreichen an Dritte.",
+  "ik.donet":"Danke, Ihre Anfrage ist unterwegs.","ik.doneb":"Wir melden uns zeitnah mit einer ehrlichen Ersteinschätzung. (Demo-Formular im Entwurf.)",
+  "mtx.eyebrow":"Der Unterschied","mtx.h2":"Nebenbei kalkuliert oder professionell begleitet",
+  "mtx.colA":"Intern, nebenbei","mtx.colB":"Mit BIFbau begleitet",
+  "mtx.r1":"Ausschreibungssuche","mtx.r1a":"unstrukturiert, Fristen gehen unter","mtx.r1b":"profilgenaues Monitoring, keine verpasste Frist",
+  "mtx.r2":"Bid oder No-Bid","mtx.r2a":"Bauchgefühl","mtx.r2b":"Entscheidung nach Risiko-Scorecard",
+  "mtx.r3":"Formalien","mtx.r3a":"fehleranfällig, ein Haken entscheidet","mtx.r3b":"lückenloser Check im Vier-Augen-Prinzip",
+  "mtx.r4":"Preis","mtx.r4a":"Angst vor Offenlegung","mtx.r4b":"vergaberechtlich abgesichert",
+  "mtx.r5":"Ihr Team","mtx.r5a":"blockiert durch Bürokratie","mtx.r5b":"frei für die Baustelle",
+  "mtx.roi":"Manuelle Bearbeitung bindet in einem mittelständischen Bauunternehmen schnell <b>über 40.000 Euro Prozesskosten im Monat.</b> Wir holen diese Kapazität zurück.",
+  "mtx.cta":"Kostenfreie Erstprüfung anfordern",
+  "ref.eyebrow":"Referenzen","ref.h2":"Projekte, an denen sich Kompetenz zeigt",
+  "ref.lVol":"Volumen","ref.lSit":"Ausgangslage","ref.lDo":"Was wir gemacht haben","ref.lRes":"Ergebnis","ref.btn":"Vergleichbares Projekt besprechen",
+  "ref.c1tag":"Verkehrsinfrastruktur · Gleisbau","ref.c1h":"Grenzüberschreitendes Schienenbauprojekt","ref.c1vol":"rund 120 Mio. Euro, EU-gefördert",
+  "ref.c1sit":"Ein Baukonzern wollte sich beteiligen, hatte aber keine freie Kapazität für Vergabeunterlagen und Bietergemeinschaft.",
+  "ref.c1do":"Komplette Bid-Orchestrierung, kartellrechtlich saubere Struktur der Bietergemeinschaft, Steuerung von Fristen und Formblättern, finaler Formalien-Check.",
+  "ref.c1res":"Fehlerfreie Einreichung über die richtige Plattform, Zuschlag erhalten.",
+  "ref.c2tag":"Tiefbau · Autobahn","ref.c2h":"Autobahnabschnitt im Tiefbau","ref.c2vol":"rund 45 Mio. Euro",
+  "ref.c2sit":"Ein mittelständischer Tiefbauer war beim letzten Verfahren wegen eines Formfehlers ausgeschlossen worden.",
+  "ref.c2do":"Potenzialanalyse, vergaberechtliche Absicherung der Einheitspreise gegen eine Preisprüfung, lückenloser Formalien-Check vor der Abgabe.",
+  "ref.c2res":"Zuschlagsfähiges Angebot, unter den ersten Bietern platziert.",
+  "faq.eyebrow":"Fragen und Antworten","faq.h2":"Was Bauunternehmen uns oft fragen","faq.more":"Ihre Frage war nicht dabei?","faq.morelink":"Stellen Sie sie in der kostenfreien Erstberatung.",
+  "cta.eyebrow":"Erstprüfung","cta.h2":"Lassen Sie Ihre nächste Ausschreibung prüfen","cta.sub":"Schicken Sie uns Ihr Vorhaben. Wir melden uns mit einer ehrlichen Einschätzung, wo die Risiken liegen und wie hoch Ihre Chancen stehen.",
+  "f.area":"Bereich","f.vol":"Geschätztes Volumen (optional)","f.volph":"z. B. 30 Mio. €",
+  "cta.btn":"Kostenfreie Erstprüfung anfordern","cta.note":"DSGVO-konform. Streng vertraulich. Auf Wunsch mit Vertraulichkeitsvereinbarung.",
+  "foot.about":"Ausschreibungsberatung für Hoch- und Tiefbau. Wir begleiten Bauunternehmen und Holdings dabei, große öffentliche Ausschreibungen europaweit zu gewinnen.",
+  "foot.contact":"Kontakt","foot.hr":"Kroatien","foot.nav":"Navigation","foot.imprint":"Impressum","foot.privacy":"Datenschutz",
+  "draft":"Entwurf · LIKOVO",
+  "faq":[
+   ["Versteht ihr den Baustellenalltag oder nur Paragrafen?","Beides. Unser Team besteht aus Bauingenieuren und Vergabeexperten. Wir sprechen die Sprache der Kalkulation und kennen die Tücken von Spezialtiefbau bis Gleisbau."],
+   ["Was passiert mit unseren Kalkulationsdaten?","Sie bleiben vertraulich. Wir arbeiten auf Wunsch mit Vertraulichkeitsvereinbarung, Ihre Preis- und Margenstrukturen verlassen den Prozess nicht."],
+   ["Ab welchem Ausschreibungsvolumen lohnt sich die Begleitung?","Wir sind auf größere öffentliche Verfahren spezialisiert. In der Erstprüfung sagen wir Ihnen ehrlich, ob sich der Aufwand für Ihr konkretes Projekt lohnt."],
+   ["Wir haben schon einmal wegen eines Formfehlers verloren. Wie verhindert ihr das?","Durch einen finalen Formalien-Check im Vier-Augen-Prinzip gegen die Originalanforderungen, inklusive Plattform, Konto, Fristen und Formblättern."],
+   ["Könnt ihr auch bei EU-geförderten Projekten begleiten?","Ja. Wir achten auf die zuwendungsrechtlichen Stolperfallen, damit keine Fördermittel nachträglich gekürzt werden."],
+   ["Was, wenn wir noch keine konkrete Ausschreibung haben?","Dann steigen wir früher ein. Gute Konsortien bereiten Großvergaben oft Jahre im Voraus vor. Wir helfen beim Sondieren."],
+   ["In welchen Ländern arbeitet ihr?","Europaweit. Unser Sitz ist in Osijek, wir haben Standorte in Kroatien, Deutschland, Serbien und der Türkei und ein Netzwerk darüber hinaus."],
+   ["Was kostet die Erstprüfung?","Nichts. Die erste Prüfung Ihrer Ausschreibung ist kostenfrei und unverbindlich."]
+  ]
+ },
+ en:{
+  "nav.ablauf":"How it works","nav.bereiche":"Areas","nav.ref":"References","nav.cta":"Free first review",
+  "hero.badge":"Specialists in public procurement for civil and structural construction",
+  "hero.h1":"Win major public contracts. <span class='gold'>Without formal errors.</span> Without tying up your team.",
+  "hero.sub":"Your next multi-million project should not fail on a bureaucratic detail. BIFbau steers your bids error-free through the entire procurement process, from opportunity analysis to final submission. Engineers and tender experts who know the construction site as well as the procurement rules.",
+  "hero.cta":"Request a free first review","hero.cta2":"See how we work",
+  "hero.micro":"We check your next or last tender for hidden sources of error. No obligation, fully confidential.",
+  "trust.s1":"tender volume supported","trust.s2":"win rate on guided procedures","trust.s3":"formal errors on guided submissions","trust.s4":"countries: Croatia, Germany, Serbia, Turkey",
+  "trust.b1":"A team of civil engineers and procurement experts","trust.b2":"Experience with EU-funded major projects","trust.b3":"Quality management certified to ISO 9001","trust.b4":"Prequalified tender support",
+  "problem.eyebrow":"The problem","problem.h2":"Where strong construction bids actually fail",
+  "problem.intro":"You know the tightrope. Bid at a sound price and the project passes you by. Bid too low and you burn your own margin. And even the best bid is worthless if a single formal error throws it out of the procedure.",
+  "problem.c1t":"Death by formal error","problem.c1b":"Weeks of calculation, every cubic metre checked three times, and then exclusion: the wrong portal account, a reference missing from the form, one forgotten checkbox. More than a third of all public construction bids are excluded on formal grounds alone.",
+  "problem.c2t":"The capacity bottleneck","problem.c2b":"Your best site managers fill in bureaucratic qualification forms instead of securing margins on site. The tender runs on the side, and that is exactly where the costly mistakes happen.",
+  "problem.c3t":"The price-audit risk","problem.c3b":"One unit price set too low, and suddenly you face the suspicion of an abnormally low bid. You either disclose your calculation or you are out.",
+  "problem.close":"The problem is rarely the construction work. <b>The problem is the procedure.</b>",
+  "sol.eyebrow":"The solution","sol.h2":"A system that gets your bid safely across the line",
+  "sol.intro":"You do not need another adviser who reads you paragraphs. You need a partner who finds the awarding body's errors before they become yours. In four steps.",
+  "sol.cta":"Choose an area and enquire",
+  "sol.s1t":"Opportunity analysis","sol.s1b":"We assess the tender for fit and real chances of success. Bid or no-bid, with a clear rationale, before you invest calculation hours.",
+  "sol.s2t":"Bid orchestration","sol.s2b":"We structure evidence, forms, deadlines and, where it makes sense, the bidding consortium. Everything runs through the right platform and the right account.",
+  "sol.s3t":"Price protection","sol.s3b":"We secure your unit prices under procurement law and prepare the case against a price audit. Your margin stays protected.",
+  "sol.s4t":"Final compliance check","sol.s4b":"Before submission we run a complete four-eyes review against the original requirements. Only then does your bid go out.",
+  "ber.eyebrow":"Your enquiry","ber.h2":"Where do you want to win the next contract?",
+  "ber.sub":"Pick your area. Then four short questions, and our team gets back to you. One click to start.",
+  "ber.req":"Request support",
+  "ber.t1tag":"Civil","ber.t1h":"Civil engineering","ber.t1p":"Earthworks, sewers, special foundations",
+  "ber.t2tag":"Building","ber.t2h":"Structural construction","ber.t2p":"Residential, commercial and public buildings",
+  "ber.t3tag":"Transport","ber.t3h":"Transport infrastructure","ber.t3p":"Rail, motorway, roads, bridges",
+  "ber.t4tag":"Industry","ber.t4h":"Industrial and plant","ber.t4p":"Works, tanks, technical installations",
+  "ik.title":"Your tender, in 4 steps","ik.step":"Step",
+  "ik.q1":"Which area is it about?",
+  "ik.q2":"Is there already a specific tender?","ik.q2a":"Yes, with a date","ik.q2b":"In preparation","ik.q2c":"Still scouting",
+  "ik.q3":"What have you delivered in the last five years?","ik.q3ph":"Briefly: your key reference projects, volume, role …",
+  "ik.upload":"Upload expertise or evidence (optional)",
+  "ik.q4":"Where may we reply?",
+  "f.company":"Company","f.name":"Contact person","f.contact":"Email or phone","f.contactph":"e.g. name@company.com",
+  "ik.back":"Back","ik.next":"Next","ik.foot":"We treat your information in strict confidence. No newsletter, no passing on to third parties.",
+  "ik.donet":"Thank you, your request is on its way.","ik.doneb":"We will get back to you shortly with an honest first assessment. (Demo form in this draft.)",
+  "mtx.eyebrow":"The difference","mtx.h2":"Calculated on the side, or professionally guided",
+  "mtx.colA":"Internal, on the side","mtx.colB":"Guided by BIFbau",
+  "mtx.r1":"Tender search","mtx.r1a":"unstructured, deadlines slip","mtx.r1b":"profile-based monitoring, no missed deadline",
+  "mtx.r2":"Bid or no-bid","mtx.r2a":"gut feeling","mtx.r2b":"decision based on a risk scorecard",
+  "mtx.r3":"Formalities","mtx.r3a":"error-prone, one checkbox decides","mtx.r3b":"complete four-eyes review",
+  "mtx.r4":"Price","mtx.r4a":"fear of disclosure","mtx.r4b":"secured under procurement law",
+  "mtx.r5":"Your team","mtx.r5a":"tied up in bureaucracy","mtx.r5b":"free for the site",
+  "mtx.roi":"Handling tenders manually easily ties up <b>more than 40,000 euros in process cost per month</b> at a mid-sized builder. We give that capacity back.",
+  "mtx.cta":"Request a free first review",
+  "ref.eyebrow":"References","ref.h2":"Projects where competence shows",
+  "ref.lVol":"Volume","ref.lSit":"Situation","ref.lDo":"What we did","ref.lRes":"Result","ref.btn":"Discuss a comparable project",
+  "ref.c1tag":"Transport infrastructure · Rail","ref.c1h":"Cross-border rail project","ref.c1vol":"around 120 million euros, EU-funded",
+  "ref.c1sit":"A construction group wanted to bid but had no spare capacity for the tender documents and consortium.",
+  "ref.c1do":"Full bid orchestration, a competition-law-clean consortium structure, control of deadlines and forms, a final compliance check.",
+  "ref.c1res":"Error-free submission through the correct platform, contract won.",
+  "ref.c2tag":"Civil engineering · Motorway","ref.c2h":"Motorway section, civil works","ref.c2vol":"around 45 million euros",
+  "ref.c2sit":"A mid-sized civil contractor had been excluded on a formal error in the previous procedure.",
+  "ref.c2do":"Opportunity analysis, procurement-law protection of the unit prices against a price audit, a complete compliance check before submission.",
+  "ref.c2res":"A fully compliant bid, ranked among the leading bidders.",
+  "faq.eyebrow":"Questions and answers","faq.h2":"What construction companies often ask us","faq.more":"Your question was not listed?","faq.morelink":"Ask it in the free first consultation.",
+  "cta.eyebrow":"First review","cta.h2":"Have your next tender reviewed","cta.sub":"Send us your project. We come back with an honest assessment of where the risks are and how strong your chances stand.",
+  "f.area":"Area","f.vol":"Estimated volume (optional)","f.volph":"e.g. 30M €",
+  "cta.btn":"Request a free first review","cta.note":"GDPR-compliant. Strictly confidential. Under NDA on request.",
+  "foot.about":"Public tender consulting for civil and structural construction. We guide builders and holdings to win large public tenders across Europe.",
+  "foot.contact":"Contact","foot.hr":"Croatia","foot.nav":"Navigation","foot.imprint":"Imprint","foot.privacy":"Privacy",
+  "draft":"Draft · LIKOVO",
+  "faq":[
+   ["Do you understand the construction site or just the paragraphs?","Both. Our team is made up of civil engineers and procurement experts. We speak the language of calculation and know the pitfalls from special foundation work to rail construction."],
+   ["What happens to our calculation data?","It stays confidential. On request we work under a non-disclosure agreement, and your price and margin structures never leave the process."],
+   ["From what tender volume is support worthwhile?","We specialise in larger public procedures. In the first review we tell you honestly whether the effort is worth it for your specific project."],
+   ["We once lost on a formal error. How do you prevent that?","With a final four-eyes compliance check against the original requirements, covering platform, account, deadlines and forms."],
+   ["Can you support EU-funded projects?","Yes. We watch the funding-law pitfalls so that no subsidies are cut retroactively."],
+   ["What if we do not have a specific tender yet?","Then we start earlier. Strong consortia often prepare major tenders years in advance. We help you scout."],
+   ["Which countries do you work in?","Across Europe. We are based in Osijek, with offices in Croatia, Germany, Serbia and Turkey, and a network beyond."],
+   ["What does the first review cost?","Nothing. The first review of your tender is free and without obligation."]
+  ]
+ }
+};
+
+let lang="de";
+function applyLang(l){
+  lang=l;
+  const dict=T[l];
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.getAttribute("data-i18n"); if(dict[k]!=null) el.innerHTML=dict[k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const k=el.getAttribute("data-i18n-ph"); if(dict[k]!=null) el.setAttribute("placeholder",dict[k]);
+  });
+  document.body.dataset.lang=l;
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.set===l));
+  buildFaq();
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.set)));
+
+/* FAQ */
+function buildFaq(){
+  const list=document.getElementById("faqList"); list.innerHTML="";
+  T[lang].faq.forEach(([q,a])=>{
+    const d=document.createElement("div"); d.className="acc";
+    d.innerHTML=`<button type="button">${q}</button><div class="ans"><p>${a}</p></div>`;
+    const btn=d.querySelector("button"), ans=d.querySelector(".ans");
+    btn.addEventListener("click",()=>{
+      const open=d.classList.contains("open");
+      document.querySelectorAll(".acc").forEach(x=>{x.classList.remove("open");x.querySelector(".ans").style.maxHeight=null});
+      if(!open){d.classList.add("open");ans.style.maxHeight=ans.scrollHeight+"px";}
+    });
+    list.appendChild(d);
+  });
+}
+
+/* Intake steps */
+let step=1;
+const form=document.getElementById("intakeForm"), done=document.getElementById("intakeDone");
+const stepNo=document.getElementById("stepNo"), prevBtn=document.getElementById("prevBtn"), nextBtn=document.getElementById("nextBtn");
+function showStep(n){
+  step=n;
+  document.querySelectorAll(".q").forEach(q=>q.classList.toggle("on",+q.dataset.step===n));
+  document.querySelectorAll(".progress .p").forEach((p,i)=>p.classList.toggle("on",i<n));
+  stepNo.textContent=n;
+  prevBtn.style.visibility=n===1?"hidden":"visible";
+  nextBtn.textContent=T[lang][n===4?"cta.btn":"ik.next"];
+}
+nextBtn.addEventListener("click",()=>{ if(step<4) showStep(step+1); else { form.style.display="none"; done.style.display="block"; }});
+prevBtn.addEventListener("click",()=>{ if(step>1) showStep(step-1); });
+
+/* option selects */
+document.querySelectorAll(".opt[data-group='timing']").forEach(o=>o.addEventListener("click",()=>{
+  document.querySelectorAll(".opt[data-group='timing']").forEach(x=>x.classList.remove("sel")); o.classList.add("sel");
+}));
+function selectArea(val){
+  document.querySelectorAll("#areaOpts .opt").forEach(x=>x.classList.toggle("sel",x.dataset.val===val));
+}
+document.querySelectorAll("#areaOpts .opt").forEach(o=>o.addEventListener("click",()=>selectArea(o.dataset.val)));
+
+/* tiles open intake */
+document.querySelectorAll(".tile").forEach(t=>t.addEventListener("click",()=>{
+  selectArea(t.dataset.area); showStep(1);
+  form.style.display="block"; done.style.display="none";
+  document.getElementById("intake").scrollIntoView({behavior:"smooth",block:"center"});
+}));
+
+document.getElementById("uploadBox").addEventListener("click",()=>alert(lang==="de"?"Upload im Entwurf als Demo, in der finalen Seite aktiv.":"Upload is a demo in this draft, active in the final site."));
+document.getElementById("ctaForm").addEventListener("submit",e=>{e.preventDefault();alert(lang==="de"?"Danke! Demo-Formular im Entwurf.":"Thank you! Demo form in this draft.");});
+
+/* shrink sticky header on scroll */
+const hdr=document.querySelector("header");
+const onScroll=()=>hdr.classList.toggle("scrolled",window.scrollY>50);
+addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+applyLang("de");
+showStep(1);
+</script>
+</body>
+</html>
