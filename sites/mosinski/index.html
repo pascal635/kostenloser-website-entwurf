@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fenster, Türen &amp; Sonnenschutz in Münster | Firma Mosinski</title>
+<meta name="description" content="Fenster, Haustüren, Rollläden und Jalousien in Münster, alles aus einer Hand: Beratung im Laden, genaues Aufmaß bei Ihnen zu Hause, fachgerechte Montage nach RAL. Jetzt kostenloses Angebot anfordern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Firma Mosinski","description":"Fenster, Türen, Rollläden und Jalousien in Münster. Beratung, Lieferung und Montage aus einer Hand.","image":"bilder/fenster-muenster-klinkerhaus-hero.jpg","address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Straße 25","postalCode":"48153","addressLocality":"Münster","addressCountry":"DE"},"telephone":"+4917632091782","email":"info@mosinski.net","url":"https://dev.likovo.de/mosinski/","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"15:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","reviewCount":"16"},"areaServed":"Münster und Münsterland"}
+</script>
+<style>
+:root{
+  --navy:#12314F; --navy-700:#1C4468; --navy-800:#163a5e; --navy-950:#0C2338;
+  --orange:#F26A21; --orange-600:#D9560F; --orange-50:#FEEEE4; --orange-100:#FDDDC8;
+  --white:#fff; --grau-50:#F5F7FA; --grau-100:#EEF2F6; --grau-200:#E2E8F0;
+  --ink:#1B2A3A; --grau-500:#5A6B7B; --grau-400:#8A99A8; --gold:#F5B301; --green:#1F8A5B;
+  --err:#C13B3B; --field:#CBD5E1;
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:24px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(16,42,67,.05);
+  --sh-2:0 1px 2px rgba(16,42,67,.05), 0 10px 28px -12px rgba(16,42,67,.18);
+  --sh-3:0 2px 4px rgba(16,42,67,.06), 0 26px 50px -18px rgba(16,42,67,.32);
+  --sh-4:0 8px 16px -8px rgba(16,42,67,.2), 0 40px 70px -24px rgba(12,35,56,.5);
+  --wrap:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;color:var(--navy);line-height:1.12;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.section{padding:104px 0}
+.shead{max-width:640px}
+.shead.center{margin:0 auto;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--orange);border-radius:2px}
+.shead.center .eyebrow::before{display:none}
+h2{font-size:clamp(30px,3.8vw,46px);font-weight:800}
+.lead{font-size:18px;color:var(--grau-500);margin-top:18px}
+.ic{display:inline-flex;width:24px;height:24px}
+.ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.stars svg{fill:var(--gold);stroke:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Manrope';font-weight:700;font-size:16px;border:none;border-radius:var(--r-md);padding:16px 28px;min-height:52px;cursor:pointer;transition:.18s;white-space:nowrap;position:relative}
+.btn .ic{width:19px;height:19px}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px -8px rgba(242,106,33,.7)}
+.btn-primary:hover{background:var(--orange-600);transform:translateY(-1px);box-shadow:0 12px 26px -8px rgba(242,106,33,.8)}
+.btn-primary:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(242,106,33,.4)}
+.btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--grau-200)}
+.btn-ghost:hover{border-color:var(--navy);background:var(--grau-50)}
+.btn-ghost-navy{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(4px)}
+.btn-ghost-navy:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+.tlink{color:var(--orange);font-weight:700;display:inline-flex;gap:7px;align-items:center;font-size:15px}
+.tlink .ic{width:17px;height:17px;transition:.18s}
+.tlink:hover .ic{transform:translateX(4px)}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(18,49,79,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.hdr{display:flex;align-items:center;gap:26px;min-height:108px;padding:12px 0}
+.brand{display:flex;align-items:center}
+.brand .logo-img{height:80px;width:auto;filter:brightness(0) invert(1)}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{color:#CBD8E5;font-weight:600;font-size:15px;transition:.15s;position:relative}
+.nav a:hover{color:#fff}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--orange);border-radius:2px;transform:scaleX(0);transition:.18s}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr-phone{display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.28);padding:11px 20px;border-radius:var(--r-pill);white-space:nowrap}
+.hdr-phone .ic{width:18px;height:18px;color:var(--orange)}
+.hdr-phone:hover{background:rgba(255,255,255,.1)}
+.burger{display:none;background:none;border:1.5px solid rgba(255,255,255,.28);border-radius:10px;width:48px;height:44px;color:#fff;cursor:pointer;margin-left:auto}
+.burger .ic{width:24px;height:24px}
+
+/* Hero */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('bilder/fenster-muenster-klinkerhaus-hero.jpg') center right/cover;}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(96deg,var(--navy) 34%,rgba(18,49,79,.94) 50%,rgba(18,49,79,.68) 100%)}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center;padding:84px 0 96px}
+.hero h1{color:#fff;font-size:clamp(38px,5.2vw,62px);font-weight:800;letter-spacing:-.025em;line-height:1.04}
+.hero .sub{font-size:clamp(17px,1.7vw,20px);color:#CBD8E5;margin:22px 0 32px;max-width:35ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap}
+.hstat{display:flex;align-items:center;gap:10px;font-size:14px;color:#D8E2EC;font-weight:600}
+.hstat .ic{width:20px;height:20px;color:var(--orange)}
+.hstat .stars{color:var(--gold);display:inline-flex;gap:1px}
+.hstat .stars .ic{width:15px;height:15px}
+
+/* Funnel */
+.funnel{position:relative;background:#fff;color:var(--ink);border-radius:var(--r-xl);box-shadow:var(--sh-4);padding:28px}
+.funnel-badge{position:absolute;top:-22px;right:24px;background:#fff;border-radius:var(--r-pill);box-shadow:var(--sh-3);padding:9px 17px;display:flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--navy)}
+.funnel-badge .stars{display:inline-flex;gap:1px}.funnel-badge .stars .ic{width:15px;height:15px}
+.funnel-badge small{color:var(--grau-500);font-weight:600}
+.f-progress{display:flex;gap:6px;margin-bottom:4px}
+.f-progress span{height:6px;flex:1;border-radius:var(--r-pill);background:var(--grau-200);transition:.3s}
+.f-progress span.on{background:var(--orange)}
+.f-step-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--grau-400);text-transform:uppercase;margin:14px 0 3px}
+.f-title{font-family:'Sora';font-weight:700;font-size:21px;color:var(--navy);margin-bottom:18px}
+.f-options{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.f-opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--grau-200);border-radius:var(--r-md);padding:14px 15px;font-weight:600;font-size:15px;cursor:pointer;background:#fff;transition:.16s;text-align:left;color:var(--navy)}
+.f-opt:hover{border-color:var(--orange-100);background:var(--grau-50)}
+.f-opt.sel{border-color:var(--orange);background:var(--orange-50)}
+.f-opt .ic{width:22px;height:22px;color:var(--grau-500);flex:none}
+.f-opt.sel .ic{color:var(--orange)}
+.f-opt .chk{margin-left:auto;color:var(--orange);display:inline-flex;width:18px;height:18px;opacity:0;transition:.16s}
+.f-opt.sel .chk{opacity:1}
+.f-sub{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--grau-400);text-transform:uppercase;margin:16px 0 9px}
+.f-fields{display:grid;gap:13px}
+.f-fields .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label.fl{font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:6px}
+.inp{width:100%;border:1.5px solid var(--field);border-radius:var(--r-md);padding:13px 15px;font-family:'Manrope';font-size:16px;color:var(--ink);background:#fff;transition:.15s}
+.inp:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,106,33,.15)}
+textarea.inp{resize:vertical;min-height:76px}
+.f-nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:12px}
+.f-back{background:none;border:none;color:var(--grau-500);font-family:'Manrope';font-weight:700;font-size:15px;cursor:pointer;padding:10px;display:inline-flex;gap:6px;align-items:center}
+.f-back .ic{width:16px;height:16px;transform:rotate(180deg)}
+.f-back:hover{color:var(--navy)}
+.f-micro{font-size:12px;color:var(--grau-400);text-align:center;margin-top:14px;display:flex;gap:7px;justify-content:center;align-items:center}
+.f-micro .ic{width:14px;height:14px;color:var(--green)}
+.f-done{text-align:center;padding:26px 6px}
+.f-done .tick{width:60px;height:60px;border-radius:50%;background:var(--orange-50);color:var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 6px}
+.f-done .tick .ic{width:30px;height:30px}
+.f-done .big{font-family:'Sora';font-weight:800;font-size:25px;color:var(--navy);margin:8px 0}
+.demo-note{display:inline-block;margin-top:16px;font-size:11px;color:var(--grau-500);background:var(--grau-50);border:1px solid var(--grau-200);border-radius:var(--r-pill);padding:5px 13px}
+
+/* Trust bar */
+.trust{background:#fff;border-bottom:1px solid var(--grau-200)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:26px 28px}
+.tchip{display:flex;align-items:center;gap:13px}
+.tchip .cic{width:44px;height:44px;border-radius:12px;background:var(--orange-50);color:var(--orange);display:flex;align-items:center;justify-content:center;flex:none}
+.tchip .cic .ic{width:22px;height:22px}
+.tchip .cic .stars{display:inline-flex}.tchip .cic .stars .ic{width:20px;height:20px}
+.tchip b{display:block;font-family:'Sora';font-size:15px;color:var(--navy);font-weight:700;line-height:1.2}
+.tchip small{color:var(--grau-500);font-size:12.5px}
+
+/* Problem */
+.problem{background:var(--grau-50)}
+.pgrid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.pcompare{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pcompare figure{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-3);position:relative;background:#fff;margin:0}
+.pcompare figure:first-child{transform:translateY(18px)}
+.pcompare img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.tagpill{position:absolute;left:14px;top:14px;background:rgba(18,49,79,.92);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:6px 13px;border-radius:var(--r-pill);backdrop-filter:blur(4px)}
+.tagpill.now{background:var(--orange)}
+.problem p{margin-bottom:16px;color:var(--grau-500)}
+.problem p b{color:var(--ink)}
+
+/* Leistungen */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:52px}
+.card{background:#fff;border:1px solid var(--grau-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-2);transition:.22s;display:flex;flex-direction:column;position:relative}
+.card:hover{box-shadow:var(--sh-3);transform:translateY(-4px)}
+.card .imgwrap{position:relative;overflow:hidden}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%;transition:.4s}
+.card:hover img{transform:scale(1.05)}
+.card .cbody{position:relative;padding:36px 22px 26px;display:flex;flex-direction:column;gap:9px;flex:1}
+.card .cic{position:absolute;top:0;left:22px;transform:translateY(-50%);width:50px;height:50px;border-radius:14px;background:#fff;color:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-2);border:1px solid var(--grau-100);z-index:3}
+.card .cic .ic{width:24px;height:24px}
+.card h3{font-size:20px;font-weight:700}
+.card p{font-size:14px;color:var(--grau-500);flex:1;line-height:1.6}
+
+/* RAL */
+.ral{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.ral h2{color:#fff}.ral .eyebrow{color:#F79A63}.ral .eyebrow::before{background:#F79A63}
+.ral-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2}
+.ral p{color:#CBD8E5;margin-top:18px;margin-bottom:26px}
+.layers{display:flex;flex-direction:column;gap:12px}
+.layer{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--orange);border-radius:var(--r-md);padding:16px 18px}
+.layer .lnum{font-family:'Sora';font-weight:800;font-size:15px;color:var(--orange);background:rgba(242,106,33,.14);width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none}
+.layer b{font-family:'Sora';font-size:15px;color:#fff;display:block}
+.layer span{font-size:13.5px;color:#AEBECD}
+.ral figure{margin:0;position:relative}
+.ral figure img{border-radius:var(--r-lg);box-shadow:var(--sh-4);width:100%}
+.ral .rbadge{position:absolute;right:-14px;bottom:-14px;background:#fff;color:var(--navy);border-radius:var(--r-md);padding:12px 16px;box-shadow:var(--sh-3);display:flex;align-items:center;gap:11px;font-weight:700;font-size:14px}
+.ral .rbadge .cic{width:38px;height:38px;border-radius:10px;background:var(--orange-50);color:var(--orange);display:flex;align-items:center;justify-content:center}
+.ral .rbadge .cic .ic{width:20px;height:20px}
+
+/* Ablauf */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:52px 0 44px;position:relative}
+.steps::before{content:"";position:absolute;top:38px;left:16%;right:16%;height:2px;background:repeating-linear-gradient(90deg,var(--grau-200) 0 8px,transparent 8px 16px)}
+.step{position:relative;text-align:center;padding:0 8px}
+.step .snum{width:76px;height:76px;margin:0 auto 22px;border-radius:50%;background:#fff;border:2px solid var(--orange-100);color:var(--orange);font-family:'Sora';font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-2);position:relative;z-index:2}
+.step .sic{position:absolute;top:-6px;right:calc(50% - 52px);width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center}
+.step .sic .ic{width:17px;height:17px}
+.step h3{font-size:19px;margin-bottom:9px}
+.step p{font-size:14.5px;color:var(--grau-500)}
+.center{text-align:center}
+
+/* Regional */
+.regional{background:var(--grau-50)}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.rvis{position:relative}
+.rvis img{border-radius:var(--r-lg);box-shadow:var(--sh-3);aspect-ratio:4/3;object-fit:cover;width:100%}
+.rvis .stat{position:absolute;background:#fff;border-radius:var(--r-md);box-shadow:var(--sh-3);padding:14px 18px;display:flex;align-items:center;gap:12px}
+.rvis .stat.s1{right:-18px;top:26px}
+.rvis .stat.s2{left:-18px;bottom:26px}
+.rvis .stat .cic{width:40px;height:40px;border-radius:11px;background:var(--orange-50);color:var(--orange);display:flex;align-items:center;justify-content:center}
+.rvis .stat .cic .ic{width:21px;height:21px}
+.rvis .stat b{font-family:'Sora';font-size:16px;color:var(--navy);display:block;line-height:1.1}
+.rvis .stat small{font-size:12px;color:var(--grau-500)}
+.quote{background:#fff;border-radius:var(--r-lg);padding:24px 26px;margin:26px 0;box-shadow:var(--sh-2);position:relative}
+.quote .qm{font-family:'Sora';font-size:56px;line-height:.6;color:var(--orange-100);position:absolute;top:20px;left:22px}
+.quote p{font-family:'Sora';font-weight:600;font-size:17.5px;color:var(--navy);font-style:italic;padding-left:40px}
+.quote .who{font-weight:700;font-size:13px;color:var(--grau-500);margin-top:12px;padding-left:40px}
+
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.review{background:#fff;border:1px solid var(--grau-200);border-radius:var(--r-lg);padding:26px;box-shadow:var(--sh-2);display:flex;flex-direction:column;gap:14px}
+.review .top{display:flex;justify-content:space-between;align-items:center}
+.review .stars{display:inline-flex;gap:2px}.review .stars .ic{width:17px;height:17px}
+.review .gg{font-size:12px;font-weight:700;color:var(--grau-400)}
+.review p{font-size:15px;color:var(--ink);flex:1}
+.review .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--grau-100);padding-top:16px}
+.review .av{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;font-family:'Sora'}
+.review .who b{display:block;font-size:14px;color:var(--navy)}
+.review .who small{color:var(--grau-500);font-size:12.5px}
+
+/* FAQ */
+.faqwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq{display:flex;flex-direction:column;gap:12px}
+.acc{border:1px solid var(--grau-200);border-radius:var(--r-md);background:#fff;overflow:hidden;transition:.2s}
+.acc[open]{box-shadow:var(--sh-2);border-color:var(--orange-100)}
+.acc summary{list-style:none;cursor:pointer;padding:19px 22px;font-family:'Sora';font-weight:700;font-size:16.5px;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.acc summary::-webkit-details-marker{display:none}
+.acc .pm{width:22px;height:22px;flex:none;color:var(--orange);position:relative;transition:.2s}
+.acc .pm::before,.acc .pm::after{content:"";position:absolute;background:currentColor;border-radius:2px}
+.acc .pm::before{top:10px;left:3px;right:3px;height:2px}
+.acc .pm::after{left:10px;top:3px;bottom:3px;width:2px;transition:.2s}
+.acc[open] .pm::after{transform:scaleY(0)}
+.acc .a{padding:0 22px 20px;color:var(--grau-500);font-size:15px}
+
+/* CTA */
+.cta{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-800) 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta h2{color:#fff;font-size:clamp(28px,3.6vw,42px);position:relative}
+.cta p{color:#CBD8E5;margin:16px auto 30px;max-width:52ch;position:relative}
+.cta .btn{position:relative}
+
+/* Footer */
+footer{background:var(--navy-950);color:#B4C0CC;padding:72px 0 100px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+footer h4{font-family:'Sora';color:#fff;font-size:14px;margin-bottom:16px}
+footer a:hover{color:#fff}
+.flogo{height:40px;filter:brightness(0) invert(1);margin-bottom:18px}
+.frow{font-size:14px;line-height:1.95}
+.frow .li{display:flex;align-items:center;gap:9px}
+.frow .li .ic{width:16px;height:16px;color:var(--orange);flex:none}
+.fbot{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;font-size:12px;color:#7A8B9A;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* Sticky call */
+.sticky-call{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--orange);color:#fff;text-align:center;padding:16px;font-weight:700;font-size:16px;box-shadow:0 -6px 20px rgba(0,0,0,.2);align-items:center;justify-content:center;gap:9px}
+.sticky-call .ic{width:19px;height:19px}
+
+@media(max-width:980px){
+  .section{padding:72px 0}
+  .hdr{min-height:84px}
+  .brand .logo-img{height:60px}
+  .nav{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;margin:0;padding:6px 0;display:none;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:var(--sh-3)}
+  .nav.open{display:flex}
+  .nav a{padding:14px 28px;width:100%}
+  .nav a::after{display:none}
+  .burger{display:inline-flex;align-items:center;justify-content:center}
+  .hdr-phone{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:44px;padding:52px 0 64px}
+  .pgrid,.ral-grid,.rgrid,.faqwrap{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:20px}.steps::before{display:none}
+  .step{display:flex;text-align:left;align-items:center;gap:20px}.step .snum{margin:0}.step .sic{display:none}.step .stx{flex:1}
+  .reviews{grid-template-columns:1fr}
+  .trust .wrap{grid-template-columns:1fr 1fr;gap:20px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .hdr-phone{display:none}
+  .sticky-call{display:flex}
+  body{padding-bottom:58px}
+  .rvis .stat.s1{right:8px}.rvis .stat.s2{left:8px}
+}
+@media(max-width:560px){
+  .cards,.trust .wrap,.fgrid{grid-template-columns:1fr}
+  .f-options{grid-template-columns:1fr}
+  .f-fields .row{grid-template-columns:1fr}
+  .pcompare figure:first-child{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M12 3.5v17M3.5 12h17"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><path d="M4 21h16"/><path d="M14.5 12h.01"/></symbol>
+  <symbol id="i-shutter" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 8h17M3.5 12h17M3.5 16h17"/></symbol>
+  <symbol id="i-blinds" viewBox="0 0 24 24"><path d="M4 3.5h16"/><path d="M6 3.5v15M18 3.5v15"/><path d="M6 8h12M6 12h12M6 16h12"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3.5 9 4.8 4.6a1 1 0 0 1 .96-.7h12.48a1 1 0 0 1 .96.7L20.5 9"/><path d="M4.5 9v10a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V9"/><path d="M3.5 9h17"/><path d="M9 20v-5h6v5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M15.5 3.5 3.5 15.5l5 5 12-12-5-5z"/><path d="M7 8l2 2M10 5l2 2M9.5 12.5l1.5 1.5M12.5 9.5l1.5 1.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-3.8-.9L3 20l1.9-5.2A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3.5h14v11H1zM15 7.5h4l3 3v4h-7"/><circle cx="5.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5 14.9 8.4l6.5.95-4.7 4.58 1.11 6.47L12 17.4l-5.81 3 1.11-6.47-4.7-4.58 6.5-.95z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap hdr">
+    <a href="#hero" class="brand"><img src="bilder/logo.png" class="logo-img" alt="Firma Mosinski"></a>
+    <nav class="nav" id="nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ral">Montage</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#regional">Über uns</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="tel:+4917632091782" class="hdr-phone"><span class="ic"><svg><use href="#i-phone"/></svg></span> 0176 32091782</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span class="ic"><svg><use href="#i-menu"/></svg></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div><div class="hero-veil"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow" style="color:#F79A63">Fenster · Türen · Sonnenschutz in Münster</span>
+      <h1>Neue Fenster und Türen. Sauber gemacht, aus einer Hand.</h1>
+      <p class="sub">Von der Beratung im Laden über das genaue Aufmaß bei Ihnen zu Hause bis zum fachgerechten Einbau nach RAL. Ein Ansprechpartner, klare Absprachen, kein Hin und Her.</p>
+      <div class="hero-cta">
+        <a href="#funnel" class="btn btn-primary">Kostenloses Angebot anfordern <span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+        <a href="#leistungen" class="btn btn-ghost-navy">Unsere Leistungen</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="stars"><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span></span> 5,0 bei Google</div>
+        <div class="hstat"><span class="ic"><svg><use href="#i-shield"/></svg></span> Einbau nach RAL</div>
+        <div class="hstat"><span class="ic"><svg><use href="#i-users"/></svg></span> Eigene Monteure</div>
+      </div>
+    </div>
+
+    <div class="funnel" id="funnel">
+      <div class="funnel-badge"><span class="stars"><span class="ic"><svg><use href="#i-star"/></svg></span></span> 5,0 <small>Google</small></div>
+      <div id="f-live">
+        <div class="f-progress" id="fProgress"></div>
+        <div class="f-step-label" id="fStepLabel"></div>
+        <div class="f-title" id="fTitle"></div>
+        <div id="fContent"></div>
+        <div class="f-nav">
+          <button class="f-back" id="fBack" type="button"><span class="ic"><svg><use href="#i-arrow"/></svg></span> Zurück</button>
+          <button class="btn btn-primary" id="fNext" type="button">Weiter <span class="ic"><svg><use href="#i-arrow"/></svg></span></button>
+        </div>
+        <div class="f-micro"><span class="ic"><svg><use href="#i-checkc"/></svg></span> In unter 2 Minuten · unverbindlich &amp; kostenlos</div>
+      </div>
+      <div id="f-done" class="f-done" style="display:none">
+        <div class="tick"><span class="ic"><svg><use href="#i-check"/></svg></span></div>
+        <div class="big">Vielen Dank!</div>
+        <p style="color:var(--grau-500);font-size:15px">Wir haben Ihre Angaben. Wir melden uns innerhalb von 24 Stunden und erstellen Ihr kostenloses Angebot.</p>
+        <span class="demo-note">Vorschau: Diese Anfrage wird noch nicht wirklich versendet.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="wrap">
+    <div class="tchip"><span class="cic"><span class="stars"><span class="ic"><svg><use href="#i-star"/></svg></span></span></span><span><b>5,0 bei Google</b><small>Durchweg begeisterte Kunden</small></span></div>
+    <div class="tchip"><span class="cic"><span class="ic"><svg><use href="#i-shield"/></svg></span></span><span><b>Einbau nach RAL</b><small>Fachgerecht &amp; dicht</small></span></div>
+    <div class="tchip"><span class="cic"><span class="ic"><svg><use href="#i-store"/></svg></span></span><span><b>Ladenlokal in Münster</b><small>Produkte vor Ort ansehen</small></span></div>
+    <div class="tchip"><span class="cic"><span class="ic"><svg><use href="#i-users"/></svg></span></span><span><b>Eigene Monteure</b><small>Alles aus einer Hand</small></span></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section problem">
+  <div class="wrap">
+    <div class="pgrid">
+      <div class="shead">
+        <span class="eyebrow">Warum jetzt handeln</span>
+        <h2>Alte Fenster kosten Sie jeden Tag Geld und Wärme.</h2>
+        <p style="margin-top:20px">Bei alten Fenstern zieht es im Winter „wie Hechtsuppe". Man sitzt abends auf dem Sofa und spürt den kalten Luftzug im Nacken, während die Heizung gegen die undichten Fugen anheizt. <b>Jeder Tag mit alten Bauelementen ist bares Geld, das nach draußen verschwindet.</b></p>
+        <p>Dazu die zweite Sorge: schlechter Einbau. Wird der Spalt nur mit Bauschaum ausgespritzt und mit Silikon zugeschmiert, hält das keine drei Jahre. Gerade bei den Klinkerhäusern im Münsterland entscheidet nicht das teuerste Fenster, sondern der saubere Einbau über das Ergebnis. Genau deshalb montieren wir nach RAL.</p>
+        <a href="#ral" class="tlink">So machen wir das richtig <span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+      </div>
+      <div class="pcompare">
+        <figure><span class="tagpill">Vorher</span><img src="bilder/fenster-muenster-altes-fenster-vorher.jpg" alt="Altes, undichtes Fenster in einem kalten Raum"></figure>
+        <figure><span class="tagpill now">Nachher</span><img src="bilder/fenster-muenster-neues-fenster-nachher.jpg" alt="Heller, warmer Wohnraum mit neuem Fenster"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">Unsere Leistungen</span>
+      <h2>Was wir für Sie machen</h2>
+      <p class="lead">Fenster, Türen und Sonnenschutz nach Maß, beraten und montiert von Ihrem Betrieb aus Münster.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="imgwrap"><img src="bilder/fenster-muenster-anthrazit-wohnraum.jpg" alt="Modernes Fenster in hellem Wohnraum"></div>
+        <div class="cbody"><span class="cic"><span class="ic"><svg><use href="#i-window"/></svg></span></span><h3>Fenster</h3><p>Kunststofffenster (TROCAL), Holz- und Holz-Alu-Fenster nach Maß. Dicht, energiesparend und leise, fachgerecht eingebaut nach RAL.</p><a href="#funnel" class="tlink">Mehr erfahren <span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+      </div>
+      <div class="card">
+        <div class="imgwrap"><img src="bilder/haustuer-muenster-klinker-eingang.jpg" alt="Moderne Haustür in Klinkerfassade"></div>
+        <div class="cbody"><span class="cic"><span class="ic"><svg><use href="#i-door"/></svg></span></span><h3>Haustüren &amp; Innentüren</h3><p>Haus- und Innentüren in vielen Ausführungen. Auf Wunsch einbruchhemmend nach RC2, gut gedämmt und passend zu Ihrem Zuhause.</p><a href="#funnel" class="tlink">Mehr erfahren <span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+      </div>
+      <div class="card">
+        <div class="imgwrap"><img src="bilder/rollladen-muenster-hausfassade.jpg" alt="Rollläden an einer Klinkerfassade"></div>
+        <div class="cbody"><span class="cic"><span class="ic"><svg><use href="#i-shutter"/></svg></span></span><h3>Rollläden</h3><p>Außenrollläden und Textilrollladen. Schutz vor Hitze, Kälte und ungebetenen Blicken, dazu mehr Sicherheit am Fenster.</p><a href="#funnel" class="tlink">Mehr erfahren <span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+      </div>
+      <div class="card">
+        <div class="imgwrap"><img src="bilder/jalousie-muenster-wohnzimmer-sonnenschutz.jpg" alt="Jalousien an großen Fenstern"></div>
+        <div class="cbody"><span class="cic"><span class="ic"><svg><use href="#i-blinds"/></svg></span></span><h3>Jalousien &amp; Sonnenschutz</h3><p>Vertikale und horizontale Jalousien für angenehmes Licht und angenehme Temperaturen, auch an großen Fensterflächen.</p><a href="#funnel" class="tlink">Mehr erfahren <span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAL -->
+<section class="section ral" id="ral">
+  <div class="wrap">
+    <div class="ral-grid">
+      <div>
+        <span class="eyebrow">Fachgerechte Montage</span>
+        <h2>Warum RAL über das Ergebnis entscheidet</h2>
+        <p>Wir dichten die Anschlussfuge in drei Ebenen ab. So bleibt die Wärme drin, Feuchtigkeit und Schimmel draußen. Die beste Verglasung nützt nichts, wenn der Einbau nicht dicht ist.</p>
+        <div class="layers">
+          <div class="layer"><span class="lnum">1</span><div><b>Innen: luftdicht</b><span>Dampfdicht, keine feuchte Raumluft in der Fuge</span></div></div>
+          <div class="layer"><span class="lnum">2</span><div><b>Mitte: gedämmt</b><span>Wärme- und Schalldämmung, keine Kältebrücke</span></div></div>
+          <div class="layer"><span class="lnum">3</span><div><b>Außen: schlagregendicht</b><span>Schutz vor Regen, diffusionsoffen nach außen</span></div></div>
+        </div>
+      </div>
+      <figure>
+        <img src="bilder/fenster-muenster-abdichtung-detail.jpg" alt="Fachgerechte RAL-Abdichtung am Fensterrahmen">
+        <div class="rbadge"><span class="cic"><span class="ic"><svg><use href="#i-shield"/></svg></span></span> Montage nach<br>RAL-Standard</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="section" id="ablauf">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">So läuft es ab</span>
+      <h2>In drei Schritten zu neuen Fenstern</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="snum">01<span class="sic"><span class="ic"><svg><use href="#i-chat"/></svg></span></span></div><div class="stx"><h3>Anfrage &amp; Beratung</h3><p>Sie schildern uns Ihr Vorhaben, im Laden oder über das Formular. Wir melden uns innerhalb von 24 Stunden und beraten ehrlich.</p></div></div>
+      <div class="step"><div class="snum">02<span class="sic"><span class="ic"><svg><use href="#i-ruler"/></svg></span></span></div><div class="stx"><h3>Aufmaß &amp; Angebot</h3><p>Wir messen genau bei Ihnen vor Ort. Sie bekommen ein klares, unverbindliches Angebot. Keine Überraschungen nach dem Aufmaß.</p></div></div>
+      <div class="step"><div class="snum">03<span class="sic"><span class="ic"><svg><use href="#i-truck"/></svg></span></span></div><div class="stx"><h3>Lieferung &amp; Montage</h3><p>Unsere eigenen Monteure bauen fachgerecht nach RAL ein. Ein Ansprechpartner für alles, kein Suchen nach Maler oder Elektriker.</p></div></div>
+    </div>
+    <div class="center"><a href="#funnel" class="btn btn-primary">Jetzt kostenloses Angebot anfordern <span class="ic"><svg><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- REGIONAL -->
+<section class="section regional" id="regional">
+  <div class="wrap">
+    <div class="rgrid">
+      <div>
+        <span class="eyebrow">Aus Münster, für Münster</span>
+        <h2>Ihr Ansprechpartner aus Münster</h2>
+        <p class="lead">Firma Mosinski ist Ihr lokaler Betrieb für Fenster, Türen und Sonnenschutz in Münster und dem Münsterland. Fester Ansprechpartner, kurze Wege und ein echter Laden, in dem Sie sich die Produkte anschauen können.</p>
+        <div class="quote">
+          <span class="qm">„</span>
+          <p>Ich stehe mit meinem Namen für saubere Arbeit und ehrliche Beratung. Bei uns bekommen Sie keine leeren Versprechen, sondern Fenster und Türen, die halten.</p>
+          <div class="who">Pawel Mosinski, Inhaber</div>
+        </div>
+        <a href="#funnel" class="btn btn-ghost"><span class="ic" style="color:var(--orange)"><svg><use href="#i-store"/></svg></span> Besuchen Sie uns im Laden</a>
+      </div>
+      <div class="rvis">
+        <img src="bilder/mosinski-muenster-monteure-team.jpg" alt="Monteure für Fenster und Türen aus Münster">
+        <div class="stat s1"><span class="cic"><span class="ic"><svg><use href="#i-users"/></svg></span></span><span><b>100%</b><small>eigene Monteure</small></span></div>
+        <div class="stat s2"><span class="cic"><span class="ic"><svg><use href="#i-pin"/></svg></span></span><span><b>Münster</b><small>&amp; Münsterland</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="bewertungen">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow">Das sagen Kunden</span>
+      <h2>5,0 Sterne bei Google</h2>
+    </div>
+    <div class="reviews">
+      <div class="review"><div class="top"><span class="stars"><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span></span><span class="gg">Google</span></div><p>„Super netter und zuverlässiger Fenstermonteur. Hat sauber und ordentlich gearbeitet, war pünktlich und alles hat reibungslos geklappt. Das Ergebnis kann sich echt sehen lassen."</p><div class="who"><span class="av">SG</span><span><b>Sophia G.</b><small>Münster</small></span></div></div>
+      <div class="review"><div class="top"><span class="stars"><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span></span><span class="gg">Google</span></div><p>„Beratung, Ausführung und Qualität der Fenster und Türen waren hervorragend. Besonders die Erreichbarkeit und die schnelle Reaktionszeit. Preis-Leistung sehr gut."</p><div class="who"><span class="av">MT</span><span><b>Marina T.</b><small>Münster</small></span></div></div>
+      <div class="review"><div class="top"><span class="stars"><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span><span class="ic"><svg><use href="#i-star"/></svg></span></span><span class="gg">Google</span></div><p>„Sehr professionell und absolut vertrauenswürdig. Die Beratung war klar und verständlich, er hat sich Zeit genommen, und alles wurde genau wie vereinbart umgesetzt."</p><div class="who"><span class="av">MR</span><span><b>Maria R.</b><small>Münster</small></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section problem" id="faq">
+  <div class="wrap">
+    <div class="faqwrap">
+      <div class="shead">
+        <span class="eyebrow">Häufige Fragen</span>
+        <h2>Gut zu wissen</h2>
+        <p class="lead">Was Kunden vor der Anfrage oft wissen möchten. Ihre Frage ist nicht dabei? Fragen Sie uns einfach.</p>
+        <a href="#funnel" class="btn btn-primary" style="margin-top:24px">Kostenloses Angebot anfordern <span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+      </div>
+      <div class="faq">
+        <details class="acc" open><summary>Was kostet ein Fenstertausch in Münster?<span class="pm"></span></summary><div class="a">Die Kosten hängen von Größe, Material und Verglasung ab. Zur Orientierung: die reine Montage macht oft rund ein Drittel der Gesamtkosten aus, üblich sind im Münsterland etwa 40 bis 60 Euro Arbeitszeit pro Stunde und 15 bis 25 Euro pro laufendem Meter Anschlussfuge inklusive Dichtmaterial. Ihr genauer Preis steht nach dem kostenlosen Aufmaß fest.</div></details>
+        <details class="acc"><summary>Bekomme ich 2026 Förderung für neue Fenster?<span class="pm"></span></summary><div class="a">Ja, das ist möglich. Über die Bundesförderung für effiziente Gebäude (BEG EM) gibt es 2026 in der Regel 15 Prozent Zuschuss auf die förderfähigen Kosten, mit individuellem Sanierungsfahrplan bis zu 20 Prozent. Voraussetzung ist unter anderem die Einbindung eines zertifizierten Energieeffizienz-Experten. Sprechen Sie uns an, wir sagen Ihnen, worauf Sie achten müssen.</div></details>
+        <details class="acc"><summary>Holen mir moderne, dichte Fenster Schimmel ins Haus?<span class="pm"></span></summary><div class="a">Berechtigte Sorge. Alte, undichte Fenster wirkten wie ein Dauerlüfter. Fällt das mit neuen, dichten Fenstern weg, steigt die Luftfeuchtigkeit im Raum. Deshalb gehört zum fachgerechten Einbau ein Lüftungskonzept, zum Beispiel über Fensterfalzlüfter, und bei Bedarf eine gedämmte Laibung. So bleibt die Wand trocken.</div></details>
+        <details class="acc"><summary>Wie lange dauert der Einbau?<span class="pm"></span></summary><div class="a">Ein Fenster ist meist in ein bis vier Stunden getauscht, ein Haustürtausch häufig an einem Arbeitstag erledigt. Den genauen Zeitplan stimmen wir vor der Montage mit Ihnen ab.</div></details>
+        <details class="acc"><summary>Bauen Sie einbruchhemmend ein?<span class="pm"></span></summary><div class="a">Ja. Auf Wunsch liefern wir Fenster und Haustüren mit geprüften Sicherheitsbeschlägen nach Widerstandsklasse RC2. In Kombination mit dem fachgerechten Einbau erschwert das ein Aufhebeln deutlich.</div></details>
+        <details class="acc"><summary>Arbeiten Sie auch außerhalb von Münster?<span class="pm"></span></summary><div class="a">Ja. Wir sind in Münster und im umliegenden Münsterland für Sie im Einsatz.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta" id="cta-final">
+  <div class="wrap">
+    <h2>Fordern Sie Ihr kostenloses Angebot an</h2>
+    <p>Unverbindlich, ehrlich beraten und mit Antwort innerhalb von 24 Stunden. Sagen Sie uns, was Sie vorhaben.</p>
+    <a href="#funnel" class="btn btn-primary">Kostenloses Angebot anfordern <span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img src="bilder/logo.png" class="flogo" alt="Firma Mosinski">
+        <div class="frow">Firma Mosinski<br>Friedrich-Ebert-Straße 25<br>48153 Münster</div>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <div class="frow">
+          <div class="li"><span class="ic"><svg><use href="#i-phone"/></svg></span><a href="tel:+4917632091782">0176 32091782</a></div>
+          <div class="li"><span class="ic"><svg><use href="#i-mail"/></svg></span><a href="mailto:info@mosinski.net">info@mosinski.net</a></div>
+        </div>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <div class="frow">Mo bis Do 9 bis 16 Uhr<br>Fr 9 bis 15 Uhr<br>Sa &amp; So geschlossen</div>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <div class="frow">Fenster · Haustüren<br>Innentüren<br>Rollläden · Jalousien</div>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© Firma Mosinski · Geschäftsführer: Pawel Mosinski · USt-IdNr.: DE 321584255</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+4917632091782" class="sticky-call"><span class="ic"><svg><use href="#i-phone"/></svg></span> Jetzt anrufen</a>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  if(burger){burger.addEventListener('click',function(){nav.classList.toggle('open')});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});}
+})();
+(function(){
+  var steps=[
+    {label:'Schritt 1 von 4',title:'Was möchten Sie erneuern?',type:'multi',options:[
+      {v:'fenster',label:'Fenster',ic:'i-window'},{v:'haustuer',label:'Haustür',ic:'i-door'},
+      {v:'innentuer',label:'Innentüren',ic:'i-door'},{v:'rollladen',label:'Rollläden',ic:'i-shutter'},
+      {v:'jalousie',label:'Jalousien',ic:'i-blinds'},{v:'mehr',label:'Mehreres',ic:'i-layers'}]},
+    {label:'Schritt 2 von 4',title:'Um was geht es?',type:'single',options:[
+      {v:'sanierung',label:'Austausch / Sanierung'},{v:'neubau',label:'Neubau'},
+      {v:'einzeln',label:'Einzelnes Element'},{v:'reparatur',label:'Reparatur / Wartung'}]},
+    {label:'Schritt 3 von 4',title:'Wie groß, und wann?',type:'double',
+      subA:'Wie viele Elemente?',optA:[{v:'1-2',label:'1 bis 2'},{v:'3-6',label:'3 bis 6'},{v:'7',label:'7 oder mehr'},{v:'unklar',label:'Unklar'}],
+      subB:'Bis wann?',optB:[{v:'asap',label:'So bald wie möglich'},{v:'3-6m',label:'In 3 bis 6 Monaten'},{v:'infos',label:'Ich sammle erst Infos'}]},
+    {label:'Schritt 4 von 4',title:'Wohin dürfen wir Ihr Angebot schicken?',type:'form'}
+  ];
+  var idx=0, data={0:[],1:null,2:{a:null,b:null},3:{}};
+  var elP=document.getElementById('fProgress'),elL=document.getElementById('fStepLabel'),
+      elT=document.getElementById('fTitle'),elC=document.getElementById('fContent'),
+      elBack=document.getElementById('fBack'),elNext=document.getElementById('fNext');
+  for(var i=0;i<steps.length;i++)elP.appendChild(document.createElement('span'));
+  function paintProgress(){var s=elP.children;for(var i=0;i<s.length;i++)s[i].className=i<=idx?'on':'';}
+  function icon(id){return '<span class="ic"><svg><use href="#'+id+'"/></svg></span>';}
+  function optBtn(o,sel){return '<button type="button" class="f-opt'+(sel?' sel':'')+'" data-v="'+o.v+'">'+
+    (o.ic?icon(o.ic):'')+'<span>'+o.label+'</span><span class="chk"><svg style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span></button>';}
+  function render(){
+    var s=steps[idx];elL.textContent=s.label;elT.textContent=s.title;var h='';
+    if(s.type==='multi'||s.type==='single'){
+      h='<div class="f-options">';
+      for(var i=0;i<s.options.length;i++){var o=s.options[i];var sel=s.type==='multi'?data[idx].indexOf(o.v)>-1:data[idx]===o.v;h+=optBtn(o,sel);}
+      h+='</div>';
+    }else if(s.type==='double'){
+      h='<div class="f-sub">'+s.subA+'</div><div class="f-options">';
+      for(var i=0;i<s.optA.length;i++)h+=optBtn(s.optA[i],data[2].a===s.optA[i].v);
+      h+='</div><div class="f-sub">'+s.subB+'</div><div class="f-options">';
+      for(var j=0;j<s.optB.length;j++)h+=optBtn(s.optB[j],data[2].b===s.optB[j].v);
+      h+='</div>';
+    }else if(s.type==='form'){
+      h='<div class="f-fields">'+
+        '<div><label class="fl">Name</label><input class="inp" placeholder="Ihr Name"></div>'+
+        '<div class="row"><div><label class="fl">Telefon</label><input class="inp" placeholder="Für den Rückruf"></div>'+
+        '<div><label class="fl">E-Mail</label><input class="inp" type="email" placeholder="name@mail.de"></div></div>'+
+        '<div><label class="fl">PLZ / Ort</label><input class="inp" placeholder="48153 Münster"></div>'+
+        '<div><label class="fl">Nachricht (optional)</label><textarea class="inp" placeholder="Worum geht es genau?"></textarea></div></div>';
+    }
+    elC.innerHTML=h;elBack.style.visibility=idx===0?'hidden':'visible';
+    elNext.innerHTML=(idx===steps.length-1?'Kostenloses Angebot anfordern':'Weiter')+' '+icon('i-arrow');
+    paintProgress();bindOpts();
+  }
+  function bindOpts(){
+    elC.querySelectorAll('.f-opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        var v=b.getAttribute('data-v'),s=steps[idx];
+        if(s.type==='multi'){var a=data[idx],p=a.indexOf(v);if(p>-1)a.splice(p,1);else a.push(v);b.classList.toggle('sel');}
+        else if(s.type==='single'){data[idx]=v;elC.querySelectorAll('.f-opt').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');}
+        else if(s.type==='double'){var g=b.parentNode;g.querySelectorAll('.f-opt').forEach(function(x){x.classList.remove('sel')});b.classList.add('sel');var isA=g.previousElementSibling.textContent===s.subA;if(isA)data[2].a=v;else data[2].b=v;}
+      });
+    });
+  }
+  elNext.addEventListener('click',function(){
+    if(idx<steps.length-1){idx++;render();document.getElementById('funnel').scrollIntoView({block:'nearest',behavior:'smooth'});}
+    else{document.getElementById('f-live').style.display='none';document.getElementById('f-done').style.display='block';}
+  });
+  elBack.addEventListener('click',function(){if(idx>0){idx--;render();}});
+  render();
+})();
+</script>
+</body>
+</html>
