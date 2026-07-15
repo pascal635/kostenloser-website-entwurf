@@ -7,6 +7,10 @@
 <meta name="description" content="Neapolitanische Steinofen-Pizza live aus dem Foodtrailer. Catering für Hochzeit, Geburtstag &amp; Firmenfeier ab 30 Personen, ab 16,50 € p. P. Jetzt anfragen.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.paninimanufaktur.de/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<meta name="theme-color" content="#C0392B">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pizza Catering aus dem Foodtrailer | Panini Manufaktur Bürgstadt">
 <meta property="og:description" content="Neapolitanische Steinofen-Pizza live vor euren Gästen. Catering für Hochzeit, Geburtstag und Firmenfeier ab 30 Personen.">
@@ -14,12 +18,12 @@
 <meta property="og:locale" content="de_DE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root{
     --tomato:#C0392B;--terracotta:#9B3A2E;--basil:#4A6B3A;--olive:#6E7F3C;--brass:#C79A3B;--brass-deep:#a97f26;
     --cream:#FBF6EC;--sand:#F1E8D7;--sand-deep:#E9DCC4;--charcoal:#241F1B;--charcoal-2:#2E2823;--warmgray:#6B6358;--line:#e4d8c2;
-    --ff-display:"Fraunces",Georgia,serif;--ff-body:"Inter",system-ui,sans-serif;--ff-script:"Caveat",cursive;
+    --ff-display:"Playfair Display",Georgia,serif;--ff-body:"Inter",system-ui,sans-serif;--ff-script:"Caveat",cursive;
     --r-sm:10px;--r-md:16px;--r-lg:22px;--r-pill:999px;
     --sh-sm:0 1px 2px rgba(36,31,27,.06),0 4px 12px rgba(36,31,27,.06);
     --sh-md:0 6px 16px rgba(36,31,27,.08),0 18px 40px rgba(36,31,27,.10);
@@ -193,6 +197,35 @@
     .b6{grid-column:span 2}
   }
 
+  /* ===== Speisekarte ===== */
+  .speisekarte{background:var(--cream)}
+  .menu-cat{max-width:940px;margin:0 auto}
+  .menu-cat + .menu-cat{margin-top:clamp(44px,5vw,68px)}
+  .menu-cat-title{text-align:center;font-size:clamp(22px,3vw,30px);margin-bottom:8px}
+  .menu-cat-title + .menu-sub{text-align:center;color:var(--warmgray);font-size:14px;margin:0 auto 30px;font-style:italic}
+  .menu-cat-rule{width:48px;height:2px;background:var(--brass);border:none;margin:0 auto 30px}
+  .menu-list{display:grid;gap:26px 46px;grid-template-columns:1fr}
+  @media(min-width:760px){.menu-list{grid-template-columns:1fr 1fr}}
+  .mi-head{display:flex;align-items:baseline;gap:8px}
+  .mi-name{font-family:var(--ff-display);font-size:19px;font-weight:600;color:var(--charcoal)}
+  .mi-dots{flex:1;border-bottom:1px dotted #cdbfa5;position:relative;top:-4px}
+  .mi-price{font-family:var(--ff-display);font-size:18px;color:var(--tomato);white-space:nowrap;font-weight:600}
+  .mi-desc{margin:6px 0 0;font-size:14.5px;line-height:1.55;color:var(--warmgray)}
+  .mi-desc em{font-style:italic;color:var(--basil);font-weight:500}
+  .mi-alg{display:inline-block;margin-top:7px;font-size:11px;letter-spacing:.08em;color:#a99e8c;text-transform:uppercase}
+  .menu-legend{max-width:940px;margin:clamp(38px,4vw,56px) auto 0;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;box-shadow:var(--sh-sm)}
+  .menu-legend summary{cursor:pointer;list-style:none;padding:18px 24px;font-family:var(--ff-display);font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .menu-legend summary::-webkit-details-marker{display:none}
+  .menu-legend summary .plus{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--brass);position:relative;transition:transform .25s var(--ease)}
+  .menu-legend summary .plus::before,.menu-legend summary .plus::after{content:"";position:absolute;top:50%;left:50%;background:var(--brass-deep);transition:.25s}
+  .menu-legend summary .plus::before{width:10px;height:1.6px;transform:translate(-50%,-50%)}
+  .menu-legend summary .plus::after{width:1.6px;height:10px;transform:translate(-50%,-50%)}
+  .menu-legend[open] summary .plus::after{transform:translate(-50%,-50%) scaleY(0)}
+  .menu-legend .a{padding:4px 24px 24px;font-size:13px;color:var(--warmgray);line-height:1.7}
+  .menu-legend .a h4{font-family:var(--ff-body);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--brass-deep);margin:14px 0 6px}
+  .menu-legend .a .cols{columns:2;column-gap:36px}
+  @media(max-width:520px){.menu-legend .a .cols{columns:1}}
+
   /* ===== Anlässe ===== */
   .occasions{display:grid;gap:26px;margin-top:clamp(30px,4vw,50px)}
   @media(min-width:820px){.occasions{grid-template-columns:1fr 1fr}}
@@ -277,12 +310,21 @@
   .contact-side li .ic{flex:none;width:38px;height:38px;border-radius:11px;background:rgba(199,154,59,.16);display:flex;align-items:center;justify-content:center}
   .contact-side li .ic svg{width:18px;height:18px;color:var(--brass)}
 
-  /* ===== Streetfood ===== */
-  .streetfood{background:var(--cream)}
-  .sf{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,#fff,#fbf4e7);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(26px,3vw,38px);box-shadow:var(--sh-sm)}
-  .sf .t{max-width:62ch}
-  .sf .t h3{margin:0 0 8px;font-size:24px}
-  .sf .t p{margin:0;color:var(--warmgray);font-size:15.5px}
+  /* ===== Termine ===== */
+  .termine{background:var(--cream)}
+  .termine-list{max-width:820px;margin:clamp(28px,3.5vw,44px) auto 0;display:grid;gap:14px}
+  .termin{display:flex;align-items:center;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:18px 24px;box-shadow:var(--sh-sm);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .termin:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+  .termin .date{flex:none;width:72px;text-align:center;border-right:1px solid var(--line);padding-right:18px}
+  .termin .date .d{font-family:var(--ff-display);font-size:28px;color:var(--tomato);line-height:1;display:block}
+  .termin .date .m{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--warmgray);margin-top:5px;display:block}
+  .termin .info b{font-size:17px;display:block;margin-bottom:3px}
+  .termin .info span{font-size:14px;color:var(--warmgray);display:inline-flex;align-items:center;gap:7px}
+  .termin .info span svg{width:14px;height:14px;color:var(--brass);flex:none}
+  .termine-empty{display:none;max-width:820px;margin:clamp(28px,3.5vw,44px) auto 0;text-align:center;background:#fff;border:1px dashed #d8cbb2;border-radius:var(--r-md);padding:30px;color:var(--warmgray)}
+  .termine-empty p{margin:0}
+  .termine-cta{text-align:center;margin-top:28px}
+  .termine-cta .note{font-size:13px;color:var(--warmgray);margin-top:14px;max-width:60ch;margin-left:auto;margin-right:auto}
 
   /* ===== CTA band ===== */
   .ctaband{background:var(--tomato);color:#fff;text-align:center;position:relative;overflow:hidden}
@@ -320,8 +362,8 @@
       <li><a href="#erlebnis">Erlebnis</a></li>
       <li><a href="#ablauf">Ablauf</a></li>
       <li><a href="#pakete">Pakete</a></li>
-      <li><a href="#speisen">Speisen</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#speisekarte">Speisekarte</a></li>
+      <li><a href="#termine">Termine</a></li>
     </ul>
     <a class="btn btn-primary" href="#anfrage">Anfragen</a>
   </div>
@@ -485,6 +527,58 @@
   </div>
 </section>
 
+<!-- S6b SPEISEKARTE -->
+<section class="speisekarte" id="speisekarte">
+  <div class="wrap">
+    <div class="sec-head center narrow reveal">
+      <span class="eyebrow">Speisekarte</span>
+      <h2>Unsere <em>Pizza</em>-Speisekarte</h2>
+      <p class="lead">Neapolitan Style, alles frisch aus dem Steinofen. Fürs Catering stellen wir daraus euer Wunschsortiment zusammen.</p>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-title">Neapolitan Style Pizza</h3>
+      <hr class="menu-cat-rule">
+      <div class="menu-list">
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Margherita</span><span class="mi-dots"></span><span class="mi-price">10 €</span></div><p class="mi-desc">Nonna's Secret, Mozzarella, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Speciale</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Unser Topseller, geht immer.</em> Nonna's Secret, Mozzarella, Salami, Prosciutto Cotto, frische Champignons, Parmigiano.</p><span class="mi-alg">A, G, 2</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Scharfe Biene</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Trifft sie euer Geschmackszentrum?</em> Nonna's Secret, Mozzarella, spicy Salami, kandierte Jalapeños, Chili-Honig vom Imker.</p><span class="mi-alg">A, G, 2</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Green Table</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Unser vegetarischer Evergreen.</em> Sauerrahm, Pesto alla Genovese, Mozzarella, bunter Paprika, rote Zwiebelchen, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Tom &amp; Cherry</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Die Kultserie als vegetarischer Genuss.</em> Nonna's Secret, Mozzarella, Cherrytomaten, frische Champignons, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Piccanto</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Französischer Geschmack mit spanischer Seele.</em> Nonna's Secret, Mozzarella, Chorizo, frische Champignons, Knoblauch, Parmigiano.</p><span class="mi-alg">A, G, 2, 3, 7</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Amore al Formaggio</span><span class="mi-dots"></span><span class="mi-price">14 €</span></div><p class="mi-desc"><em>Für alle, die Käse lieben.</em> Sauerrahm, Mozzarella, Gorgonzola, Ziegenkäse, Parmigiano, Preiselbeer-Bussi.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Oliver Onion</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>In Erinnerung an Bud Spencer, die haut richtig rein.</em> Sauerrahm, Mozzarella, französischer Weichkäse, viele rote Zwiebelchen.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Lilly</span><span class="mi-dots"></span><span class="mi-price">14 €</span></div><p class="mi-desc"><em>Eine süße Verführung.</em> Sauerrahm, Mozzarella, Prosciutto Cotto, Datteln, ein Hauch Honig, Rucola, Parmigiano.</p><span class="mi-alg">A, G, 2</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Mama-Dog</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Hot Dog war gestern, gebacken statt warmgemacht.</em> Sauerrahm, BBQ-Soße, Käsekrainer, Cheddar, Hot-Dog-Gürkchen, Röstzwiebeln.</p><span class="mi-alg">A, G, M, O, 1, 2</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Classico</span><span class="mi-dots"></span><span class="mi-price">je 12 €</span></div><p class="mi-desc"><em>Immer dabei, immer gut.</em> Nonna's Secret, Mozzarella, Parmigiano, wahlweise mit Salami, Prosciutto Cotto oder Tina Tuna.</p><span class="mi-alg">A, G, D, 2</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Balkan-Taco</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc">Panuozzo, Ajvar, Krautsalat, Sauerrahm, gegrilltes Cevapcici, Zwiebelchen.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Knobi-Heinz</span><span class="mi-dots"></span><span class="mi-price">10 €</span></div><p class="mi-desc"><em>The godfather of garlic.</em> Sauerrahm, Mozzarella, Knoblauch, Knoblauchöl.</p><span class="mi-alg">A, G</span></div>
+      </div>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3 class="menu-cat-title">Signature-Line</h3>
+      <hr class="menu-cat-rule">
+      <div class="menu-list">
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Pistaccio</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Neapolitanischer Genuss auf höchstem Niveau.</em> Pistaziencreme, Fior di Latte, Mortadella, Burrata, Pistazien, Zitronenzeste, frisches Basilikum, Parmigiano.</p><span class="mi-alg">A, G, H, 2</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Tartufo Suprema</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Ein Klassiker für Trüffelliebhaber.</em> Fior di Latte, gebratene Champignons, Rucola, Parmigiano, veredelt mit Trüffelöl.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Duchessa</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Italienische Eleganz mit cremiger Burrata.</em> Nonna's Secret, Fior di Latte, Prosciutto di Parma, Burrata, Parmigiano, Rucola, Crema di Aceto Balsamico.</p><span class="mi-alg">A, G, O</span></div>
+      </div>
+    </div>
+
+    <details class="menu-legend reveal">
+      <summary>Allergene &amp; Zusatzstoffe<span class="plus"></span></summary>
+      <div class="a">
+        <h4>Allergene</h4>
+        <div class="cols">A = Glutenhaltiges Getreide (Weizen), B = Krebstiere, C = Eier, D = Fisch, E = Erdnüsse, F = Soja, G = Milch (inkl. Laktose), H = Schalenfrüchte, L = Sellerie, M = Senf, N = Sesam, O = Schwefeldioxid / Sulfite, P = Lupinen, R = Weichtiere.</div>
+        <h4>Zusatzstoffe</h4>
+        <div class="cols">1 = mit Farbstoff, 2 = mit Konservierungsstoff, 3 = mit Antioxidationsmittel, 4 = mit Geschmacksverstärker, 5 = geschwefelt, 6 = geschwärzt, 7 = mit Phosphat, 8 = mit Milcheiweiß, 9 = koffeinhaltig, 10 = chininhaltig, 11 = mit Süßungsmittel, 12 = enthält eine Phenylalaninquelle, 13 = gewachst, 14 = taurinhaltig.</div>
+        <p style="margin-top:14px">Trotz sorgfältiger Herstellung können Spuren anderer Stoffe enthalten sein. Bitte sprecht uns bei Allergien oder Unverträglichkeiten an.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
 <!-- S7 ANLÄSSE -->
 <section id="anlaesse">
   <div class="wrap">
@@ -642,15 +736,30 @@
   </div>
 </section>
 
-<!-- STREETFOOD -->
-<section class="streetfood">
+<!-- TERMINE / STREETFOOD -->
+<section class="termine" id="termine">
   <div class="wrap">
-    <div class="sf reveal">
-      <div class="t">
-        <h3>Trefft uns beim Streetfood</h3>
-        <p>Ihr wollt unsere Pizza schon vorher probieren? Wir sind regelmäßig mit dem Foodtrailer auf Festen und bei Weingütern der Region. Folgt unserem WhatsApp-Kanal und verpasst keinen Streetfood-Termin. Allergene und Unverträglichkeiten bitte vor der Bestellung angeben.</p>
+    <div class="sec-head center narrow reveal">
+      <span class="eyebrow">Streetfood-Termine</span>
+      <h2>Wo ihr uns mit dem <em>Foodtrailer</em> trefft</h2>
+      <p class="lead">Ihr wollt unsere Pizza schon vor eurem Event probieren? Wir sind regelmäßig auf Festen und bei Weingütern der Region.</p>
+    </div>
+    <div class="termine-list reveal">
+      <div class="termin" data-until="2026-07-19">
+        <div class="date"><span class="d">18</span><span class="m">Juli</span></div>
+        <div class="info"><b>Weingut Walter</b><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Streetfood-Pizza vor Ort</span></div>
       </div>
-      <a class="btn btn-gold" href="#" rel="noopener">WhatsApp-Kanal folgen</a>
+      <div class="termin" data-until="2026-07-28">
+        <div class="date"><span class="d">24</span><span class="m">Juli</span></div>
+        <div class="info"><b>Weinberghüttenfest Großwallstadt</b><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg> 24. bis 27. Juli</span></div>
+      </div>
+    </div>
+    <div class="termine-empty" id="termine-empty">
+      <p>Aktuell ist kein öffentlicher Termin geplant. Folgt unserem WhatsApp-Kanal, dort posten wir jeden neuen Streetfood-Termin zuerst.</p>
+    </div>
+    <div class="termine-cta reveal">
+      <a class="btn btn-gold" href="#" rel="noopener">Alle Termine im WhatsApp-Kanal</a>
+      <p class="note">Vorbei? Termine verschwinden hier automatisch, sobald das Datum vergangen ist. Allergene und Unverträglichkeiten bitte vor der Bestellung angeben.</p>
     </div>
   </div>
 </section>
@@ -735,6 +844,18 @@
     var ok=document.getElementById('formok'); ok.style.display='block';
     ok.scrollIntoView({behavior:'smooth',block:'center'});
   });
+
+  // Termine mit Verfallsdatum: vergangene Termine automatisch ausblenden
+  (function(){
+    var today=new Date(); today.setHours(0,0,0,0);
+    var items=document.querySelectorAll('.termin[data-until]');
+    var visible=0;
+    items.forEach(function(el){
+      var u=new Date(el.getAttribute('data-until')+'T00:00:00');
+      if(isNaN(u.getTime())||today>=u){ el.style.display='none'; } else { visible++; }
+    });
+    if(visible===0){ var e=document.getElementById('termine-empty'); if(e) e.style.display='block'; }
+  })();
 </script>
 </body>
 </html>
