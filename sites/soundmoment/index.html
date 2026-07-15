@@ -23,7 +23,7 @@
     --maxw:1140px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;overflow-x:hidden}
   body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;line-height:1.04;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase}
   h2{font-size:clamp(30px,5vw,50px)}
@@ -62,7 +62,19 @@
   .nav-links{display:flex;gap:26px;align-items:center}
   .nav-links a:not(.btn){color:var(--text-2);font-size:15px}
   .nav-links a:not(.btn):hover{color:var(--text)}
-  @media(max-width:860px){.nav-links{display:none}}
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:0;cursor:pointer;padding:9px}
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--text);border-radius:2px;transition:.25s}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu{display:none;flex-direction:column;padding:8px 0 18px}
+  .mobile-menu a:not(.btn){color:var(--text);padding:13px var(--s6);font-size:18px;border-bottom:1px solid var(--border)}
+  .mobile-menu a.btn{margin:16px var(--s6) 0;justify-content:center}
+  @media(max-width:860px){
+    .nav-links{display:none}
+    .nav-toggle{display:flex}
+    .mobile-menu.open{display:flex}
+  }
 
   /* Hero */
   .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
@@ -174,8 +186,9 @@
 
   /* Mobile sticky bar */
   .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:12px 16px;background:rgba(12,13,15,.94);backdrop-filter:blur(10px);border-top:1px solid var(--border)}
-  .sticky .btn{flex:1;justify-content:center;padding:13px 16px}
+  .sticky .btn{flex:1;min-width:0;justify-content:center;padding:13px 12px;font-size:15px}
   @media(max-width:860px){.sticky{display:flex}}
+  @media(max-width:380px){.btn{white-space:normal;text-align:center}}
 
 </style>
 </head>
@@ -192,7 +205,16 @@
       <a href="#faq">FAQ</a>
       <a class="btn btn-primary" style="padding:11px 22px" href="#anfrage">Anfragen</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Hauptmenü mobil">
+    <a href="#anlaesse">Anlässe</a>
+    <a href="#musik">Eure Musik</a>
+    <a href="#team">Team</a>
+    <a href="#bewertungen">Bewertungen</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn btn-primary" href="#anfrage">Verfügbarkeit anfragen</a>
+  </nav>
 </header>
 
 <a id="top"></a>
@@ -377,7 +399,7 @@
         <div class="field"><label>E-Mail oder Telefon</label><input type="text" placeholder="So erreichen wir euch"></div>
         <div class="field full"><label>Musikwünsche (optional)</label><textarea rows="2" placeholder="Lieblings-Genres, No-Gos, Wünsche"></textarea></div>
         <div class="field full" style="text-align:center;margin-top:8px">
-          <button class="btn btn-primary" style="min-width:260px;justify-content:center">Verfügbarkeit anfragen</button>
+          <button class="btn btn-primary" style="width:100%;max-width:360px;justify-content:center">Verfügbarkeit anfragen</button>
           <div class="reassure">unverbindlich · kostenlos · Antwort unter 1 Std. · oder anrufen: <a href="tel:+491781790408">0178 1790408</a></div>
         </div>
       </form>
@@ -424,8 +446,21 @@
 <!-- MOBILE STICKY -->
 <div class="sticky">
   <a class="btn btn-secondary" href="tel:+491781790408">Anrufen</a>
-  <a class="btn btn-primary" href="#anfrage">Verfügbarkeit anfragen</a>
+  <a class="btn btn-primary" href="#anfrage">Anfragen</a>
 </div>
+
+<script>
+(function(){
+  var t=document.getElementById('navToggle'), m=document.getElementById('mobileMenu');
+  function close(){m.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Menü öffnen');}
+  t.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    t.setAttribute('aria-expanded',open?'true':'false');
+    t.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+</script>
 
 <!-- SEO / GEO: strukturierte Daten -->
 <script type="application/ld+json">
