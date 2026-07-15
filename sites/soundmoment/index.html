@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ für Hochzeit & Firmenfeier in Baden-Württemberg | SoundMoment DJ-Team</title>
+<meta name="description" content="SoundMoment ist euer DJ-Team für Hochzeit, Firmenfeier und Geburtstag in Baden-Württemberg und Süddeutschland. Eure Musik, Technik aus einer Hand, faire Pauschale ohne versteckte Kosten. Verfügbarkeit anfragen, Antwort unter 1 Stunde.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="SoundMoment · DJ-Team für Hochzeit & Firmenfeier in Baden-Württemberg">
+<meta property="og:description" content="Eure Musik, volle Tanzfläche, Technik aus einer Hand. DJ-Team aus dem Raum Stuttgart, buchbar in ganz Süddeutschland.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C0D0F; --surface:#16181C; --surface-2:#20232A; --border:#2A2E36;
+    --text:#F5F6F3; --text-2:#9EA1A8;
+    --lime:#C7F94A; --lime-hover:#D6FF6B; --lime-deep:#3E5400;
+    --l-bg:#F3F3EE; --l-surface:#FFFFFF; --l-border:#E2E2DA; --l-text:#111316; --l-text-2:#5C5F66;
+    --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px; --s16:64px; --s24:96px;
+    --radius:20px; --shadow:0 10px 34px rgba(0,0,0,.4);
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;line-height:1.04;font-weight:700;letter-spacing:-0.01em;text-transform:uppercase}
+  h2{font-size:clamp(30px,5vw,50px)}
+  h3{font-size:clamp(20px,2.4vw,25px);text-transform:none}
+  p{color:var(--text-2)}
+  a{color:var(--lime);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s6)}
+  section{padding:var(--s24) 0}
+  @media(max-width:700px){section{padding:var(--s16) 0}}
+
+  .kicker{color:var(--lime);font-weight:600;text-transform:uppercase;letter-spacing:.10em;font-size:13px}
+  .hl{background:var(--lime);color:#111316;padding:.02em .26em;border-radius:6px;display:inline-block;transform:rotate(-1.5deg)}
+  .lead{color:var(--text-2);font-size:clamp(17px,2vw,20px);max-width:56ch}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter';font-weight:500;font-size:16px;border-radius:999px;padding:15px 30px;border:1px solid transparent;cursor:pointer;transition:.18s ease;white-space:nowrap}
+  .btn-primary{background:var(--lime);color:#111316}
+  .btn-primary:hover{background:var(--lime-hover);transform:translateY(-1px)}
+  .btn-secondary{background:transparent;color:var(--text);border-color:var(--lime)}
+  .btn-secondary:hover{background:rgba(199,249,74,.12)}
+  .btn-ghost{background:transparent;color:var(--lime);padding-left:0}
+  .reassure{color:var(--text-2);font-size:13px;margin-top:var(--s3)}
+
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--border);color:var(--text-2)}
+  .pill.outline{border-color:var(--lime);color:var(--lime)}
+  .pill.lime{background:var(--lime);border-color:var(--lime);color:#111316;font-weight:600}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:40;background:rgba(12,13,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:inline-flex;align-items:center}
+  .brand .logo{display:block;height:80px;width:265px;background:var(--text);-webkit-mask:url('bilder/logo-soundmoment.svg') no-repeat left center/contain;mask:url('bilder/logo-soundmoment.svg') no-repeat left center/contain}
+  footer.site .brand .logo{height:64px;width:212px}
+  @media(max-width:860px){.brand .logo{height:64px;width:212px}}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a:not(.btn){color:var(--text-2);font-size:15px}
+  .nav-links a:not(.btn):hover{color:var(--text)}
+  @media(max-width:860px){.nav-links{display:none}}
+
+  /* Hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:url('bilder/dj-team-stuttgart-firmenevent-publikum.png') center/cover;transform:scaleX(-1)}
+  .hero .ov{position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,13,15,.92) 30%,rgba(12,13,15,.55) 75%,rgba(12,13,15,.75))}
+  .hero .inner{position:relative;padding:var(--s24) 0;max-width:720px}
+  .hero h1{font-size:clamp(33px,7.4vw,88px);margin:var(--s4) 0;overflow-wrap:break-word}
+  .hero .actions{display:flex;gap:var(--s4);flex-wrap:wrap;align-items:center;margin-top:var(--s8)}
+  .hero .trustline{margin-top:var(--s6);color:var(--text-2);font-size:14px;display:flex;gap:16px;flex-wrap:wrap}
+  .hero .trustline b{color:var(--lime);font-family:'Space Grotesk'}
+
+  /* Stat bar */
+  .statbar{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .statbar .wrap{display:flex;flex-wrap:wrap;gap:var(--s8);justify-content:space-between;padding-top:var(--s12);padding-bottom:var(--s12)}
+  .stat b{font-family:'Space Grotesk';font-weight:700;font-size:clamp(32px,4vw,46px);color:var(--text);display:block;line-height:1}
+  .stat b .u{color:var(--lime)}
+  .stat span{color:var(--text-2);font-size:14px}
+
+  /* GEO quick-answer */
+  .quickanswer{border-left:3px solid var(--lime);padding-left:var(--s6);max-width:70ch;color:var(--text-2);font-size:18px}
+  .quickanswer strong{color:var(--text)}
+
+  /* Grid helpers */
+  .grid{display:grid;gap:var(--s6)}
+  .g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:900px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  /* Cards */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s8);box-shadow:var(--shadow);transition:.2s ease}
+  .card:hover{border-color:var(--lime-deep);transform:translateY(-3px)}
+  .card .ico{width:48px;height:48px;border-radius:12px;background:rgba(199,249,74,.14);color:var(--lime);display:grid;place-items:center;margin-bottom:var(--s4)}
+  .card .ico svg{width:26px;height:26px}
+  .card h3{margin-bottom:var(--s3)}
+  .card p{font-size:15px}
+  .worry .num{font-family:'Space Grotesk';color:var(--lime);font-size:14px;font-weight:700}
+
+  /* Anlass cards with image */
+  .anlass{position:relative;border-radius:var(--radius);overflow:hidden;min-height:300px;display:flex;align-items:flex-end;border:1px solid var(--border)}
+  .anlass img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .anlass .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,15,.15),rgba(12,13,15,.9))}
+  .anlass .txt{position:relative;padding:var(--s6)}
+  .anlass h3{color:#fff;margin-bottom:6px}
+  .anlass p{color:#cfd2d6;font-size:14px}
+
+  /* Feature strip (alles aus einer hand) */
+  .feat{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s6)}
+  .feat .pill{background:var(--surface-2);border-color:var(--border);color:var(--text)}
+
+  /* Light section */
+  .light{background:var(--l-bg);color:var(--l-text)}
+  .light h2,.light h3{color:var(--l-text)} .light p{color:var(--l-text-2)}
+  .light .kicker{color:#111316}
+  .light .card{background:var(--l-surface);border-color:var(--l-border);box-shadow:0 10px 30px rgba(0,0,0,.06)}
+  .light .card p{color:var(--l-text-2)}
+  .light .step .n{background:#111316;color:var(--lime)}
+  .light .btn-secondary{border-color:#111316;color:#111316}
+  .light .btn-secondary:hover{background:rgba(17,19,22,.06)}
+
+  /* Split media */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:var(--s12);align-items:center}
+  @media(max-width:820px){.split{grid-template-columns:1fr;gap:var(--s8)}}
+  .split img{border-radius:var(--radius);width:100%;height:100%;max-height:460px;object-fit:cover}
+  .steps{display:grid;gap:var(--s4);margin-top:var(--s6)}
+  .step{display:flex;gap:var(--s4);align-items:flex-start}
+  .step .n{flex:none;width:34px;height:34px;border-radius:999px;background:var(--lime);color:#111316;font-family:'Space Grotesk';font-weight:700;display:grid;place-items:center}
+  .step h3{font-size:18px;margin-bottom:2px} .step p{font-size:15px}
+
+  /* Testimonials */
+  .quote{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:var(--s6)}
+  .quote .st{color:var(--lime);letter-spacing:2px;margin-bottom:var(--s2)}
+  .quote p{font-family:'Space Grotesk';font-weight:500;font-size:19px;color:var(--text)}
+  .quote .who{margin-top:var(--s3);color:var(--text-2);font-size:13px}
+
+  /* Ablauf steps (dark) */
+  .ablauf{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s6);margin-top:var(--s8)}
+  @media(max-width:900px){.ablauf{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.ablauf{grid-template-columns:1fr}}
+  .ablauf .n{font-family:'Anton';font-size:44px;color:var(--lime);line-height:1}
+
+  /* FAQ */
+  .acc{max-width:820px;margin:var(--s8) auto 0;border:1px solid var(--border);border-radius:16px;background:var(--surface);overflow:hidden}
+  .acc details{border-bottom:1px solid var(--border)}
+  .acc details:last-child{border-bottom:none}
+  .acc summary{cursor:pointer;padding:var(--s4) var(--s6);font-family:'Space Grotesk';font-weight:500;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary::after{content:'+';color:var(--lime);font-size:26px;flex:none}
+  .acc details[open] summary::after{content:'–'}
+  .acc .body{padding:0 var(--s6) var(--s4);color:var(--text-2);font-size:15px}
+
+  /* Final CTA form */
+  .final{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(24px,5vw,56px)}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin-top:var(--s6)}
+  @media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+  .field label{display:block;font-size:14px;margin-bottom:6px;color:var(--text-2)}
+  .field input,.field select,.field textarea{width:100%;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;color:var(--text);font-family:'Inter';font-size:16px}
+  .field.full{grid-column:1/-1}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
+
+  /* Footer */
+  footer.site{border-top:1px solid var(--border);padding-top:var(--s16);padding-bottom:120px;position:relative}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s8)}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+  footer.site a{color:var(--text-2)} footer.site a:hover{color:var(--text)}
+  .foot-h{color:var(--text);font-weight:600;margin-bottom:var(--s3);font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+  .foot-list{list-style:none;display:grid;gap:8px;font-size:15px}
+  .bigmark{font-family:'Anton';font-size:clamp(56px,17vw,200px);line-height:.85;letter-spacing:.01em;color:var(--surface-2);text-transform:uppercase;text-align:center;margin-top:var(--s16);user-select:none}
+  .legal{border-top:1px solid var(--border);margin-top:var(--s8);padding-top:var(--s6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--text-2);font-size:13px}
+
+  /* Mobile sticky bar */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:12px 16px;background:rgba(12,13,15,.94);backdrop-filter:blur(10px);border-top:1px solid var(--border)}
+  .sticky .btn{flex:1;justify-content:center;padding:13px 16px}
+  @media(max-width:860px){.sticky{display:flex}}
+
+</style>
+</head>
+<body id="top">
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="SoundMoment Event DJ-Team, zur Startseite"><span class="logo" role="img" aria-label="SoundMoment Event DJ-Team Logo"></span></a>
+    <nav class="nav-links">
+      <a href="#anlaesse">Anlässe</a>
+      <a href="#musik">Eure Musik</a>
+      <a href="#team">Team</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" style="padding:11px 22px" href="#anfrage">Anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bg"></div><div class="ov"></div>
+  <div class="wrap"><div class="inner">
+    <span class="pill outline">Event DJ-Team · Baden-Württemberg &amp; Süddeutschland</span>
+    <h1>Eure <span class="hl">Musik</span>. Eure Feier. Volle Tanzfläche.</h1>
+    <p class="lead">SoundMoment ist euer DJ-Team für Hochzeit, Firmenfeier und Geburtstag. Ihr gebt den Ton an, wir holen jede Generation auf die Tanzfläche.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#anfrage">Verfügbarkeit anfragen</a>
+      <a class="btn btn-secondary" href="tel:+491781790408">Anrufen</a>
+    </div>
+    <div class="reassure">unverbindlich, kostenlos, Antwort unter 1 Stunde</div>
+    <div class="trustline"><span><b>9,2 / 10</b> bei 15 Bewertungen</span><span><b>10+</b> Jahre Erfahrung</span><span><b>6er</b>-Team mit Ersatz-Garantie</span></div>
+  </div></div>
+</section>
+
+<!-- STAT BAR -->
+<div class="statbar">
+  <div class="wrap">
+    <div class="stat"><b>10<span class="u">+</span></b><span>Jahre Erfahrung</span></div>
+    <div class="stat"><b>6</b><span>DJs im Team</span></div>
+    <div class="stat"><b>9,2<span class="u">/10</span></b><span>bei 15 Bewertungen</span></div>
+    <div class="stat"><b>&lt;1<span class="u">h</span></b><span>Antwort auf eure Anfrage</span></div>
+  </div>
+</div>
+
+<!-- GEO QUICK ANSWER -->
+<section style="padding-top:var(--s16);padding-bottom:0">
+  <div class="wrap">
+    <p class="quickanswer"><strong>SoundMoment ist ein 6-köpfiges DJ-Team aus dem Raum Stuttgart (Fellbach)</strong>, das Hochzeiten, Firmenfeiern und private Feiern in ganz Baden-Württemberg und Süddeutschland bespielt, auf Wunsch mit kompletter Technik. Die Musik richtet sich zu 100 Prozent nach euren Wünschen, abgestimmt in einem persönlichen Vorgespräch. Faire Pauschale ohne versteckte Kosten, Antwort in der Regel innerhalb einer Stunde.</p>
+  </div>
+</section>
+
+<!-- PROBLEM -> LÖSUNG -->
+<section>
+  <div class="wrap">
+    <span class="kicker">Damit euer Abend nicht ins Wasser fällt</span>
+    <h2 style="margin:var(--s3) 0 var(--s4)">Kennt ihr die Sorge<br>vor dem Abend?</h2>
+    <p class="lead">Ein DJ, der sein Ding durchzieht. Eine Tanzfläche, die leer bleibt. Am Ende Kosten, mit denen keiner gerechnet hat. Wir kennen diese Ängste, und wir nehmen sie euch, bevor sie entstehen.</p>
+    <div class="grid g3" style="margin-top:var(--s8)">
+      <div class="card worry"><span class="num">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16.5 4.7a3.2 3.2 0 0 1 0 5.6"/><path d="M18.5 13.7A6.5 6.5 0 0 1 21.5 19.5"/></svg></div><h3>„Bleibt die Tanzfläche leer?"</h3><p>Wir lesen den Raum und reagieren spontan. Ein Song zieht nicht, der nächste kommt. So tanzt wirklich jeder, von den Trauzeugen bis zu den Großeltern.</p></div>
+      <div class="card worry"><span class="num">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3.2" y="14.4" width="3.6" height="6.4" rx="1.6"/><rect x="17.2" y="14.4" width="3.6" height="6.4" rx="1.6"/></svg></div><h3>„Spielt der unsere Musik?"</h3><p>Ihr gebt den Ton an. Im Vorgespräch klären wir Wunsch-Playlist und No-Gos. Eure Musik zu 100 Prozent, nicht das Programm des DJs.</p></div>
+      <div class="card worry"><span class="num">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7.5 3.1v5.3c0 4.6-3.2 7.9-7.5 9.6-4.3-1.7-7.5-5-7.5-9.6V5.6z"/><path d="M8.8 12l2.3 2.3 4.3-4.6"/></svg></div><h3>„Was, wenn der DJ ausfällt?"</h3><p>Wir sind ein Team aus 6 DJs über ganz Süddeutschland. Wird einer krank, springt ein Kollege ein. Euer Termin ist abgesichert.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANLÄSSE -->
+<section id="anlaesse">
+  <div class="wrap">
+    <span class="kicker">Für jeden Anlass</span>
+    <h2 style="margin:var(--s3) 0 var(--s4)">Für jeden Anlass<br>der <span class="hl">richtige DJ</span></h2>
+    <p class="lead">Ob der schönste Tag eures Lebens oder die Firmenfeier, an die sich alle erinnern sollen: Wir bringen den passenden DJ und auf Wunsch die komplette Technik mit.</p>
+    <div class="grid g4" style="margin-top:var(--s8)">
+      <div class="anlass"><img src="bilder/dj-hochzeit-brautpaar-erster-tanz.png" alt="DJ bei Hochzeit, Brautpaar beim ersten Tanz"><div class="ov"></div><div class="txt"><h3>Hochzeit</h3><p>Vom Sektempfang über den Eröffnungstanz bis zur Party. Der DJ, der den Bogen des Abends versteht.</p></div></div>
+      <div class="anlass"><img src="bilder/dj-team-stuttgart-firmenevent-publikum.png" alt="Event-DJ bei Firmenfeier mit voller Tanzfläche in Stuttgart"><div class="ov"></div><div class="txt"><h3>Firmenfeier &amp; Event</h3><p>Professionell und planbar. Ein Ansprechpartner, dem ihr das Thema komplett abgeben könnt.</p></div></div>
+      <div class="anlass"><img src="bilder/dj-hochzeit-open-air-lichterkette.png" alt="DJ bei Geburtstag und privater Feier"><div class="ov"></div><div class="txt"><h3>Geburtstag &amp; Feier</h3><p>Vom 18. bis zum 60., Musik für jede Altersgruppe. Damit die ganze Feier zusammen tanzt.</p></div></div>
+      <div class="anlass"><img src="bilder/dj-hochzeit-baden-wuerttemberg-scheune.jpeg" alt="DJ bei öffentlicher Veranstaltung in Baden-Württemberg"><div class="ov"></div><div class="txt"><h3>Öffentliche Events</h3><p>Vereinsfest, Stadtfest, Party. Erfahrung mit großen Gästezahlen und der richtigen Technik.</p></div></div>
+    </div>
+    <div style="margin-top:var(--s8)">
+      <span class="kicker">Alles aus einer Hand</span>
+      <div class="feat">
+        <span class="pill">DJ</span><span class="pill">Tonanlage</span><span class="pill">Lichtanlage</span><span class="pill">Mikrofon</span><span class="pill">Nebelmaschine</span><span class="pill">Fotobox / Fotospiegel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EURE MUSIK (LIGHT) -->
+<section id="musik" class="light">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">Eure Musik, euer Abend</span>
+      <h2 style="margin:var(--s3) 0 var(--s4)">Bei uns ist der <span class="hl">Kunde König</span></h2>
+      <p style="font-size:18px">Ein guter Event-DJ ist kein Club-DJ, der seine Lieblingsplatten durchzieht. Er ist euer Dienstleister für einen unvergesslichen Abend.</p>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h3>Vorgespräch</h3><p>Wir sprechen vorher alles durch, eure Lieblings-Genres und eure absoluten No-Gos.</p></div></div>
+        <div class="step"><span class="n">2</span><div><h3>Wunsch-Playlist</h3><p>Ihr schickt uns eure Playlist, wir orientieren uns daran und ergänzen mit Gespür.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h3>Live am Abend</h3><p>Wir lesen die Stimmung und reagieren. Zieht ein Song nicht, kommt der nächste.</p></div></div>
+      </div>
+      <a class="btn btn-primary" style="margin-top:var(--s8)" href="#anfrage">Über eure Musik sprechen</a>
+    </div>
+    <div><img src="bilder/event-dj-stuttgart-party-headset.png" alt="DJ von SoundMoment mit Kopfhörern am Mischpult auf einer Party"></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap split">
+    <div><img src="bilder/dj-hochzeit-baden-wuerttemberg-scheune.jpeg" alt="SoundMoment DJ am Controller bei einer Hochzeit in Baden-Württemberg"></div>
+    <div>
+      <span class="kicker">Menschen, kein anonymes Portal</span>
+      <h2 style="margin:var(--s3) 0 var(--s4)">Ein Team, das euren <span class="hl">Abend rockt</span></h2>
+      <p class="lead">Ihr bucht keine anonyme Nummer, sondern Menschen mit Namen und Gesicht. Unsere DJs sind über ganz Süddeutschland verteilt, vom Raum Stuttgart bis zum Bodensee. Kurze Wege, echte Reichweite und immer jemand verfügbar.</p>
+      <div class="steps" style="margin-top:var(--s6)">
+        <div class="step"><span class="n">✓</span><div><p style="color:var(--text)">6 DJs im Team, dadurch Ersatz-Garantie bei Ausfall</p></div></div>
+        <div class="step"><span class="n">✓</span><div><p style="color:var(--text)">Einzugsgebiet BW und Süddeutschland, rund 100 bis 110 km je Standort, bis nach Bayern</p></div></div>
+        <div class="step"><span class="n">✓</span><div><p style="color:var(--text)">Rund 10 Jahre Erfahrung auf Hochzeiten, Firmenfeiern und privaten Events</p></div></div>
+      </div>
+      <a class="btn btn-secondary" style="margin-top:var(--s8)" href="#anfrage">Euren DJ anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- BEWERTUNGEN -->
+<section id="bewertungen">
+  <div class="wrap">
+    <span class="kicker">Das sagen unsere Kunden</span>
+    <h2 style="margin:var(--s3) 0 var(--s4)">9,2 / 10 bei 15 Bewertungen</h2>
+    <p class="lead">Bewertungen auf Trustlocal und Google. Das Fremdurteil zählt mehr als jedes Eigenlob.</p>
+    <div class="grid g3" style="margin-top:var(--s8)">
+      <div class="quote"><div class="st">★★★★★</div><p>„Sogar unsere Omas und Opas waren mit auf der Tanzfläche."</p><div class="who">Hochzeitspaar · Trustlocal</div></div>
+      <div class="quote"><div class="st">★★★★★</div><p>„Absolute Weiterempfehlung!"</p><div class="who">Google-Bewertung</div></div>
+      <div class="quote"><div class="st">★★★★★</div><p>„Super zufrieden. Von mir gibt's 5 Sterne."</p><div class="who">Trustlocal</div></div>
+    </div>
+    <div style="text-align:center;margin-top:var(--s8)"><a class="btn btn-primary" href="#anfrage">Jetzt Verfügbarkeit anfragen</a></div>
+  </div>
+</section>
+
+<!-- ABLAUF (LIGHT) -->
+<section class="light">
+  <div class="wrap">
+    <span class="kicker">So läuft's</span>
+    <h2 style="margin:var(--s3) 0 var(--s4)">So einfach kommt ihr<br>zu <span class="hl">eurem DJ</span></h2>
+    <div class="ablauf">
+      <div><div class="n">1</div><h3 style="margin:12px 0 6px">Anfrage stellen</h3><p>Anlass, Datum und Ort rein, in einer Minute erledigt. Unverbindlich und kostenlos.</p></div>
+      <div><div class="n">2</div><h3 style="margin:12px 0 6px">Antwort unter 1 Stunde</h3><p>Wir prüfen die Verfügbarkeit und schicken ein faires Pauschalangebot, alles drin.</p></div>
+      <div><div class="n">3</div><h3 style="margin:12px 0 6px">Vorgespräch</h3><p>Wir klären Musikwünsche, Ablauf und Technik. Ihr wisst genau, was euch erwartet.</p></div>
+      <div><div class="n">4</div><h3 style="margin:12px 0 6px">Euer Abend</h3><p>Wir bauen auf, ihr feiert. Volle Tanzfläche bis zum Schluss.</p></div>
+    </div>
+    <div style="margin-top:var(--s12)"><a class="btn btn-primary" href="#anfrage">Verfügbarkeit anfragen</a></div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section>
+  <div class="wrap" style="max-width:820px;text-align:center">
+    <span class="kicker">Preis-Transparenz</span>
+    <h2 style="margin:var(--s3) 0 var(--s4)">Was kostet ein DJ bei uns?</h2>
+    <p class="lead" style="margin:0 auto">Ehrliche Antwort: Es kommt auf Anlass, Dauer und Technik an. Was bei uns nie passiert, sind versteckte Kosten. Ihr bekommt eine faire Pauschale, in der alles drin ist, auch Anfahrt und Aufbau. Ein Preis, keine Überraschungen im Kleingedruckten.</p>
+    <div style="margin-top:var(--s8)"><a class="btn btn-primary" href="#anfrage">Kostenloses Angebot anfragen</a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div style="text-align:center"><span class="kicker">Häufige Fragen</span><h2 style="margin-top:var(--s3)">Alles, was ihr wissen wollt</h2></div>
+    <div class="acc">
+      <details open><summary>Was kostet ein DJ bei SoundMoment?</summary><div class="body">Ihr bekommt eine faire Pauschale nach Anlass, Dauer und gewünschter Technik, ohne versteckte Kosten. Anfahrt und Aufbau sind im Angebot enthalten. Das genaue Angebot bekommt ihr nach eurer Anfrage, in der Regel unter einer Stunde.</div></details>
+      <details><summary>In welchem Umkreis seid ihr buchbar?</summary><div class="body">In ganz Baden-Württemberg und Süddeutschland. Unsere DJs sitzen an mehreren Standorten, vom Raum Stuttgart bis zum Bodensee, mit rund 100 bis 110 km Umkreis je Standort. Dadurch decken wir auch große Teile Bayerns ab.</div></details>
+      <details><summary>Können wir unsere eigene Musik bestimmen?</summary><div class="body">Ja, komplett. Im Vorgespräch klären wir eure Wunsch-Playlist und eure No-Gos. Am Abend spielen wir eure Musik und lesen die Stimmung, statt stur eine Liste abzuspielen.</div></details>
+      <details><summary>Was passiert, wenn der DJ krank wird oder ausfällt?</summary><div class="body">Wir sind ein Team aus 6 DJs. Fällt einer aus, springt ein Kollege ein. Euer Termin ist abgesichert, das kann ein einzelner DJ nicht bieten.</div></details>
+      <details><summary>Bringt ihr die Technik mit?</summary><div class="body">Ja, auf Wunsch alles aus einer Hand: Tonanlage, Lichtanlage, Mikrofon, Nebelmaschine und Fotobox oder Fotospiegel. Ihr müsst euch um nichts einzeln kümmern.</div></details>
+      <details><summary>Wie schnell bekommen wir eine Antwort?</summary><div class="body">In der Regel unter einer Stunde. Schnelle, klare Kommunikation ist uns wichtig, schon lange vor eurem Termin.</div></details>
+      <details><summary>Für welche Anlässe bucht man euch?</summary><div class="body">Hochzeiten, Firmenfeiern, Geburtstage sowie private und öffentliche Veranstaltungen aller Art. Schwerpunkt sind Hochzeiten und Firmenevents.</div></details>
+      <details><summary>Wie früh sollten wir anfragen?</summary><div class="body">So früh wie möglich. Beliebte Termine, vor allem an Wochenenden im Sommer, sind schnell vergeben. Fragt am besten direkt eure Verfügbarkeit an.</div></details>
+      <details><summary>Spielt ihr eine bestimmte Musikrichtung?</summary><div class="body">Nein, wir legen uns nicht auf ein Genre fest. Von 70er, 80er, 90er über Schlager und Disco bis Dance und aktuelle Charts, wir richten uns nach euch und eurem Publikum.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA / FORMULAR -->
+<section id="anfrage">
+  <div class="wrap">
+    <div class="final">
+      <div style="text-align:center">
+        <span class="kicker">Termin sichern</span>
+        <h2 style="margin:var(--s3) 0 var(--s4)">Sichert euch <span class="hl">euren Termin</span></h2>
+        <p class="lead" style="margin:0 auto">Sagt uns kurz, was ihr plant, und wir melden uns unter einer Stunde mit der Verfügbarkeit und einem fairen Angebot. Unverbindlich und kostenlos.</p>
+      </div>
+      <form class="form-grid" onsubmit="return false">
+        <div class="field"><label>Anlass</label><select><option>Hochzeit</option><option>Firmenfeier</option><option>Geburtstag</option><option>Andere Veranstaltung</option></select></div>
+        <div class="field"><label>Datum</label><input type="date"></div>
+        <div class="field"><label>Ort / PLZ</label><input type="text" placeholder="z. B. 70736 Fellbach"></div>
+        <div class="field"><label>Ungefähre Gästezahl</label><input type="text" placeholder="z. B. 80"></div>
+        <div class="field"><label>Name</label><input type="text" placeholder="Euer Name"></div>
+        <div class="field"><label>E-Mail oder Telefon</label><input type="text" placeholder="So erreichen wir euch"></div>
+        <div class="field full"><label>Musikwünsche (optional)</label><textarea rows="2" placeholder="Lieblings-Genres, No-Gos, Wünsche"></textarea></div>
+        <div class="field full" style="text-align:center;margin-top:8px">
+          <button class="btn btn-primary" style="min-width:260px;justify-content:center">Verfügbarkeit anfragen</button>
+          <div class="reassure">unverbindlich · kostenlos · Antwort unter 1 Std. · oder anrufen: <a href="tel:+491781790408">0178 1790408</a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="SoundMoment Event DJ-Team"><span class="logo" role="img" aria-label="SoundMoment Event DJ-Team Logo"></span></a>
+        <p style="margin-top:var(--s6);max-width:40ch">Euer Event-DJ-Team für Hochzeit, Firmenfeier und Geburtstag in Baden-Württemberg und Süddeutschland.</p>
+        <div class="feat" style="margin-top:var(--s4)"><span class="pill lime">★ 9,2 / 10</span><span class="pill">15 Bewertungen</span></div>
+      </div>
+      <div>
+        <div class="foot-h">Kontakt</div>
+        <ul class="foot-list">
+          <li>Remser Straße 6, Fellbach</li>
+          <li>(Raum Stuttgart)</li>
+          <li><a href="tel:+491781790408">0178 1790408</a></li>
+          <li><a href="mailto:djteam.soundmoment@outlook.com">djteam.soundmoment@outlook.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-h">Einzugsgebiet</div>
+        <ul class="foot-list">
+          <li>Stuttgart · Fellbach · Ludwigsburg</li>
+          <li>Esslingen · Reutlingen</li>
+          <li>Bodensee · Baden-Württemberg</li>
+          <li>Süddeutschland</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bigmark">SOUNDMOMENT</div>
+    <div class="legal">
+      <span>© 2026 SoundMoment · Event DJ-Team</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="sticky">
+  <a class="btn btn-secondary" href="tel:+491781790408">Anrufen</a>
+  <a class="btn btn-primary" href="#anfrage">Verfügbarkeit anfragen</a>
+</div>
+
+<!-- SEO / GEO: strukturierte Daten -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"SoundMoment · Event DJ-Team",
+  "description":"DJ-Team für Hochzeit, Firmenfeier und Geburtstag in Baden-Württemberg und Süddeutschland, auf Wunsch mit kompletter Technik.",
+  "areaServed":["Baden-Württemberg","Süddeutschland","Stuttgart","Fellbach","Bodensee"],
+  "address":{"@type":"PostalAddress","streetAddress":"Remser Straße 6","addressLocality":"Fellbach","addressRegion":"BW","addressCountry":"DE"},
+  "telephone":"+491781790408",
+  "email":"djteam.soundmoment@outlook.com",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"9.2","bestRating":"10","reviewCount":"15"},
+  "makesOffer":[
+    {"@type":"Offer","name":"DJ für Hochzeit"},
+    {"@type":"Offer","name":"DJ für Firmenfeier"},
+    {"@type":"Offer","name":"DJ für Geburtstag"},
+    {"@type":"Offer","name":"DJ mit Technik: Ton, Licht, Mikrofon, Nebelmaschine, Fotobox"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Was kostet ein DJ bei SoundMoment?","acceptedAnswer":{"@type":"Answer","text":"Ihr bekommt eine faire Pauschale nach Anlass, Dauer und gewünschter Technik, ohne versteckte Kosten. Anfahrt und Aufbau sind im Angebot enthalten. Das genaue Angebot bekommt ihr nach eurer Anfrage, in der Regel unter einer Stunde."}},
+    {"@type":"Question","name":"In welchem Umkreis seid ihr buchbar?","acceptedAnswer":{"@type":"Answer","text":"In ganz Baden-Württemberg und Süddeutschland, vom Raum Stuttgart bis zum Bodensee, mit rund 100 bis 110 km Umkreis je Standort. Dadurch decken wir auch große Teile Bayerns ab."}},
+    {"@type":"Question","name":"Können wir unsere eigene Musik bestimmen?","acceptedAnswer":{"@type":"Answer","text":"Ja, komplett. Im Vorgespräch klären wir eure Wunsch-Playlist und eure No-Gos. Am Abend spielen wir eure Musik und lesen die Stimmung."}},
+    {"@type":"Question","name":"Was passiert, wenn der DJ ausfällt?","acceptedAnswer":{"@type":"Answer","text":"Wir sind ein Team aus 6 DJs. Fällt einer aus, springt ein Kollege ein. Euer Termin ist abgesichert."}},
+    {"@type":"Question","name":"Bringt ihr die Technik mit?","acceptedAnswer":{"@type":"Answer","text":"Ja, auf Wunsch alles aus einer Hand: Tonanlage, Lichtanlage, Mikrofon, Nebelmaschine und Fotobox oder Fotospiegel."}}
+  ]
+}
+</script>
+</body>
+</html>
