@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immobilienmakler Bremen seit 1928 | G. Mönnich Jr. Immobilien</title>
+<meta name="description" content="G. Mönnich Jr. Immobilien, Ihr Immobilienmakler in Bremen seit 1928. Verkauf, Vermietung und kostenlose Immobilienbewertung in Bremen und Umland. Unverbindlich anfragen.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.moennich-immobilien.de/">
+<meta property="og:title" content="Immobilienmakler Bremen seit 1928 | G. Mönnich Jr. Immobilien">
+<meta property="og:description" content="Ehrlich bewertet, seriös begleitet, bis zum Notartermin. Kostenlose Immobilienbewertung in Bremen anfordern.">
+<meta property="og:type" content="website"><meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#1050A0; --brand-dark:#0C3C78; --ink:#1F2933; --muted:#5A6472;
+  --bg:#FFFFFF; --soft:#F0F1F5; --soft-2:#F7F8FA; --line:#E4E7EC;
+  --serif:'Libre Baskerville',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  --r:8px; --maxw:1440px;
+  --edge:max(32px, calc((100vw - 1440px) / 2 + 32px));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);color:var(--brand);font-weight:700;line-height:1.14;letter-spacing:0;overflow-wrap:break-word;hyphens:auto}
+h1{font-size:clamp(38px,5vw,60px)}
+h2{font-size:clamp(28px,3.4vw,42px)}
+h3{font-size:20px}
+.lead{font-size:19px;color:var(--muted)}
+.eyebrow{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--brand);letter-spacing:.02em}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:15px;padding:14px 24px;border-radius:var(--r);border:1.5px solid transparent;cursor:pointer;transition:.16s;white-space:nowrap}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark)}
+.btn-outline{background:transparent;color:var(--brand);border-color:rgba(16,80,160,.45)}
+.btn-outline:hover{border-color:var(--brand);background:var(--soft-2)}
+.btn-lg{padding:16px 30px;font-size:16px}
+.micro{font-size:13px;color:var(--muted);margin-top:12px}
+.icn{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.icn-lg{width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* Header */
+header.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:15px 32px;gap:20px}
+.nav .logo img{height:40px}
+.nav .links{display:flex;gap:28px;font-size:15px;font-weight:500;color:var(--ink)}
+.nav .links a:hover{color:var(--brand)}
+.nav .right{display:flex;align-items:center;gap:14px}
+.nav .phone{display:inline-flex;align-items:center;gap:7px;font-size:15px;font-weight:600;color:var(--brand)}
+@media(max-width:940px){.nav .links{display:none}.nav .phone span{display:none}}
+
+/* Hero (full-bleed) */
+.hero{display:grid;grid-template-columns:1.02fr 1fr;align-items:stretch;min-height:640px}
+.hero .left{min-width:0;padding:72px 72px 72px var(--edge);display:flex;flex-direction:column;justify-content:center}
+.hero h1{margin-bottom:22px}
+.hero .sub{font-size:20px;color:var(--muted);max-width:560px}
+.hero .q{margin:36px 0 16px;font-weight:600;font-size:16px;color:var(--ink)}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:600px}
+.choice{background:var(--soft);border-radius:var(--r);border:2px solid transparent;padding:24px 16px;text-align:center;color:var(--brand);transition:.16s;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px}
+.choice:hover{border-color:var(--brand);background:#fff;box-shadow:0 8px 24px rgba(16,80,160,.10)}
+.choice span{font-weight:600;font-size:15px;color:var(--ink);line-height:1.3}
+.hero .imgcol{position:relative;overflow:hidden;align-self:stretch;min-width:0}
+.hero .imgcol img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:0}.hero .left{padding:40px 32px 32px;max-width:none}.hero .imgcol{min-height:340px}}
+
+/* Full-bleed split */
+.fbsplit{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:600px}
+.fbsplit .media{position:relative;overflow:hidden;min-width:0}
+.fbsplit .txt{min-width:0}
+.fbsplit .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fbsplit .txt{display:flex;flex-direction:column;justify-content:center;padding:80px 72px}
+.fbsplit .txt.pl{padding-left:var(--edge)}
+.fbsplit .txt.pr{padding-right:var(--edge)}
+.fbsplit .txt h2{margin-bottom:16px}
+.fbsplit .txt p{color:var(--muted);margin-bottom:12px;font-size:16px}
+.fbsplit ul{list-style:none;margin-top:22px;display:grid;gap:13px}
+.fbsplit li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.fbsplit li svg{color:var(--brand);flex:none;margin-top:2px}
+@media(max-width:900px){.fbsplit{grid-template-columns:1fr;min-height:0}.fbsplit .media{min-height:320px;order:-1}.fbsplit .txt{padding:44px 32px}.fbsplit .txt.pl,.fbsplit .txt.pr{padding-left:32px;padding-right:32px}}
+
+/* Trust badges */
+.badges{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft-2)}
+.badges .wrap{display:flex;align-items:center;gap:36px;flex-wrap:wrap;padding:20px 32px;font-size:14px;color:var(--muted)}
+.badges b{color:var(--ink)}
+.badges .star{color:#E8A200}
+
+/* Section scaffolding */
+section.blk{padding:84px 0}
+section.soft{background:var(--soft-2)}
+.sechead{max-width:720px;margin:0 auto 48px;text-align:center}
+.sechead .eyebrow{display:block;margin-bottom:12px}
+.sechead p{color:var(--muted);font-size:17px;margin-top:14px}
+
+/* Cards grid */
+.cards{display:grid;gap:22px}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px 24px;transition:.16s}
+.card:hover{box-shadow:0 12px 30px rgba(16,42,71,.08);transform:translateY(-2px)}
+.card .ic{width:52px;height:52px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;color:var(--brand);margin-bottom:16px}
+.card h3{margin-bottom:8px}
+.card p{font-size:15px;color:var(--muted)}
+.card .go{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;color:var(--brand)}
+@media(max-width:900px){.c3,.c4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.c3,.c4{grid-template-columns:1fr}}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:st}
+.step{position:relative;padding-top:16px}
+.step .n{width:46px;height:46px;border-radius:50%;background:var(--brand);color:#fff;font-family:var(--serif);font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.step h3{margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:20px}}
+
+/* Split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split .img img{border-radius:12px;width:100%;height:100%;max-height:480px;object-fit:cover}
+.split ul{list-style:none;margin-top:22px;display:grid;gap:12px}
+.split li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.split li svg{color:var(--brand);flex:none;margin-top:2px}
+.split h2{margin-bottom:16px}
+.split p{color:var(--muted);margin-bottom:12px}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:28px}.split .img{order:-1}}
+
+/* Testimonials */
+.tst{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tst .q{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;display:flex;flex-direction:column}
+.tst .stars{color:#E8A200;letter-spacing:2px;margin-bottom:12px}
+.tst blockquote{font-size:16px;color:var(--ink);flex:1;line-height:1.55}
+.tst .who{margin-top:16px;font-size:13px;color:var(--muted);font-weight:600}
+@media(max-width:860px){.tst{grid-template-columns:1fr}}
+
+/* Bremen tags */
+.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.tags span{font-size:14px;font-weight:500;padding:9px 16px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+.tags span:hover{border-color:var(--brand);color:var(--brand)}
+
+/* FAQ */
+.faq{max-width:860px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:17px;color:var(--brand)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:22px;color:var(--brand);flex:none}
+.faq details[open] summary::after{content:'–'}
+.faq .a{padding:0 24px 22px;color:var(--muted);font-size:15px}
+
+/* CTA */
+.cta{background:var(--brand)}
+.cta .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:72px 0}
+.cta h2,.cta .eyebrow{color:#fff}
+.cta .eyebrow{opacity:.8;margin-bottom:12px;display:block}
+.cta p{color:#d7e2f2;margin-top:14px;max-width:440px}
+.cta a.tel{color:#fff;text-decoration:underline}
+.formcard{background:#fff;border-radius:14px;padding:30px}
+.formcard h3{margin-bottom:18px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:var(--r);font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff}
+.field input:focus,.field select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(16,80,160,.15)}
+@media(max-width:860px){.cta .grid{grid-template-columns:1fr;gap:32px;padding:48px 0}}
+
+/* Full-width image band */
+.band{position:relative;min-height:500px;display:flex;align-items:center;overflow:hidden}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band .ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,27,46,.82) 0%,rgba(12,27,46,.55) 45%,rgba(12,27,46,.15) 100%)}
+.band .in{position:relative;color:#fff;max-width:560px;padding:48px 0}
+.band .in .eyebrow{color:#9ec1f0;display:block;margin-bottom:12px}
+.band .in h2{color:#fff;margin-bottom:14px}
+.band .in p{color:#dbe4f1;font-size:17px}
+@media(max-width:700px){.band .ov{background:linear-gradient(180deg,rgba(12,27,46,.55),rgba(12,27,46,.82))}}
+
+/* Properties grid */
+.props{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prop{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.16s}
+.prop:hover{box-shadow:0 12px 30px rgba(16,42,71,.10);transform:translateY(-2px)}
+.prop .ph{aspect-ratio:3/2;overflow:hidden}
+.prop .ph img{width:100%;height:100%;object-fit:cover}
+.prop .b{padding:18px 20px}
+.prop .b .loc{font-size:13px;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.03em}
+.prop .b h3{font-size:18px;margin:6px 0 4px}
+.prop .b .meta{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.props{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.props{grid-template-columns:1fr}}
+
+/* Footer */
+footer.ft{background:#0E1B2E;color:#a9b4c4;padding:56px 0 28px;font-size:14px}
+footer.ft .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+footer.ft b{color:#fff;font-family:var(--serif);font-weight:700;font-size:17px;display:block;margin-bottom:14px}
+footer.ft a{display:block;padding:3px 0}
+footer.ft a:hover{color:#fff}
+footer.ft .base{margin-top:40px;padding-top:20px;border-top:1px solid #22304a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#75839a}
+@media(max-width:760px){footer.ft .cols{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="G. Mönnich Jr. Immobilien Startseite"><img src="logo.png" alt="G. Mönnich Jr. Immobilien Bremen"></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="#verkaufen">Verkaufen</a><a href="#ablauf">Ablauf</a><a href="#warum">Über uns</a><a href="#bremen">Bremen</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="right">
+      <a class="phone" href="tel:+4942117 35627"><svg class="icn" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg><span>0421 173 5627</span></a>
+      <a class="btn btn-primary" href="#anfrage">Bewertung anfordern</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+      <div class="left">
+        <span class="eyebrow">Immobilienmakler in Bremen seit 1928</span>
+        <h1 style="margin-top:14px">Ihr Immobilienmakler in Bremen, dem seit 1928 vertraut wird.</h1>
+        <p class="sub">Wir verkaufen und vermieten Immobilien in Bremen und Umland. Ehrlich bewertet, seriös begleitet, bis zum Notartermin.</p>
+        <p class="q">Wofür brauchen Sie den Wert Ihrer Immobilie?</p>
+        <div class="choices">
+          <a class="choice" href="#anfrage"><svg class="icn-lg" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.4"/></svg><span>Ich möchte verkaufen</span></a>
+          <a class="choice" href="#anfrage"><svg class="icn-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span>Wert ermitteln lassen</span></a>
+          <a class="choice" href="#anfrage"><svg class="icn-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11.5v5"/><path d="M12 7.5h.01"/></svg><span>Ich bin neugierig</span></a>
+        </div>
+        <p class="micro">Kostenlos und unverbindlich. Ohne Verpflichtung, auch wenn Sie sich gegen einen Verkauf entscheiden.</p>
+      </div>
+      <div class="imgcol">
+        <img src="bilder/immobilienmakler-bremen-altbau-fassade.webp" alt="Historische Altbaufassade in Bremen, Immobilienmakler G. Mönnich Jr.">
+      </div>
+</section>
+
+<!-- BADGES -->
+<div class="badges"><div class="wrap">
+  <span><span class="star">★★★★★</span> <b>4,8</b> Google-Bewertung (Platzhalter)</span>
+  <span><b>seit 1928</b> in Bremen</span>
+  <span>Mitglied im <b>IVD</b> (falls zutreffend)</span>
+  <span><b>500+</b> vermittelte Objekte (Platzhalter)</span>
+</div></div>
+
+<!-- ANLASS -->
+<section class="blk" id="verkaufen">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Ihr Anlass</span>
+      <h2>Ein Verkauf zum falschen Preis kostet Sie richtig Geld.</h2>
+      <p>Der größte Fehler passiert am Anfang, beim Preis. Deshalb fängt bei uns alles mit einer ehrlichen, marktgerechten Bewertung an. Kein Wunschpreis, um Sie zu ködern, sondern die Zahl, die Ihre Immobilie in Bremen wirklich wert ist.</p>
+    </div>
+    <div class="cards c4">
+      <div class="card"><div class="ic"><svg class="icn" viewBox="0 0 24 24"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10h14V10"/><path d="M9.5 20v-6h5v6"/></svg></div><h3>Geerbte Immobilie</h3><p>Das Elternhaus ist mehr als ein Gebäude. Wir bewerten diskret und begleiten auch Erbengemeinschaften fair.</p><a class="go" href="#anfrage">Wert erfahren →</a></div>
+      <div class="card"><div class="ic"><svg class="icn" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Scheidung</h3><p>Eine neutrale, belastbare Bewertung als Grundlage für eine saubere und faire Aufteilung.</p><a class="go" href="#anfrage">Neutrale Bewertung →</a></div>
+      <div class="card"><div class="ic"><svg class="icn" viewBox="0 0 24 24"><path d="M12.9 1.7l8 4A2 2 0 0 1 22 7.5v9a2 2 0 0 1-1.1 1.8l-8 4a2 2 0 0 1-1.8 0l-8-4A2 2 0 0 1 2 16.5v-9a2 2 0 0 1 1.1-1.8l8-4a2 2 0 0 1 1.8 0z"/><path d="M2.3 6.4 12 11.3l9.7-4.9"/><path d="M12 22.3V11.3"/></svg></div><h3>Umzug</h3><p>Neuer Lebensabschnitt, alte Immobilie. Wir übernehmen den Aufwand, Sie konzentrieren sich auf das Neue.</p><a class="go" href="#anfrage">Verkauf planen →</a></div>
+      <div class="card"><div class="ic"><svg class="icn" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Ruhestand</h3><p>Kapital freisetzen, ohne Stress und Zeitdruck. Wir holen den besten Preis raus, in Ihrem Tempo.</p><a class="go" href="#anfrage">Wert ermitteln →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BAND: Bremen -->
+<section class="band">
+  <img src="bilder/immobilienmakler-bremen-buergerhaeuser-strasse.webp" alt="Historische Bürgerhäuser in einer Bremer Straße">
+  <div class="ov"></div>
+  <div class="wrap"><div class="in">
+    <span class="eyebrow">Verwurzelt in Bremen</span>
+    <h2>Wir kennen jede Straße, nicht nur den Markt.</h2>
+    <p>Seit 1928 begleiten wir Eigentümer in Bremen und Umland. Diese Ortskenntnis ist der Unterschied zwischen einem geschätzten und einem belastbaren Preis.</p>
+  </div></div>
+</section>
+
+<!-- ABLAUF -->
+<section class="blk soft" id="ablauf">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">So läuft es ab</span>
+      <h2>In drei Schritten zum ehrlichen Verkaufspreis.</h2>
+      <p>Sie gehen keine Verpflichtung ein und entscheiden nach jedem Schritt selbst.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Immobilie beschreiben</h3><p>Sie füllen das kurze Formular aus: Art, Lage, Größe. Das dauert zwei Minuten.</p></div>
+      <div class="step"><div class="n">2</div><h3>Termin vor Ort</h3><p>Ein fester Ansprechpartner kommt zu Ihrer Immobilie und bewertet mit anerkannten Verfahren.</p></div>
+      <div class="step"><div class="n">3</div><h3>Ehrlichen Preis erfahren</h3><p>Sie bekommen eine nachvollziehbare, marktgerechte Einschätzung. Erst dann entscheiden Sie.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:44px"><a class="btn btn-primary btn-lg" href="#anfrage">Kostenlose Immobilienbewertung anfordern</a></div>
+  </div>
+</section>
+
+<!-- WARUM -->
+<section class="fbsplit" id="warum">
+  <div class="media"><img src="bilder/immobilienmakler-bremen-beratung-verkauf.webp" alt="Persönliche Beratung beim Immobilienverkauf in Bremen"></div>
+  <div class="txt pr">
+    <span class="eyebrow">Warum Mönnich</span>
+    <h2 style="margin-top:12px">Ihr Immobilienmakler in Bremen seit 1928.</h2>
+    <p>Der Name Mönnich steht in Bremen seit 1928 für Verlässlichkeit. Wir kennen die Stadt nicht aus einer Datenbank, sondern aus Generationen, und wissen, was ein Reihenhaus in Findorff von einer Altbauwohnung in Schwachhausen unterscheidet.</p>
+    <p>Wir versprechen keine Höchstpreise, um Ihren Auftrag zu bekommen. Wir sagen Ihnen ehrlich, was realistisch ist, und begründen es mit Daten.</p>
+    <ul>
+      <li><svg class="icn" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ehrliche, datenbasierte Bewertung statt Lockpreis</li>
+      <li><svg class="icn" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Fester Ansprechpartner mit Gesicht, keine anonyme Hotline</li>
+      <li><svg class="icn" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Echte Bremer Marktkenntnis, Stadtteil für Stadtteil</li>
+      <li><svg class="icn" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Full-Service von der Bewertung bis zum Notartermin</li>
+      <li><svg class="icn" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Diskret und einfühlsam, gerade bei Erbe und Scheidung</li>
+    </ul>
+  </div>
+</section>
+
+<!-- OBJEKTE -->
+<section class="blk soft" id="objekte">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Aus Bremen und Umland</span>
+      <h2>Immobilien, die wir begleiten.</h2>
+      <p>Vom Altbau bis zum Einfamilienhaus. Ein Einblick in die Art von Objekten, die wir für unsere Eigentümer vermarkten. (Beispielbilder, im Live-Betrieb echte Objekte.)</p>
+    </div>
+    <div class="props">
+      <div class="prop"><div class="ph"><img src="bilder/immobilie-verkaufen-bremen-einfamilienhaus.webp" alt="Einfamilienhaus in Bremen und Umland"></div><div class="b"><div class="loc">Bremen-Umland</div><h3>Einfamilienhaus mit Garten</h3><div class="meta">Vermarktung, Bewertung und Verkauf</div></div></div>
+      <div class="prop"><div class="ph"><img src="bilder/immobilie-verkaufen-bremen-altbauwohnung.webp" alt="Altbauwohnung in Bremen"></div><div class="b"><div class="loc">Schwachhausen</div><h3>Altbauwohnung mit Stuck</h3><div class="meta">Eigentumswohnung, Verkauf</div></div></div>
+      <div class="prop"><div class="ph"><img src="bilder/immobilie-verkaufen-bremen-wohngebaeude.webp" alt="Modernes Wohngebäude in Bremen"></div><div class="b"><div class="loc">Bremen-Neustadt</div><h3>Wohn- und Anlageobjekt</h3><div class="meta">Mehrfamilienhaus, Bewertung</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODIK -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Bewertungsmethodik</span>
+      <h2>Wie wir den Wert Ihrer Immobilie ermitteln.</h2>
+      <p>Ein seriöser Wert entsteht nicht aus dem Bauchgefühl, sondern aus einem anerkannten Verfahren.</p>
+    </div>
+    <div class="cards c3">
+      <div class="card"><h3>Vergleichswertverfahren</h3><p>Für Eigentumswohnungen und Einfamilienhäuser. Wir vergleichen mit tatsächlich verkauften, ähnlichen Objekten in Ihrer Bremer Lage.</p></div>
+      <div class="card"><h3>Sachwertverfahren</h3><p>Für selbst genutzte Häuser ohne genügend Vergleichsobjekte. Wir bewerten Grundstück und Gebäudesubstanz getrennt.</p></div>
+      <div class="card"><h3>Ertragswertverfahren</h3><p>Für vermietete Wohnungen und Mehrfamilienhäuser. Hier zählt der nachhaltige Mietertrag.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px;color:var(--muted);max-width:680px;margin-left:auto;margin-right:auto">Ein Online-Rechner liefert einen groben Richtwert. Den echten, belastbaren Wert Ihrer Immobilie sehen wir erst vor Ort. Beides bekommen Sie bei uns, kostenlos.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="blk soft">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2>Das sagen Eigentümer aus Bremen.</h2>
+      <p>Platzhalter, vor Live durch freigegebene Google-Bewertungen ersetzen.</p>
+    </div>
+    <div class="tst">
+      <div class="q"><div class="stars">★★★★★</div><blockquote>Man wusste immer, dass man in den besten Händen ist. Auf Anrufe und Mails wurde sehr schnell geantwortet.</blockquote><div class="who">Familie K. · Findorff · Hausverkauf</div></div>
+      <div class="q"><div class="stars">★★★★★</div><blockquote>Innerhalb von zwei Monaten konnten wir unser Haus zu einem sehr guten Preis verkaufen. Reibungslos und angenehm.</blockquote><div class="who">M. Ahrens · Oberneuland</div></div>
+      <div class="q"><div class="stars">★★★★★</div><blockquote>Offen, ehrlich und immer lösungsorientiert, mit viel Fingerspitzengefühl. Nach dem Erbfall genau die richtige Begleitung.</blockquote><div class="who">Erbengemeinschaft H. · Schwachhausen</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BREMEN -->
+<section class="fbsplit" id="bremen">
+  <div class="txt pl">
+    <span class="eyebrow">Bremen und Umland</span>
+    <h2 style="margin-top:12px">Ihr Makler für Ihren Stadtteil.</h2>
+    <p>Jeder Bremer Stadtteil hat seinen eigenen Markt und seinen eigenen Preis. Sagen Sie uns, wo Ihre Immobilie steht, und Sie bekommen eine Einschätzung, die zur Straße passt, nicht zum Landesdurchschnitt.</p>
+    <div class="tags" style="justify-content:flex-start">
+      <span>Schwachhausen</span><span>Findorff</span><span>Horn-Lehe</span><span>Oberneuland</span><span>Borgfeld</span><span>Neustadt</span><span>Vahr</span><span>Walle</span><span>Gröpelingen</span><span>Osterholz</span><span>Stuhr</span><span>Umland</span>
+    </div>
+  </div>
+  <div class="media"><img src="bilder/immobilienmakler-bremen-schnoor-weser.webp" alt="Historisches Schnoorviertel und Weser in Bremen"></div>
+</section>
+
+<!-- FAQ -->
+<section class="blk soft" id="faq">
+  <div class="wrap">
+    <div class="sechead"><span class="eyebrow">Häufige Fragen</span><h2>Fragen zur Immobilienbewertung in Bremen.</h2></div>
+    <div class="faq">
+      <details open><summary>Was ist meine Immobilie in Bremen wert?</summary><div class="a">Der Wert hängt von Lage, Größe, Zustand, Baujahr und Ausstattung ab. Eine kostenlose Bewertung von G. Mönnich Jr. Immobilien liefert Ihnen für Bremen und das Umland eine marktgerechte Einschätzung, online als Richtwert und präzise vor Ort.</div></details>
+      <details><summary>Ist die Immobilienbewertung wirklich kostenlos und unverbindlich?</summary><div class="a">Ja. Die Bewertung ist für Sie kostenlos und unverbindlich. Sie gehen keine Verpflichtung ein und entscheiden selbst, ob Sie verkaufen.</div></details>
+      <details><summary>Was kostet mich die Bewertung, wenn ich am Ende nicht verkaufe?</summary><div class="a">Nichts. Es entstehen keine Kosten, auch wenn Sie sich gegen einen Verkauf oder für einen anderen Makler entscheiden.</div></details>
+      <details><summary>Wie läuft die Bewertung ab und wie lange dauert sie?</summary><div class="a">Sie beschreiben Ihre Immobilie im kurzen Formular, wir vereinbaren einen Vor-Ort-Termin und Sie erhalten anschließend eine nachvollziehbare Einschätzung. Der Termin dauert in der Regel unter einer Stunde.</div></details>
+      <details><summary>Warum ist ein lokaler Bremer Makler besser als ein Online-Rechner?</summary><div class="a">Ein Online-Rechner kennt weder den Zustand Ihrer Immobilie noch die Besonderheiten Ihrer Straße. Wir bewerten mit echten Bremer Vergleichsdaten und dem, was wir vor Ort sehen. Das Ergebnis ist belastbar statt geschätzt.</div></details>
+      <details><summary>Wie verkaufe ich eine geerbte Immobilie in Bremen?</summary><div class="a">Bei einer geerbten Immobilie klären wir zuerst den Wert und die Eigentumsverhältnisse. Gehört die Immobilie einer Erbengemeinschaft, müssen alle Miterben dem Verkauf zustimmen. Wir begleiten diesen Prozess diskret und moderieren bei Bedarf.</div></details>
+      <details><summary>Was kostet der Makler beim Verkauf und wer zahlt die Provision?</summary><div class="a">Die Provision fällt erst bei erfolgreichem Verkauf an und wird in Bremen zwischen Käufer und Verkäufer geteilt. Die genaue Höhe und alle Leistungen legen wir Ihnen vorab schriftlich und transparent dar. Kein Verkauf, keine Provision.</div></details>
+      <details><summary>Bewerten Sie auch Wohnungen, Mehrfamilien- und Gewerbeimmobilien?</summary><div class="a">Ja. Wir bewerten und verkaufen Eigentumswohnungen, Einfamilien- und Mehrfamilienhäuser sowie Gewerbeimmobilien in Bremen und Umland.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BAND: Vertrauen -->
+<section class="band">
+  <img src="bilder/immobilienmakler-bremen-schluesseluebergabe-paar.webp" alt="Zufriedene Eigentümer bei der Schlüsselübergabe in Bremen" style="object-position:center 22%">
+  <div class="ov"></div>
+  <div class="wrap"><div class="in">
+    <span class="eyebrow">Am Ende zählt das Ergebnis</span>
+    <h2>Verkauft, sauber abgewickelt, gut betreut.</h2>
+    <p>Von der ehrlichen Bewertung bis zum Notartermin bleiben wir Ihr fester Ansprechpartner. Auch danach.</p>
+  </div></div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="anfrage">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Ihre Anfrage</span>
+        <h2>Erfahren Sie, was Ihre Immobilie in Bremen wert ist.</h2>
+        <p>Ein kurzes Formular, zwei Minuten, keine Verpflichtung. Wir melden uns persönlich und ermitteln den echten Wert Ihrer Immobilie. Ehrlich, marktgerecht, seit 1928.</p>
+        <p class="micro" style="color:#c5d3ea">Oder rufen Sie an: <a class="tel" href="tel:+4942117 35627">0421 173 5627</a></p>
+      </div>
+      <div class="formcard">
+        <h3>Ihre kostenlose Bewertung</h3>
+        <form onsubmit="event.preventDefault();alert('Demo-Entwurf: Formular wird im Live-Betrieb angebunden.');">
+          <div class="field"><label>Art der Immobilie</label><select><option>Wohnung</option><option>Einfamilienhaus</option><option>Mehrfamilienhaus</option><option>Grundstück</option><option>Gewerbe</option></select></div>
+          <div class="field"><label>Lage / Stadtteil</label><input placeholder="z. B. Schwachhausen"></div>
+          <div class="field"><label>Ihr Name</label><input placeholder="Vor- und Nachname"></div>
+          <div class="field"><label>E-Mail</label><input type="email" placeholder="name@beispiel.de"></div>
+          <div class="field"><label>Telefon</label><input placeholder="Für den Rückruf"></div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center" type="submit">Kostenlose Bewertung anfordern</button>
+          <p class="micro">Kostenlos und unverbindlich. Ihre Daten behandeln wir vertraulich.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>G. Mönnich Jr. Immobilien GmbH</b>
+        Langenstr. 53, 28195 Bremen<br>
+        <a href="tel:+4942117 35627">0421 173 5627</a>
+        <a href="mailto:info@moennich-immobilien.de">info@moennich-immobilien.de</a>
+        <a href="https://wa.me/4916096681241">WhatsApp: 0160 96681241</a>
+      </div>
+      <div><b>Leistungen</b><a href="#verkaufen">Immobilie verkaufen</a><a href="#anfrage">Immobilienbewertung</a><a href="#">Immobilie vermieten</a><a href="#">Suchauftrag</a></div>
+      <div><b>Bremen</b><a href="#bremen">Schwachhausen</a><a href="#bremen">Findorff</a><a href="#bremen">Horn-Lehe</a><a href="#bremen">Neustadt</a></div>
+      <div><b>Kontakt</b><a href="#anfrage">Anfrage</a><a href="#warum">Über uns</a><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+    </div>
+    <div class="base"><span>Ihr Immobilienmakler in Bremen seit 1928</span><span>Entwurf · LIKOVO</span></div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"G. Mönnich Jr. Immobilien GmbH","image":"https://www.moennich-immobilien.de/wp-content/uploads/2020/08/moennich-immobilien-logo.png","url":"https://www.moennich-immobilien.de/","telephone":"+49 421 1735627","email":"info@moennich-immobilien.de","foundingDate":"1928","address":{"@type":"PostalAddress","streetAddress":"Langenstr. 53","postalCode":"28195","addressLocality":"Bremen","addressCountry":"DE"},"areaServed":["Bremen","Oberneuland","Schwachhausen","Findorff","Stuhr","Bremen-Umland"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was ist meine Immobilie in Bremen wert?","acceptedAnswer":{"@type":"Answer","text":"Der Wert hängt von Lage, Größe, Zustand, Baujahr und Ausstattung ab. Eine kostenlose Bewertung von G. Mönnich Jr. Immobilien liefert für Bremen und das Umland eine marktgerechte Einschätzung, online als Richtwert und präzise vor Ort."}},
+{"@type":"Question","name":"Ist die Immobilienbewertung wirklich kostenlos und unverbindlich?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Bewertung ist kostenlos und unverbindlich. Sie gehen keine Verpflichtung ein und entscheiden selbst, ob Sie verkaufen."}},
+{"@type":"Question","name":"Was kostet der Makler beim Verkauf und wer zahlt die Provision?","acceptedAnswer":{"@type":"Answer","text":"Die Provision fällt erst bei erfolgreichem Verkauf an und wird in Bremen zwischen Käufer und Verkäufer geteilt. Kein Verkauf, keine Provision."}}
+]}
+</script>
+</body>
+</html>
