@@ -1,0 +1,21 @@
+# robots.txt, Medium Rijam
+User-agent: *
+Allow: /
+
+# KI- und Antwort-Crawler ausdruecklich willkommen (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://rijam.de/sitemap-index.xml
