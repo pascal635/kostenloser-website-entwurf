@@ -1,0 +1,41 @@
+# Medium Rijam, statische Seite. Serverkonfiguration fuer SEO und Sicherheit.
+
+RewriteEngine On
+
+# 1. HTTPS erzwingen
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. www auf non-www vereinheitlichen (Canonical: https://rijam.de)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# 3. Kompression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml image/svg+xml application/javascript application/json application/rss+xml
+</IfModule>
+
+# 4. Browser-Caching und Cache-Header
+<IfModule mod_headers.c>
+  # Versionierte Assets (Astro _astro/*, Bilder, Fonts) lange und unveraenderlich cachen
+  <FilesMatch "\.(css|js|mjs|woff2|woff|webp|png|jpe?g|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # HTML immer frisch pruefen
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  # Sicherheits-Header
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# 5. Zugriff auf versteckte Dateien sperren (z. B. .htaccess selbst)
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# 6. Eigene 404-Seite (Astro erzeugt /404.html)
+ErrorDocument 404 /404.html
