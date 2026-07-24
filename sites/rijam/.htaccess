@@ -2,6 +2,9 @@
 
 RewriteEngine On
 
+# Zeichensatz auch im HTTP-Header mitgeben (SEO: Content-Type; charset=UTF-8)
+AddDefaultCharset UTF-8
+
 # 1. HTTPS erzwingen
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -9,6 +12,9 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # 2. www auf non-www vereinheitlichen (Canonical: https://rijam.de)
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# 2b. Alte Handlesung-URL dauerhaft auf Handlesen (301)
+RewriteRule ^leistungen/handlesung/?$ /leistungen/handlesen/ [R=301,L]
 
 # 3. Kompression
 <IfModule mod_deflate.c>
