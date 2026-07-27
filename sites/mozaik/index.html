@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gebäudereinigung Rheine | Unterhaltsreinigung | Mozaik</title>
+<meta name="description" content="Gebäudereinigung in Rheine, Ibbenbüren und Steinfurt. Wohnanlagen, Kitas, Büros und Baustellen. Feste Ansprechperson, Angebot in 24 Stunden. Jetzt anfragen.">
+<link rel="canonical" href="https://mozaikreinigung.de/">
+<!-- Entwurfsfassung auf dev.likovo.de: darf nicht indexiert werden.
+     Vor dem Livegang auf der Kundendomain auf "index,follow" umstellen. -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="geo.region" content="DE-NW">
+<meta name="geo.placename" content="Rheine">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Mozaik Gebäudereinigung">
+<meta property="og:title" content="Gebäudereinigung Rheine | Unterhaltsreinigung | Mozaik">
+<meta property="og:description" content="Laufende Reinigung von Wohnanlagen, Kitas, Büros und Baustellen in Rheine, Ibbenbüren und Steinfurt. Feste Ansprechperson, Angebot in 24 Stunden.">
+<meta property="og:url" content="https://mozaikreinigung.de/">
+<meta property="og:image" content="https://mozaikreinigung.de/bilder/hero-gebaeudereinigung-rheine-turnhalle-desktop.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="bilder/mozaik-gebaeudereinigung-favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="bilder/mozaik-gebaeudereinigung-favicon.png">
+
+<link rel="preload" as="font" type="font/woff2" href="schriften/inter-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="bilder/hero-gebaeudereinigung-rheine-turnhalle-desktop.webp" media="(min-width:769px)">
+<link rel="preload" as="image" href="bilder/hero-gebaeudereinigung-rheine-turnhalle-mobil.webp" media="(max-width:768px)">
+
+<style>
+/* Inter selbst gehostet, kein Aufruf an Google. Variabler Schnitt 400 bis 700,
+   Subset Latin, deckt alle deutschen Umlaute und Anführungszeichen ab. */
+@font-face{
+  font-family:'Inter';
+  font-style:normal;
+  font-weight:400 700;
+  font-display:swap;
+  src:url('schriften/inter-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,
+    U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+:root{
+  --navy-900:#1B2C43; --navy-800:#22354F; --navy-700:#284060; --navy-500:#3A5A85;
+  --navy-300:#7D95B5; --navy-50:#EEF2F8;
+  --gelb-500:#F8D870; --gelb-600:#EFC647; --gelb-100:#FEF6DC;
+  --grau-900:#1A1D21; --grau-600:#5A6B80; --grau-400:#8A9099; --grau-200:#E3E7EC;
+  --grau-100:#EDEFF3; --grau-50:#F7F8FA;
+  --weiss:#fff; --erfolg:#1F7A4D; --fehler:#B3261E;
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;
+  --s-8:64px;--s-9:88px;--s-10:112px;--s-11:144px;
+  --r-sm:8px;--r-md:10px;--r-lg:16px;--r-xl:24px;--r-full:999px;
+  --t:180ms cubic-bezier(.4,0,.2,1);
+  --breite:1200px;
+  --foto:saturate(.94) contrast(1.04);
+  --schleier:linear-gradient(to top,rgba(27,44,67,.72),rgba(27,44,67,.15) 55%,transparent 80%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:17px;line-height:1.65;color:var(--navy-700);background:var(--weiss);
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- Typo ---------- */
+h1,h2,h3,h4{color:var(--navy-900)}
+h1{font-size:60px;font-weight:700;line-height:1.05;letter-spacing:-.025em}
+h2{font-size:42px;font-weight:700;line-height:1.14;letter-spacing:-.02em}
+h3{font-size:25px;font-weight:600;line-height:1.3}
+h4{font-size:19px;font-weight:600;line-height:1.4}
+.lead{font-size:20px;line-height:1.6;color:var(--grau-600)}
+.klein{font-size:14px;line-height:1.5;color:var(--grau-600)}
+p{max-width:66ch}
+
+/* Eyebrow mit gelbem Akzentstrich, gibt jeder Sektion einen ruhigen Auftakt */
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--navy-500);display:flex;align-items:center;gap:var(--s-3);margin-bottom:var(--s-4)}
+.eyebrow::before{content:'';width:28px;height:3px;background:var(--gelb-500);
+  border-radius:2px;flex:none}
+.dunkel .eyebrow{color:var(--gelb-500)}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--breite);margin:0 auto;padding:0 var(--s-5)}
+section{padding:var(--s-10) 0}
+.grau{background:var(--grau-50)}
+.dunkel{background:var(--navy-700);color:var(--weiss)}
+.dunkel h2,.dunkel h3,.dunkel h4{color:var(--weiss)}
+.dunkel .lead{color:rgba(255,255,255,.82)}
+.kopfblock{margin-bottom:var(--s-8);max-width:66ch}
+.kopfblock h2{margin-bottom:var(--s-4)}
+.raster{display:grid;gap:var(--s-6)}
+.r-2{grid-template-columns:repeat(2,1fr)}
+.r-3{grid-template-columns:repeat(3,1fr)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);
+  font:600 16px/1 'Inter',sans-serif;letter-spacing:.01em;padding:18px 30px;
+  border-radius:var(--r-md);border:1.5px solid transparent;cursor:pointer;
+  text-decoration:none;transition:var(--t);white-space:nowrap}
+.btn-primaer{background:var(--gelb-500);color:var(--navy-700);border-color:var(--gelb-500);
+  box-shadow:0 2px 0 rgba(27,44,67,.12)}
+.btn-primaer:hover{background:var(--gelb-600);border-color:var(--gelb-600);transform:translateY(-1px);
+  box-shadow:0 6px 16px rgba(239,198,71,.4)}
+.btn-primaer:active{transform:translateY(0)}
+.btn-sekundaer{background:transparent;color:var(--navy-700);border-color:var(--navy-300)}
+.btn-sekundaer:hover{background:var(--navy-700);color:var(--weiss);border-color:var(--navy-700)}
+.dunkel .btn-sekundaer{color:var(--weiss);border-color:rgba(255,255,255,.5)}
+.dunkel .btn-sekundaer:hover{background:var(--weiss);color:var(--navy-700);border-color:var(--weiss)}
+.btn:focus-visible{outline:3px solid var(--navy-500);outline-offset:3px}
+.dunkel .btn:focus-visible{outline-color:var(--gelb-500)}
+.aktionen{display:flex;gap:var(--s-3);flex-wrap:wrap}
+.icon{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.icon-sm{width:17px;height:17px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--gelb-500);color:var(--navy-700);
+  padding:12px 20px;font-weight:600;z-index:100;border-radius:0 0 var(--r-md) 0}
+.skip:focus{left:0}
+
+/* ---------- Topbar + Header ---------- */
+.topbar{background:var(--navy-900);color:rgba(255,255,255,.8);font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:var(--s-3);
+  flex-wrap:wrap;padding-top:11px;padding-bottom:11px}
+.topbar a{color:var(--weiss);text-decoration:none;font-weight:600}
+.topbar a:hover{color:var(--gelb-500)}
+
+.header{background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--grau-200);position:sticky;top:0;z-index:50}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;
+  gap:var(--s-5);padding-top:var(--s-3);padding-bottom:var(--s-3)}
+.header img{height:46px;width:auto}
+.header nav{display:flex;gap:var(--s-6);flex-wrap:wrap}
+.header nav a{text-decoration:none;font-weight:500;font-size:16px;padding:8px 0;
+  border-bottom:2px solid transparent;transition:var(--t)}
+.header nav a:hover,.header nav a:focus-visible{border-bottom-color:var(--gelb-500)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--navy-800)}
+.hero > picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center 62%;filter:var(--foto)}
+.hero::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(20,33,51,.9) 0%,rgba(20,33,51,.72) 38%,rgba(27,44,67,.42) 62%,rgba(27,44,67,.3) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 520px;
+  gap:var(--s-8);align-items:center;
+  padding-top:var(--s-9);padding-bottom:var(--s-9);min-height:700px}
+.hero-text{color:var(--weiss)}
+.hero-text h1{color:var(--weiss);margin-bottom:var(--s-5);font-size:52px;
+  text-wrap:balance;max-width:13ch}
+.hero-text .lead{color:rgba(255,255,255,.88);margin-bottom:var(--s-6);max-width:36ch}
+.hero-text .eyebrow{color:var(--gelb-500)}
+.hero-punkte{list-style:none;display:flex;flex-direction:column;gap:var(--s-3);
+  margin-bottom:var(--s-6)}
+.hero-punkte li{display:flex;gap:var(--s-3);align-items:flex-start;font-size:16px;
+  color:rgba(255,255,255,.92);line-height:1.45}
+.hero-punkte .icon{color:var(--gelb-500);margin-top:3px}
+.siegel{display:inline-flex;align-items:center;gap:var(--s-3);
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--r-md);padding:var(--s-3) var(--s-5);backdrop-filter:blur(6px)}
+.siegel .wert{font-size:26px;font-weight:700;color:var(--weiss);line-height:1}
+.siegel .klein{color:rgba(255,255,255,.8)}
+.sterne{color:var(--gelb-500);letter-spacing:2px;font-size:15px}
+
+/* ---------- Lead-Formular ---------- */
+.lf{background:var(--weiss);border-radius:var(--r-xl);padding:var(--s-7);
+  box-shadow:0 28px 70px rgba(10,18,30,.4)}
+.lf-kopf h2{font-size:26px;line-height:1.2;letter-spacing:-.015em;margin-bottom:var(--s-2)}
+.lf-kopf p{font-size:14px;color:var(--grau-600);max-width:none}
+.lf-fortschritt{margin:var(--s-5) 0 var(--s-3)}
+.lf-bahn{height:7px;background:var(--grau-200);border-radius:var(--r-full);overflow:hidden}
+.lf-fuellung{height:100%;width:20%;background:var(--navy-700);border-radius:var(--r-full);
+  transition:width 280ms cubic-bezier(.4,0,.2,1)}
+.lf-zaehler{font-size:13px;color:var(--grau-600);margin-top:var(--s-2);display:block}
+.lf-zaehler b{color:var(--navy-700)}
+
+.lf-schritt{border:0;padding:0;margin:0;min-width:0}
+.lf-frage{display:block;font-size:18px;font-weight:600;color:var(--navy-700);
+  background:var(--navy-50);border:2px solid var(--navy-300);border-radius:12px;
+  padding:14px 16px;margin-bottom:var(--s-5);line-height:1.35}
+.lf-kacheln{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3)}
+.lf-kachel{display:flex;align-items:center;min-height:60px;text-align:left;
+  background:var(--weiss);border:1.5px solid var(--grau-200);border-radius:12px;
+  padding:12px 16px;font:500 15px/1.35 'Inter',sans-serif;color:var(--navy-700);
+  cursor:pointer;transition:var(--t)}
+.lf-kachel:hover{border-color:var(--navy-500);background:var(--navy-50);transform:translateY(-1px)}
+.lf-kachel:focus-visible{outline:3px solid var(--navy-500);outline-offset:2px}
+.lf-kachel[aria-pressed=true]{border-color:var(--navy-700);background:var(--navy-50);
+  box-shadow:inset 0 0 0 1px var(--navy-700)}
+.lf-breit{grid-column:span 2}
+
+.lf-zurueck{margin-top:var(--s-5);background:none;border:0;padding:6px 0;cursor:pointer;
+  font:600 14px/1 'Inter',sans-serif;color:var(--grau-600);display:inline-flex;
+  align-items:center;gap:var(--s-2);transition:var(--t)}
+.lf-zurueck:hover{color:var(--navy-700)}
+.lf-zurueck:focus-visible{outline:3px solid var(--navy-500);outline-offset:3px;border-radius:4px}
+.lf-mikro{margin-top:var(--s-4);text-align:center;font-size:13px;color:var(--grau-600)}
+.lf-zusammenfassung{background:var(--navy-50);border-radius:var(--r-md);padding:var(--s-4);
+  font-size:14px;color:var(--navy-700);margin-bottom:var(--s-5);line-height:1.6}
+.lf-zusammenfassung b{font-weight:600}
+.lf-danke{text-align:center;padding:var(--s-6) 0}
+.lf-danke .haken{width:64px;height:64px;border-radius:var(--r-full);background:#E7F3EC;
+  color:var(--erfolg);display:grid;place-items:center;margin:0 auto var(--s-5)}
+.lf-danke .haken svg{width:32px;height:32px;stroke-width:2.5}
+.lf-danke h3{margin-bottom:var(--s-3)}
+.lf-danke p{margin:0 auto;color:var(--grau-600)}
+
+/* Ohne JavaScript: alle Schritte sichtbar, normales Formular */
+.lf-js .lf-schritt{display:none}
+.lf-js .lf-schritt.aktiv{display:block}
+.lf-js .lf-absenden-immer{display:none}
+
+/* ---------- Trustbar ---------- */
+.trustbar{background:var(--navy-900);color:var(--weiss);padding:var(--s-6) 0}
+.trustbar ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-5)}
+.trustbar li{display:flex;align-items:flex-start;gap:var(--s-3);font-size:15px;
+  font-weight:500;line-height:1.45}
+.trustbar .icon{color:var(--gelb-500);margin-top:1px}
+
+/* ---------- Logoband ---------- */
+.logoband{padding:var(--s-9) 0;border-bottom:1px solid var(--grau-200)}
+.logoband > .wrap > p{text-align:center;font-size:15px;color:var(--grau-600);
+  margin:0 auto var(--s-7);max-width:60ch}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s-7) var(--s-5);
+  align-items:center;justify-items:center}
+/* Feste Box plus contain, damit breite und quadratische Logos optisch gleich groß wirken */
+.logos img{width:100%;max-width:160px;height:58px;object-fit:contain;
+  filter:grayscale(1);opacity:.85;transition:var(--t)}
+.logos img:hover{filter:grayscale(0);opacity:1;transform:scale(1.04)}
+
+/* ---------- Vergleich ---------- */
+.vergleich{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6)}
+.spalte{border-radius:var(--r-xl);padding:var(--s-7)}
+.spalte.neg{background:var(--weiss);border:1px solid var(--grau-200)}
+.spalte.pos{background:var(--navy-700);color:var(--weiss);
+  box-shadow:0 18px 44px rgba(27,44,67,.22)}
+.spalte h3{font-size:20px;margin-bottom:var(--s-5)}
+.spalte.pos h3{color:var(--weiss)}
+.spalte ul{list-style:none;display:flex;flex-direction:column;gap:var(--s-4)}
+.spalte li{display:flex;gap:var(--s-3);align-items:flex-start;font-size:16px;line-height:1.5}
+.spalte.neg li{color:var(--grau-600)}
+.spalte.neg .icon{color:var(--grau-400);margin-top:4px}
+.spalte.pos li{color:rgba(255,255,255,.93)}
+.spalte.pos .icon{color:var(--gelb-500);margin-top:4px}
+
+/* ---------- Leistungskarten ---------- */
+.karte{background:var(--weiss);border:1px solid var(--grau-200);border-radius:var(--r-xl);
+  overflow:hidden;transition:var(--t);display:flex;flex-direction:column}
+.karte:hover{border-color:var(--navy-300);transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(27,44,67,.13)}
+.karte-bild{aspect-ratio:3/2;overflow:hidden;position:relative;background:var(--navy-50)}
+.karte-bild img{width:100%;height:100%;object-fit:cover;filter:var(--foto);transition:var(--t)}
+.karte:hover .karte-bild img{transform:scale(1.035)}
+.karte-inhalt{padding:var(--s-6);display:flex;flex-direction:column;flex:1}
+.karte .eyebrow{margin-bottom:var(--s-3);font-size:12px}
+.karte h3{font-size:20px;margin-bottom:var(--s-3)}
+.karte-inhalt > p{font-size:15px;color:var(--grau-600);max-width:none}
+.karte ul{list-style:none;margin-top:var(--s-5);display:flex;flex-direction:column;gap:var(--s-3)}
+.karte ul li{display:flex;gap:var(--s-3);align-items:flex-start;font-size:15px;color:var(--grau-600)}
+.karte ul .icon{color:var(--navy-500);margin-top:3px}
+.karte .mehr{margin-top:auto;padding-top:var(--s-6);font-size:15px;font-weight:600;
+  color:var(--navy-700);text-decoration:none;align-self:flex-start;
+  display:inline-flex;align-items:center;gap:var(--s-2);transition:var(--t)}
+.karte .mehr span{border-bottom:2px solid var(--gelb-500);padding-bottom:2px}
+.karte .mehr:hover{color:var(--navy-500)}
+.karte .mehr:hover .icon{transform:translateX(3px)}
+.karte .mehr .icon{transition:var(--t)}
+.nachsatz{margin-top:var(--s-7);font-size:16px;color:var(--grau-600);max-width:none}
+
+/* ---------- Objektgalerie ---------- */
+.galerie-band{background:var(--navy-900);color:var(--weiss);padding:var(--s-10) 0;overflow:hidden}
+.galerie-kopf{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:var(--s-6);margin-bottom:var(--s-7);flex-wrap:wrap}
+.galerie-kopf h2{color:var(--weiss);max-width:20ch}
+.galerie-kopf p{color:rgba(255,255,255,.75);max-width:36ch;font-size:16px}
+.galerie{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s-4)}
+.galerie figure{position:relative;border-radius:var(--r-lg);overflow:hidden;
+  aspect-ratio:4/5;transition:var(--t)}
+.galerie img{width:100%;height:100%;object-fit:cover;filter:var(--foto);transition:var(--t)}
+.galerie figure:hover img{transform:scale(1.05)}
+.galerie figcaption{position:absolute;left:0;right:0;bottom:0;padding:var(--s-4);
+  font-size:14px;font-weight:600;color:var(--weiss);
+  background:linear-gradient(to top,rgba(15,26,42,.9),transparent)}
+
+/* ---------- Zahlen ---------- */
+.galerie-band .zahlen{margin-top:var(--s-9);padding-top:var(--s-8);
+  border-top:1px solid rgba(255,255,255,.14)}
+.zahlen{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-6)}
+.zahlen > div{padding-left:var(--s-5);border-left:3px solid var(--gelb-500)}
+.zahlen .wert{display:block;font-size:60px;font-weight:700;line-height:1;
+  letter-spacing:-.035em;color:var(--weiss)}
+.zahlen .txt{display:block;font-size:15px;color:rgba(255,255,255,.78);margin-top:var(--s-3);
+  line-height:1.45}
+
+/* ---------- Zitate ---------- */
+.zitate{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-5)}
+.zitat{background:var(--weiss);border:1px solid var(--grau-200);border-radius:var(--r-xl);
+  padding:var(--s-6);display:flex;flex-direction:column}
+.zitat.gross{grid-column:span 3;background:var(--navy-700);border-color:var(--navy-700);
+  color:var(--weiss);padding:var(--s-8);box-shadow:0 18px 44px rgba(27,44,67,.2)}
+.zitat blockquote{font-size:17px;line-height:1.6;color:var(--navy-700)}
+.zitat.gross blockquote{font-size:27px;line-height:1.45;color:var(--weiss);font-weight:500;
+  letter-spacing:-.01em;max-width:34ch}
+.zitat figcaption{margin-top:auto;padding-top:var(--s-5);
+  border-top:1px solid var(--grau-200);display:flex;flex-wrap:wrap;gap:var(--s-2);
+  align-items:baseline;margin-top:var(--s-5)}
+.zitat.gross figcaption{border-top-color:rgba(255,255,255,.22);margin-top:var(--s-6)}
+.zitat figcaption b{font-weight:600;color:var(--navy-900)}
+.zitat.gross figcaption b{color:var(--weiss)}
+.zitat figcaption span{font-size:14px;color:var(--grau-600)}
+.zitat.gross figcaption span{color:rgba(255,255,255,.7)}
+
+.google{margin-top:var(--s-6);background:var(--weiss);border:1px solid var(--grau-200);
+  border-radius:var(--r-xl);padding:var(--s-7)}
+.google-kopf{display:flex;align-items:center;gap:var(--s-5);flex-wrap:wrap;margin-bottom:var(--s-6)}
+.google-kopf .note{font-size:46px;font-weight:700;color:var(--navy-900);line-height:1;
+  letter-spacing:-.03em}
+.google-kopf h3{margin-left:auto;font-size:19px}
+.google ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-6)}
+.google li{font-size:15px;color:var(--grau-600);line-height:1.6;
+  padding-left:var(--s-4);border-left:2px solid var(--grau-200)}
+.google li b{display:block;margin-top:var(--s-3);color:var(--navy-900);font-weight:600}
+
+/* ---------- Ablauf ---------- */
+.schritte{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-6)}
+.schritt{padding-top:var(--s-5);border-top:3px solid var(--grau-200);transition:var(--t)}
+.schritt:hover{border-top-color:var(--gelb-500)}
+.schritt .nr{display:block;font-size:15px;font-weight:700;color:var(--navy-300);
+  letter-spacing:.1em;margin-bottom:var(--s-4)}
+.schritt h3{font-size:19px;margin-bottom:var(--s-3)}
+.schritt p{font-size:16px;color:var(--grau-600);max-width:none}
+
+/* ---------- Team ---------- */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6);align-items:stretch}
+.person{background:var(--navy-700);color:var(--weiss);border-radius:var(--r-xl);
+  padding:var(--s-7);display:flex;gap:var(--s-6);align-items:center;flex-wrap:wrap;
+  box-shadow:0 18px 44px rgba(27,44,67,.2)}
+.person h3{color:var(--weiss);font-size:23px}
+.person .rolle{font-size:15px;color:rgba(255,255,255,.75);margin-top:var(--s-1)}
+.person img{width:132px;height:132px;border-radius:var(--r-full);object-fit:cover;
+  background:var(--navy-500);flex:none}
+.person .tel{font-size:25px;font-weight:700;color:var(--gelb-500);text-decoration:none;
+  display:block;margin-top:var(--s-4)}
+.person .tel:hover{color:var(--weiss)}
+.person .mail{color:rgba(255,255,255,.8);font-size:15px}
+.gebiet{background:var(--weiss);border:1px solid var(--grau-200);border-radius:var(--r-xl);
+  padding:var(--s-7);display:flex;flex-direction:column;justify-content:center}
+.gebiet h3{font-size:20px;margin-bottom:var(--s-4)}
+.orte{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-top:var(--s-5)}
+.orte span{background:var(--navy-50);color:var(--navy-700);font-size:14px;font-weight:600;
+  padding:7px 14px;border-radius:var(--r-full)}
+.team-fotos{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6);margin-top:var(--s-6)}
+.team-fotos figure{border-radius:var(--r-xl);overflow:hidden;position:relative}
+.team-fotos img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;filter:var(--foto)}
+
+/* ---------- Preis ---------- */
+.preisrahmen{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-5);margin:var(--s-7) 0}
+.preisrahmen div{background:var(--weiss);border:1px solid var(--grau-200);
+  border-radius:var(--r-lg);padding:var(--s-5)}
+.preisrahmen b{display:block;color:var(--navy-900);font-size:17px;margin-bottom:var(--s-2)}
+.preisrahmen span{font-size:14px;color:var(--grau-600);line-height:1.5}
+.hinweisbox{background:var(--gelb-100);border-left:5px solid var(--gelb-600);
+  padding:var(--s-6) var(--s-7);border-radius:0 var(--r-lg) var(--r-lg) 0;margin-top:var(--s-7)}
+.hinweisbox h3{font-size:20px;margin-bottom:var(--s-4)}
+.preis-zahl{color:var(--navy-900);font-weight:700}
+
+/* ---------- FAQ ---------- */
+.faq{border-top:1px solid var(--grau-200);max-width:920px}
+.faq details{border-bottom:1px solid var(--grau-200)}
+.faq summary{list-style:none;cursor:pointer;padding:var(--s-6) var(--s-8) var(--s-6) 0;
+  font-size:19px;font-weight:600;color:var(--navy-700);position:relative;transition:var(--t)}
+.faq summary:hover{color:var(--navy-500)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'';position:absolute;right:10px;top:50%;width:15px;height:2.5px;
+  background:var(--navy-500);transform:translateY(-50%);border-radius:2px}
+.faq summary::before{content:'';position:absolute;right:16.25px;top:50%;width:2.5px;height:15px;
+  background:var(--navy-500);transform:translateY(-50%);transition:var(--t);border-radius:2px}
+.faq details[open] summary{color:var(--navy-900)}
+.faq details[open] summary::before{transform:translateY(-50%) scaleY(0)}
+.faq details p{padding-bottom:var(--s-6);color:var(--grau-600)}
+.faq summary:focus-visible{outline:3px solid var(--navy-500);outline-offset:-3px;border-radius:var(--r-sm)}
+
+/* ---------- Kontakt / Abschluss ---------- */
+.abschluss{display:grid;grid-template-columns:1.15fr 1fr;gap:var(--s-8);align-items:center}
+.abschluss-text h2{margin-bottom:var(--s-4)}
+.abschluss-text .lead{margin-bottom:var(--s-6)}
+.direkt .mail{display:inline-block;font-size:15px;color:rgba(255,255,255,.85)}
+.feld{display:flex;flex-direction:column;gap:var(--s-2);margin-bottom:var(--s-5)}
+.feld label{font-size:14px;font-weight:600;color:var(--navy-700)}
+.feld input,.feld select,.feld textarea{font:400 16px/1.6 'Inter',sans-serif;color:var(--navy-700);
+  height:54px;padding:0 var(--s-4);background:var(--weiss);border:1px solid var(--grau-200);
+  border-radius:var(--r-md);transition:var(--t);width:100%}
+.feld textarea{height:auto;padding:var(--s-4);min-height:110px;resize:vertical}
+.feld input::placeholder,.feld textarea::placeholder{color:var(--grau-400)}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;
+  border-color:var(--navy-700);box-shadow:0 0 0 3px var(--navy-50)}
+.feld .hinweis{font-size:13px;color:var(--grau-600)}
+.feld.hat-fehler input,.feld.hat-fehler textarea{border-color:var(--fehler);
+  box-shadow:0 0 0 3px rgba(179,38,30,.12)}
+.mikro{margin-top:var(--s-4);text-align:center;font-size:14px;color:var(--grau-600)}
+.direkt{background:var(--navy-700);color:var(--weiss);border-radius:var(--r-xl);padding:var(--s-7);
+  box-shadow:0 18px 44px rgba(27,44,67,.2)}
+.direkt h3{color:var(--weiss);font-size:20px;margin-bottom:var(--s-5)}
+.direkt a{color:var(--weiss)}
+.direkt .tel{display:block;font-size:29px;font-weight:700;text-decoration:none;
+  margin:var(--s-3) 0;color:var(--gelb-500);letter-spacing:-.01em}
+.direkt .tel:hover{color:var(--weiss)}
+.direkt address{font-style:normal;font-size:15px;color:rgba(255,255,255,.8);line-height:1.9}
+.direkt hr{border:0;border-top:1px solid rgba(255,255,255,.2);margin:var(--s-6) 0}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--navy-900);color:rgba(255,255,255,.75);padding:var(--s-9) 0 var(--s-6)}
+.footer .spalten{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:var(--s-7)}
+.footer img{height:44px;width:auto;margin-bottom:var(--s-5)}
+.footer h2{color:var(--weiss);font-size:15px;font-weight:600;margin-bottom:var(--s-4);letter-spacing:0}
+.footer ul{list-style:none}
+.footer a{color:rgba(255,255,255,.75);text-decoration:none;font-size:15px;
+  display:inline-block;padding:5px 0;line-height:1.4}
+.footer li{line-height:1.4}
+.footer a:hover{color:var(--gelb-500)}
+.footer a:focus-visible{outline:2px solid var(--gelb-500);outline-offset:3px;border-radius:3px}
+.footer p{font-size:15px;max-width:36ch}
+.footer .unten{margin-top:var(--s-8);padding-top:var(--s-5);
+  border-top:1px solid rgba(255,255,255,.15);font-size:14px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--s-3)}
+
+.mobilbar{display:none}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1100px){
+  h1{font-size:46px} h2{font-size:34px}
+  .hero .wrap{min-height:0;grid-template-columns:1fr 440px;gap:var(--s-6)}
+  .lf{padding:var(--s-6)}
+  .lf-kopf h2{font-size:23px}
+  .galerie{grid-template-columns:repeat(3,1fr)}
+  .galerie figure:nth-child(n+4){display:none}
+  .logos{grid-template-columns:repeat(5,1fr);gap:var(--s-6) var(--s-4)}
+  .logos img{height:44px}
+  .trustbar ul{grid-template-columns:repeat(2,1fr)}
+  .r-3,.zitate,.google ul{grid-template-columns:repeat(2,1fr)}
+  .abschluss{grid-template-columns:1fr;gap:var(--s-6)}
+  .zitat.gross{grid-column:span 2}
+  .schritte,.preisrahmen,.zahlen{grid-template-columns:repeat(2,1fr)}
+  .zahlen{gap:var(--s-7) var(--s-6)}
+  .footer .spalten{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  body{font-size:16px;padding-bottom:86px}
+  h1{font-size:33px} h2{font-size:26px} h3{font-size:21px} h4{font-size:18px}
+  .lead{font-size:17px}
+  section{padding:var(--s-8) 0}
+  .kopfblock{margin-bottom:var(--s-7)}
+  .header nav{display:none}
+  .header img{height:38px}
+  .header .btn{padding:14px 18px;font-size:15px}
+  /* Mobil zählt, dass das Formular früh sichtbar ist. Der Textblock wird deshalb
+     gekürzt, die drei Punkte stehen direkt darunter ohnehin in der Trustbar. */
+  .hero .wrap{min-height:0;grid-template-columns:1fr;gap:var(--s-5);
+    padding-top:var(--s-5);padding-bottom:var(--s-6)}
+  .hero-text h1{margin-bottom:var(--s-3);font-size:29px;max-width:none}
+  .hero-text .lead{margin-bottom:var(--s-4);line-height:1.5;font-size:16px;max-width:none}
+  .hero-text .eyebrow{font-size:11px;letter-spacing:.07em;margin-bottom:var(--s-3)}
+  .hero-punkte{display:none}
+  .siegel{padding:10px var(--s-4)}
+  .siegel .wert{font-size:22px}
+  .lf{padding:var(--s-5);border-radius:var(--r-lg)}
+  .lf-kopf h2{font-size:21px}
+  .lf-kacheln{gap:var(--s-2)}
+  .lf-kachel{min-height:56px;font-size:14px;padding:10px 13px}
+  .lf-frage{font-size:16px;padding:12px 14px}
+  .hero > picture img{object-position:center 52%}
+  .hero::after{background:linear-gradient(180deg,rgba(27,44,67,.35),rgba(27,44,67,.6))}
+  .siegel{width:100%;justify-content:center}
+  .r-2,.r-3,.vergleich,.team,.abschluss,.zahlen,.schritte,.preisrahmen,
+  .google ul,.team-fotos,.zitate,.trustbar ul{grid-template-columns:1fr}
+  .zitat.gross{grid-column:span 1;padding:var(--s-6)}
+  .zitat.gross blockquote{font-size:21px}
+  /* setzt die 1100er-Regel zurück, sonst bleiben nur drei Kacheln übrig */
+  .galerie{grid-template-columns:repeat(2,1fr)}
+  .galerie figure:nth-child(-n+4){display:block}
+  .galerie figure:nth-child(n+5){display:none}
+  .logos{grid-template-columns:repeat(3,1fr);gap:var(--s-5) var(--s-4)}
+  .logos img{height:44px;max-width:120px}
+  .zahlen > div{padding-left:var(--s-4);border-left-width:3px}
+  .zahlen .wert{font-size:42px}
+  .google-kopf .note{font-size:34px}
+  .google-kopf h3{margin-left:0;width:100%}
+  .google li{padding-left:var(--s-3)}
+  .spalte,.direkt,.person,.gebiet{padding:var(--s-6)}
+  .person{gap:var(--s-5)}
+  .person img{width:92px;height:92px}
+  .footer .spalten{grid-template-columns:1fr}
+  .aktionen .btn{flex:1 1 100%}
+  .galerie-kopf{margin-bottom:var(--s-6)}
+  .mobilbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--weiss);border-top:1px solid var(--grau-200);padding:var(--s-3);
+    gap:var(--s-3);box-shadow:0 -4px 20px rgba(27,44,67,.12)}
+  .mobilbar .btn{flex:1;padding:16px 12px;font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+  .karte:hover,.btn-primaer:hover{transform:none}
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"ProfessionalService",
+      "@id":"https://mozaikreinigung.de/#betrieb",
+      "name":"Mozaik Gebäudereinigung",
+      "description":"Gebäudereinigung mit Schwerpunkt gewerbliche Unterhaltsreinigung in Rheine, Ibbenbüren und Steinfurt. Laufende Objektbetreuung für Wohnanlagen, Kitas, Büros und Praxen, dazu Bauendreinigung sowie Glas- und Fassadenreinigung.",
+      "url":"https://mozaikreinigung.de/",
+      "logo":"https://mozaikreinigung.de/bilder/mozaik-gebaeudereinigung-logo.png",
+      "image":"https://mozaikreinigung.de/bilder/hero-gebaeudereinigung-rheine-turnhalle-desktop.webp",
+      "telephone":"+4915780930918",
+      "email":"info@mozaikreinigung.de",
+      "priceRange":"€€",
+      "currenciesAccepted":"EUR",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Darbrookstraße 25",
+        "postalCode":"48431",
+        "addressLocality":"Rheine",
+        "addressRegion":"NW",
+        "addressCountry":"DE"
+      },
+      "founder":{"@type":"Person","name":"Mo Allaham"},
+      "employee":{"@type":"Person","name":"Mo Allaham","jobTitle":"Geschäftsführung"},
+      "areaServed":[
+        {"@type":"City","name":"Rheine"},
+        {"@type":"City","name":"Ibbenbüren"},
+        {"@type":"City","name":"Steinfurt"},
+        {"@type":"City","name":"Emsdetten"},
+        {"@type":"City","name":"Neuenkirchen"},
+        {"@type":"City","name":"Hörstel"},
+        {"@type":"City","name":"Salzbergen"},
+        {"@type":"AdministrativeArea","name":"Kreis Steinfurt"}
+      ],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Leistungen der Gebäudereinigung",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Unterhaltsreinigung","serviceType":"Laufende Objektbetreuung nach individuellem Reinigungsplan"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Treppenhausreinigung","serviceType":"Wohnanlagen und Gemeinschaftsflächen für Hausverwaltungen"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Kindergartenreinigung","serviceType":"Kitas und soziale Einrichtungen, Reinigung außerhalb der Betreuungszeit"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Büroreinigung","serviceType":"Büros, Kanzleien und Praxen"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Praxisreinigung","serviceType":"Arztpraxen und medizinische Einrichtungen nach Hygieneplan"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Bauendreinigung","serviceType":"Bauzwischen- und Bauendreinigung vor der Übergabe"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Grundreinigung","serviceType":"Intensivreinigung, auch maschinell auf großen Flächen"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Glasreinigung","serviceType":"Fenster, Glasfassaden und Vitrinen, inklusive Rahmen"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fassadenreinigung","serviceType":"Fassadenreinigung mit Hochdruck"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sonderreinigung","serviceType":"Individuelle und außergewöhnliche Reinigungsaufgaben"}}
+        ]
+      }
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://mozaikreinigung.de/#website",
+      "url":"https://mozaikreinigung.de/",
+      "name":"Mozaik Gebäudereinigung",
+      "inLanguage":"de-DE",
+      "publisher":{"@id":"https://mozaikreinigung.de/#betrieb"}
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://mozaikreinigung.de/#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"Was kostet Gebäudereinigung in Rheine?","acceptedAnswer":{"@type":"Answer","text":"Laufende Unterhaltsreinigung kostet marktüblich zwischen 0,80 und 3,00 Euro pro Quadratmeter je Reinigung, Einzelaufträge werden mit 25 bis 45 Euro netto pro Stunde kalkuliert. Der genaue Preis hängt von Fläche, Reinigungsintervall, Ausstattung und Verschmutzungsgrad ab. Wir sehen uns Ihr Objekt kostenlos an und nennen Ihnen dann einen Festpreis je Position."}},
+        {"@type":"Question","name":"Wie schnell bekomme ich ein Angebot?","acceptedAnswer":{"@type":"Answer","text":"Wir melden uns innerhalb von 24 Stunden nach Ihrer Anfrage. Das schriftliche Angebot bekommen Sie nach dem Ortstermin innerhalb von drei Werktagen."}},
+        {"@type":"Question","name":"Habe ich eine feste Ansprechperson?","acceptedAnswer":{"@type":"Answer","text":"Ja. Sie bekommen eine benannte Person mit direkter Durchwahl, die Ihr Objekt kennt. Kein Ticketsystem und keine wechselnden Zuständigkeiten. In Rheine ist das Mo Allaham, der Geschäftsführer."}},
+        {"@type":"Question","name":"Was passiert, wenn ich mit der Reinigung nicht zufrieden bin?","acceptedAnswer":{"@type":"Answer","text":"Sie rufen an und wir sind am nächsten Werktag im Objekt und sehen uns an, was nicht gestimmt hat. Nachgearbeitet wird ohne zusätzliche Kosten."}},
+        {"@type":"Question","name":"Zahlen Sie Ihren Mitarbeitern Tariflohn?","acceptedAnswer":{"@type":"Answer","text":"Ja. In der Gebäudereinigung gilt seit dem 1. Januar 2026 ein allgemeinverbindlicher Mindestlohn von 15,00 Euro pro Stunde in der Innenreinigung und 18,40 Euro in der Glas- und Fassadenreinigung. Wir halten uns daran, und deshalb bleiben unsere Leute auch länger als eine Saison."}},
+        {"@type":"Question","name":"Reinigen Sie auch außerhalb der Öffnungszeiten?","acceptedAnswer":{"@type":"Answer","text":"Ja. Büros und Praxen reinigen wir in der Regel nach Feierabend, Kitas außerhalb der Betreuungszeiten und Verkaufsflächen vor Ladenöffnung. Den Zeitraum legen wir gemeinsam fest, bevor wir anfangen."}},
+        {"@type":"Question","name":"Wie lange läuft ein Reinigungsvertrag?","acceptedAnswer":{"@type":"Answer","text":"Das legen wir gemeinsam fest. Üblich sind zwölf Monate mit einer Kündigungsfrist von drei Monaten."}},
+        {"@type":"Question","name":"Sind Sie versichert?","acceptedAnswer":{"@type":"Answer","text":"Ja, wir haben eine Betriebshaftpflichtversicherung. Schäden, die bei der Reinigung entstehen, sind abgedeckt."}},
+        {"@type":"Question","name":"Welche Objekte betreuen Sie?","acceptedAnswer":{"@type":"Answer","text":"Wohnanlagen und Treppenhäuser für Hausverwaltungen, Kindertagesstätten und soziale Einrichtungen, Büros, Kanzleien und Arztpraxen, Baustellen vor der Übergabe, Sporthallen, Fitnessstudios und Verkaufsflächen. Dazu Fenster-, Glas- und Fassadenreinigung für alle Objektarten und für Privatkunden."}},
+        {"@type":"Question","name":"In welchen Orten sind Sie tätig?","acceptedAnswer":{"@type":"Answer","text":"Unser Kerngebiet ist Rheine, Ibbenbüren und Steinfurt mit dem gesamten Kreis Steinfurt. Dazu kommen Emsdetten, Neuenkirchen, Hörstel und Salzbergen."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Rheine · Ibbenbüren · Steinfurt und Umgebung</span>
+    <span><a href="tel:+4915780930918">01578 0930918</a> · <a href="mailto:info@mozaikreinigung.de">info@mozaikreinigung.de</a></span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="wrap">
+    <a href="#inhalt" aria-label="Mozaik Gebäudereinigung, zur Startseite">
+      <img src="bilder/mozaik-gebaeudereinigung-logo.png" width="411" height="112"
+           alt="Mozaik Gebäudereinigung Rheine">
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#team">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-primaer" href="#angebot">Angebot anfordern</a>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<!-- ============ HERO MIT LEAD-FORMULAR ============ -->
+<div class="hero">
+  <picture>
+    <source media="(max-width:768px)" srcset="bilder/hero-gebaeudereinigung-rheine-turnhalle-mobil.webp">
+    <img src="bilder/hero-gebaeudereinigung-rheine-turnhalle-desktop.webp" width="1920" height="1080"
+         alt="Mitarbeiter von Mozaik reinigt den Boden einer Sporthalle in Rheine mit einer Scheuersaugmaschine"
+         fetchpriority="high" decoding="async">
+  </picture>
+  <div class="wrap">
+
+    <div class="hero-text">
+      <span class="eyebrow">Rheine · Ibbenbüren · Steinfurt</span>
+      <h1>Gebäudereinigung, um die Sie sich nicht kümmern müssen</h1>
+      <p class="lead">Laufende Reinigung von Wohnanlagen, Kitas, Büros, Praxen und
+      Baustellen im Kreis Steinfurt.</p>
+      <ul class="hero-punkte">
+        <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Eine feste Ansprechperson für Ihr Objekt</li>
+        <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Jede Position schriftlich, mit Fläche und Intervall</li>
+        <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Keine Überraschungen auf der Rechnung</li>
+      </ul>
+      <p class="siegel">
+        <span class="wert">4,9</span>
+        <span><span class="sterne" aria-hidden="true">★★★★★</span><br>
+        <span class="klein">45 Bewertungen auf Google</span></span>
+      </p>
+    </div>
+
+    <form class="lf" id="angebot" method="post" action="#" novalidate>
+      <div class="lf-kopf">
+        <h2>Kostenloses Angebot in 60 Sekunden</h2>
+        <p>Unverbindlich · ohne Anruf · Antwort binnen 24 Std.</p>
+      </div>
+
+      <div class="lf-fortschritt" data-lf-fortschritt hidden>
+        <div class="lf-bahn"><div class="lf-fuellung" data-lf-fuellung></div></div>
+        <span class="lf-zaehler">Schritt <b data-lf-jetzt>1</b> von <span data-lf-gesamt>5</span></span>
+      </div>
+
+      <!-- Schritt 1 -->
+      <fieldset class="lf-schritt aktiv" data-schritt="1">
+        <legend class="lf-frage">Für welche Objektart benötigen Sie eine Reinigung?</legend>
+        <div class="lf-kacheln">
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Wohnanlage oder Treppenhaus">Wohnanlage / Treppenhaus</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Kita oder soziale Einrichtung">Kita / soziale Einrichtung</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Büro oder Kanzlei">Büro / Kanzlei</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Arztpraxis oder Labor">Arztpraxis / Labor</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Baustelle, Bauendreinigung">Baustelle / Bauendreinigung</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Halle, Studio oder Ladenlokal">Halle / Studio / Laden</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Privathaushalt">Privathaushalt</button>
+          <button type="button" class="lf-kachel" data-feld="objekt" data-wert="Etwas anderes">Etwas anderes</button>
+        </div>
+        <input type="hidden" name="objekt" data-wert-objekt>
+      </fieldset>
+
+      <!-- Schritt 2 -->
+      <fieldset class="lf-schritt" data-schritt="2">
+        <legend class="lf-frage">Wie groß ist die Fläche ungefähr?</legend>
+        <div class="lf-kacheln">
+          <button type="button" class="lf-kachel" data-feld="flaeche" data-wert="bis 200 m²">bis 200 m²</button>
+          <button type="button" class="lf-kachel" data-feld="flaeche" data-wert="200 bis 500 m²">200 bis 500 m²</button>
+          <button type="button" class="lf-kachel" data-feld="flaeche" data-wert="500 bis 1.000 m²">500 bis 1.000 m²</button>
+          <button type="button" class="lf-kachel" data-feld="flaeche" data-wert="über 1.000 m²">über 1.000 m²</button>
+          <button type="button" class="lf-kachel lf-breit" data-feld="flaeche" data-wert="weiß ich nicht genau">Weiß ich nicht genau</button>
+        </div>
+        <input type="hidden" name="flaeche" data-wert-flaeche>
+        <button type="button" class="lf-zurueck" data-lf-zurueck>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Zurück</button>
+      </fieldset>
+
+      <!-- Schritt 3 -->
+      <fieldset class="lf-schritt" data-schritt="3">
+        <legend class="lf-frage">Wie oft soll gereinigt werden?</legend>
+        <div class="lf-kacheln">
+          <button type="button" class="lf-kachel" data-feld="turnus" data-wert="täglich">Täglich</button>
+          <button type="button" class="lf-kachel" data-feld="turnus" data-wert="mehrmals pro Woche">Mehrmals pro Woche</button>
+          <button type="button" class="lf-kachel" data-feld="turnus" data-wert="wöchentlich">Wöchentlich</button>
+          <button type="button" class="lf-kachel" data-feld="turnus" data-wert="alle zwei Wochen oder monatlich">Alle 2 Wochen / monatlich</button>
+          <button type="button" class="lf-kachel lf-breit" data-feld="turnus" data-wert="einmalig">Einmalig, zum Beispiel Grund- oder Bauendreinigung</button>
+        </div>
+        <input type="hidden" name="turnus" data-wert-turnus>
+        <button type="button" class="lf-zurueck" data-lf-zurueck>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Zurück</button>
+      </fieldset>
+
+      <!-- Schritt 4 -->
+      <fieldset class="lf-schritt" data-schritt="4">
+        <legend class="lf-frage">Wann soll es losgehen?</legend>
+        <div class="lf-kacheln">
+          <button type="button" class="lf-kachel" data-feld="start" data-wert="so schnell wie möglich">So schnell wie möglich</button>
+          <button type="button" class="lf-kachel" data-feld="start" data-wert="innerhalb von vier Wochen">Innerhalb von 4 Wochen</button>
+          <button type="button" class="lf-kachel" data-feld="start" data-wert="in ein bis drei Monaten">In 1 bis 3 Monaten</button>
+          <button type="button" class="lf-kachel" data-feld="start" data-wert="Termin steht noch nicht fest">Steht noch nicht fest</button>
+          <button type="button" class="lf-kachel lf-breit" data-feld="start" data-wert="zunächst nur ein Preisvergleich">Ich möchte erst einmal nur Preise vergleichen</button>
+        </div>
+        <input type="hidden" name="start" data-wert-start>
+        <button type="button" class="lf-zurueck" data-lf-zurueck>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Zurück</button>
+      </fieldset>
+
+      <!-- Schritt 5 -->
+      <fieldset class="lf-schritt" data-schritt="5">
+        <legend class="lf-frage">Wohin dürfen wir das Angebot schicken?</legend>
+        <div class="lf-zusammenfassung" data-lf-zusammenfassung hidden></div>
+        <div class="feld">
+          <label for="lf-name">Ihr Name</label>
+          <input id="lf-name" name="name" type="text" autocomplete="name" placeholder="Max Mustermann" required>
+        </div>
+        <div class="feld">
+          <label for="lf-kontakt">Telefon oder E-Mail</label>
+          <input id="lf-kontakt" name="kontakt" type="text" autocomplete="tel" placeholder="0171 1234567 oder name@firma.de" required>
+          <span class="hinweis">Eines von beiden genügt.</span>
+        </div>
+        <div class="feld">
+          <label for="lf-nachricht">Noch etwas, das wir wissen sollten? (optional)</label>
+          <textarea id="lf-nachricht" name="nachricht" rows="2"
+            placeholder="Zum Beispiel: 14 Parteien, Treppenhaus wöchentlich."></textarea>
+        </div>
+        <button class="btn btn-primaer" type="submit" style="width:100%">Angebot anfordern</button>
+        <p class="lf-mikro">Kostenlos und unverbindlich. Wir melden uns innerhalb von 24 Stunden.
+        Kein Vertreterbesuch, kein Abo.</p>
+        <button type="button" class="lf-zurueck" data-lf-zurueck>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Zurück</button>
+      </fieldset>
+
+      <!-- Danke -->
+      <div class="lf-danke" data-lf-danke hidden>
+        <div class="haken"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Danke, Ihre Anfrage ist da</h3>
+        <p>Wir melden uns innerhalb von 24 Stunden. Wenn es eilt, rufen Sie direkt an:
+        <a href="tel:+4915780930918"><b>01578 0930918</b></a></p>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- ============ TRUSTBAR ============ -->
+<div class="trustbar">
+  <div class="wrap">
+    <ul>
+      <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Feste Ansprechperson für Ihr Objekt</li>
+      <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Leistungsverzeichnis mit Fläche und Intervall</li>
+      <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Angebot innerhalb von 24 Stunden</li>
+      <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tariflohn nach Gebäudereinigerhandwerk</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ LOGOBAND ============ -->
+<section class="logoband" aria-labelledby="vertrauen-titel">
+  <div class="wrap">
+    <p id="vertrauen-titel">Diese Auftraggeber vertrauen uns ihre Objekte an</p>
+    <div class="logos">
+      <img src="bilder/referenzen/referenz-logo-deutsches-rotes-kreuz.webp" alt="Deutsches Rotes Kreuz" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-cjd.webp" alt="CJD" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-wohnungsverein-rheine.webp" alt="Wohnungsverein Rheine" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-eki-kindergarten.webp" alt="EKI Sandmannshof, Kindertagesstätte" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-fliesen-logemann.webp" alt="Fliesen Logemann" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-groschek-immobilien.webp" alt="Groschek Immobilien" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-tewes-steuerberatung.webp" alt="Steuerkanzlei Tewes" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-sideka.webp" alt="Sideka" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-vl-architekten.webp" alt="VL Architekten" loading="lazy" width="320" height="120">
+      <img src="bilder/referenzen/referenz-logo-bridal-concepts.webp" alt="Bridal Concepts" loading="lazy" width="320" height="120">
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM UND WENDE ============ -->
+<section class="grau" aria-labelledby="wechsel-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Warum Auftraggeber wechseln</span>
+      <h2 id="wechsel-titel">Die ersten drei Monate laufen fast immer gut</h2>
+      <p class="lead">Danach fängt es an. Die Stammkraft ist plötzlich eine andere. Auf
+      E-Mails kommt keine Antwort. Auf der Rechnung stehen Positionen, über die nie
+      gesprochen wurde. Und wenn sich ein Mieter beschwert, müssen Sie die Antwort
+      liefern, nicht Ihr Dienstleister.</p>
+    </div>
+    <div class="vergleich">
+      <div class="spalte neg">
+        <h3>Was Auftraggeber uns erzählen</h3>
+        <ul>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Beim Vertragsabschluss war noch ein anderer Ansprechpartner da</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Jede Woche steht jemand anderes im Objekt</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Anrufe und E-Mails bleiben unbeantwortet</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Im Vertrag steht „übliche Reinigungsarbeiten". Was das heißt, merkt man erst später</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Die Preiserhöhung kam ohne Vorankündigung</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Reklamation gemeldet, danach passiert nichts</li>
+        </ul>
+      </div>
+      <div class="spalte pos">
+        <h3>Wie es bei uns läuft</h3>
+        <ul>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Eine Ansprechperson, von der Anfrage bis Jahre später</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dieselben Leute in Ihrem Objekt. Ihre Mieter kennen sie beim Namen</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sie erreichen uns direkt, nicht über ein Ticketsystem</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Jede Position steht im Angebot, mit Fläche und Intervall</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Preise gelten für die vereinbarte Laufzeit. Änderungen kündigen wir schriftlich an</li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Wenn etwas nicht stimmt, sind wir am nächsten Werktag im Objekt</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEISTUNGEN ============ -->
+<section id="leistungen" aria-labelledby="leistungen-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Leistungen</span>
+      <h2 id="leistungen-titel">Unsere Leistungen für Ihr Objekt</h2>
+      <p class="lead">Wir sortieren nicht nach Reinigungsart, sondern nach dem, was Sie
+      zu betreuen haben. Suchen Sie sich Ihren Fall heraus.</p>
+    </div>
+    <div class="raster r-3">
+
+      <article class="karte">
+        <div class="karte-bild">
+          <img src="bilder/gebaeudereinigung-rheine-wohnanlage-eingangsreinigung.webp"
+               alt="Mitarbeiter von Mozaik reinigt den Eingangsbereich einer Wohnanlage in Rheine"
+               loading="lazy" width="1200" height="800"></div>
+        <div class="karte-inhalt">
+          <span class="eyebrow">Für Hausverwaltungen</span>
+          <h3>Wohnanlagen und Treppenhäuser</h3>
+          <p>Feste Kraft je Haus, fester Turnus, eine Rechnung für alle Objekte. Sie
+          bekommen die Beschwerden nicht mehr auf den Tisch.</p>
+          <ul>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Treppenhausreinigung</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sanitär und Gemeinschaftsräume</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Außenanlagen</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Glasflächen im Treppenhaus</li>
+          </ul>
+          <a class="mehr" href="#angebot"><span>Angebot für dieses Objekt</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="karte">
+        <div class="karte-bild">
+          <img src="bilder/gebaeudereinigung-rheine-kindergartenreinigung.webp"
+               alt="Mitarbeiter von Mozaik in einer Kindertagesstätte in Rheine"
+               loading="lazy" width="1200" height="800"></div>
+        <div class="karte-inhalt">
+          <span class="eyebrow">Für Kitas und Träger</span>
+          <h3>Kindergärten, Vereine und Träger</h3>
+          <p>Wir reinigen, wenn keine Kinder im Haus sind. Das DRK, das CJD und die EKI
+          Sandmannshof arbeiten mit uns.</p>
+          <ul>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gruppenräume und Sanitär</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Spielflächen und Garderoben</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Reinigung außerhalb der Betreuungszeit</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bedarfsreinigung bei Infekten</li>
+          </ul>
+          <a class="mehr" href="#angebot"><span>Angebot für dieses Objekt</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="karte">
+        <div class="karte-bild">
+          <img src="bilder/gebaeudereinigung-rheine-bueroreinigung-konferenzraum.webp"
+               alt="Büroreinigung von Mozaik in einem Konferenzraum in Rheine"
+               loading="lazy" width="1200" height="800"></div>
+        <div class="karte-inhalt">
+          <span class="eyebrow">Für Büros und Praxen</span>
+          <h3>Arbeitsräume und Praxen</h3>
+          <p>Immer dieselbe Person, immer nach Feierabend. Sie müssen nicht darüber
+          nachdenken, wer abends in Ihren Räumen ist.</p>
+          <ul>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Büro- und Unterhaltsreinigung</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Praxisreinigung nach Hygieneplan</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Konferenz- und Empfangsbereiche</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Schlüsselverwaltung nach Absprache</li>
+          </ul>
+          <a class="mehr" href="#angebot"><span>Angebot für dieses Objekt</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="karte">
+        <div class="karte-bild">
+          <img src="bilder/gebaeudereinigung-rheine-bauendreinigung-bodenschleifen.webp"
+               alt="Zwei Mitarbeiter von Mozaik bei der Bauendreinigung mit Bodenschleifmaschine in Rheine"
+               loading="lazy" width="1200" height="800"></div>
+        <div class="karte-inhalt">
+          <span class="eyebrow">Für Bau und Handwerk</span>
+          <h3>Bauendreinigung vor der Übergabe</h3>
+          <p>Der Termin steht, und er verschiebt sich nicht. Auch am Wochenende.</p>
+          <ul>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bauzwischen- und Bauendreinigung</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Bodenschleifen und Grundreinigung</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Handwerkerspuren und Bauschutt</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Übergabefertig zur Abnahme</li>
+          </ul>
+          <a class="mehr" href="#angebot"><span>Angebot für dieses Objekt</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="karte">
+        <div class="karte-bild">
+          <img src="bilder/gebaeudereinigung-rheine-fitnessstudio-bodenreinigung.webp"
+               alt="Maschinelle Bodenreinigung von Mozaik in einem Fitnessstudio in Rheine"
+               loading="lazy" width="1200" height="800"></div>
+        <div class="karte-inhalt">
+          <span class="eyebrow">Für Hallen und Läden</span>
+          <h3>Große Flächen mit eigener Technik</h3>
+          <p>Sporthallen, Fitnessstudios und Verkaufsflächen reinigen wir mit
+          Scheuersaugmaschine und Einscheibenmaschine. Vor Ladenöffnung fertig.</p>
+          <ul>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Maschinelle Bodenreinigung</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sport- und Turnhallen</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fitnessstudios und Geräteflächen</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verkaufsflächen und Lager</li>
+          </ul>
+          <a class="mehr" href="#angebot"><span>Angebot für dieses Objekt</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <article class="karte">
+        <div class="karte-bild">
+          <img src="bilder/gebaeudereinigung-rheine-glasfassade-reinigung.webp"
+               alt="Glasreinigung einer Fassade durch Mozaik Gebäudereinigung in Rheine"
+               loading="lazy" width="1200" height="800"></div>
+        <div class="karte-inhalt">
+          <span class="eyebrow">Für alle Objekte</span>
+          <h3>Glas und Fassade</h3>
+          <p>Fenster inklusive Rahmen. Ohne dass Sie danach fragen müssen.</p>
+          <ul>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fenster- und Glasreinigung</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Glasfassaden und Vitrinen</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fassadenreinigung mit Hochdruck</li>
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Jalousien und Lamellen</li>
+          </ul>
+          <a class="mehr" href="#angebot"><span>Angebot für dieses Objekt</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+    <p class="nachsatz">Außerdem: Grundreinigung, Sonderreinigung, Gartenpflege und
+    Außenanlagen. Sagen Sie uns, was ansteht.</p>
+  </div>
+</section>
+
+<!-- ============ OBJEKTGALERIE ============ -->
+<div class="galerie-band">
+  <div class="wrap">
+    <div class="galerie-kopf">
+      <div>
+        <span class="eyebrow">Aus unseren Objekten</span>
+        <h2>So sieht unsere Arbeit wirklich aus</h2>
+      </div>
+      <p>Alle Bilder auf dieser Seite stammen aus echten Aufträgen im Kreis Steinfurt.
+      Keine Stockfotos.</p>
+    </div>
+    <div class="galerie">
+      <figure>
+        <img src="bilder/galerie/objekt-turnhalle-reinigungsmaschine.webp"
+             alt="Maschinelle Bodenreinigung in einer Sporthalle" loading="lazy" width="600" height="750">
+        <figcaption>Sporthalle</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/galerie/objekt-kirche-fensterreinigung.webp"
+             alt="Fensterreinigung in einem Kirchenraum" loading="lazy" width="600" height="750">
+        <figcaption>Kirche</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/galerie/objekt-ladenlokal-bodenreinigung.webp"
+             alt="Bodenreinigung in einem Ladenlokal" loading="lazy" width="600" height="750">
+        <figcaption>Ladenlokal</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/galerie/objekt-sonderreinigung-schutzanzug.webp"
+             alt="Sonderreinigung im Vollschutzanzug" loading="lazy" width="600" height="750">
+        <figcaption>Sonderreinigung</figcaption>
+      </figure>
+      <figure>
+        <img src="bilder/galerie/objekt-eingangsbereich-glastueren.webp"
+             alt="Reinigung von Glastüren im Eingangsbereich" loading="lazy" width="600" height="750">
+        <figcaption>Eingangsbereich</figcaption>
+      </figure>
+    </div>
+
+    <div class="zahlen">
+      <div><span class="wert">25+</span><span class="txt">Objekte in laufender Betreuung</span></div>
+      <div><span class="wert">4,9</span><span class="txt">aus 45 Bewertungen auf Google</span></div>
+      <div><span class="wert">8</span><span class="txt">Standorte mit eigenem Leiter</span></div>
+      <div><span class="wert">20</span><span class="txt">Minuten bis zu Ihrem Objekt</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ REFERENZEN ============ -->
+<section id="referenzen" class="grau" aria-labelledby="referenzen-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Referenzen</span>
+      <h2 id="referenzen-titel">Zuverlässig, gründlich, termingerecht</h2>
+      <p class="lead">Das sind nicht unsere Worte. Das sind die unserer Auftraggeber.</p>
+    </div>
+    <div class="zitate">
+      <figure class="zitat gross">
+        <blockquote>„Seit der Zusammenarbeit sind unsere Wohnanlagen stets sauber und
+        gepflegt. Besonders schätzen wir die professionelle Kommunikation und die
+        konstant hohe Qualität."</blockquote>
+        <figcaption><b>Wohnungsverein Rheine</b><span>Hausverwaltung</span></figcaption>
+      </figure>
+      <figure class="zitat">
+        <blockquote>„Die Reinigung unserer Räumlichkeiten erfolgt stets zuverlässig und
+        sehr gründlich. Besonders wichtig ist uns ein sauberes und hygienisches Umfeld
+        für die Kinder."</blockquote>
+        <figcaption><b>EKI Sandmannshof</b><span>Kindertagesstätte</span></figcaption>
+      </figure>
+      <figure class="zitat">
+        <blockquote>„Die Baustellen werden stets sauber hinterlassen und die Arbeiten
+        werden gründlich ausgeführt. Wir schätzen die flexible und unkomplizierte
+        Zusammenarbeit."</blockquote>
+        <figcaption><b>Fliesen Logemann</b><span>Handwerksbetrieb</span></figcaption>
+      </figure>
+      <figure class="zitat">
+        <blockquote>„Die Fensterreinigung unserer Büroräume wird zuverlässig und sehr
+        gründlich durchgeführt. Die Termine werden stets eingehalten."</blockquote>
+        <figcaption><b>Steuerkanzlei Tewes</b><span>Kanzlei</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="google">
+      <div class="google-kopf">
+        <span class="note">4,9</span>
+        <span><span class="sterne" aria-hidden="true">★★★★★</span><br>
+        <span class="klein">45 Bewertungen auf Google</span></span>
+        <h3>Und was Privatkunden sagen</h3>
+      </div>
+      <ul>
+        <li>„Endlich wieder glasklare Scheiben! Die Rahmen wurden mit gemacht und sie
+          waren sehr freundlich! Preis/Leistung top!"<b>Anja Heckhuis</b></li>
+        <li>„Netter Kontakt, super Arbeit geleistet zum günstigen Preis. Gerne
+          wieder."<b>Jeanine Rohlmann</b></li>
+        <li>„Super ordentliche Arbeit. Freundlich und serviceorientiert. Gerne
+          wieder!"<b>Susanne Sander</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABLAUF ============ -->
+<section id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Ablauf</span>
+      <h2 id="ablauf-titel">So läuft die Zusammenarbeit ab</h2>
+      <p class="lead">Vier Schritte. Die ersten drei kosten Sie nichts.</p>
+    </div>
+    <div class="schritte">
+      <div class="schritt"><span class="nr">SCHRITT 01</span>
+        <h3>Sie sagen uns, worum es geht</h3>
+        <p>Ein Anruf oder das Formular unten. Objekt, ungefähre Fläche, was Sie brauchen.
+        Dauert fünf Minuten.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 02</span>
+        <h3>Wir schauen es uns an</h3>
+        <p>Wir kommen vorbei und sehen uns Ihr Objekt an. Kostenlos und unverbindlich,
+        auch wenn daraus nichts wird.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 03</span>
+        <h3>Sie bekommen ein schriftliches Angebot</h3>
+        <p>Mit Fläche, Intervall und Preis für jede Position. Innerhalb von drei
+        Werktagen. Nichts, was später noch dazukommt.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 04</span>
+        <h3>Wir fangen an</h3>
+        <p>Sie bekommen Ihre Ansprechperson mit Durchwahl. Ab dann müssen Sie sich nicht
+        mehr darum kümmern.</p></div>
+    </div>
+    <div class="aktionen" style="margin-top:var(--s-8)">
+      <a class="btn btn-primaer" href="#angebot">Objekt anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM UND REGION ============ -->
+<section id="team" class="grau" aria-labelledby="team-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Ihr Ansprechpartner</span>
+      <h2 id="team-titel">Kein Callcenter. Sie rufen an, Mo geht ran.</h2>
+      <p class="lead">Mozaik ist ein Betrieb aus Rheine. Wenn in Ihrem Objekt etwas ist,
+      sind wir in zwanzig Minuten da. Sie sprechen nicht mit einer Zentrale in einer
+      anderen Stadt, sondern mit dem Menschen, der auch die Angebote schreibt.</p>
+    </div>
+    <div class="team">
+      <div class="person">
+        <img src="bilder/team/mozaik-standortleiter-rheine-moauid-allaham.webp"
+             alt="Mo Allaham, Geschäftsführung von Mozaik Gebäudereinigung in Rheine"
+             loading="lazy" width="560" height="560">
+        <div>
+          <h3>Mo Allaham</h3>
+          <p class="rolle">Geschäftsführung und Standort Rheine</p>
+          <a class="tel" href="tel:+4915780930918">01578 0930918</a>
+          <a href="mailto:info@mozaikreinigung.de" class="mail">info@mozaikreinigung.de</a>
+        </div>
+      </div>
+      <div class="gebiet">
+        <h3>Unser Einzugsgebiet</h3>
+        <p>Für Objekte im gesamten Kreis Steinfurt sind wir kurzfristig vor Ort.</p>
+        <div class="orte">
+          <span>Rheine</span><span>Ibbenbüren</span><span>Steinfurt</span>
+          <span>Emsdetten</span><span>Neuenkirchen</span><span>Hörstel</span>
+          <span>Salzbergen</span>
+        </div>
+      </div>
+    </div>
+    <div class="team-fotos">
+      <figure><img src="bilder/gebaeudereinigung-rheine-team-gruppenfoto.webp"
+        alt="Das Team von Mozaik Gebäudereinigung in Rheine" loading="lazy" width="1200" height="800"></figure>
+      <figure><img src="bilder/gebaeudereinigung-rheine-firmenfahrzeug.webp"
+        alt="Firmenfahrzeug von Mozaik Gebäudereinigung Rheine" loading="lazy" width="1200" height="800"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREIS ============ -->
+<section aria-labelledby="preis-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Preise</span>
+      <h2 id="preis-titel">Was Gebäudereinigung in Rheine kostet</h2>
+      <p class="lead">Die meisten Reinigungsfirmen sagen dazu nichts. Wir schon, auch wenn
+      wir Ihnen ohne einen Blick auf Ihr Objekt keinen genauen Preis nennen können.</p>
+    </div>
+    <p>Laufende Unterhaltsreinigung liegt marktüblich zwischen <span class="preis-zahl">0,80
+    und 3,00 Euro pro Quadratmeter</span> je Reinigung. Bei Einzelaufträgen rechnen
+    Reinigungsfirmen mit <span class="preis-zahl">25 bis 45 Euro netto pro Stunde</span>.
+    Wo Sie in dieser Spanne landen, hängt an vier Dingen. Ab etwa 1.000 Quadratmetern
+    sinkt der Quadratmeterpreis deutlich.</p>
+    <div class="preisrahmen">
+      <div><b>Fläche</b><span>Wie viele Quadratmeter werden gereinigt</span></div>
+      <div><b>Intervall</b><span>Täglich, wöchentlich oder monatlich</span></div>
+      <div><b>Ausstattung</b><span>Bodenbelag, Sanitär, Glasanteil</span></div>
+      <div><b>Verschmutzung</b><span>Wie stark das Objekt beansprucht wird</span></div>
+    </div>
+    <div class="hinweisbox">
+      <h3>Warum wir nicht die Billigsten sind</h3>
+      <p>Seit dem 1. Januar 2026 gilt in der Gebäudereinigung ein allgemeinverbindlicher
+      Mindestlohn von 15,00 Euro in der Innenreinigung und 18,40 Euro in der Glas- und
+      Fassadenreinigung. Das gilt für jeden Betrieb, unabhängig von Tarifbindung. Wer
+      deutlich darunter anbietet, rechnet entweder nicht sauber oder holt es später über
+      Nachträge zurück. Beides wird für Sie als Auftraggeber teuer.</p>
+    </div>
+    <div class="aktionen" style="margin-top:var(--s-8)">
+      <a class="btn btn-primaer" href="#angebot">Angebot für Ihr Objekt anfordern</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="grau" aria-labelledby="faq-titel">
+  <div class="wrap">
+    <div class="kopfblock">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2 id="faq-titel">Häufige Fragen zur Gebäudereinigung</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Was kostet Gebäudereinigung in Rheine?</summary>
+        <p>Laufende Unterhaltsreinigung kostet marktüblich zwischen 0,80 und 3,00 Euro pro
+        Quadratmeter je Reinigung, Einzelaufträge werden mit 25 bis 45 Euro netto pro
+        Stunde kalkuliert. Der genaue Preis hängt von Fläche, Reinigungsintervall,
+        Ausstattung und Verschmutzungsgrad ab. Wir sehen uns Ihr Objekt kostenlos an und
+        nennen Ihnen dann einen Festpreis je Position.</p>
+      </details>
+      <details>
+        <summary>Wie schnell bekomme ich ein Angebot?</summary>
+        <p>Wir melden uns innerhalb von 24 Stunden nach Ihrer Anfrage. Das schriftliche
+        Angebot bekommen Sie nach dem Ortstermin innerhalb von drei Werktagen.</p>
+      </details>
+      <details>
+        <summary>Habe ich eine feste Ansprechperson?</summary>
+        <p>Ja. Sie bekommen eine benannte Person mit direkter Durchwahl, die Ihr Objekt
+        kennt. Kein Ticketsystem und keine wechselnden Zuständigkeiten. In Rheine ist das
+        Mo Allaham, der Geschäftsführer.</p>
+      </details>
+      <details>
+        <summary>Was passiert, wenn ich mit der Reinigung nicht zufrieden bin?</summary>
+        <p>Sie rufen an und wir sind am nächsten Werktag im Objekt und sehen uns an, was
+        nicht gestimmt hat. Nachgearbeitet wird ohne zusätzliche Kosten.</p>
+      </details>
+      <details>
+        <summary>Zahlen Sie Ihren Mitarbeitern Tariflohn?</summary>
+        <p>Ja. In der Gebäudereinigung gilt seit dem 1. Januar 2026 ein
+        allgemeinverbindlicher Mindestlohn von 15,00 Euro pro Stunde in der
+        Innenreinigung und 18,40 Euro in der Glas- und Fassadenreinigung. Wir halten uns
+        daran, und deshalb bleiben unsere Leute auch länger als eine Saison.</p>
+      </details>
+      <details>
+        <summary>Reinigen Sie auch außerhalb der Öffnungszeiten?</summary>
+        <p>Ja. Büros und Praxen reinigen wir in der Regel nach Feierabend, Kitas
+        außerhalb der Betreuungszeiten und Verkaufsflächen vor Ladenöffnung. Den Zeitraum
+        legen wir gemeinsam fest, bevor wir anfangen.</p>
+      </details>
+      <details>
+        <summary>Wie lange läuft ein Reinigungsvertrag?</summary>
+        <p>Das legen wir gemeinsam fest. Üblich sind zwölf Monate mit einer
+        Kündigungsfrist von drei Monaten.</p>
+      </details>
+      <details>
+        <summary>Sind Sie versichert?</summary>
+        <p>Ja, wir haben eine Betriebshaftpflichtversicherung. Schäden, die bei der
+        Reinigung entstehen, sind abgedeckt.</p>
+      </details>
+      <details>
+        <summary>Welche Objekte betreuen Sie?</summary>
+        <p>Wohnanlagen und Treppenhäuser für Hausverwaltungen, Kindertagesstätten und
+        soziale Einrichtungen, Büros, Kanzleien und Arztpraxen, Baustellen vor der
+        Übergabe, Sporthallen, Fitnessstudios und Verkaufsflächen. Dazu Fenster-, Glas-
+        und Fassadenreinigung für alle Objektarten und für Privatkunden.</p>
+      </details>
+      <details>
+        <summary>In welchen Orten sind Sie tätig?</summary>
+        <p>Unser Kerngebiet ist Rheine, Ibbenbüren und Steinfurt mit dem gesamten Kreis
+        Steinfurt. Dazu kommen Emsdetten, Neuenkirchen, Hörstel und Salzbergen.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section id="kontakt" aria-labelledby="kontakt-titel">
+  <div class="wrap">
+    <div class="abschluss">
+      <div class="abschluss-text">
+        <span class="eyebrow">Anfrage</span>
+        <h2 id="kontakt-titel">Sagen Sie uns, um welches Objekt es geht</h2>
+        <p class="lead">Vier Klicks, dann Ihre Kontaktdaten. Wir melden uns innerhalb von
+        24 Stunden mit einem Vorschlag, wie die Betreuung Ihres Objekts aussehen kann.
+        Kein Vertreterbesuch, kein Abo.</p>
+        <div class="aktionen">
+          <a class="btn btn-primaer" href="#angebot">Angebot in 60 Sekunden</a>
+        </div>
+      </div>
+      <div class="direkt">
+        <h3>Lieber direkt sprechen?</h3>
+        <p>Mo Allaham, Geschäftsführung</p>
+        <a class="tel" href="tel:+4915780930918">01578 0930918</a>
+        <a href="mailto:info@mozaikreinigung.de" class="mail">info@mozaikreinigung.de</a>
+        <hr>
+        <address>
+          Mozaik Gebäudereinigung<br>
+          Darbrookstraße 25<br>
+          48431 Rheine
+        </address>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="spalten">
+      <div>
+        <img src="bilder/mozaik-gebaeudereinigung-logo-hell.png" width="410" height="112"
+             alt="Mozaik Gebäudereinigung" loading="lazy">
+        <p>Laufende Objektbetreuung, Bauendreinigung und Glasreinigung in Rheine,
+        Ibbenbüren und Steinfurt.</p>
+      </div>
+      <div>
+        <h2>Leistungen</h2>
+        <ul>
+          <li><a href="#leistungen">Unterhaltsreinigung</a></li>
+          <li><a href="#leistungen">Büroreinigung</a></li>
+          <li><a href="#leistungen">Treppenhausreinigung</a></li>
+          <li><a href="#leistungen">Kindergartenreinigung</a></li>
+          <li><a href="#leistungen">Praxisreinigung</a></li>
+          <li><a href="#leistungen">Bauendreinigung</a></li>
+          <li><a href="#leistungen">Grundreinigung</a></li>
+          <li><a href="#leistungen">Fensterreinigung</a></li>
+          <li><a href="#leistungen">Fassadenreinigung</a></li>
+          <li><a href="#leistungen">Sonderreinigung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Einzugsgebiet</h2>
+        <ul>
+          <li>Rheine</li><li>Ibbenbüren</li><li>Steinfurt</li><li>Emsdetten</li>
+          <li>Neuenkirchen</li><li>Hörstel</li><li>Salzbergen</li><li>Kreis Steinfurt</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <address style="font-style:normal;font-size:15px;line-height:2">
+          Darbrookstraße 25<br>
+          48431 Rheine<br>
+          <a href="tel:+4915780930918">01578 0930918</a><br>
+          <a href="mailto:info@mozaikreinigung.de">info@mozaikreinigung.de</a>
+        </address>
+      </div>
+    </div>
+    <div class="unten">
+      <span>© 2026 Mozaik Gebäudereinigung</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mehrstufiges Lead-Formular.
+   Ohne JavaScript bleiben alle Schritte sichtbar und das Formular funktioniert
+   als normales Formular. Erst hier wird daraus der Schritt-für-Schritt-Ablauf. */
+(function(){
+  var f = document.getElementById('angebot');
+  if(!f) return;
+  f.classList.add('lf-js');
+
+  var schritte  = [].slice.call(f.querySelectorAll('.lf-schritt')),
+      gesamt    = schritte.length,
+      fortschr  = f.querySelector('[data-lf-fortschritt]'),
+      fuellung  = f.querySelector('[data-lf-fuellung]'),
+      jetztAus  = f.querySelector('[data-lf-jetzt]'),
+      gesamtAus = f.querySelector('[data-lf-gesamt]'),
+      zusammen  = f.querySelector('[data-lf-zusammenfassung]'),
+      danke     = f.querySelector('[data-lf-danke]'),
+      kopf      = f.querySelector('.lf-kopf'),
+      jetzt     = 1,
+      antworten = {};
+
+  var beschriftung = {objekt:'Objekt', flaeche:'Fläche', turnus:'Turnus', start:'Start'};
+
+  fortschr.hidden = false;
+  gesamtAus.textContent = gesamt;
+
+  function zeige(n, fokus){
+    jetzt = Math.min(Math.max(n,1), gesamt);
+    schritte.forEach(function(s){
+      s.classList.toggle('aktiv', +s.dataset.schritt === jetzt);
+    });
+    fuellung.style.width = (jetzt/gesamt*100) + '%';
+    jetztAus.textContent = jetzt;
+    if(jetzt === gesamt) zusammenfassen();
+    if(fokus){
+      var z = f.querySelector('.lf-schritt.aktiv .lf-kachel, .lf-schritt.aktiv input');
+      if(z) z.focus({preventScroll:true});
+    }
+  }
+
+  function zusammenfassen(){
+    var teile = Object.keys(antworten).map(function(k){
+      return '<b>' + beschriftung[k] + ':</b> ' + antworten[k];
+    });
+    if(teile.length){ zusammen.innerHTML = teile.join(' · '); zusammen.hidden = false; }
+  }
+
+  f.addEventListener('click', function(e){
+    var k = e.target.closest('.lf-kachel');
+    if(k){
+      var feld = k.dataset.feld;
+      antworten[feld] = k.dataset.wert;
+      f.querySelector('[data-wert-' + feld + ']').value = k.dataset.wert;
+      // Auswahl im aktuellen Schritt markieren
+      k.closest('.lf-schritt').querySelectorAll('.lf-kachel').forEach(function(b){
+        b.setAttribute('aria-pressed', b === k ? 'true' : 'false');
+      });
+      setTimeout(function(){ zeige(jetzt + 1, true); }, 160);
+      return;
+    }
+    if(e.target.closest('[data-lf-zurueck]')) zeige(jetzt - 1, true);
+  });
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = f.querySelector('#lf-name'), kontakt = f.querySelector('#lf-kontakt');
+    [name, kontakt].forEach(function(i){
+      i.closest('.feld').classList.toggle('hat-fehler', !i.value.trim());
+    });
+    if(!name.value.trim() || !kontakt.value.trim()){
+      (!name.value.trim() ? name : kontakt).focus();
+      return;
+    }
+    /* Hier wird im Livebetrieb versendet. Im Entwurf nur die Bestätigung. */
+    schritte.forEach(function(s){ s.classList.remove('aktiv'); });
+    fortschr.hidden = true; kopf.hidden = true; danke.hidden = false;
+    danke.setAttribute('role','status');
+  });
+
+  zeige(1, false);
+})();
+</script>
+
+<!-- Mobile Aktionsleiste -->
+<div class="mobilbar">
+  <a class="btn btn-sekundaer" href="tel:+4915780930918">
+    <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Anrufen</a>
+  <a class="btn btn-primaer" href="#angebot">Angebot</a>
+</div>
+
+</body>
+</html>
