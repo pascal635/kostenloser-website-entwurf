@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Nur URLs, die es wirklich gibt. Die alte Sitemap listete 11 Adressen
+     unter /de/, die alle mit Status 404 antworteten. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://henricreates.de/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://henricreates.de/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://henricreates.de/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://henricreates.de/"/>
+  </url>
+  <url>
+    <loc>https://henricreates.de/de/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://henricreates.de/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://henricreates.de/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://henricreates.de/"/>
+  </url>
+</urlset>
