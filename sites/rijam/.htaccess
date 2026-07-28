@@ -16,6 +16,14 @@ RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 # 2b. Alte Handlesung-URL dauerhaft auf Handlesen (301)
 RewriteRule ^leistungen/handlesung/?$ /leistungen/handlesen/ [R=301,L]
 
+# 2c. Alte flache Leistungs-URLs (Vorgaengerseite) auf die neue Struktur (301)
+RewriteRule ^partnerrueckfuehrung/?$ /leistungen/partnerrueckfuehrung/ [R=301,L]
+RewriteRule ^partnerzusammenfuehrung/?$ /leistungen/partnerzusammenfuehrung/ [R=301,L]
+RewriteRule ^kartenlegen/?$ /leistungen/kartenlegen/ [R=301,L]
+RewriteRule ^handlesen/?$ /leistungen/handlesen/ [R=301,L]
+RewriteRule ^handlesung/?$ /leistungen/handlesen/ [R=301,L]
+RewriteRule ^blockadenaufloesung/?$ /leistungen/blockadenaufloesung/ [R=301,L]
+
 # 3. Kompression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml image/svg+xml application/javascript application/json application/rss+xml
