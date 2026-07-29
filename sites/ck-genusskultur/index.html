@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catering &amp; Eventausstattung Berlin und Brandenburg | CK Genusskultur &amp; Events</title>
+<meta name="description" content="Catering, Live Cooking und komplette Eventausstattung aus einer Hand. Richtfeste, Firmenfeste und Hochzeiten in Berlin und Brandenburg, für 30 bis 5.000 Gäste. 20 Jahre Erfahrung, Aufbau und Abbau inklusive. Jetzt unverbindlich anfragen.">
+<!-- Entwurf auf dev.likovo.de: bewusst noindex, damit der Draft nicht unter der
+     LIKOVO-Dev-Domain in den Index gerät. Beim Livegang auf der Kundendomain
+     umstellen auf:
+       <meta name="robots" content="index,follow">
+       <link rel="canonical" href="https://genusskultur.berlin/">
+     und im JSON-LD unten die Platzhalter-URLs auf die echte Domain ziehen. -->
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Catering &amp; Eventausstattung Berlin und Brandenburg | CK Genusskultur &amp; Events">
+<meta property="og:description" content="Küche und komplette Ausstattung aus einer Hand. Richtfeste, Firmenfeste und Hochzeiten in Berlin und Brandenburg, für 30 bis 5.000 Gäste.">
+<meta property="og:image" content="assets/bilder/hero-catering-eventausstattung-berlin-live-cooking.webp">
+<meta name="theme-color" content="#141110">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/bilder/hero-catering-eventausstattung-berlin-live-cooking.webp" fetchpriority="high">
+
+<style>
+/* ============================================================
+   CK GENUSSKULTUR & EVENTS · Startseiten-Entwurf
+   Design-System: siehe design-system.html (Gate 9 freigegeben)
+   Art-Direction: warm editorial, abendlich.
+   Mobil zuerst, Desktop über min-width Queries.
+   ============================================================ */
+:root{
+  --gold:#B68741; --gold-hell:#D9A85C; --gold-tief:#7E5B2C;
+  --kohle:#0A0A0A; --anthrazit:#141110; --braunschwarz:#1E1916; --braunschwarz-hell:#2A231E;
+  --creme:#F7F3EC; --creme-tief:#EBE3D6;
+  --text-dunkel:#F2EDE4; --text-dunkel-leise:#B4A896;
+  --text-hell:#1A1714; --text-hell-leise:#6B6154;
+  --erfolg:#5C7A4A;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
+  --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+  --r-sm:4px; --r-md:8px; --r-lg:14px; --r-pill:999px;
+  --e-base:0 1px 2px rgba(10,8,6,.28);
+  --e-elevated:0 1px 2px rgba(10,8,6,.24), 0 6px 14px -4px rgba(10,8,6,.30), 0 14px 34px -12px rgba(126,91,44,.22);
+  --e-floating:0 2px 4px rgba(10,8,6,.28), 0 12px 28px -8px rgba(10,8,6,.36), 0 28px 60px -20px rgba(126,91,44,.30);
+  --ease:cubic-bezier(.2,.8,.2,1); --dur:200ms;
+  --max:1240px;
+  --f-display:"Anton","Haettenschweiler","Arial Narrow",Impact,sans-serif;
+  --f-cond:"Oswald","Arial Narrow",sans-serif;
+  --f-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--f-body);font-size:16px;line-height:1.65;
+  color:var(--text-dunkel);background:var(--anthrazit);overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--gold);color:#150F06;padding:var(--s3) var(--s5);font-family:var(--f-cond);text-transform:uppercase;letter-spacing:.08em}
+.skip:focus{left:var(--s4);top:var(--s4)}
+
+/* ---------- Flächen ---------- */
+.flaeche{position:relative;padding:var(--s8) var(--s4);overflow:hidden}
+.flaeche::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:var(--grain);opacity:.045;mix-blend-mode:overlay}
+.inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto}
+.dunkel{
+  background:
+    radial-gradient(1100px 520px at 8% -10%, rgba(182,135,65,.16), transparent 62%),
+    radial-gradient(900px 480px at 92% 8%, rgba(126,91,44,.14), transparent 60%),
+    radial-gradient(700px 400px at 50% 108%, rgba(182,135,65,.10), transparent 65%),
+    var(--anthrazit);
+}
+.kohleflaeche{background:radial-gradient(800px 400px at 80% 0%, rgba(182,135,65,.12), transparent 60%),var(--kohle)}
+.hell{
+  background:
+    radial-gradient(900px 460px at 12% 0%, rgba(182,135,65,.10), transparent 60%),
+    radial-gradient(760px 420px at 88% 100%, rgba(126,91,44,.08), transparent 62%),
+    var(--creme);
+  color:var(--text-hell);
+}
+.hell .leise{color:var(--text-hell-leise)}
+.dunkel .leise,.kohleflaeche .leise{color:var(--text-dunkel-leise)}
+.dicht{padding-top:var(--s7);padding-bottom:var(--s7)}
+
+/* Feine Goldlinie NUR dort, wo Hell auf Dunkel trifft. Vorher hing sie an jeder hellen
+   Sektion, dadurch lag sie auch zwischen zwei gleichfarbigen Sektionen mitten in der
+   Fläche und die Headline klebte scheinbar an der Kante. */
+.kante::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;z-index:2;
+  background:linear-gradient(to right,transparent,rgba(182,135,65,.5) 18%,rgba(182,135,65,.5) 82%,transparent);
+}
+/* Zwei Sektionen gleicher Farbe hintereinander: engerer, aber echter Abstand statt
+   padding-top:0. Sonst startet die Headline direkt an der Sektionsgrenze. */
+.flaeche.anschluss{padding-top:var(--s8)}
+.flaeche.anschluss-ende{padding-bottom:var(--s7)}
+
+/* Sprungziele nicht unter der klebenden Kopfzeile verstecken */
+[id]{scroll-margin-top:96px}
+
+/* ---------- Typo ---------- */
+.eyebrow{font-family:var(--f-cond);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin:0 0 var(--s3)}
+.hell .eyebrow{color:var(--gold-tief)}
+.eyebrow-kursiv{font-family:var(--f-body);font-style:italic;font-weight:400;font-size:16px;letter-spacing:.06em;color:var(--gold-hell);margin:0 0 var(--s3)}
+h1,h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;margin:0 0 var(--s4)}
+h1{font-size:clamp(34px,8.4vw,72px);line-height:.98;letter-spacing:-.03em;margin-bottom:var(--s5)}
+h2{font-size:clamp(27px,5.6vw,48px);line-height:1.03;letter-spacing:-.025em}
+h3{font-family:var(--f-cond);font-weight:600;font-size:20px;line-height:1.2;margin:0 0 var(--s2)}
+h4{font-family:var(--f-cond);font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 var(--s3)}
+p{margin:0 0 var(--s4);max-width:68ch}
+.lead{font-size:18px;line-height:1.6;font-weight:300}
+.klein{font-size:14px;line-height:1.55}
+.zahl{font-family:var(--f-cond);font-weight:700;font-size:clamp(30px,7vw,46px);line-height:1;letter-spacing:-.02em;color:var(--gold)}
+.pullquote{font-family:var(--f-body);font-style:italic;font-weight:300;font-size:clamp(20px,3.4vw,28px);line-height:1.45;max-width:26ch;margin:0}
+.kopf{max-width:62ch;margin-bottom:var(--s7)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);
+  font-family:var(--f-cond);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.09em;
+  padding:15px var(--s5);border-radius:var(--r-pill);border:1.5px solid transparent;
+  text-decoration:none;cursor:pointer;
+  transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background-color var(--dur) var(--ease);
+}
+.btn:focus-visible{outline:2px solid var(--gold-hell);outline-offset:3px}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-primaer{background:var(--gold);color:#150F06;box-shadow:var(--e-elevated)}
+.btn-primaer:hover{transform:translateY(-2px);box-shadow:var(--e-floating);background:var(--gold-hell)}
+.btn-sekundaer{background:transparent;color:var(--gold);border-color:rgba(182,135,65,.5)}
+.btn-sekundaer:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(182,135,65,.09)}
+.hell .btn-sekundaer{color:var(--gold-tief);border-color:rgba(126,91,44,.4)}
+.hell .btn-sekundaer:hover{border-color:var(--gold-tief);background:rgba(126,91,44,.07)}
+.btn-ghost{background:transparent;color:currentColor;padding-left:0;padding-right:0;letter-spacing:.12em}
+.btn-ghost::after{content:"";width:24px;height:1px;background:currentColor;transition:width var(--dur) var(--ease)}
+.btn-ghost:hover::after{width:38px}
+.btn-reihe{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+
+/* ---------- Header ---------- */
+.kopfzeile{
+  position:sticky;top:0;z-index:20;
+  background:rgba(10,8,6,.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(182,135,65,.2);
+}
+.kopfzeile-inner{max-width:var(--max);margin:0 auto;padding:var(--s2) var(--s4);display:flex;align-items:center;gap:var(--s4);justify-content:space-between}
+.kopfzeile-inner > *{min-width:0}
+.kopfzeile img{height:60px;width:auto}
+.nav{display:none;gap:var(--s5);font-family:var(--f-cond);font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+.nav a{text-decoration:none;color:var(--text-dunkel-leise);transition:color var(--dur) var(--ease)}
+.nav a:hover{color:var(--gold-hell)}
+.kopf-aktionen{display:flex;align-items:center;gap:var(--s4);flex:0 0 auto}
+/* Auf sehr schmalen Displays weicht die Telefonnummer aus, damit das 60 px hohe Logo
+   nicht die Seite breiter macht. Anrufen geht dort über den Sticky-Balken unten. */
+.tel-link{display:none;font-family:var(--f-cond);font-size:15px;letter-spacing:.04em;text-decoration:none;color:var(--text-dunkel);white-space:nowrap}
+.tel-link:hover{color:var(--gold-hell)}
+/* Mobil trägt der Sticky-Button unten den CTA, in der Kopfzeile steht nur die Telefonnummer */
+.kopfzeile .btn{display:none;padding:11px var(--s4);font-size:13px}
+
+/* ---------- Bild-Treatment ---------- */
+.bild{position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--braunschwarz)}
+.bild img{width:100%;height:100%;object-fit:cover;transition:transform 400ms var(--ease)}
+.bild::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(10,8,6,.78) 0%,rgba(10,8,6,.28) 38%,rgba(10,8,6,0) 72%)}
+.bild::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:rgba(182,135,65,.08);mix-blend-mode:multiply;box-shadow:inset 0 0 0 1px rgba(182,135,65,.16);border-radius:var(--r-lg)}
+.bild-text{position:absolute;z-index:4;left:var(--s5);right:var(--s5);bottom:var(--s5)}
+
+/* ---------- Hero ---------- */
+/* Mobil: Bild zuerst als visueller Einstieg, danach der Text. Kein Innenabstand,
+   das Bild soll randabfallend sein. Padding sitzt auf .hero-text. */
+.hero{position:relative;padding:0;display:flex;flex-direction:column}
+.hero-bild{order:-1;position:relative;height:56vw;max-height:420px;min-height:250px}
+.hero-bild .bild{position:absolute;inset:0;border-radius:0}
+.hero-bild .bild::after{border-radius:0}
+.hero-bild .bild::before{background:linear-gradient(to top,rgba(20,17,16,.95) 0%,rgba(20,17,16,.45) 55%,rgba(20,17,16,.1) 100%)}
+.hero-text{padding:var(--s6) var(--s4) var(--s8);max-width:var(--max);margin:0 auto}
+/* Zweite Zeile im Hero: trägt die Kernbotschaft, ohne der H1 optisch Konkurrenz zu machen */
+.hero-claim{
+  font-family:var(--f-cond);font-weight:500;font-size:clamp(18px,2.2vw,24px);line-height:1.3;
+  letter-spacing:.01em;color:var(--gold-hell);margin:0 0 var(--s4);max-width:30ch;
+}
+/* Micro-Trust als eine durchlaufende Zeile mit Gold-Trennern. In der schmalen
+   Hero-Spalte lesen drei Spalten sonst zerrissen, weil jedes Label umbricht. */
+.hero-trust{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s3);
+  margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(182,135,65,.24);
+  font-size:14px;color:var(--text-dunkel-leise)}
+.hero-trust span{white-space:nowrap}
+.hero-trust i{font-style:normal;color:var(--gold);opacity:.7}
+
+/* ---------- Trust-Bar ---------- */
+.stat-reihe{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);border-top:1px solid rgba(126,91,44,.22);border-bottom:1px solid rgba(126,91,44,.22);padding:var(--s5) 0}
+.stat .zahl{display:block;margin-bottom:var(--s1)}
+.stat p{font-size:14px;margin:0;color:var(--text-hell-leise)}
+
+/* ---------- Vergleich ---------- */
+.vergleich{display:grid;gap:var(--s5)}
+.vergleich-spalte{border-radius:var(--r-lg);padding:var(--s5);border:1px solid rgba(126,91,44,.2)}
+.vergleich-ohne{background:rgba(26,23,20,.05)}
+.vergleich-mit{background:var(--kohle);color:var(--text-dunkel);box-shadow:var(--e-elevated);border-color:rgba(182,135,65,.3)}
+.vergleich-spalte h4{color:var(--text-hell-leise)}
+.vergleich-mit h4{color:var(--gold)}
+.liste{list-style:none;padding:0;margin:0}
+.liste li{display:flex;gap:var(--s3);align-items:flex-start;padding:10px 0;font-size:15px;border-bottom:1px solid rgba(126,91,44,.14)}
+.liste li:last-child{border-bottom:0}
+.vergleich-mit .liste li{border-bottom-color:rgba(182,135,65,.16)}
+.liste svg{flex:0 0 auto;margin-top:4px}
+.liste-inklusive svg{color:var(--erfolg)}
+.liste-extra svg{color:var(--gold-tief)}
+
+/* ---------- Anlass-Kacheln ---------- */
+.anlass-raster{display:grid;grid-template-columns:1fr;gap:var(--s4)}
+.anlass{
+  position:relative;display:block;text-decoration:none;color:var(--text-dunkel);
+  border-radius:var(--r-lg);overflow:hidden;min-height:260px;box-shadow:var(--e-base);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.anlass:hover{transform:translateY(-4px);box-shadow:var(--e-floating)}
+.anlass:hover img{transform:scale(1.04)}
+.anlass:focus-visible{outline:2px solid var(--gold-hell);outline-offset:3px}
+.anlass .bild{position:absolute;inset:0;border-radius:var(--r-lg)}
+.anlass .bild::before{background:linear-gradient(to top,rgba(8,6,5,.94) 0%,rgba(8,6,5,.80) 30%,rgba(8,6,5,.42) 58%,rgba(8,6,5,.06) 88%)}
+.anlass-inhalt{position:relative;z-index:4;padding:var(--s5);display:flex;flex-direction:column;justify-content:flex-end;min-height:260px}
+.anlass-inhalt p{font-size:14px;color:rgba(242,237,228,.84);margin:0}
+.anlass-cta{margin-top:var(--s3);font-family:var(--f-cond);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-hell);display:inline-flex;align-items:center;gap:6px}
+.segment-titel{font-family:var(--f-cond);font-size:13px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin:var(--s7) 0 var(--s4);display:flex;align-items:center;gap:var(--s4)}
+.segment-titel::after{content:"";flex:1;height:1px;background:rgba(182,135,65,.25)}
+.segment-titel:first-of-type{margin-top:0}
+
+/* ---------- Karten ---------- */
+.grid{display:grid;gap:var(--s4)}
+.karte{
+  background:var(--braunschwarz);border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--e-base);border:1px solid rgba(182,135,65,.14);
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background-color var(--dur) var(--ease);
+  display:flex;flex-direction:column;
+}
+.karte:hover{transform:translateY(-4px);box-shadow:var(--e-floating);background:var(--braunschwarz-hell)}
+.karte .bild{border-radius:0;aspect-ratio:4/3}
+.karte .bild::after{border-radius:0}
+.karte-inhalt{padding:var(--s5);flex:1;display:flex;flex-direction:column}
+.karte-inhalt p{font-size:15px;color:var(--text-dunkel-leise);margin:0;flex:1}
+.karte-fakt{display:inline-block;margin-top:var(--s4);font-family:var(--f-cond);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);border-top:1px solid rgba(182,135,65,.3);padding-top:var(--s2)}
+.karte-ohne-bild{background:linear-gradient(160deg,rgba(182,135,65,.12),rgba(30,25,22,0) 60%),var(--braunschwarz)}
+.karte-icon{width:46px;height:46px;border-radius:var(--r-md);border:1px solid rgba(182,135,65,.35);display:grid;place-items:center;color:var(--gold);margin-bottom:var(--s4)}
+.karte-hell{background:var(--creme-tief);border:1px solid rgba(126,91,44,.16);border-radius:var(--r-lg);padding:var(--s5);box-shadow:var(--e-base)}
+.karte-hell p{color:var(--text-hell-leise);font-size:15px}
+
+/* ---------- Richtfest ---------- */
+.richtfest-punkte{display:grid;gap:var(--s5);margin-top:var(--s7);padding-top:var(--s6);border-top:1px solid rgba(182,135,65,.2)}
+.richtfest-punkt{border-left:2px solid rgba(182,135,65,.45);padding-left:var(--s4)}
+.richtfest-punkt h3{font-size:17px;margin-bottom:var(--s1)}
+.richtfest-punkt p{font-size:14px;color:var(--text-dunkel-leise);margin:0}
+
+/* ---------- Miete ---------- */
+.miete{display:flex;gap:var(--s4);align-items:flex-start;padding:var(--s4) 0;border-bottom:1px solid rgba(182,135,65,.16)}
+.miete:last-child{border-bottom:0}
+.miete-icon{flex:0 0 auto;width:42px;height:42px;border-radius:var(--r-md);border:1px solid rgba(182,135,65,.35);display:grid;place-items:center;color:var(--gold)}
+.miete h3{font-size:17px;margin-bottom:2px}
+.miete p{font-size:14px;margin:0;color:var(--text-dunkel-leise)}
+.reibung{display:grid;gap:var(--s4);margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(182,135,65,.2)}
+.reibung div{display:flex;gap:var(--s3);align-items:flex-start}
+.reibung svg{color:var(--gold);flex:0 0 auto;margin-top:3px}
+.reibung b{font-family:var(--f-cond);font-weight:600;letter-spacing:.02em;display:block}
+.reibung span{font-size:14px;color:var(--text-dunkel-leise)}
+
+/* ---------- Ablauf ---------- */
+.schritte{display:grid;gap:var(--s6)}
+.schritt{display:flex;gap:var(--s5);align-items:flex-start}
+.schritt-nr{flex:0 0 auto;font-family:var(--f-display);font-size:42px;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--gold)}
+.schritt p{font-size:15px;margin:0;color:var(--text-hell-leise)}
+
+/* ---------- Preise ---------- */
+.anker-reihe{display:grid;gap:var(--s4);margin-bottom:var(--s6)}
+.anker{background:var(--kohle);color:var(--text-dunkel);border-radius:var(--r-lg);padding:var(--s5);box-shadow:var(--e-elevated);border:1px solid rgba(182,135,65,.28)}
+.anker .zahl{font-size:clamp(28px,6vw,40px)}
+.anker p{margin:var(--s2) 0 0;font-size:14px;color:var(--text-dunkel-leise)}
+.preis-fuss{font-size:14px;color:var(--text-hell-leise);margin-top:var(--s5)}
+
+/* ---------- Beweis ---------- */
+.beweis{background:var(--braunschwarz);border-radius:var(--r-lg);padding:var(--s6);border:1px solid rgba(182,135,65,.2);box-shadow:var(--e-elevated)}
+.beweis .zahl{font-size:clamp(30px,7vw,44px)}
+.tags{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5);padding:0;list-style:none}
+.tags li{font-family:var(--f-cond);font-size:13px;letter-spacing:.06em;border:1px solid rgba(182,135,65,.3);border-radius:var(--r-pill);padding:6px 14px;color:var(--text-dunkel-leise)}
+/* Beweis-Bild als breiter Streifen unter beiden Spalten. Vorher hing es in der rechten
+   Spalte und die linke lief mit einer großen Leerfläche aus. */
+.breitstreifen{aspect-ratio:16/9;margin-top:var(--s7)}
+.breitstreifen .bild-text{max-width:46ch;color:rgba(242,237,228,.9);margin:0}
+
+/* ---------- FAQ ---------- */
+.faq{border-top:1px solid rgba(126,91,44,.22)}
+.faq details{border-bottom:1px solid rgba(126,91,44,.22)}
+.faq summary{cursor:pointer;list-style:none;padding:var(--s5) var(--s7) var(--s5) 0;position:relative;font-family:var(--f-cond);font-weight:600;font-size:18px;transition:color var(--dur) var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--gold-tief)}
+.faq summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:var(--r-sm)}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:translateY(-70%) rotate(45deg);transition:transform var(--dur) var(--ease)}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq-antwort{padding:0 var(--s5) var(--s5) 0}
+.faq-antwort p{margin:0;color:var(--text-hell-leise);font-size:15px}
+.faq-antwort b{color:var(--text-hell)}
+
+/* ---------- Formular ---------- */
+.formular-block{display:grid;gap:var(--s7)}
+.feld{display:block;margin-bottom:var(--s4)}
+.feld > span{display:block;font-family:var(--f-cond);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;color:var(--text-dunkel-leise)}
+.feld input,.feld select,.feld textarea{
+  width:100%;font-family:var(--f-body);font-size:16px;color:var(--text-hell);background:#fff;
+  border:1px solid rgba(26,23,20,.18);border-radius:var(--r-md);padding:13px var(--s4);
+  transition:border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease);
+}
+.feld textarea{min-height:100px;resize:vertical}
+.feld input:hover,.feld select:hover,.feld textarea:hover{border-color:rgba(126,91,44,.45)}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(182,135,65,.22)}
+.feld-paar{display:grid;gap:var(--s4)}
+.reassurance{display:flex;gap:var(--s2);align-items:flex-start;font-size:14px;color:var(--text-dunkel-leise);margin-top:var(--s3)}
+.reassurance svg{flex:0 0 auto;margin-top:3px;color:var(--erfolg)}
+.direktkontakt{margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(182,135,65,.2)}
+.direktkontakt a{font-family:var(--f-cond);font-size:18px;letter-spacing:.03em;text-decoration:none;display:inline-flex;align-items:center;gap:var(--s2);transition:color var(--dur) var(--ease)}
+.direktkontakt a:hover{color:var(--gold-hell)}
+.danke{display:none;background:rgba(92,122,74,.14);border:1px solid rgba(92,122,74,.5);border-radius:var(--r-lg);padding:var(--s5);margin-top:var(--s4)}
+.danke.ist-sichtbar{display:block}
+
+/* ---------- Footer ---------- */
+.fusszeile{display:grid;gap:var(--s6)}
+.fusszeile h4{color:var(--gold)}
+.fusszeile ul{list-style:none;padding:0;margin:0;font-size:14px;color:var(--text-dunkel-leise)}
+.fusszeile li{padding:3px 0}
+.fusszeile a{text-decoration:none;transition:opacity var(--dur) var(--ease)}
+.fusszeile a:hover{opacity:.65}
+.fuss-schluss{margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(182,135,65,.18);font-size:13px;color:var(--text-dunkel-leise)}
+
+/* ---------- Sticky mobil ---------- */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:30;
+  background:rgba(10,8,6,.94);backdrop-filter:blur(10px);
+  border-top:1px solid rgba(182,135,65,.3);padding:var(--s3) var(--s4);
+  display:flex;gap:var(--s3);
+}
+.sticky-cta .btn{flex:1}
+body{padding-bottom:76px}
+
+/* ============================================================
+   DESKTOP
+   ============================================================ */
+@media (min-width:480px){
+  .tel-link{display:inline-flex}
+}
+@media (min-width:700px){
+  .kopfzeile .btn{display:inline-flex}
+  .stat-reihe{grid-template-columns:repeat(4,1fr)}
+  .stat + .stat{border-left:1px solid rgba(126,91,44,.18);padding-left:var(--s5)}
+  .anlass-raster{grid-template-columns:repeat(2,1fr)}
+  .grid-3,.grid-2{grid-template-columns:repeat(2,1fr)}
+  .vergleich{grid-template-columns:1fr 1fr}
+  .richtfest-punkte{grid-template-columns:1fr 1fr}
+  .reibung{grid-template-columns:repeat(3,1fr)}
+  .schritte{grid-template-columns:1fr 1fr;gap:var(--s7) var(--s8)}
+  .anker-reihe{grid-template-columns:1fr 1fr}
+  .feld-paar{grid-template-columns:1fr 1fr}
+  .fusszeile{grid-template-columns:1fr 1fr}
+}
+@media (min-width:960px){
+  body{font-size:17px;padding-bottom:0}
+  .flaeche{padding:var(--s9) var(--s5)}
+  .dicht{padding-top:var(--s8);padding-bottom:var(--s8)}
+  .nav{display:flex}
+  .tel-link{display:inline-flex}
+  .sticky-cta{display:none}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .anlass-raster{grid-template-columns:repeat(4,1fr)}
+  .anlass-raster .breit{grid-column:span 2}
+  .fusszeile{grid-template-columns:1.5fr 1fr 1fr 1fr}
+  .formular-block{grid-template-columns:1fr 1fr;gap:var(--s8);align-items:start}
+  .zwei-spalten{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:start}
+  .breitstreifen{aspect-ratio:21/9}
+
+  /* Hero asymmetrisch: Text links 45 Prozent, Bild rechts randabfallend.
+     align-items:stretch, damit das Bild die volle Höhe füllt. Der Text zentriert
+     sich selbst per Flexbox, sonst bliebe oben und unten ein dunkler Streifen. */
+  .hero{display:grid;grid-template-columns:minmax(0,45fr) minmax(0,55fr);align-items:stretch;min-height:680px;
+        padding-left:max(var(--s5),calc((100vw - var(--max))/2))}
+  .hero-text{padding:var(--s9) var(--s7) var(--s9) 0;max-width:none;margin:0;
+             display:flex;flex-direction:column;justify-content:center}
+  .hero-bild{order:0;height:auto;max-height:none;min-height:0}
+  .richtfest-punkte{grid-template-columns:repeat(4,1fr);gap:var(--s6)}
+  /* Küchen-Raster auf 6 Spalten: normale Karten spannen 2, breite spannen 3.
+     Damit gehen alle Reihen auf und in der Zweier-Reihe sind beide Karten gleich breit,
+     also auch gleich hoch. */
+  .grid-3{grid-template-columns:repeat(6,1fr)}
+  .grid-3 > .karte{grid-column:span 2}
+  .grid-3 > .karte-breit{grid-column:span 3}
+  .hero-bild .bild::before{background:linear-gradient(to right,rgba(20,17,16,.96) 0%,rgba(20,17,16,.55) 22%,rgba(20,17,16,.12) 58%,rgba(10,8,6,.35) 100%)}
+  .hero-diagonale{position:absolute;z-index:3;top:0;bottom:0;left:0;width:2px;
+    background:linear-gradient(to bottom,transparent,rgba(182,135,65,.75),transparent);transform:skewX(-8deg)}
+}
+@media (max-width:959px){ .hero-diagonale{display:none} }
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#anfrage">Direkt zur Anfrage</a>
+
+<!-- =================== HEADER =================== -->
+<header class="kopfzeile">
+  <div class="kopfzeile-inner">
+    <a href="#top" aria-label="CK Genusskultur und Events, Startseite"><img src="assets/logo-weiss.png" alt="CK Genusskultur &amp; Events" width="200" height="34"></a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#anlaesse">Anlässe</a>
+      <a href="#kueche">Küche</a>
+      <a href="#ausstattung">Ausstattung mieten</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#preise">Preise</a>
+      <a href="#fragen">Fragen</a>
+    </nav>
+    <div class="kopf-aktionen">
+      <a class="tel-link" href="tel:+491608449781">0160 8449 781</a>
+      <a class="btn btn-primaer" href="#anfrage">Event anfragen</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- =================== HERO =================== -->
+<section class="hero dunkel flaeche">
+  <div class="hero-text">
+    <p class="eyebrow">Catering · Live Cooking · Eventausstattung</p>
+    <h1>Catering und Eventausstattung für Berlin und Brandenburg</h1>
+    <p class="hero-claim">Ein Ansprechpartner für Ihr Event, vom Essen bis zum Zelt.</p>
+    <p class="lead leise">
+      CK Genusskultur &amp; Events richtet Firmenfeste, Richtfeste und Hochzeiten komplett aus.
+      Küche, Ausstattung, Aufbau und Abbau aus einer Hand, für 30 bis 5.000 Gäste, seit 20 Jahren.
+    </p>
+    <div class="btn-reihe">
+      <a class="btn btn-primaer" href="#anfrage">Event anfragen</a>
+      <a class="btn btn-sekundaer" href="#ablauf">So läuft es ab</a>
+    </div>
+    <p class="hero-trust">
+      <span>20 Jahre Erfahrung</span><i aria-hidden="true">·</i>
+      <span>Alles aus einer Hand</span><i aria-hidden="true">·</i>
+      <span>Aufbau und Abbau inklusive</span>
+    </p>
+  </div>
+  <div class="hero-bild">
+    <span class="hero-diagonale" aria-hidden="true"></span>
+    <div class="bild">
+      <img src="assets/bilder/hero-catering-eventausstattung-berlin-live-cooking.webp"
+           alt="Koch grillt live unter einem schwarzen Pavillon, dahinter ein Festzelt mit Lichterketten und Gästen an Stehtischen"
+           width="2200" height="1228" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- =================== TRUST-BAR =================== -->
+<section class="flaeche hell dicht kante anschluss-ende" aria-label="Zahlen und Fakten">
+  <div class="inner">
+    <div class="stat-reihe">
+      <div class="stat"><span class="zahl">20 Jahre</span><p>Events in Berlin und Brandenburg</p></div>
+      <div class="stat"><span class="zahl">30 bis 5.000</span><p>Gäste, von der Gartenparty bis zum Stadtfest</p></div>
+      <div class="stat"><span class="zahl">1</span><p>Ansprechpartner für Essen, Zelt und Technik</p></div>
+      <div class="stat"><span class="zahl">50 km</span><p>Anfahrt inklusive, Aufbau und Abbau ebenso</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ALLES AUS EINER HAND =================== -->
+<section class="flaeche hell anschluss">
+  <div class="inner">
+    <div class="kopf">
+      <h2>Ein Fest, ein Ansprechpartner, eine Rechnung</h2>
+      <p class="leise">
+        Ein Fest zu organisieren scheitert selten am Essen. Es scheitert an der Koordination.
+        Der Caterer kann nur zur einen Uhrzeit, der Zeltverleih liefert am Vortag nicht, die Getränke kommen von woanders,
+        das Geschirr fehlt und am Ende telefonieren Sie sich durch den Tag, an dem Sie eigentlich Gastgeber sein wollten.
+      </p>
+      <p class="leise">
+        Genau da fängt unsere Arbeit an. Wir kochen und wir bringen die komplette Ausstattung mit.
+        Sie sprechen mit einer Person, bekommen ein Angebot und am Eventtag steht alles, bevor der erste Gast kommt.
+      </p>
+    </div>
+    <div class="vergleich">
+      <div class="vergleich-spalte vergleich-ohne">
+        <h4>Ohne CK</h4>
+        <ul class="liste">
+          <li><span>4 bis 5 Dienstleister koordinieren</span></li>
+          <li><span>5 Angebote vergleichen</span></li>
+          <li><span>5 Rechnungen prüfen</span></li>
+          <li><span>5 Liefertermine abstimmen</span></li>
+          <li><span>Wenn etwas fehlt, sucht jeder die Schuld beim anderen</span></li>
+        </ul>
+      </div>
+      <div class="vergleich-spalte vergleich-mit">
+        <h4>Mit CK</h4>
+        <ul class="liste">
+          <li><span>1 Ansprechpartner</span></li>
+          <li><span>1 Angebot mit Festpreis</span></li>
+          <li><span>1 Rechnung</span></li>
+          <li><span>1 Aufbautermin</span></li>
+          <li><span>Wenn etwas fehlt, ist es unsere Sache</span></li>
+        </ul>
+        <p class="pullquote" style="margin-top:var(--s5);color:var(--gold-hell)">Sie feiern. Wir kümmern uns um den Rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ANLÄSSE =================== -->
+<section class="flaeche kohleflaeche kante" id="anlaesse">
+  <div class="inner">
+    <div class="kopf">
+      <h2>Welches Fest richten wir für Sie aus?</h2>
+      <p class="leise">Jeder Anlass hat andere Regeln. Ein Richtschmaus für 60 Handwerker funktioniert anders als ein Hochzeitsempfang. Wählen Sie Ihren Anlass, dann ist Ihre Anfrage schon halb ausgefüllt.</p>
+    </div>
+
+    <p class="segment-titel">Für Firmen, Bauunternehmen und Vereine</p>
+    <div class="anlass-raster">
+      <a class="anlass breit" href="#anfrage" data-anlass="Richtfest">
+        <div class="bild"><img src="assets/bilder/richtfest-berlin-brandenburg-richtkranz-rohbau.webp" alt="Richtfest am Rohbau mit Richtkranz am Dachstuhl, Handwerker an Bierzeltgarnituren" loading="lazy" width="1920" height="1072"></div>
+        <div class="anlass-inhalt">
+          <h3>Richtfest</h3>
+          <p>Deftiger Richtschmaus vom Grill, Zelt und Bierwagen auf der Baustelle, Richtkranz inklusive. Ab 30 Personen.</p>
+          <span class="anlass-cta">Richtfest anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="anlass" href="#anfrage" data-anlass="Firmen-Sommerfest">
+        <div class="bild"><img src="assets/bilder/bierwagen-mieten-firmen-sommerfest-brandenburg.webp" alt="Bierwagen mit Zapfanlage auf einer Wiese beim Firmensommerfest" loading="lazy" width="1200" height="896"></div>
+        <div class="anlass-inhalt">
+          <h3>Firmen-Sommerfest</h3>
+          <p>Live Cooking vor Ihrem Team, Bierwagen, Stehtische, Licht. Draußen und wetterfest geplant.</p>
+          <span class="anlass-cta">Sommerfest anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="anlass" href="#anfrage" data-anlass="Firmenfeier und Jubiläum">
+        <div class="bild"><img src="assets/bilder/canapes-fingerfood-catering-berlin-gaesteempfang.webp" alt="Kellner serviert Canapés auf einer Schieferplatte beim Gästeempfang" loading="lazy" width="1200" height="896"></div>
+        <div class="anlass-inhalt">
+          <h3>Firmenfeier und Jubiläum</h3>
+          <p>Vom Business-Lunch mit Canapés bis zum Abend mit Buffet und Bar. Mit Rechnung, mit fixem Preis pro Person.</p>
+          <span class="anlass-cta">Firmenfeier anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="anlass breit" href="#anfrage" data-anlass="Stadt- und Straßenfest">
+        <div class="bild"><img src="assets/bilder/festzelt-mieten-berlin-brandenburg-innenansicht.webp" alt="Festzelt von innen mit Bierzeltgarnituren, Stehtischen und Bar" loading="lazy" width="1920" height="1072"></div>
+        <div class="anlass-inhalt">
+          <h3>Stadtfest und Straßenfest</h3>
+          <p>Mobiler Bierwagen und Küche für 50 bis über 5.000 Gäste. Schneller Aufbau, reibungsloser Ablauf.</p>
+          <span class="anlass-cta">Stadtfest anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="anlass breit" href="#anfrage" data-anlass="Vereinsfest">
+        <div class="bild"><img src="assets/bilder/eventausstattung-berlin-aufbau-lieferung-transportkisten.webp" alt="Crew liefert Transportkisten mit Geschirr an, dahinter ein halb aufgebautes Festzelt" loading="lazy" width="1200" height="896"></div>
+        <div class="anlass-inhalt">
+          <h3>Vereinsfest</h3>
+          <p>Zelt, Garnituren, Zapfanlage und Grill im Paket. Auch nur die Ausstattung, wenn Ihr Verein selbst kocht.</p>
+          <span class="anlass-cta">Vereinsfest anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+
+    <p class="segment-titel">Für private Feiern</p>
+    <div class="anlass-raster">
+      <a class="anlass breit" href="#anfrage" data-anlass="Hochzeit">
+        <div class="bild"><img src="assets/bilder/hochzeit-catering-berlin-festzelt-tafel-kerzenlicht.webp" alt="Lange Hochzeitstafel im Festzelt bei Kerzenlicht" loading="lazy" width="1200" height="896"></div>
+        <div class="anlass-inhalt">
+          <h3>Hochzeit</h3>
+          <p>Von der ersten Idee bis zum letzten Tanz. Planung, Beratung, Catering, Ausstattung, Organisation, Durchführung.</p>
+          <span class="anlass-cta">Hochzeit anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="anlass" href="#anfrage" data-anlass="Geburtstag und Jubiläum">
+        <div class="bild"><img src="assets/bilder/spanferkel-catering-berlin-kraeuter-knoblauch.webp" alt="Spanferkel mit knuspriger Kruste vor einem Holzofen" loading="lazy" width="1200" height="896"></div>
+        <div class="anlass-inhalt">
+          <h3>Geburtstag und Jubiläum</h3>
+          <p>Spanferkel, Burger oder Flammkuchen frisch vor Ihren Gästen, Geschirr und Gläser dazu.</p>
+          <span class="anlass-cta">Geburtstag anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="anlass" href="#anfrage" data-anlass="Jugendweihe, Einschulung, Familienfeier">
+        <div class="bild"><img src="assets/bilder/catering-berlin-kaeseplatte-trauben.jpg" alt="Käseplatte mit Trauben und Johannisbeeren auf Silbertablett" loading="lazy" width="569" height="517"></div>
+        <div class="anlass-inhalt">
+          <h3>Jugendweihe und Einschulung</h3>
+          <p>Ein besonderer Tag mit gutem Essen und ohne Küchenstress für die Familie. Auch Gartenparty und Polterabend.</p>
+          <span class="anlass-cta">Familienfeier anfragen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== RICHTFEST =================== -->
+<section class="flaeche dunkel" id="richtfest">
+  <div class="inner">
+    <div class="zwei-spalten">
+      <div>
+        <p class="eyebrow">Unsere Spezialität für Bauunternehmen und Bauherren</p>
+        <h2>Richtfest in Berlin und Brandenburg, komplett ausgerichtet</h2>
+        <p class="leise">
+          Der Rohbau steht, der Richtkranz gehört an den Dachfirst, der Zimmermeister hält den Richtspruch
+          und danach haben 60 Leute Hunger. Ein Richtfest ist keine Cocktail-Veranstaltung. Es soll deftig sein,
+          es soll schnell gehen und es soll trotzdem etwas hergeben, weil der Bauherr sich damit bei den Handwerkern bedankt.
+        </p>
+        <p class="leise">
+          Wir bringen alles auf die Baustelle: Grill oder Spanferkel, Bierwagen mit gekühltem Fass, Zelt für den Fall,
+          dass es regnet, Bierzeltgarnituren, Stehtische, Licht. Aufbau vor dem Termin, Abbau danach.
+          Sie brauchen auf der Baustelle nichts vorzubereiten außer einer freien Fläche.
+        </p>
+        <div class="btn-reihe" style="margin-top:var(--s5)">
+          <a class="btn btn-primaer" href="#anfrage" data-anlass="Richtfest">Richtfest anfragen</a>
+        </div>
+      </div>
+      <div>
+        <div class="bild" style="aspect-ratio:4/3">
+          <img src="assets/bilder/richtfest-berlin-brandenburg-richtkranz-rohbau.webp" alt="Richtkranz mit Bändern am Dachstuhl eines Rohbaus, Handwerker feiern an Bierzeltgarnituren" loading="lazy" width="1920" height="1072">
+        </div>
+      </div>
+    </div>
+    <div class="richtfest-punkte">
+      <div class="richtfest-punkt">
+        <h3>Richtkranz inklusive</h3>
+        <p>Mit Bändern in Ihrer Farbwahl. Einzeln 45 Euro, ab 30 Personen im Richtfest-Paket enthalten.</p>
+      </div>
+      <div class="richtfest-punkt">
+        <h3>Deftig und schnell</h3>
+        <p>Grillstationen und Spanferkel versorgen viele hungrige Gäste in kurzer Zeit und sehen trotzdem wertig aus.</p>
+      </div>
+      <div class="richtfest-punkt">
+        <h3>Baustellentauglich</h3>
+        <p>Wir kommen mit eigener Technik, eigenem Material und eigenen Fahrzeugen. Kein Strom vor Ort nötig, wenn wir es vorher wissen.</p>
+      </div>
+      <div class="richtfest-punkt">
+        <h3>Planbar ab 50 Gästen</h3>
+        <p>Ab dieser Größe verteilen sich die Fixkosten und der Preis pro Kopf sinkt deutlich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== KÜCHE =================== -->
+<section class="flaeche kohleflaeche" id="kueche">
+  <div class="inner">
+    <div class="kopf">
+      <p class="eyebrow-kursiv">Echter Geschmack. Echte Momente.</p>
+      <h2>Catering und Live Cooking, frisch vor Ihren Gästen</h2>
+      <p class="leise">Essen ist bei uns Programmpunkt, nicht Pausenfüller. Wir backen, grillen und garen vor Ort, weil warm und frisch schmeckt und weil Gäste gern zuschauen.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="karte">
+        <div class="bild"><img src="assets/bilder/spanferkel-catering-berlin-kraeuter-knoblauch.webp" alt="Spanferkel mit knuspriger Kruste auf einem Blech mit Rosmarin und Knoblauch" loading="lazy" width="1200" height="896"></div>
+        <div class="karte-inhalt">
+          <h3>Spanferkel aus dem Ofen</h3>
+          <p>Langsam im Spezialofen gegart, mit unserer Kräuter-Knoblauch-Marinade. Zart, saftig, knusprig.</p>
+          <span class="karte-fakt">Unser Original in Berlin und Brandenburg</span>
+        </div>
+      </article>
+      <article class="karte">
+        <div class="bild"><img src="assets/bilder/pizza-flammkuchen-catering-berlin-holzofen-live.webp" alt="Bäcker holt eine Pizza mit dem Schieber aus dem Holzofen, Gäste schauen zu" loading="lazy" width="1200" height="896"></div>
+        <div class="karte-inhalt">
+          <h3>Pizza und Flammkuchen</h3>
+          <p>Live aus dem Ofen, direkt vor Ihren Gästen gebacken. Mediterran, rustikal, immer heiß.</p>
+          <span class="karte-fakt">Holzofen vor Ort</span>
+        </div>
+      </article>
+      <article class="karte">
+        <div class="bild"><img src="assets/bilder/burger-catering-berlin-live-station-firmenevent.webp" alt="Koch richtet Burger auf einem Holzbrett an der Burger-Station an" loading="lazy" width="1200" height="896"></div>
+        <div class="karte-inhalt">
+          <h3>Burger</h3>
+          <p>Frisch gebraten an der Burger-Bar, belegt nach Wunsch. Das Highlight, an dem sich die Schlange von selbst bildet.</p>
+          <span class="karte-fakt">Live vor den Gästen zubereitet</span>
+        </div>
+      </article>
+      <article class="karte karte-breit">
+        <div class="bild"><img src="assets/bilder/canapes-fingerfood-catering-berlin-gaesteempfang.webp" alt="Canapés mit Lachs, Mozzarella und Schinken auf einer Schieferplatte" loading="lazy" width="1200" height="896"></div>
+        <div class="karte-inhalt">
+          <h3>Canapés und Flying Buffet</h3>
+          <p>Für Gästeempfang, Business-Lunch und Sektempfang. Kreativ kombiniert, frische und saisonale Zutaten.</p>
+          <span class="karte-fakt">Von kleinen Runden bis große Events</span>
+        </div>
+      </article>
+      <article class="karte karte-breit">
+        <div class="bild"><img src="assets/bilder/catering-berlin-wurst-antipasti-platte.jpg" alt="Wurst- und Antipasti-Platte mit Oliven, Tomaten und Salami" loading="lazy" width="567" height="517"></div>
+        <div class="karte-inhalt">
+          <h3>Platten und Buffets</h3>
+          <p>Wurst, Käse, Antipasti, reich belegt und angerichtet. Auch als Ergänzung zur warmen Küche.</p>
+          <span class="karte-fakt">Kaltes Buffet nach Gästezahl</span>
+        </div>
+      </article>
+      <article class="karte karte-ohne-bild">
+        <div class="karte-inhalt">
+          <span class="karte-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11h16a8 8 0 01-8 8 8 8 0 01-8-8zM8 7c0-1 1-1.5 1-3M12 7c0-1 1-1.5 1-3M16 7c0-1 1-1.5 1-3"/></svg></span>
+          <h3>Suppenküche</h3>
+          <p>Auswahl nach Ihrem Wunsch, frisches Brot dazu. Wärmend, herzhaft, ideal für kalte Monate und Outdoor-Termine.</p>
+          <span class="karte-fakt">Bis zu 4 Suppen gleichzeitig</span>
+        </div>
+      </article>
+      <article class="karte karte-ohne-bild">
+        <div class="karte-inhalt">
+          <span class="karte-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 10a5 5 0 0110 0zM8 10l4 11 4-11M5 6h14"/></svg></span>
+          <h3>BBQ und Grill</h3>
+          <p>XXL-Gasgrills und Grillstationen für große Gruppen. Der Klassiker fürs Richtfest und Sommerfest.</p>
+          <span class="karte-fakt">Für viele Gäste in kurzer Zeit</span>
+        </div>
+      </article>
+      <article class="karte karte-ohne-bild">
+        <div class="karte-inhalt">
+          <span class="karte-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 9a4 4 0 018 0v1H8zM9 10l3 11 3-11"/></svg></span>
+          <h3>Eis-Anhänger und polnische Eisspezialitäten</h3>
+          <p>Cremiges Softeis im Hörnchen aus dem DDR-Klassiker-Anhänger oder Świderki nach original polnischer Rezeptur.</p>
+          <span class="karte-fakt">Der Moment, den keiner vergisst</span>
+        </div>
+      </article>
+    </div>
+    <p class="leise" style="margin-top:var(--s6)">Vegetarisch, vegan und allergiegerecht stimmen wir vorher mit Ihnen ab. Sagen Sie uns, was Ihre Gäste brauchen.</p>
+    <div class="btn-reihe">
+      <a class="btn btn-sekundaer" href="#anfrage">Ganze Auswahl anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AUSSTATTUNG =================== -->
+<section class="flaeche dunkel" id="ausstattung">
+  <div class="inner">
+    <div class="zwei-spalten">
+      <div>
+        <p class="eyebrow">Mieten statt kaufen</p>
+        <h2>Eventausstattung mieten in Berlin und Brandenburg</h2>
+        <p class="leise">
+          Warum einen ganzen Schrank voller Geschirr kaufen, wenn Sie ihn einmal brauchen?
+          Wir vermieten alles, was ein Fest braucht, mit flexiblen Stückzahlen, sauber und einsatzbereit. Auch ohne Catering.
+        </p>
+        <div class="btn-reihe" style="margin-top:var(--s5)">
+          <a class="btn btn-sekundaer" href="#anfrage" data-bedarf="Nur Ausstattung">Mietliste anfragen</a>
+        </div>
+        <div class="bild" style="aspect-ratio:16/10;margin-top:var(--s6)">
+          <img src="assets/bilder/catering-berlin-geschirr-besteck-transportkisten.jpg" alt="Gestapelte Transportkisten mit Teller, Gläsern und Besteck, einsatzbereit" loading="lazy" width="1141" height="392">
+        </div>
+      </div>
+      <div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg></span>
+          <div><h3>Festzelte und Pavillons mieten</h3><p>Verschiedene Größen, mit Boden und Seitenwänden</p></div>
+        </div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 10h16M6 10V7a6 6 0 0112 0v3M8 10v10M16 10v10"/></svg></span>
+          <div><h3>Bierwagen mit Zapfanlage mieten</h3><p>Mobil, ausgelegt für 50 bis über 5.000 Gäste</p></div>
+        </div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9h18M5 9v10M19 9v10M3 14h18"/></svg></span>
+          <div><h3>Bierzeltgarnituren mieten</h3><p>Robust und bequem, ab 12 Euro pro Tag</p></div>
+        </div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 6h14l-2 6H7L5 6zM12 12v6M9 18h6"/></svg></span>
+          <div><h3>Stehtische, Hussen, Theken und Bars mieten</h3><p>Stilvoll und praktisch, für Empfang und Ausschank</p></div>
+        </div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v5M7 8h10l-1 5H8zM12 13v8M8 21h8"/></svg></span>
+          <div><h3>Geschirr, Besteck und Gläser mieten</h3><p>Inklusive Kaffeegeschirr sowie Servier- und Buffetzubehör, auf Wunsch mit Reinigung</p></div>
+        </div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18h6l2-12 2 12h6M8 6h8"/></svg></span>
+          <div><h3>Licht und Technik mieten</h3><p>Beleuchtung, Ton, Stromverteilung</p></div>
+        </div>
+        <div class="miete">
+          <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M9 15l-1 6M15 15l1 6M12 15v6"/></svg></span>
+          <div><h3>Richtkranz mieten</h3><p>Mit Bändern in individueller Farbgestaltung, 45 Euro</p></div>
+        </div>
+        <div class="reibung">
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17h13v-7H3zM16 12h3l2 3v2h-5z"/></svg>
+            <span><b>Lieferung, Aufbau und Abbau</b>Wir stellen es hin und holen es wieder ab.</span>
+          </div>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12a8 8 0 1016 0 8 8 0 00-16 0zM9 12l2 2 4-4"/></svg>
+            <span><b>Reinigung auf Wunsch</b>Geschirr geht ungespült zurück, wenn Sie es so buchen.</span>
+          </div>
+          <div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h6"/></svg>
+            <span><b>Flexible Stückzahlen</b>20 Teller oder 500, beides geht.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABLAUF =================== -->
+<section class="flaeche hell kante anschluss-ende" id="ablauf">
+  <div class="inner">
+    <div class="kopf"><h2>In vier Schritten zu Ihrem Fest</h2></div>
+    <div class="schritte">
+      <div class="schritt"><span class="schritt-nr" aria-hidden="true">01</span><div><h3>Sie fragen an</h3><p>Anlass, Wunschtermin, Ort und ungefähre Gästezahl. Mehr brauchen wir für den Start nicht. Unverbindlich und kostenlos.</p></div></div>
+      <div class="schritt"><span class="schritt-nr" aria-hidden="true">02</span><div><h3>Sie bekommen ein Angebot</h3><p>Innerhalb von 24 Stunden melden wir uns. Sie erhalten einen Festpreis mit einer klaren Liste, was enthalten ist.</p></div></div>
+      <div class="schritt"><span class="schritt-nr" aria-hidden="true">03</span><div><h3>Wir stimmen die Details ab</h3><p>Menü, Ausstattung, Zeitplan, Sonderwünsche, vegetarische und allergiegerechte Optionen. In einem Gespräch, nicht in zehn Mails.</p></div></div>
+      <div class="schritt"><span class="schritt-nr" aria-hidden="true">04</span><div><h3>Wir bauen auf, kochen und bauen ab</h3><p>Wir sind vor Ihren Gästen da. Am Ende nehmen wir alles wieder mit. Sie räumen nichts hinterher.</p></div></div>
+    </div>
+    <div class="btn-reihe" style="margin-top:var(--s7)">
+      <a class="btn btn-primaer" href="#anfrage">Schritt 1 starten</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PREISE =================== -->
+<section class="flaeche hell anschluss" id="preise">
+  <div class="inner">
+    <div class="kopf">
+      <h2>Was kostet das, ehrlich gerechnet</h2>
+      <p class="leise">Der häufigste Grund für Ärger beim Catering sind nicht die Preise, sondern die Posten, die niemand vorher genannt hat. Deshalb sagen wir beides: was drin ist und was extra kommt.</p>
+    </div>
+    <div class="anker-reihe">
+      <div class="anker">
+        <span class="zahl">ab 24,50 €</span>
+        <p>pro Person für Catering, ab 30 Personen</p>
+      </div>
+      <div class="anker">
+        <span class="zahl">ab 12 €</span>
+        <p>pro Tag für eine Bierzeltgarnitur. Gesamtpaket für Ausstattung nach Bedarf.</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+      <div class="karte-hell">
+        <h4>Immer inklusive</h4>
+        <ul class="liste liste-inklusive">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Beratung und Planung mit einem festen Ansprechpartner</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Zubereitung vor Ort</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Lieferung, Aufbau und Abbau</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Anfahrt im Umkreis von 50 km um Berlin</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Nachbestellung bis 10 Prozent der Gästezahl bis 72 Stunden vor dem Termin</span></li>
+        </ul>
+      </div>
+      <div class="karte-hell">
+        <h4>Kostet extra, und das sagen wir vorher</h4>
+        <ul class="liste liste-extra">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Anfahrt außerhalb von 50 km</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Servicepersonal für Ausschank und Bedienung</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Reinigung von Miet-Geschirr, wenn Sie es ungespült zurückgeben</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Termine an Feiertagen</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Getränke nach Verbrauch, wenn Sie es so möchten</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="preis-fuss">Alle Preise verstehen sich netto zuzüglich Mehrwertsteuer. Sie erhalten vor der Zusage einen Festpreis, keine Schätzung.</p>
+    <div class="btn-reihe" style="margin-top:var(--s5)">
+      <a class="btn btn-primaer" href="#anfrage">Angebot anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BEWEIS + ÜBER =================== -->
+<section class="flaeche kohleflaeche kante" id="ueber">
+  <div class="inner">
+    <div class="zwei-spalten">
+      <div>
+        <h2>Warum Kunden uns den Termin überlassen</h2>
+        <div class="beweis">
+          <span class="zahl">41 Grad</span>
+          <h3 style="margin-top:var(--s3)">Zwei Events an zwei Tagen, bei Rekordhitze</h3>
+          <p class="leise" style="margin:0">
+            Im Juni 2026 haben wir an zwei aufeinanderfolgenden Tagen zwei Veranstaltungen ausgerichtet, bei 41 Grad im Schatten.
+            Beide sind gelaufen. Genau dafür buchen Bauunternehmen und Firmen einen Dienstleister, der eigenes Material und eigene Leute hat:
+            weil der Termin steht, egal was das Wetter macht.
+          </p>
+        </div>
+        <h4 style="margin-top:var(--s6);color:var(--gold)">Anlässe, die wir regelmäßig ausrichten</h4>
+        <ul class="tags">
+          <li>Richtfeste für Bauunternehmen</li><li>Sommerfeste für Firmen</li><li>Stadt- und Straßenfeste</li>
+          <li>Hochzeiten</li><li>Jubiläen</li><li>Jugendweihen</li><li>Vereinsfeste</li>
+        </ul>
+      </div>
+      <div>
+        <h2>20 Jahre Feste in Berlin und Brandenburg</h2>
+        <p class="leise">
+          Hinter CK Genusskultur &amp; Events steht ein Team, das seit 20 Jahren Events macht,
+          vom Richtfest auf der Baustelle bis zum Stadtfest mit mehreren Tausend Gästen.
+          In diesen 20 Jahren hat sich eine einfache Erkenntnis durchgesetzt: Gastgeber wollen keine fünf Dienstleister,
+          sie wollen einen, der es macht.
+        </p>
+        <p class="leise">
+          Deshalb liefern wir Küche und Ausstattung selbst. Eigenes Material, eigene Fahrzeuge, eigene Leute.
+          Rustikal, modern, persönlich.
+        </p>
+        <p class="pullquote" style="color:var(--gold-hell);margin-top:var(--s5)">Genuss. Erlebnis. Erinnerung.</p>
+      </div>
+    </div>
+    <div class="bild breitstreifen">
+      <img src="assets/bilder/eventausstattung-berlin-aufbau-lieferung-transportkisten.webp" alt="Crew trägt Transportkisten mit Geschirr aus dem Anhänger, dahinter ein halb aufgebautes Festzelt" loading="lazy" width="1200" height="896">
+      <p class="bild-text klein">Eigenes Material, eigene Fahrzeuge, eigene Leute. Aufbau am Morgen, damit alles steht, bevor die Gäste kommen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section class="flaeche hell kante" id="fragen">
+  <div class="inner">
+    <div class="kopf"><h2>Häufige Fragen</h2></div>
+    <div class="faq">
+      <details open>
+        <summary>Was kostet Catering pro Person?</summary>
+        <div class="faq-antwort"><p><b>Unser Catering beginnt bei 24,50 Euro pro Person.</b> Der Preis hängt von Speisenauswahl, Gästezahl und Ausstattung ab. Sie erhalten vor der Zusage einen Festpreis mit einer klaren Liste, was enthalten ist, keine Schätzung.</p></div>
+      </details>
+      <details>
+        <summary>Ab wie vielen Gästen richten Sie ein Event aus?</summary>
+        <div class="faq-antwort"><p><b>Wir richten Events ab 30 Personen aus</b> und haben Veranstaltungen bis über 5.000 Gäste ausgestattet. Für kleinere Runden vermieten wir Ausstattung ohne Catering.</p></div>
+      </details>
+      <details>
+        <summary>In welchem Gebiet sind Sie unterwegs?</summary>
+        <div class="faq-antwort"><p><b>Wir arbeiten in Berlin und Brandenburg.</b> Im Umkreis von 50 km um Berlin ist die Anfahrt inklusive, darüber hinaus berechnen wir sie transparent im Angebot. Regelmäßig im Einsatz sind wir unter anderem in Berlin, Potsdam, im Havelland, in Oberhavel, im Barnim und in Teltow-Fläming.</p></div>
+      </details>
+      <details>
+        <summary>Was ist im Preis enthalten und was kostet extra?</summary>
+        <div class="faq-antwort"><p><b>Enthalten sind Beratung und Planung, Zubereitung vor Ort, Lieferung, Aufbau und Abbau sowie die Anfahrt im Kerngebiet.</b> Extra kosten Servicepersonal, Anfahrt außerhalb des Kerngebiets, Reinigung von ungespült zurückgegebenem Miet-Geschirr und Termine an Feiertagen. Wir nennen das im Angebot, nicht in der Rechnung.</p></div>
+      </details>
+      <details>
+        <summary>Können wir nur Ausstattung mieten, ohne Catering?</summary>
+        <div class="faq-antwort"><p><b>Ja.</b> Festzelte, Bierwagen, Bierzeltgarnituren, Stehtische, Theken, Zapfanlagen sowie Geschirr, Besteck und Gläser vermieten wir auch einzeln, mit flexiblen Stückzahlen. Umgekehrt geht es genauso: Catering ohne Ausstattung.</p></div>
+      </details>
+      <details>
+        <summary>Wer baut Zelt und Ausstattung auf und ab?</summary>
+        <div class="faq-antwort"><p><b>Wir.</b> Aufbau erfolgt in der Regel am Vortag oder am Morgen des Events, Abbau nach der Veranstaltung oder am Folgetag. Sie räumen nichts hinterher und brauchen keine Helfer zu organisieren.</p></div>
+      </details>
+      <details>
+        <summary>Was passiert bei Regen?</summary>
+        <div class="faq-antwort"><p><b>Wir planen Außenveranstaltungen von Anfang an mit einer Wetterlösung:</b> Festzelt oder Pavillon in passender Größe, Boden und Seitenwände nach Bedarf. Unsere Küche arbeitet wettergeschützt, gekocht wird auch bei Regen.</p></div>
+      </details>
+      <details>
+        <summary>Wie viel Vorlauf brauchen Sie für eine Anfrage?</summary>
+        <div class="faq-antwort"><p><b>Vier Wochen sind ein guter Richtwert, in der Hochsaison von Mai bis September acht Wochen.</b> Kurzfristige Termine gehen oft trotzdem, fragen Sie einfach: entweder ist der Termin frei oder nicht, das sagen wir Ihnen sofort.</p></div>
+      </details>
+      <details>
+        <summary>Gibt es vegetarische, vegane und allergiegerechte Optionen?</summary>
+        <div class="faq-antwort"><p><b>Ja.</b> Wir stimmen Vegetarisch, Vegan und Allergien vor dem Event mit Ihnen ab und kennzeichnen die Speisen vor Ort. Sagen Sie uns bei der Anfrage, wie viele Gäste betroffen sind, dann steht es im Angebot.</p></div>
+      </details>
+      <details>
+        <summary>Was passiert, wenn kurzfristig mehr Gäste kommen?</summary>
+        <div class="faq-antwort"><p><b>Bis 10 Prozent der vereinbarten Gästezahl können Sie bis 72 Stunden vor dem Termin nachbestellen, ohne Aufpreis auf den Pro-Kopf-Satz.</b> Größere Änderungen rechnen wir zum gleichen Satz nach, wenn es die Logistik zulässt.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FORMULAR =================== -->
+<section class="flaeche dunkel kante" id="anfrage">
+  <div class="inner">
+    <div class="formular-block">
+      <div>
+        <h2>Event anfragen</h2>
+        <p class="lead leise">Anlass, Termin, Ort, Gästezahl. Mehr brauchen wir nicht, um Ihnen ein Angebot zu machen.</p>
+        <div class="direktkontakt">
+          <p class="klein leise" style="margin-bottom:var(--s2)">Lieber direkt sprechen?</p>
+          <a href="tel:+491608449781">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2 2a12 12 0 005 5l2-2 5 2v4a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1z"/></svg>
+            0160 8449 781
+          </a><br>
+          <a href="mailto:ck@genusskultur.berlin" style="margin-top:var(--s3)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>
+            ck@genusskultur.berlin
+          </a>
+        </div>
+        <ul class="liste liste-inklusive" style="margin-top:var(--s6);padding-top:var(--s5);border-top:1px solid rgba(182,135,65,.2)">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Antwort in der Regel innerhalb von 24 Stunden</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Unverbindlich und kostenlos, Sie legen sich mit der Anfrage zu nichts fest</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Ein Ansprechpartner von der Anfrage bis zum Abbau</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Sie bekommen einen Festpreis, keine Schätzung</span></li>
+        </ul>
+      </div>
+
+      <!-- Hinweis: Entwurf ohne Backend. Das Formular bestätigt clientseitig,
+           damit der Ablauf demonstrierbar ist. Versand wird beim Livegang angebunden. -->
+      <form id="anfrage-formular" novalidate>
+        <label class="feld"><span>Anlass</span>
+          <select name="anlass" id="feld-anlass">
+            <option>Richtfest</option>
+            <option>Firmen-Sommerfest</option>
+            <option>Firmenfeier und Jubiläum</option>
+            <option>Stadt- und Straßenfest</option>
+            <option>Vereinsfest</option>
+            <option>Hochzeit</option>
+            <option>Geburtstag und Jubiläum</option>
+            <option>Jugendweihe, Einschulung, Familienfeier</option>
+            <option>Gartenparty oder Polterabend</option>
+            <option>Anderer Anlass</option>
+          </select>
+        </label>
+        <label class="feld"><span>Was brauchen Sie?</span>
+          <select name="bedarf" id="feld-bedarf">
+            <option>Catering und Ausstattung</option>
+            <option>Nur Catering</option>
+            <option>Nur Ausstattung</option>
+            <option>Weiß ich noch nicht</option>
+          </select>
+        </label>
+        <div class="feld-paar">
+          <label class="feld"><span>Wunschtermin</span><input type="text" name="termin" placeholder="TT.MM.JJJJ" inputmode="numeric"></label>
+          <label class="feld"><span>Gästezahl</span><input type="text" name="gaeste" placeholder="ungefähr reicht" inputmode="numeric"></label>
+        </div>
+        <label class="feld"><span>Ort der Veranstaltung</span><input type="text" name="ort" placeholder="Berlin, Potsdam, Havelland …"></label>
+        <div class="feld-paar">
+          <label class="feld"><span>Ihr Name</span><input type="text" name="name" required></label>
+          <label class="feld"><span>E-Mail</span><input type="email" name="email" required></label>
+        </div>
+        <label class="feld"><span>Telefon (freiwillig)</span><input type="tel" name="telefon"></label>
+        <label class="feld"><span>Ihre Nachricht (freiwillig)</span><textarea name="nachricht" placeholder="Was sollen wir wissen?"></textarea></label>
+        <button class="btn btn-primaer" type="submit" style="width:100%">Unverbindlich anfragen</button>
+        <div class="reassurance">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Unverbindlich und kostenlos. Wir antworten in der Regel innerhalb von 24 Stunden. Ihre Daten nutzen wir ausschließlich für Ihre Anfrage.</span>
+        </div>
+        <div class="danke" id="danke" role="status">
+          <h3 style="color:var(--erfolg);margin-bottom:var(--s2)">Danke, Ihre Anfrage ist unterwegs</h3>
+          <p class="klein leise" style="margin:0">Wir melden uns in der Regel innerhalb von 24 Stunden mit einem Festpreis. Wenn es dringend ist, rufen Sie gern direkt an: 0160 8449 781.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="flaeche kohleflaeche dicht">
+  <div class="inner">
+    <div class="fusszeile">
+      <div>
+        <img src="assets/logo-weiss.png" alt="CK Genusskultur &amp; Events" width="240" height="41" style="height:41px;width:auto;margin-bottom:var(--s4)" loading="lazy">
+        <p class="klein leise" style="max-width:36ch">CK Genusskultur &amp; Events. Catering, Live Cooking und Eventausstattung für Berlin und Brandenburg. Seit 20 Jahren.</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#kueche">Catering</a></li>
+          <li><a href="#kueche">Live Cooking</a></li>
+          <li><a href="#kueche">Spanferkel</a></li>
+          <li><a href="#kueche">BBQ und Grill</a></li>
+          <li><a href="#ausstattung">Bierwagen mieten</a></li>
+          <li><a href="#ausstattung">Festzelt mieten</a></li>
+          <li><a href="#ausstattung">Geschirr mieten</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Anlässe</h4>
+        <ul>
+          <li><a href="#richtfest">Richtfest</a></li>
+          <li><a href="#anlaesse">Firmen-Sommerfest</a></li>
+          <li><a href="#anlaesse">Firmenfeier</a></li>
+          <li><a href="#anlaesse">Stadtfest</a></li>
+          <li><a href="#anlaesse">Vereinsfest</a></li>
+          <li><a href="#anlaesse">Hochzeit</a></li>
+          <li><a href="#anlaesse">Jugendweihe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+491608449781">0160 8449 781</a></li>
+          <li><a href="mailto:ck@genusskultur.berlin">ck@genusskultur.berlin</a></li>
+          <li>Berlin &amp; Brandenburg</li>
+          <li><a href="https://www.instagram.com/ck.genusskultur.events/" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fuss-schluss">
+      Im Einsatz in Berlin, Potsdam, Havelland, Oberhavel, Barnim, Teltow-Fläming und in ganz Brandenburg.
+      &nbsp;·&nbsp; <a href="#">Impressum</a> &nbsp;·&nbsp; <a href="#">Datenschutz</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Sticky CTA, nur mobil -->
+<div class="sticky-cta">
+  <a class="btn btn-primaer" href="#anfrage">Event anfragen</a>
+  <a class="btn btn-sekundaer" href="tel:+491608449781" aria-label="Anrufen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h4l2 5-2 2a12 12 0 005 5l2-2 5 2v4a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1z"/></svg>
+  </a>
+</div>
+
+<!-- =================== STRUKTURIERTE DATEN (GEO) =================== -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":["CateringBusiness","LocalBusiness"],
+      "@id":"https://genusskultur.berlin/#betrieb",
+      "name":"CK Genusskultur & Events",
+      "description":"CK Genusskultur & Events richtet Events in Berlin und Brandenburg aus und liefert Catering und Eventausstattung aus einer Hand. 20 Jahre Erfahrung, für 30 bis 5.000 Gäste.",
+      "telephone":"+49 160 8449781",
+      "email":"ck@genusskultur.berlin",
+      "url":"https://genusskultur.berlin/",
+      "image":"https://genusskultur.berlin/assets/bilder/hero-catering-eventausstattung-berlin-live-cooking.webp",
+      "priceRange":"ab 24,50 EUR pro Person",
+      "areaServed":[
+        {"@type":"City","name":"Berlin"},
+        {"@type":"City","name":"Potsdam"},
+        {"@type":"AdministrativeArea","name":"Brandenburg"},
+        {"@type":"AdministrativeArea","name":"Havelland"},
+        {"@type":"AdministrativeArea","name":"Oberhavel"},
+        {"@type":"AdministrativeArea","name":"Barnim"},
+        {"@type":"AdministrativeArea","name":"Teltow-Fläming"}
+      ],
+      "sameAs":["https://www.instagram.com/ck.genusskultur.events/"],
+      "makesOffer":[
+        {"@type":"Offer","name":"Richtfest Catering","priceCurrency":"EUR","price":"24.50","description":"Deftiger Richtschmaus vom Grill inklusive Zelt, Bierwagen und Richtkranz. Ab 30 Personen."},
+        {"@type":"Offer","name":"Spanferkel Catering","description":"Langsam im Spezialofen gegart, mit Kräuter-Knoblauch-Marinade."},
+        {"@type":"Offer","name":"Pizza und Flammkuchen Catering","description":"Live aus dem Holzofen, direkt vor den Gästen gebacken."},
+        {"@type":"Offer","name":"Burger Catering","description":"Frisch gebraten an der Burger-Bar, live vor den Gästen."},
+        {"@type":"Offer","name":"Suppenküche","description":"Bis zu 4 Suppen gleichzeitig, Auswahl nach Wunsch, frisches Brot dazu."}
+      ]
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://genusskultur.berlin/#organisation",
+      "name":"CK Genusskultur & Events",
+      "logo":"https://genusskultur.berlin/assets/logo.png",
+      "url":"https://genusskultur.berlin/",
+      "sameAs":["https://www.instagram.com/ck.genusskultur.events/"]
+    },
+    {"@type":"Product","name":"Festzelt mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Festzelte und Pavillons in verschiedenen Größen, mit Boden und Seitenwänden, inklusive Lieferung, Aufbau und Abbau in Berlin und Brandenburg.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR","areaServed":"Berlin und Brandenburg"}},
+    {"@type":"Product","name":"Bierwagen mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Mobiler Bierwagen mit Zapfanlage, ausgelegt für Veranstaltungen von 50 bis über 5.000 Gäste, inklusive Lieferung und Aufbau.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR"}},
+    {"@type":"Product","name":"Bierzeltgarnitur mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Robuste Bierzeltgarnituren zur Miete in Berlin und Brandenburg, inklusive Lieferung, Aufbau und Abbau.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR","price":"12.00","unitText":"pro Tag"}},
+    {"@type":"Product","name":"Geschirr, Besteck und Gläser mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Geschirr, Besteck, Gläser, Kaffeegeschirr sowie Servier- und Buffetzubehör zur Miete mit flexiblen Stückzahlen, auf Wunsch mit Reinigung.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR"}},
+    {"@type":"Product","name":"Richtkranz mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Richtkranz mit Bändern in individueller Farbgestaltung. Bei Buchung eines Richtfestes ab 30 Personen inklusive.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR","price":"45.00"}},
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Was kostet Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Das Catering von CK Genusskultur & Events beginnt bei 24,50 Euro pro Person. Der Preis hängt von Speisenauswahl, Gästezahl und Ausstattung ab. Vor der Zusage gibt es einen Festpreis mit einer klaren Liste, was enthalten ist."}},
+        {"@type":"Question","name":"Ab wie vielen Gästen richtet CK Genusskultur & Events ein Event aus?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events richtet Events ab 30 Personen aus und hat Veranstaltungen bis über 5.000 Gäste ausgestattet. Für kleinere Runden wird Ausstattung ohne Catering vermietet."}},
+        {"@type":"Question","name":"In welchem Gebiet ist CK Genusskultur & Events unterwegs?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events arbeitet in Berlin und Brandenburg. Im Umkreis von 50 km um Berlin ist die Anfahrt inklusive. Regelmäßige Einsatzgebiete sind Berlin, Potsdam, Havelland, Oberhavel, Barnim und Teltow-Fläming."}},
+        {"@type":"Question","name":"Was ist im Preis enthalten und was kostet extra?","acceptedAnswer":{"@type":"Answer","text":"Enthalten sind Beratung und Planung, Zubereitung vor Ort, Lieferung, Aufbau und Abbau sowie die Anfahrt im Kerngebiet. Extra kosten Servicepersonal, Anfahrt außerhalb des Kerngebiets, Reinigung von ungespült zurückgegebenem Miet-Geschirr und Termine an Feiertagen."}},
+        {"@type":"Question","name":"Kann man bei CK Genusskultur & Events nur Ausstattung mieten, ohne Catering?","acceptedAnswer":{"@type":"Answer","text":"Ja. Festzelte, Bierwagen, Bierzeltgarnituren, Stehtische, Theken, Zapfanlagen sowie Geschirr, Besteck und Gläser werden auch einzeln vermietet, mit flexiblen Stückzahlen. Catering ohne Ausstattung ist ebenso möglich."}},
+        {"@type":"Question","name":"Wer baut Zelt und Ausstattung auf und ab?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events baut selbst auf und ab. Der Aufbau erfolgt in der Regel am Vortag oder am Morgen des Events, der Abbau nach der Veranstaltung oder am Folgetag."}},
+        {"@type":"Question","name":"Was passiert bei Regen?","acceptedAnswer":{"@type":"Answer","text":"Außenveranstaltungen werden von Anfang an mit einer Wetterlösung geplant: Festzelt oder Pavillon in passender Größe, Boden und Seitenwände nach Bedarf. Die Küche arbeitet wettergeschützt, gekocht wird auch bei Regen."}},
+        {"@type":"Question","name":"Wie viel Vorlauf braucht eine Anfrage?","acceptedAnswer":{"@type":"Answer","text":"Vier Wochen sind ein guter Richtwert, in der Hochsaison von Mai bis September acht Wochen. Kurzfristige Termine sind oft trotzdem möglich."}},
+        {"@type":"Question","name":"Gibt es vegetarische, vegane und allergiegerechte Optionen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Vegetarische, vegane und allergiegerechte Optionen werden vor dem Event abgestimmt und vor Ort gekennzeichnet."}},
+        {"@type":"Question","name":"Was passiert, wenn kurzfristig mehr Gäste kommen?","acceptedAnswer":{"@type":"Answer","text":"Bis 10 Prozent der vereinbarten Gästezahl kann bis 72 Stunden vor dem Termin ohne Aufpreis auf den Pro-Kopf-Satz nachbestellt werden. Größere Änderungen werden zum gleichen Satz nachgerechnet, wenn es die Logistik zulässt."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+/* Kontext-CTAs belegen Anlass und Bedarf im Formular vor */
+document.addEventListener('click', function(e){
+  var link = e.target.closest('a[href="#anfrage"]');
+  if(!link) return;
+  var anlass = link.getAttribute('data-anlass');
+  var bedarf = link.getAttribute('data-bedarf');
+  if(anlass){
+    var sel = document.getElementById('feld-anlass');
+    for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text === anlass){ sel.selectedIndex = i; break; } }
+  }
+  if(bedarf){
+    var selB = document.getElementById('feld-bedarf');
+    for(var j=0;j<selB.options.length;j++){ if(selB.options[j].text === bedarf){ selB.selectedIndex = j; break; } }
+  }
+});
+
+/* Entwurf ohne Backend: Bestätigung clientseitig, damit der Ablauf demonstrierbar ist */
+document.getElementById('anfrage-formular').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.currentTarget;
+  if(!f.name.value.trim() || !f.email.value.trim()){
+    (!f.name.value.trim() ? f.name : f.email).focus();
+    return;
+  }
+  document.getElementById('danke').classList.add('ist-sichtbar');
+  f.querySelector('button[type="submit"]').disabled = true;
+});
+</script>
+</body>
+</html>
