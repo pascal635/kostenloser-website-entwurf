@@ -1,0 +1,4 @@
+/* Selbst gehostet, kein Google-Fonts-Request (DSGVO). Variable Fonts, Subset latin. */
+@font-face{font-family:'Sora';font-style:normal;font-weight:400 600;font-display:swap;src:url(sora.woff2) format('woff2');}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 600;font-display:swap;src:url(instrument-sans.woff2) format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(jetbrains-mono.woff2) format('woff2');}
