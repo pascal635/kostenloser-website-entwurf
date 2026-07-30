@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Catering &amp; Eventausstattung Berlin und Brandenburg | CK Genusskultur &amp; Events</title>
-<meta name="description" content="Catering, Live Cooking und komplette Eventausstattung aus einer Hand. Richtfeste, Firmenfeste und Hochzeiten in Berlin und Brandenburg, für 30 bis 5.000 Gäste. 20 Jahre Erfahrung, Aufbau und Abbau inklusive. Jetzt unverbindlich anfragen.">
+<meta name="description" content="Catering, Eventausstattung und Eventorganisation aus einer Hand. Richtfeste, Firmenfeste und Hochzeiten in Berlin und Brandenburg, für 30 bis 5.000 Gäste. Ein Team mit 20 Jahren Event-Erfahrung, Aufbau und Abbau inklusive. Jetzt unverbindlich anfragen.">
 <!-- Entwurf auf dev.likovo.de: bewusst noindex, damit der Draft nicht unter der
      LIKOVO-Dev-Domain in den Index gerät. Beim Livegang auf der Kundendomain
      umstellen auf:
@@ -173,7 +173,15 @@ p{margin:0 0 var(--s4);max-width:68ch}
 .hero-bild .bild::after{border-radius:0}
 .hero-bild .bild::before{background:linear-gradient(to top,rgba(20,17,16,.95) 0%,rgba(20,17,16,.45) 55%,rgba(20,17,16,.1) 100%)}
 .hero-text{padding:var(--s6) var(--s4) var(--s8);max-width:var(--max);margin:0 auto}
-/* Zweite Zeile im Hero: trägt die Kernbotschaft, ohne der H1 optisch Konkurrenz zu machen */
+/* Markenzeile über der H1. Der Kunde will in den ersten Sekunden Name, Leistungen
+   und Region lesen, in genau dieser Reihenfolge. */
+.marke{
+  font-family:var(--f-cond);font-weight:600;font-size:clamp(15px,1.8vw,18px);
+  text-transform:uppercase;letter-spacing:.16em;color:var(--text-dunkel);
+  margin:0 0 var(--s3);
+}
+.hero .lead strong{font-weight:600;color:var(--text-dunkel)}
+/* Regionzeile unter der H1: trägt mit, ohne der H1 optisch Konkurrenz zu machen */
 .hero-claim{
   font-family:var(--f-cond);font-weight:500;font-size:clamp(18px,2.2vw,24px);line-height:1.3;
   letter-spacing:.01em;color:var(--gold-hell);margin:0 0 var(--s4);max-width:30ch;
@@ -273,7 +281,14 @@ p{margin:0 0 var(--s4);max-width:68ch}
 .anker{background:var(--kohle);color:var(--text-dunkel);border-radius:var(--r-lg);padding:var(--s5);box-shadow:var(--e-elevated);border:1px solid rgba(182,135,65,.28)}
 .anker .zahl{font-size:clamp(28px,6vw,40px)}
 .anker p{margin:var(--s2) 0 0;font-size:14px;color:var(--text-dunkel-leise)}
-.preis-fuss{font-size:14px;color:var(--text-hell-leise);margin-top:var(--s5)}
+.preis-fuss{font-size:14px;color:var(--text-hell-leise);margin-top:var(--s5);max-width:76ch}
+/* Paketbeispiele statt allgemeingültiger Konditionen. Der Kunde will sich öffentlich
+   nicht auf Pro-Kopf-Preise und Inklusiv-Zusagen festlegen. */
+.paket-groesse{font-family:var(--f-cond);font-size:13px;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--gold-tief);margin:0 0 var(--s4)}
+.paket-preis{font-family:var(--f-cond);font-weight:600;font-size:15px;letter-spacing:.04em;
+  color:var(--text-hell);margin:var(--s4) 0 0;padding-top:var(--s3);
+  border-top:1px solid rgba(126,91,44,.25)}
 
 /* ---------- Beweis ---------- */
 .beweis{background:var(--braunschwarz);border-radius:var(--r-lg);padding:var(--s6);border:1px solid rgba(182,135,65,.2);box-shadow:var(--e-elevated)}
@@ -384,10 +399,11 @@ body{padding-bottom:76px}
   .richtfest-punkte{grid-template-columns:repeat(4,1fr);gap:var(--s6)}
   /* Küchen-Raster auf 6 Spalten: normale Karten spannen 2, breite spannen 3.
      Damit gehen alle Reihen auf und in der Zweier-Reihe sind beide Karten gleich breit,
-     also auch gleich hoch. */
-  .grid-3{grid-template-columns:repeat(6,1fr)}
-  .grid-3 > .karte{grid-column:span 2}
-  .grid-3 > .karte-breit{grid-column:span 3}
+     also auch gleich hoch. Bewusst auf #kueche begrenzt, sonst greift die Regel in
+     andere Dreier-Raster (Paketbeispiele) und quetscht die Karten auf eine Spalte. */
+  #kueche .grid-3{grid-template-columns:repeat(6,1fr)}
+  #kueche .grid-3 > .karte{grid-column:span 2}
+  #kueche .grid-3 > .karte-breit{grid-column:span 3}
   .hero-bild .bild::before{background:linear-gradient(to right,rgba(20,17,16,.96) 0%,rgba(20,17,16,.55) 22%,rgba(20,17,16,.12) 58%,rgba(10,8,6,.35) 100%)}
   .hero-diagonale{position:absolute;z-index:3;top:0;bottom:0;left:0;width:2px;
     background:linear-gradient(to bottom,transparent,rgba(182,135,65,.75),transparent);transform:skewX(-8deg)}
@@ -426,19 +442,19 @@ body{padding-bottom:76px}
 <!-- =================== HERO =================== -->
 <section class="hero dunkel flaeche">
   <div class="hero-text">
-    <p class="eyebrow">Catering · Live Cooking · Eventausstattung</p>
-    <h1>Catering und Eventausstattung für Berlin und Brandenburg</h1>
-    <p class="hero-claim">Ein Ansprechpartner für Ihr Event, vom Essen bis zum Zelt.</p>
+    <p class="marke">CK Genusskultur &amp; Events</p>
+    <h1>Catering, Eventausstattung und Eventorganisation</h1>
+    <p class="hero-claim">für Berlin &amp; Brandenburg</p>
     <p class="lead leise">
-      CK Genusskultur &amp; Events richtet Firmenfeste, Richtfeste und Hochzeiten komplett aus.
-      Küche, Ausstattung, Aufbau und Abbau aus einer Hand, für 30 bis 5.000 Gäste, seit 20 Jahren.
+      <strong>Alles aus einer Hand.</strong> Küche, Ausstattung und Organisation von einem Ansprechpartner,
+      für 30 bis 5.000 Gäste. Dahinter steht ein Team mit 20 Jahren Event-Erfahrung.
     </p>
     <div class="btn-reihe">
       <a class="btn btn-primaer" href="#anfrage">Event anfragen</a>
       <a class="btn btn-sekundaer" href="#ablauf">So läuft es ab</a>
     </div>
     <p class="hero-trust">
-      <span>20 Jahre Erfahrung</span><i aria-hidden="true">·</i>
+      <span>20 Jahre Erfahrung im Team</span><i aria-hidden="true">·</i>
       <span>Alles aus einer Hand</span><i aria-hidden="true">·</i>
       <span>Aufbau und Abbau inklusive</span>
     </p>
@@ -457,10 +473,10 @@ body{padding-bottom:76px}
 <section class="flaeche hell dicht kante anschluss-ende" aria-label="Zahlen und Fakten">
   <div class="inner">
     <div class="stat-reihe">
-      <div class="stat"><span class="zahl">20 Jahre</span><p>Events in Berlin und Brandenburg</p></div>
+      <div class="stat"><span class="zahl">20 Jahre</span><p>Event-Erfahrung im Team</p></div>
       <div class="stat"><span class="zahl">30 bis 5.000</span><p>Gäste, von der Gartenparty bis zum Stadtfest</p></div>
       <div class="stat"><span class="zahl">1</span><p>Ansprechpartner für Essen, Zelt und Technik</p></div>
-      <div class="stat"><span class="zahl">50 km</span><p>Anfahrt inklusive, Aufbau und Abbau ebenso</p></div>
+      <div class="stat"><span class="zahl">3</span><p>Bereiche aus einer Hand: Catering, Ausstattung, Organisation</p></div>
     </div>
   </div>
 </section>
@@ -746,7 +762,7 @@ body{padding-bottom:76px}
         </div>
         <div class="miete">
           <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9h18M5 9v10M19 9v10M3 14h18"/></svg></span>
-          <div><h3>Bierzeltgarnituren mieten</h3><p>Robust und bequem, ab 12 Euro pro Tag</p></div>
+          <div><h3>Bierzeltgarnituren mieten</h3><p>Robust und bequem, in der Stückzahl, die Sie brauchen</p></div>
         </div>
         <div class="miete">
           <span class="miete-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 6h14l-2 6H7L5 6zM12 12v6M9 18h6"/></svg></span>
@@ -803,42 +819,49 @@ body{padding-bottom:76px}
 <section class="flaeche hell anschluss" id="preise">
   <div class="inner">
     <div class="kopf">
-      <h2>Was kostet das, ehrlich gerechnet</h2>
-      <p class="leise">Der häufigste Grund für Ärger beim Catering sind nicht die Preise, sondern die Posten, die niemand vorher genannt hat. Deshalb sagen wir beides: was drin ist und was extra kommt.</p>
+      <h2>Paketbeispiele zur Orientierung</h2>
+      <p class="leise">Jedes Event ist anders, deshalb gibt es bei uns keine Preisliste von der Stange. Damit Sie trotzdem wissen, in welchem Rahmen Sie planen, hier drei typische Konzepte, die wir so schon oft umgesetzt haben.</p>
     </div>
-    <div class="anker-reihe">
-      <div class="anker">
-        <span class="zahl">ab 24,50 €</span>
-        <p>pro Person für Catering, ab 30 Personen</p>
-      </div>
-      <div class="anker">
-        <span class="zahl">ab 12 €</span>
-        <p>pro Tag für eine Bierzeltgarnitur. Gesamtpaket für Ausstattung nach Bedarf.</p>
-      </div>
-    </div>
-    <div class="grid grid-2">
+    <div class="grid grid-3">
       <div class="karte-hell">
-        <h4>Immer inklusive</h4>
+        <h4>Richtfest</h4>
+        <p class="paket-groesse">Beispiel: 60 Gäste, Baustelle</p>
         <ul class="liste liste-inklusive">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Beratung und Planung mit einem festen Ansprechpartner</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Zubereitung vor Ort</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Lieferung, Aufbau und Abbau</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Anfahrt im Umkreis von 50 km um Berlin</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Nachbestellung bis 10 Prozent der Gästezahl bis 72 Stunden vor dem Termin</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Spanferkel oder Grillstation</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Bierwagen mit Zapfanlage</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Zelt, Garnituren, Stehtische</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Richtkranz, Aufbau und Abbau</span></li>
         </ul>
+        <p class="paket-preis">Beispielpreis auf Anfrage</p>
       </div>
       <div class="karte-hell">
-        <h4>Kostet extra, und das sagen wir vorher</h4>
-        <ul class="liste liste-extra">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Anfahrt außerhalb von 50 km</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Servicepersonal für Ausschank und Bedienung</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Reinigung von Miet-Geschirr, wenn Sie es ungespült zurückgeben</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Termine an Feiertagen</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Getränke nach Verbrauch, wenn Sie es so möchten</span></li>
+        <h4>Firmen-Sommerfest</h4>
+        <p class="paket-groesse">Beispiel: 120 Gäste, Firmengelände</p>
+        <ul class="liste liste-inklusive">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Live Cooking, zwei Stationen</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Bierwagen und Getränketechnik</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Zelt, Stehtische mit Hussen, Licht</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Geschirr, Gläser, Aufbau und Abbau</span></li>
         </ul>
+        <p class="paket-preis">Beispielpreis auf Anfrage</p>
+      </div>
+      <div class="karte-hell">
+        <h4>Hochzeit</h4>
+        <p class="paket-groesse">Beispiel: 80 Gäste, Scheune oder Zelt</p>
+        <ul class="liste liste-inklusive">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Empfang mit Canapés, danach Buffet</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Bar und Getränkeservice</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Eingedeckte Tafeln, Geschirr, Gläser</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Planung und Ablauforganisation</span></li>
+        </ul>
+        <p class="paket-preis">Beispielpreis auf Anfrage</p>
       </div>
     </div>
-    <p class="preis-fuss">Alle Preise verstehen sich netto zuzüglich Mehrwertsteuer. Sie erhalten vor der Zusage einen Festpreis, keine Schätzung.</p>
+    <p class="preis-fuss">
+      Was in Ihrem Angebot steht, hängt vom Konzept ab. Fest ist nur eins: Sie bekommen einen Festpreis,
+      keine Schätzung, und jeder Posten steht einzeln darin. Auch Servicepersonal, Anfahrt und Reinigung,
+      damit am Ende keine Überraschung dazukommt. Alle Angaben netto zuzüglich Mehrwertsteuer.
+    </p>
     <div class="btn-reihe" style="margin-top:var(--s5)">
       <a class="btn btn-primaer" href="#anfrage">Angebot anfragen</a>
     </div>
@@ -867,11 +890,11 @@ body{padding-bottom:76px}
         </ul>
       </div>
       <div>
-        <h2>20 Jahre Feste in Berlin und Brandenburg</h2>
+        <h2>Ein Team mit 20 Jahren Event-Erfahrung</h2>
         <p class="leise">
           Hinter CK Genusskultur &amp; Events steht ein Team, das seit 20 Jahren Events macht,
           vom Richtfest auf der Baustelle bis zum Stadtfest mit mehreren Tausend Gästen.
-          In diesen 20 Jahren hat sich eine einfache Erkenntnis durchgesetzt: Gastgeber wollen keine fünf Dienstleister,
+          In diesen Jahren hat sich eine einfache Erkenntnis durchgesetzt: Gastgeber wollen keine fünf Dienstleister,
           sie wollen einen, der es macht.
         </p>
         <p class="leise">
@@ -895,7 +918,7 @@ body{padding-bottom:76px}
     <div class="faq">
       <details open>
         <summary>Was kostet Catering pro Person?</summary>
-        <div class="faq-antwort"><p><b>Unser Catering beginnt bei 24,50 Euro pro Person.</b> Der Preis hängt von Speisenauswahl, Gästezahl und Ausstattung ab. Sie erhalten vor der Zusage einen Festpreis mit einer klaren Liste, was enthalten ist, keine Schätzung.</p></div>
+        <div class="faq-antwort"><p><b>Das hängt vom Konzept ab, deshalb arbeiten wir mit Paketbeispielen statt mit einer Preisliste.</b> Speisenauswahl, Gästezahl, Ausstattung und Dauer entscheiden über den Preis. Sagen Sie uns Anlass, Termin, Ort und Gästezahl, dann bekommen Sie ein Angebot mit Festpreis und einer klaren Liste, was enthalten ist, keine Schätzung.</p></div>
       </details>
       <details>
         <summary>Ab wie vielen Gästen richten Sie ein Event aus?</summary>
@@ -903,11 +926,11 @@ body{padding-bottom:76px}
       </details>
       <details>
         <summary>In welchem Gebiet sind Sie unterwegs?</summary>
-        <div class="faq-antwort"><p><b>Wir arbeiten in Berlin und Brandenburg.</b> Im Umkreis von 50 km um Berlin ist die Anfahrt inklusive, darüber hinaus berechnen wir sie transparent im Angebot. Regelmäßig im Einsatz sind wir unter anderem in Berlin, Potsdam, im Havelland, in Oberhavel, im Barnim und in Teltow-Fläming.</p></div>
+        <div class="faq-antwort"><p><b>Wir arbeiten in Berlin und Brandenburg.</b> Regelmäßig im Einsatz sind wir unter anderem in Berlin, Potsdam, im Havelland, in Oberhavel, im Barnim und in Teltow-Fläming. Die Anfahrt weisen wir im Angebot transparent aus, damit sie nicht später auf der Rechnung auftaucht.</p></div>
       </details>
       <details>
         <summary>Was ist im Preis enthalten und was kostet extra?</summary>
-        <div class="faq-antwort"><p><b>Enthalten sind Beratung und Planung, Zubereitung vor Ort, Lieferung, Aufbau und Abbau sowie die Anfahrt im Kerngebiet.</b> Extra kosten Servicepersonal, Anfahrt außerhalb des Kerngebiets, Reinigung von ungespült zurückgegebenem Miet-Geschirr und Termine an Feiertagen. Wir nennen das im Angebot, nicht in der Rechnung.</p></div>
+        <div class="faq-antwort"><p><b>In der Regel enthalten sind Beratung und Planung, die Zubereitung vor Ort sowie Lieferung, Aufbau und Abbau.</b> Posten wie Servicepersonal, Anfahrt, Reinigung von Miet-Geschirr und Termine an Feiertagen hängen vom Konzept ab und stehen einzeln im Angebot. Wir nennen sie im Angebot, nicht in der Rechnung.</p></div>
       </details>
       <details>
         <summary>Können wir nur Ausstattung mieten, ohne Catering?</summary>
@@ -931,7 +954,7 @@ body{padding-bottom:76px}
       </details>
       <details>
         <summary>Was passiert, wenn kurzfristig mehr Gäste kommen?</summary>
-        <div class="faq-antwort"><p><b>Bis 10 Prozent der vereinbarten Gästezahl können Sie bis 72 Stunden vor dem Termin nachbestellen, ohne Aufpreis auf den Pro-Kopf-Satz.</b> Größere Änderungen rechnen wir zum gleichen Satz nach, wenn es die Logistik zulässt.</p></div>
+        <div class="faq-antwort"><p><b>Kurzfristige Änderungen der Gästezahl bekommen wir in der Regel unter.</b> Wie groß der Spielraum ist und bis wann er gilt, halten wir im Angebot fest, damit beide Seiten wissen, woran sie sind. Sagen Sie einfach Bescheid, sobald sich etwas ändert.</p></div>
       </details>
     </div>
   </div>
@@ -1021,7 +1044,7 @@ body{padding-bottom:76px}
     <div class="fusszeile">
       <div>
         <img src="assets/logo-weiss.png" alt="CK Genusskultur &amp; Events" width="240" height="41" style="height:41px;width:auto;margin-bottom:var(--s4)" loading="lazy">
-        <p class="klein leise" style="max-width:36ch">CK Genusskultur &amp; Events. Catering, Live Cooking und Eventausstattung für Berlin und Brandenburg. Seit 20 Jahren.</p>
+        <p class="klein leise" style="max-width:36ch">CK Genusskultur &amp; Events. Catering, Eventausstattung und Eventorganisation für Berlin und Brandenburg. Ein Team mit 20 Jahren Event-Erfahrung.</p>
       </div>
       <div>
         <h4>Leistungen</h4>
@@ -1081,12 +1104,11 @@ body{padding-bottom:76px}
       "@type":["CateringBusiness","LocalBusiness"],
       "@id":"https://genusskultur.berlin/#betrieb",
       "name":"CK Genusskultur & Events",
-      "description":"CK Genusskultur & Events richtet Events in Berlin und Brandenburg aus und liefert Catering und Eventausstattung aus einer Hand. 20 Jahre Erfahrung, für 30 bis 5.000 Gäste.",
+      "description":"CK Genusskultur & Events richtet Events in Berlin und Brandenburg aus und liefert Catering, Eventausstattung und Eventorganisation aus einer Hand. Ein Team mit 20 Jahren Event-Erfahrung, für 30 bis 5.000 Gäste.",
       "telephone":"+49 160 8449781",
       "email":"ck@genusskultur.berlin",
       "url":"https://genusskultur.berlin/",
       "image":"https://genusskultur.berlin/assets/bilder/hero-catering-eventausstattung-berlin-live-cooking.webp",
-      "priceRange":"ab 24,50 EUR pro Person",
       "areaServed":[
         {"@type":"City","name":"Berlin"},
         {"@type":"City","name":"Potsdam"},
@@ -1098,7 +1120,7 @@ body{padding-bottom:76px}
       ],
       "sameAs":["https://www.instagram.com/ck.genusskultur.events/"],
       "makesOffer":[
-        {"@type":"Offer","name":"Richtfest Catering","priceCurrency":"EUR","price":"24.50","description":"Deftiger Richtschmaus vom Grill inklusive Zelt, Bierwagen und Richtkranz. Ab 30 Personen."},
+        {"@type":"Offer","name":"Richtfest Catering","description":"Deftiger Richtschmaus vom Grill inklusive Zelt, Bierwagen und Richtkranz. Angebot nach Konzept, Gästezahl und Ausstattung."},
         {"@type":"Offer","name":"Spanferkel Catering","description":"Langsam im Spezialofen gegart, mit Kräuter-Knoblauch-Marinade."},
         {"@type":"Offer","name":"Pizza und Flammkuchen Catering","description":"Live aus dem Holzofen, direkt vor den Gästen gebacken."},
         {"@type":"Offer","name":"Burger Catering","description":"Frisch gebraten an der Burger-Bar, live vor den Gästen."},
@@ -1115,22 +1137,22 @@ body{padding-bottom:76px}
     },
     {"@type":"Product","name":"Festzelt mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Festzelte und Pavillons in verschiedenen Größen, mit Boden und Seitenwänden, inklusive Lieferung, Aufbau und Abbau in Berlin und Brandenburg.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR","areaServed":"Berlin und Brandenburg"}},
     {"@type":"Product","name":"Bierwagen mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Mobiler Bierwagen mit Zapfanlage, ausgelegt für Veranstaltungen von 50 bis über 5.000 Gäste, inklusive Lieferung und Aufbau.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR"}},
-    {"@type":"Product","name":"Bierzeltgarnitur mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Robuste Bierzeltgarnituren zur Miete in Berlin und Brandenburg, inklusive Lieferung, Aufbau und Abbau.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR","price":"12.00","unitText":"pro Tag"}},
+    {"@type":"Product","name":"Bierzeltgarnitur mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Robuste Bierzeltgarnituren zur Miete in Berlin und Brandenburg, inklusive Lieferung, Aufbau und Abbau.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR"}},
     {"@type":"Product","name":"Geschirr, Besteck und Gläser mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Geschirr, Besteck, Gläser, Kaffeegeschirr sowie Servier- und Buffetzubehör zur Miete mit flexiblen Stückzahlen, auf Wunsch mit Reinigung.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR"}},
     {"@type":"Product","name":"Richtkranz mieten","brand":{"@id":"https://genusskultur.berlin/#betrieb"},"description":"Richtkranz mit Bändern in individueller Farbgestaltung. Bei Buchung eines Richtfestes ab 30 Personen inklusive.","offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"EUR","price":"45.00"}},
     {
       "@type":"FAQPage",
       "mainEntity":[
-        {"@type":"Question","name":"Was kostet Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Das Catering von CK Genusskultur & Events beginnt bei 24,50 Euro pro Person. Der Preis hängt von Speisenauswahl, Gästezahl und Ausstattung ab. Vor der Zusage gibt es einen Festpreis mit einer klaren Liste, was enthalten ist."}},
+        {"@type":"Question","name":"Was kostet Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Der Preis richtet sich nach Konzept, Speisenauswahl, Gästezahl und Ausstattung. CK Genusskultur & Events nennt auf der Seite Paketbeispiele zur Orientierung und erstellt für jede Anfrage ein Angebot mit Festpreis und einer klaren Liste, was enthalten ist."}},
         {"@type":"Question","name":"Ab wie vielen Gästen richtet CK Genusskultur & Events ein Event aus?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events richtet Events ab 30 Personen aus und hat Veranstaltungen bis über 5.000 Gäste ausgestattet. Für kleinere Runden wird Ausstattung ohne Catering vermietet."}},
-        {"@type":"Question","name":"In welchem Gebiet ist CK Genusskultur & Events unterwegs?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events arbeitet in Berlin und Brandenburg. Im Umkreis von 50 km um Berlin ist die Anfahrt inklusive. Regelmäßige Einsatzgebiete sind Berlin, Potsdam, Havelland, Oberhavel, Barnim und Teltow-Fläming."}},
-        {"@type":"Question","name":"Was ist im Preis enthalten und was kostet extra?","acceptedAnswer":{"@type":"Answer","text":"Enthalten sind Beratung und Planung, Zubereitung vor Ort, Lieferung, Aufbau und Abbau sowie die Anfahrt im Kerngebiet. Extra kosten Servicepersonal, Anfahrt außerhalb des Kerngebiets, Reinigung von ungespült zurückgegebenem Miet-Geschirr und Termine an Feiertagen."}},
+        {"@type":"Question","name":"In welchem Gebiet ist CK Genusskultur & Events unterwegs?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events arbeitet in Berlin und Brandenburg. Regelmäßige Einsatzgebiete sind Berlin, Potsdam, Havelland, Oberhavel, Barnim und Teltow-Fläming. Die Anfahrt wird im Angebot transparent ausgewiesen."}},
+        {"@type":"Question","name":"Was ist im Preis enthalten und was kostet extra?","acceptedAnswer":{"@type":"Answer","text":"In den Angeboten von CK Genusskultur & Events sind in der Regel Beratung und Planung, die Zubereitung vor Ort sowie Lieferung, Aufbau und Abbau enthalten. Posten wie Servicepersonal, Anfahrt, Reinigung von Miet-Geschirr und Termine an Feiertagen werden im Angebot einzeln ausgewiesen."}},
         {"@type":"Question","name":"Kann man bei CK Genusskultur & Events nur Ausstattung mieten, ohne Catering?","acceptedAnswer":{"@type":"Answer","text":"Ja. Festzelte, Bierwagen, Bierzeltgarnituren, Stehtische, Theken, Zapfanlagen sowie Geschirr, Besteck und Gläser werden auch einzeln vermietet, mit flexiblen Stückzahlen. Catering ohne Ausstattung ist ebenso möglich."}},
         {"@type":"Question","name":"Wer baut Zelt und Ausstattung auf und ab?","acceptedAnswer":{"@type":"Answer","text":"CK Genusskultur & Events baut selbst auf und ab. Der Aufbau erfolgt in der Regel am Vortag oder am Morgen des Events, der Abbau nach der Veranstaltung oder am Folgetag."}},
         {"@type":"Question","name":"Was passiert bei Regen?","acceptedAnswer":{"@type":"Answer","text":"Außenveranstaltungen werden von Anfang an mit einer Wetterlösung geplant: Festzelt oder Pavillon in passender Größe, Boden und Seitenwände nach Bedarf. Die Küche arbeitet wettergeschützt, gekocht wird auch bei Regen."}},
         {"@type":"Question","name":"Wie viel Vorlauf braucht eine Anfrage?","acceptedAnswer":{"@type":"Answer","text":"Vier Wochen sind ein guter Richtwert, in der Hochsaison von Mai bis September acht Wochen. Kurzfristige Termine sind oft trotzdem möglich."}},
         {"@type":"Question","name":"Gibt es vegetarische, vegane und allergiegerechte Optionen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Vegetarische, vegane und allergiegerechte Optionen werden vor dem Event abgestimmt und vor Ort gekennzeichnet."}},
-        {"@type":"Question","name":"Was passiert, wenn kurzfristig mehr Gäste kommen?","acceptedAnswer":{"@type":"Answer","text":"Bis 10 Prozent der vereinbarten Gästezahl kann bis 72 Stunden vor dem Termin ohne Aufpreis auf den Pro-Kopf-Satz nachbestellt werden. Größere Änderungen werden zum gleichen Satz nachgerechnet, wenn es die Logistik zulässt."}}
+        {"@type":"Question","name":"Was passiert, wenn kurzfristig mehr Gäste kommen?","acceptedAnswer":{"@type":"Answer","text":"Kurzfristige Änderungen der Gästezahl lassen sich in der Regel auffangen. Der Spielraum und die Frist werden im Angebot festgehalten, damit beide Seiten wissen, woran sie sind."}}
       ]
     }
   ]
