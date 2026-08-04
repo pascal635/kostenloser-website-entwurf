@@ -16,9 +16,7 @@
 <meta property="og:description" content="Neapolitanische Steinofen-Pizza live vor euren Gästen. Catering für Hochzeit, Geburtstag und Firmenfeier ab 30 Personen.">
 <meta property="og:image" content="bilder/pizza-catering-buergstadt-steinofen-pizza.jpg">
 <meta property="og:locale" content="de_DE">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root{
     --tomato:#C0392B;--terracotta:#9B3A2E;--basil:#4A6B3A;--olive:#6E7F3C;--brass:#C79A3B;--brass-deep:#a97f26;
@@ -300,6 +298,7 @@
   input:focus,select:focus,textarea:focus{outline:none;border-color:var(--tomato);box-shadow:0 0 0 3px rgba(192,57,43,.14);background:#fff}
   form .btn{margin-top:4px}
   #formok{display:none;background:rgba(74,107,58,.1);border:1px solid var(--basil);color:#3c5730;padding:15px 17px;border-radius:var(--r-sm);font-weight:500}
+  #formerr{display:none;background:rgba(192,57,43,.08);border:1px solid var(--tomato);color:#9b3a2e;padding:15px 17px;border-radius:var(--r-sm);font-weight:500}
   .contact-side{background:var(--charcoal);color:var(--cream);border-radius:var(--r-lg);padding:clamp(26px,3vw,36px);box-shadow:var(--sh-md)}
   .contact-side h3{font-size:21px;color:#fff}
   .contact-side .goldrule{margin:14px 0 24px}
@@ -703,8 +702,13 @@
       <p class="lead">Sagt uns, wann und wo ihr feiert. Wir prüfen die Verfügbarkeit und melden uns meist innerhalb von 24 Stunden mit einem klaren Angebot. Unverbindlich und kostenlos.</p>
     </div>
     <div class="contact-grid">
-      <form id="anfrageform" novalidate class="reveal">
-        <div id="formok">Danke für eure Anfrage. Michael meldet sich meist innerhalb von 24 Stunden. (Formularversand wird beim Deploy angebunden.)</div>
+      <form id="anfrageform" novalidate class="reveal" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="6bbc7d4c-351b-497b-8f4b-3354e1f71af8">
+        <input type="hidden" name="subject" value="Neue Catering-Anfrage über die Website">
+        <input type="hidden" name="from_name" value="Panini Manufaktur Website">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none!important;position:absolute;left:-9999px" aria-hidden="true">
+        <div id="formok">Danke für eure Anfrage. Michael meldet sich meist innerhalb von 24 Stunden.</div>
+        <div id="formerr">Das hat leider nicht geklappt. Bitte versucht es erneut oder schreibt direkt an paninimanufaktur@gmail.com.</div>
         <div class="row2">
           <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Vor- und Nachname" required></div>
           <div><label for="email">E-Mail</label><input id="email" name="email" type="email" placeholder="name@beispiel.de" required></div>
@@ -758,7 +762,7 @@
       <p>Aktuell ist kein öffentlicher Termin geplant. Folgt unserem WhatsApp-Kanal, dort posten wir jeden neuen Streetfood-Termin zuerst.</p>
     </div>
     <div class="termine-cta reveal">
-      <a class="btn btn-gold" href="#" rel="noopener">Alle Termine im WhatsApp-Kanal</a>
+      <a class="btn btn-gold" href="https://www.whatsapp.com/channel/0029Vb7o5bB8qIzxqMS29u1R" target="_blank" rel="noopener">Alle Termine im WhatsApp-Kanal</a>
       <p class="note">Vorbei? Termine verschwinden hier automatisch, sobald das Datum vergangen ist. Allergene und Unverträglichkeiten bitte vor der Bestellung angeben.</p>
     </div>
   </div>
@@ -791,7 +795,7 @@
       </div>
       <div>
         <h4>Rechtliches</h4>
-        <p><a href="/impressum">Impressum</a><br><a href="/datenschutz">Datenschutz</a></p>
+        <p><a href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a></p>
       </div>
     </div>
     <div class="fbottom">
@@ -838,11 +842,22 @@
     });
   });
 
-  // Formular-Demo
-  document.getElementById('anfrageform').addEventListener('submit',function(e){
+  // Formular-Versand über Web3Forms
+  var afForm=document.getElementById('anfrageform');
+  afForm.addEventListener('submit',function(e){
     e.preventDefault();
-    var ok=document.getElementById('formok'); ok.style.display='block';
-    ok.scrollIntoView({behavior:'smooth',block:'center'});
+    var ok=document.getElementById('formok'), err=document.getElementById('formerr');
+    ok.style.display='none'; err.style.display='none';
+    var btn=afForm.querySelector('button[type="submit"]'); var label=btn.innerHTML;
+    btn.disabled=true; btn.textContent='Wird gesendet ...';
+    fetch(afForm.action,{method:'POST',body:new FormData(afForm),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        if(j.success){ afForm.reset(); ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
+        else { err.style.display='block'; }
+      })
+      .catch(function(){ err.style.display='block'; })
+      .finally(function(){ btn.disabled=false; btn.innerHTML=label; });
   });
 
   // Termine mit Verfallsdatum: vergangene Termine automatisch ausblenden
