@@ -14,7 +14,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pizza Catering aus dem Foodtrailer | Panini Manufaktur Bürgstadt">
 <meta property="og:description" content="Neapolitanische Steinofen-Pizza live vor euren Gästen. Catering für Hochzeit, Geburtstag und Firmenfeier ab 30 Personen.">
-<meta property="og:image" content="bilder/pizza-catering-buergstadt-steinofen-pizza.jpg">
+<meta property="og:image" content="https://www.paninimanufaktur.de/bilder/pizza-catering-buergstadt-steinofen-pizza.jpg">
+<meta property="og:url" content="https://www.paninimanufaktur.de/">
 <meta property="og:locale" content="de_DE">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -297,6 +298,9 @@
   input::placeholder,textarea::placeholder{color:#a99e8c}
   input:focus,select:focus,textarea:focus{outline:none;border-color:var(--tomato);box-shadow:0 0 0 3px rgba(192,57,43,.14);background:#fff}
   form .btn{margin-top:4px}
+  .consent{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--warmgray);line-height:1.5;cursor:pointer}
+  .consent input{width:auto;flex:none;margin:2px 0 0;width:18px;height:18px;accent-color:var(--tomato)}
+  .consent a{color:var(--terracotta);font-weight:600}
   #formok{display:none;background:rgba(74,107,58,.1);border:1px solid var(--basil);color:#3c5730;padding:15px 17px;border-radius:var(--r-sm);font-weight:500}
   #formerr{display:none;background:rgba(192,57,43,.08);border:1px solid var(--tomato);color:#9b3a2e;padding:15px 17px;border-radius:var(--r-sm);font-weight:500}
   .contact-side{background:var(--charcoal);color:var(--cream);border-radius:var(--r-lg);padding:clamp(26px,3vw,36px);box-shadow:var(--sh-md)}
@@ -702,7 +706,7 @@
       <p class="lead">Sagt uns, wann und wo ihr feiert. Wir prüfen die Verfügbarkeit und melden uns meist innerhalb von 24 Stunden mit einem klaren Angebot. Unverbindlich und kostenlos.</p>
     </div>
     <div class="contact-grid">
-      <form id="anfrageform" novalidate class="reveal" action="https://api.web3forms.com/submit" method="POST">
+      <form id="anfrageform" class="reveal" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="6bbc7d4c-351b-497b-8f4b-3354e1f71af8">
         <input type="hidden" name="subject" value="Neue Catering-Anfrage über die Website">
         <input type="hidden" name="from_name" value="Panini Manufaktur Website">
@@ -723,6 +727,7 @@
         </div>
         <div><label for="paket">Wunschpaket</label><select id="paket" name="paket"><option value="">bitte wählen</option><option>Jeder eine Pizza</option><option>Signature-Event (All you can eat)</option><option>noch unsicher</option></select></div>
         <div><label for="nachricht">Nachricht</label><textarea id="nachricht" name="nachricht" rows="4" placeholder="Erzählt uns kurz von eurem Event"></textarea></div>
+        <label class="consent"><input type="checkbox" id="datenschutz" name="Datenschutz zugestimmt" value="Ja" required> Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. *</label>
         <button class="btn btn-primary" type="submit">Unverbindliche Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="micro">Unverbindlich. Antwort meist innerhalb von 24 Stunden. Kein Callcenter, ihr redet direkt mit Michael.</p>
       </form>
@@ -795,7 +800,7 @@
       </div>
       <div>
         <h4>Rechtliches</h4>
-        <p><a href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a></p>
+        <p><a href="/impressum">Impressum</a><br><a href="/datenschutz">Datenschutz</a></p>
       </div>
     </div>
     <div class="fbottom">

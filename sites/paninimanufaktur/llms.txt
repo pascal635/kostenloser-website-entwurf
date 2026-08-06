@@ -30,5 +30,5 @@
 
 ## Seiten
 - [Startseite](https://www.paninimanufaktur.de/): Leistungen, Live-Cooking, Ablauf, Pakete und Preise, Speisekarte, Anlässe, Bewertungen, FAQ, Anfrageformular, Streetfood-Termine
-- [Impressum](https://www.paninimanufaktur.de/impressum.html)
-- [Datenschutz](https://www.paninimanufaktur.de/datenschutz.html)
+- [Impressum](https://www.paninimanufaktur.de/impressum)
+- [Datenschutz](https://www.paninimanufaktur.de/datenschutz)
