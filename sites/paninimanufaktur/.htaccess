@@ -1,7 +1,8 @@
-# Panini Manufaktur — saubere URLs & Weiterleitungen (Apache)
+# Panini Manufaktur — saubere URLs, Weiterleitungen, Kompression (Apache)
 
 Options -Indexes
 DirectoryIndex index.html
+AddDefaultCharset UTF-8
 
 RewriteEngine On
 
@@ -9,9 +10,9 @@ RewriteEngine On
 # RewriteCond %{HTTPS} off
 # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# --- Immer mit www: einkommentieren, wenn die Domain kanonisch mit www laufen soll ---
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# --- Einheitlich auf www weiterleiten (verhindert Duplicate Content) ---
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ %{REQUEST_SCHEME}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # /index.html -> /
 RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
@@ -25,6 +26,13 @@ RewriteRule ^ /%1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
+
+# GZip-Komprimierung
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/rss+xml
+</IfModule>
 
 # Caching statischer Dateien (Performance)
 <IfModule mod_expires.c>

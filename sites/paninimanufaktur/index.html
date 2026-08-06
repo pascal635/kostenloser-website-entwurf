@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pizza Catering Miltenberg &amp; Untermain | Panini Manufaktur Bürgstadt</title>
+<title>Pizza Catering Miltenberg &amp; Untermain | Panini Manufaktur</title>
 <meta name="description" content="Neapolitanische Steinofen-Pizza live aus dem Foodtrailer. Catering für Hochzeit, Geburtstag &amp; Firmenfeier ab 30 Personen, ab 16,50 € p. P. Jetzt anfragen.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.paninimanufaktur.de/">
@@ -135,7 +135,7 @@
   .benefit:first-child{border-top:none}
   .benefit .ic{flex:none;width:48px;height:48px;border-radius:14px;background:linear-gradient(150deg,rgba(74,107,58,.16),rgba(74,107,58,.06));display:flex;align-items:center;justify-content:center;color:var(--basil)}
   .benefit .ic svg{width:26px;height:26px}
-  .benefit h3{margin:.1em 0 .25em;font-size:20px}
+  .benefit .bt{margin:.1em 0 .25em;font-size:20px;font-family:var(--ff-display);font-weight:600;line-height:1.12;color:var(--charcoal)}
   .benefit p{margin:0;color:var(--warmgray);font-size:16px}
 
   /* ===== Ablauf ===== */
@@ -145,7 +145,7 @@
   .step{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-md);padding:32px 28px;position:relative;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
   .step:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
   .step .num{width:56px;height:56px;border-radius:50%;background:var(--cream);border:1.5px solid var(--brass);color:var(--brass-deep);font-family:var(--ff-display);font-size:26px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;z-index:1}
-  .step h3{font-size:21px}
+  .step .bt{font-size:21px;font-family:var(--ff-display);font-weight:600;line-height:1.12;margin:0 0 .35em;color:var(--charcoal)}
   .step p{margin:0 0 4px;color:var(--warmgray);font-size:16px}
   .step .textlink{margin-top:10px}
 
@@ -168,18 +168,18 @@
   .card .ex{font-size:13.5px;color:var(--warmgray);margin:0}
   .card .btn{margin-top:8px;width:100%}
   .incl-card{background:#fff;border-radius:var(--r-lg);padding:clamp(26px,3vw,34px);margin-top:26px;box-shadow:var(--sh-sm)}
-  .incl-card h3{font-size:19px;margin-bottom:20px}
+  .incl-card .bt{font-size:19px;margin:0 0 20px;font-family:var(--ff-display);font-weight:600;color:var(--charcoal)}
   .incl{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
   @media(min-width:680px){.incl{grid-template-columns:repeat(3,1fr)}}
   .incl li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.45}
   .incl li svg{flex:none;width:20px;height:20px;color:var(--basil);margin-top:2px}
   .addons{background:#fff;border-radius:var(--r-lg);padding:32px;margin-top:26px;box-shadow:var(--sh-sm)}
-  .addons h3{font-size:19px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-  .addons h3 .pill{font-family:var(--ff-body);font-size:12px;font-weight:600;color:var(--basil);background:rgba(74,107,58,.1);padding:4px 11px;border-radius:var(--r-pill)}
+  .addons .bt{font-size:19px;margin:0 0 18px;display:flex;align-items:center;gap:10px;font-family:var(--ff-display);font-weight:600;color:var(--charcoal)}
+  .addons .bt .pill{font-family:var(--ff-body);font-size:12px;font-weight:600;color:var(--basil);background:rgba(74,107,58,.1);padding:4px 11px;border-radius:var(--r-pill)}
   .addons ul{list-style:none;padding:0;margin:0;display:grid;gap:0}
   .addons li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px}
   .addons li:last-child{border-bottom:none}
-  .addons li b{color:var(--tomato);font-weight:600;white-space:nowrap;font-family:var(--ff-display)}
+  .addons li .amt{color:var(--tomato);font-weight:600;white-space:nowrap;font-family:var(--ff-display)}
   .footnote{font-size:13px;color:var(--warmgray);margin-top:20px;text-align:center}
 
   /* ===== Bento Galerie ===== */
@@ -221,7 +221,7 @@
   .menu-legend summary .plus::after{width:1.6px;height:10px;transform:translate(-50%,-50%)}
   .menu-legend[open] summary .plus::after{transform:translate(-50%,-50%) scaleY(0)}
   .menu-legend .a{padding:4px 24px 24px;font-size:13px;color:var(--warmgray);line-height:1.7}
-  .menu-legend .a h4{font-family:var(--ff-body);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--brass-deep);margin:14px 0 6px}
+  .menu-legend .a .lt{font-family:var(--ff-body);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--brass-deep);margin:14px 0 6px;font-weight:600}
   .menu-legend .a .cols{columns:2;column-gap:36px}
   @media(max-width:520px){.menu-legend .a .cols{columns:1}}
 
@@ -304,7 +304,7 @@
   #formok{display:none;background:rgba(74,107,58,.1);border:1px solid var(--basil);color:#3c5730;padding:15px 17px;border-radius:var(--r-sm);font-weight:500}
   #formerr{display:none;background:rgba(192,57,43,.08);border:1px solid var(--tomato);color:#9b3a2e;padding:15px 17px;border-radius:var(--r-sm);font-weight:500}
   .contact-side{background:var(--charcoal);color:var(--cream);border-radius:var(--r-lg);padding:clamp(26px,3vw,36px);box-shadow:var(--sh-md)}
-  .contact-side h3{font-size:21px;color:#fff}
+  .contact-side .bt{font-size:21px;color:#fff;font-family:var(--ff-display);font-weight:600;margin:0}
   .contact-side .goldrule{margin:14px 0 24px}
   .contact-side ul{list-style:none;padding:0;margin:0;display:grid;gap:20px}
   .contact-side li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;color:#e6dbc8}
@@ -343,7 +343,7 @@
   .fcols{display:grid;gap:36px}
   @media(min-width:760px){.fcols{grid-template-columns:1.5fr 1fr 1fr 1fr}}
   footer .logo{height:80px;margin-bottom:16px}
-  footer h4{font-family:var(--ff-body);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--brass);margin:0 0 14px}
+  footer .ftitle{font-family:var(--ff-body);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--brass);margin:0 0 14px;font-weight:600}
   footer a{color:#c9bda8}
   footer a:hover{color:#fff}
   footer .claim{font-size:15px;max-width:34ch;line-height:1.7}
@@ -427,15 +427,15 @@
         <div class="benefits">
           <div class="benefit">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c.4 2.7.7 6.2-1.2 7.6-.6.4-1.4-.1-1.4-.9-1 .8-1.9 2.2-1.9 4.1a4.5 4.5 0 1 0 9 0c0-4.6-3.5-7-4.5-10.9Z"/></svg></div>
-            <div><h3>Ein Programmpunkt, kein Buffet</h3><p>Eure Gäste schauen zu, wie ihre Pizza belegt und im heißen Steinofen in rund 90 Sekunden fertig wird. Das duftet, das unterhält, das bleibt in Erinnerung.</p></div>
+            <div><p class="bt">Ein Programmpunkt, kein Buffet</p><p>Eure Gäste schauen zu, wie ihre Pizza belegt und im heißen Steinofen in rund 90 Sekunden fertig wird. Das duftet, das unterhält, das bleibt in Erinnerung.</p></div>
           </div>
           <div class="benefit">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5 12 21l9-13.5z"/><path d="M4.2 8.6c4.6-2.7 11-2.7 15.6 0"/><circle cx="10" cy="11" r=".9" fill="currentColor" stroke="none"/><circle cx="13.2" cy="14" r=".9" fill="currentColor" stroke="none"/></svg></div>
-            <div><h3>Echtes Handwerk, kein Aufwärmen</h3><p>48 Stunden gereifter Teig, fruchtige Tomatensauce, hochwertige italienische Zutaten. Keine Fertigprodukte, alles frisch vor Ort. Frisch und heiß ist bei uns nicht Glückssache, sondern eingebaut.</p></div>
+            <div><p class="bt">Echtes Handwerk, kein Aufwärmen</p><p>48 Stunden gereifter Teig, fruchtige Tomatensauce, hochwertige italienische Zutaten. Keine Fertigprodukte, alles frisch vor Ort. Frisch und heiß ist bei uns nicht Glückssache, sondern eingebaut.</p></div>
           </div>
           <div class="benefit">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 19 6v5.2c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg></div>
-            <div><h3>Rundum sorglos</h3><p>Vom Foodtrailer vor der Tür bis zum eingespielten Service-Team: Aufbau, Abbau und Reinigung übernehmen wir. Ihr müsst am eigenen Fest nicht Regie führen.</p></div>
+            <div><p class="bt">Rundum sorglos</p><p>Vom Foodtrailer vor der Tür bis zum eingespielten Service-Team: Aufbau, Abbau und Reinigung übernehmen wir. Ihr müsst am eigenen Fest nicht Regie führen.</p></div>
           </div>
         </div>
       </div>
@@ -452,9 +452,9 @@
       <p class="lead">In drei Schritten vom Wunschtermin zum Fest, über das alle reden.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>Anfragen</h3><p>Ihr schickt uns Wunschtermin, Gästezahl und euer Wunschpaket. Unverbindlich, in zwei Minuten.</p><a class="textlink" href="#anfrage">Termin anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      <div class="step reveal"><div class="num">2</div><h3>Angebot &amp; Bestätigung</h3><p>Wir prüfen die Verfügbarkeit und schicken euch ein klares Angebot mit fixem Preis pro Person. Passt alles, bestätigt ihr.</p></div>
-      <div class="step reveal"><div class="num">3</div><h3>Wir kommen und kochen live</h3><p>Am Eventtag rollt der Foodtrailer an, wir bauen auf, backen live vor euren Gästen und bauen danach wieder ab. Ihr feiert einfach.</p></div>
+      <div class="step reveal"><div class="num">1</div><p class="bt">Anfragen</p><p>Ihr schickt uns Wunschtermin, Gästezahl und euer Wunschpaket. Unverbindlich, in zwei Minuten.</p><a class="textlink" href="#anfrage">Termin anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="step reveal"><div class="num">2</div><p class="bt">Angebot &amp; Bestätigung</p><p>Wir prüfen die Verfügbarkeit und schicken euch ein klares Angebot mit fixem Preis pro Person. Passt alles, bestätigt ihr.</p></div>
+      <div class="step reveal"><div class="num">3</div><p class="bt">Wir kommen und kochen live</p><p>Am Eventtag rollt der Foodtrailer an, wir bauen auf, backen live vor euren Gästen und bauen danach wieder ab. Ihr feiert einfach.</p></div>
     </div>
   </div>
 </section>
@@ -486,7 +486,7 @@
     </div>
 
     <div class="incl-card reveal">
-      <h3>Immer inklusive</h3>
+      <p class="bt">Immer inklusive</p>
       <ul class="incl">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Foodtrailer vor Ort</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vegetarische Optionen</li>
@@ -497,14 +497,14 @@
     </div>
 
     <div class="addons reveal">
-      <h3>Zubuchbar <span class="pill">ab 30 Portionen</span></h3>
+      <p class="bt">Zubuchbar <span class="pill">ab 30 Portionen</span></p>
       <ul>
-        <li><span>Premium Panini, frisch gegrillt, Belag nach Absprache</span> <b>10 € netto</b></li>
-        <li><span>Panuozzo Balkan-Taco: Ajvar, Cevapcici, rote Zwiebeln, Sauerrahm</span> <b>12 € netto</b></li>
-        <li><span>Panuozzo Pulled-Pork: Pulled Pork, Krautsalat, Blaubeersoße</span> <b>12 € netto</b></li>
-        <li><span>Panuozzo Bella-Italia: Tomate, Rucola, Burrata, Balsamico</span> <b>12 € netto</b></li>
-        <li><span>Panuozzo Halloumi-Fries: Halloumi-Fries im grünen Bett, vegetarisch</span> <b>12 € netto</b></li>
-        <li><span>Poffertjes, warme Mini-Pfannkuchen zum Nachtisch</span> <b>auf Anfrage</b></li>
+        <li><span>Premium Panini, frisch gegrillt, Belag nach Absprache</span> <span class="amt">10 € netto</span></li>
+        <li><span>Panuozzo Balkan-Taco: Ajvar, Cevapcici, rote Zwiebeln, Sauerrahm</span> <span class="amt">12 € netto</span></li>
+        <li><span>Panuozzo Pulled-Pork: Pulled Pork, Krautsalat, Blaubeersoße</span> <span class="amt">12 € netto</span></li>
+        <li><span>Panuozzo Bella-Italia: Tomate, Rucola, Burrata, Balsamico</span> <span class="amt">12 € netto</span></li>
+        <li><span>Panuozzo Halloumi-Fries: Halloumi-Fries im grünen Bett, vegetarisch</span> <span class="amt">12 € netto</span></li>
+        <li><span>Poffertjes, warme Mini-Pfannkuchen zum Nachtisch</span> <span class="amt">auf Anfrage</span></li>
       </ul>
     </div>
     <p class="footnote">Alle Preise netto pro Person, zzgl. 19 % MwSt. Buchbar ab 30 Personen. Für kleinere oder größere Gruppen passen wir den Pro-Kopf-Preis flexibel an.</p>
@@ -572,9 +572,9 @@
     <details class="menu-legend reveal">
       <summary>Allergene &amp; Zusatzstoffe<span class="plus"></span></summary>
       <div class="a">
-        <h4>Allergene</h4>
+        <p class="lt">Allergene</p>
         <div class="cols">A = Glutenhaltiges Getreide (Weizen), B = Krebstiere, C = Eier, D = Fisch, E = Erdnüsse, F = Soja, G = Milch (inkl. Laktose), H = Schalenfrüchte, L = Sellerie, M = Senf, N = Sesam, O = Schwefeldioxid / Sulfite, P = Lupinen, R = Weichtiere.</div>
-        <h4>Zusatzstoffe</h4>
+        <p class="lt">Zusatzstoffe</p>
         <div class="cols">1 = mit Farbstoff, 2 = mit Konservierungsstoff, 3 = mit Antioxidationsmittel, 4 = mit Geschmacksverstärker, 5 = geschwefelt, 6 = geschwärzt, 7 = mit Phosphat, 8 = mit Milcheiweiß, 9 = koffeinhaltig, 10 = chininhaltig, 11 = mit Süßungsmittel, 12 = enthält eine Phenylalaninquelle, 13 = gewachst, 14 = taurinhaltig.</div>
         <p style="margin-top:14px">Trotz sorgfältiger Herstellung können Spuren anderer Stoffe enthalten sein. Bitte sprecht uns bei Allergien oder Unverträglichkeiten an.</p>
       </div>
@@ -727,12 +727,12 @@
         </div>
         <div><label for="paket">Wunschpaket</label><select id="paket" name="paket"><option value="">bitte wählen</option><option>Jeder eine Pizza</option><option>Signature-Event (All you can eat)</option><option>noch unsicher</option></select></div>
         <div><label for="nachricht">Nachricht</label><textarea id="nachricht" name="nachricht" rows="4" placeholder="Erzählt uns kurz von eurem Event"></textarea></div>
-        <label class="consent"><input type="checkbox" id="datenschutz" name="Datenschutz zugestimmt" value="Ja" required> Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. *</label>
+        <label class="consent"><input type="checkbox" id="datenschutz" name="Datenschutz zugestimmt" value="Ja" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. *</span></label>
         <button class="btn btn-primary" type="submit">Unverbindliche Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="micro">Unverbindlich. Antwort meist innerhalb von 24 Stunden. Kein Callcenter, ihr redet direkt mit Michael.</p>
       </form>
       <aside class="contact-side reveal">
-        <h3>Lieber direkt?</h3>
+        <p class="bt">Lieber direkt?</p>
         <hr class="goldrule">
         <ul>
           <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.8a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg></span> <a href="tel:+4915170855203">0151 70855203</a></li>
@@ -778,7 +778,7 @@
   <div class="wrap narrow reveal">
     <h2>Macht euer Fest zum Gesprächsthema</h2>
     <p>Neapolitanische Steinofen-Pizza, live vor euren Gästen. Sichert euch euren Wunschtermin, unverbindlich.</p>
-    <a class="btn" href="#anfrage">Catering-Anfrage starten <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn" href="#anfrage">Jetzt Wunschtermin sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -791,15 +791,15 @@
         <p class="claim">Mobiles Pizza Catering aus Bürgstadt. Neapolitanische Steinofen-Pizza, live aus dem Foodtrailer.</p>
       </div>
       <div>
-        <h4>Kontakt</h4>
+        <p class="ftitle">Kontakt</p>
         <p>Panini Manufaktur<br>Stormstraße 2<br>63927 Bürgstadt<br><a href="tel:+4915170855203">0151 70855203</a><br><a href="mailto:paninimanufaktur@gmail.com">paninimanufaktur@gmail.com</a><br><a href="https://www.instagram.com/panini.manufaktur/" rel="noopener">@panini.manufaktur</a></p>
       </div>
       <div>
-        <h4>Einzugsgebiet</h4>
+        <p class="ftitle">Einzugsgebiet</p>
         <p>Bürgstadt, Miltenberg, Klingenberg, Amorbach, Großwallstadt und die Region Untermain / Churfranken. Anfahrt bis 25 km inklusive.</p>
       </div>
       <div>
-        <h4>Rechtliches</h4>
+        <p class="ftitle">Rechtliches</p>
         <p><a href="/impressum">Impressum</a><br><a href="/datenschutz">Datenschutz</a></p>
       </div>
     </div>
@@ -810,7 +810,7 @@
   </div>
 </footer>
 
-<div class="sticky-cta"><a href="#anfrage">Catering-Anfrage starten</a></div>
+<div class="sticky-cta"><a href="#anfrage">Anfrage starten</a></div>
 
 <!-- JSON-LD: FoodEstablishment -->
 <script type="application/ld+json">
