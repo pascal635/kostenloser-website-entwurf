@@ -1,8 +1,10 @@
 name: Deploy Entwürfe (FTP)
 
-# Laedt sites/ per FTPS (lftp) auf den dev-Webspace (dedi1145, gleicher Zugang wie beta-plus).
+# Laedt sites/ per FTPS (lftp) auf den dev-Webspace.
 # sites/<kunde>/ landet unter /<kunde>/ = dev.likovo.de/<kunde>/
-# KEIN --delete: nur hochladen/aktualisieren, damit andere Kundenordner im Docroot unangetastet bleiben.
+# Bei push: nur GEAENDERTE Kundenordner werden gespiegelt (schnell).
+# Manueller Start (workflow_dispatch): spiegelt ALLE Ordner (Voll-Deploy).
+# KEIN --delete: es wird nur hochgeladen/aktualisiert, nichts geloescht.
 
 on:
   push:
@@ -18,20 +20,58 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Geaenderte Kundenordner ermitteln
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Voll-Deploy (manuell ausgeloest)."
+            DIRS=$(ls -d sites/*/ 2>/dev/null | sed 's#^sites/##; s#/##')
+          else
+            BASE="${{ github.event.before }}"
+            if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+              BASE="$(git rev-parse HEAD~1 2>/dev/null || echo '')"
+            fi
+            if [ -z "$BASE" ]; then
+              echo "Kein Vergleichs-Commit gefunden, Voll-Deploy."
+              DIRS=$(ls -d sites/*/ 2>/dev/null | sed 's#^sites/##; s#/##')
+            else
+              DIRS=$(git diff --name-only "$BASE" "${{ github.sha }}" -- sites/ | awk -F/ 'NF>=2 {print $2}' | sort -u)
+            fi
+          fi
+          echo "Betroffene Ordner:"
+          echo "$DIRS"
+          # als Leerzeichen-getrennte Liste weitergeben
+          echo "dirs=$(echo $DIRS | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
 
       - name: FTPS Deploy (lftp)
+        if: steps.changed.outputs.dirs != ''
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-          lftp -c "
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate no;
-            set net:max-retries 2;
-            set net:timeout 20;
-            open -u \"$FTP_USER\",\"$FTP_PASSWORD\" \"$FTP_HOST\";
-            mirror -R --verbose --exclude-glob .git* ./sites/ ./;
-          "
+          for k in ${{ steps.changed.outputs.dirs }}; do
+            if [ ! -d "sites/$k" ]; then
+              echo "Ueberspringe (im Repo nicht mehr vorhanden): $k"
+              continue
+            fi
+            echo "::group::Deploy sites/$k/ -> /$k/"
+            lftp -c "
+              set ftp:ssl-force true;
+              set ftp:ssl-protect-data true;
+              set ssl:verify-certificate no;
+              set net:max-retries 2;
+              set net:timeout 20;
+              open -u \"$FTP_USER\",\"$FTP_PASSWORD\" \"$FTP_HOST\";
+              mirror -R --verbose --exclude-glob .git* ./sites/$k/ ./$k/;
+            "
+            echo "::endgroup::"
+          done
+
+      - name: Nichts zu deployen
+        if: steps.changed.outputs.dirs == ''
+        run: echo "Keine Aenderungen in sites/, es wurde nichts hochgeladen."
