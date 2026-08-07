@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rufpflege24.de/sitemap.xml
