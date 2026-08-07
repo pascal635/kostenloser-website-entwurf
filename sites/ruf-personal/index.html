@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Personalvermittlung Rumänien &amp; Polen für deutsche Betriebe | Ruf Personal</title>
 <meta name="description" content="Ruf Personal vermittelt vorgeprüfte Arbeitskräfte aus Rumänien und Polen an Betriebe in Bau, Produktion, Logistik, Handwerk und Landwirtschaft. Reine Vermittlung, keine Zeitarbeit, persönlich betreut. Jetzt unverbindlich anfragen.">
-<link rel="canonical" href="https://ruf-personal.de/">
+<link rel="canonical" href="https://rufpersonal.de/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Personalvermittlung Rumänien &amp; Polen für deutsche Betriebe | Ruf Personal">
 <meta property="og:description" content="Vorgeprüfte Arbeitskräfte aus Rumänien und Polen. Reine Vermittlung, keine Zeitarbeit, keine Vorkasse.">
@@ -148,6 +148,12 @@
   .inp{width:100%;font-family:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
   .inp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,127,199,.15)}
   .form-note{font-size:13px;color:var(--muted);margin-top:8px}
+  .form-note a{color:var(--blue-600)}
+  .form-status{margin-top:14px;padding:0;font-size:15px;font-weight:600;border-radius:10px;display:none}
+  .form-status.show{display:block;padding:14px 16px}
+  .form-status.ok{background:rgba(46,158,107,.12);color:#1f7a51;border:1px solid rgba(46,158,107,.35)}
+  .form-status.err{background:rgba(214,72,72,.10);color:#b23b3b;border:1px solid rgba(214,72,72,.3)}
+  .btn[aria-busy="true"]{opacity:.7;pointer-events:none}
   .contact-alt{margin-top:22px;color:var(--muted);font-size:15px}
   .contact-alt a{color:var(--navy);font-weight:700;text-decoration:none}
 
@@ -350,23 +356,28 @@
         </div>
       </div>
       <div class="form-card">
-        <form action="#" method="post" onsubmit="return false">
+        <form id="anfrageForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="756dd2b9-ce9f-46d6-9d0a-9b8725089d6f">
+          <input type="hidden" name="subject" value="Neue Personalanfrage über rufpersonal.de">
+          <input type="hidden" name="from_name" value="rufpersonal.de">
+          <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
           <div class="fgrid">
-            <div class="field"><label for="name">Name*</label><input class="inp" id="name" name="name" required></div>
-            <div class="field"><label for="firma">Firma*</label><input class="inp" id="firma" name="firma" required></div>
-            <div class="field"><label for="tel">Telefon*</label><input class="inp" id="tel" name="tel" type="tel" required></div>
-            <div class="field"><label for="mail">E-Mail*</label><input class="inp" id="mail" name="mail" type="email" required></div>
+            <div class="field"><label for="name">Name*</label><input class="inp" id="name" name="Name" required></div>
+            <div class="field"><label for="firma">Firma*</label><input class="inp" id="firma" name="Firma" required></div>
+            <div class="field"><label for="tel">Telefon*</label><input class="inp" id="tel" name="Telefon" type="tel" required></div>
+            <div class="field"><label for="mail">E-Mail*</label><input class="inp" id="mail" name="E-Mail" type="email" required></div>
             <div class="field"><label for="branche">Branche</label>
-              <select class="inp" id="branche" name="branche">
+              <select class="inp" id="branche" name="Branche">
                 <option>Bau</option><option>Produktion</option><option>Logistik</option><option>Handwerk</option><option>Landwirtschaft</option><option>Sonstige</option>
               </select>
             </div>
-            <div class="field"><label for="anzahl">Anzahl Kräfte</label><input class="inp" id="anzahl" name="anzahl" type="number" min="1" placeholder="z. B. 3"></div>
-            <div class="field full"><label for="start">Gewünschter Starttermin</label><input class="inp" id="start" name="start" type="text" placeholder="z. B. ab August"></div>
-            <div class="field full"><label for="nachricht">Ihre Nachricht</label><textarea class="inp" id="nachricht" name="nachricht" rows="3" placeholder="Was suchen Sie genau?"></textarea></div>
+            <div class="field"><label for="anzahl">Anzahl Kräfte</label><input class="inp" id="anzahl" name="Anzahl Kräfte" type="number" min="1" placeholder="z. B. 3"></div>
+            <div class="field full"><label for="start">Gewünschter Starttermin</label><input class="inp" id="start" name="Starttermin" type="text" placeholder="z. B. ab August"></div>
+            <div class="field full"><label for="nachricht">Ihre Nachricht</label><textarea class="inp" id="nachricht" name="Nachricht" rows="3" placeholder="Was suchen Sie genau?"></textarea></div>
           </div>
           <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Personalanfrage absenden</button>
-          <p class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. Details in der Datenschutzerklärung.</p>
+          <p class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -392,8 +403,8 @@
         <a href="#branchen">Einsatzbranchen</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#anfrage">Personalanfrage</a>
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -417,7 +428,7 @@
   "name":"Ruf Personal",
   "founder":"Georg Ruf",
   "description":"Ruf Personal vermittelt vorgeprüfte Arbeitskräfte aus Rumänien und Polen an Betriebe in Deutschland. Reine Personalvermittlung, keine Arbeitnehmerüberlassung.",
-  "url":"https://ruf-personal.de/",
+  "url":"https://rufpersonal.de/",
   "telephone":"+49 151 2486 2936",
   "email":"georg_ruf@gmx.de",
   "address":{"@type":"PostalAddress","streetAddress":"Postgasse 4","postalCode":"86470","addressLocality":"Thannhausen","addressCountry":"DE"},
@@ -436,6 +447,48 @@
     {"@type":"Question","name":"Was kostet die Vermittlung?","acceptedAnswer":{"@type":"Answer","text":"Sie zahlen keine Vorkasse. Die Anfrage ist unverbindlich und kostenlos, die Konditionen werden transparent besprochen."}}
   ]
 }
+</script>
+
+<script>
+(function(){
+  var form = document.getElementById('anfrageForm');
+  if(!form) return;
+  var status = document.getElementById('formStatus');
+  var btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.className = 'form-status';
+    status.textContent = '';
+    btn.setAttribute('aria-busy','true');
+    var original = btn.textContent;
+    btn.textContent = 'Wird gesendet …';
+    var data = Object.fromEntries(new FormData(form).entries());
+    fetch('https://api.web3forms.com/submit', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    })
+    .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+    .then(function(res){
+      if(res.ok && res.j.success){
+        form.reset();
+        status.className = 'form-status show ok';
+        status.textContent = 'Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir melden uns in der Regel innerhalb von 24 Stunden.';
+      } else {
+        status.className = 'form-status show err';
+        status.textContent = 'Das hat leider nicht geklappt. Bitte rufen Sie uns an unter +49 151 2486 2936 oder schreiben Sie an georg_ruf@gmx.de.';
+      }
+    })
+    .catch(function(){
+      status.className = 'form-status show err';
+      status.textContent = 'Das hat leider nicht geklappt. Bitte rufen Sie uns an unter +49 151 2486 2936 oder schreiben Sie an georg_ruf@gmx.de.';
+    })
+    .finally(function(){
+      btn.removeAttribute('aria-busy');
+      btn.textContent = original;
+    });
+  });
+})();
 </script>
 
 </body>
