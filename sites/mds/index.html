@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hausmeisterservice Hoyerswerda | Kehrdienst &amp; Winterdienst | MDS</title>
+<meta name="description" content="Hausmeisterservice und Kehrdienst in Hoyerswerda: Winterdienst, Treppenhausreinigung, Grünpflege und Kleinreparaturen aus einer Hand. Kostenlose Objektbesichtigung, Festpreis, dokumentierte Einsätze.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==============================================================
+   MDS Hausmeisterservice u. Kehrdienstleistungen · Hoyerswerda
+   Startseiten-Entwurf · LIKOVO
+   Design-System Rev. 4: reines Weiß, Haarlinien, große Radien,
+   Foto-geführt, Nachtblau für dunkle Blöcke, Orange dezent.
+   ============================================================== */
+:root{
+  --bg:#FFFFFF; --white:#FFFFFF;
+  --ink:#16232E; --body:#5C6873; --navy:#14283A;
+  --accent:#E4692F; --accent-deep:#B4491A; --accent-soft:#FDF0E7;
+  --inset:#F6F7F8; --sand:#F0F1F2; --mist:#EDF1F4; --tint:#F2F5F8;
+  --line:#E7E9EB; --line-cool:#E3E7EA; --ok:#3B8A5E; --err:#B3362A;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
+  --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+  --r-xs:10px; --r-sm:14px; --r:20px; --r-lg:28px; --r-xl:40px; --pill:999px;
+  --sh1:0 1px 2px rgba(22,35,46,.04), 0 6px 20px rgba(22,35,46,.05);
+  --sh2:0 2px 6px rgba(22,35,46,.05), 0 18px 44px rgba(22,35,46,.08);
+  --sh3:0 4px 10px rgba(22,35,46,.06), 0 30px 70px rgba(22,35,46,.12);
+  --ease:cubic-bezier(.2,.7,.2,1); --dur:220ms;
+  --head:"Plus Jakarta Sans",system-ui,sans-serif;
+  --text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+body{margin:0;font-family:var(--text);font-size:17px;line-height:1.7;color:var(--body);
+  background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--head);color:var(--ink);letter-spacing:-.022em;line-height:1.12;margin:0;font-weight:700}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+::selection{background:var(--accent);color:#fff}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:var(--s4);top:var(--s4);z-index:200;background:#fff;padding:12px 18px;
+  border-radius:var(--pill);box-shadow:var(--sh2)}
+
+/* Icons */
+.ic{display:block;width:22px;height:22px;flex:none;fill:none;stroke:currentColor;
+  stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.ic--sm{width:18px;height:18px}
+.ictile{width:44px;height:44px;border-radius:14px;background:var(--accent-soft);
+  color:var(--accent-deep);display:grid;place-items:center;flex:none}
+.ictile--sm{width:38px;height:38px;border-radius:12px}
+.ictile--mist{background:var(--mist);color:var(--navy)}
+
+/* Bausteine */
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--s6)}
+.pill{display:inline-flex;align-items:center;gap:9px;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--pill);padding:7px 16px;
+  font-family:var(--head);font-size:12.5px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);box-shadow:var(--sh1)}
+.pill--dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff;box-shadow:none}
+.todo{display:inline-flex;align-items:center;gap:7px;background:#FFF6DC;border:1px solid #EBD79A;
+  color:#7A5E06;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:var(--pill);
+  font-family:var(--head)}
+.tnum{font-variant-numeric:tabular-nums}
+.small{font-size:14.5px;color:var(--body)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--head);font-weight:700;font-size:15.5px;min-height:54px;padding:0 var(--s6);
+  border-radius:var(--pill);border:0;cursor:pointer;text-decoration:none;white-space:nowrap;
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 5px 16px rgba(228,105,47,.26)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(228,105,47,.32)}
+.btn-outline{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line-cool)}
+.btn-outline:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-white{background:#fff;color:var(--ink);box-shadow:var(--sh1)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+.btn:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+.btn-sm{min-height:46px;font-size:14.5px;padding:0 var(--s5)}
+
+/* Header */
+.hd{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;gap:var(--s5);max-width:1200px;margin:0 auto;padding:var(--s3) var(--s6)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none;margin-right:auto}
+.brand .mark{width:40px;height:40px;border-radius:12px;background:var(--navy);color:#fff;
+  display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:15px;letter-spacing:.02em}
+.brand b{display:block;font-family:var(--head);font-size:15.5px;color:var(--ink);font-weight:800;line-height:1.2}
+.brand span{display:block;font-size:12.5px;color:var(--body)}
+.hd nav{display:flex;gap:var(--s2)}
+.hd nav a{font-family:var(--head);font-size:14.5px;font-weight:600;color:var(--body);white-space:nowrap;
+  text-decoration:none;padding:9px 13px;border-radius:var(--pill);transition:background var(--dur) var(--ease),color var(--dur) var(--ease)}
+.hd nav a:hover{background:var(--inset);color:var(--ink)}
+.hd .tel{display:flex;align-items:center;gap:9px;font-family:var(--head);font-weight:700;
+  font-size:15.5px;color:var(--ink);text-decoration:none;flex:none}
+.hd .tel:hover{color:var(--accent-deep)}
+
+/* Sektions-Grundgerüst */
+section{padding:112px 0;position:relative}
+/* Sektions-Rhythmus: nicht alles weiß, sonst wirkt die Seite flach */
+.band{background:var(--tint)}
+.band-dark{background:var(--navy);color:#B7C4CF}
+.band-dark h2,.band-dark h3,.band-dark strong{color:#fff}
+.sec-head{max-width:64ch}
+.sec-head h2{font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;margin-top:var(--s4)}
+.sec-head h2 em{font-style:normal;color:var(--accent)}
+.sec-head p{margin-top:var(--s5);font-size:18px}
+.grid{display:grid;gap:var(--s5)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+
+/* ---------- HERO: Vollbild-Hintergrund + Funnel ---------- */
+.hero{position:relative;isolation:isolate;color:#fff;padding:var(--s9) 0 172px;
+  background:#0A1622;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:url("bilder/hausmeisterservice-hoyerswerda-hero-winterdienst-morgen.webp") center right/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(8,19,31,.96) 0%,rgba(8,19,31,.9) 38%,rgba(8,19,31,.6) 66%,rgba(8,19,31,.42) 100%),
+             linear-gradient(180deg,rgba(8,19,31,.55) 0%,transparent 34%,rgba(8,19,31,.45) 100%)}
+.hero-in{display:grid;grid-template-columns:1fr 440px;gap:var(--s8);align-items:center}
+.hero .pill{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff;box-shadow:none}
+.hero h1{font-size:clamp(34px,4.6vw,56px);font-weight:800;letter-spacing:-.034em;color:#fff;
+  max-width:16ch;margin-top:var(--s5);text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero h1 em{font-style:normal;color:#FF8A4C}
+.hero .sub{font-size:19px;margin-top:var(--s5);max-width:44ch;color:#CBD6E0}
+.hero .marks{display:grid;gap:var(--s3);margin-top:var(--s7);padding-top:var(--s6);
+  border-top:1px solid rgba(255,255,255,.16)}
+.hero .marks div{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:#E4EBF1;line-height:1.45}
+.hero .marks .ic{color:#FF8A4C;margin-top:3px}
+
+/* Funnel-Karte */
+.funnel{background:#fff;border-radius:var(--r-lg);box-shadow:0 24px 60px rgba(4,12,22,.45);
+  padding:var(--s6);color:var(--body)}
+.funnel-top{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3)}
+.funnel-top h2{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.funnel-top span{font-family:var(--head);font-size:12.5px;font-weight:700;color:var(--accent-deep);
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.funnel-bar{height:4px;border-radius:99px;background:var(--line);margin:var(--s4) 0 var(--s5);overflow:hidden}
+.funnel-bar i{display:block;height:100%;width:50%;background:var(--accent);border-radius:99px;
+  transition:width var(--dur) var(--ease)}
+.funnel .lead{font-size:15px;margin-bottom:var(--s4);color:var(--body)}
+.funnel .step[hidden]{display:none}
+.funnel .back{background:none;border:0;padding:0;margin-top:var(--s4);cursor:pointer;
+  font-family:var(--head);font-weight:600;font-size:14px;color:var(--body);
+  display:inline-flex;align-items:center;gap:7px}
+.funnel .back:hover{color:var(--ink)}
+.funnel .note{font-size:13px;color:var(--body);margin-top:var(--s4);text-align:center}
+.funnel .btn{width:100%}
+.funnel .checks{margin-bottom:var(--s4)}
+.funnel .field{margin-bottom:var(--s3)}
+.funnel .consent{margin:var(--s3) 0 var(--s4)}
+
+
+/* Nachweis-Karte (Nachweis-Sektion) */
+.proof{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--sh3);padding:var(--s5);max-width:320px}
+.proof-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);
+  padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
+.proof-top b{display:flex;align-items:center;gap:8px;font-family:var(--head);font-size:13.5px;
+  font-weight:700;color:var(--ink)}
+.proof-top .ok{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--ok)}
+.proof-rows{padding-top:var(--s3)}
+.proof-rows div{display:flex;gap:var(--s3);align-items:baseline;font-size:14px;padding:5px 0}
+.proof-rows .z{font-family:var(--head);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;min-width:48px}
+.proof-foot{margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--line);
+  font-size:13px;display:flex;justify-content:space-between;gap:var(--s3)}
+.proof-foot b{font-family:var(--head);color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* Vertrauensband: schiebt sich bewusst über die Hero-Kante */
+.trustband{position:relative;z-index:5;margin-top:-88px;padding:0 0 var(--s9)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5)}
+.trust>div{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6) var(--s5);box-shadow:var(--sh3)}
+.trust .ictile{margin-bottom:var(--s4)}
+.trust strong{display:block;font-family:var(--head);font-size:15.5px;color:var(--ink)}
+.trust span{display:block;font-size:14px;margin-top:5px;line-height:1.5}
+
+/* Faktenkarten Satzung */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.fact{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:var(--s7) var(--s6);box-shadow:var(--sh2)}
+.fact .ictile{margin-bottom:var(--s5)}
+.fact b{display:block;font-family:var(--head);font-weight:800;font-size:clamp(36px,4vw,50px);
+  letter-spacing:-.035em;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.fact h3{font-size:20px;margin:var(--s4) 0 var(--s3)}
+.fact p{font-size:15.5px}
+.fact cite{display:block;font-style:normal;font-size:13px;color:#8A949D;margin-top:var(--s4);
+  padding-top:var(--s3);border-top:1px solid var(--line)}
+.checkline{margin-top:var(--s6);display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;
+  background:var(--inset);border-radius:var(--r);padding:var(--s5)}
+.checkline p{font-size:16px}
+.checkline a{font-family:var(--head);font-weight:700;color:var(--accent-deep);text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px}
+.checkline a:hover{text-decoration:underline}
+
+/* Alles aus einer Hand */
+.onehand{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:center}
+.onehand h2{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;color:#fff}
+.onehand p{margin-top:var(--s5);font-size:17.5px;color:#B7C4CF}
+.vs{display:grid;gap:var(--s3)}
+.vs div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-sm);
+  padding:var(--s4) var(--s5);display:flex;align-items:center;gap:var(--s4);font-size:15.5px;color:#B7C4CF}
+.vs .n{font-family:var(--head);font-weight:800;color:#8795A2;font-size:13px;flex:none;
+  letter-spacing:.06em;text-transform:uppercase;min-width:58px}
+.vs .mds{background:#fff;border-color:#fff;color:var(--ink);font-weight:600}
+.vs .mds .n{color:var(--accent-deep)}
+
+/* Leistungen */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+  overflow:hidden;box-shadow:var(--sh2);display:flex;flex-direction:column;
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--sh3)}
+.svc img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.svc-in{padding:var(--s6);display:flex;flex-direction:column;flex:1}
+.svc-head{display:flex;align-items:center;gap:12px}
+.svc h3{font-size:20px;font-weight:700}
+.svc .claim{font-size:15.5px;margin-top:var(--s3)}
+.svc ul{margin:var(--s4) 0 0;padding:0;list-style:none;font-size:14.5px}
+.svc li{padding-left:20px;position:relative;margin-bottom:7px}
+.svc li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;
+  background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.svc .turnus{margin-top:auto;padding-top:var(--s4);border-top:1px solid var(--line);
+  font-size:13.5px;font-weight:600;color:var(--accent-deep);margin-bottom:0}
+.svc .turnus-wrap{margin-top:auto;padding-top:var(--s5)}
+
+/* Zielgruppen */
+.aud{border-radius:var(--r-xl);padding:var(--s7)}
+.aud--b2b{background:var(--navy);color:#fff;box-shadow:var(--sh2)}
+.aud--b2b h3{color:#fff}
+.aud--b2c{background:var(--white);border:1px solid var(--line);box-shadow:var(--sh1)}
+.aud h3{font-size:25px;font-weight:800;letter-spacing:-.026em;margin:var(--s4) 0 var(--s3)}
+.aud>p{font-size:16.5px}
+.aud--b2b>p{color:#B7C4CF}
+.aud ul{list-style:none;padding:0;margin:var(--s5) 0 var(--s6);font-size:16px}
+.aud li{padding-left:26px;position:relative;margin-bottom:var(--s3);line-height:1.55}
+.aud li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.aud--b2b li{color:#D6DFE7}
+
+/* Nachweis */
+.nw{display:grid;grid-template-columns:1fr 1.15fr;gap:var(--s8);align-items:center}
+.nwlist{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5);margin-top:var(--s8)}
+.nwlist>div{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6) var(--s5);box-shadow:var(--sh2)}
+.nwlist .ictile{margin-bottom:var(--s4)}
+.nwlist strong{display:block;font-family:var(--head);font-size:16.5px;color:var(--ink);margin-bottom:6px}
+.nwlist p{font-size:15px}
+.nwimg{position:relative}
+.nwimg img{display:block;width:100%;border-radius:var(--r-lg);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--sh3)}
+.nwimg .proof{position:absolute;left:var(--s5);bottom:var(--s5);max-width:320px}
+.nwbig .cap{margin-top:var(--s4);font-size:14px;color:var(--body)}
+
+/* Ablauf */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5)}
+.step{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6) var(--s5);box-shadow:var(--sh2)}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);
+  display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:15px;margin-bottom:var(--s4)}
+.step h3{font-size:17.5px}
+.step p{font-size:14.5px;margin-top:var(--s2)}
+.step .when{display:block;margin-top:var(--s4);font-size:13px;font-weight:600;color:var(--accent-deep)}
+
+/* Preise */
+.priceGrid{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--s8);align-items:start}
+.factors{display:grid;gap:var(--s3);margin-top:var(--s6)}
+.factors div{display:flex;gap:var(--s3);align-items:center;background:var(--inset);
+  border-radius:var(--r-sm);padding:var(--s4) var(--s5);font-size:16px}
+.factors b{font-family:var(--head);color:var(--ink)}
+.ptable{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+  overflow-x:auto;box-shadow:var(--sh1)}
+.ptable table{min-width:420px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{font-family:var(--head);font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--body);text-align:left;padding:var(--s4) var(--s6);border-bottom:1px solid var(--line)}
+td{padding:var(--s4) var(--s6);border-bottom:1px solid var(--line);color:var(--ink)}
+td:last-child{text-align:right;font-family:var(--head);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.example{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:var(--s6);margin-top:var(--s5)}
+.example h3{color:#fff;font-size:18px}
+.example p{color:#B7C4CF;font-size:15.5px;margin-top:var(--s3)}
+.example .sum{font-family:var(--head);font-weight:800;font-size:26px;color:#fff;margin-top:var(--s4);
+  font-variant-numeric:tabular-nums}
+
+/* Warum */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:stretch}
+.why>div:last-child{display:flex}
+.whylist{display:grid;gap:var(--s5);margin-top:var(--s6)}
+.whylist>div{display:flex;gap:var(--s4);align-items:flex-start}
+.whylist strong{display:block;font-family:var(--head);font-size:16.5px;color:var(--ink);margin-bottom:4px}
+.whylist p{font-size:15.5px}
+.owner{background:var(--inset);border-radius:var(--r);padding:var(--s5);margin-top:var(--s6);
+  display:flex;gap:var(--s4);align-items:center}
+.owner .av{width:56px;height:56px;border-radius:50%;background:var(--sand);flex:none;
+  display:grid;place-items:center;color:#9AA5AE}
+.why img{border-radius:var(--r-lg);box-shadow:var(--sh3);width:100%;height:100%;min-height:520px;object-fit:cover}
+
+/* Beispielpakete */
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.pack{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:var(--s6);box-shadow:var(--sh2);display:flex;flex-direction:column}
+.pack .ictile{margin-bottom:var(--s5)}
+.pack h3{font-size:19px}
+.pack .we{display:block;font-size:14px;color:var(--body);margin-top:6px}
+.pack ul{list-style:none;padding:0;margin:var(--s5) 0 0;font-size:15px}
+.pack li{padding-left:24px;position:relative;margin-bottom:9px;line-height:1.5}
+.pack li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;
+  background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent)}
+.pack .from{margin-top:auto;padding-top:var(--s5);border-top:1px solid var(--line)}
+.pack .from b{display:block;font-family:var(--head);font-weight:800;font-size:24px;color:var(--ink);
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.pack .from span{font-size:13.5px;color:var(--body)}
+
+/* Stimmen */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.quote{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s6);box-shadow:var(--sh1)}
+.quote p{font-size:16.5px;color:var(--ink);line-height:1.6}
+.quote .who{display:flex;align-items:center;gap:var(--s3);margin-top:var(--s5);
+  padding-top:var(--s4);border-top:1px solid var(--line)}
+.quote .av{width:40px;height:40px;border-radius:50%;background:var(--sand);flex:none}
+.quote .who b{display:block;font-family:var(--head);font-size:14.5px;color:var(--ink)}
+
+/* Einsatzgebiet */
+.area{background:var(--inset);border-radius:var(--r-xl);padding:var(--s8)}
+.area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--s6)}
+.area-tags span{background:#fff;border:1px solid var(--line);border-radius:var(--pill);
+  padding:9px 16px;font-size:15px;color:var(--ink);font-weight:500}
+.area-tags .lead{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
+
+/* FAQ */
+.faq{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  margin-bottom:var(--s3);box-shadow:var(--sh1);overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:var(--s5) var(--s6);font-family:var(--head);
+  font-weight:700;font-size:18px;color:var(--ink);display:flex;justify-content:space-between;
+  gap:var(--s4);align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:focus-visible{outline:2.5px solid var(--accent);outline-offset:-3px}
+.faq summary i{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);
+  display:grid;place-items:center;flex:none;transition:transform var(--dur) var(--ease)}
+.faq[open] summary i{transform:rotate(45deg)}
+.faq .answer{padding:0 var(--s6) var(--s6);max-width:80ch;font-size:16.5px}
+
+/* Abschluss + Formular */
+.final{background:var(--navy);border-radius:var(--r-xl);padding:var(--s8);color:#fff;box-shadow:var(--sh3)}
+.final-in{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--s8);align-items:start}
+.final h2{color:#fff;font-size:clamp(27px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;margin-top:var(--s4)}
+.final p{color:#B7C4CF;margin-top:var(--s4);font-size:17px}
+.napblock{margin-top:var(--s7);display:grid;gap:var(--s4)}
+.napblock a,.napblock div{display:flex;gap:var(--s4);align-items:flex-start;color:#fff;
+  text-decoration:none;font-size:16px}
+.napblock span{color:#B7C4CF;font-size:14.5px;display:block}
+.napblock b{font-family:var(--head);font-size:16.5px}
+.napblock a:hover b{color:var(--accent)}
+.napblock a,.napblock div{min-width:0}
+.napblock b,.ft .nap a{overflow-wrap:anywhere}
+.form{background:#fff;border-radius:var(--r-lg);padding:var(--s6);color:var(--body);align-self:start}
+.field{display:block;margin-bottom:var(--s3)}
+.field>span{display:block;font-family:var(--head);font-weight:600;font-size:13.5px;color:var(--ink);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--text);font-size:16px;color:var(--ink);
+  padding:11px var(--s4);border:1px solid var(--line-cool);border-radius:var(--r-sm);background:#fff;min-height:48px;
+  transition:border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.field textarea{min-height:76px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#9AA5AE}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:#C3CDD5}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(228,105,47,.13)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--s3)}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.check input{position:absolute;opacity:0;width:0;height:0}
+.check span{display:inline-block;font-size:14px;font-weight:500;padding:8px 14px;border:1px solid var(--line-cool);
+  border-radius:var(--pill);background:#fff;cursor:pointer;
+  transition:transform var(--dur) var(--ease),background var(--dur) var(--ease),color var(--dur) var(--ease)}
+.check span:hover{transform:translateY(-1px);border-color:#C3CDD5}
+.check input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+.check input:focus-visible+span{outline:2.5px solid var(--accent);outline-offset:2px}
+.consent{display:flex;gap:var(--s3);align-items:flex-start;font-size:13.5px;line-height:1.5;margin:var(--s4) 0}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--accent)}
+
+/* Footer */
+.ft{background:var(--navy);color:#B7C4CF}
+.ft-in{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:var(--s8);padding:var(--s9) 0 var(--s7)}
+.ft strong{color:#fff;font-family:var(--head);display:block;margin-bottom:var(--s4);font-size:16px}
+.ft a{color:#B7C4CF;text-decoration:none;display:block;padding:4px 0;font-size:15px;
+  transition:color var(--dur) var(--ease)}
+.ft a:hover{color:#fff}
+.ft .nap{font-size:15px;line-height:1.8}
+.ft-base{border-top:1px solid rgba(255,255,255,.1);padding:var(--s5) 0;font-size:14px;
+  display:flex;justify-content:space-between;gap:var(--s5);flex-wrap:wrap}
+.ft-base a{display:inline}
+
+/* Raster-Kinder dürfen unter ihre Inhaltsbreite schrumpfen */
+.aud,.svc,.step,.fact,.pack,.quote,.trust>div,.nwlist>div,.ptable,.priceGrid>div,.hero-in>div,.nw>div,.why>div,.final-in>div{min-width:0}
+
+/* Spezifitäts-Korrekturen: Element-Selektoren wie .trust span dürfen
+   die Icon-Kacheln und die Platzhalter-Chips nicht platt machen */
+.trust .ictile,.napblock .ictile,.quote .av,.owner .av{display:grid}
+.trust .todo,.napblock .todo,.quote .todo,.step .todo,.nwlist .todo,.ft-base .todo{display:inline-flex}
+
+/* Sticky mobil */
+.mob{position:fixed;left:var(--s4);right:var(--s4);bottom:var(--s4);z-index:90;display:none;
+  gap:var(--s3);background:#fff;border:1px solid var(--line);padding:10px;border-radius:var(--pill);
+  box-shadow:var(--sh3)}
+.mob .btn{flex:1}
+
+/* Responsive */
+@media (max-width:1080px){
+  .hd nav{display:none}
+  .g4,.g3,.svcs,.facts,.packs,.quotes,.trust,.nwlist{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .hero{padding-bottom:var(--s9)}
+  .trustband{margin-top:-56px}
+  .hero-in{grid-template-columns:1fr;gap:var(--s7)}
+  .onehand,.nw,.priceGrid,.why,.final-in{grid-template-columns:1fr}
+  .why>div:last-child{display:block}
+  .why img{min-height:340px}
+  .proof{position:relative;z-index:2;left:auto;bottom:auto;
+    margin:calc(-1 * var(--s6)) auto 0 var(--s4);max-width:340px}
+  .nwimg .proof{position:relative;left:auto;bottom:auto;margin:calc(-1 * var(--s6)) auto 0 var(--s4);max-width:340px;z-index:2}
+  .ft-in{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  body{font-size:16.5px}
+  .wrap{padding:0 var(--s5)}
+  section{padding:var(--s8) 0}
+  .g2,.g3,.g4,.svcs,.facts,.packs,.quotes,.trust,.steps,.nwlist,.f2,.f3{grid-template-columns:1fr}
+  .ft-in{grid-template-columns:1fr}
+  .onehand,.final,.area{padding:var(--s6)}
+  .ft-in{padding:var(--s7) 0 var(--s6)}
+  .hd .tel span{display:none}
+  .hd-in{padding:var(--s3) var(--s5)}
+  .brand span{display:none}
+  .mob{display:flex}
+  body{padding-bottom:88px}
+  .hero{padding:var(--s7) 0 var(--s8)}
+  .trustband{margin-top:0;padding-top:var(--s8)}
+  .hero::after{background:linear-gradient(180deg,rgba(8,19,31,.86) 0%,rgba(8,19,31,.92) 55%,rgba(8,19,31,.96) 100%)}
+  .funnel{padding:var(--s5)}
+  .btn{white-space:normal;text-align:center;line-height:1.3;padding:0 var(--s5)}
+  th,td{padding:var(--s3) var(--s4)}
+  .ptable table{min-width:340px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+<symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21.5c4.5-4.4 6.8-8 6.8-11a6.8 6.8 0 1 0-13.6 0c0 3 2.3 6.6 6.8 11z"/><circle cx="12" cy="10.3" r="2.4"/></symbol>
+<symbol id="ic-building" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 21V4.6A1.6 1.6 0 0 1 7.6 3h5.8A1.6 1.6 0 0 1 15 4.6V21"/><path d="M15 21V11h3.4A1.6 1.6 0 0 1 20 12.6V21"/><path d="M9 7.5h3M9 11.5h3M9 15.5h3"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3.2 19 6v5.6c0 4.4-2.9 8-7 9.2-4.1-1.2-7-4.8-7-9.2V6l7-2.8z"/><path d="m9.2 12.2 2.1 2.1 3.5-3.5"/></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24"><path d="M15.8 21A13.8 13.8 0 0 1 3 8.2V6a2 2 0 0 1 2-2h2.3a1 1 0 0 1 1 .8l.7 3a1 1 0 0 1-.5 1.1l-1.4.8a11.2 11.2 0 0 0 5 5l.8-1.4a1 1 0 0 1 1.1-.5l3 .7a1 1 0 0 1 .8 1V19a2 2 0 0 1-2 2z"/></symbol>
+<symbol id="ic-mail" viewBox="0 0 24 24"><path d="M4.5 6h15A1.5 1.5 0 0 1 21 7.5v9A1.5 1.5 0 0 1 19.5 18h-15A1.5 1.5 0 0 1 3 16.5v-9A1.5 1.5 0 0 1 4.5 6z"/><path d="m3.6 7.4 8.4 5.7 8.4-5.7"/></symbol>
+<symbol id="ic-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.8"/><path d="M5.2 20a6.8 6.8 0 0 1 13.6 0"/></symbol>
+<symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><path d="M12 7.2V12l3.4 2"/></symbol>
+<symbol id="ic-calendar" viewBox="0 0 24 24"><path d="M5.5 6h13A1.5 1.5 0 0 1 20 7.5v11A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6z"/><path d="M8.5 3.5V6M15.5 3.5V6M4 10.5h16"/></symbol>
+<symbol id="ic-ruler" viewBox="0 0 24 24"><path d="M4.4 12h15.2"/><path d="M3.4 7.8v8.4M20.6 7.8v8.4"/><path d="m8.4 9.1-2.9 2.9 2.9 2.9M15.6 9.1l2.9 2.9-2.9 2.9"/></symbol>
+<symbol id="ic-euro" viewBox="0 0 24 24"><path d="M17.6 6.6a6.9 6.9 0 1 0 0 10.8"/><path d="M4.4 10.4h8.2M4.4 13.6h8.2"/></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24"><path d="m5.2 12.8 4.4 4.4L18.8 7.4"/></symbol>
+<symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M4.2 12h13.6"/><path d="m12.4 6.4 5.6 5.6-5.6 5.6"/></symbol>
+<symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 5.4v13.2M5.4 12h13.2"/></symbol>
+<symbol id="ic-image" viewBox="0 0 24 24"><path d="M4.5 5h15A1.5 1.5 0 0 1 21 6.5v11A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5v-11A1.5 1.5 0 0 1 4.5 5z"/><circle cx="8.6" cy="9.6" r="1.5"/><path d="m3.6 16.6 4.8-4.4 3.4 3.2 3-2.8 4.6 4.2"/></symbol>
+<symbol id="ic-doc" viewBox="0 0 24 24"><path d="M6.5 3h6.6L18 7.9V20a1 1 0 0 1-1 1H6.5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M13 3v5h5"/><path d="M8.5 12.5h6M8.5 16h4"/></symbol>
+<symbol id="ic-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/><path d="M10.5 3.9 12 6l1.5-2.1M10.5 20.1 12 18l1.5 2.1M18.3 6.6 17.2 9l2.6.2M5.7 17.4 6.8 15l-2.6-.2M18.3 17.4 17.2 15l2.6-.2M5.7 6.6 6.8 9l-2.6.2"/></symbol>
+<symbol id="ic-broom" viewBox="0 0 24 24"><path d="M12 2.8V10"/><path d="M6.2 10h11.6a.8.8 0 0 1 .8.8v2.4H5.4v-2.4a.8.8 0 0 1 .8-.8z"/><path d="M7.6 13.2v6.3M10.5 13.2v7.5M13.5 13.2v7.5M16.4 13.2v6.3"/></symbol>
+<symbol id="ic-stairs" viewBox="0 0 24 24"><path d="M3.5 20h4v-4h4v-4h4V8h4.5"/></symbol>
+<symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M20.4 3.6C9.6 4.8 4.2 10.8 4.2 20.4c9.6 0 15.6-5.4 16.2-16.8z"/><path d="M4.6 20 15.2 9.2"/></symbol>
+<symbol id="ic-bin" viewBox="0 0 24 24"><path d="M4.2 7h15.6"/><path d="M9.4 7V5.4A1.6 1.6 0 0 1 11 3.8h2a1.6 1.6 0 0 1 1.6 1.6V7"/><path d="m6.2 7 .9 12.1A1.9 1.9 0 0 0 9 20.9h6a1.9 1.9 0 0 0 1.9-1.8L17.8 7"/><path d="M10.2 11v6M13.8 11v6"/></symbol>
+<symbol id="ic-repair" viewBox="0 0 24 24"><path d="M12 3.1l7.4 4.3v8.6L12 20.3 4.6 16V7.4z"/><circle cx="12" cy="11.7" r="3"/></symbol>
+<symbol id="ic-clipboard" viewBox="0 0 24 24"><path d="M8.6 5H6.6A1.6 1.6 0 0 0 5 6.6v12.8A1.6 1.6 0 0 0 6.6 21h10.8a1.6 1.6 0 0 0 1.6-1.6V6.6A1.6 1.6 0 0 0 17.4 5h-2"/><path d="M9.4 3h5.2v3.2H9.4z"/><path d="m9.6 13.6 2 2 3.4-3.4"/></symbol>
+</svg>
+
+<!-- ==================== HEADER ==================== -->
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="#top">
+      <span class="mark">MDS</span>
+      <span>
+        <b>MDS Hausmeisterservice</b>
+        <span>u. Kehrdienstleistungen</span>
+      </span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#pflichten">Ihre Pflichten</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#preise">Preise</a>
+      <a href="#fragen">Fragen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="tel" href="tel:+4915567287976"><svg class="ic ic--sm"><use href="#ic-phone"/></svg><span class="tnum">015567 287976</span></a>
+    <a class="btn btn-primary btn-sm" href="#kontakt">Angebot anfragen</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <span class="pill">Hoyerswerda und Umgebung</span>
+        <h1>Hausmeisterservice und Kehrdienst in <em>Hoyerswerda</em></h1>
+        <p class="sub">Räumpflicht, Kehrpflicht, Treppenhaus, Grünanlagen. Wir übernehmen die Pflichten für Ihr Objekt, dokumentiert und zum Festpreis.</p>
+        <div class="marks">
+          <div><svg class="ic ic--sm"><use href="#ic-check"/></svg>Ein Ansprechpartner für alle Leistungen, eine Rechnung im Monat</div>
+          <div><svg class="ic ic--sm"><use href="#ic-check"/></svg>Festpreis nach kostenloser Objektbesichtigung</div>
+          <div><svg class="ic ic--sm"><use href="#ic-check"/></svg>Jeder Wintereinsatz mit Datum und Uhrzeit dokumentiert</div>
+        </div>
+      </div>
+
+      <form class="funnel" id="funnel" method="post" action="#" novalidate>
+        <div class="funnel-top">
+          <h2>Angebot in 30 Sekunden</h2>
+          <span id="funnelStep">Schritt 1 von 2</span>
+        </div>
+        <div class="funnel-bar"><i id="funnelBar"></i></div>
+
+        <div class="step" id="step1">
+          <p class="lead">Was braucht Ihr Objekt? Mehrfachauswahl möglich.</p>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="leistung" value="Winterdienst"><span>Winterdienst</span></label>
+            <label class="check"><input type="checkbox" name="leistung" value="Kehrdienst"><span>Kehrdienst</span></label>
+            <label class="check"><input type="checkbox" name="leistung" value="Treppenhaus"><span>Treppenhaus</span></label>
+            <label class="check"><input type="checkbox" name="leistung" value="Grünpflege"><span>Grünpflege</span></label>
+            <label class="check"><input type="checkbox" name="leistung" value="Mülltonnen"><span>Mülltonnen</span></label>
+            <label class="check"><input type="checkbox" name="leistung" value="Kleinreparaturen"><span>Kleinreparaturen</span></label>
+            <label class="check"><input type="checkbox" name="leistung" value="Komplettbetreuung"><span>Komplett</span></label>
+          </div>
+          <label class="field"><span>Objekttyp</span>
+            <select name="objekttyp">
+              <option>Bitte wählen</option>
+              <option>Mehrfamilienhaus</option>
+              <option>Eigentümergemeinschaft</option>
+              <option>Einfamilien- oder Doppelhaus</option>
+              <option>Gewerbeobjekt</option>
+              <option>Mehrere Objekte</option>
+            </select>
+          </label>
+          <button class="btn btn-primary" type="button" id="funnelNext">Weiter <svg class="ic ic--sm"><use href="#ic-arrow"/></svg></button>
+          <p class="note">Kostenlos und unverbindlich. Kein Vertrag, kein Abo.</p>
+        </div>
+
+        <div class="step" id="step2" hidden>
+          <p class="lead">Wohin dürfen wir das Angebot schicken?</p>
+          <label class="field"><span>Name</span><input type="text" name="name" placeholder="Vor- und Nachname"></label>
+          <label class="field"><span>Telefon</span><input type="tel" name="telefon" placeholder="Für den Rückruf"></label>
+          <label class="field"><span>Objektadresse oder Ort</span><input type="text" name="objekt" placeholder="Straße, Hoyerswerda"></label>
+          <label class="consent"><input type="checkbox" name="datenschutz">
+            <span>Ich habe die <a href="#datenschutz" style="color:var(--accent-deep)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben einverstanden.</span></label>
+          <button class="btn btn-primary" type="submit">Kostenloses Angebot anfordern</button>
+          <button class="back" type="button" id="funnelBack"><svg class="ic ic--sm" style="transform:rotate(180deg)"><use href="#ic-arrow"/></svg>Zurück</button>
+          <p class="note">Antwort am selben Werktag. Besichtigung und Angebot kosten Sie nichts.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VERTRAUENSBAND ==================== -->
+<section class="trustband">
+  <div class="wrap">
+    <div class="trust">
+      <div>
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <strong>Hoyerswerda und Umland</strong>
+        <span>Lauta, Wittichenau, Bernsdorf, Knappenrode, Schwarzkollm</span>
+      </div>
+      <div>
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-building"/></svg></span>
+        <strong>Privat, gewerblich und öffentlich</strong>
+        <span>Mehrfamilienhäuser, WEG, Gewerbeobjekte, Kommunen</span>
+      </div>
+      <div>
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-shield"/></svg></span>
+        <strong>Betriebshaftpflicht</strong>
+        <span>3 Mio. Euro Deckungssumme für Personen- und Sachschäden</span>
+      </div>
+      <div>
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-user"/></svg></span>
+        <strong>Erreichbar bei einer Person</strong>
+        <span>Kein Callcenter, kein Ticketsystem</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PFLICHTEN ==================== -->
+<section id="pflichten" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">Rechtslage in Hoyerswerda</span>
+      <h2>Was Sie als Eigentümer in Hoyerswerda <em>leisten müssen</em></h2>
+      <p>Die Stadt Hoyerswerda hat Winterdienst und Straßenreinigung auf die Eigentümer und Besitzer der Anliegergrundstücke übertragen. Wer die Fristen nicht einhält, begeht eine Ordnungswidrigkeit. Wer sie einhalten lässt, bleibt trotzdem verantwortlich. Beides steht in den Satzungen der Stadt, und beides nehmen wir Ihnen ab.</p>
+    </div>
+    <div class="facts" style="margin-top:var(--s7)">
+      <div class="fact">
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-clock"/></svg></span>
+        <b>08:00</b>
+        <h3>Winterdienst bis 8 Uhr</h3>
+        <p>Gehwege und Fahrbahnen müssen bis 08:00 Uhr geräumt und gestreut sein, an Sonn- und Feiertagen bis 09:00 Uhr. Gehwege werden komplett abgestumpft, mindestens auf 1,50 Meter Breite. Fällt im Laufe des Tages Schnee, wird sofort und bei Bedarf mehrfach nachgeräumt, bis 20:00 Uhr.</p>
+        <cite>Quelle: Winterdienstsatzung Hoyerswerda, § 5 und § 6</cite>
+      </div>
+      <div class="fact">
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-ruler"/></svg></span>
+        <b>1/2</b>
+        <h3>Kehrpflicht bis zur Fahrbahnmitte</h3>
+        <p>Zur Reinigung gehören Gehweg, Grünstreifen und Böschung sowie die halbe Breite der Fahrbahn einschließlich Rinne und Bordsteinkante. Auch Laub, Unkraut und Wildkräuter zählen dazu. Das gilt für alle Straßen, die nicht in der Reinigungsliste der Stadt stehen.</p>
+        <cite>Quelle: Straßenreinigungssatzung Hoyerswerda, § 2</cite>
+      </div>
+      <div class="fact">
+        <span class="ictile ictile--mist"><svg class="ic"><use href="#ic-euro"/></svg></span>
+        <b>500 €</b>
+        <h3>Bußgeld, Verantwortung bleibt bei Ihnen</h3>
+        <p>Wird nicht rechtzeitig geräumt oder gestreut, kann die Stadt ein Bußgeld bis 500,00 Euro verhängen. Sie dürfen die Pflicht an einen Dienstleister abgeben, bleiben der Stadt gegenüber aber verantwortlich. Deshalb dokumentieren wir jeden Einsatz.</p>
+        <cite>Quelle: Winterdienstsatzung Hoyerswerda, § 4 Abs. 3 und § 9</cite>
+      </div>
+    </div>
+    <div class="checkline">
+      <p><strong style="color:var(--ink)">Nicht jede Straße ist Anliegersache.</strong> Wir prüfen für Ihre Objektadresse kostenlos, ob die Stadt räumt oder Sie.</p>
+      <a href="#kontakt">Adresse prüfen lassen <svg class="ic ic--sm"><use href="#ic-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ALLES AUS EINER HAND ==================== -->
+<section class="band-dark">
+  <div class="wrap">
+    <div class="onehand">
+      <div>
+        <span class="pill">Objektbetreuung</span>
+        <h2 style="margin-top:var(--s4)">Ein Ansprechpartner statt vier Dienstleister</h2>
+        <p>Die meisten Objekte werden von vier Firmen betreut: eine für den Winterdienst, eine für den Garten, eine für das Treppenhaus, eine für Reparaturen. Vier Verträge, vier Rechnungen, vier Nummern, und im Zweifel war es immer der andere.</p>
+        <p style="margin-top:var(--s4)">Bei uns läuft alles über einen Ansprechpartner, einen Leistungskatalog und eine Rechnung im Monat. Sie sagen einmal, was Ihr Objekt braucht. Danach kümmern wir uns, ohne dass Sie nachfragen müssen.</p>
+      </div>
+      <div class="vs">
+        <div><span class="n">Üblich</span> Winterdienstfirma</div>
+        <div><span class="n">Üblich</span> Gartenbaubetrieb</div>
+        <div><span class="n">Üblich</span> Reinigungskraft</div>
+        <div><span class="n">Üblich</span> Handwerker auf Abruf</div>
+        <div class="mds"><span class="n">Bei uns</span> Alles aus einer Hand, eine Rechnung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LEISTUNGEN ==================== -->
+<section id="leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">Unsere Leistungen</span>
+      <h2>Alles, was Ihr Objekt braucht, in <em>Hoyerswerda</em> und Umgebung</h2>
+      <p>Jede Leistung mit klarem Inhalt und festem Turnus. Was wir zusagen, steht später im Leistungsverzeichnis, damit in der Eigentümerversammlung nichts offen bleibt.</p>
+    </div>
+    <div class="svcs" style="margin-top:var(--s7)">
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-streudienst-splitt.webp" width="1000" height="667" loading="lazy"
+             alt="Mitarbeiter streut Splitt auf einem vereisten Weg vor einem Wohnhaus">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-snow"/></svg></span>
+            <h3>Winterdienst</h3>
+          </div>
+          <p class="claim">Wir sind vor der Frist auf der Fläche, damit Ihr Objekt um 8 Uhr geräumt und gestreut ist.</p>
+          <ul>
+            <li>Schneeräumung auf Gehwegen, Zufahrten, Stellplätzen und Hauseingängen</li>
+            <li>Abstumpfen mit Sand, Splitt oder Salz, auf Treppen und Rampen bei Blitzeis mit Auftaumittel</li>
+            <li>Zugänge zu Mülltonnenplätzen, Hydranten und Absperrschiebern freihalten</li>
+            <li>Schneewälle unterbrechen, damit Tauwasser abläuft</li>
+            <li>Streugut nach der Saison wieder aufnehmen, spätestens vor Ostern</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Bereitschaft über die ganze Saison, jeder Einsatz mit Datum und Uhrzeit dokumentiert</p></div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-kehrdienst-laub-weg.webp" width="1000" height="667" loading="lazy"
+             alt="Mitarbeiter kehrt Herbstlaub mit einem Großflächenbesen vom Gehweg">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-broom"/></svg></span>
+            <h3>Kehrdienst und Straßenreinigung</h3>
+          </div>
+          <p class="claim">Wir übernehmen die Anliegerpflicht, die viele Eigentümer nicht auf dem Schirm haben.</p>
+          <ul>
+            <li>Gehweg, Radweg, Grünstreifen und Böschung</li>
+            <li>Halbe Fahrbahnbreite mit Rinne und Bordsteinkante</li>
+            <li>Laub, Papier, Verpackungen und Fremdkörper</li>
+            <li>Unkraut und Wildkräuter aus Fugen, Kanten und Randstreifen</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Turnus nach Bedarf des Objekts, wöchentlich bis monatlich</p></div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-treppenhausreinigung.webp" width="1200" height="780" loading="lazy"
+             alt="Helles Treppenhaus mit Terrazzostufen und Wischeimer auf dem Podest">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-stairs"/></svg></span>
+            <h3>Treppenhausreinigung</h3>
+          </div>
+          <p class="claim">Sauberes Treppenhaus ohne Diskussion im Hausflur, ein Termin pro Woche oder zwei.</p>
+          <ul>
+            <li>Treppen, Podeste, Handläufe und Geländer</li>
+            <li>Eingangsbereich, Briefkastenanlage, Fenster im Treppenhaus</li>
+            <li>Keller- und Nebengänge auf Wunsch</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Turnus schriftlich festgelegt, kein Streit über „wer war dran"</p></div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-heckenschnitt-gruenpflege.webp" width="1000" height="667" loading="lazy"
+             alt="Heckenschnitt mit der Heckenschere an einer Wohnanlage">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-leaf"/></svg></span>
+            <h3>Garten- und Grünanlagenpflege</h3>
+          </div>
+          <p class="claim">Ihre Außenanlage sieht das ganze Jahr gepflegt aus, ohne dass Sie an Termine denken.</p>
+          <ul>
+            <li>Rasen mähen und Kanten stechen in der Saison</li>
+            <li>Hecken- und Strauchschnitt</li>
+            <li>Unkrautentfernung auf Wegen und Beeten</li>
+            <li>Laub im Herbst, Grünschnitt entsorgt</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Turnus 14-tägig oder monatlich, je Objekt</p></div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-muelltonnenservice-standplatz.webp" width="1200" height="780" loading="lazy"
+             alt="Aufgeräumter Mülltonnenstandplatz hinter einem Mehrfamilienhaus">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-bin"/></svg></span>
+            <h3>Mülltonnenservice</h3>
+          </div>
+          <p class="claim">Die Tonnen stehen draußen, wenn sie draußen stehen müssen, und danach wieder im Standplatz.</p>
+          <ul>
+            <li>Tonnen zum Bereitstellplatz und zurück</li>
+            <li>Standplatz sauber und im Winter frei geräumt</li>
+            <li>Tonnenreinigung auf Wunsch</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Nach Abfuhrkalender der Stadt</p></div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-kleinreparatur-deckenleuchte.webp" width="1000" height="667" loading="lazy"
+             alt="Hände wechseln ein Leuchtmittel in einer Deckenleuchte">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-repair"/></svg></span>
+            <h3>Kleinreparaturen</h3>
+          </div>
+          <p class="claim">Kleine Schäden werden erledigt, statt monatelang auf einen Handwerkertermin zu warten.</p>
+          <ul>
+            <li>Leuchtmittel, Schalter, Türschließer, Schlösser</li>
+            <li>Tropfende Armaturen, verstopfte Abläufe</li>
+            <li>Befestigungen, Klappen, Zaunfelder, Briefkästen</li>
+            <li>Größere Schäden melden wir mit Foto, bevor daraus Kosten werden</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Auf Abruf oder im Rahmen der laufenden Betreuung</p></div>
+        </div>
+      </article>
+
+      <article class="svc">
+        <img src="bilder/hausmeisterservice-hoyerswerda-objektkontrolle-rundgang.webp" width="1200" height="780" loading="lazy"
+             alt="Rundgang mit Klemmbrett an Fassade und Fallrohr eines Wohngebäudes">
+        <div class="svc-in">
+          <div class="svc-head">
+            <span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-clipboard"/></svg></span>
+            <h3>Objektkontrolle</h3>
+          </div>
+          <p class="claim">Wir sehen die Probleme, bevor Ihre Mieter anrufen.</p>
+          <ul>
+            <li>Regelmäßiger Rundgang mit Checkliste</li>
+            <li>Beleuchtung, Türen, Dachrinnen, Schächte, Außenanlagen</li>
+            <li>Meldung mit Foto und klarer Empfehlung</li>
+            <li>Auf Wunsch Ablesungen und Verbrauchskontrolle</li>
+          </ul>
+          <div class="turnus-wrap"><p class="turnus">Monatlich oder nach Absprache</p></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ZIELGRUPPEN ==================== -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">Für wen wir arbeiten</span>
+      <h2>Für Hausverwaltungen und für <em>private Eigentümer</em></h2>
+    </div>
+    <div class="grid g2" style="margin-top:var(--s7)">
+      <div class="aud aud--b2b">
+        <span class="pill pill--dark">Für Verwaltungen</span>
+        <h3>Hausverwaltungen, WEG und Vermieter</h3>
+        <p>Sie brauchen keinen Dienstleister, den Sie kontrollieren müssen. Sie brauchen einen, der liefert und es belegt.</p>
+        <ul>
+          <li>Mehrere Objekte über einen Ansprechpartner, eine Rechnung pro Objekt oder gesammelt</li>
+          <li>Leistungsverzeichnis mit festem Turnus, damit in der Eigentümerversammlung nichts offen bleibt</li>
+          <li>Einsatznachweise für den Winterdienst, auf Wunsch mit Foto</li>
+          <li>Kosten so ausgewiesen, dass sie nach Betriebskostenverordnung umlagefähig bleiben</li>
+          <li>Vertretung bei Krankheit und Urlaub ist geregelt, auch mitten im Winter</li>
+        </ul>
+        <a class="btn btn-white" href="#kontakt">Objektliste anfragen <svg class="ic ic--sm"><use href="#ic-arrow"/></svg></a>
+      </div>
+      <div class="aud aud--b2c">
+        <span class="pill">Für Eigentümer</span>
+        <h3>Private Eigentümer und Vermieter</h3>
+        <p>Sie müssen nicht mehr selbst räumen, kehren oder Termine koordinieren. Auch dann nicht, wenn Sie gar nicht in Hoyerswerda wohnen.</p>
+        <ul>
+          <li>Ein Festpreis pro Monat, keine Überraschungen</li>
+          <li>Auch für einzelne Häuser, Doppelhäuser und kleine Grundstücke</li>
+          <li>Sie erreichen dieselbe Person, die auch bei Ihnen vor Ort ist</li>
+          <li>Wir melden uns, wenn am Objekt etwas auffällt, mit Foto</li>
+        </ul>
+        <a class="btn btn-primary" href="#kontakt">Festpreis für mein Objekt <svg class="ic ic--sm"><use href="#ic-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NACHWEIS ==================== -->
+<section>
+  <div class="wrap">
+    <div class="nw">
+      <div>
+        <span class="pill">Nachweis und Absicherung</span>
+        <h2 style="font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;margin-top:var(--s4)">Sie geben die Arbeit ab, <em style="font-style:normal;color:var(--accent)">nicht die Sicherheit</em></h2>
+        <p style="margin-top:var(--s5);font-size:18px">In der Winterdienstsatzung steht ein Satz, den viele überlesen: Sie dürfen einen Dienstleister beauftragen, bleiben der Stadt gegenüber aber verantwortlich.</p>
+        <p style="margin-top:var(--s4);font-size:18px">Wenn jemand stürzt, zählt nicht, dass jemand beauftragt war, sondern ob geräumt wurde und ob Sie das belegen können. Deshalb bekommen Sie von uns für jeden Wintereinsatz einen Nachweis.</p>
+      </div>
+      <div class="nwbig">
+        <div class="nwimg">
+        <img src="bilder/hausmeisterservice-hoyerswerda-schneeraeumen-gehweg.webp" width="1000" height="603" loading="lazy"
+             alt="Mitarbeiter schiebt frischen Schnee vom Gehweg vor einem Wohnhaus">
+        <div class="proof">
+          <div class="proof-top">
+            <b><svg class="ic ic--sm"><use href="#ic-doc"/></svg>Einsatznachweis</b>
+            <span class="ok"><svg class="ic ic--sm"><use href="#ic-check"/></svg>erledigt</span>
+          </div>
+          <div class="proof-rows">
+            <div><span class="z">05:42</span><span>Anfahrt, 4 cm Neuschnee</span></div>
+            <div><span class="z">06:07</span><span>Gehweg geräumt, 1,50 m</span></div>
+            <div><span class="z">06:24</span><span>Splitt gestreut, Eingang frei</span></div>
+          </div>
+          <div class="proof-foot"><span>Frist laut Satzung <b>08:00</b></span><span>erledigt <b>06:24</b></span></div>
+        </div>
+        </div>
+        <p class="cap">Beispielprotokoll. So sieht der Nachweis aus, den Sie zu Ihrem Objekt bekommen.</p>
+      </div>
+    </div>
+
+    <div class="nwlist">
+      <div>
+        <span class="ictile"><svg class="ic"><use href="#ic-doc"/></svg></span>
+        <strong>Einsatznachweis</strong>
+        <p>Jeder Wintereinsatz mit Datum, Uhrzeit und Fläche, auf Wunsch mit Foto.</p>
+      </div>
+      <div>
+        <span class="ictile"><svg class="ic"><use href="#ic-shield"/></svg></span>
+        <strong>Betriebshaftpflicht</strong>
+        <p>3 Mio. Euro Deckungssumme. Den Nachweis legen wir dem Angebot bei.</p>
+      </div>
+      <div>
+        <span class="ictile"><svg class="ic"><use href="#ic-clipboard"/></svg></span>
+        <strong>Leistungskatalog</strong>
+        <p>Was wir machen, wie oft, in welchem Umfang. Kein Rundum-sorglos ohne Inhalt.</p>
+      </div>
+      <div>
+        <span class="ictile"><svg class="ic"><use href="#ic-calendar"/></svg></span>
+        <strong>Feste Vertretung</strong>
+        <p>Bei Krankheit und Urlaub übernimmt eine eingearbeitete Vertretung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABLAUF ==================== -->
+<section id="ablauf" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">Ablauf</span>
+      <h2>So läuft die <em>Zusammenarbeit</em></h2>
+    </div>
+    <div class="steps" style="margin-top:var(--s7)">
+      <div class="step"><div class="n">1</div><h3>Sie fragen an</h3><p>Formular oder Anruf. Sie hören am selben Werktag von uns.</p><span class="when">Antwort am selben Werktag</span></div>
+      <div class="step"><div class="n">2</div><h3>Wir schauen uns das Objekt an</h3><p>Vor Ort, mit Ihnen oder ohne Sie. Dabei prüfen wir auch, welche Flächen tatsächlich in Ihrer Pflicht liegen.</p><span class="when">Kostenlos und unverbindlich</span></div>
+      <div class="step"><div class="n">3</div><h3>Sie bekommen ein Festpreis-Angebot</h3><p>Schriftlich, mit Leistungsverzeichnis und Turnus.</p><span class="when">Innerhalb von 2 Werktagen</span></div>
+      <div class="step"><div class="n">4</div><h3>Wir starten zum Wunschtermin</h3><p>Ab dann kümmern wir uns. Sie hören von uns, wenn es etwas zu melden gibt.</p><span class="when">Nach Ihrer Freigabe</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PREISE ==================== -->
+<section id="preise">
+  <div class="wrap">
+    <div class="priceGrid">
+      <div>
+        <span class="pill">Kosten</span>
+        <h2 style="font-size:clamp(27px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;margin-top:var(--s4)">Was ein Hausmeisterservice in <em style="font-style:normal;color:var(--accent)">Hoyerswerda</em> kostet</h2>
+        <p style="margin-top:var(--s5);font-size:17.5px">Feste Preise ohne Objektbesichtigung wären geraten, deshalb nennen wir Rahmen und rechnen offen vor. Ihren Preis bekommen Sie nach der Besichtigung schriftlich, und dann gilt er.</p>
+        <div class="factors">
+          <div><b>1</b> Fläche und Objektgröße</div>
+          <div><b>2</b> Turnus, also wie oft</div>
+          <div><b>3</b> Umfang der Leistungen</div>
+        </div>
+        <p class="small" style="margin-top:var(--s5)">Hausmeisterkosten sind in der Regel nach Betriebskostenverordnung auf die Mieter umlagefähig, in der Praxis bis rund 0,50 Euro pro Quadratmeter Wohnfläche im Monat. Kleinreparaturen zählen nicht dazu, die weisen wir getrennt aus.</p>
+      </div>
+      <div>
+        <div class="ptable">
+          <table>
+            <caption class="small" style="text-align:left;padding:var(--s5) var(--s6) 0">Richtwerte in der Region, keine Angebote</caption>
+            <thead><tr><th>Leistung</th><th style="text-align:right">Größenordnung</th></tr></thead>
+            <tbody>
+              <tr><td>Hausmeisterleistungen im Stundensatz</td><td>40 bis 50 €</td></tr>
+              <tr><td>Treppenhausreinigung, wöchentlich</td><td>35 bis 97 € / Monat</td></tr>
+              <tr><td>Grünanlagenpflege, anteilig</td><td>40 bis 80 € / Monat</td></tr>
+              <tr><td>Mülltonnenservice</td><td>30 bis 60 € / Monat</td></tr>
+              <tr><td>Winterdienst</td><td>Pauschale plus Einsätze</td></tr>
+              <tr><td>Komplettbetreuung Mehrfamilienhaus</td><td>240 bis 700 € / Monat</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="example">
+          <h3>Rechenbeispiel: Mehrfamilienhaus mit sechs Wohneinheiten</h3>
+          <p>Treppenhaus zweimal pro Woche, Grünpflege 14-tägig in der Saison, Mülltonnenservice, Winterdienst in Bereitschaft.</p>
+          <div class="sum">280 bis 450 € im Monat</div>
+          <p>Abhängig von Grundstücksgröße und Treppenhaus. Ihr Festpreis kommt nach der Besichtigung.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WARUM MDS ==================== -->
+<section class="band">
+  <div class="wrap">
+    <div class="why">
+      <div>
+        <span class="pill">Warum MDS</span>
+        <h2 style="font-size:clamp(27px,3.2vw,40px);font-weight:800;letter-spacing:-.03em;margin-top:var(--s4)">Warum Eigentümer <em style="font-style:normal;color:var(--accent)">mit uns arbeiten</em></h2>
+        <div class="whylist">
+          <div><span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-user"/></svg></span>
+            <div><strong>Sie erreichen einen Menschen, nicht ein Postfach</strong><p>Sie sprechen mit der Person, die Ihr Objekt kennt. Im Büro von Montag bis Freitag, 8 bis 16 Uhr, im Winterdienst ab dem frühen Morgen.</p></div></div>
+          <div><span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-clock"/></svg></span>
+            <div><strong>Wir sind vor der Frist da</strong><p>Die Satzung sagt 8 Uhr. Wir planen so, dass Ihre Flächen vorher fertig sind, nicht knapp danach.</p></div></div>
+          <div><span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-doc"/></svg></span>
+            <div><strong>Wir schreiben auf, was wir tun</strong><p>Damit Sie belegen können, dass geräumt wurde, wenn es darauf ankommt.</p></div></div>
+          <div><span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-euro"/></svg></span>
+            <div><strong>Ein Festpreis, eine Rechnung, ein Leistungskatalog</strong><p>Sie wissen im Januar, was der Dezember kostet.</p></div></div>
+          <div><span class="ictile ictile--sm"><svg class="ic ic--sm"><use href="#ic-pin"/></svg></span>
+            <div><strong>Wir arbeiten hier</strong><p>Hoyerswerda und Umland, kurze Wege, kein Subunternehmer aus drei Städten Entfernung.</p></div></div>
+        </div>
+        <div class="owner">
+          <span class="av"><svg class="ic"><use href="#ic-phone"/></svg></span>
+          <div><strong style="font-family:var(--head);color:var(--ink);display:block">Direkter Draht statt Warteschleife</strong>
+            <span class="small">Montag bis Freitag von 8 bis 16 Uhr unter <a href="tel:+4915567287976" style="color:var(--accent-deep);font-weight:600" class="tnum">015567 287976</a>, im Winterdienst ab dem frühen Morgen.</span></div>
+        </div>
+      </div>
+      <div>
+        <img src="bilder/hausmeisterservice-hoyerswerda-transporter-winterausruestung.webp" width="1200" height="780" loading="lazy"
+             alt="Transporter mit Schneeschiebern, Streuwagen und Werkzeug vor einem Wohnblock in Hoyerswerda">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BEISPIELPAKETE ==================== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">Beispielpakete</span>
+      <h2>So sieht Betreuung bei uns <em>konkret aus</em></h2>
+      <p>Drei typische Zuschnitte aus der Praxis. Ihr Paket stellen wir nach der Besichtigung zusammen, Sie zahlen nur, was Ihr Objekt wirklich braucht.</p>
+    </div>
+    <div class="packs" style="margin-top:var(--s7)">
+
+      <div class="pack">
+        <span class="ictile"><svg class="ic"><use href="#ic-building"/></svg></span>
+        <h3>Mehrfamilienhaus</h3>
+        <span class="we">6 Wohneinheiten, kleiner Innenhof</span>
+        <ul>
+          <li>Treppenhaus zweimal pro Woche</li>
+          <li>Grünpflege 14-tägig in der Saison</li>
+          <li>Mülltonnen zum Bereitstellplatz und zurück</li>
+          <li>Winterdienst in Bereitschaft, dokumentiert</li>
+        </ul>
+        <div class="from"><b>ab 280 € / Monat</b><span>Festpreis nach Besichtigung</span></div>
+      </div>
+
+      <div class="pack">
+        <span class="ictile"><svg class="ic"><use href="#ic-clipboard"/></svg></span>
+        <h3>Eigentümergemeinschaft</h3>
+        <span class="we">18 Wohneinheiten, zwei Eingänge</span>
+        <ul>
+          <li>Treppenhäuser zweimal pro Woche</li>
+          <li>Außenanlagen, Kehrdienst wöchentlich</li>
+          <li>Objektkontrolle monatlich mit Protokoll</li>
+          <li>Winterdienst mit Einsatznachweis je Einsatz</li>
+        </ul>
+        <div class="from"><b>ab 620 € / Monat</b><span>Umlagefähig ausgewiesen</span></div>
+      </div>
+
+      <div class="pack">
+        <span class="ictile"><svg class="ic"><use href="#ic-pin"/></svg></span>
+        <h3>Haus mit auswärtigem Eigentümer</h3>
+        <span class="we">Einzelnes Wohnhaus, Eigentümer wohnt nicht vor Ort</span>
+        <ul>
+          <li>Kehrdienst wöchentlich, Anliegerpflicht abgedeckt</li>
+          <li>Winterdienst über die ganze Saison</li>
+          <li>Rasen und Hecke in der Saison</li>
+          <li>Meldung mit Foto, wenn etwas auffällt</li>
+        </ul>
+        <div class="from"><b>ab 150 € / Monat</b><span>Ohne Anreise für Sie</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EINSATZGEBIET ==================== -->
+<section>
+  <div class="wrap">
+    <div class="area">
+      <span class="pill">Einsatzgebiet</span>
+      <h2 style="font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;margin-top:var(--s4)">Wo wir Objekte betreuen</h2>
+      <p style="margin-top:var(--s5);font-size:17.5px;max-width:70ch">Wir betreuen Objekte in Hoyerswerda (02977) mit allen Ortsteilen und im Umland. Ihr Objekt liegt knapp außerhalb? Fragen Sie trotzdem, oft passt es in eine bestehende Tour.</p>
+      <div class="area-tags">
+        <span class="lead">Hoyerswerda 02977</span>
+        <span>Altstadt</span><span>Neustadt</span><span>Schwarzkollm</span><span>Knappenrode</span>
+        <span>Zeißig</span><span>Dörgenhausen</span><span>Bröthen</span><span>Michalken</span>
+        <span>Lauta</span><span>Wittichenau</span><span>Bernsdorf</span><span>Elsterheide</span>
+        <span>Spreetal</span><span>Lohsa</span><span>Senftenberg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="fragen" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="pill">Häufige Fragen</span>
+      <h2>Antworten zum Hausmeisterservice in <em>Hoyerswerda</em></h2>
+    </div>
+    <div style="margin-top:var(--s7);max-width:900px">
+
+      <details class="faq" open>
+        <summary>Bis wann muss in Hoyerswerda geräumt und gestreut sein?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Gehwege und Fahrbahnen müssen an Werktagen bis 08:00 Uhr geräumt und gestreut sein, an Sonn- und Feiertagen bis 09:00 Uhr. Fällt im Laufe des Tages Schnee, muss unverzüglich und bei Bedarf mehrmals nachgeräumt werden. Die Pflicht endet um 20:00 Uhr. Gehwege sind komplett zu räumen, mindestens auf 1,50 Meter Breite. Grundlage ist die Winterdienstsatzung der Stadt Hoyerswerda, § 5 und § 6.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Wer haftet, wenn jemand stürzt, obwohl ein Dienstleister beauftragt ist?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Die Pflicht darf auf einen geeigneten Dritten übertragen werden, der Eigentümer bleibt der Stadt gegenüber aber verantwortlich, so steht es in § 4 Abs. 3 der Winterdienstsatzung. Im Streitfall zählt deshalb, ob der Einsatz belegbar ist. Wir dokumentieren jeden Wintereinsatz mit Datum und Uhrzeit, damit Sie diesen Nachweis haben.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Was gehört in Hoyerswerda zum Kehrdienst, den ich als Anlieger schulde?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Zur Reinigung gehören Gehwege, Radwege, Grünstreifen, Trennstreifen, Gräben und Böschungen sowie die halbe Breite der Fahrbahn einschließlich Rinnen und Bordsteinkanten. Umfasst sind auch Laub, Schmutz, Papier, Verpackungen und die Beseitigung von Unkraut und Wildkräutern. Das gilt für Straßen, die nicht in der Reinigungsliste der Stadt stehen. Grundlage ist die Straßenreinigungssatzung, § 2.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Was kostet ein Hausmeisterservice für ein Mehrfamilienhaus?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Für ein Mehrfamilienhaus mit sechs Wohneinheiten liegt die Komplettbetreuung erfahrungsgemäß bei 240 bis 700 Euro im Monat, abhängig von Turnus, Grundstücksgröße und Leistungsumfang. Stundenweise Hausmeisterleistungen liegen in der Region bei 40 bis 50 Euro pro Stunde. Ihren verbindlichen Festpreis erhalten Sie nach der kostenlosen Objektbesichtigung schriftlich.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Sind die Kosten auf die Mieter umlagefähig?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Hausmeisterkosten sind nach der Betriebskostenverordnung in der Regel umlagefähig, in der Praxis bis rund 0,50 Euro pro Quadratmeter Wohnfläche im Monat. Nicht umlagefähig sind Instandhaltungs- und Reparaturleistungen. Wir weisen beides getrennt aus, damit Ihre Betriebskostenabrechnung sauber bleibt.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Wie schnell können Sie ein Objekt übernehmen?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Nach der Objektbesichtigung und Ihrer Freigabe starten wir zum Wunschtermin. Im Winter gilt: Wer den Winterdienst erst nach dem ersten Schnee anfragt, konkurriert mit allen anderen. Verträge für die Saison werden sinnvollerweise zwischen September und November geschlossen.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Was passiert bei Krankheit oder Urlaub?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Die Vertretung ist geregelt, damit auch mitten im Winter kein Einsatz ausfällt. Eine eingearbeitete Vertretung übernimmt Ihr Objekt mit demselben Leistungsverzeichnis, und Sie bekommen die Einsatznachweise wie gewohnt.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Gibt es einen Nachweis über die Einsätze?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Ja. Wintereinsätze werden mit Datum, Uhrzeit und Fläche festgehalten, auf Wunsch mit Foto. Bei laufender Objektbetreuung erhalten Sie auf Wunsch eine monatliche Übersicht der erbrachten Leistungen.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Wie lange läuft der Vertrag?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Wir arbeiten mit einer Mindestlaufzeit von zwölf Monaten, danach ist der Vertrag mit drei Monaten Frist kündbar. Winterdienst kann auch als reiner Saisonvertrag von Oktober bis April laufen. Laufzeit und Frist stehen im Angebot, bevor Sie unterschreiben.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Betreuen Sie auch Objekte, wenn ich nicht in Hoyerswerda wohne?<i><svg class="ic ic--sm"><use href="#ic-plus"/></svg></i></summary>
+        <div class="answer">Ja, das ist einer unserer häufigsten Fälle. Sie erhalten Rückmeldung, wenn am Objekt etwas auffällt, auf Wunsch mit Foto, und müssen für Besichtigung oder Übergabe nicht anreisen. Die Abstimmung läuft telefonisch oder per E-Mail.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABSCHLUSS + FORMULAR ==================== -->
+<section id="kontakt">
+  <div class="wrap">
+    <div class="final">
+      <div class="final-in">
+        <div>
+          <span class="pill pill--dark">Kostenlos und unverbindlich</span>
+          <h2>Angebot für Ihr Objekt anfragen</h2>
+          <p>Besichtigung und Angebot sind kostenlos und unverbindlich. Sie hören am selben Werktag von uns, und den Festpreis bekommen Sie schriftlich.</p>
+          <div class="napblock">
+            <a href="tel:+4915567287976">
+              <span class="ictile" style="background:rgba(255,255,255,.12);color:#fff"><svg class="ic"><use href="#ic-phone"/></svg></span>
+              <span><span>Telefon</span><b class="tnum">015567 287976</b></span>
+            </a>
+            <a href="mailto:mdhausmeistersservice26@gmail.com">
+              <span class="ictile" style="background:rgba(255,255,255,.12);color:#fff"><svg class="ic"><use href="#ic-mail"/></svg></span>
+              <span><span>E-Mail</span><b>mdhausmeistersservice26@gmail.com</b></span>
+            </a>
+            <div>
+              <span class="ictile" style="background:rgba(255,255,255,.12);color:#fff"><svg class="ic"><use href="#ic-pin"/></svg></span>
+              <span><span>Adresse</span><b>Dresdener Str. 99A, 02977 Hoyerswerda</b></span>
+            </div>
+            <div>
+              <span class="ictile" style="background:rgba(255,255,255,.12);color:#fff"><svg class="ic"><use href="#ic-clock"/></svg></span>
+              <span><span>Bürozeiten</span><b class="tnum">Montag bis Freitag, 08:00 bis 16:00 Uhr</b>
+              <span>Winterdienst: ab dem frühen Morgen im Einsatz</span></span>
+            </div>
+          </div>
+        </div>
+
+        <form class="form" method="post" action="#" novalidate>
+          <div class="f2">
+            <label class="field"><span>Name</span><input type="text" name="name" placeholder="Vor- und Nachname" required></label>
+            <label class="field"><span>Telefon</span><input type="tel" name="telefon" placeholder="Für den Rückruf" required></label>
+          </div>
+          <div class="f2">
+            <label class="field"><span>E-Mail</span><input type="email" name="email" placeholder="ihre@adresse.de"></label>
+            <label class="field"><span>Objektadresse oder Ort</span><input type="text" name="objekt" placeholder="Straße, Hoyerswerda" required></label>
+          </div>
+          <div class="f2">
+            <label class="field"><span>Objekttyp</span>
+              <select name="objekttyp">
+                <option>Bitte wählen</option>
+                <option>Mehrfamilienhaus</option>
+                <option>Eigentümergemeinschaft</option>
+                <option>Einfamilien- oder Doppelhaus</option>
+                <option>Gewerbeobjekt</option>
+                <option>Mehrere Objekte</option>
+              </select>
+            </label>
+            <label class="field"><span>Wohneinheiten oder Fläche</span><input type="text" name="groesse" placeholder="z. B. 6 WE"></label>
+          </div>
+          <div class="field">
+            <span>Gewünschte Leistungen</span>
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="leistung" value="Winterdienst"><span>Winterdienst</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Kehrdienst"><span>Kehrdienst</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Treppenhausreinigung"><span>Treppenhausreinigung</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Grünanlagenpflege"><span>Grünanlagenpflege</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Mülltonnenservice"><span>Mülltonnenservice</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Kleinreparaturen"><span>Kleinreparaturen</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Objektkontrolle"><span>Objektkontrolle</span></label>
+              <label class="check"><input type="checkbox" name="leistung" value="Komplettbetreuung"><span>Komplettbetreuung</span></label>
+            </div>
+          </div>
+          <label class="field"><span>Nachricht</span><textarea name="nachricht" placeholder="Was braucht Ihr Objekt?"></textarea></label>
+          <label class="consent"><input type="checkbox" name="datenschutz" required>
+            <span>Ich habe die <a href="#datenschutz" style="color:var(--accent-deep)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label>
+          <button class="btn btn-primary" type="submit" style="width:100%">Kostenloses Angebot anfordern <svg class="ic ic--sm"><use href="#ic-arrow"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="ft">
+  <div class="wrap">
+    <div>
+      <div class="ft-in">
+        <div>
+          <strong>MDS Hausmeisterservice u. Kehrdienstleistungen</strong>
+          <div class="nap">
+            Dresdener Str. 99A, 02977 Hoyerswerda<br>
+            Telefon: <a href="tel:+4915567287976" style="display:inline" class="tnum">015567 287976</a><br>
+            E-Mail: <a href="mailto:mdhausmeistersservice26@gmail.com" style="display:inline">mdhausmeistersservice26@gmail.com</a><br>
+            Büro: Montag bis Freitag, <span class="tnum">08:00 bis 16:00</span> Uhr<br>
+            Winterdienst: ab dem frühen Morgen im Einsatz
+          </div>
+        </div>
+        <div>
+          <strong>Leistungen</strong>
+          <a href="#leistungen">Winterdienst</a>
+          <a href="#leistungen">Kehrdienst</a>
+          <a href="#leistungen">Treppenhausreinigung</a>
+          <a href="#leistungen">Grünanlagenpflege</a>
+          <a href="#leistungen">Mülltonnenservice</a>
+          <a href="#leistungen">Kleinreparaturen</a>
+          <a href="#leistungen">Objektkontrolle</a>
+        </div>
+        <div>
+          <strong>Einsatzgebiet</strong>
+          <a href="#kontakt">Hoyerswerda</a>
+          <a href="#kontakt">Lauta</a>
+          <a href="#kontakt">Wittichenau</a>
+          <a href="#kontakt">Bernsdorf</a>
+          <a href="#kontakt">Elsterheide</a>
+          <a href="#kontakt">Spreetal</a>
+          <a href="#kontakt">Senftenberg</a>
+        </div>
+      </div>
+      <div class="ft-base">
+        <span>© 2026 MDS Hausmeisterservice u. Kehrdienstleistungen</span>
+        <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutzerklärung</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mob">
+  <a class="btn btn-outline btn-sm" href="tel:+4915567287976"><svg class="ic ic--sm"><use href="#ic-phone"/></svg>Anrufen</a>
+  <a class="btn btn-primary btn-sm" href="#kontakt">Angebot</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MDS Hausmeisterservice u. Kehrdienstleistungen",
+  "description": "Hausmeisterservice, Kehrdienst, Winterdienst und Objektbetreuung in Hoyerswerda und Umgebung.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Dresdener Str. 99A",
+    "postalCode": "02977",
+    "addressLocality": "Hoyerswerda",
+    "addressRegion": "Sachsen",
+    "addressCountry": "DE"
+  },
+  "telephone": "+49 15567 287976",
+  "email": "mdhausmeistersservice26@gmail.com",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "16:00"
+  }],
+  "areaServed": [
+    {"@type":"City","name":"Hoyerswerda"},
+    {"@type":"City","name":"Lauta"},
+    {"@type":"City","name":"Wittichenau"},
+    {"@type":"City","name":"Bernsdorf"},
+    {"@type":"City","name":"Elsterheide"},
+    {"@type":"City","name":"Spreetal"},
+    {"@type":"City","name":"Lohsa"},
+    {"@type":"City","name":"Senftenberg"}
+  ],
+  "makesOffer": [
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Winterdienst"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Kehrdienst und Straßenreinigung"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Treppenhausreinigung"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Garten- und Grünanlagenpflege"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mülltonnenservice"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Kleinreparaturen"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Objektkontrolle"}}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Bis wann muss in Hoyerswerda geräumt und gestreut sein?","acceptedAnswer":{"@type":"Answer","text":"Gehwege und Fahrbahnen müssen an Werktagen bis 08:00 Uhr geräumt und gestreut sein, an Sonn- und Feiertagen bis 09:00 Uhr. Fällt im Laufe des Tages Schnee, muss unverzüglich und bei Bedarf mehrmals nachgeräumt werden. Die Pflicht endet um 20:00 Uhr. Gehwege sind komplett zu räumen, mindestens auf 1,50 Meter Breite. Grundlage ist die Winterdienstsatzung der Stadt Hoyerswerda, § 5 und § 6."}},
+    {"@type":"Question","name":"Wer haftet, wenn jemand stürzt, obwohl ein Dienstleister beauftragt ist?","acceptedAnswer":{"@type":"Answer","text":"Die Pflicht darf auf einen geeigneten Dritten übertragen werden, der Eigentümer bleibt der Stadt gegenüber aber verantwortlich, so steht es in § 4 Abs. 3 der Winterdienstsatzung. Im Streitfall zählt deshalb, ob der Einsatz belegbar ist. Wir dokumentieren jeden Wintereinsatz mit Datum und Uhrzeit."}},
+    {"@type":"Question","name":"Was gehört in Hoyerswerda zum Kehrdienst, den ich als Anlieger schulde?","acceptedAnswer":{"@type":"Answer","text":"Zur Reinigung gehören Gehwege, Radwege, Grünstreifen, Trennstreifen, Gräben und Böschungen sowie die halbe Breite der Fahrbahn einschließlich Rinnen und Bordsteinkanten. Umfasst sind auch Laub, Schmutz, Papier, Verpackungen und die Beseitigung von Unkraut und Wildkräutern. Grundlage ist die Straßenreinigungssatzung, § 2."}},
+    {"@type":"Question","name":"Was kostet ein Hausmeisterservice für ein Mehrfamilienhaus?","acceptedAnswer":{"@type":"Answer","text":"Für ein Mehrfamilienhaus mit sechs Wohneinheiten liegt die Komplettbetreuung erfahrungsgemäß bei 240 bis 700 Euro im Monat, abhängig von Turnus, Grundstücksgröße und Leistungsumfang. Stundenweise Hausmeisterleistungen liegen in der Region bei 40 bis 50 Euro pro Stunde."}},
+    {"@type":"Question","name":"Sind die Kosten auf die Mieter umlagefähig?","acceptedAnswer":{"@type":"Answer","text":"Hausmeisterkosten sind nach der Betriebskostenverordnung in der Regel umlagefähig, in der Praxis bis rund 0,50 Euro pro Quadratmeter Wohnfläche im Monat. Nicht umlagefähig sind Instandhaltungs- und Reparaturleistungen."}},
+    {"@type":"Question","name":"Betreuen Sie auch Objekte, wenn ich nicht in Hoyerswerda wohne?","acceptedAnswer":{"@type":"Answer","text":"Ja. Sie erhalten Rückmeldung, wenn am Objekt etwas auffällt, auf Wunsch mit Foto, und müssen für Besichtigung oder Übergabe nicht anreisen. Die Abstimmung läuft telefonisch oder per E-Mail."}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var s1=document.getElementById('step1'), s2=document.getElementById('step2'),
+      bar=document.getElementById('funnelBar'), lbl=document.getElementById('funnelStep');
+  function go(n){
+    s1.hidden = n===2; s2.hidden = n===1;
+    bar.style.width = n===1 ? '50%' : '100%';
+    lbl.textContent = 'Schritt ' + n + ' von 2';
+    if(n===2){ var f=s2.querySelector('input'); if(f) f.focus(); }
+  }
+  document.getElementById('funnelNext').addEventListener('click', function(){ go(2); });
+  document.getElementById('funnelBack').addEventListener('click', function(){ go(1); });
+})();
+</script>
+</body>
+</html>
