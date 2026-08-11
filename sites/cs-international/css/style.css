@@ -1,0 +1,931 @@
+/* ==========================================================================
+   CS INTERNATIONAL · Startseiten-Entwurf · LIKOVO
+   Violett ist Licht. Lila ist Handlung. Dunkel ist Inhalt.
+   Kein Gold, kein Pink. Keine Kapsel-Labels, keine Pill-Buttons,
+   keine Icon-Kacheln. Radius maximal 4px.
+   Grundlage: design-briefing.md Fassung 3
+   ========================================================================== */
+
+/* --- Schriften, selbst gehostet. Archivo und Inter sind Variable Fonts,
+       darum je Familie und Subset genau eine Datei. --- */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url('../fonts/archivo-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url('../fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;
+  src:url('../fonts/inter-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;
+  src:url('../fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  interpolate-size:allow-keywords;
+
+  --void:#0A0818; --ink:#100D26; --ink-2:#14102E; --panel:#171233; --panel-2:#1F1946;
+  --field:#4331B5; --field-hi:#5B45D6; --field-deep:#251B70; --field-glow:rgba(91,69,214,.45);
+  --act-a:#6D28D9; --act-b:#9333EA; --act-c:#A855F7;
+  --lila:#AE6BF7; --lila-hi:#C79BFF; --lila-field:#DCC4FE; --lila-glow:rgba(147,51,234,.4);
+  --tx:#FFFFFF; --tx-body:#C3BCE2; --tx-mute:#877FAF;
+  --tx-field:#EFEBFF; --tx-field-mute:#C3B7F2;
+
+  --line:rgba(150,120,240,.20); --line-strong:rgba(160,130,250,.44);
+  --line-top:rgba(255,255,255,.08); --line-bottom:rgba(0,0,0,.6); --line-field:rgba(255,255,255,.22);
+
+  --sh-1:0 1px 1px rgba(0,0,0,.6), 0 2px 5px rgba(0,0,0,.4);
+  --sh-2:0 1px 1px rgba(0,0,0,.65), 0 4px 10px rgba(0,0,0,.45), 0 14px 32px -10px rgba(0,0,0,.6);
+  --sh-3:0 1px 2px rgba(0,0,0,.7), 0 10px 22px rgba(0,0,0,.5), 0 34px 70px -16px rgba(0,0,0,.72);
+  --sh-field:0 1px 2px rgba(14,6,52,.55), 0 8px 20px rgba(14,6,52,.42), 0 34px 68px -18px rgba(14,6,52,.66);
+  --sh-act:0 1px 1px rgba(0,0,0,.5), 0 6px 16px -3px var(--lila-glow), 0 20px 46px -18px var(--lila-glow);
+
+  --f-head:'Archivo','Helvetica Neue',system-ui,sans-serif;
+  --f-body:'Inter',system-ui,-apple-system,sans-serif;
+  --t-display:clamp(2.4rem,4.8vw,4.25rem);
+  --t-h1:clamp(2rem,4vw,3.25rem);
+  --t-h2:clamp(1.6rem,3vw,2.4rem);
+  --t-h3:1.25rem;
+  --t-lead:1.1875rem;
+  --t-sm:.875rem; --t-xs:.75rem; --t-2xs:.6875rem;
+
+  --s-1:.25rem;--s-2:.5rem;--s-3:.75rem;--s-4:1rem;
+  --s-5:1.5rem;--s-6:2rem;--s-7:3rem;--s-8:4rem;--s-9:6rem;--s-10:8rem;
+
+  --fs-base:1rem; --nav-h:104px;
+  --r:4px; --r-s:2px; --notch:12px;
+  --maxw:1200px;
+  --ease:cubic-bezier(.4,.14,.3,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+
+/* ===================== GROSSE BILDSCHIRME =====================
+   Auf 2K und 4K wirkte die Seite schmal und gedrängt: 1200 px Inhalt in
+   der Mitte von 2560 px, dazu Schriftgrade, die per clamp() schon lange
+   an ihrer Obergrenze klebten. Weil alles aus den Tokens abgeleitet ist,
+   genügt es, die Tokens zu skalieren. Kein Layout wird angefasst. */
+@media(min-width:1600px){
+  :root{
+    --maxw:1400px;
+    --t-display:clamp(3.6rem,4.4vw,5.25rem);
+    --t-h1:clamp(2.9rem,3.4vw,4rem);
+    --t-h2:clamp(2.1rem,2.5vw,2.9rem);
+    --t-h3:1.375rem;
+    --t-lead:1.3125rem;
+    --t-sm:.9375rem; --t-xs:.8125rem; --t-2xs:.75rem;
+    --s-9:7rem; --s-10:9.5rem;
+    --fs-base:1.0625rem; --nav-h:116px;
+  }
+}
+@media(min-width:2100px){
+  :root{
+    --maxw:1560px;
+    --t-display:5.75rem;
+    --t-h1:4.4rem;
+    --t-h2:3.15rem;
+    --t-h3:1.5rem;
+    --t-lead:1.4375rem;
+    --t-sm:1rem; --t-xs:.875rem;
+    --s-9:8rem; --s-10:11rem;
+    --fs-base:1.125rem; --nav-h:124px;
+  }
+}
+/* Über 2800 px wächst nur noch der Rand, nicht mehr die Textbreite:
+   Zeilen über ~90 Zeichen liest niemand gern. */
+@media(min-width:2800px){:root{--maxw:1680px}}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:var(--nav-h);
+  scrollbar-color:var(--act-b) var(--void)}
+body{margin:0; background:var(--ink); color:var(--tx-body);
+  font-family:var(--f-body); font-size:var(--fs-base); line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden}
+::selection{background:var(--act-b); color:#fff}
+img,video{max-width:100%}
+p{margin:0 0 var(--s-4)} p:last-child{margin-bottom:0}
+
+/* Feine Koernung, verhindert tote dunkle Flaechen */
+body::after{content:''; position:fixed; inset:0; z-index:9998; pointer-events:none; opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.skip{position:absolute; left:-9999px; top:0; z-index:10000; background:var(--act-b); color:#fff;
+  padding:.9em 1.4em; font-family:var(--f-head); font-weight:700; text-transform:uppercase;
+  font-size:var(--t-xs); letter-spacing:.09em}
+.skip:focus{left:var(--s-4); top:var(--s-4)}
+
+/* Scroll-Fortschritt, CSS-only */
+.progress{position:fixed; inset:0 0 auto 0; height:2px; z-index:9999; transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--act-a),var(--act-c)); transform:scaleX(0)}
+@supports (animation-timeline:scroll()){
+  .progress{animation:grow linear; animation-timeline:scroll(root)}
+  @keyframes grow{from{transform:scaleX(0)} to{transform:scaleX(1)}}
+}
+
+/* ===================== ATMOSPHAERE ===================== */
+.atmos{position:relative; isolation:isolate; overflow:hidden}
+.atmos::before{content:''; position:absolute; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(130% 76% at 50% -22%, var(--field-glow) 0%, transparent 64%),
+    radial-gradient(70% 56% at 108% 4%, rgba(147,51,234,.18) 0%, transparent 62%)}
+.atmos::after{content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.55;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.024) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.024) 1px, transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(84% 62% at 50% 0%, #000 0%, transparent 76%)}
+
+.field{position:relative; isolation:isolate; overflow:hidden; color:var(--tx-field);
+  background:
+    radial-gradient(120% 88% at 10% -12%, var(--field-hi) 0%, transparent 58%),
+    linear-gradient(158deg, var(--field) 0%, var(--field-deep) 62%, #191153 100%)}
+.field::before{content:''; position:absolute; z-index:-1; width:60vw; aspect-ratio:1;
+  right:-14vw; top:-24vw; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(168,85,247,.4) 0%, transparent 62%);
+  animation:drift 26s var(--ease) infinite alternate}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)} to{transform:translate3d(-6vw,5vw,0) scale(1.18)}}
+.field::after{content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.5;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(90% 72% at 18% 0%, #000 0%, transparent 78%)}
+.field .mute{color:var(--tx-field-mute)}
+.field .hi{color:var(--lila-field)}
+.field h1,.field h2,.field h3{color:#fff}
+
+/* ===================== TYPOGRAFIE ===================== */
+h1,h2,h3,.display{font-family:var(--f-head); color:var(--tx); margin:0;
+  text-transform:uppercase; font-weight:800}
+.display{font-size:var(--t-display); line-height:.94; letter-spacing:-.032em}
+h1{font-size:var(--t-h1); line-height:.98; letter-spacing:-.028em}
+h2{font-size:var(--t-h2); line-height:1.02; letter-spacing:-.022em}
+h3{font-size:var(--t-h3); line-height:1.18; letter-spacing:-.008em; font-weight:700}
+.hi{color:var(--lila)}
+.lead{font-size:var(--t-lead); line-height:1.58}
+.sm{font-size:var(--t-sm)} .xs{font-size:var(--t-xs)}
+.mute{color:var(--tx-mute)}
+.kick{font-family:var(--f-head); font-weight:600; font-size:var(--t-xs); color:var(--tx-mute);
+  text-transform:uppercase; letter-spacing:.14em; margin:0 0 var(--s-4)}
+.field .kick{color:var(--tx-field-mute)}
+
+/* Harter Schraegbalken, ersetzt das Kapsel-Label */
+.bar{display:block; width:88px; height:7px; background:var(--tx); border:0;
+  transform:skewX(-18deg) scaleX(0); transform-origin:0 50%;
+  animation:barIn .7s var(--ease-out) .1s forwards}
+@keyframes barIn{to{transform:skewX(-18deg) scaleX(1)}}
+.bar--act{background:linear-gradient(90deg,var(--act-a),var(--act-c))}
+.bar--w{background:#fff}
+
+/* ===================== BUTTONS ===================== */
+/* Zielgroessen nach WCAG 2.5.5 (Enhanced): mindestens 44x44 CSS-Pixel.
+   Der Primaer-Button liegt bei 56 px Hoehe, der kleine bei 46 px. Die
+   gekappten Ecken schneiden nur Deko weg, die Klickflaeche bleibt. */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.65em;
+  font-family:var(--f-head); font-size:.9375rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.045em; line-height:1;
+  min-height:56px; padding:1.1em 2.2em; border:0; background:none; color:inherit; position:relative;
+  cursor:pointer; text-decoration:none; white-space:nowrap; overflow:hidden;
+  clip-path:polygon(0 0, calc(100% - var(--notch)) 0, 100% var(--notch),
+                    100% 100%, var(--notch) 100%, 0 calc(100% - var(--notch)));
+  transition:transform .2s var(--ease), box-shadow .26s var(--ease),
+             background-position .45s var(--ease), background-color .26s var(--ease), color .2s var(--ease)}
+.btn i{width:17px; height:1.5px; background:currentColor; position:relative; flex:0 0 auto;
+  transition:transform .28s var(--ease-out), width .28s var(--ease-out)}
+.btn i::after{content:''; position:absolute; right:0; top:-4px; width:9px; height:9px;
+  border-top:1.5px solid currentColor; border-right:1.5px solid currentColor; transform:rotate(45deg)}
+.btn:hover i{transform:translateX(4px); width:23px}
+.btn::after{content:''; position:absolute; inset:0 auto 0 -60%; width:45%; pointer-events:none;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent);
+  transform:skewX(-18deg); transition:left .6s var(--ease-out)}
+.btn:hover::after{left:120%}
+.btn--primary{background:linear-gradient(104deg, var(--act-a) 0%, var(--act-b) 55%, var(--act-c) 100%);
+  background-size:190% 100%; background-position:0% 0; color:#fff; box-shadow:var(--sh-act)}
+.btn--primary:hover{background-position:100% 0; transform:translateY(-2px);
+  box-shadow:0 1px 1px rgba(0,0,0,.5), 0 12px 26px -4px var(--lila-glow), 0 30px 62px -20px var(--lila-glow)}
+.btn--primary:active{transform:translateY(0) scale(.985)}
+.btn--primary:focus-visible{box-shadow:inset 0 0 0 2px #fff, var(--sh-act); outline:none}
+.btn--secondary{color:var(--tx); box-shadow:inset 0 0 0 1px var(--line-strong)}
+.btn--secondary:hover{background:rgba(147,51,234,.16); transform:translateY(-2px);
+  box-shadow:inset 0 0 0 1px var(--act-c), 0 10px 24px -8px var(--lila-glow)}
+.btn--secondary:active{transform:translateY(0) scale(.985)}
+.btn--secondary:focus-visible{box-shadow:inset 0 0 0 2px var(--lila-hi); outline:none}
+.field .btn--secondary,.hero .btn--secondary{box-shadow:inset 0 0 0 1px var(--line-field)}
+.field .btn--secondary:hover,.hero .btn--secondary:hover{background:rgba(255,255,255,.15);
+  box-shadow:inset 0 0 0 1px #fff}
+.btn--sm{font-size:.8125rem; min-height:46px; padding:.9em 1.6em; --notch:10px}
+/* Auf schmalen Schirmen darf die Beschriftung umbrechen. Mit den groesseren
+   Zielgroessen sprengt sonst ein langes Label wie "Get a sample post-event
+   report" die Spalte, weil .btn nowrap ist. Volle Breite ist dort ohnehin
+   die bessere Tap-Flaeche. */
+@media(max-width:560px){
+  .btn{white-space:normal; text-align:center; line-height:1.25; padding:1.05em 1.4em}
+  .row .btn,.hinge .btn,.verify .btn{width:100%}
+  .nav .btn{width:auto; white-space:nowrap; padding:.9em 1.3em}
+}
+.btn--block{width:100%}
+.btn-note{font-size:var(--t-xs); color:var(--tx-mute); margin:.8em 0 0}
+.field .btn-note,.hero .btn-note{color:var(--tx-field-mute)}
+
+.link{color:var(--lila-hi); text-decoration:none; position:relative; padding-bottom:2px;
+  transition:color .2s var(--ease)}
+.link::before{content:''; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background:currentColor; opacity:.4}
+.link::after{content:''; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:currentColor; transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .34s var(--ease-out)}
+.link:hover{color:#fff} .link:hover::after{transform:scaleX(1)}
+.link:focus-visible{outline:2px solid var(--lila-hi); outline-offset:3px}
+.link em{font-style:normal; display:inline-block; transition:transform .28s var(--ease-out)}
+.link:hover em{transform:translate(3px,-3px)}
+.field .link,.hero .link{color:#fff}
+.link--big{font-family:var(--f-head); font-weight:700; font-size:1.5rem; letter-spacing:-.015em}
+
+/* ===================== KENNZAHLEN ===================== */
+.stat__v{font-family:var(--f-head); font-weight:800; font-size:clamp(2.2rem,3.8vw,3.2rem);
+  line-height:.9; letter-spacing:-.04em; color:var(--lila);
+  font-variant-numeric:tabular-nums; display:block}
+.stat__l{font-size:var(--t-xs); line-height:1.5; color:var(--tx-mute); max-width:26ch; margin:.5em 0 0}
+.field .stat__v{color:#fff} .field .stat__l{color:var(--tx-field-mute)}
+
+/* Die Kennzahl-Ringe aus dem Design-System sind hier absichtlich nicht
+   in Gebrauch: im Case verkleideten sie kleine Zahlen (1 Karte, 2 Welten,
+   3 Rechteinhaber) als Kennzahlen. Ersetzt durch die .dateline. */
+
+/* ===================== PANELS ===================== */
+.panel{--mx:50%; --my:0%;
+  position:relative; padding:var(--s-6); border-radius:var(--r); overflow:hidden;
+  background:linear-gradient(158deg, var(--panel-2) 0%, var(--panel) 56%, #131029 100%);
+  box-shadow:inset 0 0 0 1px var(--line), inset 0 1px 0 var(--line-top),
+             inset 0 -1px 0 var(--line-bottom), var(--sh-2);
+  transition:transform .3s var(--ease-out), box-shadow .32s var(--ease)}
+.panel::before{content:''; position:absolute; inset:0; pointer-events:none; opacity:0; z-index:1;
+  background:radial-gradient(340px circle at var(--mx) var(--my), rgba(168,85,247,.20), transparent 62%);
+  transition:opacity .32s var(--ease)}
+.panel--hover:hover{transform:translateY(-4px);
+  box-shadow:inset 0 0 0 1px var(--line-strong), inset 0 1px 0 rgba(255,255,255,.13),
+             inset 0 -1px 0 var(--line-bottom), var(--sh-3)}
+.panel--hover:hover::before{opacity:1}
+.panel--lead{background:
+    radial-gradient(130% 100% at 0% 0%, rgba(109,40,217,.55) 0%, transparent 58%),
+    linear-gradient(158deg, #251C55 0%, var(--panel) 60%, #131029 100%);
+  clip-path:polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+  box-shadow:inset 0 0 0 1px var(--line-strong), inset 0 1px 0 var(--line-top), var(--sh-3)}
+.panel--lead::after{content:''; position:absolute; left:0; top:0; width:62%; height:2px; z-index:2;
+  background:linear-gradient(90deg, var(--act-c), transparent)}
+.field .panel{background:linear-gradient(158deg, #171139 0%, #110D2C 60%, #0C0922 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.1), inset 0 1px 0 rgba(255,255,255,.14), var(--sh-field)}
+.panel > *{position:relative; z-index:2}
+.panel h3{margin-bottom:var(--s-3)}
+.panel__b{font-size:var(--t-sm); color:var(--tx-body)}
+.field .panel__b{color:var(--tx-field-mute)}
+.panel--flush{padding:0}
+.panel--flush .panel__in{padding:var(--s-6)}
+
+/* Konturziffer statt Icon-Kachel */
+.num{font-family:var(--f-head); font-weight:800; font-size:2.6rem; line-height:.85;
+  letter-spacing:-.05em; color:transparent; font-variant-numeric:tabular-nums;
+  -webkit-text-stroke:1px var(--line-strong); display:block; margin-bottom:var(--s-4);
+  transition:color .34s var(--ease), -webkit-text-stroke-color .34s var(--ease)}
+.panel--hover:hover .num{color:rgba(168,85,247,.16); -webkit-text-stroke-color:var(--act-c)}
+.panel--lead .num{-webkit-text-stroke-color:var(--act-c); color:rgba(168,85,247,.14)}
+.field .num{-webkit-text-stroke-color:rgba(255,255,255,.42)}
+.field .panel--hover:hover .num{color:rgba(255,255,255,.14); -webkit-text-stroke-color:#fff}
+
+/* ===================== TABELLEN ===================== */
+.facts{width:100%; border-collapse:collapse; font-size:var(--t-sm); font-variant-numeric:tabular-nums}
+.facts tr{transition:background-color .22s var(--ease)}
+.facts tr:hover{background:rgba(168,85,247,.07)}
+.facts th,.facts td{text-align:left; padding:.9em 1.1em; border-bottom:1px solid var(--line);
+  vertical-align:top}
+.facts th{font-family:var(--f-head); font-weight:700; font-size:var(--t-2xs);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--tx-mute); width:32%; position:relative;
+  transition:color .22s var(--ease)}
+.facts th::before{content:''; position:absolute; left:0; top:.9em; bottom:.9em; width:2px;
+  background:var(--act-c); transform:scaleY(0); transform-origin:50% 0;
+  transition:transform .3s var(--ease-out)}
+.facts tr:hover th{color:var(--tx)}
+.facts tr:hover th::before{transform:scaleY(1)}
+.facts td{color:var(--tx)}
+.facts tr:last-child th,.facts tr:last-child td{border-bottom:0}
+.field .facts th,.field .facts td{border-bottom-color:rgba(255,255,255,.13)}
+.field .facts th{color:var(--tx-field-mute)}
+.field .facts tr:hover{background:rgba(255,255,255,.06)}
+.field .facts tr:hover th{color:#fff}
+.field .facts th::before{background:#fff}
+.tscroll{overflow-x:auto}
+
+/* ===================== CASE STUDY =====================
+   Erzaehllinie mit einem Hoehepunkt statt acht gleich schwerer Kaesten.
+   Fakten vorne (zitierfaehig), Dreiklang in der Mitte, das Produkt als
+   Klimax, Ergebnis gross, vollstaendiges Protokoll am Ende. */
+
+/* Dateline: die harten Fakten direkt unter der Headline, wie im Journalismus.
+   Ersetzt die Kennzahl-Ringe, die kleine Zahlen als KPI verkleidet haben. */
+.dateline{display:grid; grid-template-columns:repeat(5,1fr);
+  gap:var(--s-5) var(--s-6); margin:var(--s-6) 0 0;
+  padding-top:var(--s-4); border-top:1px solid rgba(255,255,255,.24)}
+@media(max-width:1080px){.dateline{grid-template-columns:repeat(3,1fr)}}
+.dateline > div{min-width:0}
+/* Keine harten Zeilenumbrueche im Markup: Franzoesisch laeuft laenger,
+   Japanisch kuerzer, ein fester <br> waere ein Lokalisierungs-Fehler. */
+.dateline dd{text-wrap:pretty}
+@media(max-width:560px){.dateline{grid-template-columns:1fr 1fr; gap:var(--s-4)}}
+.dateline dt{font-family:var(--f-head); font-weight:600; font-size:.625rem;
+  text-transform:uppercase; letter-spacing:.15em; color:var(--tx-field-mute)}
+.dateline dd{margin:.4em 0 0; font-family:var(--f-head); font-weight:700; font-size:.9375rem;
+  line-height:1.25; color:#fff; letter-spacing:-.005em; font-variant-numeric:tabular-nums}
+
+/* Dreiklang: Ausgangslage, Aufgabe, Umsetzung. Redaktionell, ohne Kaesten,
+   damit es als Folge gelesen wird und nicht als Menue. */
+.beats{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); margin-top:var(--s-8)}
+.beat{padding-top:var(--s-4); border-top:2px solid rgba(255,255,255,.3);
+  transition:border-color .3s var(--ease)}
+.beat:hover{border-top-color:#fff}
+.beat h3{margin:var(--s-4) 0 var(--s-3)}
+.beat p{font-size:var(--t-sm); color:var(--tx-field-mute); margin:0}
+.beat .num{-webkit-text-stroke-color:rgba(255,255,255,.5); margin-bottom:0; font-size:2.1rem}
+.beat:hover .num{color:rgba(255,255,255,.16); -webkit-text-stroke-color:#fff}
+@media(max-width:820px){.beats{grid-template-columns:1fr; gap:var(--s-5)}}
+
+/* Klimax: das Produkt. Asymmetrisch, das Objekt gross, die Fakten daneben. */
+.artefact{display:grid; grid-template-columns:.8fr 1.2fr; gap:var(--s-5);
+  margin-top:var(--s-8); align-items:start}
+
+/* Die Promo-Karte als Objekt in einem Lichtkegel. Die Datei ist ein
+   freigestelltes PNG mit Alpha und schon leicht perspektivisch gekippt,
+   darum KEIN eigenes rotate und KEIN box-shadow: ein box-shadow zeichnet
+   ein Rechteck um die transparenten Ränder. Schatten daher per
+   drop-shadow, das folgt der Silhouette. */
+.card{margin:0; position:relative; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; gap:var(--s-5);
+  padding:var(--s-7) var(--s-5) var(--s-6); border-radius:var(--r); overflow:hidden;
+  background:
+    radial-gradient(64% 56% at 50% 8%, rgba(168,85,247,.34), transparent 68%),
+    linear-gradient(158deg, var(--panel-2) 0%, #0E0B22 100%);
+  box-shadow:inset 0 0 0 1px var(--line), inset 0 1px 0 var(--line-top), var(--sh-2)}
+/* Lichtkegel-Boden: eine weiche Ellipse unter der Karte, damit sie steht */
+.card::after{content:''; position:absolute; left:50%; bottom:52px; z-index:0;
+  width:62%; height:26px; transform:translateX(-50%);
+  background:radial-gradient(ellipse at center, rgba(0,0,0,.6), transparent 70%);
+  filter:blur(6px)}
+.card img{position:relative; z-index:1; display:block; width:auto; max-width:100%;
+  height:auto; max-height:420px;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.6)) drop-shadow(0 20px 40px rgba(0,0,0,.55))
+         drop-shadow(0 0 34px rgba(168,85,247,.35));
+  transition:transform .55s var(--ease-out), filter .55s var(--ease)}
+.card:hover img{transform:translateY(-8px) scale(1.03);
+  filter:drop-shadow(0 10px 14px rgba(0,0,0,.6)) drop-shadow(0 30px 56px rgba(0,0,0,.6))
+         drop-shadow(0 0 52px rgba(168,85,247,.5))}
+.card figcaption{position:relative; z-index:1; text-align:center;
+  font-variant-numeric:tabular-nums}
+@media(max-width:820px){.card img{max-height:340px}}
+.artefact dl{margin:var(--s-5) 0 0; display:grid; grid-template-columns:auto 1fr;
+  gap:.8em var(--s-5); font-size:var(--t-sm)}
+.artefact dt{font-family:var(--f-head); font-weight:700; font-size:var(--t-2xs);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--tx-field-mute); white-space:nowrap}
+.artefact dd{margin:0; color:#fff; font-variant-numeric:tabular-nums}
+@media(max-width:820px){.artefact{grid-template-columns:1fr}
+  .artefact .media video,.artefact .media img{min-height:0; aspect-ratio:4/3}}
+
+/* Ergebnis: gross und breit. Die Pointe darf nicht in einer Nebenspalte sitzen. */
+.result{margin-top:var(--s-8); padding-top:var(--s-6);
+  border-top:1px solid rgba(255,255,255,.24);
+  display:grid; grid-template-columns:1.25fr .75fr; gap:var(--s-7)}
+.result__lead{font-family:var(--f-head); font-weight:700; font-size:clamp(1.25rem,2.1vw,1.75rem);
+  line-height:1.24; letter-spacing:-.018em; color:#fff; margin:0; max-width:34ch}
+.result p{color:var(--tx-field-mute)}
+@media(max-width:820px){.result{grid-template-columns:1fr; gap:var(--s-5)}}
+
+/* Protokoll: die vollstaendige Faktenliste zum Schluss, zweispaltig,
+   damit sie nicht in die Hoehe waechst. Das ist der GEO-Anker. */
+.record{margin-top:var(--s-8)}
+.record__grid{display:grid; grid-template-columns:1fr 1fr; gap:0 var(--s-6); margin-top:var(--s-4)}
+@media(max-width:820px){.record__grid{grid-template-columns:1fr}}
+
+/* ===================== YOUTUBE-EMBED =====================
+   Klick-zum-Laden. Vor dem Klick geht KEIN Request an Google: das Vorschaubild
+   ist selbst gehostet. Erst der Klick laedt den Player, und zwar von
+   youtube-nocookie.com. Ohne JavaScript bleibt es ein normaler Link zu YouTube,
+   die Seite verliert also nichts. Die alte Seite hat das per "Load YouTube"
+   auch so gemacht, das ist kein Rueckschritt bei der Privatsphaere. */
+.yt{margin:0}
+/* Der Rahmen bleibt 16:9, weil der YouTube-Player 16:9 ist. Beim Klick
+   springt also nichts. Das Video selbst ist 2.39:1, das Vorschaubild ist
+   auf 2.39:1 beschnitten und liegt mit object-fit:contain darin. Damit
+   scheint oben und unten unser eigener Grund durch statt eingebranntem
+   Schwarz, und der Letterbox liest sich als Absicht. */
+.yt__frame{position:relative; display:block; overflow:hidden; border-radius:var(--r-s);
+  box-shadow:inset 0 0 0 1px var(--line), var(--sh-2);
+  background:
+    radial-gradient(90% 70% at 20% 0%, rgba(147,51,234,.22), transparent 62%),
+    linear-gradient(158deg, var(--panel-2), #100D26);
+  aspect-ratio:16/9; text-decoration:none}
+.yt__frame img{width:100%; height:100%; object-fit:contain; display:block;
+  filter:saturate(.9) brightness(.86);
+  transition:transform .7s var(--ease-out), filter .5s var(--ease)}
+.yt__frame::after{content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to top, rgba(10,8,24,.9) 0%, rgba(10,8,24,.2) 46%, transparent 72%),
+             radial-gradient(90% 60% at 18% 0%, rgba(147,51,234,.24), transparent 60%);
+  transition:opacity .5s var(--ease)}
+.yt__frame:hover img{transform:scale(1.03); filter:saturate(1) brightness(.95)}
+.yt__frame:hover::after{opacity:.8}
+.yt__frame:focus-visible{outline:2px solid var(--lila-hi); outline-offset:3px}
+
+/* Play-Taste in derselben Formensprache wie die Buttons: gekappte Ecke. */
+.yt__play{position:absolute; left:50%; top:50%; z-index:2; width:92px; height:92px;
+  transform:translate(-50%,-50%); display:grid; place-items:center;
+  background:linear-gradient(104deg, var(--act-a), var(--act-b) 60%, var(--act-c));
+  clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  box-shadow:var(--sh-act); transition:transform .28s var(--ease-out), box-shadow .28s var(--ease)}
+.yt__play::before{content:''; width:0; height:0; margin-left:6px;
+  border-left:24px solid #fff; border-top:15px solid transparent; border-bottom:15px solid transparent}
+.yt__frame:hover .yt__play{transform:translate(-50%,-50%) scale(1.07);
+  box-shadow:0 1px 1px rgba(0,0,0,.5), 0 14px 30px -6px var(--lila-glow), 0 32px 66px -22px var(--lila-glow)}
+
+.yt__meta{position:absolute; left:var(--s-5); right:var(--s-5); bottom:var(--s-5); z-index:2}
+.yt__meta b{display:block; font-family:var(--f-head); font-weight:700; font-size:1.0625rem;
+  text-transform:uppercase; letter-spacing:-.01em; color:#fff}
+.yt__meta em{display:block; font-style:normal; font-size:var(--t-xs); color:var(--tx-body);
+  margin-top:.3em}
+.yt__note{font-size:var(--t-xs); color:var(--tx-mute); margin-top:.7em}
+.field .yt__note{color:var(--tx-field-mute)}
+.yt iframe{display:block; width:100%; aspect-ratio:16/9; height:auto; border:0;
+  border-radius:var(--r-s)}
+@media(max-width:560px){.yt__play{width:58px; height:58px}
+  .yt__play::before{border-left-width:15px; border-top-width:10px; border-bottom-width:10px}}
+
+/* ===================== SERVICES =====================
+   Sechs gleich grosse Kacheln, von denen nur vier ein Bild tragen, lesen
+   sich wie ein unfertiges Raster. Und die sechs Leistungen sind nicht
+   gleich wichtig. Darum zwei Ebenen: vier Leistungen, die wir liefern,
+   je mit Bild und in Zweierreihen (dadurch werden die Bilder gross genug,
+   um zu wirken). Danach die zwei Faehigkeiten, die im Haus sitzen und die
+   andere Agenturen nicht haben, typografisch abgesetzt. Dass sie kein
+   Bild haben, ist damit Absicht und nicht Mangel. */
+.svc{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-5); margin-top:var(--s-7)}
+@media(max-width:820px){.svc{grid-template-columns:1fr}}
+
+/* In-House-Block: eine hervorgehobene Flaeche fuer die zwei Trumpfkarten */
+.inhouse{margin-top:var(--s-6); padding:var(--s-7) var(--s-6)}
+/* Einspaltig wie jeder andere Sektions-Kopf auf der Seite. Vorher lagen
+   Headline und Erklaerung in einer Flex-Zeile auf gemeinsamer Grundlinie:
+   bei zwei so unterschiedlichen Schriftgraden hing die zweite Textzeile
+   frei unter der Headline, und der Block war der einzige zweispaltige
+   Kopf der Seite. Beides sah nach Fehler aus. */
+.inhouse__head{padding-bottom:var(--s-5); margin-bottom:var(--s-6);
+  border-bottom:1px solid var(--line-strong)}
+.inhouse__head h3{font-size:clamp(1.25rem,1.9vw,1.6rem); max-width:30ch}
+.inhouse__head p{margin:var(--s-3) 0 0; font-size:var(--t-sm);
+  color:var(--tx-body); max-width:60ch}
+.inhouse__grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-7)}
+.inhouse__grid > div:last-child{padding-left:var(--s-7); border-left:1px solid var(--line)}
+@media(max-width:820px){
+  .inhouse{padding:var(--s-6) var(--s-5)}
+  .inhouse__grid{grid-template-columns:1fr; gap:var(--s-6)}
+  .inhouse__grid > div:last-child{padding-left:0; padding-top:var(--s-6);
+    border-left:0; border-top:1px solid var(--line)}
+}
+
+/* ===================== THE PROBLEM =====================
+   Die Headline verspricht zwei Tests, also muss das Layout zwei zeigen.
+   Diptychon mit Trennlinie in der Mitte, keine Kaesten: die Sektion soll
+   ruhig bleiben, sie liegt zwischen zwei schweren Feld-Sektionen. */
+.diptych{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-8);
+  margin-top:var(--s-8)}
+.diptych > div:last-child{padding-left:var(--s-8); border-left:1px solid var(--line)}
+.diptych .num{margin-bottom:var(--s-3); font-size:2.4rem}
+.diptych h3{margin-bottom:var(--s-4)}
+.diptych p{color:var(--tx-body)}
+@media(max-width:860px){
+  .diptych{grid-template-columns:1fr; gap:var(--s-7)}
+  .diptych > div:last-child{padding-left:0; padding-top:var(--s-7);
+    border-left:0; border-top:1px solid var(--line)}
+}
+
+/* 19/81-Balken. Die staerkste Zahl der Seite bekommt eine Form.
+   Bewusst ohne Animation: das ist Beweis, der muss sofort dastehen. */
+.split{margin-top:var(--s-6)}
+.split__bar{height:10px; border-radius:1px; overflow:hidden; display:flex;
+  box-shadow:inset 0 0 0 1px var(--line-strong); background:rgba(0,0,0,.35)}
+.split__fill{width:19%; flex:0 0 auto;
+  background:linear-gradient(90deg, var(--act-a), var(--act-c));
+  box-shadow:0 0 14px -2px var(--lila-glow)}
+.split__legend{display:grid; grid-template-columns:auto 1fr; gap:.5em var(--s-5);
+  margin-top:var(--s-4)}
+.split__legend b{font-family:var(--f-head); font-weight:800; font-size:1.5rem; line-height:1;
+  letter-spacing:-.03em; font-variant-numeric:tabular-nums; white-space:nowrap}
+.split__legend > div{display:flex; align-items:baseline; gap:var(--s-3); grid-column:1 / -1}
+.split__legend span{font-size:var(--t-xs); line-height:1.45; color:var(--tx-mute)}
+/* 19 % ist lila, weil das Segment im Balken lila ist. Die 81 % sind weiss,
+   denn das ist die Zahl, die das Argument traegt: vier von fuenf. */
+.split__legend .is-us b{color:var(--lila)}
+.split__legend .is-them b{color:var(--tx)}
+.split__src{font-size:var(--t-2xs); color:var(--tx-mute); margin-top:var(--s-4);
+  padding-left:var(--s-3); border-left:1px solid var(--line)}
+
+/* Scharnier zur Loesung. Volle Breite, damit es als Wendepunkt gelesen wird. */
+.hinge{margin-top:var(--s-8); padding-top:var(--s-6); border-top:1px solid var(--line);
+  display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between;
+  gap:var(--s-5)}
+.hinge p{margin:0; font-family:var(--f-head); font-weight:700;
+  font-size:clamp(1.25rem,2.1vw,1.75rem); line-height:1.22; letter-spacing:-.018em;
+  color:#fff; max-width:30ch; text-transform:uppercase}
+
+/* ===================== CREDENTIAL / ORGANIZED PLAY =====================
+   Die staerkste Referenz der Firma. Sie braucht Architektur, nicht eine
+   Nebenspalte: Behauptung, dann Nachpruefbarkeit laut, dann Groessenordnung,
+   dann was der Kaeufer davon hat. */
+
+/* Verifizierungs-Band. Der Kern: das kann man auf fremder Domain nachpruefen. */
+.verify{position:relative; margin-top:var(--s-7); padding:var(--s-5) var(--s-6);
+  display:grid; grid-template-columns:1fr auto; gap:var(--s-5); align-items:center;
+  background:linear-gradient(100deg, rgba(109,40,217,.3) 0%, rgba(31,25,70,.5) 62%, rgba(19,16,41,.6) 100%);
+  clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  box-shadow:inset 0 0 0 1px var(--line-strong), inset 0 1px 0 var(--line-top), var(--sh-2)}
+.verify::before{content:''; position:absolute; left:0; top:0; width:46%; height:2px;
+  background:linear-gradient(90deg, var(--act-c), transparent)}
+.verify p{margin:0; font-size:var(--t-sm); color:#fff; max-width:62ch}
+.verify strong{font-family:var(--f-head); font-weight:700; text-transform:uppercase;
+  letter-spacing:.02em; font-size:1rem; display:block; margin-bottom:.35em}
+@media(max-width:760px){.verify{grid-template-columns:1fr}}
+
+/* Turnierplan. Eine echte Tabelle mit Kopfzeile, nicht zwei gequetschte Zeilen. */
+.schedule{width:100%; border-collapse:collapse; font-size:var(--t-sm);
+  font-variant-numeric:tabular-nums; margin-top:var(--s-4)}
+.schedule th,.schedule td{text-align:left; padding:1em 1.1em; vertical-align:top}
+.schedule thead th{font-family:var(--f-head); font-weight:700; font-size:var(--t-2xs);
+  text-transform:uppercase; letter-spacing:.11em; color:var(--tx-mute);
+  border-bottom:1px solid var(--line-strong); padding-block:.7em}
+.schedule tbody tr{border-bottom:1px solid var(--line); transition:background-color .22s var(--ease)}
+.schedule tbody tr:hover{background:rgba(168,85,247,.07)}
+.schedule tbody td{color:var(--tx-body)}
+.schedule tbody td:first-child{position:relative; color:#fff;
+  font-family:var(--f-head); font-weight:700; white-space:nowrap}
+.schedule tbody td:first-child::before{content:''; position:absolute; left:0; top:1em; bottom:1em;
+  width:2px; background:var(--act-c); transform:scaleY(0); transform-origin:50% 0;
+  transition:transform .3s var(--ease-out)}
+.schedule tbody tr:hover td:first-child::before{transform:scaleY(1)}
+.schedule tbody td:nth-child(2){color:#fff; font-weight:500}
+.schedule__note{font-size:var(--t-xs); color:var(--tx-mute); margin-top:var(--s-4);
+  padding-left:var(--s-4); border-left:1px solid var(--line-strong); max-width:64ch}
+@media(max-width:760px){
+  .schedule thead{position:absolute; left:-9999px}
+  .schedule tbody tr{display:block; padding-block:var(--s-4)}
+  .schedule tbody td{display:block; padding:.2em 0}
+  /* Die Akzentkante greift nur bei Hover, mobil wuerde die Einrueckung das
+     Datum gegen die Labels darunter verschieben. */
+  .schedule tbody td:first-child{padding-left:0; margin-bottom:.4em}
+  .schedule tbody td:first-child::before{display:none}
+  .schedule tbody td::before{content:attr(data-l) ': '; color:var(--tx-mute);
+    font-family:var(--f-head); font-weight:600; font-size:var(--t-2xs);
+    text-transform:uppercase; letter-spacing:.09em; display:block; margin-bottom:.15em}
+  .schedule tbody td:first-child::before{content:''}
+}
+
+/* Breites Banner-Bild. Groessenordnung braucht Breite. */
+.media--21 img,.media--21 video{aspect-ratio:21/9}
+@media(max-width:760px){.media--21 img,.media--21 video{aspect-ratio:16/10}}
+
+/* ===================== PROZESS / HOW IT WORKS =====================
+   Vorher steckten fuenf Schritte in einer 500-px-Spalte, waehrend die
+   linke Haelfte halb leer war. Und die Rangfolge war falsch: Schritt 1
+   ist das Einzige, was der Leser tun muss, stand aber als Punkt eins von
+   fuenf da. Jetzt: Schritt 1 als eigener Block mit CTA, danach 2 bis 5
+   als Band ueber die volle Breite, zum Schluss die Zusicherung. */
+
+/* Schritt 01, hervorgehoben, mit dem CTA daneben */
+.step1{margin-top:var(--s-7); padding:var(--s-7) var(--s-6)}
+.step1__grid{display:grid; grid-template-columns:1.4fr .6fr; gap:var(--s-6) var(--s-7);
+  align-items:center}
+/* line-strong statt line: das Panel ist hier oben links deutlich heller,
+   die leise Haarlinie verschwindet darauf. */
+.step1__grid > div:last-child{padding-left:var(--s-7); border-left:1px solid var(--line-strong)}
+.step1 .num{font-size:3.2rem; margin-bottom:var(--s-4)}
+.step1 h3{font-size:clamp(1.375rem,2.1vw,1.75rem); margin-bottom:var(--s-3)}
+.step1 p{color:var(--tx-body)}
+@media(max-width:860px){
+  .step1{padding:var(--s-6) var(--s-5)}
+  .step1__grid{grid-template-columns:1fr}
+  .step1__grid > div:last-child{padding-left:0; padding-top:var(--s-6);
+    border-left:0; border-top:1px solid var(--line)}
+}
+
+/* Schritte 02 bis 05 als Band. Die Oberlinie verlaeuft nach rechts aus,
+   das gibt der Reihe eine Richtung, ohne Pfeile zu brauchen. */
+.flow{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-6); margin-top:var(--s-8)}
+.flow__s{position:relative; padding-top:var(--s-4)}
+.flow__s::before{content:''; position:absolute; left:0; right:0; top:0; height:2px;
+  background:linear-gradient(90deg, var(--line-strong), rgba(160,130,250,.1));
+  transition:background .32s var(--ease)}
+.flow__s:hover::before{background:linear-gradient(90deg, var(--act-c), rgba(168,85,247,.16))}
+.flow__s .num{font-size:2rem; margin-bottom:var(--s-3)}
+.flow__s:hover .num{color:rgba(168,85,247,.18); -webkit-text-stroke-color:var(--act-c)}
+.flow__s h3{font-size:1.0625rem; margin-bottom:var(--s-3)}
+.flow__s p{font-size:var(--t-sm); color:var(--tx-body); margin:0}
+@media(max-width:980px){.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.flow{grid-template-columns:1fr; gap:var(--s-5)}}
+
+.flow__note{font-size:var(--t-sm); color:var(--tx-mute); margin-top:var(--s-6);
+  padding-left:var(--s-4); border-left:1px solid var(--line-strong); max-width:72ch}
+
+/* Zusicherung zum Schluss: drei Dinge, mehr nicht. */
+.needs{margin-top:var(--s-8); padding-top:var(--s-6); border-top:1px solid var(--line)}
+.needs h3{max-width:26ch}
+.needs > p{margin:var(--s-3) 0 0; font-size:var(--t-sm); color:var(--tx-body); max-width:60ch}
+.needs__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-5);
+  margin-top:var(--s-6)}
+.needs__item{padding-left:var(--s-4); border-left:2px solid var(--act-c)}
+.needs__item b{display:block; font-family:var(--f-head); font-weight:700; color:#fff;
+  font-size:1rem; text-transform:uppercase; letter-spacing:-.005em; margin-bottom:.35em}
+.needs__item span{font-size:var(--t-sm); color:var(--tx-body)}
+@media(max-width:700px){.needs__grid{grid-template-columns:1fr; gap:var(--s-4)}}
+
+/* ===================== MEASUREMENT =====================
+   Vorher waren die acht Kennzahlen eine flache Label-Beschreibung-Tabelle,
+   also eine Liste. Und der eigentliche Satz der Sektion, "wir legen die
+   Kennzahlen VORHER fest", war im Fliesstext versteckt. Jetzt tragen drei
+   Phasen die Struktur: vorher, am Tag, danach. Damit ist die Reihenfolge
+   die Aussage, und die Kennzahlen sind nach dem gruppiert, was sie
+   beantworten. */
+.phases{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-5); margin-top:var(--s-7)}
+.phase__t{display:block; font-family:var(--f-head); font-weight:700; font-size:var(--t-2xs);
+  text-transform:uppercase; letter-spacing:.15em; color:var(--tx-field-mute);
+  padding-bottom:var(--s-3); margin-bottom:var(--s-4);
+  border-bottom:1px solid rgba(255,255,255,.18)}
+.phase h3{font-size:1.0625rem; margin-bottom:var(--s-3)}
+.phase > p{font-size:var(--t-sm); color:var(--tx-field-mute)}
+.kpi{list-style:none; padding:0; margin:var(--s-5) 0 0; display:grid; gap:var(--s-3)}
+.kpi li{display:grid; grid-template-columns:auto 1fr; gap:var(--s-3);
+  font-size:var(--t-sm); color:var(--tx-field-mute); line-height:1.5}
+.kpi li::before{content:''; width:6px; height:6px; margin-top:.6em;
+  background:var(--lila-field); flex:0 0 auto}
+.kpi b{display:block; color:#fff; font-weight:600}
+.phase--lead .phase__t{color:#fff}
+@media(max-width:900px){.phases{grid-template-columns:1fr; gap:var(--s-4)}}
+
+/* ===================== FAQ (Akkordeon) =====================
+   Vorher nur Haarlinien zwischen den Fragen, das las sich als Liste und
+   nicht als Akkordeon. Jetzt ist jede Frage ein eigenes Panel mit Rand,
+   die Klickflaeche ist die ganze Zeile, und der geoeffnete Zustand ist
+   sichtbar: Panel wird heller, links waechst eine Lila-Kante, das Plus
+   dreht zum Minus.
+
+   Technisch bleibt es <details>/<summary>: vollstaendig im DOM (zaehlt
+   also fuer Google und KI), ohne JavaScript bedienbar, per Tastatur
+   erreichbar. Die Hoehenanimation laeuft ueber ::details-content. */
+.faq{display:grid; gap:var(--s-3); max-width:920px}
+.faq details{position:relative; border-radius:var(--r); overflow:hidden;
+  background:linear-gradient(158deg, var(--panel) 0%, #131029 100%);
+  box-shadow:inset 0 0 0 1px var(--line), inset 0 1px 0 var(--line-top), var(--sh-1);
+  transition:box-shadow .3s var(--ease), background-color .3s var(--ease)}
+.faq details:hover{box-shadow:inset 0 0 0 1px var(--line-strong), inset 0 1px 0 var(--line-top), var(--sh-2)}
+/* Lila-Kante links, waechst beim Oeffnen */
+.faq details::before{content:''; position:absolute; left:0; top:0; bottom:0; width:2px; z-index:2;
+  background:linear-gradient(180deg, var(--act-c), rgba(168,85,247,.2));
+  transform:scaleY(0); transform-origin:50% 0;
+  transition:transform .34s var(--ease-out)}
+.faq details[open]::before{transform:scaleY(1)}
+.faq details[open]{background:linear-gradient(158deg, var(--panel-2) 0%, var(--panel) 100%);
+  box-shadow:inset 0 0 0 1px var(--line-strong), inset 0 1px 0 var(--line-top), var(--sh-2)}
+
+.faq summary{display:flex; align-items:center; justify-content:space-between; gap:var(--s-5);
+  padding:1.25em var(--s-5); cursor:pointer; list-style:none;
+  font-family:var(--f-head); font-size:1.0625rem; font-weight:700; color:var(--tx);
+  min-height:64px; transition:color .2s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::marker{content:''}
+.faq summary:hover{color:var(--lila-hi)}
+.faq summary:focus-visible{outline:2px solid var(--lila-hi); outline-offset:-3px; border-radius:var(--r)}
+
+/* Plus, das zum Minus dreht. In einem Kasten, damit es als Bedienelement liest. */
+.faq summary u{position:relative; flex:0 0 auto; width:34px; height:34px; text-decoration:none;
+  display:grid; place-items:center; border-radius:var(--r-s);
+  box-shadow:inset 0 0 0 1px var(--line-strong);
+  transition:box-shadow .3s var(--ease), background-color .3s var(--ease)}
+.faq summary:hover u{background:rgba(168,85,247,.14); box-shadow:inset 0 0 0 1px var(--act-c)}
+.faq summary u::before,.faq summary u::after{content:''; position:absolute;
+  width:13px; height:1.5px; background:var(--act-c); transition:transform .34s var(--ease-out)}
+.faq summary u::after{transform:rotate(90deg)}
+.faq details[open] summary u::before{transform:rotate(180deg)}
+.faq details[open] summary u::after{transform:rotate(180deg)}
+
+.faq details p{margin:0 0 1.4em; font-size:var(--t-sm); max-width:74ch; color:var(--tx-body);
+  padding-inline:var(--s-5)}
+.faq details p:first-of-type{padding-top:.2em}
+@supports selector(::details-content){
+  .faq details::details-content{block-size:0; overflow:hidden; opacity:0;
+    transition:block-size .42s var(--ease-out), opacity .3s var(--ease), content-visibility .42s;
+    transition-behavior:allow-discrete}
+  .faq details[open]::details-content{block-size:auto; opacity:1}
+}
+
+/* ===================== FORMULAR ===================== */
+.frow{display:flex; flex-direction:column; gap:.5em; margin-bottom:var(--s-4)}
+.frow label{font-family:var(--f-head); font-size:var(--t-2xs); font-weight:700;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--tx-mute);
+  transition:color .2s var(--ease)}
+.frow:focus-within label{color:var(--lila-hi)}
+.frow .opt{text-transform:none; letter-spacing:0; font-weight:400; opacity:.75}
+.input{font-family:var(--f-body); font-size:1rem; color:var(--tx); width:100%;
+  padding:.9em 1.05em; border-radius:var(--r-s); background:rgba(0,0,0,.36);
+  border:1px solid var(--line); box-shadow:inset 0 1px 3px rgba(0,0,0,.45);
+  transition:border-color .22s var(--ease), box-shadow .22s var(--ease), background-color .22s var(--ease)}
+.input::placeholder{color:var(--tx-mute)}
+.input:hover{border-color:var(--line-strong)}
+.input:focus{outline:none; border-color:var(--act-c); background:rgba(0,0,0,.5);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.45), 0 0 0 3px var(--lila-glow)}
+.input:user-invalid{border-color:#E0574E; box-shadow:inset 0 1px 3px rgba(0,0,0,.45), 0 0 0 3px rgba(224,87,78,.18)}
+
+/* ===================== MEDIEN ===================== */
+.media{position:relative; overflow:hidden; border-radius:var(--r-s);
+  box-shadow:inset 0 0 0 1px var(--line), var(--sh-2); background:var(--panel)}
+.media img,.media video{display:block; width:100%; height:auto; object-fit:cover;
+  transition:transform .7s var(--ease-out), filter .5s var(--ease)}
+/* Der Standbild-Fallback liegt nur bereit, sichtbar wird er erst bei
+   reduzierter Bewegung. Selektor braucht dieselbe Spezifitaet wie .media img. */
+.media img.media__fallback{display:none}
+.media--p img{aspect-ratio:4/5; filter:saturate(.72) contrast(1.06) brightness(.9)}
+.media::before{content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(to top, rgba(10,8,24,.95) 0%, rgba(10,8,24,.34) 40%, transparent 68%),
+             radial-gradient(94% 60% at 16% 0%, rgba(147,51,234,.28), transparent 62%);
+  transition:opacity .5s var(--ease)}
+.media:hover img{transform:scale(1.05); filter:saturate(.95) contrast(1.04) brightness(1)}
+.media:hover::before{opacity:.82}
+.media--plain::before{background:linear-gradient(to top, rgba(10,8,24,.55) 0%, transparent 52%),
+  radial-gradient(94% 60% at 16% 0%, rgba(147,51,234,.2), transparent 62%)}
+.media__c{position:absolute; left:var(--s-4); right:var(--s-4); bottom:var(--s-4); z-index:2}
+.media__n{font-family:var(--f-head); font-weight:700; font-size:1rem; color:#fff; display:block;
+  text-transform:uppercase; letter-spacing:-.01em}
+.media__r{font-size:var(--t-xs); color:var(--lila-hi); letter-spacing:.03em; display:block}
+.media__p{font-size:var(--t-xs); color:var(--tx-body); margin:.5em 0 0; line-height:1.45;
+  transition:transform .45s var(--ease-out), color .3s var(--ease)}
+.media:hover .media__p{transform:translateY(-2px); color:#fff}
+figure{margin:0}
+figcaption{font-size:var(--t-xs); color:var(--tx-mute); margin-top:.7em}
+.field figcaption{color:var(--tx-field-mute)}
+
+/* Bild im Panel-Kopf.
+   height:auto ist Pflicht, sonst schlaegt das HTML-height-Attribut
+   als Praesentations-Hinweis das aspect-ratio und die Karte wird meterhoch. */
+.panel__img{display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;
+  filter:saturate(.8) contrast(1.05) brightness(.86);
+  transition:transform .7s var(--ease-out), filter .5s var(--ease)}
+.panel--hover:hover .panel__img{transform:scale(1.04); filter:saturate(1) brightness(1)}
+.panel__imgwrap{position:relative; overflow:hidden}
+.panel__imgwrap::after{content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to top, var(--panel-2) 0%, rgba(31,25,70,.4) 40%, transparent 72%)}
+
+/* ===================== LOGO-LAUFBAND ===================== */
+.marquee{overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee__t{display:flex; gap:var(--s-6); width:max-content; animation:slide 30s linear infinite}
+.marquee:hover .marquee__t{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.logo-cell{display:grid; place-items:center; min-height:80px; min-width:200px;
+  padding:var(--s-4) var(--s-6); border-radius:var(--r-s);
+  box-shadow:inset 0 0 0 1px var(--line), inset 0 1px 0 var(--line-top);
+  background:linear-gradient(160deg, rgba(147,51,234,.12), rgba(0,0,0,.24));
+  transition:box-shadow .3s var(--ease), transform .3s var(--ease-out)}
+.logo-cell:hover{transform:translateY(-3px);
+  box-shadow:inset 0 0 0 1px var(--act-c), 0 12px 26px -10px var(--lila-glow)}
+.logo-cell img{max-height:34px; width:auto; opacity:.72; transition:opacity .3s var(--ease)}
+.logo-cell:hover img{opacity:1}
+
+/* ===================== KOPFZEILE ===================== */
+.nav{position:sticky; top:0; z-index:100; padding-block:var(--s-4);
+  transition:padding-block .34s var(--ease), background-color .34s var(--ease),
+             box-shadow .34s var(--ease), backdrop-filter .34s var(--ease)}
+.nav.is-stuck{padding-block:var(--s-2); background:rgba(16,13,38,.86);
+  backdrop-filter:blur(14px) saturate(1.3); box-shadow:0 1px 0 var(--line), var(--sh-2)}
+.nav__in{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--s-5);
+  display:flex; align-items:center; gap:var(--s-5)}
+.nav__mark{display:flex; align-items:center; gap:.8rem; text-decoration:none; flex:0 0 auto;
+  transition:opacity .2s var(--ease)}
+.nav__mark:hover{opacity:.82}
+.nav__mark:focus-visible{outline:2px solid var(--lila-hi); outline-offset:4px}
+.nav__mark img{height:60px; width:auto; display:block}
+.nav__mark span{font-family:var(--f-head); font-weight:800; font-size:1.0625rem; color:#fff;
+  text-transform:uppercase; letter-spacing:.01em; white-space:nowrap}
+@media(max-width:900px){.nav__mark img{height:48px}}
+/* Der nav-Wrapper schiebt alles nach ihm nach rechts. Er bleibt auch dann
+   im Fluss, wenn die Link-Liste mobil ausgeblendet ist, darum sitzt der CTA
+   in jeder Breite rechts. */
+.nav__in > nav{margin-left:auto}
+.nav__links{display:flex; gap:var(--s-4); list-style:none; padding:0; margin:0}
+/* nowrap ist Pflicht: sonst bricht "Organized play" um, sobald Logo und
+   CTA die Liste zusammendruecken, und die Kopfzeile wird zweizeilig. */
+.nav__links a{font-family:var(--f-head); font-weight:600; font-size:var(--t-xs);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--tx-body); text-decoration:none;
+  position:relative; padding-bottom:3px; white-space:nowrap;
+  transition:color .2s var(--ease)}
+.nav__links a::after{content:''; position:absolute; left:0; bottom:0; height:1px; width:100%;
+  background:var(--act-c); transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .3s var(--ease-out)}
+.nav__links a:hover,.nav__links a:focus-visible{color:#fff}
+.nav__links a:hover::after,.nav__links a:focus-visible::after{transform:scaleX(1)}
+.nav__tel{font-family:var(--f-head); font-weight:700; font-size:var(--t-xs); color:#fff;
+  text-decoration:none; letter-spacing:.03em; white-space:nowrap}
+.nav__tel:hover{color:var(--lila-hi)}
+@media(max-width:1180px){.nav__links{display:none}}
+@media(max-width:600px){.nav__tel{display:none}}
+/* Unter 560px wuerde die Wortmarke den CTA aus der Zeile draengen.
+   Bildmarke bleibt, Text weicht. */
+@media(max-width:560px){.nav__mark span{display:none} .nav__in{gap:var(--s-4)}}
+
+/* ===================== LAYOUT ===================== */
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--s-5)}
+.sec{padding-block:var(--s-9)}
+.sec--tight{padding-block:var(--s-7)}
+.sec--airy{padding-block:var(--s-10)}
+.grid{display:grid; gap:var(--s-5)}
+.g-2{grid-template-columns:repeat(2,1fr)}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.row{display:flex; gap:var(--s-4); flex-wrap:wrap; align-items:center}
+.mw-52{max-width:52ch} .mw-46{max-width:46ch} .mw-62{max-width:62ch}
+@media(max-width:920px){.g-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.g-2,.g-3{grid-template-columns:1fr}
+  .sec,.sec--airy{padding-block:var(--s-7)}}
+
+/* ===================== HERO mit Video =====================
+   Eine Textspalte, links, ueber dem Video. Die zweite Spalte mit dem
+   freistehenden Emblem ist raus: dort ging es im unruhigen Videobild
+   verloren und wurde zur Dekoration. Das Emblem sitzt jetzt in der
+   Eyebrow-Zeile, wo Linienzeichnung klein und sauber liest. Den Raum
+   darunter fuellt Beweis statt Deko. */
+.hero{position:relative; isolation:isolate; overflow:hidden; color:var(--tx-field);
+  display:flex; flex-direction:column; justify-content:flex-end;
+  min-height:min(94svh,900px)}
+.hero__bg{position:absolute; inset:0; z-index:-2; overflow:hidden}
+.hero__bg video,.hero__bg img{width:100%; height:100%; object-fit:cover}
+.hero__bg::after{content:''; position:absolute; inset:0; z-index:2;
+  background:
+    linear-gradient(96deg, rgba(10,8,24,.95) 0%, rgba(12,9,30,.86) 38%, rgba(16,13,38,.5) 68%, rgba(67,49,181,.34) 100%),
+    linear-gradient(to bottom, rgba(10,8,24,.72) 0%, transparent 30%, rgba(10,8,24,.42) 62%, var(--ink) 100%)}
+/* Wandernder Lichtschein rechts. Ersetzt das Leuchten, das vorher am
+   Emblem hing, und haelt die rechte Bildhaelfte lebendig. */
+.hero__bg::before{content:''; position:absolute; z-index:1; right:-10vw; top:-14vw;
+  width:56vw; aspect-ratio:1; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(168,85,247,.34) 0%, rgba(91,69,214,.18) 44%, transparent 68%);
+  animation:pulse 9s var(--ease) infinite alternate}
+@keyframes pulse{from{transform:scale(.9) translate3d(0,0,0); opacity:.55}
+  to{transform:scale(1.08) translate3d(-3vw,2vw,0); opacity:1}}
+
+.hero__in{width:100%; max-width:var(--maxw); margin-inline:auto;
+  padding:var(--s-9) var(--s-5) var(--s-7)}
+/* Der Beweis-Streifen muss ueber der Falz bleiben. Auf flachen Fenstern
+   das obere Polster weiter zuruecknehmen, statt den Streifen zu verlieren. */
+@media(min-width:901px) and (max-height:920px){
+  .hero__in{padding-top:var(--s-7)}
+  .hero__proof{margin-top:var(--s-6)}
+}
+
+/* Eyebrow: Bildmarke, Label, Haarlinie. Hier hat das Emblem eine Aufgabe. */
+.hero__eyebrow{display:flex; align-items:center; gap:var(--s-4); margin-bottom:var(--s-5)}
+.hero__crest{width:58px; height:58px; flex:0 0 auto;
+  filter:drop-shadow(0 3px 16px rgba(168,85,247,.8));
+  animation:rise .9s var(--ease-out) both}
+@keyframes rise{from{transform:translateY(14px); opacity:0} to{transform:translateY(0); opacity:1}}
+.hero__eyebrow b{font-family:var(--f-head); font-weight:700; font-size:var(--t-xs);
+  text-transform:uppercase; letter-spacing:.16em; color:#fff; white-space:nowrap}
+.hero__eyebrow i{flex:1 1 auto; height:1px; max-width:240px; display:block;
+  background:linear-gradient(90deg, var(--act-c), transparent);
+  transform:scaleX(0); transform-origin:0 50%; animation:barIn .8s var(--ease-out) .25s forwards}
+.hero h1{color:#fff}
+
+/* Beweis-Streifen im Hero: Bandai-Rolle plus drei Kennzahlen, ueber der Falz. */
+.hero__proof{border-top:1px solid rgba(255,255,255,.18); margin-top:var(--s-8);
+  padding-top:var(--s-5); display:grid; gap:var(--s-5) var(--s-6);
+  grid-template-columns:1.6fr repeat(3,.8fr); align-items:start}
+.hero__proof > p{margin:0; font-size:var(--t-sm); color:#fff; max-width:36ch}
+.hero__proof .stat__v{font-size:clamp(1.7rem,2.4vw,2.25rem); color:#fff}
+.hero__proof .stat__l{color:var(--tx-field-mute); max-width:21ch}
+@media(max-width:1080px){
+  .hero__proof{grid-template-columns:repeat(3,1fr)}
+  .hero__proof > p{grid-column:1 / -1; max-width:60ch}
+}
+@media(max-width:900px){
+  .hero{min-height:0}
+  .hero__in{padding-block:var(--s-8) var(--s-7)}
+  .hero__crest{width:38px; height:38px}
+  .hero__eyebrow i{display:none}
+}
+@media(max-width:560px){.hero__proof{grid-template-columns:1fr 1fr}}
+
+/* ===================== FOOTER ===================== */
+.foot{background:var(--void); padding-block:var(--s-8) var(--s-6)}
+.foot a{color:var(--tx-body); text-decoration:none; transition:color .2s var(--ease)}
+.foot a:hover{color:#fff}
+.foot__grid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1.2fr; gap:var(--s-6); align-items:start}
+@media(max-width:820px){.foot__grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.foot__grid{grid-template-columns:1fr}}
+
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important; transition:none !important}
+  .bar{transform:skewX(-18deg) scaleX(1)}
+  .btn:hover,.panel--hover:hover,.ring:hover,.logo-cell:hover,.media:hover img{transform:none}
+  .ring circle{stroke-dashoffset:0}
+  .hero__bg video{display:none}          /* das poster-Attribut uebernimmt */
+  .media video{display:none}
+  .media img.media__fallback{display:block}
+}
