@@ -82,6 +82,44 @@ Website: www.rijam.de
         setTimeout(function () { document.documentElement.classList.remove('js'); }, 3000);
       }
 
+      // Bilder im Browser verkleinern, bevor sie gesendet werden.
+      // Wichtig: Web3Forms haengt nur Dateien bis 5 MB an. Handy-Fotos sind oft groesser.
+      window.rijamSetInputFile = function (input, file) {
+        try { var dt = new DataTransfer(); dt.items.add(file); input.files = dt.files; } catch (e) {}
+      };
+      window.rijamCompressImage = function (file) {
+        return new Promise(function (resolve) {
+          if (!file || !/^image\//.test(file.type) || /image\/gif/.test(file.type)) { resolve(file); return; }
+          var url = URL.createObjectURL(file);
+          var img = new Image();
+          img.onload = function () {
+            URL.revokeObjectURL(url);
+            var max = 1600, w = img.width, h = img.height;
+            if (w > max || h > max) { var s = Math.min(max / w, max / h); w = Math.round(w * s); h = Math.round(h * s); }
+            try {
+              var c = document.createElement('canvas'); c.width = w; c.height = h;
+              c.getContext('2d').drawImage(img, 0, 0, w, h);
+              c.toBlob(function (blob) {
+                if (!blob) { resolve(file); return; }
+                if (blob.size >= file.size && file.size <= 4.5 * 1024 * 1024) { resolve(file); return; }
+                var name = (file.name || 'foto').replace(/\.[^.]+$/, '') + '.jpg';
+                resolve(new File([blob], name, { type: 'image/jpeg', lastModified: Date.now() }));
+              }, 'image/jpeg', 0.82);
+            } catch (e) { resolve(file); }
+          };
+          img.onerror = function () { URL.revokeObjectURL(url); resolve(file); };
+          img.src = url;
+        });
+      };
+      window.rijamCompressFormImages = function (form) {
+        var inputs = Array.prototype.slice.call(form.querySelectorAll('input[type=file]'));
+        return Promise.all(inputs.map(function (inp) {
+          var f = inp.files && inp.files[0];
+          if (!f) return Promise.resolve();
+          return window.rijamCompressImage(f).then(function (nf) { if (nf && nf !== f) window.rijamSetInputFile(inp, nf); });
+        }));
+      };
+
       // Web3Forms: Absenden per AJAX mit Inline-Erfolgsmeldung (kein Fremdseiten-Redirect)
       document.querySelectorAll('form[data-web3form]').forEach(function (form) {
         form.addEventListener('submit', function (ev) {
@@ -89,7 +127,9 @@ Website: www.rijam.de
           var btn = form.querySelector('[type=submit]');
           var orig = btn ? btn.textContent : '';
           if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet ...'; }
-          fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+          window.rijamCompressFormImages(form).then(function () {
+            return fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          })
             .then(function (r) {
               if (!r.ok) throw new Error('Fehler');
               var ok = form.parentNode.querySelector('[data-form-success]');
