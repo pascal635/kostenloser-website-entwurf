@@ -147,7 +147,7 @@ section[id],.funnel{scroll-margin-top:92px}
    Damit bleibt die Regel "kein Formular im Hero" gewahrt: der Besucher sieht
    eine Frage, keine Formularwand. */
 .funnel{position:absolute;right:max(var(--raum-5),calc(50vw - var(--breite)/2 + var(--raum-6)));
-  bottom:-44px;z-index:5;
+  top:50%;transform:translateY(-50%);z-index:5;
   width:min(392px,calc(100% - var(--raum-7)));background:var(--weiss);border-radius:var(--r-xl);
   padding:var(--raum-6);box-shadow:var(--schatten-floating);border:1px solid rgba(255,255,255,.9);
   /* Feste Mindesthöhe, damit die Karte zwischen den Schritten nicht springt */
@@ -318,12 +318,15 @@ section{position:relative}
 .faq .antwort{padding:0 var(--raum-7) var(--raum-5) 0;font-size:var(--t-klein);color:var(--tinte-70)}
 
 /* ---------- Anfrage ---------- */
-.anfrage .zwei{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--raum-6);align-items:start}
-.formkarte{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-xl);padding:var(--raum-6);box-shadow:var(--schatten-floating)}
-.formkarte h2{font-size:var(--t-h2);margin-bottom:var(--raum-3)}
-.formkarte > p{color:var(--tinte-70);font-size:var(--t-klein);margin-bottom:var(--raum-5)}
+.anfrage .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--raum-6);align-items:stretch}
+.wegkarte{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-xl);
+  padding:var(--raum-6);box-shadow:var(--schatten-floating)}
+.wegkarte h3{font-size:var(--t-h3);margin-bottom:var(--raum-3)}
+.wegkarte > p{color:var(--tinte-70);font-size:var(--t-klein);margin-bottom:var(--raum-5)}
+.beruhigung-liste{margin-top:var(--raum-5);padding-top:var(--raum-5);border-top:1px solid var(--linie)}
+.beruhigung-liste li{display:flex;gap:var(--raum-2);font-size:var(--t-klein);color:var(--tinte-70);padding:var(--raum-2) 0}
+.beruhigung-liste svg{width:16px;height:16px;color:var(--blau-600);flex:none;margin-top:4px}
 .feld{display:grid;gap:var(--raum-2);margin-bottom:var(--raum-4)}
-.feld-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--raum-4)}
 label{font-size:var(--t-klein);font-weight:600;color:var(--tinte-70)}
 input,select,textarea{font-family:var(--font-text);font-size:1rem;color:var(--tinte);padding:14px 16px;
   border:1px solid var(--linie-stark);border-radius:var(--r-m);background:var(--weiss);width:100%;
@@ -341,14 +344,6 @@ textarea{min-height:104px;resize:vertical}
 .telefonkarte .nr:hover{opacity:.85}
 .telefonkarte .zeiten{font-size:var(--t-mikro);color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.16);padding-top:var(--raum-4);margin-top:var(--raum-5)}
 .telefonkarte a.mail{color:var(--blau-300);text-decoration:none;font-size:var(--t-klein);word-break:break-word}
-/* Formular spannt beide Zeilen, damit die zwei Karten rechts direkt untereinander sitzen
-   und nicht von der Höhe des Formulars auseinandergezogen werden. */
-.anfrage .formkarte{grid-row:1/span 2}
-.beruhigung{grid-column:2;grid-row:2;align-self:start;background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);
-  padding:var(--raum-5);box-shadow:var(--schatten-base)}
-.beruhigung b{font-family:var(--font-display);font-size:1.02rem;display:block;margin-bottom:var(--raum-3)}
-.beruhigung li{display:flex;gap:var(--raum-2);font-size:var(--t-klein);color:var(--tinte-70);padding:var(--raum-2) 0}
-.beruhigung svg{width:16px;height:16px;color:var(--blau-600);flex:none;margin-top:4px}
 
 /* ---------- Gebiet ---------- */
 .gebiet .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--raum-7);align-items:center}
@@ -385,13 +380,11 @@ footer .unten a{display:inline}
   .hero .text{padding:var(--raum-7) var(--raum-5) var(--raum-6);order:2}
   .hero .foto{min-height:290px;order:1;margin-right:0}
   /* Funnel wandert in den Fluss, direkt unter den Hero-Text */
-  .funnel{position:static;bottom:auto;width:auto;margin:0 var(--raum-5) var(--raum-7);
+  .funnel{position:static;top:auto;transform:none;width:auto;margin:0 var(--raum-5) var(--raum-7);
     padding:var(--raum-5);border:1px solid var(--linie);min-height:0}
   .nav-links{display:none}
   .raster-2,.raster-3{grid-template-columns:1fr}
   .pflege .zwei,.ueber .zwei,.kosten .zwei,.anfrage .zwei,.gebiet .zwei{grid-template-columns:1fr;gap:var(--raum-7)}
-  .anfrage .formkarte{grid-row:auto}
-  .beruhigung{grid-column:1;grid-row:auto}
   .anfrage .zwei{gap:var(--raum-5)}
   .pflege .innen{padding-top:var(--raum-8);padding-bottom:var(--raum-8)}
   .luftig .innen{padding-top:var(--raum-8);padding-bottom:var(--raum-8)}
@@ -400,7 +393,6 @@ footer .unten a{display:inline}
 }
 @media (max-width:560px){
   .schritte{grid-template-columns:1fr}
-  .feld-2{grid-template-columns:1fr}
   .btn-reihe .btn{width:100%}
   .nav .btn{display:none}
 }
@@ -634,7 +626,7 @@ footer .unten a{display:inline}
         <div class="inhalt">
           <h3>Fensterreinigung und Glasreinigung im Haushalt</h3>
           <p>Fenster innen und außen, Rahmen, Falze und Rollladenkästen, Wintergarten, Glasdach, Glastüren und Fliegengitter. Ich arbeite mit entkalktem Wasser, deshalb bleiben keine Kalkränder zurück.</p>
-          <div class="fuss"><a class="btn-text" href="#kontakt">Angebot für meine Fenster</a></div>
+          <div class="fuss"><a class="btn-text" href="#funnel" data-vorwahl="Fenster und Glas">Angebot für meine Fenster</a></div>
         </div>
       </article>
       <article class="karte-l betont">
@@ -642,7 +634,7 @@ footer .unten a{display:inline}
         <div class="inhalt">
           <h3>Solarreinigung in Bad Salzschlirf, damit der Ertrag stimmt</h3>
           <p>Moos, Pollen, Staub und Vogeldreck kosten Ertrag, und zwar dauerhaft. Ich reinige Module schonend und ohne Chemie, die der Beschichtung schadet. Vorher sage ich Ihnen, ob sich die Reinigung bei Ihrer Anlage überhaupt lohnt.</p>
-          <div class="fuss"><a class="btn btn-hell" href="#kontakt">Angebot für meine Solaranlage</a></div>
+          <div class="fuss"><a class="btn btn-hell" href="#funnel" data-vorwahl="Solaranlage">Angebot für meine Solaranlage</a></div>
         </div>
       </article>
     </div>
@@ -652,7 +644,7 @@ footer .unten a{display:inline}
         <div class="inhalt">
           <h3>Bauendreinigung, bezugsfertig statt besenrein</h3>
           <p>Nach Neubau oder Sanierung: Bauschmutz, Zementschleier, Farbspritzer, Klebereste und Aufkleber runter, Fenster klar, Böden und Sanitär gebrauchsfertig. Ich weiß, dass hier ein Übergabetermin dranhängt.</p>
-          <div class="fuss"><a class="btn-text" href="#kontakt">Angebot für meine Baustelle</a></div>
+          <div class="fuss"><a class="btn-text" href="#funnel" data-vorwahl="Bauendreinigung">Angebot für meine Baustelle</a></div>
         </div>
       </article>
       <article class="karte-l">
@@ -668,7 +660,7 @@ footer .unten a{display:inline}
         <div class="inhalt">
           <h3>Auch die Stellen, an denen man es sieht</h3>
           <p>Rahmen, Falze und Dichtungen gehören dazu. Genau daran erkennt man hinterher, ob wirklich geputzt wurde oder nur die Scheibe abgewischt.</p>
-          <div class="fuss"><a class="btn-text" href="#kontakt">Angebot anfragen</a></div>
+          <div class="fuss"><a class="btn-text" href="#funnel" data-vorwahl="Fenster und Glas">Angebot anfragen</a></div>
         </div>
       </article>
     </div>
@@ -701,7 +693,7 @@ footer .unten a{display:inline}
           </div>
         </div>
         <p style="color:var(--tinte-70);font-size:var(--t-klein);margin-bottom:var(--raum-5)"><b>Was nicht ungesagt bleiben soll:</b> Ich bin keine Pflegekraft. Ich übernehme den Haushalt, nicht die Körperpflege und keine medizinischen Leistungen. Wer beides braucht, braucht mich und einen Pflegedienst.</p>
-        <a class="btn btn-primaer" href="#kontakt">Kostenlos prüfen, was die Pflegekasse übernimmt <svg><use href="#i-pfeil"/></svg></a>
+        <a class="btn btn-primaer" href="#funnel" data-vorwahl="Haushalt und Pflegekasse">Kostenlos prüfen, was die Pflegekasse übernimmt <svg><use href="#i-pfeil"/></svg></a>
         <p class="mikro">Ein Anruf, rund zehn Minuten. Unverbindlich, und ohne dass Sie vorher Unterlagen zusammensuchen.</p>
         <p class="rechtshinweis">Angaben zu Leistungen der Pflegeversicherung nach dem Stand August 2026. Über Ihren konkreten Anspruch entscheidet Ihre Pflegekasse.</p>
       </div>
@@ -885,38 +877,19 @@ footer .unten a{display:inline}
   </div>
 </section>
 
-<!-- ============ ANFRAGE ============ -->
+<!-- ============ ABSCHLUSS-CTA ============
+     Kein zweites Formular. Es gibt genau zwei Conversion-Ziele: der Funnel oben
+     und der Anruf. Diese Sektion führt auf beide. -->
 <section class="luftig hell anfrage" id="kontakt">
   <div class="innen rein">
+    <div class="sek-kopf">
+      <span class="eyebrow">Kontakt</span>
+      <h2>Zwei Wege, und beide dauern zwei Minuten</h2>
+    </div>
     <div class="zwei">
-      <div class="formkarte">
-        <h2>Angebot anfragen, unverbindlich</h2>
-        <p>Fünf Felder, kein Captcha. Oder rufen Sie einfach an, das geht schneller.</p>
-        <!-- Entwurf: Formular ohne Versandziel. Vor dem Livegang action und Datenschutz-Checkbox ergänzen. -->
-        <form>
-          <div class="feld-2">
-            <div class="feld"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Vor- und Nachname" required></div>
-            <div class="feld"><label for="kontakt">Telefon oder E-Mail</label><input id="kontakt" name="kontakt" type="text" autocomplete="tel" placeholder="0160 000000" required></div>
-          </div>
-          <div class="feld-2">
-            <div class="feld"><label for="thema">Worum geht es?</label>
-              <select id="thema" name="thema">
-                <option>Fenster und Glas</option>
-                <option>Solaranlage</option>
-                <option>Bauendreinigung</option>
-                <option>Haushalt und Pflegekasse</option>
-              </select>
-            </div>
-            <div class="feld"><label for="ort">Ort</label><input id="ort" name="ort" type="text" placeholder="Bad Salzschlirf"></div>
-          </div>
-          <div class="feld"><label for="text">Was soll gemacht werden?</label><textarea id="text" name="text" placeholder="Optional, ein Satz reicht"></textarea></div>
-          <button class="btn btn-primaer" type="submit" style="width:100%">Kostenloses Angebot anfragen <svg><use href="#i-pfeil"/></svg></button>
-          <p class="mikro">Antwort meist am selben Tag. Unverbindlich, kein Vertreterbesuch, kein Abo.</p>
-        </form>
-      </div>
       <div class="telefonkarte">
-        <h3>Lieber direkt sprechen?</h3>
-        <p>Am Telefon ist in zwei Minuten geklärt, was ein Formular in mehreren Runden bräuchte. Rufen Sie an, ich gehe selbst ran.</p>
+        <h3>Anrufen, ich gehe selbst ran</h3>
+        <p>Am Telefon ist in zwei Minuten geklärt, was ein Formular in mehreren Runden bräuchte. Keine Zentrale, kein Callcenter.</p>
         <a class="nr" href="tel:+491602624098">0160 2624098</a>
         <a class="mail" href="mailto:glasreinigungsservice-schenk@outlook.com">glasreinigungsservice-schenk@outlook.com</a>
         <div class="zeiten">
@@ -925,9 +898,12 @@ footer .unten a{display:inline}
           Bad Salzschlirf und Umgebung, rund 8 Kilometer
         </div>
       </div>
-      <div class="beruhigung">
-        <b>Was Sie nicht bekommen</b>
-        <ul>
+      <div class="wegkarte">
+        <h3>Oder in drei Schritten anfragen</h3>
+        <p>Erst eine Auswahl, dann eine Rückfrage, dann Ihre Nummer. Keine Datenabfrage vorweg, unter einer Minute erledigt.</p>
+        <a class="btn btn-primaer" href="#funnel">Kostenloses Angebot anfragen <svg><use href="#i-pfeil"/></svg></a>
+        <p class="mikro">Antwort meist am selben Tag.</p>
+        <ul class="beruhigung-liste">
           <li><svg><use href="#i-check"/></svg> Keinen Vertreterbesuch und kein Verkaufsgespräch</li>
           <li><svg><use href="#i-check"/></svg> Kein Abo, keine Mindestlaufzeit, keinen Vertrag</li>
           <li><svg><use href="#i-check"/></svg> Keine Vorkasse bei Abrechnung über die Pflegekasse</li>
@@ -1137,14 +1113,24 @@ footer .unten a{display:inline}
     weiter('4', 4);
   });
 
-  /* Alle Wege, die "Kostenloses Angebot anfragen" heißen, landen hier.
-     Auf dem Handy steht der Funnel unter dem Hero-Text, deshalb sanft hinscrollen. */
+  /* Alle Wege zum Funnel. Links aus den Leistungskarten bringen ihr Thema mit und
+     überspringen damit Schritt 1, sonst müsste der Besucher dieselbe Frage zweimal
+     beantworten. Nach dem Scrollen wandert der Fokus in den aktiven Schritt. */
+  function zuruecksetzen(){
+    verlauf = ['1']; auswahl = {thema:'', umfang:''}; zeige('1', 1);
+  }
   document.querySelectorAll('a[href="#funnel"]').forEach(function(a){
     a.addEventListener('click', function(){
+      var vorwahl = a.dataset.vorwahl;
+      if(vorwahl){
+        zuruecksetzen();
+        auswahl.thema = vorwahl;
+        weiter(vorwahl === 'Haushalt und Pflegekasse' ? '2b' : '2a', 2);
+      }
       setTimeout(function(){
         var f = funnel.querySelector('.schritt-inhalt.aktiv button, .schritt-inhalt.aktiv input');
         if(f) f.focus({preventScroll:true});
-      }, 420);
+      }, 460);
     });
   });
 })();
