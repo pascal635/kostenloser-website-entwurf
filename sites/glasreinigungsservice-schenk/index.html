@@ -66,6 +66,8 @@ img{max-width:100%;height:auto;display:block}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--blau-400);outline-offset:2px;border-radius:var(--r-s)}
 .innen{max-width:var(--breite);margin:0 auto;padding:0 var(--raum-5)}
+/* Sprungziele nicht unter die Sticky-Navigation rutschen lassen */
+section[id],.funnel{scroll-margin-top:92px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 /* Sanftes Einblenden, nur transform und opacity */
@@ -116,31 +118,81 @@ ul{margin:0;padding:0;list-style:none}
 .nav-links a{color:inherit;text-decoration:none}
 .nav-links a:hover{color:var(--blau-700)}
 
-/* ---------- Hero ---------- */
-.hero{position:relative;overflow:hidden;background:var(--weiss)}
+/* ---------- Hero ----------
+   Kein overflow:hidden. Die Funnel-Karte ragt absichtlich über die Sektionskante,
+   overflow:hidden hat sie vorher unten abgeschnitten. Stattdessen z-index über
+   der folgenden Vertrauensleiste, und der Verlauf sitzt am Hero selbst statt auf
+   einem Pseudo-Element, das nach links aus dem Viewport lief. */
+.hero{position:relative;z-index:2;background:var(--weiss);
+  background-image:radial-gradient(700px 480px at 18% 22%,rgba(29,140,188,.13),transparent 64%),var(--grain);
+  /* clip nur waagerecht: der Bild-Anschnitt nach rechts wird gekappt,
+     die Funnel-Karte darf senkrecht weiter über die Kante ragen */
+  overflow-x:clip;overflow-y:visible}
 .hero .buehne{max-width:var(--breite);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch}
 .hero .text{padding:var(--raum-9) var(--raum-6) var(--raum-8) var(--raum-5);position:relative;z-index:2}
-.hero .text::before{content:"";position:absolute;inset:-40px -40px -40px -50vw;z-index:-1;
-  background:radial-gradient(600px 420px at 24% 14%,rgba(29,140,188,.14),transparent 64%),var(--grain)}
 .hero h1{font-size:var(--t-hero);font-weight:600;letter-spacing:-.032em;max-width:20ch}
 .hero h1 em{font-style:normal;color:var(--blau-600)}
 .hero .lead{font-size:var(--t-lead);color:var(--tinte-70);margin:var(--raum-5) 0 var(--raum-6);max-width:48ch}
 .hero .trusts{display:grid;gap:var(--raum-3);margin-bottom:var(--raum-6)}
-.hero .foto{position:relative;min-height:480px}
+/* Foto läuft rechts bis an den Viewport-Rand, sonst bleibt auf großen Monitoren
+   eine weiße Fläche neben dem Bild stehen. */
+.hero .foto{position:relative;min-height:600px;margin-right:min(0px,calc(var(--breite)/2 - 50vw))}
 .hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .foto::after{content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,var(--weiss),rgba(255,255,255,0) 22%),
              linear-gradient(210deg,rgba(29,140,188,.20),transparent 52%),
              linear-gradient(0deg,rgba(4,32,47,.30),transparent 60%)}
-.hero .schwebekarte{position:absolute;right:max(var(--raum-5),calc(50vw - var(--breite)/2 + var(--raum-5)));bottom:-40px;z-index:5;
-  width:min(320px,calc(100% - var(--raum-8)));background:var(--weiss);border-radius:var(--r-l);padding:var(--raum-5);
-  box-shadow:var(--schatten-floating);border:1px solid rgba(255,255,255,.9)}
-.hero .schwebekarte .kopf{display:flex;align-items:flex-start;gap:var(--raum-3);margin-bottom:var(--raum-2)}
-.hero .schwebekarte .kopf svg{width:22px;height:22px;color:var(--blau-600);flex:none;margin-top:2px}
-.hero .schwebekarte b{font-family:var(--font-display);font-size:1.02rem;display:block}
-.hero .schwebekarte p{font-size:var(--t-mikro);color:var(--tinte-50)}
-.hero .schwebekarte .nr{font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:-.03em;color:var(--blau-700);text-decoration:none;display:block;margin-top:var(--raum-2)}
-.hero .schwebekarte .nr:hover{opacity:.75}
+/* ---------- Lead-Funnel im Hero ----------
+   Schritt 1 fragt bewusst keine persönlichen Daten ab, nur eine Auswahl.
+   Damit bleibt die Regel "kein Formular im Hero" gewahrt: der Besucher sieht
+   eine Frage, keine Formularwand. */
+.funnel{position:absolute;right:max(var(--raum-5),calc(50vw - var(--breite)/2 + var(--raum-6)));
+  bottom:-44px;z-index:5;
+  width:min(392px,calc(100% - var(--raum-7)));background:var(--weiss);border-radius:var(--r-xl);
+  padding:var(--raum-6);box-shadow:var(--schatten-floating);border:1px solid rgba(255,255,255,.9);
+  /* Feste Mindesthöhe, damit die Karte zwischen den Schritten nicht springt */
+  display:flex;flex-direction:column;min-height:600px}
+.funnel .fortschritt{display:flex;align-items:center;gap:var(--raum-3);margin-bottom:var(--raum-4)}
+.funnel .balken{flex:1;height:4px;border-radius:var(--r-pill);background:var(--blau-100);overflow:hidden}
+.funnel .balken i{display:block;height:100%;width:33.33%;border-radius:var(--r-pill);
+  background:linear-gradient(90deg,var(--blau-500),var(--blau-700));transition:width .35s var(--ease)}
+.funnel .zaehler{font-size:var(--t-mikro);color:var(--tinte-50);font-weight:600;white-space:nowrap}
+.funnel .frage{font-family:var(--font-display);font-size:1.22rem;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-bottom:var(--raum-2)}
+.funnel .hinweis{font-size:var(--t-mikro);color:var(--tinte-50);margin-bottom:var(--raum-4)}
+.funnel .schritt-inhalt{display:none}
+.funnel .schritt-inhalt.aktiv{display:block;animation:funnel-rein .32s var(--ease)}
+@keyframes funnel-rein{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
+.wahl{display:grid;gap:var(--raum-2)}
+.wahl button{display:flex;align-items:center;gap:var(--raum-3);width:100%;text-align:left;
+  font-family:var(--font-text);font-size:.96rem;font-weight:600;color:var(--tinte);
+  background:var(--weiss);border:1px solid var(--linie-stark);border-radius:var(--r-m);
+  padding:14px 16px;cursor:pointer;
+  transition:transform .16s var(--ease-federnd),border-color .16s var(--ease),box-shadow .16s var(--ease)}
+.wahl button:hover{transform:translateX(3px);border-color:var(--blau-400);box-shadow:var(--schatten-base)}
+.wahl button:active{transform:translateX(0) scale(.99)}
+.wahl button svg{width:19px;height:19px;color:var(--blau-600);flex:none}
+.wahl button .pfeil{margin-left:auto;width:15px;height:15px;color:var(--blau-300)}
+.funnel-fuss{margin-top:auto;padding-top:var(--raum-5);border-top:1px solid var(--linie);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--raum-3);flex-wrap:wrap}
+.funnel-fuss .anruf{font-size:var(--t-mikro);color:var(--tinte-50)}
+.funnel-fuss .anruf a{font-family:var(--font-display);font-size:1.1rem;font-weight:600;letter-spacing:-.02em;
+  color:var(--blau-700);text-decoration:none;display:block}
+.funnel-fuss .anruf a:hover{opacity:.75}
+.funnel .zurueck{background:none;border:0;padding:4px 0;font-family:var(--font-text);font-size:var(--t-mikro);
+  font-weight:600;color:var(--tinte-50);cursor:pointer;transition:opacity .16s var(--ease)}
+.funnel .zurueck:hover{opacity:.6}
+.funnel .zurueck[hidden]{display:none}
+.funnel .feld{margin-bottom:var(--raum-3)}
+.funnel input{padding:13px 15px}
+.funnel .gewaehlt{display:inline-flex;align-items:center;gap:6px;font-size:var(--t-mikro);font-weight:600;
+  color:var(--blau-700);background:var(--blau-100);border:1px solid var(--blau-200);
+  padding:5px 11px;border-radius:var(--r-pill);margin-bottom:var(--raum-3)}
+.funnel .fertig{text-align:center;padding:var(--raum-3) 0}
+.funnel .fertig .haken{width:52px;height:52px;border-radius:var(--r-pill);background:var(--blau-100);
+  border:1px solid var(--blau-200);display:grid;place-items:center;margin:0 auto var(--raum-4)}
+.funnel .fertig .haken svg{width:26px;height:26px;color:var(--blau-700)}
+.funnel .fertig b{font-family:var(--font-display);font-size:1.18rem;display:block;margin-bottom:var(--raum-2)}
+.funnel .fertig p{font-size:var(--t-klein);color:var(--tinte-70)}
 
 /* ---------- Vertrauensleiste, dicht ---------- */
 .trustleiste{background:var(--blau-950);color:var(--weiss)}
@@ -331,8 +383,10 @@ footer .unten a{display:inline}
   body{padding-bottom:84px}
   .hero .buehne{grid-template-columns:1fr}
   .hero .text{padding:var(--raum-7) var(--raum-5) var(--raum-6);order:2}
-  .hero .foto{min-height:290px;order:1}
-  .hero .schwebekarte{position:static;width:auto;margin:var(--raum-5) var(--raum-5) 0;bottom:auto;right:auto}
+  .hero .foto{min-height:290px;order:1;margin-right:0}
+  /* Funnel wandert in den Fluss, direkt unter den Hero-Text */
+  .funnel{position:static;bottom:auto;width:auto;margin:0 var(--raum-5) var(--raum-7);
+    padding:var(--raum-5);border:1px solid var(--linie);min-height:0}
   .nav-links{display:none}
   .raster-2,.raster-3{grid-template-columns:1fr}
   .pflege .zwei,.ueber .zwei,.kosten .zwei,.anfrage .zwei,.gebiet .zwei{grid-template-columns:1fr;gap:var(--raum-7)}
@@ -350,9 +404,31 @@ footer .unten a{display:inline}
   .btn-reihe .btn{width:100%}
   .nav .btn{display:none}
 }
+/* ---------- Große Monitore: 2K und aufwärts ----------
+   Bei 2560 Pixel wirkt ein 1180er Container verloren, deshalb wächst der Satzspiegel
+   in zwei Stufen mit, dazu die Schriftgrößen über die Wurzel. */
+@media (min-width:1600px){
+  :root{--breite:1340px}
+  .hero .foto{min-height:660px}
+  .funnel{width:min(420px,calc(100% - var(--raum-7)))}
+}
+@media (min-width:2000px){
+  html{font-size:17px}
+  :root{--breite:1500px;--raum-9:112px;--raum-10:152px}
+  .hero .foto{min-height:740px}
+  .hero .text{padding:var(--raum-10) var(--raum-7) var(--raum-9) var(--raum-5)}
+  .funnel{width:min(452px,calc(100% - var(--raum-7)));padding:var(--raum-7)}
+  .faq{max-width:88ch}
+}
+@media (min-width:2500px){
+  html{font-size:18px}
+  :root{--breite:1620px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
   .rein{opacity:1;transform:none}
+  .schritt-inhalt.aktiv{animation:none!important}
 }
 </style>
 </head>
@@ -388,7 +464,7 @@ footer .unten a{display:inline}
       <a href="#ueber">Über mich</a>
       <a href="#kontakt">Kontakt</a>
     </div>
-    <a class="btn btn-primaer" style="padding:12px 20px;font-size:.9rem" href="#kontakt">Angebot anfragen</a>
+    <a class="btn btn-primaer" style="padding:12px 20px;font-size:.9rem" href="#funnel">Angebot anfragen</a>
   </div>
 </nav>
 
@@ -406,7 +482,7 @@ footer .unten a{display:inline}
         <li class="trust-pill"><svg><use href="#i-check"/></svg> Kleine Aufträge sind willkommen</li>
       </ul>
       <div class="btn-reihe">
-        <a class="btn btn-primaer" href="#kontakt">Kostenloses Angebot anfragen <svg><use href="#i-pfeil"/></svg></a>
+        <a class="btn btn-primaer" href="#funnel">Kostenloses Angebot anfragen <svg><use href="#i-pfeil"/></svg></a>
         <a class="btn btn-sekundaer" href="tel:+491602624098"><svg><use href="#i-tel"/></svg> 0160 2624098</a>
       </div>
       <p class="mikro">Unverbindlich, Antwort meist am selben Tag. Kein Vertreterbesuch, kein Abo.</p>
@@ -415,12 +491,91 @@ footer .unten a{display:inline}
       <img src="bilder/fensterreinigung-bad-salzschlirf-einfamilienhaus.webp" width="1920" height="1072" alt="Fensterreinigung an einem Einfamilienhaus in Bad Salzschlirf" fetchpriority="high">
     </div>
   </div>
-  <div class="schwebekarte">
-    <div class="kopf">
-      <svg><use href="#i-tel"/></svg>
-      <div><b>Direkt durchgestellt</b><p>Kein Callcenter, kein Formular nötig</p></div>
+  <!-- Lead-Funnel. Entwurf ohne Versandziel: der letzte Schritt zeigt eine Bestätigung,
+       verschickt aber nichts. Vor echtem Traffic muss hier ein Endpunkt und eine
+       Datenschutz-Einwilligung dran, sonst gehen Anfragen verloren. -->
+  <div class="funnel" id="funnel">
+    <div class="fortschritt">
+      <div class="balken"><i id="funnel-balken"></i></div>
+      <span class="zaehler" id="funnel-zaehler">Schritt 1 von 3</span>
     </div>
-    <a class="nr" href="tel:+491602624098">0160 2624098</a>
+
+    <div class="schritt-inhalt aktiv" data-schritt="1">
+      <p class="frage">Worum geht es bei Ihnen?</p>
+      <p class="hinweis">Eine Auswahl, keine Daten. Dauert unter einer Minute.</p>
+      <div class="wahl">
+        <button type="button" data-thema="Fenster und Glas">
+          <svg><use href="#i-check"/></svg> Fenster, Wintergarten oder Glasdach
+          <svg class="pfeil"><use href="#i-pfeil"/></svg>
+        </button>
+        <button type="button" data-thema="Solaranlage">
+          <svg><use href="#i-check"/></svg> Solaranlage reinigen
+          <svg class="pfeil"><use href="#i-pfeil"/></svg>
+        </button>
+        <button type="button" data-thema="Bauendreinigung">
+          <svg><use href="#i-check"/></svg> Reinigung nach dem Bau
+          <svg class="pfeil"><use href="#i-pfeil"/></svg>
+        </button>
+        <button type="button" data-thema="Haushalt und Pflegekasse" data-pflege="1">
+          <svg><use href="#i-herz"/></svg> Hilfe im Haushalt, über die Kasse
+          <svg class="pfeil"><use href="#i-pfeil"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="schritt-inhalt" data-schritt="2a">
+      <span class="gewaehlt" data-echo><svg style="width:12px;height:12px"><use href="#i-check"/></svg> <span></span></span>
+      <p class="frage">Wie viel ist es etwa?</p>
+      <p class="hinweis">Grob reicht, den genauen Preis nenne ich Ihnen danach.</p>
+      <div class="wahl">
+        <button type="button" data-umfang="Wohnung, bis etwa 10 Fenster">Wohnung, bis etwa 10 Fenster <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+        <button type="button" data-umfang="Haus, etwa 10 bis 25 Fenster">Haus, etwa 10 bis 25 Fenster <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+        <button type="button" data-umfang="Mehr, oder Wintergarten und Glasdach">Mehr, oder Wintergarten und Glasdach <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+        <button type="button" data-umfang="Kann ich nicht einschätzen">Kann ich nicht einschätzen <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+      </div>
+      <button type="button" class="zurueck">Zurück</button>
+    </div>
+
+    <div class="schritt-inhalt" data-schritt="2b">
+      <span class="gewaehlt" data-echo><svg style="width:12px;height:12px"><use href="#i-herz"/></svg> <span></span></span>
+      <p class="frage">Liegt schon ein Pflegegrad vor?</p>
+      <p class="hinweis">Ab Pflegegrad 1 sind das rund vier Stunden im Monat, für Sie ohne Eigenanteil.</p>
+      <div class="wahl">
+        <button type="button" data-umfang="Pflegegrad 1">Ja, Pflegegrad 1 <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+        <button type="button" data-umfang="Pflegegrad 2 oder höher">Ja, Pflegegrad 2 oder höher <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+        <button type="button" data-umfang="Noch keiner, Antrag läuft oder ist geplant">Noch keiner, ist aber geplant <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+        <button type="button" data-umfang="Weiß ich nicht">Weiß ich nicht <svg class="pfeil"><use href="#i-pfeil"/></svg></button>
+      </div>
+      <button type="button" class="zurueck">Zurück</button>
+    </div>
+
+    <div class="schritt-inhalt" data-schritt="3">
+      <span class="gewaehlt" data-echo><svg style="width:12px;height:12px"><use href="#i-check"/></svg> <span></span></span>
+      <p class="frage">Wohin darf ich antworten?</p>
+      <p class="hinweis">Meist noch am selben Tag. Kein Vertreterbesuch, kein Abo.</p>
+      <form id="funnel-form" novalidate>
+        <div class="feld"><label class="sr" for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ihr Name" required></div>
+        <div class="feld"><label class="sr" for="f-tel">Telefon oder E-Mail</label>
+          <input id="f-tel" name="kontakt" type="text" autocomplete="tel" placeholder="Telefon oder E-Mail" required></div>
+        <div class="feld"><label class="sr" for="f-ort">Ort</label>
+          <input id="f-ort" name="ort" type="text" placeholder="Ort" value="Bad Salzschlirf"></div>
+        <button class="btn btn-primaer" type="submit" style="width:100%">Angebot anfragen <svg><use href="#i-pfeil"/></svg></button>
+      </form>
+      <button type="button" class="zurueck" style="margin-top:var(--raum-3)">Zurück</button>
+    </div>
+
+    <div class="schritt-inhalt" data-schritt="4">
+      <div class="fertig">
+        <div class="haken"><svg><use href="#i-check"/></svg></div>
+        <b>Danke, ich habe alles.</b>
+        <p>Ich melde mich meist noch am selben Tag mit einem Preis. Wenn es schneller gehen soll, rufen Sie einfach an.</p>
+      </div>
+    </div>
+
+    <div class="funnel-fuss">
+      <div class="anruf">Lieber direkt sprechen?<a href="tel:+491602624098">0160 2624098</a></div>
+    </div>
   </div>
 </header>
 
@@ -845,7 +1000,7 @@ footer .unten a{display:inline}
 <!-- ============ STICKY MOBIL ============ -->
 <div class="sticky-bar">
   <a class="btn btn-sekundaer" href="tel:+491602624098"><svg><use href="#i-tel"/></svg> Anrufen</a>
-  <a class="btn btn-primaer" href="#kontakt">Anfragen</a>
+  <a class="btn btn-primaer" href="#funnel">Anfragen</a>
 </div>
 
 <script type="application/ld+json">
@@ -923,6 +1078,75 @@ footer .unten a{display:inline}
     });
   },{rootMargin:'0px 0px -12% 0px',threshold:.08});
   ziele.forEach(function(el){beobachter.observe(el)});
+})();
+
+/* Lead-Funnel. Drei Schritte, Schritt 2 verzweigt je nach Auswahl.
+   Ohne Versandziel: der Absenden-Schritt zeigt nur die Bestätigung. */
+(function(){
+  var funnel = document.getElementById('funnel');
+  if(!funnel) return;
+  var schritte  = funnel.querySelectorAll('.schritt-inhalt');
+  var balken    = document.getElementById('funnel-balken');
+  var zaehler   = document.getElementById('funnel-zaehler');
+  var verlauf   = ['1'];
+  var auswahl   = {thema:'', umfang:''};
+
+  function zeige(id, nummer){
+    schritte.forEach(function(s){ s.classList.toggle('aktiv', s.dataset.schritt === id) });
+    balken.style.width = (Math.min(nummer,3)/3*100) + '%';
+    zaehler.textContent = nummer > 3 ? 'Fertig' : 'Schritt ' + nummer + ' von 3';
+    funnel.querySelectorAll('[data-echo] span').forEach(function(e){ e.textContent = auswahl.thema });
+    var aktiv = funnel.querySelector('.schritt-inhalt.aktiv');
+    var fokus = aktiv && aktiv.querySelector('button, input');
+    // Fokus nur setzen, wenn der Funnel schon im Blick ist, sonst springt die Seite
+    if(fokus && verlauf.length > 1){
+      var r = funnel.getBoundingClientRect();
+      if(r.top > -40 && r.bottom < innerHeight + 40) fokus.focus({preventScroll:true});
+    }
+  }
+
+  function weiter(id, nummer){ verlauf.push(id); zeige(id, nummer) }
+
+  funnel.querySelectorAll('[data-thema]').forEach(function(b){
+    b.addEventListener('click', function(){
+      auswahl.thema = b.dataset.thema;
+      weiter(b.dataset.pflege ? '2b' : '2a', 2);
+    });
+  });
+
+  funnel.querySelectorAll('[data-umfang]').forEach(function(b){
+    b.addEventListener('click', function(){ auswahl.umfang = b.dataset.umfang; weiter('3', 3) });
+  });
+
+  funnel.querySelectorAll('.zurueck').forEach(function(b){
+    b.addEventListener('click', function(){
+      if(verlauf.length < 2) return;
+      verlauf.pop();
+      var id = verlauf[verlauf.length-1];
+      zeige(id, id === '1' ? 1 : (id === '3' ? 3 : 2));
+    });
+  });
+
+  var form = document.getElementById('funnel-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var leer = [...form.querySelectorAll('[required]')].filter(function(i){ return !i.value.trim() });
+    if(leer.length){ leer[0].focus(); leer[0].style.borderColor = '#B4472F'; return }
+    /* Hier gehört der echte Versand hin. Vorhandene Daten:
+       auswahl.thema, auswahl.umfang und die Formularfelder. */
+    weiter('4', 4);
+  });
+
+  /* Alle Wege, die "Kostenloses Angebot anfragen" heißen, landen hier.
+     Auf dem Handy steht der Funnel unter dem Hero-Text, deshalb sanft hinscrollen. */
+  document.querySelectorAll('a[href="#funnel"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      setTimeout(function(){
+        var f = funnel.querySelector('.schritt-inhalt.aktiv button, .schritt-inhalt.aktiv input');
+        if(f) f.focus({preventScroll:true});
+      }, 420);
+    });
+  });
 })();
 </script>
 </body>
