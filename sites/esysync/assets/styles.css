@@ -116,22 +116,22 @@ section{position:relative}
 /* ---------- Hero: vollflächiges Foto, Text darüber ---------- */
 .hero{
   position:relative; margin-top:-80px; padding-top:80px;
-  min-height:min(94vh,900px); display:flex; flex-direction:column; justify-content:flex-end;
+  min-height:min(96vh,1060px); display:flex; flex-direction:column; justify-content:flex-end;
   overflow:hidden; isolation:isolate;
 }
 .hero__bg{position:absolute; inset:0; z-index:-2}
-/* gespiegelt: die leuchtenden Displays liegen dadurch rechts in der freien Fläche,
-   der Betrachter links schaut weiter auf sie zu */
+/* nicht spiegeln (Kundenvorgabe). Die Displays liegen dadurch im oberen Bilddrittel,
+   der Text sitzt darunter. Scrim deshalb vertikal statt seitlich. */
 .hero__bg img{
-  width:100%; height:100%; object-fit:cover; object-position:50% 46%;
-  transform:scaleX(-1); filter:saturate(.88) contrast(1.08) brightness(1.06);
+  width:100%; height:100%; object-fit:cover; object-position:50% 38%;
+  filter:saturate(.88) contrast(1.08) brightness(1.06);
 }
 /* Foto-Scrim, Pflicht unter Text (CI 03) */
 .hero__bg::after{
   content:""; position:absolute; inset:0;
   background:
-    linear-gradient(90deg, rgba(8,8,15,.95) 0%, rgba(8,8,15,.88) 30%, rgba(8,8,15,.52) 52%, rgba(8,8,15,.12) 74%, rgba(8,8,15,.42) 100%),
-    linear-gradient(180deg, rgba(8,8,15,.80) 0%, rgba(8,8,15,.08) 32%, rgba(8,8,15,.70) 86%, var(--ink-1000) 100%);
+    linear-gradient(180deg, rgba(8,8,15,.72) 0%, rgba(8,8,15,.06) 26%, rgba(8,8,15,.18) 42%, rgba(8,8,15,.80) 66%, rgba(8,8,15,.95) 86%, var(--ink-1000) 100%),
+    linear-gradient(90deg, rgba(8,8,15,.42) 0%, rgba(8,8,15,.10) 34%, transparent 62%);
 }
 .hero__in{padding-block:clamp(72px,9vw,120px) clamp(28px,4vw,48px)}
 .hero__copy{max-width:min(57rem,72%)}
@@ -507,3 +507,92 @@ ul{margin:0; padding:0}
   filter:saturate(.9) contrast(1.03);
 }
 .shots figcaption{margin-top:12px; font-size:13.5px; line-height:20px; color:var(--ink-400)}
+
+/* ============================================================
+   2K und größer. Ab 1800px wächst das Raster mit, sonst steht der
+   Inhalt als schmale Säule in der Mitte. Tokens skalieren, damit
+   Typo, Abstände und Raster im Verhältnis bleiben.
+   ============================================================ */
+@media (min-width:1800px){
+  :root{
+    --content:1560px; --pad-x:96px; --gutter:32px;
+    --s-12:56px; --s-16:76px; --s-24:120px; --s-32:160px;
+  }
+  body{font-size:17px; line-height:28px}
+  h1{font-size:clamp(64px,4.2vw,86px); letter-spacing:-.034em}
+  h2{font-size:clamp(40px,2.6vw,52px)}
+  h3{font-size:23px; line-height:30px}
+  .lead{font-size:21px; line-height:34px; max-width:64ch}
+  .small{font-size:15px; line-height:24px}
+  .wrap--bleed{max-width:1960px}
+
+  .hero{min-height:min(94vh,1200px)}
+  .hero h1{font-size:clamp(64px,4.2vw,86px)}
+  .hero__sub{font-size:clamp(21px,1.25vw,24px)}
+  .hero__copy{max-width:min(64rem,70%)}
+  .hero__stats div{padding:24px 28px}
+  .hero__stats b{font-size:26px}
+  .hero__stats span{font-size:14px; line-height:21px}
+
+  .btn{min-height:48px; padding:0 26px; font-size:16px}
+  .btn--lg{min-height:58px; padding:0 34px; font-size:17px}
+  .header__in{max-width:calc(var(--content) - 40px); padding:12px 12px 12px 30px}
+  .header__logo{height:42px}
+
+  .card,.promise{padding:38px}
+  .pain{padding:30px 34px}
+  .pain p,.ben p,.step p{font-size:16px; line-height:27px}
+  .cmp th,.cmp td{padding:22px 26px; font-size:16px; line-height:26px}
+  .faq summary{font-size:19px; padding:26px 56px 26px 0}
+  .faq p{font-size:16.5px; line-height:29px}
+  .quote blockquote{font-size:17px; line-height:29px}
+  .marquee img{height:36px}
+  .logowall{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .logowall img{max-height:30px}
+  .logowall div{min-height:96px; padding:26px 20px}
+  .form{padding:40px}
+  .glow--hero{width:1400px; height:1000px; top:-400px; right:-320px}
+  .glow--end{width:1560px; height:900px}
+}
+
+/* Sehr breite Displays: Raster einmal weiter öffnen, dann ist Schluss.
+   Mehr Breite hilft der Lesbarkeit nicht mehr. */
+@media (min-width:2400px){
+  :root{--content:1720px; --pad-x:120px}
+  .wrap--bleed{max-width:2200px}
+  .hero{min-height:min(90vh,1240px)}
+}
+
+/* ---------- Preise: Lizenzstufen + Hardware ---------- */
+.tiers{display:grid; gap:var(--s-6); margin-top:var(--s-12)}
+@media(min-width:900px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.tier{
+  background:var(--ink-800); border:1px solid var(--ink-700); border-radius:var(--r-lg);
+  padding:var(--s-8); display:flex; flex-direction:column;
+}
+.tier--lead{
+  background:linear-gradient(160deg,rgba(109,14,240,.16),rgba(20,20,28,.95) 58%);
+  border-color:rgba(116,46,232,.45);
+}
+.tier{position:relative}
+/* absolut positioniert, damit die hervorgehobene Karte nicht nach unten rutscht */
+.tier__tag{
+  position:absolute; top:var(--s-8); right:var(--s-8);
+  font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--violet-200); background:rgba(109,14,240,.2); border:1px solid rgba(116,46,232,.45);
+  padding:5px 10px; border-radius:999px;
+}
+.tier h3{font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-400); font-family:var(--f-text); font-weight:600}
+.tier__amt{display:flex; align-items:baseline; gap:8px; margin-top:12px}
+.tier__amt b{font-family:var(--f-display); font-weight:600; font-size:42px; line-height:1; color:#fff; letter-spacing:-.035em}
+.tier__amt span{color:var(--ink-400); font-size:14px}
+.tier__note{margin-top:10px; font-size:14px; line-height:22px; color:var(--ink-200)}
+.tier ul{margin-top:var(--s-6); padding-top:var(--s-6); border-top:1px solid var(--ink-700); display:grid; gap:12px}
+.tier li{list-style:none; display:flex; gap:11px; font-size:14.5px; line-height:23px; color:var(--ink-400)}
+.tier li svg{width:17px; height:17px; color:var(--violet-400); flex:0 0 auto; margin-top:3px}
+.tier li b{color:var(--ink-100); font-weight:600}
+
+.pricecols{display:grid; gap:var(--s-8); margin-top:var(--s-12)}
+@media(min-width:900px){.pricecols{grid-template-columns:1fr 1fr; gap:var(--s-16)}}
+.pricecols h3{font-size:17px; margin-bottom:var(--s-4)}
+.pricefoot{margin-top:var(--s-8); font-size:13px; line-height:21px; color:var(--ink-400)}

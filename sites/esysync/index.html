@@ -17,7 +17,7 @@
 
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-sans.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp" imagesrcset="assets/bilder/esysync-schaufenster-nacht-betrachter-700w.webp 700w, assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp 1100w, assets/bilder/esysync-schaufenster-nacht-betrachter.webp 1800w" imagesizes="(max-width:900px) 100vw, 52vw" fetchpriority="high">
+<link rel="preload" as="image" href="assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp" imagesrcset="assets/bilder/esysync-schaufenster-nacht-betrachter-700w.webp 700w, assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp 1100w, assets/bilder/esysync-schaufenster-nacht-betrachter.webp 1800w, assets/bilder/esysync-schaufenster-nacht-betrachter-2400w.webp 2400w, assets/bilder/esysync-schaufenster-nacht-betrachter-2560w.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 
 <link rel="stylesheet" href="assets/styles.css">
@@ -38,7 +38,7 @@
 <section class="hero">
   <div class="hero__bg">
     <img src="assets/bilder/esysync-schaufenster-nacht-betrachter.webp"
-         srcset="assets/bilder/esysync-schaufenster-nacht-betrachter-700w.webp 700w, assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp 1100w, assets/bilder/esysync-schaufenster-nacht-betrachter.webp 1800w"
+         srcset="assets/bilder/esysync-schaufenster-nacht-betrachter-700w.webp 700w, assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp 1100w, assets/bilder/esysync-schaufenster-nacht-betrachter.webp 1800w, assets/bilder/esysync-schaufenster-nacht-betrachter-2400w.webp 2400w, assets/bilder/esysync-schaufenster-nacht-betrachter-2560w.webp 2560w"
          sizes="100vw" width="1800" height="1200" fetchpriority="high"
          alt="Passant betrachtet abends die leuchtenden ESYSYNC-Displays im Schaufenster eines Maklerbüros">
   </div>
@@ -401,26 +401,79 @@
 <!-- ══ 9 · PREISE ════════════════════════════════════════════ -->
 <section class="sec">
   <div class="wrap">
-    <div class="price">
-      <div>
-        <span class="label">Preise</span>
-        <h2 style="margin-top:var(--s-4)">Software und Hardware, passend zu Ihren Anforderungen.</h2>
-        <p class="lead" style="margin-top:var(--s-4)">ESYSYNC besteht aus zwei Bausteinen: der Software für die zentrale Steuerung und der passenden Display-Hardware für Ihr Schaufenster. Die Software startet bei 39 € netto pro Monat. Displays, Einrichtung und zusätzliche Funktionen werden passend zur Anzahl Ihrer Standorte, Screens und gewünschten Automatisierungen zusammengestellt. So erhalten Sie eine vollständige Lösung, die technisch und preislich zu Ihrem Bedarf passt.</p>
-        <div style="margin-top:var(--s-8)"><a class="btn btn--primary" href="#demo">Individuelles Angebot in der Demo</a></div>
-      </div>
+    <div class="sec__head">
+      <span class="label">Preise</span>
+      <h2>Software und Hardware, passend zu Ihren Anforderungen.</h2>
+      <p class="lead">ESYSYNC besteht aus zwei Bausteinen: der Software für die zentrale Steuerung und der passenden Display-Hardware für Ihr Schaufenster. Die Software startet bei 39 € netto pro Monat. Displays, Einrichtung und zusätzliche Funktionen werden passend zur Anzahl Ihrer Standorte, Screens und gewünschten Automatisierungen zusammengestellt. So erhalten Sie eine vollständige Lösung, die technisch und preislich zu Ihrem Bedarf passt.</p>
+    </div>
 
-      <div class="pricebox">
-        <span class="label">ESYSYNC Software</span>
-        <div class="pricebox__amt"><b>39 €</b><span>pro Monat und Standort, netto</span></div>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Basic</h3>
+        <div class="tier__amt"><b>39 €</b><span>pro Monat, netto</span></div>
+        <p class="tier__note">Der Einstieg mit einem Standort.</p>
+        <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>1 Standortlizenz</b>, bis zu 6 Screens</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>1 Player-Box-Lizenz inklusive</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Bis zu 4 Inhalte je Screen, JPEG und PNG</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Betrieb über WLAN</span></li>
+        </ul>
+      </div>
+      <div class="tier tier--lead">
+        <span class="tier__tag">Meistgewählt</span>
+        <h3>Enterprise</h3>
+        <div class="tier__amt"><b>79 €</b><span>pro Monat, netto</span></div>
+        <p class="tier__note">Die Stufe mit der automatischen Übernahme aus Ihrem Maklersystem.</p>
+        <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Bis zu 12 Screens</b> pro Standortlizenz</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>OpenImmo Butler</b>, Objekte werden automatisch übernommen</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Wiedergabelisten über mehrere Screens</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Videoplayer bis 200 MB je Video</span></li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>Premium AI</h3>
+        <div class="tier__amt"><b>109 €</b><span>pro Monat, netto</span></div>
+        <p class="tier__note">Komplettpaket mit Videoerstellung.</p>
+        <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Alles aus Enterprise</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>AI Video Maker und individuelle Videovorlage</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>30 € Token-Guthaben inklusive</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>Weitere Token 3,00 € je Bild</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pricecols">
+      <div>
+        <h3>Display-Sets</h3>
         <div class="pricelist">
-          <!-- TODO: an die aktuelle Preisliste aus Avantos Anhang anpassen (Kunde 03.08.). -->
-          <div><span>Displays, Einrichtung und Zusatzfunktionen</span><span>nach Standorten und Screens</span></div>
-          <div><span>Erstlaufzeit</span><span>24 Monate</span></div>
-          <div><span>Verlängerung</span><span>jeweils 12 Monate</span></div>
+          <div><span>PRIME BLACK 15,6" (A4), 3er-Set</span><span>2.315,00 €</span></div>
+          <div><span>PRIME BLACK 15,6" (A4), 6er-Set</span><span>4.630,00 €</span></div>
+          <div><span>PRIME BLACK 21,5" (A3), 2er-Set</span><span>2.436,00 €</span></div>
+          <div><span>PRIME BLACK 21,5" (A3), 4er-Set</span><span>4.872,00 €</span></div>
+          <div><span>A3 Portrait, je Display</span><span>1.149,00 €</span></div>
+          <div><span>Systemschiene für Wand- und Deckenmontage</span><span>139,00 €</span></div>
+          <div><span>ESYSYNC Mediabox für externe Geräte</span><span>390,00 €</span></div>
+        </div>
+      </div>
+      <div>
+        <h3>Zusatzoptionen und einmalige Kosten</h3>
+        <div class="pricelist">
+          <div><span>Weiterer Standort</span><span>ab 19,45 € / Monat</span></div>
+          <div><span>Weitere Player-Box</span><span>ab 10,00 € / Monat</span></div>
+          <div><span>4G-LTE-Modem inklusive 1 GB, wenn kein WLAN vorhanden</span><span>29,90 € / Monat</span></div>
+          <div><span>Einrichtung der CRM- und OpenImmo-Schnittstelle</span><span>379,00 € einmalig</span></div>
+          <div><span>Individuelle Anpassungen</span><span>129,00 € / Stunde</span></div>
+          <div><span>Erstlaufzeit, danach je 12 Monate</span><span>24 Monate</span></div>
           <div><span>Herstellergarantie</span><span>24 Monate</span></div>
         </div>
       </div>
     </div>
+
+    <p class="pricefoot">Alle Preise zzgl. gesetzlicher Mehrwertsteuer, Hardware zzgl. Versand. Alle Displays mit 1000 cd/m², sunlight readable, 1920 x 1080 px, inklusive Systemschiene, Drahtseilaufhängung, Netzteil und Montageanleitung. Stand Juni 2026, Änderungen vorbehalten.</p>
+
+    <div style="margin-top:var(--s-8)"><a class="btn btn--primary btn--lg" href="#demo">Individuelles Angebot in der Demo</a></div>
   </div>
 </section>
 
@@ -435,7 +488,7 @@
     <div class="faq">
       <details open>
         <summary>Was kostet ein digitales Schaufenster für Makler?</summary>
-        <p>Die ESYSYNC-Software startet bei 39 € netto pro Monat. Dazu kommen die Displays, die Einrichtung und optionale Zusatzfunktionen, zusammengestellt nach Anzahl Ihrer Standorte und Screens. Das genaue Angebot besprechen wir in der Demo.</p>
+        <p>Die Software startet bei 39 € netto pro Monat für einen Standort mit bis zu 6 Screens. Die automatische Übernahme aus Ihrem Maklersystem über den OpenImmo Butler ist ab der Enterprise-Lizenz für 79 € netto pro Monat enthalten. Dazu kommen die Display-Sets ab 2.315 € und die einmalige Einrichtung der Schnittstelle für 379 €. Das genaue Angebot besprechen wir in der Demo.</p>
       </details>
       <details>
         <summary>Funktioniert das mit onOffice oder Propstack?</summary>
