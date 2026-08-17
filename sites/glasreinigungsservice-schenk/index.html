@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fensterreinigung Bad Salzschlirf · Glasreinigungsservice Schenk</title>
+<meta name="description" content="Streifenfreie Fenster, Glasdächer und Solaranlagen in Bad Salzschlirf und Umgebung. Dazu Haushaltshilfe, über die Pflegekasse abrechenbar ab Pflegegrad 1.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fensterreinigung Bad Salzschlirf · Glasreinigungsservice Schenk">
+<meta property="og:description" content="Streifenfreie Fenster, Glasdächer und Solaranlagen in Bad Salzschlirf. Haushaltshilfe über die Pflegekasse, ab Pflegegrad 1.">
+<meta property="og:image" content="bilder/fensterreinigung-bad-salzschlirf-einfamilienhaus.webp">
+<meta name="theme-color" content="#0E5375">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E5375'/%3E%3Cg stroke='%23fff' stroke-width='2.2' fill='none'%3E%3Crect x='8' y='8' width='16' height='16' rx='1.5'/%3E%3Cpath d='M16 8v16M8 16h16'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Platzhalter-Favicon aus dem CI. Wird durch das Logo ersetzt, sobald es vorliegt. -->
+<!-- Vor dem Livegang ergänzen: <link rel="canonical" href="https://..."> und die echte Domain in og:image -->
+<style>
+/* ============================================================
+   SCHRIFTEN · lokal, nicht über Google Fonts (DSGVO)
+   ============================================================ */
+@font-face{font-family:'Bricolage Grotesque';src:url('fonts/bricolage-grotesque-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Bricolage Grotesque';src:url('fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';src:url('fonts/inter-latin-ext.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --blau-950:#04202F; --blau-900:#06293C; --blau-800:#0A3B54;
+  --blau-700:#0E5375; --blau-600:#136E96; --blau-500:#1D8CBC;
+  --blau-400:#4FA9D2; --blau-300:#8AC6E1; --blau-200:#BFDFEE;
+  --blau-100:#DDEDF6; --blau-50:#F0F7FB;
+  --sand-50:#FAF6F0; --sand-100:#F2EBE1; --sand-200:#E4D8C8;
+  --weiss:#FFFFFF;
+  --tinte:#0C1D26; --tinte-70:#3B4E58; --tinte-50:#68797F; --tinte-30:#98A6AC;
+  --linie:#DBE5EA; --linie-stark:#C3D2DA;
+  --font-display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --font-text:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  --t-hero:clamp(2.05rem,5.2vw,4.1rem);
+  --t-h2:clamp(1.65rem,2.8vw,2.35rem);
+  --t-h3:clamp(1.15rem,1.6vw,1.35rem);
+  --t-lead:clamp(1.05rem,1.4vw,1.22rem);
+  --t-klein:.875rem; --t-mikro:.78rem;
+  --raum-1:4px; --raum-2:8px; --raum-3:12px; --raum-4:16px; --raum-5:24px;
+  --raum-6:32px; --raum-7:48px; --raum-8:64px; --raum-9:96px; --raum-10:128px;
+  --r-s:6px; --r-m:12px; --r-l:20px; --r-xl:30px; --r-pill:999px;
+  --schatten-base:0 1px 2px rgba(6,41,60,.06),0 1px 1px rgba(6,41,60,.04);
+  --schatten-elevated:0 1px 2px rgba(6,41,60,.05),0 4px 8px -2px rgba(6,41,60,.08),0 14px 22px -10px rgba(6,41,60,.12);
+  --schatten-floating:0 2px 4px rgba(6,41,60,.06),0 10px 18px -4px rgba(6,41,60,.10),0 28px 46px -14px rgba(6,41,60,.18),inset 0 1px 0 rgba(255,255,255,.7);
+  --ease:cubic-bezier(.2,.8,.25,1);
+  --ease-federnd:cubic-bezier(.34,1.4,.5,1);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  --breite:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-text);font-size:1rem;line-height:1.65;color:var(--tinte);background:var(--weiss)}
+/* Keine automatische Trennung in Überschriften, "Pflegekas-se" liest sich schlecht.
+   overflow-wrap bleibt als Notbremse für sehr lange Komposita auf schmalen Handys. */
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.025em;line-height:1.1;margin:0;overflow-wrap:break-word;hyphens:manual;font-optical-sizing:auto}
+p{margin:0}
+/* height:auto ist Pflicht, sonst wirken die width/height-Attribute als feste CSS-Höhe
+   und die Bilder werden vertikal gestreckt. */
+img{max-width:100%;height:auto;display:block}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--blau-400);outline-offset:2px;border-radius:var(--r-s)}
+.innen{max-width:var(--breite);margin:0 auto;padding:0 var(--raum-5)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* Sanftes Einblenden, nur transform und opacity */
+.rein{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.rein.da{opacity:1;transform:none}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--raum-2);
+  font-family:var(--font-text);font-size:1rem;font-weight:600;line-height:1.25;text-align:center;
+  padding:16px 26px;border-radius:var(--r-pill);border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:transform .18s var(--ease-federnd),box-shadow .18s var(--ease),opacity .18s var(--ease)}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-primaer{background:linear-gradient(180deg,var(--blau-600),var(--blau-700));color:var(--weiss);
+  box-shadow:0 1px 2px rgba(4,32,47,.20),0 8px 16px -6px rgba(14,83,117,.45),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn-primaer:hover{transform:translateY(-2px)}
+.btn-primaer:active{transform:translateY(0) scale(.985)}
+.btn-sekundaer{background:var(--weiss);color:var(--blau-800);border-color:var(--linie-stark);box-shadow:var(--schatten-base)}
+.btn-sekundaer:hover{transform:translateY(-2px);border-color:var(--blau-300)}
+.btn-sekundaer:active{transform:translateY(0) scale(.985)}
+.btn-hell{background:rgba(255,255,255,.14);color:var(--weiss);border-color:rgba(255,255,255,.35);backdrop-filter:blur(8px)}
+.btn-hell:hover{transform:translateY(-2px);background:rgba(255,255,255,.2)}
+.btn-text{background:none;padding:6px 0;color:var(--blau-600);border-radius:0;border-bottom:1.5px solid var(--blau-300);font-weight:600;text-decoration:none;display:inline-block}
+.btn-text:hover{opacity:.7}
+.nav .btn,.sticky-bar .btn{white-space:nowrap}
+.btn-reihe{display:flex;flex-wrap:wrap;gap:var(--raum-3);align-items:center}
+.mikro{font-size:var(--t-mikro);color:var(--tinte-50);margin-top:var(--raum-3)}
+.mikro.auf-dunkel{color:rgba(255,255,255,.6)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:var(--raum-2);font-size:var(--t-mikro);font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--blau-700);background:var(--blau-100);
+  padding:7px 14px;border-radius:var(--r-pill);border:1px solid var(--blau-200)}
+.eyebrow svg{width:13px;height:13px}
+.eyebrow.auf-dunkel{color:var(--blau-100);background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22)}
+.eyebrow.auf-sand{color:var(--blau-800);background:var(--sand-100);border-color:var(--sand-200)}
+
+.trust-pill{display:flex;align-items:center;gap:var(--raum-2);font-size:var(--t-klein);font-weight:500;color:var(--tinte-70)}
+.trust-pill svg{width:17px;height:17px;color:var(--blau-600);flex:none}
+
+/* ---------- Topbar + Nav ---------- */
+.topbar{background:var(--blau-950);color:rgba(255,255,255,.86);font-size:var(--t-mikro)}
+.topbar .innen{display:flex;gap:var(--raum-4);justify-content:space-between;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+.topbar a{color:var(--weiss);text-decoration:none;font-weight:600}
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--linie)}
+.nav .innen{display:flex;align-items:center;gap:var(--raum-5);padding-top:var(--raum-4);padding-bottom:var(--raum-4)}
+.wortmarke{font-family:var(--font-display);font-weight:700;letter-spacing:-.03em;font-size:1.12rem;line-height:1.1;color:var(--tinte);text-decoration:none}
+.wortmarke span{display:block;font-family:var(--font-text);font-weight:500;font-size:var(--t-mikro);letter-spacing:.06em;text-transform:uppercase;color:var(--blau-600);white-space:nowrap}
+.nav-links{display:flex;gap:var(--raum-4);margin-left:auto;font-size:var(--t-klein);color:var(--tinte-70)}
+.nav-links a{color:inherit;text-decoration:none}
+.nav-links a:hover{color:var(--blau-700)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--weiss)}
+.hero .buehne{max-width:var(--breite);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch}
+.hero .text{padding:var(--raum-9) var(--raum-6) var(--raum-8) var(--raum-5);position:relative;z-index:2}
+.hero .text::before{content:"";position:absolute;inset:-40px -40px -40px -50vw;z-index:-1;
+  background:radial-gradient(600px 420px at 24% 14%,rgba(29,140,188,.14),transparent 64%),var(--grain)}
+.hero h1{font-size:var(--t-hero);font-weight:600;letter-spacing:-.032em;max-width:20ch}
+.hero h1 em{font-style:normal;color:var(--blau-600)}
+.hero .lead{font-size:var(--t-lead);color:var(--tinte-70);margin:var(--raum-5) 0 var(--raum-6);max-width:48ch}
+.hero .trusts{display:grid;gap:var(--raum-3);margin-bottom:var(--raum-6)}
+.hero .foto{position:relative;min-height:480px}
+.hero .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .foto::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--weiss),rgba(255,255,255,0) 22%),
+             linear-gradient(210deg,rgba(29,140,188,.20),transparent 52%),
+             linear-gradient(0deg,rgba(4,32,47,.30),transparent 60%)}
+.hero .schwebekarte{position:absolute;right:max(var(--raum-5),calc(50vw - var(--breite)/2 + var(--raum-5)));bottom:-40px;z-index:5;
+  width:min(320px,calc(100% - var(--raum-8)));background:var(--weiss);border-radius:var(--r-l);padding:var(--raum-5);
+  box-shadow:var(--schatten-floating);border:1px solid rgba(255,255,255,.9)}
+.hero .schwebekarte .kopf{display:flex;align-items:flex-start;gap:var(--raum-3);margin-bottom:var(--raum-2)}
+.hero .schwebekarte .kopf svg{width:22px;height:22px;color:var(--blau-600);flex:none;margin-top:2px}
+.hero .schwebekarte b{font-family:var(--font-display);font-size:1.02rem;display:block}
+.hero .schwebekarte p{font-size:var(--t-mikro);color:var(--tinte-50)}
+.hero .schwebekarte .nr{font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:-.03em;color:var(--blau-700);text-decoration:none;display:block;margin-top:var(--raum-2)}
+.hero .schwebekarte .nr:hover{opacity:.75}
+
+/* ---------- Vertrauensleiste, dicht ---------- */
+.trustleiste{background:var(--blau-950);color:var(--weiss)}
+.trustleiste .innen{padding-top:var(--raum-7);padding-bottom:var(--raum-6)}
+.trustleiste .reihe{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--raum-5)}
+.trustleiste b{font-family:var(--font-display);font-size:1.28rem;font-weight:600;letter-spacing:-.02em;display:block}
+.trustleiste span{font-size:var(--t-mikro);color:rgba(255,255,255,.62);line-height:1.5;display:block;margin-top:2px}
+
+/* ---------- Sektionsgrundlagen ---------- */
+section{position:relative}
+.sek-kopf{max-width:48ch;margin-bottom:var(--raum-7)}
+.sek-kopf h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-3)}
+.sek-kopf p{color:var(--tinte-70)}
+.hell{background:var(--blau-50);background-image:radial-gradient(800px 460px at 88% 6%,rgba(29,140,188,.10),transparent 62%),var(--grain);
+  border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.luftig .innen{padding-top:var(--raum-9);padding-bottom:var(--raum-9)}
+.dicht .innen{padding-top:var(--raum-8);padding-bottom:var(--raum-8)}
+
+/* ---------- Problem ---------- */
+.pas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--raum-5)}
+.pas .karte{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);padding:var(--raum-5);box-shadow:var(--schatten-base)}
+.pas .karte q{font-family:var(--font-display);font-size:1.06rem;font-weight:600;letter-spacing:-.015em;display:block;margin-bottom:var(--raum-3);line-height:1.25}
+.pas .karte p{font-size:var(--t-klein);color:var(--tinte-70)}
+.uebergang{margin-top:var(--raum-6);font-size:var(--t-lead)}
+
+/* ---------- Leistungskarten ---------- */
+.karte-l{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);box-shadow:var(--schatten-elevated);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .22s var(--ease-federnd),box-shadow .22s var(--ease)}
+.karte-l:hover{transform:translateY(-4px);box-shadow:var(--schatten-floating)}
+.karte-l .bild{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--blau-100)}
+.karte-l .bild img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.karte-l:hover .bild img{transform:scale(1.035)}
+.karte-l .bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(200deg,rgba(29,140,188,.16),transparent 46%),linear-gradient(0deg,rgba(4,32,47,.34),transparent 58%)}
+.karte-l .inhalt{padding:var(--raum-5);display:flex;flex-direction:column;flex:1}
+.karte-l h3{font-size:var(--t-h3);margin-bottom:var(--raum-3)}
+.karte-l p{font-size:var(--t-klein);color:var(--tinte-70)}
+.karte-l .fuss{margin-top:auto;padding-top:var(--raum-4);border-top:1px solid var(--linie)}
+.karte-l.betont{background:linear-gradient(170deg,var(--blau-700),var(--blau-800));border-color:var(--blau-700);color:var(--weiss)}
+.karte-l.betont h3{color:var(--weiss)}
+.karte-l.betont p{color:rgba(255,255,255,.88)}
+.karte-l.betont .fuss{border-color:rgba(255,255,255,.22)}
+.raster-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--raum-5);margin-bottom:var(--raum-5)}
+.raster-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--raum-5)}
+
+/* ---------- Pflegekasse, warmer Raum ---------- */
+.pflege{background:var(--sand-50);background-image:radial-gradient(780px 500px at 84% 8%,rgba(228,216,200,.9),transparent 62%),var(--grain);
+  border-top:1px solid var(--sand-200);border-bottom:1px solid var(--sand-200)}
+.pflege .innen{padding-top:var(--raum-10);padding-bottom:var(--raum-10)}
+.pflege .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:var(--raum-8);align-items:center}
+.pflege h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-5);max-width:24ch}
+.pflege .punkte{display:grid;gap:var(--raum-5);margin-bottom:var(--raum-6)}
+.pflege .punkt{display:grid;grid-template-columns:34px 1fr;gap:var(--raum-4)}
+.pflege .nummer{width:34px;height:34px;border-radius:var(--r-pill);background:var(--blau-700);color:var(--weiss);
+  display:grid;place-items:center;font-family:var(--font-display);font-weight:600;font-size:.95rem;box-shadow:0 4px 10px -3px rgba(14,83,117,.5)}
+.pflege .punkt b{font-family:var(--font-display);font-size:1.08rem;display:block;margin-bottom:2px}
+.pflege .punkt p{font-size:var(--t-klein);color:var(--tinte-70)}
+.pflege .bild-rahmen{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--schatten-floating);position:relative;margin-bottom:var(--raum-5)}
+.pflege .bild-rahmen::after{content:"";position:absolute;inset:0;background:linear-gradient(190deg,rgba(255,255,255,.10),transparent 40%),linear-gradient(0deg,rgba(4,32,47,.20),transparent 55%)}
+.budget{background:var(--weiss);border:1px solid var(--sand-200);border-radius:var(--r-l);padding:var(--raum-6);box-shadow:var(--schatten-elevated)}
+.budget b.titel{font-family:var(--font-display);font-size:1.05rem;display:block;margin-bottom:var(--raum-4)}
+.budget .zeile{display:flex;justify-content:space-between;gap:var(--raum-4);padding:var(--raum-3) 0;border-bottom:1px dashed var(--sand-200);font-size:var(--t-klein)}
+.budget .zeile:last-of-type{border-bottom:0}
+.budget .wert{font-family:var(--font-display);font-weight:600;letter-spacing:-.02em;color:var(--blau-700);white-space:nowrap}
+.budget .gross{font-family:var(--font-display);font-size:1.9rem;font-weight:600;letter-spacing:-.03em;color:var(--blau-700);line-height:1.1;margin-top:var(--raum-4);display:block}
+.rechtshinweis{font-size:var(--t-mikro);color:var(--tinte-50);margin-top:var(--raum-5);max-width:64ch}
+
+/* ---------- Warum ---------- */
+.warum{display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:var(--raum-6)}
+.warum .punkt{display:grid;grid-template-columns:40px 1fr;gap:var(--raum-4)}
+.warum .ikon{width:40px;height:40px;border-radius:var(--r-m);background:var(--blau-100);border:1px solid var(--blau-200);display:grid;place-items:center}
+.warum .ikon svg{width:20px;height:20px;color:var(--blau-700)}
+.warum b{font-family:var(--font-display);font-size:1.06rem;display:block;margin-bottom:var(--raum-1)}
+.warum p{font-size:var(--t-klein);color:var(--tinte-70)}
+
+/* ---------- Ablauf, die eine dunkle Sektion ---------- */
+.ablauf{color:var(--weiss);background:linear-gradient(165deg,var(--blau-900),var(--blau-950));
+  background-image:radial-gradient(860px 440px at 12% 0%,rgba(29,140,188,.26),transparent 58%),
+    linear-gradient(165deg,var(--blau-900),var(--blau-950)),var(--grain)}
+.ablauf h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-7);max-width:26ch}
+.schritte{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--raum-5);counter-reset:s}
+.schritt{padding-top:var(--raum-5);border-top:2px solid rgba(138,198,225,.32)}
+.schritt::before{counter-increment:s;content:"0" counter(s);font-family:var(--font-display);font-size:var(--t-mikro);
+  font-weight:600;color:var(--blau-300);letter-spacing:.1em;display:block;margin-bottom:var(--raum-3)}
+.schritt b{font-family:var(--font-display);font-size:1.1rem;display:block;margin-bottom:var(--raum-2)}
+.schritt p{font-size:var(--t-klein);color:rgba(255,255,255,.72)}
+.schritt .zeit{font-size:var(--t-mikro);color:var(--blau-300);font-weight:600;margin-top:var(--raum-3);display:block}
+
+/* ---------- Über mich ---------- */
+.ueber .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.72fr);gap:var(--raum-8);align-items:center}
+.ueber h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-5);max-width:24ch}
+.ueber p{color:var(--tinte-70);margin-bottom:var(--raum-4);max-width:54ch}
+.ueber .nr-gross{font-family:var(--font-display);font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:600;letter-spacing:-.035em;
+  color:var(--blau-700);text-decoration:none;display:inline-block;margin-top:var(--raum-3)}
+.ueber .nr-gross:hover{opacity:.75}
+.ueber .detailbild{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--schatten-floating);position:relative}
+.ueber .detailbild::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(29,140,188,.18),transparent 50%)}
+
+/* ---------- Kosten ---------- */
+.kosten .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--raum-7);align-items:start}
+.kosten h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-5)}
+.kosten h3{font-size:1.08rem;margin-bottom:var(--raum-2)}
+.kosten p{color:var(--tinte-70);font-size:var(--t-klein)}
+.hebel{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);padding:var(--raum-5);
+  box-shadow:var(--schatten-base);margin-bottom:var(--raum-4);display:grid;grid-template-columns:auto 1fr;gap:var(--raum-4)}
+.hebel .zahl{font-family:var(--font-display);font-size:1.7rem;font-weight:600;letter-spacing:-.03em;color:var(--blau-700);line-height:1.1;white-space:nowrap}
+.faktor{display:flex;gap:var(--raum-2);flex-wrap:wrap;margin-top:var(--raum-4)}
+.faktor li{font-size:var(--t-mikro);color:var(--tinte-70);background:var(--weiss);border:1px solid var(--linie);
+  padding:6px 12px;border-radius:var(--r-pill)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:82ch;border-top:1px solid var(--linie)}
+.faq details{border-bottom:1px solid var(--linie)}
+.faq summary{cursor:pointer;list-style:none;padding:var(--raum-5) var(--raum-7) var(--raum-5) 0;position:relative;
+  font-family:var(--font-display);font-size:1.08rem;font-weight:600;letter-spacing:-.015em;transition:opacity .16s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{opacity:.66}
+.faq summary::after{content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+  border-right:2px solid var(--blau-600);border-bottom:2px solid var(--blau-600);
+  transform:translateY(-70%) rotate(45deg);transition:transform .22s var(--ease)}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq details[open] summary{color:var(--blau-700)}
+.faq .antwort{padding:0 var(--raum-7) var(--raum-5) 0;font-size:var(--t-klein);color:var(--tinte-70)}
+
+/* ---------- Anfrage ---------- */
+.anfrage .zwei{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--raum-6);align-items:start}
+.formkarte{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-xl);padding:var(--raum-6);box-shadow:var(--schatten-floating)}
+.formkarte h2{font-size:var(--t-h2);margin-bottom:var(--raum-3)}
+.formkarte > p{color:var(--tinte-70);font-size:var(--t-klein);margin-bottom:var(--raum-5)}
+.feld{display:grid;gap:var(--raum-2);margin-bottom:var(--raum-4)}
+.feld-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--raum-4)}
+label{font-size:var(--t-klein);font-weight:600;color:var(--tinte-70)}
+input,select,textarea{font-family:var(--font-text);font-size:1rem;color:var(--tinte);padding:14px 16px;
+  border:1px solid var(--linie-stark);border-radius:var(--r-m);background:var(--weiss);width:100%;
+  transition:border-color .16s var(--ease),box-shadow .16s var(--ease)}
+input:hover,select:hover,textarea:hover{border-color:var(--blau-300)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blau-500);box-shadow:0 0 0 4px rgba(29,140,188,.16)}
+textarea{min-height:104px;resize:vertical}
+.telefonkarte{border-radius:var(--r-xl);padding:var(--raum-6);color:var(--weiss);box-shadow:var(--schatten-floating);
+  background-image:radial-gradient(560px 300px at 84% 0%,rgba(29,140,188,.34),transparent 60%),
+    linear-gradient(150deg,var(--blau-800),var(--blau-950)),var(--grain)}
+.telefonkarte h3{font-size:var(--t-h3);margin-bottom:var(--raum-3)}
+.telefonkarte p{color:rgba(255,255,255,.8);font-size:var(--t-klein);margin-bottom:var(--raum-5)}
+.telefonkarte .nr{font-family:var(--font-display);font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:600;letter-spacing:-.035em;
+  color:var(--weiss);text-decoration:none;display:block;margin-bottom:var(--raum-4)}
+.telefonkarte .nr:hover{opacity:.85}
+.telefonkarte .zeiten{font-size:var(--t-mikro);color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.16);padding-top:var(--raum-4);margin-top:var(--raum-5)}
+.telefonkarte a.mail{color:var(--blau-300);text-decoration:none;font-size:var(--t-klein);word-break:break-word}
+/* Formular spannt beide Zeilen, damit die zwei Karten rechts direkt untereinander sitzen
+   und nicht von der Höhe des Formulars auseinandergezogen werden. */
+.anfrage .formkarte{grid-row:1/span 2}
+.beruhigung{grid-column:2;grid-row:2;align-self:start;background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);
+  padding:var(--raum-5);box-shadow:var(--schatten-base)}
+.beruhigung b{font-family:var(--font-display);font-size:1.02rem;display:block;margin-bottom:var(--raum-3)}
+.beruhigung li{display:flex;gap:var(--raum-2);font-size:var(--t-klein);color:var(--tinte-70);padding:var(--raum-2) 0}
+.beruhigung svg{width:16px;height:16px;color:var(--blau-600);flex:none;margin-top:4px}
+
+/* ---------- Gebiet ---------- */
+.gebiet .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--raum-7);align-items:center}
+.gebiet h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-4)}
+.gebiet p{color:var(--tinte-70);margin-bottom:var(--raum-4)}
+.gebiet .bild{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--schatten-elevated);position:relative}
+.gebiet .bild::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(29,140,188,.18),transparent 52%)}
+.nap{font-size:var(--t-klein);line-height:1.9;background:var(--weiss);border:1px solid var(--linie);
+  border-radius:var(--r-l);padding:var(--raum-5);box-shadow:var(--schatten-base)}
+.nap b{font-family:var(--font-display);font-size:1.05rem;display:block;margin-bottom:var(--raum-2)}
+.nap a{color:var(--blau-700);text-decoration:none;border-bottom:1px solid var(--blau-200);word-break:break-word}
+
+/* ---------- Footer ---------- */
+footer{background:var(--blau-950);color:rgba(255,255,255,.72);font-size:var(--t-klein)}
+footer .innen{padding-top:var(--raum-8);padding-bottom:var(--raum-5)}
+footer .oben{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:var(--raum-7);padding-bottom:var(--raum-6);border-bottom:1px solid rgba(255,255,255,.12)}
+footer h4{font-family:var(--font-display);color:var(--weiss);font-size:1rem;margin-bottom:var(--raum-4)}
+footer a{color:rgba(255,255,255,.74);text-decoration:none;display:block;padding:3px 0}
+footer a:hover{color:var(--weiss)}
+footer .wm{font-family:var(--font-display);font-weight:700;color:#fff;font-size:1.12rem;letter-spacing:-.03em}
+footer .orte{padding:var(--raum-5) 0;font-size:var(--t-mikro);color:rgba(255,255,255,.5);line-height:1.9}
+footer .unten{display:flex;justify-content:space-between;gap:var(--raum-5);flex-wrap:wrap;font-size:var(--t-mikro);color:rgba(255,255,255,.5);padding-top:var(--raum-4);border-top:1px solid rgba(255,255,255,.12)}
+footer .unten a{display:inline}
+
+/* ---------- Sticky-Leiste mobil ---------- */
+.sticky-bar{display:none}
+@media (max-width:900px){
+  .sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;gap:var(--raum-3);padding:var(--raum-3);
+    background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-top:1px solid var(--linie);
+    box-shadow:0 -8px 24px -12px rgba(6,41,60,.28);padding-bottom:calc(var(--raum-3) + env(safe-area-inset-bottom))}
+  .sticky-bar .btn{flex:1;padding:15px 12px;font-size:.94rem}
+  body{padding-bottom:84px}
+  .hero .buehne{grid-template-columns:1fr}
+  .hero .text{padding:var(--raum-7) var(--raum-5) var(--raum-6);order:2}
+  .hero .foto{min-height:290px;order:1}
+  .hero .schwebekarte{position:static;width:auto;margin:var(--raum-5) var(--raum-5) 0;bottom:auto;right:auto}
+  .nav-links{display:none}
+  .raster-2,.raster-3{grid-template-columns:1fr}
+  .pflege .zwei,.ueber .zwei,.kosten .zwei,.anfrage .zwei,.gebiet .zwei{grid-template-columns:1fr;gap:var(--raum-7)}
+  .anfrage .formkarte{grid-row:auto}
+  .beruhigung{grid-column:1;grid-row:auto}
+  .anfrage .zwei{gap:var(--raum-5)}
+  .pflege .innen{padding-top:var(--raum-8);padding-bottom:var(--raum-8)}
+  .luftig .innen{padding-top:var(--raum-8);padding-bottom:var(--raum-8)}
+  .schritte{grid-template-columns:repeat(2,1fr)}
+  footer .oben{grid-template-columns:1fr;gap:var(--raum-6)}
+}
+@media (max-width:560px){
+  .schritte{grid-template-columns:1fr}
+  .feld-2{grid-template-columns:1fr}
+  .btn-reihe .btn{width:100%}
+  .nav .btn{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .rein{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-tel" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-uhr" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3.2 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-herz" viewBox="0 0 24 24"><path d="M12 20.5S3.8 15.4 3.8 9.9A4.6 4.6 0 0 1 12 7.2a4.6 4.6 0 0 1 8.2 2.7c0 5.5-8.2 10.6-8.2 10.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+<symbol id="i-schild" viewBox="0 0 24 24"><path d="M12 22s8-3.4 8-10V5.5L12 2 4 5.5V12c0 6.6 8 10 8 10Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 12.2 11 14.4l4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.6 20a7.4 7.4 0 0 1 14.8 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="i-beleg" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 8h5M9.5 12h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+<symbol id="i-pfeil" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="innen">
+    <span>Bad Salzschlirf und Umgebung, rund 8 Kilometer</span>
+    <span>Mo bis Do 8 bis 17 Uhr, Fr 9 bis 13 Uhr · <a href="tel:+491602624098">0160 2624098</a></span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="innen">
+    <a class="wortmarke" href="#top">Schenk<span>Ihre mobile Putzfee</span></a>
+    <div class="nav-links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#pflegekasse">Pflegekasse</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <a class="btn btn-primaer" style="padding:12px 20px;font-size:.9rem" href="#kontakt">Angebot anfragen</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="buehne">
+    <div class="text">
+      <span class="eyebrow">Glas- und Gebäudereinigung</span>
+      <h1 style="margin-top:var(--raum-5)">Fensterreinigung in Bad Salzschlirf, ohne dass Sie auf die <em>Leiter</em> müssen</h1>
+      <p class="lead">Fenster, Wintergarten, Glasdach, Solaranlage und die Reinigung nach dem Bau. Ich komme zu Ihnen, arbeite streifenfrei und lasse Ihre Räume so zurück, wie Sie sie vorgefunden haben.</p>
+      <ul class="trusts">
+        <li class="trust-pill"><svg><use href="#i-check"/></svg> Streifenfrei, auch Rahmen und Falze</li>
+        <li class="trust-pill"><svg><use href="#i-uhr"/></svg> Feste Termine, ich rufe zurück</li>
+        <li class="trust-pill"><svg><use href="#i-herz"/></svg> Für Kassen anerkannt, Haushaltshilfe ab Pflegegrad 1</li>
+        <li class="trust-pill"><svg><use href="#i-check"/></svg> Kleine Aufträge sind willkommen</li>
+      </ul>
+      <div class="btn-reihe">
+        <a class="btn btn-primaer" href="#kontakt">Kostenloses Angebot anfragen <svg><use href="#i-pfeil"/></svg></a>
+        <a class="btn btn-sekundaer" href="tel:+491602624098"><svg><use href="#i-tel"/></svg> 0160 2624098</a>
+      </div>
+      <p class="mikro">Unverbindlich, Antwort meist am selben Tag. Kein Vertreterbesuch, kein Abo.</p>
+    </div>
+    <div class="foto">
+      <img src="bilder/fensterreinigung-bad-salzschlirf-einfamilienhaus.webp" width="1920" height="1072" alt="Fensterreinigung an einem Einfamilienhaus in Bad Salzschlirf" fetchpriority="high">
+    </div>
+  </div>
+  <div class="schwebekarte">
+    <div class="kopf">
+      <svg><use href="#i-tel"/></svg>
+      <div><b>Direkt durchgestellt</b><p>Kein Callcenter, kein Formular nötig</p></div>
+    </div>
+    <a class="nr" href="tel:+491602624098">0160 2624098</a>
+  </div>
+</header>
+
+<!-- ============ VERTRAUENSLEISTE ============ -->
+<section class="trustleiste">
+  <div class="innen">
+    <ul class="reihe">
+      <li><b>Ab Pflegegrad 1</b><span>anerkannt für die Abrechnung über die Pflegekasse</span></li>
+      <li><b>Selber Tag</b><span>Antwort auf Anruf oder E-Mail, meist noch am selben Tag</span></li>
+      <li><b>Mit Rechnung</b><span>bargeldlos, 20 Prozent der Arbeitskosten absetzbar</span></li>
+      <li><b>Immer dieselbe Person</b><span>Sie erklären Ihre Wohnung einmal, nicht jeden Monat neu</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="luftig">
+  <div class="innen rein">
+    <div class="sek-kopf">
+      <span class="eyebrow">Kennen Sie das</span>
+      <h2>Vier Sätze, die ich am Telefon fast täglich höre</h2>
+    </div>
+    <div class="pas">
+      <div class="karte">
+        <q>Die Fenster sind dran, aber ich komme da nicht mehr hoch.</q>
+        <p>Wintergarten, Dachfenster, Treppenhausfenster. Genau da, wo es nötig ist, wird es unangenehm.</p>
+      </div>
+      <div class="karte">
+        <q>Ich habe geputzt, und trotzdem sieht man jeden Streifen.</q>
+        <p>Sobald die Sonne draufsteht, sieht man alles. Streifenfrei ist Technik, nicht Fleiß.</p>
+      </div>
+      <div class="karte">
+        <q>Ich habe angefragt und nie wieder was gehört.</q>
+        <p>Der häufigste Ärger in dieser Branche ist nicht schlechte Arbeit, es ist niemand, der zurückruft.</p>
+      </div>
+      <div class="karte">
+        <q>Meine Mutter braucht Hilfe im Haushalt, aber ich weiß nicht, was das kostet.</q>
+        <p>Bei Pflegegrad 1 steht Ihnen ein Budget zu, das die meisten nicht kennen. Ich rechne direkt mit der Kasse ab.</p>
+      </div>
+    </div>
+    <p class="uebergang">Alles vier ist lösbar, und zwar mit einem Anruf. <a class="btn-text" href="#kosten">Was das bei Ihnen kostet</a></p>
+  </div>
+</section>
+
+<!-- ============ LEISTUNGEN ============ -->
+<section class="luftig hell" id="leistungen">
+  <div class="innen rein">
+    <div class="sek-kopf">
+      <span class="eyebrow">Leistungen</span>
+      <h2>Was ich für Sie mache</h2>
+      <p>Gegliedert nach Anlass, nicht nach Reinigungsverfahren. Sie sollen sich in einer der Karten wiederfinden.</p>
+    </div>
+    <div class="raster-2">
+      <article class="karte-l">
+        <div class="bild"><img src="bilder/glasreinigung-bad-salzschlirf-wintergarten-glasdach.webp" width="1200" height="896" alt="Wintergarten und Glasdach werden in Bad Salzschlirf gereinigt" loading="lazy"></div>
+        <div class="inhalt">
+          <h3>Fensterreinigung und Glasreinigung im Haushalt</h3>
+          <p>Fenster innen und außen, Rahmen, Falze und Rollladenkästen, Wintergarten, Glasdach, Glastüren und Fliegengitter. Ich arbeite mit entkalktem Wasser, deshalb bleiben keine Kalkränder zurück.</p>
+          <div class="fuss"><a class="btn-text" href="#kontakt">Angebot für meine Fenster</a></div>
+        </div>
+      </article>
+      <article class="karte-l betont">
+        <div class="bild"><img src="bilder/solarreinigung-bad-salzschlirf-photovoltaik-dach.webp" width="1200" height="896" alt="Solaranlage auf einem Ziegeldach wird gereinigt, links gereinigte, rechts bemooste Module" loading="lazy"></div>
+        <div class="inhalt">
+          <h3>Solarreinigung in Bad Salzschlirf, damit der Ertrag stimmt</h3>
+          <p>Moos, Pollen, Staub und Vogeldreck kosten Ertrag, und zwar dauerhaft. Ich reinige Module schonend und ohne Chemie, die der Beschichtung schadet. Vorher sage ich Ihnen, ob sich die Reinigung bei Ihrer Anlage überhaupt lohnt.</p>
+          <div class="fuss"><a class="btn btn-hell" href="#kontakt">Angebot für meine Solaranlage</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="raster-3">
+      <article class="karte-l">
+        <div class="bild"><img src="bilder/bauendreinigung-bad-salzschlirf-neubau-innenraum.webp" width="1200" height="896" alt="Neubauraum nach der Bauendreinigung, klare Fenster und sauberer Boden" loading="lazy"></div>
+        <div class="inhalt">
+          <h3>Bauendreinigung, bezugsfertig statt besenrein</h3>
+          <p>Nach Neubau oder Sanierung: Bauschmutz, Zementschleier, Farbspritzer, Klebereste und Aufkleber runter, Fenster klar, Böden und Sanitär gebrauchsfertig. Ich weiß, dass hier ein Übergabetermin dranhängt.</p>
+          <div class="fuss"><a class="btn-text" href="#kontakt">Angebot für meine Baustelle</a></div>
+        </div>
+      </article>
+      <article class="karte-l">
+        <div class="bild"><img src="bilder/haushaltsreinigung-bad-salzschlirf-kueche.webp" width="1200" height="896" alt="Küchenarbeitsplatte wird bei der Haushaltsreinigung gewischt" loading="lazy"></div>
+        <div class="inhalt">
+          <h3>Haushaltsreinigung und Hauswirtschaft</h3>
+          <p>Küche, Bad, Böden, Staub, Wäsche und Ordnung. Einmalig als Grundreinigung oder regelmäßig zum festen Termin. Für Menschen mit Pflegegrad rechne ich direkt mit der Kasse ab.</p>
+          <div class="fuss"><a class="btn-text" href="#pflegekasse">Über die Pflegekasse abrechnen</a></div>
+        </div>
+      </article>
+      <article class="karte-l">
+        <div class="bild"><img src="bilder/fensterreinigung-bad-salzschlirf-rahmen-falz-detail.webp" width="900" height="900" alt="Fensterrahmen und Falz werden mit einem Mikrofasertuch gereinigt" loading="lazy"></div>
+        <div class="inhalt">
+          <h3>Auch die Stellen, an denen man es sieht</h3>
+          <p>Rahmen, Falze und Dichtungen gehören dazu. Genau daran erkennt man hinterher, ob wirklich geputzt wurde oder nur die Scheibe abgewischt.</p>
+          <div class="fuss"><a class="btn-text" href="#kontakt">Angebot anfragen</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PFLEGEKASSE ============ -->
+<section class="pflege" id="pflegekasse">
+  <div class="innen rein">
+    <div class="zwei">
+      <div>
+        <span class="eyebrow auf-sand"><svg><use href="#i-herz"/></svg> Für Angehörige</span>
+        <h2>Haushaltshilfe über die Pflegekasse, ab Pflegegrad 1</h2>
+        <p style="color:var(--tinte-70);margin-bottom:var(--raum-6);max-width:52ch">Wenn Sie für Ihre Eltern suchen, kennen Sie die Frage, die zuerst kommt: was kostet das, und was zahlt die Kasse? Hier ist die Antwort in Klartext.</p>
+        <div class="punkte">
+          <div class="punkt">
+            <div class="nummer">1</div>
+            <div><b>Es gilt schon ab Pflegegrad 1.</b>
+            <p>Das ist der Punkt, den fast alle falsch kennen. Bei Pflegegrad 1 gibt es kein Pflegegeld und keine Pflegesachleistungen, aber es gibt den Entlastungsbetrag nach § 45b SGB XI: 131 Euro im Monat, zweckgebunden für Leistungen wie eine Haushaltshilfe. Ich bin als Anbieter dafür anerkannt.</p></div>
+          </div>
+          <div class="punkt">
+            <div class="nummer">2</div>
+            <div><b>Sie müssen nichts vorstrecken.</b>
+            <p>Ich rechne direkt mit der Pflegekasse ab. Sie bekommen keine Rechnung, die Sie erst bezahlen und dann einreichen müssen.</p></div>
+          </div>
+          <div class="punkt">
+            <div class="nummer">3</div>
+            <div><b>Der Papierkram bleibt bei mir.</b>
+            <p>Sie sagen mir den Pflegegrad und die Kasse, den Rest kläre ich. Wenn noch kein Pflegegrad vorliegt, sage ich Ihnen, wo Sie anfangen.</p></div>
+          </div>
+        </div>
+        <p style="color:var(--tinte-70);font-size:var(--t-klein);margin-bottom:var(--raum-5)"><b>Was nicht ungesagt bleiben soll:</b> Ich bin keine Pflegekraft. Ich übernehme den Haushalt, nicht die Körperpflege und keine medizinischen Leistungen. Wer beides braucht, braucht mich und einen Pflegedienst.</p>
+        <a class="btn btn-primaer" href="#kontakt">Kostenlos prüfen, was die Pflegekasse übernimmt <svg><use href="#i-pfeil"/></svg></a>
+        <p class="mikro">Ein Anruf, rund zehn Minuten. Unverbindlich, und ohne dass Sie vorher Unterlagen zusammensuchen.</p>
+        <p class="rechtshinweis">Angaben zu Leistungen der Pflegeversicherung nach dem Stand August 2026. Über Ihren konkreten Anspruch entscheidet Ihre Pflegekasse.</p>
+      </div>
+      <div>
+        <div class="bild-rahmen">
+          <img src="bilder/haushaltshilfe-bad-salzschlirf-wohnzimmer.webp" width="1920" height="1072" alt="Haushaltshilfe räumt ein Wohnzimmer auf" loading="lazy">
+        </div>
+        <div class="budget">
+          <b class="titel">Ihr Budget bei Pflegegrad 1</b>
+          <div class="zeile"><span>Entlastungsbetrag der Pflegekasse</span><span class="wert">131 € / Monat</span></div>
+          <div class="zeile"><span>Mein Satz</span><span class="wert">31 € / Stunde</span></div>
+          <div class="zeile"><span>Ihre Vorkasse</span><span class="wert">0 €</span></div>
+          <div class="zeile"><span>Nicht genutztes Budget</span><span class="wert">bis 30. Juni übertragbar</span></div>
+          <span class="gross">Rund 4 Stunden im Monat, für Sie ohne Eigenanteil.</span>
+          <p style="font-size:var(--t-mikro);color:var(--tinte-50);margin-top:var(--raum-3)">Die Abrechnung läuft direkt zwischen mir und Ihrer Pflegekasse. Wenn Sie mehr Zeit brauchen als das Budget hergibt, sage ich Ihnen vorher, was die zusätzlichen Stunden kosten.</p>
+        </div>
+        <!-- Falls der Kunde pro Einsatz statt pro Stunde abrechnet: in der Zeile "Mein Satz"
+             "31 € / Stunde" zu "31 € / Einsatz" ändern und in der .gross-Zeile "Stunden" zu
+             "Einsätze". Sonst ändert sich nichts. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WARUM ============ -->
+<section class="luftig">
+  <div class="innen rein">
+    <div class="sek-kopf">
+      <span class="eyebrow">Warum ich</span>
+      <h2>Warum Kunden in Bad Salzschlirf bei mir bleiben</h2>
+    </div>
+    <div class="warum">
+      <div class="punkt">
+        <div class="ikon"><svg><use href="#i-person"/></svg></div>
+        <div><b>Es kommt immer dieselbe Person</b><p>Sie erklären Ihre Wohnung einmal, nicht jeden Monat neu. Kein wechselndes Personal, keine Subunternehmer.</p></div>
+      </div>
+      <div class="punkt">
+        <div class="ikon"><svg><use href="#i-tel"/></svg></div>
+        <div><b>Ich gehe ans Telefon</b><p>Die Nummer auf dieser Seite ist mein Handy, keine Zentrale und kein Callcenter. Sie sprechen mit der Person, die dann auch kommt.</p></div>
+      </div>
+      <div class="punkt">
+        <div class="ikon"><svg><use href="#i-uhr"/></svg></div>
+        <div><b>Feste Termine, die halten</b><p>Wenn ich einen Termin zusage, steht er. Wenn etwas dazwischenkommt, rufe ich an, bevor Sie warten.</p></div>
+      </div>
+      <div class="punkt">
+        <div class="ikon"><svg><use href="#i-beleg"/></svg></div>
+        <div><b>Ordentliche Rechnung, bargeldlos</b><p>Kein Bargeld unter der Hand. Sie können 20 Prozent der Arbeitskosten steuerlich geltend machen.</p></div>
+      </div>
+      <div class="punkt">
+        <div class="ikon"><svg><use href="#i-herz"/></svg></div>
+        <div><b>Anerkannt für die Abrechnung mit Pflegekassen</b><p>Haushaltshilfe ab Pflegegrad 1, direkt über die Kasse. Das hat im Umkreis kaum ein Reinigungsbetrieb.</p></div>
+      </div>
+      <div class="punkt">
+        <div class="ikon"><svg><use href="#i-check"/></svg></div>
+        <div><b>Auch kleine Aufträge</b><p>Acht Fenster oder ein einzelner Wintergarten sind mir nicht zu klein. Genau das lehnen größere Firmen oft ab.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABLAUF ============ -->
+<section class="luftig ablauf" id="ablauf">
+  <div class="innen rein">
+    <span class="eyebrow auf-dunkel">Ablauf</span>
+    <h2>So läuft es ab</h2>
+    <div class="schritte">
+      <div class="schritt"><b>Sie rufen an oder schreiben</b><p>Was, wo, wie viele Fenster oder wie groß der Haushalt.</p><span class="zeit">2 Minuten</span></div>
+      <div class="schritt"><b>Ich sage Ihnen den Preis</b><p>Bei kleineren Aufträgen direkt am Telefon, bei größeren nach einem Blick vor Ort.</p><span class="zeit">kostenlos und unverbindlich</span></div>
+      <div class="schritt"><b>Wir machen einen festen Termin</b><p>Sie wissen, wann ich komme, und müssen nicht dabei sein, wenn Sie das nicht möchten.</p><span class="zeit">fest zugesagt</span></div>
+      <div class="schritt"><b>Bei Haushaltshilfe kläre ich die Kasse</b><p>Pflegegrad und Kasse reichen mir. Die Abrechnung läuft zwischen mir und der Pflegekasse.</p><span class="zeit">ohne Ihr Zutun</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÜBER MICH ============ -->
+<section class="luftig ueber" id="ueber">
+  <div class="innen rein">
+    <div class="zwei">
+      <div>
+        <span class="eyebrow">Über mich</span>
+        <h2>Ihre mobile Putzfee, mit Nummer statt Kontaktformular</h2>
+        <p>Ich bin in Bad Salzschlirf zu Hause und arbeite selbst. Wenn Sie hier anrufen, sprechen Sie mit der Person, die dann bei Ihnen die Fenster putzt oder im Haushalt hilft. Das ist der Unterschied zu einer Reinigungsfirma, bei der Sie erst ein Büro erreichen.</p>
+        <p>Mein Gebiet sind Bad Salzschlirf und die Orte im Umkreis von rund acht Kilometern. Wenn Sie knapp außerhalb wohnen, fragen Sie trotzdem, oft passt es.</p>
+        <!-- Sobald Name und Foto vorliegen: hier Foto einsetzen und den Namen in H2 und Text ergänzen. -->
+        <a class="nr-gross" href="tel:+491602624098">0160 2624098</a>
+        <p class="mikro">Mo bis Do 8 bis 17 Uhr, Fr 9 bis 13 Uhr. Außerhalb der Zeiten einfach eine Nachricht, ich rufe zurück.</p>
+      </div>
+      <div class="detailbild">
+        <img src="bilder/glasreinigung-bad-salzschlirf-abzieher-detail.webp" width="900" height="900" alt="Fensterabzieher zieht eine klare Bahn über eingeseiftes Glas" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KOSTEN ============ -->
+<section class="dicht hell kosten" id="kosten">
+  <div class="innen rein">
+    <div class="zwei">
+      <div>
+        <span class="eyebrow">Kosten</span>
+        <h2>Was es kostet, und was Sie davon zurückbekommen</h2>
+        <h3>Was den Preis bestimmt</h3>
+        <p>Anzahl und Größe der Fenster, Etage und Zugang, Sprossen und Rollladenkästen, Verschmutzungsgrad, bei Haushalten die Fläche und der Rhythmus. Deshalb steht hier kein Festpreis. Sie bekommen den Preis, bevor ich anfange, nicht danach.</p>
+        <ul class="faktor">
+          <li>Anzahl der Fenster</li><li>Etage und Zugang</li><li>Sprossen</li>
+          <li>Rollladenkästen</li><li>Verschmutzungsgrad</li><li>Fläche</li><li>Rhythmus</li>
+        </ul>
+        <h3 style="margin-top:var(--raum-6)">Keine Bindung</h3>
+        <p>Kein Vertrag, keine Mindestlaufzeit, kein Abo. Auch nicht bei regelmäßigen Terminen.</p>
+      </div>
+      <div>
+        <div class="hebel">
+          <div class="zahl">131 €</div>
+          <div>
+            <b style="font-family:var(--font-display);display:block;margin-bottom:2px">Pflegekasse, pro Monat</b>
+            <p>Bei Pflegegrad 1 bis 5 steht der Entlastungsbetrag zur Verfügung, mit dem eine Haushaltshilfe bezahlt werden kann. Mein Satz liegt bei 31 Euro pro Stunde, das Budget deckt damit rund vier Stunden im Monat. Ich bin dafür anerkannt und rechne direkt mit der Kasse ab.</p>
+          </div>
+        </div>
+        <div class="hebel">
+          <div class="zahl">20 %</div>
+          <div>
+            <b style="font-family:var(--font-display);display:block;margin-bottom:2px">Steuer, bis 4.000 Euro im Jahr</b>
+            <p>Reinigungsarbeiten im Haushalt sind haushaltsnahe Dienstleistungen. 20 Prozent der Arbeitskosten mindern Ihre Steuer. Voraussetzung ist eine Rechnung und bargeldlose Zahlung, beides bekommen Sie bei mir automatisch.</p>
+          </div>
+        </div>
+        <p class="mikro">Angaben nach dem Stand August 2026. Für Ihre Steuer entscheidet Ihr Finanzamt, für die Pflegeleistung Ihre Pflegekasse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="luftig" id="faq">
+  <div class="innen rein">
+    <div class="sek-kopf">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Was Kunden vorher wissen wollen</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Was kostet eine Fensterreinigung?</summary>
+        <div class="antwort">Der Preis einer Fensterreinigung richtet sich nach Anzahl und Größe der Fenster, dem Zugang und dem Verschmutzungsgrad. Bei kleineren Aufträgen nenne ich den Preis direkt am Telefon, bei größeren nach einem kostenlosen Blick vor Ort. Sie kennen den Preis, bevor ich anfange.</div>
+      </details>
+      <details>
+        <summary>Kommen Sie auch für kleine Aufträge?</summary>
+        <div class="antwort">Ja, kleine Aufträge sind ausdrücklich willkommen, auch acht Fenster oder ein einzelner Wintergarten. Genau solche Aufträge lehnen größere Firmen häufig ab.</div>
+      </details>
+      <details>
+        <summary>Übernimmt die Pflegekasse eine Haushaltshilfe?</summary>
+        <div class="antwort">Die Pflegekasse kann eine Haushaltshilfe über den Entlastungsbetrag nach § 45b SGB XI mit 131 Euro pro Monat bezahlen. Glasreinigungsservice Schenk ist als Anbieter für diese Leistung anerkannt und rechnet direkt mit der Pflegekasse ab. Über Ihren konkreten Anspruch entscheidet Ihre Pflegekasse.</div>
+      </details>
+      <details>
+        <summary>Ich habe nur Pflegegrad 1, gibt es da überhaupt Leistungen?</summary>
+        <div class="antwort">Der Entlastungsbetrag von 131 Euro monatlich gilt bereits ab Pflegegrad 1. Bei Pflegegrad 1 gibt es kein Pflegegeld und keine Pflegesachleistungen, der Entlastungsbetrag ist dort oft die einzige regelmäßige Leistung und wird deshalb häufig übersehen.</div>
+      </details>
+      <details>
+        <summary>Muss ich die Haushaltshilfe erst selbst bezahlen?</summary>
+        <div class="antwort">Nein, ich rechne direkt mit der Pflegekasse ab. Sie gehen nicht in Vorkasse und müssen keine Rechnung einreichen.</div>
+      </details>
+      <details>
+        <summary>Verfällt das Budget, wenn ich es nicht nutze?</summary>
+        <div class="antwort">Nicht genutzter Entlastungsbetrag kann angespart und noch bis zum 30. Juni des Folgejahres abgerufen werden, danach verfällt er. Wer im Vorjahr nichts abgerufen hat, sollte deshalb bis Ende Juni handeln.</div>
+      </details>
+      <details>
+        <summary>Was gehört zur Haushaltshilfe, und was nicht?</summary>
+        <div class="antwort">Zur Haushaltshilfe gehören hauswirtschaftliche Arbeiten wie Reinigung, Wäsche und Ordnung. Körperpflege und medizinische Leistungen gehören nicht dazu, dafür ist ein Pflegedienst zuständig.</div>
+      </details>
+      <details>
+        <summary>Kann ich die Reinigung von der Steuer absetzen?</summary>
+        <div class="antwort">Reinigungsleistungen im privaten Haushalt gelten als haushaltsnahe Dienstleistung nach § 35a EStG, 20 Prozent der Arbeitskosten mindern die Steuer, maximal 4.000 Euro im Jahr. Voraussetzung sind eine Rechnung und bargeldlose Zahlung, beides ist bei mir Standard.</div>
+      </details>
+      <details>
+        <summary>Wird meine Solaranlage bei der Reinigung beschädigt?</summary>
+        <div class="antwort">Solarmodule werden mit entkalktem Wasser und weichen Bürsten ohne aggressive Chemie gereinigt, damit die Beschichtung unbeschädigt bleibt. Vor der Reinigung sage ich Ihnen, ob sich der Aufwand bei Ihrer Anlage lohnt.</div>
+      </details>
+      <details>
+        <summary>Muss ich zu Hause sein, wenn Sie kommen?</summary>
+        <div class="antwort">Sie müssen nicht anwesend sein. Viele Kunden geben mir einen Schlüssel oder lassen mich von Angehörigen einlassen, ganz wie es Ihnen lieber ist.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANFRAGE ============ -->
+<section class="luftig hell anfrage" id="kontakt">
+  <div class="innen rein">
+    <div class="zwei">
+      <div class="formkarte">
+        <h2>Angebot anfragen, unverbindlich</h2>
+        <p>Fünf Felder, kein Captcha. Oder rufen Sie einfach an, das geht schneller.</p>
+        <!-- Entwurf: Formular ohne Versandziel. Vor dem Livegang action und Datenschutz-Checkbox ergänzen. -->
+        <form>
+          <div class="feld-2">
+            <div class="feld"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+            <div class="feld"><label for="kontakt">Telefon oder E-Mail</label><input id="kontakt" name="kontakt" type="text" autocomplete="tel" placeholder="0160 000000" required></div>
+          </div>
+          <div class="feld-2">
+            <div class="feld"><label for="thema">Worum geht es?</label>
+              <select id="thema" name="thema">
+                <option>Fenster und Glas</option>
+                <option>Solaranlage</option>
+                <option>Bauendreinigung</option>
+                <option>Haushalt und Pflegekasse</option>
+              </select>
+            </div>
+            <div class="feld"><label for="ort">Ort</label><input id="ort" name="ort" type="text" placeholder="Bad Salzschlirf"></div>
+          </div>
+          <div class="feld"><label for="text">Was soll gemacht werden?</label><textarea id="text" name="text" placeholder="Optional, ein Satz reicht"></textarea></div>
+          <button class="btn btn-primaer" type="submit" style="width:100%">Kostenloses Angebot anfragen <svg><use href="#i-pfeil"/></svg></button>
+          <p class="mikro">Antwort meist am selben Tag. Unverbindlich, kein Vertreterbesuch, kein Abo.</p>
+        </form>
+      </div>
+      <div class="telefonkarte">
+        <h3>Lieber direkt sprechen?</h3>
+        <p>Am Telefon ist in zwei Minuten geklärt, was ein Formular in mehreren Runden bräuchte. Rufen Sie an, ich gehe selbst ran.</p>
+        <a class="nr" href="tel:+491602624098">0160 2624098</a>
+        <a class="mail" href="mailto:glasreinigungsservice-schenk@outlook.com">glasreinigungsservice-schenk@outlook.com</a>
+        <div class="zeiten">
+          Mo bis Do 8 bis 17 Uhr<br>
+          Fr 9 bis 13 Uhr<br>
+          Bad Salzschlirf und Umgebung, rund 8 Kilometer
+        </div>
+      </div>
+      <div class="beruhigung">
+        <b>Was Sie nicht bekommen</b>
+        <ul>
+          <li><svg><use href="#i-check"/></svg> Keinen Vertreterbesuch und kein Verkaufsgespräch</li>
+          <li><svg><use href="#i-check"/></svg> Kein Abo, keine Mindestlaufzeit, keinen Vertrag</li>
+          <li><svg><use href="#i-check"/></svg> Keine Vorkasse bei Abrechnung über die Pflegekasse</li>
+          <li><svg><use href="#i-check"/></svg> Keine Überraschung auf der Rechnung, der Preis steht vorher</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GEBIET ============ -->
+<section class="dicht gebiet">
+  <div class="innen rein">
+    <div class="zwei">
+      <div>
+        <span class="eyebrow">Einsatzgebiet</span>
+        <h2>Wo ich arbeite</h2>
+        <p>Glasreinigungsservice Schenk arbeitet in Bad Salzschlirf und den Orten im Umkreis von rund acht Kilometern. Für Glas, Solar und Bauendreinigung fahre ich auch weiter, fragen Sie einfach nach.</p>
+        <!-- Ortsliste vom Kunden bestätigen lassen und hier als Textfläche einsetzen.
+             Keine Orte behaupten, die nicht bedient werden, das kostet lokale Rankings. -->
+        <div class="nap">
+          <b>Glasreinigungsservice Schenk</b>
+          Rudolf-Müller-Straße 18<br>
+          36364 Bad Salzschlirf<br>
+          <a href="tel:+491602624098">0160 2624098</a><br>
+          <a href="mailto:glasreinigungsservice-schenk@outlook.com">glasreinigungsservice-schenk@outlook.com</a>
+        </div>
+      </div>
+      <div class="bild">
+        <img src="bilder/gebaeudereinigung-bad-salzschlirf-wohngebiet.webp" width="1400" height="782" alt="Wohnstraße in Bad Salzschlirf mit Einfamilienhäusern" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="innen">
+    <div class="oben">
+      <div>
+        <div class="wm">Schenk</div>
+        <p style="margin-top:var(--raum-3);max-width:36ch;font-size:var(--t-mikro);color:rgba(255,255,255,.55)">Glas- und Gebäudereinigung sowie Hauswirtschaft in Bad Salzschlirf. Haushaltshilfe über die Pflegekasse, ab Pflegegrad 1.</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <a href="#leistungen">Fensterreinigung Bad Salzschlirf</a>
+        <a href="#leistungen">Glasreinigung</a>
+        <a href="#leistungen">Solarreinigung</a>
+        <a href="#leistungen">Bauendreinigung</a>
+        <a href="#pflegekasse">Haushaltshilfe über die Pflegekasse</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="tel:+491602624098">0160 2624098</a>
+        <a href="mailto:glasreinigungsservice-schenk@outlook.com">glasreinigungsservice-schenk@outlook.com</a>
+        <span style="display:block;padding:3px 0;color:rgba(255,255,255,.55)">Rudolf-Müller-Straße 18<br>36364 Bad Salzschlirf</span>
+        <span style="display:block;padding:3px 0;color:rgba(255,255,255,.55)">Mo bis Do 8 bis 17 Uhr, Fr 9 bis 13 Uhr</span>
+      </div>
+    </div>
+    <div class="orte">
+      <b style="color:rgba(255,255,255,.72)">Einsatzgebiet:</b> Bad Salzschlirf und die Orte im Umkreis von rund acht Kilometern.
+    </div>
+    <div class="unten">
+      <span>© 2026 Glasreinigungsservice Schenk</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · Stand: August 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBIL ============ -->
+<div class="sticky-bar">
+  <a class="btn btn-sekundaer" href="tel:+491602624098"><svg><use href="#i-tel"/></svg> Anrufen</a>
+  <a class="btn btn-primaer" href="#kontakt">Anfragen</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"ProfessionalService",
+      "@id":"#betrieb",
+      "name":"Glasreinigungsservice Schenk",
+      "alternateName":"Glasreinigungsservice Ihre mobile Putzfee Schenk",
+      "description":"Glasreinigungsservice Schenk reinigt Fenster, Glasflächen und Solaranlagen in Bad Salzschlirf und im Umkreis von rund acht Kilometern und übernimmt hauswirtschaftliche Leistungen, die über die Pflegekasse abgerechnet werden können.",
+      "telephone":"+49 160 2624098",
+      "email":"glasreinigungsservice-schenk@outlook.com",
+      "image":"bilder/fensterreinigung-bad-salzschlirf-einfamilienhaus.webp",
+      "priceRange":"$$",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Rudolf-Müller-Straße 18",
+        "postalCode":"36364",
+        "addressLocality":"Bad Salzschlirf",
+        "addressRegion":"Hessen",
+        "addressCountry":"DE"
+      },
+      "areaServed":{
+        "@type":"GeoCircle",
+        "geoMidpoint":{"@type":"GeoCoordinates","address":"Bad Salzschlirf, Hessen, DE"},
+        "geoRadius":"8000"
+      },
+      "openingHoursSpecification":[
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"08:00","closes":"17:00"},
+        {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"13:00"}
+      ],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Leistungen",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fensterreinigung","serviceType":"Fensterreinigung","areaServed":"Bad Salzschlirf"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Glasreinigung","serviceType":"Glasreinigung","areaServed":"Bad Salzschlirf"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Solarreinigung","serviceType":"Photovoltaikreinigung","areaServed":"Bad Salzschlirf"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Bauendreinigung","serviceType":"Bauendreinigung","areaServed":"Bad Salzschlirf"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hauswirtschaftliche Versorgung und Haushaltshilfe","serviceType":"Haushaltshilfe über die Pflegekasse ab Pflegegrad 1","areaServed":"Bad Salzschlirf"}}
+        ]
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Was kostet eine Fensterreinigung?","acceptedAnswer":{"@type":"Answer","text":"Der Preis einer Fensterreinigung richtet sich nach Anzahl und Größe der Fenster, dem Zugang und dem Verschmutzungsgrad. Bei kleineren Aufträgen nenne ich den Preis direkt am Telefon, bei größeren nach einem kostenlosen Blick vor Ort. Sie kennen den Preis, bevor ich anfange."}},
+        {"@type":"Question","name":"Kommen Sie auch für kleine Aufträge?","acceptedAnswer":{"@type":"Answer","text":"Ja, kleine Aufträge sind ausdrücklich willkommen, auch acht Fenster oder ein einzelner Wintergarten. Genau solche Aufträge lehnen größere Firmen häufig ab."}},
+        {"@type":"Question","name":"Übernimmt die Pflegekasse eine Haushaltshilfe?","acceptedAnswer":{"@type":"Answer","text":"Die Pflegekasse kann eine Haushaltshilfe über den Entlastungsbetrag nach § 45b SGB XI mit 131 Euro pro Monat bezahlen. Glasreinigungsservice Schenk ist als Anbieter für diese Leistung anerkannt und rechnet direkt mit der Pflegekasse ab. Über Ihren konkreten Anspruch entscheidet Ihre Pflegekasse."}},
+        {"@type":"Question","name":"Ich habe nur Pflegegrad 1, gibt es da überhaupt Leistungen?","acceptedAnswer":{"@type":"Answer","text":"Der Entlastungsbetrag von 131 Euro monatlich gilt bereits ab Pflegegrad 1. Bei Pflegegrad 1 gibt es kein Pflegegeld und keine Pflegesachleistungen, der Entlastungsbetrag ist dort oft die einzige regelmäßige Leistung und wird deshalb häufig übersehen."}},
+        {"@type":"Question","name":"Muss ich die Haushaltshilfe erst selbst bezahlen?","acceptedAnswer":{"@type":"Answer","text":"Nein, ich rechne direkt mit der Pflegekasse ab. Sie gehen nicht in Vorkasse und müssen keine Rechnung einreichen."}},
+        {"@type":"Question","name":"Verfällt das Budget, wenn ich es nicht nutze?","acceptedAnswer":{"@type":"Answer","text":"Nicht genutzter Entlastungsbetrag kann angespart und noch bis zum 30. Juni des Folgejahres abgerufen werden, danach verfällt er. Wer im Vorjahr nichts abgerufen hat, sollte deshalb bis Ende Juni handeln."}},
+        {"@type":"Question","name":"Was gehört zur Haushaltshilfe, und was nicht?","acceptedAnswer":{"@type":"Answer","text":"Zur Haushaltshilfe gehören hauswirtschaftliche Arbeiten wie Reinigung, Wäsche und Ordnung. Körperpflege und medizinische Leistungen gehören nicht dazu, dafür ist ein Pflegedienst zuständig."}},
+        {"@type":"Question","name":"Kann ich die Reinigung von der Steuer absetzen?","acceptedAnswer":{"@type":"Answer","text":"Reinigungsleistungen im privaten Haushalt gelten als haushaltsnahe Dienstleistung nach § 35a EStG, 20 Prozent der Arbeitskosten mindern die Steuer, maximal 4.000 Euro im Jahr. Voraussetzung sind eine Rechnung und bargeldlose Zahlung, beides ist bei mir Standard."}},
+        {"@type":"Question","name":"Wird meine Solaranlage bei der Reinigung beschädigt?","acceptedAnswer":{"@type":"Answer","text":"Solarmodule werden mit entkalktem Wasser und weichen Bürsten ohne aggressive Chemie gereinigt, damit die Beschichtung unbeschädigt bleibt. Vor der Reinigung sage ich Ihnen, ob sich der Aufwand bei Ihrer Anlage lohnt."}},
+        {"@type":"Question","name":"Muss ich zu Hause sein, wenn Sie kommen?","acceptedAnswer":{"@type":"Answer","text":"Sie müssen nicht anwesend sein. Viele Kunden geben mir einen Schlüssel oder lassen mich von Angehörigen einlassen, ganz wie es Ihnen lieber ist."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+/* Sanftes Einblenden. Ohne JavaScript ist alles sofort sichtbar, weil .da dann per Fallback gesetzt wird. */
+(function(){
+  var ziele = document.querySelectorAll('.rein');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    ziele.forEach(function(el){el.classList.add('da')}); return;
+  }
+  var beobachter = new IntersectionObserver(function(eintraege){
+    eintraege.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('da'); beobachter.unobserve(e.target); }
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.08});
+  ziele.forEach(function(el){beobachter.observe(el)});
+})();
+</script>
+</body>
+</html>
