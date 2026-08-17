@@ -25,13 +25,6 @@
     var d = document.createElement("div"); d.appendChild(img(s)); wall.appendChild(d);
   });
 
-  /* Vorher / Nachher */
-  var ba = document.getElementById("ba"), range = document.getElementById("baRange");
-  if(ba && range){
-    var set = function(){ ba.style.setProperty("--pos", range.value + "%"); };
-    range.addEventListener("input", set);
-    set();
-  }
 
   /* Sticky CTA erst nach dem Hero, nicht über dem Formular */
   var sticky = document.getElementById("sticky"), demo = document.getElementById("demo");

@@ -223,46 +223,7 @@ section{position:relative}
   line-height:1.4; letter-spacing:-.018em; color:#fff; max-width:34ch;
 }
 
-/* ---------- Vorher / Nachher: zwei Fotos, gleiche Kamera ---------- */
-.ba{
-  --pos:50%;
-  position:relative; margin-top:var(--s-12); border-radius:var(--r-md); overflow:hidden;
-  border:1px solid var(--ink-700); background:var(--ink-900);
-  aspect-ratio:1800/1005; user-select:none; touch-action:pan-y;
-  box-shadow:0 50px 100px -50px rgba(0,0,0,1);
-}
-.ba__img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
-.ba__pane--before{
-  position:absolute; inset:0; z-index:2;
-  clip-path:inset(0 calc(100% - var(--pos)) 0 0);
-}
-.ba__tag{
-  position:absolute; top:16px; z-index:4; padding:6px 12px; border-radius:999px;
-  font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
-  background:rgba(8,8,15,.78); border:1px solid var(--ink-600); backdrop-filter:blur(8px);
-}
-.ba__tag--l{left:16px; color:var(--ink-200)}
-.ba__tag--r{right:16px; color:var(--violet-200); border-color:rgba(116,46,232,.5)}
-.ba__line{
-  position:absolute; top:0; bottom:0; left:var(--pos); width:2px; z-index:5;
-  background:#fff; transform:translateX(-1px); pointer-events:none;
-  box-shadow:0 0 22px rgba(255,255,255,.4);
-}
-.ba__knob{
-  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  width:44px; height:44px; border-radius:50%; background:#fff; color:var(--ink-1000);
-  display:grid; place-items:center; box-shadow:0 6px 20px rgba(0,0,0,.6);
-}
-.ba__knob svg{width:20px; height:20px}
-.ba__range{
-  position:absolute; inset:0; z-index:6; width:100%; height:100%;
-  margin:0; opacity:0; cursor:ew-resize; -webkit-appearance:none; appearance:none; background:transparent;
-}
-.ba__range:focus-visible + .ba__line{box-shadow:0 0 0 3px var(--violet-400)}
-.ba__range::-webkit-slider-thumb{-webkit-appearance:none; width:60px; height:100%}
-.ba__hint{margin-top:14px; text-align:center; color:var(--ink-400); font-size:13px}
-
-/* ---------- Benefits unter dem Slider ---------- */
+/* ---------- Nutzen-Reihe ---------- */
 .bens{display:grid; gap:var(--s-6); margin-top:var(--s-12)}
 @media(min-width:900px){.bens{grid-template-columns:repeat(3,1fr)}}
 .ben{display:flex; gap:16px; align-items:flex-start}
@@ -536,3 +497,13 @@ ul{margin:0; padding:0}
   text-transform:uppercase; color:var(--ink-200); white-space:nowrap;
 }
 .duo figure:last-child b{color:var(--violet-200)}
+
+/* Streifen mit echten Installationsfotos */
+.shots{display:grid; gap:var(--s-6); margin-top:var(--s-12)}
+@media(min-width:760px){.shots{grid-template-columns:repeat(3,1fr)}}
+.shots figure{margin:0}
+.shots img{
+  width:100%; border-radius:var(--r-md); border:1px solid var(--ink-700); display:block;
+  filter:saturate(.9) contrast(1.03);
+}
+.shots figcaption{margin-top:12px; font-size:13.5px; line-height:20px; color:var(--ink-400)}
