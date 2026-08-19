@@ -18,8 +18,10 @@
 /* ============================================================
    SCHRIFTEN · lokal, nicht über Google Fonts (DSGVO)
    ============================================================ */
-@font-face{font-family:'Bricolage Grotesque';src:url('fonts/bricolage-grotesque-latin.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Bricolage Grotesque';src:url('fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Poppins';src:url('fonts/poppins-600-latin.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Poppins';src:url('fonts/poppins-600-latin-ext.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Poppins';src:url('fonts/poppins-700-latin.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Poppins';src:url('fonts/poppins-700-latin-ext.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter';src:url('fonts/inter-latin.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Inter';src:url('fonts/inter-latin-ext.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
@@ -35,7 +37,7 @@
   --weiss:#FFFFFF;
   --tinte:#0C1D26; --tinte-70:#3B4E58; --tinte-50:#68797F; --tinte-30:#98A6AC;
   --linie:#DBE5EA; --linie-stark:#C3D2DA;
-  --font-display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --font-display:'Poppins','Helvetica Neue',Arial,sans-serif;
   --font-text:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
   --t-hero:clamp(2.05rem,5.2vw,4.1rem);
   --t-h2:clamp(1.65rem,2.8vw,2.35rem);
@@ -58,7 +60,7 @@ html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-text);font-size:1rem;line-height:1.65;color:var(--tinte);background:var(--weiss)}
 /* Keine automatische Trennung in Überschriften, "Pflegekas-se" liest sich schlecht.
    overflow-wrap bleibt als Notbremse für sehr lange Komposita auf schmalen Handys. */
-h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.025em;line-height:1.1;margin:0;overflow-wrap:break-word;hyphens:manual;font-optical-sizing:auto}
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.02em;line-height:1.16;margin:0;overflow-wrap:break-word;hyphens:manual}
 p{margin:0}
 /* height:auto ist Pflicht, sonst wirken die width/height-Attribute als feste CSS-Höhe
    und die Bilder werden vertikal gestreckt. */
@@ -112,7 +114,7 @@ section[id],.funnel{scroll-margin-top:92px}
 .topbar a{color:var(--weiss);text-decoration:none;font-weight:600}
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--linie)}
 .nav .innen{display:flex;align-items:center;gap:var(--raum-5);padding-top:var(--raum-4);padding-bottom:var(--raum-4)}
-.wortmarke{font-family:var(--font-display);font-weight:700;letter-spacing:-.03em;font-size:1.12rem;line-height:1.1;color:var(--tinte);text-decoration:none}
+.wortmarke{font-family:var(--font-display);font-weight:700;letter-spacing:-.022em;font-size:1.12rem;line-height:1.1;color:var(--tinte);text-decoration:none}
 .wortmarke span{display:block;font-family:var(--font-text);font-weight:500;font-size:var(--t-mikro);letter-spacing:.06em;text-transform:uppercase;color:var(--blau-600);white-space:nowrap}
 .nav-links{display:flex;gap:var(--raum-4);margin-left:auto;font-size:var(--t-klein);color:var(--tinte-70)}
 .nav-links a{color:inherit;text-decoration:none}
@@ -130,7 +132,7 @@ section[id],.funnel{scroll-margin-top:92px}
   overflow-x:clip;overflow-y:visible}
 .hero .buehne{max-width:var(--breite);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch}
 .hero .text{padding:var(--raum-9) var(--raum-6) var(--raum-8) var(--raum-5);position:relative;z-index:2}
-.hero h1{font-size:var(--t-hero);font-weight:600;letter-spacing:-.032em;max-width:20ch}
+.hero h1{font-size:var(--t-hero);font-weight:600;letter-spacing:-.025em;max-width:20ch}
 .hero h1 em{font-style:normal;color:var(--blau-600)}
 .hero .lead{font-size:var(--t-lead);color:var(--tinte-70);margin:var(--raum-5) 0 var(--raum-6);max-width:48ch}
 .hero .trusts{display:grid;gap:var(--raum-3);margin-bottom:var(--raum-6)}
@@ -157,7 +159,7 @@ section[id],.funnel{scroll-margin-top:92px}
 .funnel .balken i{display:block;height:100%;width:33.33%;border-radius:var(--r-pill);
   background:linear-gradient(90deg,var(--blau-500),var(--blau-700));transition:width .35s var(--ease)}
 .funnel .zaehler{font-size:var(--t-mikro);color:var(--tinte-50);font-weight:600;white-space:nowrap}
-.funnel .frage{font-family:var(--font-display);font-size:1.22rem;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-bottom:var(--raum-2)}
+.funnel .frage{font-family:var(--font-display);font-size:1.22rem;font-weight:600;letter-spacing:-.015em;line-height:1.25;margin-bottom:var(--raum-2)}
 .funnel .hinweis{font-size:var(--t-mikro);color:var(--tinte-50);margin-bottom:var(--raum-4)}
 .funnel .schritt-inhalt{display:none}
 .funnel .schritt-inhalt.aktiv{display:block;animation:funnel-rein .32s var(--ease)}
@@ -175,7 +177,7 @@ section[id],.funnel{scroll-margin-top:92px}
 .funnel-fuss{margin-top:auto;padding-top:var(--raum-5);border-top:1px solid var(--linie);
   display:flex;align-items:center;justify-content:space-between;gap:var(--raum-3);flex-wrap:wrap}
 .funnel-fuss .anruf{font-size:var(--t-mikro);color:var(--tinte-50)}
-.funnel-fuss .anruf a{font-family:var(--font-display);font-size:1.1rem;font-weight:600;letter-spacing:-.02em;
+.funnel-fuss .anruf a{font-family:var(--font-display);font-size:1.1rem;font-weight:600;letter-spacing:-.015em;
   color:var(--blau-700);text-decoration:none;display:block}
 .funnel-fuss .anruf a:hover{opacity:.75}
 .funnel .zurueck{background:none;border:0;padding:4px 0;font-family:var(--font-text);font-size:var(--t-mikro);
@@ -198,7 +200,7 @@ section[id],.funnel{scroll-margin-top:92px}
 .trustleiste{background:var(--blau-950);color:var(--weiss)}
 .trustleiste .innen{padding-top:var(--raum-7);padding-bottom:var(--raum-6)}
 .trustleiste .reihe{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--raum-5)}
-.trustleiste b{font-family:var(--font-display);font-size:1.28rem;font-weight:600;letter-spacing:-.02em;display:block}
+.trustleiste b{font-family:var(--font-display);font-size:1.28rem;font-weight:600;letter-spacing:-.015em;display:block}
 .trustleiste span{font-size:var(--t-mikro);color:rgba(255,255,255,.62);line-height:1.5;display:block;margin-top:2px}
 
 /* ---------- Sektionsgrundlagen ---------- */
@@ -214,7 +216,7 @@ section{position:relative}
 /* ---------- Problem ---------- */
 .pas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--raum-5)}
 .pas .karte{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);padding:var(--raum-5);box-shadow:var(--schatten-base)}
-.pas .karte q{font-family:var(--font-display);font-size:1.06rem;font-weight:600;letter-spacing:-.015em;display:block;margin-bottom:var(--raum-3);line-height:1.25}
+.pas .karte q{font-family:var(--font-display);font-size:1.06rem;font-weight:600;letter-spacing:-.01em;display:block;margin-bottom:var(--raum-3);line-height:1.25}
 .pas .karte p{font-size:var(--t-klein);color:var(--tinte-70)}
 .uebergang{margin-top:var(--raum-6);font-size:var(--t-lead)}
 
@@ -256,8 +258,8 @@ section{position:relative}
 .budget b.titel{font-family:var(--font-display);font-size:1.05rem;display:block;margin-bottom:var(--raum-4)}
 .budget .zeile{display:flex;justify-content:space-between;gap:var(--raum-4);padding:var(--raum-3) 0;border-bottom:1px dashed var(--sand-200);font-size:var(--t-klein)}
 .budget .zeile:last-of-type{border-bottom:0}
-.budget .wert{font-family:var(--font-display);font-weight:600;letter-spacing:-.02em;color:var(--blau-700);white-space:nowrap}
-.budget .gross{font-family:var(--font-display);font-size:1.9rem;font-weight:600;letter-spacing:-.03em;color:var(--blau-700);line-height:1.1;margin-top:var(--raum-4);display:block}
+.budget .wert{font-family:var(--font-display);font-weight:600;letter-spacing:-.015em;color:var(--blau-700);white-space:nowrap}
+.budget .gross{font-family:var(--font-display);font-size:1.9rem;font-weight:600;letter-spacing:-.022em;color:var(--blau-700);line-height:1.1;margin-top:var(--raum-4);display:block}
 .rechtshinweis{font-size:var(--t-mikro);color:var(--tinte-50);margin-top:var(--raum-5);max-width:64ch}
 
 /* ---------- Warum ---------- */
@@ -285,7 +287,7 @@ section{position:relative}
 .ueber .zwei{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.72fr);gap:var(--raum-8);align-items:center}
 .ueber h2{font-size:var(--t-h2);margin:var(--raum-4) 0 var(--raum-5);max-width:24ch}
 .ueber p{color:var(--tinte-70);margin-bottom:var(--raum-4);max-width:54ch}
-.ueber .nr-gross{font-family:var(--font-display);font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:600;letter-spacing:-.035em;
+.ueber .nr-gross{font-family:var(--font-display);font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:600;letter-spacing:-.028em;
   color:var(--blau-700);text-decoration:none;display:inline-block;margin-top:var(--raum-3)}
 .ueber .nr-gross:hover{opacity:.75}
 .ueber .detailbild{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--schatten-floating);position:relative}
@@ -298,7 +300,7 @@ section{position:relative}
 .kosten p{color:var(--tinte-70);font-size:var(--t-klein)}
 .hebel{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--r-l);padding:var(--raum-5);
   box-shadow:var(--schatten-base);margin-bottom:var(--raum-4);display:grid;grid-template-columns:auto 1fr;gap:var(--raum-4)}
-.hebel .zahl{font-family:var(--font-display);font-size:1.7rem;font-weight:600;letter-spacing:-.03em;color:var(--blau-700);line-height:1.1;white-space:nowrap}
+.hebel .zahl{font-family:var(--font-display);font-size:1.7rem;font-weight:600;letter-spacing:-.022em;color:var(--blau-700);line-height:1.1;white-space:nowrap}
 .faktor{display:flex;gap:var(--raum-2);flex-wrap:wrap;margin-top:var(--raum-4)}
 .faktor li{font-size:var(--t-mikro);color:var(--tinte-70);background:var(--weiss);border:1px solid var(--linie);
   padding:6px 12px;border-radius:var(--r-pill)}
@@ -307,7 +309,7 @@ section{position:relative}
 .faq{max-width:82ch;border-top:1px solid var(--linie)}
 .faq details{border-bottom:1px solid var(--linie)}
 .faq summary{cursor:pointer;list-style:none;padding:var(--raum-5) var(--raum-7) var(--raum-5) 0;position:relative;
-  font-family:var(--font-display);font-size:1.08rem;font-weight:600;letter-spacing:-.015em;transition:opacity .16s var(--ease)}
+  font-family:var(--font-display);font-size:1.08rem;font-weight:600;letter-spacing:-.01em;transition:opacity .16s var(--ease)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary:hover{opacity:.66}
 .faq summary::after{content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
@@ -339,7 +341,7 @@ textarea{min-height:104px;resize:vertical}
     linear-gradient(150deg,var(--blau-800),var(--blau-950)),var(--grain)}
 .telefonkarte h3{font-size:var(--t-h3);margin-bottom:var(--raum-3)}
 .telefonkarte p{color:rgba(255,255,255,.8);font-size:var(--t-klein);margin-bottom:var(--raum-5)}
-.telefonkarte .nr{font-family:var(--font-display);font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:600;letter-spacing:-.035em;
+.telefonkarte .nr{font-family:var(--font-display);font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:600;letter-spacing:-.028em;
   color:var(--weiss);text-decoration:none;display:block;margin-bottom:var(--raum-4)}
 .telefonkarte .nr:hover{opacity:.85}
 .telefonkarte .zeiten{font-size:var(--t-mikro);color:rgba(255,255,255,.6);border-top:1px solid rgba(255,255,255,.16);padding-top:var(--raum-4);margin-top:var(--raum-5)}
@@ -363,7 +365,7 @@ footer .oben{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:var(--raum-7);
 footer h4{font-family:var(--font-display);color:var(--weiss);font-size:1rem;margin-bottom:var(--raum-4)}
 footer a{color:rgba(255,255,255,.74);text-decoration:none;display:block;padding:3px 0}
 footer a:hover{color:var(--weiss)}
-footer .wm{font-family:var(--font-display);font-weight:700;color:#fff;font-size:1.12rem;letter-spacing:-.03em}
+footer .wm{font-family:var(--font-display);font-weight:700;color:#fff;font-size:1.12rem;letter-spacing:-.022em}
 footer .orte{padding:var(--raum-5) 0;font-size:var(--t-mikro);color:rgba(255,255,255,.5);line-height:1.9}
 footer .unten{display:flex;justify-content:space-between;gap:var(--raum-5);flex-wrap:wrap;font-size:var(--t-mikro);color:rgba(255,255,255,.5);padding-top:var(--raum-4);border-top:1px solid rgba(255,255,255,.12)}
 footer .unten a{display:inline}
