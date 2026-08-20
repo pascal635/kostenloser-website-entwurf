@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fliesenleger Hannover | Sandro Bartels Fliesenlegerhandwerk</title>
+<meta name="description" content="Fliesenleger in Hannover mit 35 Jahren Erfahrung. Bad, Dusche, Boden, Altbau, Fugen und Silikon. Alles aus einer Hand, kostenlose Besichtigung, Festangebot.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Fliesenleger Hannover | Sandro Bartels Fliesenlegerhandwerk">
+<meta property="og:description" content="35 Jahre Fliesenlegerhandwerk in Hannover. Alles aus einer Hand, von der Beratung bis zur letzten Fuge.">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --schwarz:#111111; --anthrazit:#2B2E31; --anthrazit-hoch:#3A3D40;
+  --grau:#8A8A8A; --grau-text:#57595B; --grau-invers:#B9B9B6; --grau-tint:#EDEDEB;
+  --fuge:#C9C9C7; --fuge-soft:#E3E3E0; --weiss:#FFFFFF; --papier:#F7F6F4; --porzellan:#F0EFEC;
+  --fehler:#8E2F20;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --ui:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;
+  --r1:2px;--r2:4px;--r3:8px;
+  --e1:0 1px 2px rgba(17,17,17,.06), 0 2px 8px rgba(17,17,17,.04);
+  --e2:0 2px 4px rgba(17,17,17,.05), 0 8px 20px rgba(17,17,17,.07), inset 0 1px 0 rgba(255,255,255,.6);
+  --e3:0 4px 8px rgba(17,17,17,.06), 0 18px 40px rgba(17,17,17,.10), 0 2px 0 rgba(17,17,17,.10);
+  --e-dark:0 2px 6px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.05);
+  --ease:cubic-bezier(.2,.8,.2,1); --t:200ms;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papier);color:var(--schwarz);font-family:var(--ui);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:var(--grain);opacity:.045;pointer-events:none;z-index:200;mix-blend-mode:multiply}
+img{max-width:100%;display:block}
+/* Pflicht: das hidden-Attribut ist nur eine UA-Regel und wird von jedem eigenen display
+   ueberschrieben (.btn ist inline-flex, .f-nav ist flex). Ohne das hier stehen Senden-Button
+   und Navigation dauerhaft sichtbar. */
+[hidden]{display:none!important}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:0}
+p{margin:0 0 var(--s4)}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--s5)}
+.micro{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grau-text)}
+.lead{font-size:19px;color:#3C3E40;max-width:64ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Sektions-Rhythmus: hell, dicht, dunkel im Wechsel */
+section{padding:var(--s9) 0}
+.s-papier{background:var(--papier)}
+.s-porzellan{background:var(--porzellan)}
+.s-dunkel{background:var(--anthrazit);color:#EDEDEA;padding:var(--s10) 0;position:relative;overflow:hidden}
+.s-dunkel::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(58% 100% at 6% 0%, rgba(255,255,255,.10), transparent 62%),
+  radial-gradient(50% 90% at 96% 96%, rgba(140,150,160,.12), transparent 60%)}
+.s-dunkel .wrap{position:relative;z-index:1}
+.s-dunkel h2,.s-dunkel h3{color:#fff}
+.s-dunkel .lead{color:var(--grau-invers)}
+.s-dunkel .micro{color:var(--grau-invers)}
+h2{font-size:clamp(28px,3.6vw,42px)}
+.h2-sub{margin-top:var(--s4)}
+
+.grid{display:grid;gap:var(--s5)}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.row{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);font-family:var(--ui);font-size:16px;font-weight:600;
+  padding:15px 26px;border-radius:var(--r2);border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),background-color var(--t) var(--ease),color var(--t) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:2px solid var(--schwarz);outline-offset:2px}
+.btn-1{background:var(--schwarz);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 2px 6px rgba(17,17,17,.26),0 10px 24px rgba(17,17,17,.18)}
+.btn-1:hover{background:#000;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 4px 10px rgba(17,17,17,.34),0 16px 34px rgba(17,17,17,.24)}
+.btn-tel{background:var(--weiss);color:var(--schwarz);border-color:var(--fuge);box-shadow:var(--e1);font-variant-numeric:tabular-nums}
+.btn-tel:hover{border-color:var(--schwarz)}
+.btn-3{background:transparent;color:var(--schwarz);border-color:var(--schwarz)}
+.btn-3:hover{background:var(--schwarz);color:#fff}
+.s-dunkel .btn-1{background:var(--weiss);color:var(--schwarz);box-shadow:0 2px 6px rgba(0,0,0,.45),0 12px 28px rgba(0,0,0,.35)}
+.s-dunkel .btn-1:hover{background:var(--porzellan);box-shadow:0 4px 10px rgba(0,0,0,.5),0 18px 40px rgba(0,0,0,.42)}
+.s-dunkel .btn-1:focus-visible,.s-dunkel .btn-3:focus-visible{outline-color:var(--weiss)}
+.s-dunkel .btn-3{color:#fff;border-color:rgba(255,255,255,.45)}
+.s-dunkel .btn-3:hover{background:#fff;color:var(--schwarz)}
+.btn-fine{font-size:13px;color:var(--grau-text);margin-top:var(--s3)}
+.s-dunkel .btn-fine{color:var(--grau-invers)}
+
+/* Chips */
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:7px 14px;background:var(--weiss);border:1px solid var(--fuge);border-radius:100px;box-shadow:var(--e1)}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--schwarz);flex:none}
+.s-dunkel .chip{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);color:#EDEDEA;box-shadow:none}
+.s-dunkel .chip::before{background:var(--grau-invers)}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:100;background:rgba(247,246,244,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--fuge-soft)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);padding:var(--s3) 0}
+.top img{width:190px;height:auto}
+nav.main{display:flex;gap:var(--s5)}
+nav.main a{font-size:15px;font-weight:500;text-decoration:none;color:var(--grau-text);padding:4px 0;border-bottom:1px solid transparent;transition:color var(--t) var(--ease),border-color var(--t) var(--ease)}
+nav.main a:hover{color:var(--schwarz);border-color:var(--schwarz)}
+.top-cta{display:flex;gap:var(--s3);align-items:center}
+@media(max-width:1000px){nav.main{display:none}}
+@media(max-width:640px){.top-cta .btn-1{display:none}.top img{width:150px}}
+
+/* Hero, asymmetrisch. Das Bild laeuft bis an den rechten Viewport-Rand und ist der Blickfang. */
+.hero{padding:var(--s8) 0 var(--s9);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(46% 70% at 82% 18%, rgba(17,17,17,.07), transparent 66%),
+  radial-gradient(40% 60% at 4% 92%, rgba(138,138,138,.14), transparent 62%)}
+/* Das Einrueck-Padding gehoert an den Grid-Container, NICHT in die Textspalte:
+   sonst zieht es von der Spaltenbreite ab und die Spalte kollabiert auf breiten Monitoren.
+   100% statt 100vw, damit die Scrollbar die Ausrichtung zum restlichen Inhalt nicht verschiebt. */
+.hero-in{position:relative;z-index:1;display:grid;
+  grid-template-columns:minmax(0,clamp(340px,40vw,600px)) minmax(0,1fr);
+  gap:clamp(28px,3.4vw,72px);align-items:center;
+  padding-left:max(var(--s5), calc((100% - 1200px)/2 + var(--s5)))}
+.hero h1{font-size:clamp(36px,5.2vw,62px);letter-spacing:-.032em;text-wrap:balance}
+.hero .sub{font-size:19px;color:#3C3E40;max-width:46ch;margin:var(--s5) 0}
+.hero-chips{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s6)}
+.hero-shot{position:relative}
+.hero-shot .shot{border-radius:var(--r3) 0 0 var(--r3);border-right:0;
+  height:clamp(400px,64vh,660px);box-shadow:-2px 4px 12px rgba(17,17,17,.10),-8px 26px 60px rgba(17,17,17,.16)}
+.hero-shot .shot img{height:100%}
+/* versetzter Fugen-Rahmen als Tiefenschicht hinter dem Bild */
+.hero-shot::before{content:"";position:absolute;left:-22px;top:-22px;width:220px;height:220px;
+  border-top:1px solid var(--fuge);border-left:1px solid var(--fuge)}
+/* Makro-Detail ueberlappt das Hauptbild, klassischer Editorial-Griff und unser Craft-Beweis */
+.hero-makro{position:absolute;left:-28px;bottom:-40px;width:clamp(112px,11.5vw,176px);aspect-ratio:1;
+  border-radius:var(--r3);overflow:hidden;border:6px solid var(--papier);
+  box-shadow:0 4px 10px rgba(17,17,17,.10),0 20px 44px rgba(17,17,17,.20);z-index:2}
+.hero-makro img{width:100%;height:100%;object-fit:cover;filter:saturate(.62) contrast(1.04)}
+@media(max-width:900px){
+  .hero{padding:var(--s7) 0 var(--s8)}
+  .hero-in{grid-template-columns:1fr;gap:var(--s6);padding-left:0}
+  .hero-text{padding:0 var(--s5)}
+  .hero-shot .shot{border-radius:var(--r3) 0 0 var(--r3);height:clamp(300px,52vh,460px)}
+  .hero-shot::before{display:none}
+  .hero-makro{left:var(--s4);bottom:-22px;width:104px;border-width:5px}
+}
+
+/* Bild-Treatment */
+figure.shot{position:relative;overflow:hidden;border:1px solid var(--fuge);border-radius:var(--r3);box-shadow:var(--e2);background:var(--anthrazit);margin:0}
+figure.shot img{width:100%;height:100%;object-fit:cover;transition:transform 480ms var(--ease)}
+figure.shot::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(17,17,17,.82) 0%,rgba(17,17,17,.55) 22%,rgba(17,17,17,.16) 48%,rgba(17,17,17,0) 72%)}
+figure.shot:hover img{transform:scale(1.03)}
+figure.shot figcaption{position:absolute;left:var(--s4);right:var(--s4);bottom:var(--s4);z-index:2;color:#fff}
+figure.shot figcaption b{display:block;font-family:var(--display);font-size:19px;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+figure.shot figcaption small{font-size:13px;color:#DEDEDB;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.macro img{filter:saturate(.62) contrast(1.04)}
+.r169{aspect-ratio:16/9}.r32{aspect-ratio:3/2}.r11{aspect-ratio:1/1}.r34{aspect-ratio:3/4}
+.hinweis-badge{position:absolute;top:var(--s3);left:var(--s3);z-index:2;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(17,17,17,.72);color:#fff;padding:5px 9px;border-radius:var(--r1);backdrop-filter:blur(4px)}
+
+/* Vertrauensband, dichte Sektion */
+.trust{padding:var(--s7) 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--fuge);border-bottom:1px solid var(--fuge)}
+.trust-grid>div{padding:var(--s6) var(--s5) var(--s6) 0;border-right:1px solid var(--fuge)}
+.trust-grid>div:last-child{border-right:0}
+.trust-grid>div:not(:first-child){padding-left:var(--s5)}
+.tnum{font-family:var(--display);font-size:clamp(38px,4vw,58px);font-weight:700;letter-spacing:-.04em;line-height:.95;display:block;margin-bottom:var(--s2)}
+.tnum.klein{font-size:clamp(24px,2.4vw,34px)}
+.tlogo{height:clamp(24px,2.2vw,31px);width:auto;margin-bottom:var(--s3);margin-top:var(--s2)}
+.trust-grid b{display:block;font-size:15px;font-weight:600}
+.trust-grid small{display:block;font-size:14px;color:var(--grau-text)}
+@media(max-width:860px){.trust-grid{grid-template-columns:1fr 1fr}.trust-grid>div{border-bottom:1px solid var(--fuge)}.trust-grid>div:nth-child(2n){border-right:0}.trust-grid>div:nth-child(n+3){border-bottom:0}}
+@media(max-width:520px){.trust-grid{grid-template-columns:1fr}.trust-grid>div{border-right:0!important;border-bottom:1px solid var(--fuge)!important;padding-left:0!important}.trust-grid>div:last-child{border-bottom:0!important}}
+
+/* Problem-Gegenüberstellung, dichteste Sektion */
+.pz{border-top:1px solid var(--fuge)}
+.pz-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);padding:var(--s5) 0;border-bottom:1px solid var(--fuge)}
+.pz-row .l{color:var(--grau-text);font-size:16px}
+.pz-row .r{font-weight:500;font-size:16px}
+.pz-row .r::before{content:"";display:inline-block;width:14px;height:8px;border-left:2px solid var(--schwarz);border-bottom:2px solid var(--schwarz);transform:rotate(-45deg) translateY(-3px);margin-right:10px}
+@media(max-width:760px){.pz-row{grid-template-columns:1fr;gap:var(--s2)}}
+
+/* Karten */
+.card{background:var(--weiss);border:1px solid var(--fuge-soft);border-radius:var(--r3);box-shadow:var(--e1);padding:var(--s5);
+  transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease),border-color var(--t) var(--ease);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-2px);box-shadow:var(--e3);border-color:var(--fuge)}
+.card h3{font-size:22px;margin-bottom:var(--s2)}
+.card p{font-size:15px;color:#3C3E40;margin-bottom:var(--s4)}
+.card .meta{font-size:13px;font-weight:600;margin-top:auto}
+.card-ico{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--fuge);border-radius:var(--r2);background:linear-gradient(160deg,#fff,var(--porzellan));margin-bottom:var(--s4);box-shadow:var(--e1)}
+.s-dunkel .card{background:var(--anthrazit-hoch);border-color:rgba(255,255,255,.09);box-shadow:var(--e-dark)}
+.s-dunkel .card p{color:var(--grau-invers)}
+.s-dunkel .card .meta{color:var(--grau-invers)}
+.s-dunkel .card-ico{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);box-shadow:none}
+.s-dunkel .card:hover{box-shadow:0 6px 14px rgba(0,0,0,.5),0 26px 60px rgba(0,0,0,.5)}
+.card-link{background:none;border:0;padding:0;margin-top:var(--s4);font:600 15px var(--ui);color:inherit;cursor:pointer;text-align:left;
+  border-bottom:1px solid currentColor;align-self:flex-start;transition:opacity var(--t) var(--ease)}
+.card-link:hover{opacity:.6}
+.card-link:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* Partner-Karte: die Keramundo-Wortmarke ist schwarz, sie braucht eine helle Flaeche */
+.partner-karte{background:var(--weiss);border:1px solid var(--fuge-soft);border-radius:var(--r3);
+  box-shadow:var(--e2);padding:var(--s7) var(--s6);display:flex;flex-direction:column;gap:var(--s5);align-items:flex-start}
+.partner-karte img{width:min(340px,100%);height:auto}
+.partner-text{font-size:15px;color:#3C3E40;margin:0;max-width:38ch}
+
+/* Split-Block */
+.split{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:var(--s7);align-items:center}
+.split.rev{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+@media(max-width:900px){.split,.split.rev{grid-template-columns:1fr;gap:var(--s5)}}
+ul.klar{list-style:none;padding:0;margin:var(--s5) 0 0}
+ul.klar li{position:relative;padding-left:26px;margin-bottom:var(--s3);font-size:16px}
+ul.klar li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:7px;border-left:2px solid var(--schwarz);border-bottom:2px solid var(--schwarz);transform:rotate(-45deg)}
+.s-dunkel ul.klar li::before{border-color:#fff}
+
+/* Filter-Tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:var(--s2);margin:var(--s5) 0 var(--s6)}
+.tab{font:600 15px var(--ui);padding:9px 18px;background:transparent;border:1px solid var(--fuge);border-radius:100px;cursor:pointer;transition:background-color var(--t) var(--ease),color var(--t) var(--ease),border-color var(--t) var(--ease)}
+.tab:hover{border-color:var(--schwarz)}
+.tab[aria-selected="true"]{background:var(--schwarz);border-color:var(--schwarz);color:#fff}
+.tab:focus-visible{outline:2px solid var(--schwarz);outline-offset:2px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.gal figure{transition:opacity var(--t) var(--ease)}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gal{grid-template-columns:1fr}}
+
+/* Ablauf */
+.step{display:flex;gap:var(--s4);padding:var(--s5) 0;border-bottom:1px solid var(--fuge)}
+.step:last-child{border-bottom:0}
+.step-n{flex:none;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--schwarz);color:#fff;font:700 19px var(--display);box-shadow:var(--e2)}
+.step h3{font-size:20px;margin-bottom:4px}
+.step p{font-size:15px;color:#3C3E40;margin:0}
+.step .when{font-size:13px;font-weight:600;margin-top:6px}
+
+/* Preise */
+.ptab{width:100%;border-collapse:collapse;font-size:16px}
+.ptab caption{text-align:left;font:700 12px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--grau-text);padding-bottom:var(--s3)}
+.ptab th{text-align:left;font:700 12px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--grau-text);padding:0 0 var(--s3);border-bottom:1px solid var(--fuge)}
+.ptab th:last-child,.ptab td:last-child{text-align:right}
+.ptab td{padding:var(--s4) 0;border-bottom:1px solid var(--fuge-soft)}
+.ptab td:last-child{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tab-scroll{overflow-x:auto}
+
+/* Gebiet */
+.orte{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5)}
+.ort{font-size:14px;font-weight:500;padding:6px 12px;border:1px solid var(--fuge);border-radius:var(--r2);background:var(--weiss)}
+
+/* Funnel */
+.funnel{background:var(--weiss);color:var(--schwarz);border-radius:var(--r3);padding:var(--s6);box-shadow:0 8px 20px rgba(0,0,0,.35),0 30px 70px rgba(0,0,0,.4);max-width:620px}
+/* Die Funnel-Karte liegt in .s-dunkel, erbt aber deren Textfarben nicht:
+   sonst steht die Frage weiss auf weiss und das Schritt-Label hellgrau auf weiss. */
+.s-dunkel .funnel h2,.s-dunkel .funnel h3{color:var(--schwarz)}
+.s-dunkel .funnel .micro{color:var(--grau-text)}
+.s-dunkel .funnel .f-hint,.s-dunkel .funnel p{color:var(--grau-text)}
+.s-dunkel .funnel .btn-1{background:var(--schwarz);color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 2px 6px rgba(17,17,17,.26),0 10px 24px rgba(17,17,17,.18)}
+.s-dunkel .funnel .btn-1:hover{background:#000}
+.s-dunkel .funnel .btn-1:focus-visible{outline-color:var(--schwarz)}
+.prog{display:flex;gap:6px;margin-bottom:var(--s5)}
+.prog i{height:4px;flex:1;background:var(--fuge-soft);border-radius:100px;transition:background-color var(--t) var(--ease)}
+.prog i.on{background:var(--schwarz)}
+.f-step h3{font-size:26px;margin-bottom:var(--s5)}
+.f-opts{display:grid;gap:var(--s2)}
+.f-opts.zwei{grid-template-columns:1fr 1fr}
+@media(max-width:560px){.f-opts.zwei{grid-template-columns:1fr}}
+.pick{display:block;cursor:pointer}
+.pick input{position:absolute;opacity:0;width:1px;height:1px}
+.pick span{display:flex;align-items:center;gap:var(--s3);padding:15px var(--s4);background:var(--weiss);border:1px solid var(--fuge);border-radius:var(--r2);
+  font-weight:500;font-size:16px;box-shadow:var(--e1);transition:transform var(--t) var(--ease),border-color var(--t) var(--ease),box-shadow var(--t) var(--ease),background-color var(--t) var(--ease)}
+.pick span::before{content:"";width:18px;height:18px;flex:none;border:1px solid var(--fuge);border-radius:50%;background:var(--weiss)}
+.pick:hover span{transform:translateY(-2px);border-color:var(--grau);box-shadow:var(--e2)}
+.pick input:checked+span{border-color:var(--schwarz);background:var(--grau-tint);box-shadow:var(--e2)}
+.pick input:checked+span::before{background:var(--schwarz);border-color:var(--schwarz);box-shadow:inset 0 0 0 3px var(--weiss)}
+.pick input:focus-visible+span{outline:2px solid var(--schwarz);outline-offset:2px}
+.f-nav{display:flex;gap:var(--s3);align-items:center;margin-top:var(--s5);flex-wrap:wrap}
+.f-back{background:none;border:0;font:600 15px var(--ui);color:var(--grau-text);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--fuge)}
+.f-back:hover{color:var(--schwarz);border-color:var(--schwarz)}
+.f-hint{font-size:14px;color:var(--grau-text);margin-top:var(--s4)}
+label.f{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--grau-text);margin-bottom:var(--s2)}
+.inp{width:100%;font-family:var(--ui);font-size:16px;padding:13px 14px;background:var(--weiss);color:var(--schwarz);border:1px solid var(--fuge);border-radius:var(--r2);
+  box-shadow:inset 0 1px 2px rgba(17,17,17,.05);transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+.inp:focus{outline:none;border-color:var(--schwarz);box-shadow:0 0 0 3px rgba(17,17,17,.14),inset 0 1px 2px rgba(17,17,17,.05)}
+.inp[aria-invalid="true"]{border-color:var(--fehler);box-shadow:0 0 0 3px rgba(142,47,32,.12)}
+.err-msg{font-size:13px;color:var(--fehler);margin-top:6px;display:none}
+.err-msg.zeig{display:block}
+.f-felder{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.f-felder .voll{grid-column:1/-1}
+@media(max-width:560px){.f-felder{grid-template-columns:1fr}}
+.f-danke{text-align:left}
+.f-danke .haken{width:52px;height:52px;border-radius:50%;background:var(--schwarz);display:grid;place-items:center;margin-bottom:var(--s5)}
+.zusammenfassung{background:var(--porzellan);border:1px solid var(--fuge);border-radius:var(--r2);padding:var(--s4);font-size:15px;margin:var(--s5) 0}
+.zusammenfassung dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px var(--s4)}
+.zusammenfassung dt{color:var(--grau-text)}
+.zusammenfassung dd{margin:0;font-weight:600}
+
+/* FAQ */
+details.faq{border-bottom:1px solid var(--fuge);padding:var(--s4) 0}
+details.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:var(--s4);font:600 20px var(--display);letter-spacing:-.015em}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font:400 26px var(--ui);flex:none;line-height:1;transition:transform var(--t) var(--ease)}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq summary:focus-visible{outline:2px solid var(--schwarz);outline-offset:4px}
+details.faq p{font-size:16px;color:#3C3E40;margin:var(--s3) 0 0;max-width:74ch}
+
+/* Footer */
+footer{background:var(--schwarz);color:#EDEDEA;padding:var(--s9) 0 var(--s7)}
+footer img{width:200px;height:auto;margin-bottom:var(--s4)}
+footer a{color:#EDEDEA}
+footer .micro{color:var(--grau-invers)}
+footer p,footer li{font-size:15px;color:var(--grau-invers)}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:6px}
+.f-linie{height:1px;background:rgba(255,255,255,.14);margin:var(--s6) 0}
+.entitaet{font-size:14px;color:#9A9A97;max-width:92ch}
+
+/* Mobil-Leiste */
+.mobil-bar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;gap:var(--s2);padding:var(--s3);
+  background:rgba(17,17,17,.97);border-top:1px solid rgba(255,255,255,.14);box-shadow:0 -6px 24px rgba(0,0,0,.4)}
+.mobil-bar .btn{flex:1;padding:14px 12px;font-size:15px}
+.mobil-bar .btn-1{background:var(--weiss);color:var(--schwarz)}
+.mobil-bar .btn-3{color:#fff;border-color:rgba(255,255,255,.45)}
+@media(max-width:760px){.mobil-bar{display:flex}body{padding-bottom:76px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a href="#hero" aria-label="Startseite Fliesenlegerhandwerk Hannover"><img src="logo.svg" alt="Fliesenlegerhandwerk Hannover, Sandro Bartels" width="600" height="158"></a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#altbau">Altbau</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#preise">Preise</a>
+      <a href="#faq">Fragen</a>
+    </nav>
+    <div class="top-cta">
+      <a class="btn btn-tel" href="tel:+4915142112494">01514 2112494</a>
+      <a class="btn btn-1" href="#anfrage">Anfrage</a>
+    </div>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<section class="hero s-papier" id="hero">
+  <div class="hero-in">
+    <div class="hero-text">
+      <p class="micro">Fliesenlegerhandwerk Hannover</p>
+      <h1>Fliesenleger in Hannover, der selbst mit anpackt</h1>
+      <p class="sub">35 Jahre Fliesenlegerhandwerk, alles aus einer Hand. Beratung, Aufmaß, Verlegung, Fugen und Silikon. Ein Ansprechpartner von der ersten Idee bis zur letzten Fuge.</p>
+      <div class="row">
+        <a class="btn btn-1" href="#anfrage">Anfrage in 60 Sekunden</a>
+        <a class="btn btn-tel" href="tel:+4915142112494">01514 2112494</a>
+      </div>
+      <p class="btn-fine">Kostenlos und unverbindlich. Antwort am selben Werktag.</p>
+      <div class="hero-chips">
+        <span class="chip">35 Jahre Erfahrung</span>
+        <span class="chip">Alles aus einer Hand</span>
+        <span class="chip">Hannover und Umland</span>
+        <span class="chip">Kostenlose Besichtigung</span>
+      </div>
+    </div>
+    <div class="hero-shot">
+      <figure class="shot">
+        <img src="bilder/fliesenleger-hannover-bad-grossformat-anthrazit.webp" alt="Fertig saniertes Badezimmer in Hannover mit anthrazitfarbenen Großformatfliesen und bodengleicher Dusche" width="1920" height="1072" fetchpriority="high">
+      </figure>
+      <div class="hero-makro">
+        <img src="bilder/fliesenleger-hannover-detail-fugenkreuz.webp" alt="Makroaufnahme eines präzise gesetzten Fugenkreuzes" width="1100" height="1100" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · VERTRAUENSBAND -->
+<section class="trust s-papier" aria-label="Fakten zum Betrieb">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div><span class="tnum">35</span><b>Jahre im Fliesenlegerhandwerk</b><small>Hannover und Region</small></div>
+      <div><span class="tnum klein">A bis Z</span><b>Ein Ansprechpartner</b><small>Von der Beratung bis zur Abnahme</small></div>
+      <div><img class="tlogo" src="bilder/keramundo_rgb.svg" alt="Keramundo, Welt der Fliesen" width="190" height="31" loading="lazy"><b>Partner im Fliesen-Fachhandel</b><small>Sie suchen im Studio in Ruhe aus</small></div>
+      <div><span class="tnum klein">DIN 18534</span><b>Abdichtung im Verbund</b><small>Norm, kein Werbewort</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PROBLEM UND ZUSPITZUNG -->
+<section class="s-porzellan">
+  <div class="wrap">
+    <h2>Warum Fliesen legen lassen so oft Nerven kostet</h2>
+    <p class="lead h2-sub">Wir hören es seit 35 Jahren, und es ändert sich nichts. Nicht die Fliese ist das Problem, sondern alles drumherum.</p>
+    <div class="pz" style="margin-top:var(--s6)">
+      <div class="pz-row"><div class="l">Man schreibt drei Betriebe an und keiner antwortet.</div><div class="r">Sie bekommen am selben Werktag eine Antwort, auch wenn es ein Nein ist.</div></div>
+      <div class="pz-row"><div class="l">Der Termin platzt und keiner sagt Bescheid.</div><div class="r">Sie bekommen ein festes Zeitfenster. Verschiebt sich etwas, hören Sie es vorher von uns.</div></div>
+      <div class="pz-row"><div class="l">Nach der Arbeit sieht die Wohnung aus wie eine Baustelle.</div><div class="r">Wege werden abgedeckt, Staub wird abgesaugt, abends ist besenrein.</div></div>
+      <div class="pz-row"><div class="l">Ein Jahr später reißen die Fugen und niemand ist erreichbar.</div><div class="r">Untergrund prüfen, Abdichtung nach DIN 18534, Fugen und Silikon sauber ausgeführt. Und Sie erreichen mich weiterhin.</div></div>
+    </div>
+    <p class="lead" style="margin-top:var(--s6);font-weight:500;color:var(--schwarz)">Wenn der Untergrund nicht taugt, sagen wir das vorher. Nicht mitten in der Arbeit.</p>
+  </div>
+</section>
+
+<!-- 4 · LEISTUNGEN, dunkles Band -->
+<section class="s-dunkel" id="leistungen">
+  <div class="wrap">
+    <p class="micro">Leistungen</p>
+    <h2 style="margin-top:var(--s3)">Fliesen verlegen und Bad sanieren in Hannover</h2>
+    <p class="lead h2-sub" style="margin-bottom:var(--s7)">Von der einzelnen Silikonfuge bis zum kompletten Bad. Alles im eigenen Haus, ohne Subunternehmer-Kette.</p>
+    <div class="grid g3">
+      <article class="card">
+        <div class="card-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9B9B6" stroke-width="1.6"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+        <h3>Bad komplett neu</h3>
+        <p>Fliesen, Abdichtung, Fugen und Silikon für das ganze Bad. Wir koordinieren den Ablauf, damit Sie nicht zwischen den Gewerken vermitteln müssen.</p>
+        <div class="meta">Typisch 5 bis 10 Arbeitstage</div>
+        <button class="card-link" data-anliegen="Bad komplett">Bad anfragen</button>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9B9B6" stroke-width="1.6"><path d="M12 3v8M8 7l4-4 4 4"/><path d="M4 13h16v8H4z"/></svg></div>
+        <h3>Bodengleiche Dusche</h3>
+        <p>Gefälle, Abdichtung im Verbund, saubere Anschlüsse. Der Teil, an dem sich später zeigt, ob jemand sein Handwerk kann.</p>
+        <div class="meta">Typisch 3 bis 5 Arbeitstage</div>
+        <button class="card-link" data-anliegen="Bodengleiche Dusche">Dusche anfragen</button>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9B9B6" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+        <h3>Boden und Großformat</h3>
+        <p>Feinsteinzeug, Großformat, Naturstein, Mosaik. Für Wohnraum, Flur, Küche und Terrasse. Ebene Untergründe, saubere Schnitte, ruhiges Fugenbild.</p>
+        <div class="meta">Auch Platten über 80 x 80 cm</div>
+        <button class="card-link" data-anliegen="Boden und Großformat">Boden anfragen</button>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9B9B6" stroke-width="1.6"><path d="M4 20h16M7 20V9l5-5 5 5v11"/><path d="M10 20v-5h4v5"/></svg></div>
+        <h3>Altbau: Dünn- und Dickbett</h3>
+        <p>Alte Bäder in Hannover liegen oft im Dickbett. Wir sanieren beides, Dünnbett und Dickbett, auch wenn Wände und Estrich nicht mehr im Lot sind.</p>
+        <div class="meta">Die Fälle, die andere ablehnen</div>
+        <button class="card-link" data-anliegen="Altbau, Dünn- oder Dickbett">Altbau anfragen</button>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9B9B6" stroke-width="1.6"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><path d="M3 21h18"/></svg></div>
+        <h3>Fugen und Silikon erneuern</h3>
+        <p>Fugen bröckeln, Silikon wird schwarz oder löst sich. Wir nehmen die alten Fugen heraus und setzen sie neu, statt drüber zu schmieren.</p>
+        <div class="meta">Typisch 1 Arbeitstag</div>
+        <button class="card-link" data-anliegen="Fugen und Silikon erneuern">Fugen anfragen</button>
+      </article>
+      <article class="card">
+        <div class="card-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9B9B6" stroke-width="1.6"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div>
+        <h3>Reparatur und Ausbesserung</h3>
+        <p>Einzelne Fliesen gerissen, hohl liegend oder ausgebrochen. Auch kleine Aufträge, ohne Mindestauftragswert.</p>
+        <div class="meta">Kleine Aufträge willkommen</div>
+        <button class="card-link" data-anliegen="Reparatur">Reparatur anfragen</button>
+      </article>
+    </div>
+    <div class="row" style="margin-top:var(--s7)">
+      <a class="btn btn-1" href="#anfrage">Anfrage in 60 Sekunden</a>
+      <a class="btn btn-3" href="tel:+4915142112494">Lieber anrufen</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · ALTBAU -->
+<section class="s-papier" id="altbau">
+  <div class="wrap split">
+    <figure class="shot r32">
+      <span class="hinweis-badge">Beispielumsetzung</span>
+      <img src="bilder/fliesenleger-hannover-altbau-dickbett-sanierung.webp" alt="Altbau-Bad in Hannover zurückgebaut, altes Dickbett entfernt, Abdichtung angesetzt" loading="lazy" width="1600" height="1073">
+      <figcaption><b>Altbau zurückgebaut</b><small>Dickbett entfernt, Abdichtung angesetzt</small></figcaption>
+    </figure>
+    <div>
+      <p class="micro">Unsere Spezialität</p>
+      <h2 style="margin-top:var(--s3)">Altbau in Hannover: Dickbett und Dünnbett sanieren</h2>
+      <p class="lead h2-sub">Viele Bäder in Hannover stammen aus einer Zeit, in der Fliesen im Dickbett gesetzt wurden, also in einem dicken Mörtelbett direkt auf das Mauerwerk. Wer da einfach die alten Fliesen abschlägt, steht vor schiefen Wänden, offenen Leitungen und einem Untergrund, der neu aufgebaut werden muss. Genau deshalb winken viele Betriebe bei Altbau ab.</p>
+      <p class="lead" style="font-weight:500;color:var(--schwarz)">Wir machen es seit 35 Jahren. Dickbett und Dünnbett, Sanierung und Neuaufbau.</p>
+      <ul class="klar">
+        <li>Untergrund beurteilen, bevor irgendetwas abgeschlagen wird</li>
+        <li>Neuaufbau mit Ausgleich, Entkopplung und Abdichtung nach DIN 18534</li>
+        <li>Ehrliche Ansage vorher, wenn der Aufwand größer ist als gedacht</li>
+      </ul>
+      <div class="row" style="margin-top:var(--s6)">
+        <button class="btn btn-1" data-anliegen="Altbau, Dünn- oder Dickbett">Altbau-Projekt anfragen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · REFERENZEN -->
+<section class="s-porzellan" id="referenzen">
+  <div class="wrap">
+    <p class="micro">Ergebnisse</p>
+    <h2 style="margin-top:var(--s3)">Fliesenarbeiten aus Hannover und Region</h2>
+    <p class="lead h2-sub">Das Ergebnis zählt, nicht die Beschreibung.</p>
+    <div class="tabs" role="tablist" aria-label="Referenzen filtern">
+      <button class="tab" role="tab" aria-selected="true" data-filter="alle">Alle</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="bad">Bad</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="dusche">Dusche</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="boden">Boden</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="detail">Detail</button>
+    </div>
+    <div class="gal">
+      <figure class="shot r32" data-kat="bad">
+        <span class="hinweis-badge">Beispielumsetzung</span>
+        <img src="bilder/fliesenleger-hannover-bad-grossformat-anthrazit.webp" alt="Badezimmer in Hannover mit Großformatfliesen in Anthrazit" loading="lazy" width="1920" height="1072">
+        <figcaption><b>Bad komplett, Großformat</b><small>Anthrazit, bodengleiche Dusche</small></figcaption>
+      </figure>
+      <figure class="shot r32" data-kat="dusche">
+        <span class="hinweis-badge">Beispielumsetzung</span>
+        <img src="bilder/fliesenleger-hannover-bodengleiche-dusche.webp" alt="Bodengleiche Dusche mit Linienentwässerung und dunklen Großformatfliesen" loading="lazy" width="1200" height="1607">
+        <figcaption><b>Bodengleiche Dusche</b><small>Linienentwässerung, Abdichtung im Verbund</small></figcaption>
+      </figure>
+      <figure class="shot r32" data-kat="boden">
+        <span class="hinweis-badge">Beispielumsetzung</span>
+        <img src="bilder/fliesenleger-hannover-grossformat-boden-flur.webp" alt="Großformat-Fliesenboden im Flur eines Hauses in Hannover" loading="lazy" width="1600" height="1073">
+        <figcaption><b>Großformat im Flur</b><small>120 x 120 cm, schmale Fuge</small></figcaption>
+      </figure>
+      <figure class="shot r32" data-kat="boden">
+        <span class="hinweis-badge">Beispielumsetzung</span>
+        <img src="bilder/fliesenleger-hannover-kueche-fliesenspiegel.webp" alt="Küchen-Fliesenspiegel in dunklem Grau im Stapelverband" loading="lazy" width="1600" height="1073">
+        <figcaption><b>Fliesenspiegel Küche</b><small>Stapelverband, dunkle Fuge</small></figcaption>
+      </figure>
+      <figure class="shot r32 macro" data-kat="detail">
+        <img src="bilder/fliesenleger-hannover-detail-fugenkreuz.webp" alt="Makroaufnahme eines präzisen Fugenkreuzes zwischen vier Fliesen" loading="lazy" width="1100" height="1100">
+        <figcaption><b>Fugenkreuz</b><small>Vier Kanten, ein Punkt</small></figcaption>
+      </figure>
+      <figure class="shot r32 macro" data-kat="detail">
+        <img src="bilder/fliesenleger-hannover-detail-silikonfuge.webp" alt="Silikonfuge wird mit dem Spachtel sauber gezogen" loading="lazy" width="1100" height="1100">
+        <figcaption><b>Silikonfuge</b><small>Der Teil, den Sie täglich sehen</small></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · ABLAUF -->
+<section class="s-papier" id="ablauf">
+  <div class="wrap split rev">
+    <div>
+      <p class="micro">Ablauf</p>
+      <h2 style="margin-top:var(--s3)">So läuft Ihr Projekt ab</h2>
+      <p class="lead h2-sub">Fünf Schritte, keine Überraschungen.</p>
+      <div style="margin-top:var(--s5)">
+        <div class="step"><div class="step-n">1</div><div><h3>Anfrage</h3><p>Sie schildern in 60 Sekunden, was gemacht werden soll.</p><div class="when">Antwort am selben Werktag</div></div></div>
+        <div class="step"><div class="step-n">2</div><div><h3>Besichtigung und Aufmaß</h3><p>Kostenlos und bei Ihnen vor Ort. Wir sehen den Untergrund an, messen auf und sprechen über Material und Format.</p><div class="when">In der Regel innerhalb einer Woche</div></div></div>
+        <div class="step"><div class="step-n">3</div><div><h3>Festangebot</h3><p>Sie bekommen ein schriftliches Angebot mit klaren Positionen.</p><div class="when">Innerhalb von 3 Werktagen nach der Besichtigung</div></div></div>
+        <div class="step"><div class="step-n">4</div><div><h3>Ausführung</h3><p>Fester Termin, festes Zeitfenster. Wege abgedeckt, Staub abgesaugt, abends besenrein.</p><div class="when">Zeitfenster steht vor dem Start</div></div></div>
+        <div class="step"><div class="step-n">5</div><div><h3>Abnahme</h3><p>Wir gehen gemeinsam durch, Sie prüfen Fugen, Kanten und Silikon. Dazu bekommen Sie die Pflegehinweise für Ihr Material.</p></div></div>
+      </div>
+      <div class="row" style="margin-top:var(--s6)">
+        <a class="btn btn-1" href="#anfrage">Schritt 1 starten</a>
+      </div>
+    </div>
+    <figure class="shot r34">
+      <span class="hinweis-badge">Beispielumsetzung</span>
+      <img src="bilder/fliesenleger-hannover-fliesen-verlegen-kleber.webp" alt="Fliesenleger trägt Fliesenkleber mit der Zahnkelle in gleichmäßigen Rippen auf" loading="lazy" width="1600" height="1073">
+      <figcaption><b>Kleberauftrag mit der Zahnkelle</b><small>Gleichmäßige Rippen, volle Auflage</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 8 · WARUM -->
+<section class="s-porzellan" id="warum">
+  <div class="wrap">
+    <p class="micro">Warum Sandro Bartels</p>
+    <h2 style="margin-top:var(--s3)">Sechs Gründe, die im Alltag den Unterschied machen</h2>
+    <div class="grid g3" style="margin-top:var(--s7)">
+      <div class="card"><h3>Der Chef legt selbst</h3><p>Sie sprechen mit dem Mann, der die Arbeit macht. Keine Subunternehmer-Kette, kein Callcenter, kein Vergleichsportal.</p></div>
+      <div class="card"><h3>35 Jahre am Material</h3><p>Feinsteinzeug, Großformat, Naturstein, Mosaik, Dünnbett, Dickbett. Die Fälle, die andere ablehnen, sind hier Routine.</p></div>
+      <div class="card"><h3>Alles aus einer Hand</h3><p>Verlegung, Abdichtung, Fugen und Silikon. Kein Zuständigkeits-Streit darüber, wer die Silikonfuge macht.</p></div>
+      <div class="card"><h3>Die Fuge ist der Beweis</h3><p>Die Abdichtung sehen Sie nie wieder, die Fuge jeden Morgen. Deshalb wird sie hier so behandelt, wie es sich gehört, und nicht am Ende schnell hingeschmiert.</p></div>
+      <div class="card"><h3>Ihre Wohnung bleibt bewohnbar</h3><p>Wege abgedeckt, Staub abgesaugt, abends besenrein. Ganz ohne Staub geht es nicht, aber er bleibt im Arbeitsbereich.</p></div>
+      <div class="card"><h3>Material vom Fachhandel</h3><p>Als Partner von Keramundo, Welt der Fliesen, und über unsere Bauchemie-Partner. Sie suchen im Studio in Ruhe aus, wir bringen es mit.</p></div>
+    </div>
+    <div class="split" style="margin-top:var(--s8);align-items:center">
+      <div class="partner-karte">
+        <p class="micro">Unser Partner im Fachhandel</p>
+        <img src="bilder/keramundo_rgb.svg" alt="Keramundo, Welt der Fliesen" width="380" height="62" loading="lazy">
+        <p class="partner-text">Fliesen, Kleber und Abdichtung kommen aus dem Fachhandel. Sie sehen die Ware vorher in echt.</p>
+      </div>
+      <div>
+        <h3 style="font-size:26px;margin-bottom:var(--s4)">Sie suchen aus, wir bringen es mit</h3>
+        <p class="lead">Im Studio sehen Sie Format, Farbe und Oberfläche in echt, nicht im Katalog. Wir sagen Ihnen vorher, welche Formate zu Ihrem Raum und Ihrem Untergrund passen, kümmern uns um Bestellung und Anlieferung und arbeiten mit Kleber und Abdichtung aus dem Fachhandel, nicht aus dem Baumarktregal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · PREISE -->
+<section class="s-papier" id="preise">
+  <div class="wrap split">
+    <div>
+      <p class="micro">Preise</p>
+      <h2 style="margin-top:var(--s3)">Was kostet ein Fliesenleger in Hannover</h2>
+      <p class="lead h2-sub">Seriös geht das erst nach einer Besichtigung, weil der Untergrund den Preis macht. Damit Sie trotzdem eine Größenordnung haben, hier die üblichen Spannen für 2026.</p>
+      <h3 style="font-size:20px;margin:var(--s6) 0 var(--s3)">Was den Preis treibt</h3>
+      <p style="font-size:16px;color:#3C3E40">Format und Verlegemuster, Zustand des Untergrunds, Demontage und Entsorgung, Umfang der Abdichtung, Zugänglichkeit der Baustelle.</p>
+      <h3 style="font-size:20px;margin:var(--s6) 0 var(--s3)">Zwei Hinweise, die Geld sparen</h3>
+      <ul class="klar" style="margin-top:0">
+        <li>Der Lohnanteil auf unserer Rechnung ist getrennt ausgewiesen. Als Eigentümer können Sie Handwerkerleistungen steuerlich absetzen.</li>
+        <li>Wir sagen vorher, wenn sich eine Teil-Sanierung mehr lohnt als ein kompletter Neuaufbau. Auch wenn der Auftrag dadurch kleiner wird.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="tab-scroll">
+        <table class="ptab">
+          <caption>Übliche Spannen, Stand 2026</caption>
+          <thead><tr><th scope="col">Leistung</th><th scope="col">Preis</th></tr></thead>
+          <tbody>
+            <tr><td>Fliesen verlegen, reine Arbeitszeit</td><td>30 bis 70 € / m²</td></tr>
+            <tr><td>Wandfliesen</td><td>50 bis 80 € / m²</td></tr>
+            <tr><td>Großformat ab 80 x 80 cm</td><td>70 bis 120 € / m²</td></tr>
+            <tr><td>Badsanierung komplett</td><td>1.800 bis 3.500 € / m²</td></tr>
+            <tr><td>Demontage und Entsorgung des alten Bads</td><td>500 bis 1.500 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row" style="margin-top:var(--s6)">
+        <a class="btn btn-1" href="#anfrage">Was kostet Ihr Projekt?</a>
+      </div>
+      <p class="btn-fine">Festpreis nach kostenloser Besichtigung.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · EINSATZGEBIET -->
+<section class="s-porzellan" id="gebiet">
+  <div class="wrap">
+    <p class="micro">Einsatzgebiet</p>
+    <h2 style="margin-top:var(--s3)">Wir arbeiten in Hannover und im Umland</h2>
+    <p class="lead h2-sub">Unser Betrieb sitzt im Zehlendorfweg in Hannover Sahlkamp. Wir arbeiten in der ganzen Stadt und in der Region Hannover.</p>
+    <h3 style="font-size:18px;margin:var(--s6) 0 0">Hannover</h3>
+    <div class="orte">
+      <span class="ort">Sahlkamp</span><span class="ort">Bothfeld</span><span class="ort">Vahrenwald</span><span class="ort">List</span>
+      <span class="ort">Vahrenheide</span><span class="ort">Misburg</span><span class="ort">Kirchrode</span><span class="ort">Kleefeld</span>
+      <span class="ort">Südstadt</span><span class="ort">Linden</span><span class="ort">Ricklingen</span><span class="ort">Döhren</span>
+      <span class="ort">Herrenhausen</span><span class="ort">Stöcken</span><span class="ort">Mitte</span>
+    </div>
+    <h3 style="font-size:18px;margin:var(--s6) 0 0">Region Hannover</h3>
+    <div class="orte">
+      <span class="ort">Langenhagen</span><span class="ort">Isernhagen</span><span class="ort">Burgdorf</span><span class="ort">Lehrte</span>
+      <span class="ort">Sehnde</span><span class="ort">Laatzen</span><span class="ort">Hemmingen</span><span class="ort">Ronnenberg</span>
+      <span class="ort">Garbsen</span><span class="ort">Seelze</span><span class="ort">Wedemark</span><span class="ort">Burgwedel</span>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · LEADFUNNEL + ABSCHLUSS-CTA -->
+<section class="s-dunkel" id="anfrage">
+  <div class="wrap split">
+    <div>
+      <p class="micro">Anfrage</p>
+      <h2 style="margin-top:var(--s3)">Ihr Bad, Ihr Boden, ein Ansprechpartner</h2>
+      <p class="lead h2-sub">Erzählen Sie in 60 Sekunden, was gemacht werden soll. Wir sehen uns das vor Ort an, kostenlos, und Sie bekommen ein Festangebot mit klaren Positionen.</p>
+      <ul class="klar">
+        <li>Vier kurze Fragen, Kontaktdaten erst am Ende</li>
+        <li>Die Anfrage geht direkt an Sandro Bartels, nicht an ein Portal</li>
+        <li>Kein Captcha, keine Pflichtfelder ohne Zweck</li>
+      </ul>
+      <div class="row" style="margin-top:var(--s6)">
+        <a class="btn btn-3" href="tel:+4915142112494">Oder anrufen: 01514 2112494</a>
+      </div>
+      <p class="btn-fine">Montag bis Freitag, 7 bis 18 Uhr</p>
+    </div>
+
+    <form class="funnel" id="funnel" novalidate>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      <p class="micro" id="fSchritt">Schritt 1 von 4</p>
+
+      <div class="f-step" data-step="1">
+        <h3>Worum geht es?</h3>
+        <div class="f-opts zwei">
+          <label class="pick"><input type="radio" name="anliegen" value="Bad komplett"><span>Bad komplett</span></label>
+          <label class="pick"><input type="radio" name="anliegen" value="Bodengleiche Dusche"><span>Bodengleiche Dusche</span></label>
+          <label class="pick"><input type="radio" name="anliegen" value="Boden und Großformat"><span>Boden und Großformat</span></label>
+          <label class="pick"><input type="radio" name="anliegen" value="Altbau, Dünn- oder Dickbett"><span>Altbau, Dünn- oder Dickbett</span></label>
+          <label class="pick"><input type="radio" name="anliegen" value="Fugen und Silikon erneuern"><span>Fugen und Silikon</span></label>
+          <label class="pick"><input type="radio" name="anliegen" value="Reparatur"><span>Reparatur</span></label>
+          <label class="pick"><input type="radio" name="anliegen" value="Etwas anderes"><span>Etwas anderes</span></label>
+        </div>
+      </div>
+
+      <div class="f-step" data-step="2" hidden>
+        <h3>Wie groß ist die Fläche etwa?</h3>
+        <div class="f-opts">
+          <label class="pick"><input type="radio" name="flaeche" value="unter 5 m²"><span>Unter 5 m²</span></label>
+          <label class="pick"><input type="radio" name="flaeche" value="5 bis 10 m²"><span>5 bis 10 m²</span></label>
+          <label class="pick"><input type="radio" name="flaeche" value="10 bis 25 m²"><span>10 bis 25 m²</span></label>
+          <label class="pick"><input type="radio" name="flaeche" value="über 25 m²"><span>Über 25 m²</span></label>
+          <label class="pick"><input type="radio" name="flaeche" value="unbekannt, bitte aufmessen"><span>Weiß ich nicht, bitte aufmessen</span></label>
+        </div>
+        <p class="f-hint">Schätzen reicht. Genau wird es beim Aufmaß.</p>
+      </div>
+
+      <div class="f-step" data-step="3" hidden>
+        <h3>Wann soll es losgehen?</h3>
+        <div class="f-opts">
+          <label class="pick"><input type="radio" name="zeit" value="so schnell wie möglich"><span>So schnell wie möglich</span></label>
+          <label class="pick"><input type="radio" name="zeit" value="in den nächsten 4 Wochen"><span>In den nächsten 4 Wochen</span></label>
+          <label class="pick"><input type="radio" name="zeit" value="in 1 bis 3 Monaten"><span>In 1 bis 3 Monaten</span></label>
+          <label class="pick"><input type="radio" name="zeit" value="später, plane erst"><span>Später, ich plane erst</span></label>
+        </div>
+      </div>
+
+      <div class="f-step" data-step="4" hidden>
+        <h3>Wohin dürfen wir antworten?</h3>
+        <div class="f-felder">
+          <div><label class="f" for="name">Name</label><input class="inp" id="name" name="name" autocomplete="name" required><div class="err-msg" id="err-name">Bitte Ihren Namen angeben.</div></div>
+          <div><label class="f" for="telefon">Telefon</label><input class="inp" id="telefon" name="telefon" type="tel" autocomplete="tel" required><div class="err-msg" id="err-telefon">Bitte eine erreichbare Nummer angeben.</div></div>
+          <div><label class="f" for="ort">Ort oder Stadtteil</label><input class="inp" id="ort" name="ort" autocomplete="address-level2"></div>
+          <div><label class="f" for="email">E-Mail (optional)</label><input class="inp" id="email" name="email" type="email" autocomplete="email"></div>
+          <div class="voll"><label class="f" for="nachricht">Ihre Nachricht (optional)</label><textarea class="inp" id="nachricht" name="nachricht" rows="3"></textarea></div>
+        </div>
+        <p class="f-hint">Ihre Daten gehen direkt an Sandro Bartels. Keine Weitergabe an Portale oder Vermittler.</p>
+      </div>
+
+      <div class="f-nav" id="fNav">
+        <button type="button" class="f-back" id="fBack" hidden>Zurück</button>
+        <button type="button" class="btn btn-1" id="fWeiter">Weiter</button>
+        <button type="submit" class="btn btn-1" id="fSenden" hidden>Anfrage abschicken</button>
+      </div>
+
+      <div class="f-danke" id="fDanke" hidden>
+        <div class="haken" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
+        <h3>Danke, Ihre Anfrage ist da</h3>
+        <p style="font-size:16px;color:#3C3E40">Sie hören am selben Werktag von uns, meistens per Telefon. Wenn es schneller gehen soll: <a href="tel:+4915142112494" style="font-weight:600">01514 2112494</a>.</p>
+        <div class="zusammenfassung"><dl id="fZusammen"></dl></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 13 · FAQ -->
+<section class="s-papier" id="faq">
+  <div class="wrap">
+    <p class="micro">Häufige Fragen</p>
+    <h2 style="margin-top:var(--s3)">Häufige Fragen zu Fliesenarbeiten und Badsanierung</h2>
+    <div style="margin-top:var(--s6);max-width:900px">
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Was kostet es, Fliesen verlegen zu lassen?</h3></summary>
+        <p>Die reine Verlegung liegt 2026 bei etwa 30 bis 70 Euro je Quadratmeter, bei Großformat ab 80 x 80 cm bei 70 bis 120 Euro. Eine komplette Badsanierung liegt bei etwa 1.800 bis 3.500 Euro je Quadratmeter Badfläche. Den Festpreis machen wir nach der kostenlosen Besichtigung, weil der Untergrund den größten Teil des Aufwands bestimmt.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Wie lange kann ich mein Bad nicht benutzen?</h3></summary>
+        <p>Bei einer kompletten Badsanierung rechnen Sie mit 5 bis 10 Arbeitstagen für die Fliesenarbeiten, bei einer bodengleichen Dusche mit 3 bis 5. Sie bekommen vor dem Start ein festes Zeitfenster, damit Sie planen können.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Wie schmutzig wird das in meiner Wohnung?</h3></summary>
+        <p>Wege und Möbel werden abgedeckt, beim Abschlagen und Schneiden wird abgesaugt, abends ist die Baustelle besenrein. Ganz ohne Staub geht es bei Fliesenarbeiten nicht, aber er bleibt im Arbeitsbereich.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Machen Sie auch Altbau mit Dickbett?</h3></summary>
+        <p>Ja. Dickbett und Dünnbett, Sanierung und Neuaufbau. Wir beurteilen den Untergrund vor dem Abschlagen und sagen vorher, wenn ein Neuaufbau nötig ist.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Übernehmen Sie auch kleine Aufträge, zum Beispiel nur die Silikonfugen?</h3></summary>
+        <p>Ja. Fugen erneuern und Silikonarbeiten sind Teil unseres Leistungsumfangs, ohne Mindestauftragswert. Fugen werden herausgenommen und neu gesetzt, nicht überschmiert.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Kann ich meine Fliesen selbst aussuchen?</h3></summary>
+        <p>Ja. Als Partner von Keramundo, Welt der Fliesen, gehen Sie im Studio in Ruhe schauen und entscheiden. Wir sagen Ihnen vorher, welche Formate für Ihren Raum und Ihren Untergrund sinnvoll sind, und bringen das Material mit.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Wer macht die Abdichtung?</h3></summary>
+        <p>Wir. Die Abdichtung im Verbund nach DIN 18534 gehört zu unserer Leistung, genauso wie Fugen und Silikon. Damit gibt es keine Diskussion darüber, wer für welchen Teil zuständig ist.</p></details>
+      <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">In welchem Gebiet arbeiten Sie?</h3></summary>
+        <p>In Hannover und in der Region Hannover, unter anderem Langenhagen, Laatzen, Burgdorf, Lehrte, Sehnde, Garbsen und Wedemark. Unser Betrieb sitzt im Zehlendorfweg in Hannover Sahlkamp.</p></details>
+    </div>
+    <div class="row" style="margin-top:var(--s7)">
+      <a class="btn btn-1" href="#anfrage">Frage nicht dabei? Anfrage starten</a>
+      <a class="btn btn-tel" href="tel:+4915142112494">01514 2112494</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid g4">
+      <div>
+        <img src="logo-invers.svg" alt="Fliesenlegerhandwerk Hannover, Sandro Bartels" width="600" height="158">
+        <p>Sandro Bartels<br>Zehlendorfweg 11<br>30179 Hannover</p>
+      </div>
+      <div>
+        <p class="micro" style="margin-bottom:var(--s3)">Kontakt</p>
+        <ul>
+          <li><a href="tel:+4915142112494">Mobil 01514 2112494</a></li>
+          <li><a href="tel:+4951189836470">Telefon 0511 89836470</a></li>
+          <li><a href="mailto:sandro.bartels@t-online.de">sandro.bartels@t-online.de</a></li>
+          <li>Montag bis Freitag, 7 bis 18 Uhr</li>
+        </ul>
+      </div>
+      <div>
+        <p class="micro" style="margin-bottom:var(--s3)">Leistungen</p>
+        <ul>
+          <li><a href="#leistungen">Bad komplett</a></li>
+          <li><a href="#leistungen">Bodengleiche Dusche</a></li>
+          <li><a href="#leistungen">Boden und Großformat</a></li>
+          <li><a href="#altbau">Altbau und Dickbett</a></li>
+          <li><a href="#leistungen">Fugen und Silikon</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="micro" style="margin-bottom:var(--s3)">Einsatzgebiet</p>
+        <ul>
+          <li>Hannover und Region</li>
+          <li>Langenhagen, Laatzen, Burgdorf</li>
+          <li>Lehrte, Sehnde, Garbsen</li>
+          <li>Wedemark und Umgebung</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-linie"></div>
+    <p class="entitaet">Das Fliesenlegerhandwerk Sandro Bartels ist ein Fliesenlegerfachbetrieb aus Hannover mit 35 Jahren Erfahrung. Der Betrieb übernimmt Fliesen- und Plattenarbeiten, Badsanierungen, bodengleiche Duschen, Großformat- und Feinsteinzeugverlegung, Dünnbett- und Dickbett-Sanierung im Altbau sowie Fugen- und Silikonarbeiten in Hannover und der Region Hannover.</p>
+    <p style="font-size:13px;color:#7E7E7B;margin-top:var(--s5)">Impressum · Datenschutz · Entwurf, noch nicht veröffentlicht. Abbildungen sind Beispielumsetzungen.</p>
+  </div>
+</footer>
+
+<div class="mobil-bar">
+  <a class="btn btn-1" href="#anfrage">Anfrage</a>
+  <a class="btn btn-3" href="tel:+4915142112494">Anrufen</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":["LocalBusiness","HomeAndConstructionBusiness"],
+      "@id":"#betrieb",
+      "name":"Sandro Bartels Fliesenlegerhandwerk Hannover",
+      "description":"Fliesenlegerfachbetrieb aus Hannover mit 35 Jahren Erfahrung. Fliesen- und Plattenarbeiten, Badsanierung, bodengleiche Duschen, Großformat, Dünnbett- und Dickbett-Sanierung im Altbau, Fugen- und Silikonarbeiten.",
+      "founder":{"@type":"Person","name":"Sandro Bartels"},
+      "address":{"@type":"PostalAddress","streetAddress":"Zehlendorfweg 11","postalCode":"30179","addressLocality":"Hannover","addressRegion":"Niedersachsen","addressCountry":"DE"},
+      "telephone":"+4915142112494",
+      "email":"sandro.bartels@t-online.de",
+      "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"}],
+      "areaServed":[
+        {"@type":"City","name":"Hannover"},{"@type":"City","name":"Langenhagen"},{"@type":"City","name":"Laatzen"},
+        {"@type":"City","name":"Burgdorf"},{"@type":"City","name":"Lehrte"},{"@type":"City","name":"Sehnde"},
+        {"@type":"City","name":"Garbsen"},{"@type":"City","name":"Seelze"},{"@type":"City","name":"Wedemark"},
+        {"@type":"City","name":"Hemmingen"},{"@type":"City","name":"Ronnenberg"},{"@type":"City","name":"Burgwedel"}
+      ],
+      "knowsAbout":["Fliesenverlegung","Badsanierung","Abdichtung nach DIN 18534","Dickbett-Sanierung","Dünnbett-Sanierung","Feinsteinzeug","Großformatfliesen","Silikonfugen"],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog","name":"Leistungen",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Badsanierung komplett","areaServed":"Hannover"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Bodengleiche Dusche","areaServed":"Hannover"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Boden- und Großformatverlegung","areaServed":"Hannover"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Dünnbett- und Dickbett-Sanierung im Altbau","areaServed":"Hannover"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fugen- und Silikonarbeiten","areaServed":"Hannover"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Reparatur und Ausbesserung","areaServed":"Hannover"}}
+        ]
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Was kostet es, Fliesen verlegen zu lassen?","acceptedAnswer":{"@type":"Answer","text":"Die reine Verlegung liegt 2026 bei etwa 30 bis 70 Euro je Quadratmeter, bei Großformat ab 80 x 80 cm bei 70 bis 120 Euro. Eine komplette Badsanierung liegt bei etwa 1.800 bis 3.500 Euro je Quadratmeter Badfläche. Den Festpreis macht der Betrieb nach der kostenlosen Besichtigung."}},
+        {"@type":"Question","name":"Wie lange kann ich mein Bad nicht benutzen?","acceptedAnswer":{"@type":"Answer","text":"Bei einer kompletten Badsanierung sind 5 bis 10 Arbeitstage für die Fliesenarbeiten üblich, bei einer bodengleichen Dusche 3 bis 5. Das Zeitfenster steht vor dem Start fest."}},
+        {"@type":"Question","name":"Machen Sie auch Altbau mit Dickbett?","acceptedAnswer":{"@type":"Answer","text":"Ja. Dickbett und Dünnbett, Sanierung und Neuaufbau. Der Untergrund wird vor dem Abschlagen beurteilt."}},
+        {"@type":"Question","name":"Wer macht die Abdichtung?","acceptedAnswer":{"@type":"Answer","text":"Der Betrieb selbst. Die Abdichtung im Verbund nach DIN 18534 gehört zur Leistung, genauso wie Fugen und Silikon."}},
+        {"@type":"Question","name":"In welchem Gebiet arbeiten Sie?","acceptedAnswer":{"@type":"Answer","text":"In Hannover und der Region Hannover, unter anderem Langenhagen, Laatzen, Burgdorf, Lehrte, Sehnde, Garbsen und Wedemark. Der Betrieb sitzt im Zehlendorfweg in Hannover Sahlkamp."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  /* ---------- Referenz-Filter ---------- */
+  var tabs = document.querySelectorAll('.tab');
+  var figs = document.querySelectorAll('.gal figure');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.setAttribute('aria-selected','false'); });
+      t.setAttribute('aria-selected','true');
+      var f = t.dataset.filter;
+      figs.forEach(function(fig){
+        var zeig = (f === 'alle' || fig.dataset.kat === f);
+        fig.hidden = !zeig;
+      });
+    });
+  });
+
+  /* ---------- Leadfunnel ---------- */
+  var form   = document.getElementById('funnel');
+  var steps  = form.querySelectorAll('.f-step');
+  var prog   = form.querySelectorAll('.prog i');
+  var label  = document.getElementById('fSchritt');
+  var back   = document.getElementById('fBack');
+  var weiter = document.getElementById('fWeiter');
+  var senden = document.getElementById('fSenden');
+  var nav    = document.getElementById('fNav');
+  var danke  = document.getElementById('fDanke');
+  var aktuell = 1;
+  var MAX = steps.length;
+
+  function zeige(n){
+    aktuell = n;
+    steps.forEach(function(s){ s.hidden = (Number(s.dataset.step) !== n); });
+    prog.forEach(function(i,idx){ i.classList.toggle('on', idx < n); });
+    label.textContent = 'Schritt ' + n + ' von ' + MAX;
+    back.hidden = (n === 1);
+    weiter.hidden = (n === MAX);
+    senden.hidden = (n !== MAX);
+  }
+
+  /* Auswahl klickt sich selbst weiter, das senkt die Abbruchquote */
+  form.querySelectorAll('.f-step input[type=radio]').forEach(function(r){
+    r.addEventListener('change', function(){
+      if (aktuell < MAX) { setTimeout(function(){ zeige(aktuell + 1); }, 180); }
+    });
+  });
+
+  weiter.addEventListener('click', function(){
+    var s = form.querySelector('.f-step[data-step="' + aktuell + '"]');
+    var radios = s.querySelectorAll('input[type=radio]');
+    if (radios.length && !s.querySelector('input[type=radio]:checked')) {
+      s.querySelectorAll('.pick span').forEach(function(sp){
+        sp.animate([{transform:'translateX(0)'},{transform:'translateX(-3px)'},{transform:'translateX(3px)'},{transform:'translateX(0)'}], {duration:220});
+      });
+      return;
+    }
+    if (aktuell < MAX) zeige(aktuell + 1);
+  });
+
+  back.addEventListener('click', function(){ if (aktuell > 1) zeige(aktuell - 1); });
+
+  function pruefe(id){
+    var el = document.getElementById(id);
+    var msg = document.getElementById('err-' + id);
+    var ok = el.value.trim().length > 1;
+    el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    msg.classList.toggle('zeig', !ok);
+    return ok;
+  }
+  ['name','telefon'].forEach(function(id){
+    document.getElementById(id).addEventListener('blur', function(){ pruefe(id); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    /* beide Felder pruefen, nicht kurzschliessen, sonst sieht der Nutzer nur einen Fehler */
+    var okName = pruefe('name');
+    var okTel  = pruefe('telefon');
+    if (!okName || !okTel) { form.querySelector('[aria-invalid="true"]').focus(); return; }
+
+    /* Entwurf: kein Versand-Endpunkt. Auf der echten Seite geht hier die Anfrage raus. */
+    var d = new FormData(form);
+    var zeilen = [
+      ['Anliegen', d.get('anliegen') || 'nicht angegeben'],
+      ['Fläche', d.get('flaeche') || 'nicht angegeben'],
+      ['Zeitraum', d.get('zeit') || 'nicht angegeben'],
+      ['Name', d.get('name')],
+      ['Telefon', d.get('telefon')]
+    ];
+    if (d.get('ort')) zeilen.push(['Ort', d.get('ort')]);
+    var dl = document.getElementById('fZusammen');
+    dl.innerHTML = zeilen.map(function(z){
+      return '<dt>' + z[0] + '</dt><dd>' + String(z[1]).replace(/[<>&]/g,'') + '</dd>';
+    }).join('');
+
+    steps.forEach(function(s){ s.hidden = true; });
+    nav.hidden = true;
+    label.hidden = true;
+    form.querySelector('.prog').hidden = true;
+    danke.hidden = false;
+    danke.scrollIntoView({block:'center', behavior:'smooth'});
+  });
+
+  /* Leistungskachel und Altbau-Button springen mit vorbelegtem Anliegen in den Funnel */
+  document.querySelectorAll('[data-anliegen]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var wert = b.dataset.anliegen;
+      var r = form.querySelector('input[name=anliegen][value="' + wert + '"]');
+      if (r) { r.checked = true; zeige(2); }
+      document.getElementById('anfrage').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  zeige(1);
+})();
+</script>
+</body>
+</html>
