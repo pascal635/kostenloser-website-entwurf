@@ -73,7 +73,7 @@
 </script>
 <style>
 :root{
-  --paper:#F2E9DA; --paper-deep:#E6DAC6; --paper-edge:#D4C4A8;
+  --paper:#F5EEE2; --paper-deep:#EADFCC; --paper-edge:#D4C4A8;
   --ink:#221B14; --ink-soft:#4A3D2E; --ink-mute:#7A6A54;
   --night:#171310; --night-up:#221B15; --night-edge:#33281E; --night-deep:#0E0B09;
   --wood:#4E3A28; --leather:#6B4C31;
@@ -89,7 +89,18 @@
   --el-night-3:0 6px 14px rgba(0,0,0,.55), 0 26px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(240,200,120,.22);
   --ease:cubic-bezier(.34,1.36,.64,1);
   --tap:200ms;
-  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.05' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+  /* Papiertextur, drei Ebenen. Nach dem Mockup gebaut und dagegen abgeglichen:
+     feine Faser (overlay, haelt die Helligkeit), sparse dunkle Einschluesse (multiply),
+     weiche warme Wolken fuer ungleichmaessige Tonung (multiply).
+     stitchTiles='stitch' macht die Kacheln nahtlos, sonst sieht man die Raster. */
+  --tx-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .30 0 0 0 0 .21 0 0 0 0 .13 .46 .46 .46 0 -.12'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)' opacity='.18'/%3E%3C/svg%3E");
+  --tx-specks:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.5' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .20 0 0 0 0 .15 0 0 0 0 .10 -3.6 -3.6 -3.6 0 2.52'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23s)' opacity='.6'/%3E%3C/svg%3E");
+  --tx-cloud:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 .22 .22 .22 0 -.07'/%3E%3C/filter%3E%3Crect width='800' height='800' filter='url(%23c)' opacity='.16'/%3E%3C/svg%3E");
+  /* Kurzschreibweisen fuer Flaechen mit eigener background-color */
+  --tex-layers:var(--tx-specks),var(--tx-grain),var(--tx-cloud);
+  --tex-blend:multiply,multiply,multiply;
+  --tex-size:320px 320px,180px 180px,800px 800px;
   --tear-a:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='22' preserveAspectRatio='none'%3E%3Cpath d='M0 22V7l24 3 19-6 27 5 22-8 31 6 18-4 26 7 23-9 29 6 20-3 25 8 22-7 30 5 19-6 27 7 23-8 28 6 21-4 26 8 22-7 31 5 18-6 27 7 24-9 29 6 20-3 26 8 21-7 30 5 19-5 27 6 23-8 29 6 20-3 25 7 23-6 30 4 19-5 27 6 24-7 28 5 21-3 26 6 22-5 30 4v15z' fill='%23F2E9DA'/%3E%3C/svg%3E");
   --tear-b:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='20' preserveAspectRatio='none'%3E%3Cpath d='M0 0v9l26-4 21 6 29-5 19 7 27-6 24 5 28-7 20 4 26-6 22 7 30-5 18 6 27-7 23 5 29-6 21 7 25-5 23 6 30-7 19 4 27-6 24 7 28-5 20 6 26-7 22 5 31-6 18 7 27-5 23 6 29-7 20 4 26-6 21 7 30-5 19 6 27-7 24 5 28-6 21 7V0z' fill='%23171310'/%3E%3C/svg%3E");
 }
@@ -214,7 +225,7 @@ h3,.t-h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:1.18rem;line
 
 .playbill{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s7);align-items:start}
 @media(max-width:900px){.playbill{grid-template-columns:1fr;gap:var(--s8)}}
-.bill{position:relative;background:var(--paper);color:var(--ink);padding:var(--s7) var(--s6) var(--s6);border-radius:var(--r-sm);box-shadow:var(--el-4);transform:rotate(-.7deg);background-image:var(--grain);background-blend-mode:multiply}
+.bill{position:relative;background-color:var(--paper);color:var(--ink);padding:var(--s7) var(--s6) var(--s6);border-radius:var(--r-sm);box-shadow:var(--el-4);transform:rotate(-.7deg);}
 .bill__rule{border:none;border-top:3px double var(--paper-edge);margin:var(--s4) 0}
 .bill__when{display:flex;align-items:baseline;gap:var(--s3);font-family:"Alfa Slab One",Georgia,serif;letter-spacing:-.03em;line-height:.9}
 .bill__when .d{font-size:clamp(3rem,6.4vw,4.6rem)}
@@ -225,7 +236,7 @@ h3,.t-h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:1.18rem;line
 .bill__stamp{position:absolute;right:var(--s5);top:var(--s6);z-index:4}
 
 .strips{display:flex;flex-direction:column;gap:var(--s3)}
-.strip{position:relative;display:grid;grid-template-columns:66px 1fr auto;align-items:center;gap:var(--s4);background:var(--paper-deep);color:var(--ink);border-radius:var(--r-sm);padding:var(--s3) var(--s4);box-shadow:var(--el-2);border-left:3px solid var(--paper-edge);transition:transform var(--tap) var(--ease),box-shadow var(--tap) var(--ease),border-color var(--tap) linear}
+.strip{position:relative;display:grid;grid-template-columns:66px 1fr auto;align-items:center;gap:var(--s4);background-color:var(--paper-deep);color:var(--ink);border-radius:var(--r-sm);padding:var(--s3) var(--s4);box-shadow:var(--el-2);border-left:3px solid var(--paper-edge);transition:transform var(--tap) var(--ease),box-shadow var(--tap) var(--ease),border-color var(--tap) linear}
 .strip:nth-child(odd){transform:rotate(.35deg)}
 .strip:nth-child(even){transform:rotate(-.4deg)}
 .strip:hover{transform:rotate(0) translateX(5px);box-shadow:var(--el-3);border-left-color:var(--ochre)}
@@ -244,7 +255,7 @@ h3,.t-h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:1.18rem;line
 .card--s1{grid-area:s1}
 .card--s2{grid-area:s2}
 @media(max-width:900px){.card--big{min-height:300px}}
-.card{position:relative;background:var(--paper-deep);color:var(--ink);border-radius:var(--r-sm);overflow:hidden;box-shadow:var(--el-2);display:flex;flex-direction:column;transition:transform var(--tap) var(--ease),box-shadow var(--tap) var(--ease);min-height:190px}
+.card{position:relative;background-color:var(--paper-deep);color:var(--ink);border-radius:var(--r-sm);overflow:hidden;box-shadow:var(--el-2);display:flex;flex-direction:column;transition:transform var(--tap) var(--ease),box-shadow var(--tap) var(--ease);min-height:190px}
 .card:hover{transform:translateY(-3px);box-shadow:var(--el-3)}
 .card__img{position:relative;overflow:hidden;background:var(--wood);flex:1;min-height:130px}
 .card__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.44) sepia(.5) saturate(1.32) contrast(1.09) brightness(.98);transition:transform 520ms var(--ease)}
@@ -257,18 +268,18 @@ h3,.t-h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:1.18rem;line
 .card--overlay .card__body p{color:#CDBFA8}
 .card__kicker{font-family:"DM Mono",monospace;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);margin:0 0 2px}
 
-.note{position:relative;background:var(--paper);color:var(--ink);border-radius:var(--r-sm);padding:var(--s7) var(--s5) var(--s5);box-shadow:var(--el-3);background-image:var(--grain);background-blend-mode:multiply}
+.note{position:relative;background-color:var(--paper);color:var(--ink);border-radius:var(--r-sm);padding:var(--s7) var(--s5) var(--s5);box-shadow:var(--el-3);}
 .note--a{transform:rotate(-1.1deg)}
 .note--b{transform:rotate(.8deg)}
 .note::before{content:"\201C";position:absolute;top:-2px;left:var(--s5);font-family:"Alfa Slab One",Georgia,serif;font-size:4rem;line-height:1;color:var(--ochre);opacity:.3;pointer-events:none}
 .note p{margin:0 0 var(--s4);font-size:1.02rem;line-height:1.6;position:relative}
 .note footer{font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
-.note--lead{background:var(--night-up);color:var(--paper);box-shadow:var(--el-night-3);padding:var(--s8) var(--s6) var(--s6);transform:rotate(-.6deg)}
+.note--lead{background-color:var(--night-up);color:var(--paper);box-shadow:var(--el-night-3);padding:var(--s8) var(--s6) var(--s6);transform:rotate(-.6deg)}
 .note--lead p{font-size:1.24rem;line-height:1.5}
 .note--lead footer{color:#A08E75}
 .note--lead::before{color:var(--candle);opacity:.36}
 
-.trustbar{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;background:var(--night-up);border-radius:var(--r-sm);box-shadow:var(--el-night-2);position:relative;overflow:hidden}
+.trustbar{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;background-color:var(--night-up);border-radius:var(--r-sm);box-shadow:var(--el-night-2);position:relative;overflow:hidden}
 .trustbar::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.36;mix-blend-mode:overlay;pointer-events:none}
 .trustitem{text-align:center;position:relative;z-index:1;flex:1 1 150px;padding:var(--s5) var(--s4)}
 .trustitem + .trustitem::before{content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;background:linear-gradient(to bottom,transparent,var(--night-edge) 24%,var(--night-edge) 76%,transparent)}
@@ -297,25 +308,54 @@ h3,.t-h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:1.18rem;line
 .faq .faq__a{padding:0 var(--s8) var(--s5) var(--s6);color:var(--ink-soft);max-width:72ch}
 .faq .faq__a p{margin:0}
 
+/* ============================================================
+   PAPIERTEXTUR auf allen Flaechen mit eigener Hintergrundfarbe.
+   background-blend-mode mischt die Layer mit der background-color,
+   deshalb braucht es hier kein Pseudo-Element und kein mix-blend-mode.
+   ============================================================ */
+body,
+.sect,.sect--paper,.sect--paper-deep,.sect--deep,
+.cardsheet,.bill,.note,.card,.spec,.strip,.hours,.seal{
+  background-image:var(--tex-layers);
+  background-blend-mode:var(--tex-blend);
+  background-size:var(--tex-size);
+}
+/* .sect ohne eigene Farbe: Farbe setzen, damit die Textur greift */
+.sect{background-color:var(--paper)}
+.sect--deep{background-color:var(--paper-deep)}
+/* Flaechen, die eine eigene Verlaufsschicht mitbringen, behalten sie und
+   bekommen die Textur zusaetzlich hinten angestellt */
+.seal{
+  background-image:radial-gradient(circle at 34% 26%,rgba(255,255,255,.6),transparent 62%),var(--tex-layers);
+  background-blend-mode:normal,multiply,multiply,multiply;
+  background-size:auto,var(--tex-size);
+}
+/* Dunkle Flaechen: nur die feine Faser, deutlich zurueckgenommen */
+.sect--night,.foot,.trustbar,.hero,.topbar,.note--lead{
+  background-image:var(--tx-grain);
+  background-blend-mode:soft-light;
+  background-size:200px 200px;
+}
+
 .sect{padding:var(--s9) 0;position:relative}
-.sect--night{background:var(--night);color:var(--paper);overflow:hidden}
+.sect--night{background-color:var(--night);color:var(--paper);overflow:hidden}
 .sect--night::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.4;mix-blend-mode:overlay;pointer-events:none}
 .sect--night > .wrap{z-index:1}
 .sect__head{max-width:62ch;margin-bottom:var(--s7);position:relative;z-index:1}
 
-.foot{background:var(--night-deep);color:#A08E75;padding:var(--s8) 0 var(--s6);position:relative;overflow:hidden}
+.foot{background-color:var(--night-deep);color:#A08E75;padding:var(--s8) 0 var(--s6);position:relative;overflow:hidden}
 .foot::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.4;mix-blend-mode:overlay;pointer-events:none}
 .foot .wrap{z-index:1}
 .foot h3{color:var(--paper);font-family:"DM Mono",monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.2em;margin-bottom:var(--s3);font-weight:500}
 .foot a{color:#C4B39B;text-decoration:none;border-bottom:1px solid transparent;transition:border-color var(--tap) linear,color var(--tap) linear}
 .foot a:hover{color:var(--candle);border-bottom-color:var(--candle)}
 .foot .fine{border-top:1px solid var(--night-edge);margin-top:var(--s7);padding-top:var(--s4);font-family:"DM Mono",monospace;font-size:.7rem;letter-spacing:.08em;display:flex;gap:var(--s5);flex-wrap:wrap;align-items:center}
-.mobar{display:none;position:sticky;bottom:0;z-index:20;gap:2px;background:var(--night-deep);box-shadow:0 -6px 20px rgba(0,0,0,.4);padding:8px}
+.mobar{display:none;position:sticky;bottom:0;z-index:20;gap:2px;background-color:var(--night-deep);box-shadow:0 -6px 20px rgba(0,0,0,.4);padding:8px}
 .mobar .btn{flex:1}
 @media(max-width:640px){.mobar{display:flex}}
 
-.spec{background:var(--paper-deep);color:var(--ink);border-radius:var(--r-sm);padding:var(--s5);box-shadow:var(--el-1)}
-.spec--night{background:var(--night-up);color:var(--paper);box-shadow:var(--el-night-2)}
+.spec{background-color:var(--paper-deep);color:var(--ink);border-radius:var(--r-sm);padding:var(--s5);box-shadow:var(--el-1)}
+.spec--night{background-color:var(--night-up);color:var(--paper);box-shadow:var(--el-night-2)}
 code{font-family:"DM Mono",ui-monospace,monospace;font-size:.84em;background:rgba(34,27,20,.08);padding:2px 6px;border-radius:var(--r-sm)}
 .spec--night code,.on-night code{background:rgba(242,233,218,.12)}
 
@@ -325,7 +365,7 @@ code{font-family:"DM Mono",ui-monospace,monospace;font-size:.84em;background:rgb
 .skip{position:absolute;left:-9999px;top:0;background:var(--ochre);color:#211906;padding:12px 20px;z-index:100;font-weight:700;border-radius:0 0 var(--r-md) 0}
 .skip:focus{left:0}
 
-.topbar{position:relative;z-index:12;background:var(--night-deep);border-bottom:1px solid var(--night-edge)}
+.topbar{position:relative;z-index:12;background-color:var(--night-deep);border-bottom:1px solid var(--night-edge)}
 .topbar__in{display:flex;align-items:center;gap:var(--s6);padding-top:var(--s3);padding-bottom:var(--s3)}
 .brand{text-decoration:none;display:flex;flex-direction:column;line-height:1;flex:0 0 auto}
 .brand__logo{height:46px;width:auto;display:block}
@@ -365,7 +405,7 @@ code{font-family:"DM Mono",ui-monospace,monospace;font-size:.84em;background:rgb
 }
 
 /* Papierbogen als Trägerfläche für Listen und Karten */
-.cardsheet{background:var(--paper);border-radius:var(--r-sm);padding:var(--s7) var(--s7) var(--s6);box-shadow:var(--el-3);background-image:var(--grain);background-blend-mode:multiply;transform:rotate(-.35deg)}
+.cardsheet{background-color:var(--paper);border-radius:var(--r-sm);padding:var(--s7) var(--s7) var(--s6);box-shadow:var(--el-3);transform:rotate(-.35deg)}
 @media(max-width:640px){.cardsheet{padding:var(--s5) var(--s4);transform:none}}
 .pricecols{columns:2}
 @media(max-width:760px){.pricecols{columns:1;column-rule:none}}
