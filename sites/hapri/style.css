@@ -1,4 +1,30 @@
 /* ==========================================================
+   Schriften, selbst gehostet. Kein Request zu Google, damit
+   DSGVO-seitig nichts zu erklaeren ist. Variable Fonts,
+   deshalb deckt eine Datei je Sprachraum alle Schnitte ab.
+   ========================================================== */
+@font-face{
+  font-family:'Montserrat'; font-style:normal; font-weight:500 800; font-display:swap;
+  src:url('fonts/montserrat-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Montserrat'; font-style:normal; font-weight:500 800; font-display:swap;
+  src:url('fonts/montserrat-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face{
+  font-family:'Instrument Sans'; font-style:normal; font-weight:400 600; font-display:swap;
+  src:url('fonts/instrument-sans-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Instrument Sans'; font-style:normal; font-weight:400 600; font-display:swap;
+  src:url('fonts/instrument-sans-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* ==========================================================
    Hapri Handel und Dienstleistungen · Startseiten-Entwurf
    Design-System: siehe ../design-system.html
    ========================================================== */
@@ -12,7 +38,7 @@
   --el-3:0 3px 6px rgba(19,26,20,.06), 0 14px 30px -8px rgba(19,26,20,.12), 0 36px 70px -28px rgba(37,111,58,.26);
   --r-s:10px; --r-m:16px; --r-l:24px; --r-pill:999px;
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
-  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --display:"Montserrat","Helvetica Neue",Arial,sans-serif;
   --text:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
@@ -87,11 +113,16 @@ a{color:var(--gruen-tief)}
 .marke{font-family:var(--display); font-weight:800; font-size:1.25rem; letter-spacing:-.03em;
   color:var(--tinte); text-decoration:none; line-height:1.1}
 .marke span{display:block; font-family:var(--text); font-weight:500; font-size:.6875rem;
-  letter-spacing:.09em; text-transform:uppercase; color:var(--tinte-3)}
+  letter-spacing:.09em; text-transform:uppercase; color:var(--tinte-3); white-space:nowrap}
+/* Montserrat laeuft breiter: auf schmalen Screens wuerde der Kopf sonst dreizeilig */
+@media (max-width:560px){
+  .marke span{display:none}
+  .kopf__tel{font-size:1rem; gap:8px}
+}
 .kopf__nav{display:none; gap:var(--s5); margin-left:auto; font-size:.9375rem}
 .kopf__nav a{color:var(--tinte-2); text-decoration:none}
 .kopf__nav a:hover{color:var(--gruen-tief)}
-.kopf__tel{margin-left:auto; display:flex; align-items:center; gap:10px;
+.kopf__tel{margin-left:auto; display:flex; align-items:center; gap:10px; white-space:nowrap;
   font-family:var(--display); font-weight:700; font-size:1.0625rem; color:var(--tinte); text-decoration:none}
 .kopf__tel svg{color:var(--rot)}
 
