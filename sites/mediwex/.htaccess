@@ -1,0 +1,20 @@
+# MediWex: Entwurf auf Kundenwunsch offline genommen (11.08.2026).
+# Der Ordner bleibt bestehen, weil die Deploy-Action nichts loeschen kann
+# (KEIN --delete). Deshalb wird der Zugriff hier serverseitig verweigert.
+
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+  # Apache 2.4
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  # Apache 2.2
+  Order deny,allow
+  Deny from all
+</IfModule>
+
+# Falls die Zugriffssperre nicht greift, wenigstens nicht indexieren lassen.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+</IfModule>
