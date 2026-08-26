@@ -119,6 +119,31 @@ svg.i{width:1em;height:1em;fill:currentColor;flex:0 0 auto;display:inline-block;
 .hd .brandlogo{display:inline-flex;align-items:center;margin-right:14px}
 .hd .brandlogo img{height:22px;width:auto}
 
+/* ===== Mobile: Burger-Menü ===== */
+.burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:var(--pill);
+  border:1px solid var(--line-strong);background:var(--card);cursor:pointer;flex-direction:column;gap:5px;padding:0;
+  transition:border-color var(--fast)}
+.burger:hover{border-color:var(--ink)}
+.burger:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.burger span{display:block;width:18px;height:2px;border-radius:1px;background:var(--ink);transition:transform var(--med) var(--ease),opacity var(--fast)}
+.hd.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hd.open .burger span:nth-child(2){opacity:0}
+.hd.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobilenav{display:none;flex-direction:column;gap:6px;padding:6px 24px 16px;border-top:1px solid var(--line);background:rgba(255,255,255,.97)}
+.mobilenav a{font-family:var(--head);font-weight:700;font-size:16px;color:var(--ink);text-decoration:none;
+  padding:12px 16px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--card);transition:background var(--fast),color var(--fast)}
+.mobilenav a:hover,.mobilenav a:focus-visible{background:var(--orange-soft);color:var(--orange-hover)}
+@media(max-width:960px){
+  .hd a.tab{display:none}
+  .burger{display:inline-flex;flex:0 0 auto}
+  .hd .in{flex-wrap:nowrap;gap:10px;padding:12px 16px}
+  .hd .brandlogo{margin-right:auto}
+  .hd .brandlogo img{height:17px}
+  .hd .tel{margin-left:0;padding:8px 13px;font-size:13px;white-space:nowrap}
+  .hd.open .mobilenav{display:flex}
+}
+
+
 /* ===== Hero ===== */
 .hero{padding:40px 0 64px;position:relative;overflow:hidden}
 .herobg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -431,7 +456,18 @@ details.faq .a{padding:0 20px 18px;color:var(--ink-70);font-size:14px}
     <a class="tab" href="#ablauf">Ablauf</a>
     <a class="tab" href="#faq">FAQ</a>
     <a class="tel" href="tel:+4922117060520"><svg class="i"><use href="#i-phone"/></svg>0221 170 60 520</a>
+    <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobilenav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobilenav" id="mobilenav" aria-label="Mobiles Menü">
+    <a href="#top">Start</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#warum">Warum wir</a>
+    <a href="#tarife">Tarife</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#faq">FAQ</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -838,5 +874,18 @@ details.faq .a{padding:0 20px 18px;color:var(--ink-70);font-size:14px}
 </div>
 
 
+<script>
+(function(){
+  var h=document.querySelector('.hd'),b=h.querySelector('.burger');
+  b.addEventListener('click',function(){
+    var o=h.classList.toggle('open');
+    b.setAttribute('aria-expanded',o?'true':'false');
+    b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');
+  });
+  h.querySelectorAll('.mobilenav a').forEach(function(a){
+    a.addEventListener('click',function(){h.classList.remove('open');b.setAttribute('aria-expanded','false');});
+  });
+})();
+</script>
 </body>
 </html>
