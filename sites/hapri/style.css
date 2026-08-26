@@ -110,13 +110,14 @@ a{color:var(--gruen-tief)}
 /* Kopf */
 .kopf{position:sticky; top:0; z-index:30; background:rgba(247,248,245,.9);
   backdrop-filter:blur(12px); border-bottom:1px solid var(--linie)}
-.kopf__in{display:flex; align-items:center; gap:var(--s4); padding-block:12px}
-.marke{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--tinte)}
-.marke img{height:50px; width:auto}
-/* Die Wortmarke steckt im Logo, eine getippte Zusatzzeile daneben ist nur Unruhe */
-/* Montserrat laeuft breiter: auf schmalen Screens wuerde der Kopf sonst dreizeilig */
+.kopf__in{display:flex; align-items:center; gap:var(--s4); padding-block:10px}
+.marke{display:flex; align-items:center; text-decoration:none; color:var(--tinte)}
+/* Die Wortmarke steckt im Logo, eine getippte Zusatzzeile daneben waere nur Unruhe */
+.marke img{height:80px; width:auto}
+/* Am Handy waere ein 80er Logo plus Polster eine 100 px hohe Leiste, das frisst
+   zu viel vom Bildschirm. Darunter deshalb kleiner. */
 @media (max-width:620px){
-  .marke img{height:42px}
+  .marke img{height:56px}
   .kopf__tel{font-size:1rem; gap:8px}
 }
 .kopf__nav{display:none; gap:var(--s5); margin-left:auto; font-size:.9375rem}
@@ -125,6 +126,10 @@ a{color:var(--gruen-tief)}
 .kopf__tel{margin-left:auto; display:flex; align-items:center; gap:10px; white-space:nowrap;
   font-family:var(--display); font-weight:700; font-size:1.0625rem; color:var(--tinte); text-decoration:none}
 .kopf__tel svg{color:var(--rot)}
+
+/* Ankersprünge muessen unter der klebenden Leiste hervorkommen */
+section[id]{scroll-margin-top:76px}
+@media (min-width:620px){section[id]{scroll-margin-top:104px}}
 
 /* Sektionen */
 .sek{padding:var(--s8) 0}
@@ -276,14 +281,22 @@ details.faq .faq__in{padding:0 var(--s5) var(--s5); color:var(--tinte-2); max-wi
   .beweis > :first-child{grid-column:1 / -1}
   .beweis > :first-child .foto img{aspect-ratio:4/3}
 }
+@media (min-width:740px){
+  /* Bis 1000 px war hier gar keine Navigation zu sehen, der Kopf sah leer aus.
+     Ab 740 px passen Logo, fuenf Punkte und die Nummer nebeneinander, wenn die
+     Abstaende etwas enger stehen. */
+  .kopf__nav{display:flex; gap:18px}
+  .kopf__tel{margin-left:0}
+}
+@media (min-width:900px){
+  .kopf__nav{gap:var(--s5)}
+}
 @media (min-width:1000px){
   body{font-size:1.125rem}
   .sek{padding:var(--s9) 0}
   .hero{padding:var(--s8) 0 var(--s9)}
   .hero__grid{grid-template-columns:1.05fr .95fr; gap:var(--s7); align-items:center}
   .raster--3{grid-template-columns:repeat(3,1fr)}
-  .kopf__nav{display:flex}
-  .kopf__tel{margin-left:0}
   .sticky{display:none}
   .fuss{padding-bottom:var(--s8)}
 }
