@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPU-Vorbereitung Eifel und online · Burkhard Rau, Fachbuchautor</title>
+<meta name="description" content="Persönliche MPU-Vorbereitung bei Alkohol, Drogen, Punkten und Verkehrsdelikten. Einzelbetreuung durch Fachbuchautor Burkhard Rau, in der Eifel und bundesweit online. Erstgespräch kostenlos, Festpreise ab 190 Euro.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://mpu-eifel.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MPU-Vorbereitung Eifel und online · Burkhard Rau">
+<meta property="og:description" content="Einzelbetreuung durch Fachbuchautor Burkhard Rau. Alkohol, Drogen, Punkte, Verkehrsdelikte. Erstgespräch kostenlos.">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nachtblau:#071C3C; --nachtblau-hell:#0D2B57; --tiefblau:#04122A;
+  --blau:#1B4BD8; --blau-hell:#3D69EC; --blau-tief:#1539A8; --blau-schleier:#E8EDFC; --blau-label:#9DBAFB;
+  --nebel:#E9EFF7; --weiss:#FFFFFF; --tinte:#16191F; --grau:#5A6270; --grau-hell:#8C939F;
+  --linie:rgba(7,28,60,.12); --linie-dunkel:rgba(255,255,255,.14);
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+  --r-s:4px; --r-m:10px; --r-l:14px;
+  --e-base:0 1px 2px rgba(7,28,60,.06), 0 0 0 1px rgba(7,28,60,.07);
+  --e-elev:0 1px 2px rgba(7,28,60,.05), 0 4px 12px rgba(7,28,60,.09), 0 0 0 1px rgba(7,28,60,.05);
+  --e-float:0 1px 2px rgba(7,28,60,.06), 0 8px 20px rgba(7,28,60,.10), 0 24px 48px rgba(7,28,60,.13);
+  --e-blau:0 1px 2px rgba(21,57,168,.24), 0 6px 16px rgba(27,75,216,.28);
+  --e-dunkel:0 1px 2px rgba(2,10,24,.4), 0 10px 28px rgba(2,10,24,.5), 0 28px 60px rgba(2,10,24,.4);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--weiss);color:var(--tinte);
+  font-family:Inter,system-ui,"Helvetica Neue",sans-serif;font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%}
+h1,h2,h3,h4{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:0}
+h1{font-size:clamp(34px,4.6vw,56px);line-height:1.05;letter-spacing:-.032em}
+h2{font-size:clamp(27px,3.1vw,40px)}
+h3{font-size:20px;line-height:1.28;font-weight:700}
+h4{font-size:18px;line-height:1.32;font-weight:700}
+p{margin:0}
+a{color:var(--blau)}
+.doc{max-width:1180px;margin:0 auto;padding:0 var(--s5)}
+.meta{font-family:"Plus Jakarta Sans",sans-serif;font-size:12.5px;letter-spacing:.11em;
+  text-transform:uppercase;font-weight:700;color:var(--blau)}
+.sek-dunkel .meta{color:var(--blau-label)}
+.lead{font-size:clamp(18px,2vw,20px);line-height:1.62;color:var(--grau)}
+.mw{max-width:66ch}
+.grain{position:absolute;inset:0;opacity:.42;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
+.grid{display:grid;gap:var(--s5)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+
+/* ---- Buttons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:700;letter-spacing:-.01em;
+  padding:14px 26px;border-radius:var(--r-s);border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.btn:focus-visible{outline:2px solid var(--blau);outline-offset:3px}
+.btn:active{transform:translateY(1px)}
+.btn-primaer{background:var(--blau);color:#fff;box-shadow:var(--e-blau)}
+.btn-primaer:hover{background:var(--blau-hell);transform:translateY(-1px);box-shadow:0 2px 4px rgba(21,57,168,.22),0 10px 24px rgba(27,75,216,.34)}
+.btn-sekundaer{background:var(--weiss);color:var(--nachtblau);border-color:rgba(7,28,60,.22)}
+.btn-sekundaer:hover{border-color:var(--blau);color:var(--blau);transform:translateY(-1px);box-shadow:var(--e-base)}
+.btn-dunkel{background:var(--nachtblau);color:#fff;box-shadow:var(--e-elev)}
+.btn-dunkel:hover{background:var(--nachtblau-hell);transform:translateY(-1px)}
+.btn-geist{background:transparent;color:#fff;border-color:rgba(255,255,255,.38)}
+.btn-geist:hover{background:rgba(255,255,255,.10);border-color:#fff}
+.btn-gross{padding:17px 32px;font-size:17px}
+.btn-block{display:flex;width:100%}
+.tel{display:inline-flex;align-items:center;gap:var(--s2);font-family:"Plus Jakarta Sans",sans-serif;
+  font-weight:700;color:var(--nachtblau);text-decoration:none;font-size:16px}
+.tel svg{flex:none;color:var(--blau)}
+.tel-num{border-bottom:2px solid transparent;transition:border-color .2s var(--ease)}
+.tel:hover .tel-num{border-bottom-color:var(--blau)}
+
+/* ---- Wortmarke ---- */
+.wortmarke{display:inline-flex;flex-direction:column;gap:3px;text-decoration:none}
+.wortmarke .z1{font-family:"Plus Jakarta Sans",sans-serif;font-size:24px;font-weight:500;letter-spacing:-.03em;color:var(--nachtblau);line-height:1}
+.wortmarke .z1 b{font-weight:800}
+.wortmarke .strich{width:100%;height:2px;background:var(--blau)}
+.wortmarke .z2{font-family:"Plus Jakarta Sans",sans-serif;font-size:10.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--grau);font-weight:700;line-height:1}
+.wortmarke-dunkel .z1{color:#fff}
+.wortmarke-dunkel .z2{color:rgba(255,255,255,.66)}
+
+/* ---- Kopf ---- */
+.service{background:var(--tiefblau);color:rgba(255,255,255,.76);font-size:13.5px;padding:9px 0}
+.service .doc{display:flex;gap:var(--s5);align-items:center;flex-wrap:wrap}
+.service a{color:#fff;text-decoration:none;font-weight:700}
+.service .rechts{margin-left:auto}
+.nav{background:var(--weiss);border-bottom:1px solid var(--linie);position:sticky;top:0;z-index:50}
+.nav .doc{display:flex;align-items:center;gap:var(--s6);padding-top:var(--s4);padding-bottom:var(--s4)}
+.nav ul{list-style:none;display:flex;gap:var(--s5);margin:0 0 0 auto;padding:0}
+.nav a.lnk{color:var(--tinte);text-decoration:none;font-size:15.5px;font-weight:500;padding-bottom:3px;
+  border-bottom:2px solid transparent;transition:border-color .2s var(--ease),color .2s var(--ease)}
+.nav a.lnk:hover{color:var(--blau);border-bottom-color:var(--blau)}
+
+/* ---- Hero ---- */
+.hero{background:var(--nachtblau);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(62% 100% at 94% 6%,rgba(27,75,216,.55),transparent 62%),
+             radial-gradient(58% 90% at 0% 100%,rgba(4,18,42,.85),transparent 62%)}
+.hero .doc{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);
+  align-items:center;padding-top:var(--s9);padding-bottom:var(--s9)}
+.hero h1{color:#fff}
+.hero .unter{color:rgba(255,255,255,.78);font-size:18.5px;line-height:1.6;margin:var(--s5) 0 var(--s6);max-width:52ch}
+.hero .aktion{display:flex;gap:var(--s4);align-items:center;flex-wrap:wrap}
+.hero .tel{color:#fff}
+.hero .tel svg{color:var(--blau-hell)}
+.hero .signale{display:flex;gap:var(--s4) var(--s5);flex-wrap:wrap;margin-top:var(--s6);font-size:13.5px;color:rgba(255,255,255,.64)}
+.hero .signale span{display:inline-flex;align-items:center;gap:7px}
+.hero .signale span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blau-hell);flex:none}
+.hero-bild{position:relative;overflow:hidden;box-shadow:var(--e-dunkel);border-radius:var(--r-m);
+  clip-path:polygon(0 0,100% 0,100% 84%,88% 100%,0 100%)}
+.hero-bild img{display:block;width:100%;height:auto;filter:saturate(.95) contrast(1.02)}
+.hero-bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(7,28,60,.5),transparent 50%),linear-gradient(to right,rgba(7,28,60,.3),transparent 42%)}
+.hero-karte{position:absolute;left:calc(var(--s7) * -1);bottom:calc(var(--s5) * -1);z-index:2;
+  background:var(--weiss);border-radius:var(--r-m);padding:var(--s5);max-width:262px;
+  box-shadow:var(--e-float);border-top:3px solid var(--blau)}
+.hero-karte h4{color:var(--nachtblau);margin-bottom:6px}
+.hero-karte p{margin:0 0 var(--s4);font-size:14.5px;color:var(--grau);line-height:1.55}
+
+/* ---- Sektionen ---- */
+.sek{padding:var(--s9) 0}
+.sek-nebel{background:var(--nebel)}
+.sek-dunkel{background:var(--nachtblau);color:#fff;position:relative;overflow:hidden}
+.sek-dunkel h2{color:#fff}
+.sek-dunkel .lead{color:rgba(255,255,255,.74)}
+.kopf{margin-bottom:var(--s7);max-width:62ch}
+.kopf h2{margin:var(--s3) 0 var(--s4)}
+
+/* ---- Karten ---- */
+.karte{background:var(--weiss);border-radius:var(--r-m);padding:var(--s6);box-shadow:var(--e-base);
+  transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
+.karte:hover{transform:translateY(-3px);box-shadow:var(--e-elev)}
+.karte h3,.karte h4{margin-bottom:var(--s2)}
+.karte p{font-size:15.5px;line-height:1.65;color:var(--grau)}
+.ikon{width:46px;height:46px;border-radius:50%;background:var(--blau-schleier);color:var(--blau);
+  display:grid;place-items:center;margin-bottom:var(--s4);
+  transition:background-color .22s var(--ease),color .22s var(--ease)}
+.karte:hover .ikon{background:var(--blau);color:#fff}
+.ikon svg{width:21px;height:21px}
+.karte-fall{border-top:3px solid var(--blau);padding-top:calc(var(--s6) - 3px)}
+.kicker{font-family:"Plus Jakarta Sans",sans-serif;font-size:12.5px;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:700;color:var(--blau);display:block;margin-bottom:var(--s3)}
+.fakt{background:var(--blau);color:#fff;border-radius:var(--r-m);padding:var(--s5);position:relative;
+  overflow:hidden;box-shadow:var(--e-blau)}
+.fakt::before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(255,255,255,.16),transparent 55%)}
+.fakt > *{position:relative}
+.fakt .zahl{font-family:"Plus Jakarta Sans",sans-serif;font-size:30px;font-weight:800;letter-spacing:-.03em;display:block}
+.fakt .was{font-size:14px;color:rgba(255,255,255,.82);margin-top:4px;display:block;line-height:1.45}
+.badge{display:inline-flex;align-items:center;gap:var(--s2);background:var(--blau-schleier);color:var(--blau-tief);
+  border:1px solid rgba(27,75,216,.20);border-radius:var(--r-s);padding:7px 12px;font-size:14px;
+  font-weight:600;font-family:"Plus Jakarta Sans",sans-serif}
+.badge svg{flex:none}
+
+/* ---- Zitat ---- */
+.zitat{background:var(--blau);color:#fff;border-radius:var(--r-m);padding:var(--s6);position:relative;
+  box-shadow:var(--e-blau);margin:0}
+.zitat::before{content:"";position:absolute;inset:0;border-radius:var(--r-m);
+  background:linear-gradient(150deg,rgba(255,255,255,.14),transparent 52%)}
+.zitat .anf{position:relative;font-family:"Plus Jakarta Sans",sans-serif;font-size:52px;font-weight:800;
+  line-height:.7;color:rgba(255,255,255,.34);display:block;margin-bottom:var(--s3)}
+.zitat p{position:relative;font-family:"Plus Jakarta Sans",sans-serif;font-weight:600;font-style:italic;
+  font-size:clamp(18px,2.1vw,23px);line-height:1.45;letter-spacing:-.02em}
+.zitat cite{position:relative;display:block;font-family:Inter,sans-serif;font-style:normal;font-size:14px;
+  color:rgba(255,255,255,.75);margin-top:var(--s4)}
+
+/* ---- Bild-Treatment ---- */
+.bild{position:relative;overflow:hidden;border-radius:var(--r-m);box-shadow:var(--e-float);
+  clip-path:polygon(0 0,100% 0,100% 100%,12% 100%,0 86%)}
+.bild img{display:block;width:100%;height:auto;filter:saturate(.95) contrast(1.02)}
+.bild::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(7,28,60,.28),transparent 55%)}
+
+/* ---- Schritte ---- */
+.schritt{display:flex;gap:var(--s5);align-items:flex-start}
+.schritt .nr{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:18px;background:var(--blau);
+  color:#fff;box-shadow:var(--e-blau)}
+.schritt h3{color:#fff;margin-bottom:6px}
+.schritt p{color:rgba(255,255,255,.74);font-size:15.5px;line-height:1.65}
+.hinweis{margin-top:var(--s7);padding:var(--s5);border:1px solid var(--linie-dunkel);
+  border-radius:var(--r-m);background:rgba(4,18,42,.55);font-size:15px;color:rgba(255,255,255,.74);line-height:1.65}
+.hinweis strong{color:#fff}
+
+/* ---- Bücherbühne: freigestellte Cover, gefächert auf einer Regalkante ---- */
+.regal{position:relative;display:flex;justify-content:center;align-items:flex-end;
+  padding:var(--s7) 0 var(--s6);margin-bottom:var(--s4)}
+/* Bodenschatten und angedeutete Regalkante */
+.regal::before{content:"";position:absolute;left:50%;bottom:var(--s6);transform:translateX(-50%);
+  width:min(760px,92%);height:36px;
+  background:radial-gradient(ellipse at center,rgba(7,28,60,.20),rgba(7,28,60,.06) 55%,transparent 72%);
+  filter:blur(2px)}
+.regal::after{content:"";position:absolute;left:50%;bottom:var(--s6);transform:translateX(-50%);
+  width:min(820px,96%);height:1px;
+  background:linear-gradient(to right,transparent,rgba(7,28,60,.22),transparent)}
+.regal a{position:relative;display:block;line-height:0;border-radius:2px;
+  transform-origin:bottom center;transition:transform .28s var(--ease)}
+.regal a:focus-visible{outline:2px solid var(--blau);outline-offset:6px}
+.regal img{position:relative;display:block;width:clamp(96px,13.2vw,168px);height:auto;
+  transform-origin:bottom center;
+  filter:drop-shadow(0 2px 3px rgba(7,28,60,.22)) drop-shadow(0 12px 22px rgba(7,28,60,.20));
+  transition:transform .28s var(--ease),filter .28s var(--ease)}
+.regal a:nth-child(1){transform:rotate(-7deg) scale(.87);margin-right:-2.4%;z-index:1}
+.regal a:nth-child(2){transform:rotate(-3.5deg) scale(.94);margin-right:-2.4%;z-index:2}
+.regal a:nth-child(3){transform:scale(1.08);z-index:5}
+.regal a:nth-child(3) img{filter:drop-shadow(0 3px 4px rgba(7,28,60,.26)) drop-shadow(0 18px 32px rgba(7,28,60,.26))}
+.regal a:nth-child(4){transform:rotate(3.5deg) scale(.94);margin-left:-2.4%;z-index:2}
+.regal a:nth-child(5){transform:rotate(7deg) scale(.87);margin-left:-2.4%;z-index:1}
+.regal a:hover{z-index:9;transform:translateY(-14px) rotate(0deg) scale(1.1)}
+.regal a:hover img{filter:drop-shadow(0 4px 6px rgba(7,28,60,.24)) drop-shadow(0 24px 44px rgba(7,28,60,.30))}
+.titelzeile{display:flex;justify-content:center;gap:var(--s2) var(--s5);flex-wrap:wrap;
+  font-size:13.5px;color:var(--grau);margin-bottom:var(--s8)}
+.titelzeile span{display:inline-flex;align-items:center;gap:7px}
+.titelzeile span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--blau);flex:none}
+.titelzeile a{color:var(--grau);text-decoration:none;border-bottom:1px solid rgba(27,75,216,.3);
+  transition:color .2s var(--ease),border-color .2s var(--ease)}
+.titelzeile a:hover{color:var(--blau);border-bottom-color:var(--blau)}
+.titelzeile em{margin-right:calc(var(--s2) * -1)}
+/* ISBN-Zeile als Beweis-Stempel */
+.isbn{display:inline-flex;align-items:center;gap:var(--s3);background:var(--weiss);
+  border:1px solid rgba(27,75,216,.22);border-left:3px solid var(--blau);border-radius:var(--r-s);
+  padding:var(--s3) var(--s4);box-shadow:var(--e-base);font-size:14.5px;color:var(--tinte)}
+.isbn b{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700}
+.isbn a{color:var(--blau);text-decoration:none;font-weight:600}
+.isbn a:hover{text-decoration:underline}
+.isbn .wert{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;color:var(--grau)}
+
+/* ---- Preise ---- */
+.preis{background:var(--weiss);border-radius:var(--r-m);padding:var(--s6);box-shadow:var(--e-base);
+  display:flex;flex-direction:column;gap:var(--s3);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
+.preis:hover{transform:translateY(-3px);box-shadow:var(--e-elev)}
+.preis .name{font-family:"Plus Jakarta Sans",sans-serif;font-size:19px;font-weight:700}
+.preis .wert{font-family:"Plus Jakarta Sans",sans-serif;font-size:32px;font-weight:800;letter-spacing:-.03em;color:var(--nachtblau)}
+.preis .wert span{font-family:Inter,sans-serif;font-size:14px;font-weight:400;color:var(--grau)}
+.preis p{font-size:15px;line-height:1.6;color:var(--grau);flex:1}
+.preis-empfohlen{position:relative;border:2px solid var(--blau);
+  box-shadow:0 1px 2px rgba(21,57,168,.2),0 10px 26px rgba(27,75,216,.30),0 28px 56px rgba(2,10,24,.4)}
+.preis-empfohlen .wert{color:var(--blau)}
+.fahne{position:absolute;top:-11px;left:var(--s6);background:var(--blau);color:#fff;
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;padding:4px 11px;border-radius:3px;box-shadow:var(--e-blau)}
+
+/* ---- FAQ ---- */
+.faq{border-top:1px solid var(--linie);max-width:860px}
+.faq details{border-bottom:1px solid var(--linie)}
+.faq summary{list-style:none;cursor:pointer;padding:var(--s5) var(--s7) var(--s5) 0;position:relative;
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:18px;font-weight:700;letter-spacing:-.015em;
+  color:var(--nachtblau);transition:color .2s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--blau)}
+.faq summary:focus-visible{outline:2px solid var(--blau);outline-offset:2px}
+.faq summary::after{content:"";position:absolute;right:var(--s3);top:50%;width:11px;height:11px;
+  border-right:2.5px solid var(--blau);border-bottom:2.5px solid var(--blau);
+  transform:translateY(-70%) rotate(45deg);transition:transform .22s var(--ease)}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq details[open] summary{color:var(--blau)}
+.faq .antwort{padding:0 var(--s7) var(--s5) 0;color:var(--grau);font-size:16px;line-height:1.72;max-width:68ch}
+
+/* ---- Formular ---- */
+.feld{display:block;margin-bottom:var(--s4)}
+.feld span.lab{display:block;font-size:14.5px;font-weight:600;margin-bottom:6px;color:var(--tinte)}
+.feld .hilfe{font-size:13px;color:var(--grau-hell);font-weight:400;margin-left:6px}
+.feld input,.feld select,.feld textarea{width:100%;font-family:inherit;font-size:16px;color:var(--tinte);
+  padding:12px 14px;border:1px solid rgba(7,28,60,.20);border-radius:var(--r-s);background:var(--weiss);
+  transition:border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.feld input::placeholder,.feld textarea::placeholder{color:var(--grau-hell)}
+.feld input:hover,.feld select:hover,.feld textarea:hover{border-color:rgba(7,28,60,.38)}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--blau);box-shadow:0 0 0 3px rgba(27,75,216,.16)}
+.feld textarea{min-height:110px;resize:vertical}
+.check{display:flex;gap:var(--s3);align-items:flex-start;font-size:14.5px;color:var(--grau);line-height:1.5}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--blau);flex:none}
+
+/* ---- Footer ---- */
+.fuss{background:var(--tiefblau);color:rgba(255,255,255,.66);padding:var(--s8) 0 var(--s6);font-size:15px}
+.fuss h5{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;color:#fff;margin:0 0 var(--s3);font-weight:700}
+.fuss a{color:rgba(255,255,255,.66);text-decoration:none}
+.fuss a:hover{color:#fff}
+.fuss .unten{border-top:1px solid var(--linie-dunkel);margin-top:var(--s7);padding-top:var(--s5);
+  font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+
+/* ---- Mobiler CTA-Balken ---- */
+.mobil-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:var(--s3);
+  background:var(--weiss);padding:var(--s3);box-shadow:0 -4px 20px rgba(7,28,60,.14);border-top:1px solid var(--linie)}
+.mobil-bar .btn{flex:1;padding:13px 12px;font-size:15px}
+
+/* ---- Responsive ---- */
+@media(max-width:1000px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .nav ul{display:none}
+  .hero .doc{grid-template-columns:1fr;gap:var(--s7);padding-top:var(--s8);padding-bottom:var(--s8)}
+  .hero-bild{clip-path:none}
+  .hero-karte{position:static;max-width:none;margin-top:var(--s4)}
+  .g2,.g3{grid-template-columns:1fr}
+  .bild{clip-path:none}
+  .sek{padding:var(--s8) 0}
+}
+@media(max-width:820px){
+  .mobil-bar{display:flex}
+  body{padding-bottom:76px}
+  .service .rechts{margin-left:0}
+  /* Hero kompakter, damit der CTA ohne Scrollen über dem festen Balken steht */
+  .hero .doc{padding-top:var(--s6);padding-bottom:var(--s7);gap:var(--s6)}
+  .hero h1{font-size:clamp(28px,7.4vw,34px)}
+  .hero .unter{font-size:16.5px;margin:var(--s4) 0 var(--s5)}
+  .hero .aktion{gap:var(--s3)}
+  .hero .aktion .btn{width:100%}
+  .hero .signale{margin-top:var(--s5);gap:var(--s2) var(--s4);font-size:13px}
+  .service{font-size:12.5px}
+}
+@media(max-width:900px){
+  /* Regal ohne Überlappung, damit auf schmalen Schirmen nichts verdeckt wird */
+  .regal{flex-wrap:wrap;gap:var(--s5) var(--s4);padding-top:var(--s6)}
+  .regal img{width:clamp(88px,26vw,132px)}
+  .regal a:nth-child(n){margin:0;transform:rotate(-2deg) scale(1)}
+  .regal a:nth-child(even){transform:rotate(2deg) scale(1)}
+  /* Hauptbuch zuerst, damit es auf schmalen Schirmen die erste Leseposition bekommt */
+  .regal a:nth-child(3){order:-1;transform:scale(1.06)}
+  .regal::before,.regal::after{display:none}
+}
+@media(max-width:620px){
+  .g4{grid-template-columns:1fr}
+  .karte{padding:var(--s5)}
+  .titelzeile{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ======= Servicezeile ======= -->
+<div class="service">
+  <div class="doc">
+    <span>Wiesbaum in der Vulkaneifel und bundesweit online</span>
+    <span class="rechts">Erstgespräch kostenlos · <a href="tel:+4915792362812">01579 2362 812</a></span>
+  </div>
+</div>
+
+<!-- ======= Navigation ======= -->
+<header class="nav">
+  <div class="doc">
+    <a href="#" class="wortmarke" aria-label="MPU Beratung Burkhard Rau, Startseite">
+      <span class="z1"><b>MPU</b> Beratung</span><span class="strich"></span><span class="z2">Burkhard Rau · Eifel</span>
+    </a>
+    <ul>
+      <li><a href="#ablauf" class="lnk">Ablauf</a></li>
+      <li><a href="#fuer-wen" class="lnk">Für wen</a></li>
+      <li><a href="#buecher" class="lnk">Bücher</a></li>
+      <li><a href="#preise" class="lnk">Preise</a></li>
+      <li><a href="#fragen" class="lnk">Fragen</a></li>
+    </ul>
+    <a href="#kontakt" class="btn btn-primaer">Erstgespräch</a>
+  </div>
+</header>
+
+<!-- ======= Hero ======= -->
+<section class="hero">
+  <div class="grain"></div>
+  <div class="doc">
+    <div>
+      <h1>Zurück zum Führerschein. Persönlich vorbereitet vom Fachbuchautor.</h1>
+      <p class="unter">Burkhard Rau begleitet Sie durch die MPU bei Alkohol, Drogen, Punkten und Verkehrsdelikten. Einzelbetreuung statt Gruppenkurs, in der Eifel oder online in ganz Deutschland. Das Erstgespräch kostet nichts und verpflichtet zu nichts.</p>
+      <div class="aktion">
+        <a href="#kontakt" class="btn btn-primaer btn-gross">Kostenloses Erstgespräch anfragen</a>
+        <a href="tel:+4915792362812" class="tel">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg>
+          <span class="tel-num">01579 2362 812</span>
+        </a>
+      </div>
+      <div class="signale">
+        <span>Alkohol, Drogen, Punkte, Verkehrsdelikte</span>
+        <span>Feste Preise, offen auf dieser Seite</span>
+        <span>Keine Erfolgsversprechen</span>
+        <span>Ihre Anfrage bleibt unter uns</span>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="hero-bild">
+        <img src="bilder/mpu-beratung-wiesbaum-burkhard-rau-fachbuchautor-schreibtisch.webp"
+             alt="Burkhard Rau an seinem Schreibtisch, daneben ein Stapel seiner MPU-Fachbücher" width="1402" height="1122">
+      </div>
+      <div class="hero-karte">
+        <h4>Er hat das Buch geschrieben</h4>
+        <p>Sicher durch die MPU, 202 Seiten, ISBN 978-3-8192-9458-7. Prüfbar, bevor Sie ihn buchen.</p>
+        <a href="#buecher" class="btn btn-sekundaer btn-block">Zu den Büchern</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Vertrauensleiste ======= -->
+<section class="sek sek-dunkel" style="padding-top:var(--s8);padding-bottom:var(--s8);margin-top:-1px">
+  <div class="grain"></div>
+  <div class="doc" style="position:relative">
+    <div class="grid g4">
+      <div class="fakt"><span class="zahl">5</span><span class="was">eigene Fachbücher mit ISBN, alle 2026 erschienen</span></div>
+      <div class="fakt"><span class="zahl">15 Jahre</span><span class="was">Erwachsenenbildung, Dozent an Berufsschulen</span></div>
+      <div class="fakt"><span class="zahl">ab 190 €</span><span class="was">Festpreis, schriftlich vor Beginn, keine Nachforderung</span></div>
+      <div class="fakt"><span class="zahl">1 Person</span><span class="was">immer derselbe Ansprechpartner, kein Callcenter</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Problem ======= -->
+<section class="sek sek-nebel">
+  <div class="doc">
+    <div class="kopf">
+      <p class="meta">Sie sind hier richtig</p>
+      <h2>Führerschein weg. Und jetzt reden alle auf Sie ein.</h2>
+      <p class="lead">Die Führerscheinstelle schickt Formulare. Im Internet steht auf jeder zweiten Seite eine andere Zahl. Anbieter versprechen Erfolgsquoten, die niemand belegen kann. Und im Bekanntenkreis hat jeder eine Meinung, aber keiner war dabei.</p>
+    </div>
+    <div class="grid g2" style="gap:var(--s7);margin-bottom:var(--s8);align-items:start">
+      <p class="mw" style="color:var(--grau)">Dazu kommt das, worüber Sie mit niemandem sprechen: die Sperrfrist läuft, der Job hängt am Auto, und hier in der Eifel kommen Sie ohne Führerschein nicht weit. Vielleicht haben Sie die MPU, die viele immer noch Idiotentest nennen, schon einmal versucht und den Bescheid bekommen, der Ihnen den Boden weggezogen hat.</p>
+      <p class="mw" style="color:var(--grau)">Sie brauchen keine Motivationsrede. Sie brauchen jemanden, der den Ablauf kennt, Ihren Fall ehrlich einschätzt und Ihnen sagt, was zu tun ist. Und zwar bevor Sie Geld für die falschen Nachweise ausgeben.</p>
+    </div>
+
+    <h3 id="fuer-wen" style="font-size:22px;margin-bottom:var(--s5);scroll-margin-top:90px">Vier Ausgangslagen, vier Wege</h3>
+    <div class="grid g4">
+      <article class="karte karte-fall">
+        <span class="kicker">Fall 01</span>
+        <h4>MPU nach Alkohol am Steuer</h4>
+        <p>Ab 1,6 Promille wird die MPU angeordnet, bei Wiederholung auch früher. Die Gutachter wollen sehen, dass sich Ihr Umgang mit Alkohol wirklich geändert hat, nicht dass Sie die passenden Sätze auswendig können.</p>
+      </article>
+      <article class="karte karte-fall">
+        <span class="kicker">Fall 02</span>
+        <h4>MPU nach Drogen und Cannabis</h4>
+        <p>Hier zählt vor allem der belegte Verzicht über einen längeren Zeitraum, sauber dokumentiert. Wir klären zuerst, welche Nachweise Ihr Fall braucht, bevor Sie Geld für die falschen ausgeben.</p>
+      </article>
+      <article class="karte karte-fall">
+        <span class="kicker">Fall 03</span>
+        <h4>MPU wegen Punkten in Flensburg</h4>
+        <p>Acht Punkte, Fahrerlaubnis weg. Bei Punktefällen geht es um Ihr Fahrverhalten über Jahre, nicht um einen einzelnen Fehler. Das erfordert eine andere Vorbereitung als ein Alkoholfall.</p>
+      </article>
+      <article class="karte karte-fall">
+        <span class="kicker">Fall 04</span>
+        <h4>MPU nach einem Fehlversuch</h4>
+        <p>Ein negatives Gutachten ist kein Urteil über Sie, sondern eine Liste von Gründen. Wir gehen Ihr Gutachten Punkt für Punkt durch und arbeiten genau an dem, was gefehlt hat.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Der Berater ======= -->
+<section class="sek">
+  <div class="doc">
+    <div class="grid g2" style="gap:var(--s8);align-items:center">
+      <div>
+        <p class="meta">Der Mensch, mit dem Sie arbeiten</p>
+        <h2 style="margin:var(--s3) 0 var(--s5)">Burkhard Rau. Ihr Berater, nicht Ihr Richter.</h2>
+        <p class="mw" style="color:var(--grau);margin-bottom:var(--s4)">Burkhard Rau steht seit rund 15 Jahren in der Erwachsenenbildung, als Dozent an Berufsschulen, als Mediator, als psychologischer Berater und Verkehrspädagoge. Er hat Biologie studiert und ist Betriebswirt (HWK). Seine Fortbildungen reichen von Psychologie und Kommunikation über Mediation und Resilienztraining bis zur Verkehrspädagogik.</p>
+        <p class="mw" style="color:var(--grau);margin-bottom:var(--s5)">Bei ihm sitzen Sie keinem Team gegenüber, das wechselt. Sie arbeiten von der ersten bis zur letzten Stunde mit derselben Person, die Ihren Fall kennt.</p>
+        <blockquote class="zitat">
+          <span class="anf" aria-hidden="true">&bdquo;</span>
+          <p>Wissen allein verändert Menschen selten. Entscheidend ist die Fähigkeit, neue Erkenntnisse in dauerhaftes Verhalten umzusetzen.</p>
+          <cite>Burkhard Rau, MPU-Berater und Fachbuchautor</cite>
+        </blockquote>
+      </div>
+      <div>
+        <div class="bild">
+          <img src="bilder/mpu-beratung-wiesbaum-beratungsgespraech-mpu-vorbereitung.webp"
+               alt="Burkhard Rau im Beratungsgespräch mit einer Klientin" width="1400" height="1050" loading="lazy">
+        </div>
+        <div style="margin-top:var(--s6)">
+          <h3 style="margin-bottom:var(--s4)">Was er nicht macht</h3>
+          <ul style="list-style:none;padding:0;margin:0;color:var(--grau);font-size:15.5px;line-height:1.6">
+            <li style="display:flex;gap:var(--s3);margin-bottom:var(--s3)"><span style="color:var(--blau);font-weight:700">01</span>Keine Erfolgsgarantie. Wie er selbst schreibt: seriöse Berater geben keine.</li>
+            <li style="display:flex;gap:var(--s3);margin-bottom:var(--s3)"><span style="color:var(--blau);font-weight:700">02</span>Keine auswendig gelernten Antworten. Die erkennt jeder Gutachter.</li>
+            <li style="display:flex;gap:var(--s3);margin-bottom:var(--s3)"><span style="color:var(--blau);font-weight:700">03</span>Kein Kleinreden dessen, was passiert ist. Damit fällt man durch.</li>
+            <li style="display:flex;gap:var(--s3)"><span style="color:var(--blau);font-weight:700">04</span>Keine Gruppenkurse, in denen Ihr Fall untergeht.</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-dunkel" style="margin-top:var(--s5)">Erstgespräch mit Burkhard Rau vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Ablauf ======= -->
+<section class="sek sek-dunkel" id="ablauf" style="scroll-margin-top:70px">
+  <div class="grain"></div>
+  <div class="doc" style="position:relative">
+    <div class="kopf">
+      <p class="meta">Ihr Fahrplan</p>
+      <h2>So läuft Ihre MPU-Vorbereitung ab</h2>
+      <p class="lead">Vier Schritte, die aufeinander aufbauen. Sie wissen von Anfang an, wo Sie stehen und was als Nächstes kommt.</p>
+    </div>
+    <div class="grid g2" style="gap:var(--s7) var(--s8)">
+      <div class="schritt"><span class="nr">1</span><div>
+        <h3>Erstgespräch, kostenlos</h3>
+        <p>Sie schildern Ihre Situation, er hört zu und ordnet ein: welcher Fall liegt vor, welche Nachweise brauchen Sie, wie viel Zeit ist realistisch. Am Ende wissen Sie, woran Sie sind. Auch dann, wenn die ehrliche Antwort lautet, dass Sie noch warten müssen.</p>
+      </div></div>
+      <div class="schritt"><span class="nr">2</span><div>
+        <h3>Ehrliche Reflexion</h3>
+        <p>Gemeinsam schauen Sie sich an, wie es zu der Sache gekommen ist. Nicht um Schuld zu verteilen, sondern weil die Begutachtungsstelle genau das von Ihnen hören will: dass Sie die Ursachen kennen.</p>
+      </div></div>
+      <div class="schritt"><span class="nr">3</span><div>
+        <h3>Verhaltensänderung, die trägt</h3>
+        <p>Aus der Erkenntnis wird Alltag. Sie erarbeiten konkrete Veränderungen und dokumentieren sie so, dass sie den Anforderungen der Begutachtungsstellen standhalten. Dafür bekommen Sie Workbooks und feste Termine, online oder vor Ort.</p>
+      </div></div>
+      <div class="schritt"><span class="nr">4</span><div>
+        <h3>Simulation des MPU-Gesprächs</h3>
+        <p>Bevor Sie zum echten Termin gehen, führen Sie das Gespräch einmal komplett durch. Sie kennen die Fragen, die Sprache und die Situation. Danach ist der Raum beim Gutachter kein fremder Raum mehr.</p>
+      </div></div>
+    </div>
+    <p class="hinweis"><strong>Wichtig zu wissen:</strong> Die MPU selbst findet immer bei einer amtlich anerkannten Begutachtungsstelle statt, zum Beispiel TÜV oder DEKRA. Diese Vorbereitung ist davon unabhängig. Sie bereitet Sie darauf vor, sie begutachtet Sie nicht und hat auf das Ergebnis keinen Einfluss.</p>
+    <div style="margin-top:var(--s7)">
+      <a href="#kontakt" class="btn btn-primaer btn-gross">Mit Schritt 1 beginnen, kostenlos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Beweis: Bücher ======= -->
+<section class="sek" id="buecher" style="scroll-margin-top:70px;background:linear-gradient(to bottom,var(--weiss) 0%,var(--weiss) 62%,var(--nebel) 100%)">
+  <div class="doc">
+    <div class="kopf" style="margin-bottom:var(--s5)">
+      <p class="meta">Nachprüfbar statt behauptet</p>
+      <h2>Warum Sie ihm glauben können, ohne dass er etwas verspricht</h2>
+      <p class="lead">Erfolgsquoten kann jeder auf eine Website schreiben. Nachprüfbar ist etwas anderes: Burkhard Rau hat die Bücher zu diesem Thema selbst geschrieben.</p>
+    </div>
+
+    <div class="regal">
+      <a href="https://buchshop.bod.de/mpu-workbook-punkte-und-verkehrsdilikte-burkhard-rau-9783695716173" target="_blank" rel="noopener" title="MPU Workbook Punkte und Verkehrsdelikte im Buchshop ansehen">
+        <img src="bilder/mpu-beratung-wiesbaum-buch-workbook-punkte-verkehrsdelikte.webp"
+             alt="Buchcover MPU Workbook Punkte und Verkehrsdelikte von Burkhard Rau" width="253" height="477" loading="lazy"></a>
+      <a href="https://buchshop.bod.de/mpu-workbook-alkohol-burkhard-rau-9783695746460" target="_blank" rel="noopener" title="MPU Workbook Alkohol im Buchshop ansehen">
+        <img src="bilder/mpu-beratung-wiesbaum-buch-workbook-alkohol.webp"
+             alt="Buchcover MPU Workbook Alkohol von Burkhard Rau" width="252" height="465" loading="lazy"></a>
+      <a href="https://buchshop.bod.de/mpu-buch-sicher-durch-die-mpu-burkhard-rau-9783819294587" target="_blank" rel="noopener" title="MPU-Buch, Sicher durch die MPU, im Buchshop ansehen">
+        <img src="bilder/mpu-beratung-wiesbaum-buch-mpu-sicher-durch-die-mpu.webp"
+             alt="Buchcover MPU-Buch, Sicher durch die MPU von Burkhard Rau" width="257" height="451"></a>
+      <a href="https://buchshop.bod.de/mpu-workbook-drogen-burkhard-rau-9783695169528" target="_blank" rel="noopener" title="MPU Workbook Drogen im Buchshop ansehen">
+        <img src="bilder/mpu-beratung-wiesbaum-buch-workbook-drogen.webp"
+             alt="Buchcover MPU Workbook Drogen von Burkhard Rau" width="259" height="471" loading="lazy"></a>
+      <a href="https://buchshop.bod.de/kuh-vom-eis-burkhard-rau-9783696393366" target="_blank" rel="noopener" title="Kuh vom Eis im Buchshop ansehen">
+        <img src="bilder/mpu-beratung-wiesbaum-buch-kuh-vom-eis-freigestellt.webp"
+             alt="Buchcover Kuh vom Eis, wie wir typische Rückfallsituationen im Leben meistern, von Burkhard Rau" width="248" height="441" loading="lazy"></a>
+    </div>
+    <p class="titelzeile">
+      <em style="font-style:normal;font-weight:600;color:var(--tinte)">Seine Titel, alle im Buchhandel:</em>
+      <span><a href="https://buchshop.bod.de/mpu-buch-sicher-durch-die-mpu-burkhard-rau-9783819294587" target="_blank" rel="noopener">Sicher durch die MPU</a></span>
+      <span><a href="https://buchshop.bod.de/mpu-workbook-alkohol-burkhard-rau-9783695746460" target="_blank" rel="noopener">Workbook Alkohol</a></span>
+      <span><a href="https://buchshop.bod.de/mpu-workbook-drogen-burkhard-rau-9783695169528" target="_blank" rel="noopener">Workbook Drogen</a></span>
+      <span><a href="https://buchshop.bod.de/mpu-workbook-punkte-und-verkehrsdilikte-burkhard-rau-9783695716173" target="_blank" rel="noopener">Workbook Punkte und Verkehrsdelikte</a></span>
+      <span><a href="https://buchshop.bod.de/kuh-vom-eis-burkhard-rau-9783696393366" target="_blank" rel="noopener">Kuh vom Eis</a></span>
+    </p>
+
+    <div class="grid g2" style="gap:var(--s8);align-items:start">
+      <div>
+        <h3 style="margin-bottom:var(--s4)">Er hat das Buch geschrieben, das andere lesen</h3>
+        <p class="mw" style="color:var(--grau);margin-bottom:var(--s4)">Wer ein Fachbuch zu einem Thema veröffentlicht, muss es vollständig durchdrungen haben. Jedes dieser Bücher steht mit eigener ISBN im Buchhandel, Sie können es anklicken, kaufen und lesen, bevor Sie ihn buchen. Das ist ein anderer Beweis als eine Sternchen-Leiste, die niemand nachrechnen kann.</p>
+        <p class="mw" style="color:var(--grau);margin-bottom:var(--s5)">Dazu kommen drei Workbooks, eines für jede Fallgruppe, und mit „Kuh vom Eis" ein Buch über Rückfallsituationen im Leben. Fünf Titel, zusammen 544 Seiten, alle 2026 erschienen und damit auf dem heutigen Stand der Begutachtungspraxis. Mit genau diesen Materialien arbeiten Sie in der Vorbereitung.</p>
+        <p class="isbn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blau)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span><b>MPU Buch: Sicher durch die MPU</b><br><span class="wert">202 Seiten · 14,99 Euro · ISBN 978-3-8192-9458-7</span><br>
+          <a href="https://buchshop.bod.de/mpu-buch-sicher-durch-die-mpu-burkhard-rau-9783819294587" target="_blank" rel="noopener">Im Buchshop ansehen</a></span>
+        </p>
+      </div>
+      <div class="grid" style="gap:var(--s5)">
+        <article class="karte">
+          <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></div>
+          <h3>Der Ratgeber kostet nichts</h3>
+          <p>Sie sind noch nicht so weit, jemanden anzurufen. Verständlich. Sein MPU-Ratgeber beantwortet die wichtigsten Fragen und kommt als PDF zu Ihnen. Lesen Sie ihn und entscheiden Sie danach.</p>
+          <a href="#kontakt" class="btn btn-sekundaer" style="margin-top:var(--s5)">Gratis-Ratgeber anfordern</a>
+        </article>
+        <article class="karte">
+          <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Alle Preise stehen offen</h3>
+          <p>Die meisten Anbieter nennen ihre Preise erst im Gespräch. Hier stehen sie auf der Seite, bevor Sie Kontakt aufnehmen. Was vereinbart wird, steht vorher schriftlich fest. Nachforderungen gibt es nicht.</p>
+          <a href="#preise" class="btn btn-sekundaer" style="margin-top:var(--s5)">Zu den Preisen</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Preise ======= -->
+<section class="sek sek-dunkel" id="preise" style="scroll-margin-top:70px">
+  <div class="grain"></div>
+  <div class="doc" style="position:relative">
+    <div class="kopf">
+      <p class="meta">Transparent, wie es sein sollte</p>
+      <h2>Was die Vorbereitung kostet</h2>
+      <p class="lead">Vier Wege, je nachdem wie viel Begleitung Sie brauchen. Welcher zu Ihnen passt, klären Sie im kostenlosen Erstgespräch. Alle Preise sind Festpreise.</p>
+    </div>
+    <div class="grid g4" style="align-items:stretch">
+      <div class="preis">
+        <span class="name">Selbststudium</span>
+        <span class="wert">190 €<span> einmalig</span></span>
+        <p>Lernunterlagen und Online-Simulation zum eigenständigen Arbeiten. Für alle, die ihren Fall im Griff haben und nur eine saubere Struktur brauchen.</p>
+        <a href="#kontakt" class="btn btn-sekundaer btn-block">Anfragen</a>
+      </div>
+      <div class="preis">
+        <span class="name">Light</span>
+        <span class="wert">490 €<span> einmalig</span></span>
+        <p>Fünf Stunden persönliche Vorbereitung, Workbook und eine Prüfungssimulation. Der Einstieg, wenn Ihr Fall klar liegt und die Zeit reicht.</p>
+        <a href="#kontakt" class="btn btn-sekundaer btn-block">Anfragen</a>
+      </div>
+      <div class="preis preis-empfohlen">
+        <span class="fahne">Meist gewählt</span>
+        <span class="name">Standard</span>
+        <span class="wert">1.150 €<span> einmalig</span></span>
+        <p>15 Stunden persönliche Vorbereitung, alle Materialien und die vollständige Simulation. Der Weg, den die meisten gehen, weil echte Verhaltensänderung Zeit braucht.</p>
+        <a href="#kontakt" class="btn btn-primaer btn-block">Anfragen</a>
+      </div>
+      <div class="preis">
+        <span class="name">Premium</span>
+        <span class="wert">2.450 €<span> einmalig</span></span>
+        <p>Unbegrenzte Stunden, intensive Begleitung und Betreuung auch nach der MPU. Für komplizierte Fälle, für Wiederholer und für alle, bei denen viel auf dem Spiel steht.</p>
+        <a href="#kontakt" class="btn btn-sekundaer btn-block">Anfragen</a>
+      </div>
+    </div>
+    <p style="margin-top:var(--s6);color:rgba(255,255,255,.74);font-size:15.5px;max-width:70ch">
+      Beratung online, bei ihm in Wiesbaum oder bei Ihnen zu Hause. Sie zahlen für Ihre Vorbereitung. Die Gebühren der Begutachtungsstelle rechnet diese separat mit Ihnen ab.
+    </p>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section class="sek" id="fragen" style="scroll-margin-top:70px">
+  <div class="doc">
+    <div class="kopf">
+      <p class="meta">Bevor Sie fragen</p>
+      <h2>Fragen, die fast alle stellen</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Was kostet eine MPU-Vorbereitung?</summary>
+        <p class="antwort">Bei Burkhard Rau kostet die Vorbereitung zwischen 190 Euro für das Selbststudium und 2.450 Euro für die Premium-Begleitung mit unbegrenzten Stunden. Die meisten Klienten wählen das Standard-Paket für 1.150 Euro mit 15 Stunden persönlicher Vorbereitung. Alle Preise sind Festpreise und werden vor Beginn schriftlich festgehalten. Die Gebühren der Begutachtungsstelle für die MPU selbst kommen separat hinzu.</p>
+      </details>
+      <details>
+        <summary>Wie lange dauert die Vorbereitung?</summary>
+        <p class="antwort">Das hängt vom Fall ab. Bei Punktefällen genügen oft wenige Wochen. Bei Alkohol- und Drogenfällen richtet sich die Dauer nach den erforderlichen Abstinenz- oder Kontrollzeiträumen, üblich sind sechs bis zwölf Monate. Diese Zeit ist keine Wartezeit, sondern genau der Zeitraum, in dem die Veränderung entsteht, die die Begutachtungsstelle sehen will. Im Erstgespräch bekommen Sie eine realistische Einschätzung für Ihren Fall.</p>
+      </details>
+      <details>
+        <summary>Brauche ich überhaupt eine Vorbereitung?</summary>
+        <p class="antwort">Vorgeschrieben ist sie nicht. Rund vier von zehn Kandidaten bestehen die MPU beim ersten Versuch jedoch nicht, meist weil sie die Ursachen ihres Verhaltens nicht nachvollziehbar darstellen können. Genau daran arbeitet eine Vorbereitung. Ob Sie eine brauchen und in welchem Umfang, klären Sie am besten im kostenlosen Erstgespräch, ehrlich und ohne Verkaufsdruck.</p>
+      </details>
+      <details>
+        <summary>Wie hoch ist Ihre Erfolgsquote?</summary>
+        <p class="antwort">Diese Frage beantwortet Burkhard Rau bewusst nicht mit einer Zahl. Über das Ergebnis entscheidet allein die amtlich anerkannte Begutachtungsstelle, nicht der Berater. Wer Ihnen eine Quote von 95 oder 98 Prozent nennt oder eine Erfolgsgarantie gibt, verspricht etwas, das er nicht einlösen kann. Seriöse Beratung arbeitet an Ihrer Vorbereitung, nicht an Werbeversprechen.</p>
+      </details>
+      <details>
+        <summary>Was ist der Unterschied zwischen MPU-Beratung und Begutachtungsstelle?</summary>
+        <p class="antwort">Die MPU wird ausschließlich von amtlich anerkannten Begutachtungsstellen durchgeführt, zum Beispiel TÜV, DEKRA oder GTÜ. Dort findet die Untersuchung statt und dort entsteht das Gutachten. Die MPU-Beratung ist davon vollständig unabhängig. Sie bereitet Sie auf diesen Termin vor, hat aber keinerlei Einfluss auf das Ergebnis und keine Verbindung zu den Gutachtern.</p>
+      </details>
+      <details>
+        <summary>Wie läuft die MPU selbst ab?</summary>
+        <p class="antwort">Die Untersuchung dauert in der Regel zwei bis vier Stunden und besteht aus vier Teilen: der Prüfung Ihrer Identität, einer medizinischen Untersuchung, einem Leistungstest am Rechner zu Reaktion und Konzentration sowie dem psychologischen Gespräch. Das Gespräch ist der Teil, vor dem die meisten Angst haben, und der Teil, auf den sich eine Vorbereitung konzentriert.</p>
+      </details>
+      <details>
+        <summary>Ich bin schon einmal durchgefallen. Hat das noch Sinn?</summary>
+        <p class="antwort">Ja. Ein negatives Gutachten enthält immer eine Begründung, und diese Begründung ist Ihr Arbeitsauftrag für den zweiten Anlauf. Gemeinsam gehen Sie das Gutachten durch und arbeiten gezielt an den Punkten, die gefehlt haben. Wiederholer sind ein wesentlicher Teil der Klienten, und sie kommen oft besser vorbereitet in den zweiten Termin als beim ersten Mal.</p>
+      </details>
+      <details>
+        <summary>Erfährt mein Arbeitgeber davon?</summary>
+        <p class="antwort">Nein. Was Sie im Erstgespräch und in der Beratung erzählen, bleibt bei Burkhard Rau. Es gibt keine Meldung an Arbeitgeber, Behörden oder Versicherungen und keine Weitergabe Ihrer Daten. Wenn Sie möchten, laufen Termine vollständig online, dann muss niemand in Ihrem Umfeld überhaupt mitbekommen, dass Sie sich vorbereiten.</p>
+      </details>
+      <details>
+        <summary>Geht die Vorbereitung auch online?</summary>
+        <p class="antwort">Ja, vollständig. Die Beratung findet online, hier in Wiesbaum oder auf Wunsch bei Ihnen zu Hause statt. Online-Termine funktionieren erfahrungsgemäß genauso gut wie Präsenztermine, sind flexibler neben dem Job und sparen Ihnen die Anfahrt. Das gilt bundesweit, nicht nur in der Eifel.</p>
+      </details>
+      <details>
+        <summary>Wie schnell kann ich anfangen?</summary>
+        <p class="antwort">Melden Sie sich, und Sie bekommen zeitnah einen Termin für das Erstgespräch. Wichtiger als Tempo ist der richtige Startzeitpunkt: Bei Abstinenznachweisen entscheidet der Beginn über den Termin bei der Begutachtungsstelle. Genau deshalb lohnt sich das Erstgespräch früh, auch wenn Ihre Sperrfrist noch läuft.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Abschluss-CTA mit Formular ======= -->
+<section class="sek sek-dunkel" id="kontakt" style="scroll-margin-top:70px">
+  <div class="grain"></div>
+  <div class="doc" style="position:relative">
+    <div class="grid g2" style="gap:var(--s8);align-items:start">
+      <div>
+        <p class="meta">Der erste Schritt</p>
+        <h2 style="margin:var(--s3) 0 var(--s5)">Ein Gespräch, das nichts kostet und Sie zu nichts verpflichtet</h2>
+        <p style="color:rgba(255,255,255,.84);font-size:19px;line-height:1.6;margin-bottom:var(--s4);max-width:50ch">Sie müssen sich nicht rechtfertigen und nichts beschönigen. Sagen Sie einfach, was passiert ist und wo Sie gerade stehen. Danach wissen Sie, was auf Sie zukommt, was es kostet und wie lange es dauert.</p>
+        <p style="color:rgba(255,255,255,.72);margin-bottom:var(--s6)">Wenn Sie das dann alleine machen wollen, ist das auch in Ordnung.</p>
+        <div style="border-top:1px solid var(--linie-dunkel);padding-top:var(--s5)">
+          <p style="color:rgba(255,255,255,.74);font-size:15px;margin-bottom:var(--s3)">Lieber sprechen als schreiben:</p>
+          <a href="tel:+4915792362812" class="btn btn-geist btn-gross">01579 2362 812</a>
+        </div>
+      </div>
+      <div style="background:var(--weiss);border-radius:var(--r-m);padding:var(--s6);box-shadow:var(--e-float)">
+        <h3 style="margin-bottom:var(--s2)">Erstgespräch anfragen</h3>
+        <p style="font-size:15px;color:var(--grau);margin-bottom:var(--s5)">Ein paar Angaben genügen. Er meldet sich zeitnah bei Ihnen zurück.</p>
+        <form>
+          <label class="feld"><span class="lab">Name</span><input type="text" name="name" placeholder="Ihr Name" autocomplete="name"></label>
+          <label class="feld"><span class="lab">Telefon oder E-Mail</span><input type="text" name="kontakt" placeholder="Wie erreicht er Sie?" autocomplete="tel"></label>
+          <label class="feld"><span class="lab">Worum geht es <span class="hilfe">optional</span></span>
+            <select name="anlass">
+              <option>Bitte wählen</option>
+              <option>Alkohol</option>
+              <option>Drogen</option>
+              <option>Punkte in Flensburg</option>
+              <option>Verkehrsdelikt</option>
+              <option>Weiß ich noch nicht</option>
+            </select>
+          </label>
+          <label class="feld"><span class="lab">Ihre Nachricht <span class="hilfe">optional</span></span>
+            <textarea name="nachricht" placeholder="Was ist passiert, wo stehen Sie gerade?"></textarea></label>
+          <label class="check" style="margin-bottom:var(--s5)"><input type="checkbox" name="datenschutz">
+            <span>Ich habe die Datenschutzerklärung gelesen und bin mit der Verarbeitung meiner Angaben einverstanden.</span></label>
+          <button type="submit" class="btn btn-primaer btn-block btn-gross">Erstgespräch anfragen</button>
+        </form>
+        <p style="font-size:14.5px;color:var(--grau);text-align:center;margin-top:var(--s4)">Ihre Angaben bleiben vertraulich. Keine Weitergabe, keine Werbung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Footer ======= -->
+<footer class="fuss">
+  <div class="doc">
+    <div class="grid g4" style="gap:var(--s7)">
+      <div>
+        <span class="wortmarke wortmarke-dunkel"><span class="z1"><b>MPU</b> Beratung</span><span class="strich"></span><span class="z2">Burkhard Rau · Eifel</span></span>
+        <p style="margin-top:var(--s4);line-height:1.7">Psychologische Beratung Burkhard Rau<br>Higis-Ring 20<br>54578 Wiesbaum</p>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <p style="line-height:1.9"><a href="tel:+4915792362812">01579 2362 812</a><br><a href="mailto:burkhard.rau@mpu-eifel.com">burkhard.rau@mpu-eifel.com</a></p>
+      </div>
+      <div>
+        <h5>Einzugsgebiet</h5>
+        <p style="line-height:1.7">MPU-Vorbereitung in Wiesbaum, Daun, Gerolstein, Bitburg, Prüm, Wittlich, Trier und der gesamten Vulkaneifel. Online in ganz Deutschland.</p>
+      </div>
+      <div>
+        <h5>Leistungen</h5>
+        <p style="line-height:1.9">Alkohol-MPU<br>Drogen-MPU<br>Punkte-MPU<br>Verkehrs-MPU<br>Vorbereitung nach Fehlversuch<br>MPU-Bücher</p>
+      </div>
+    </div>
+    <p class="unten">Die MPU wird ausschließlich von amtlich anerkannten Begutachtungsstellen durchgeführt. Diese Beratung bereitet darauf vor und stellt keine Heilbehandlung im Sinne des Heilpraktikergesetzes dar. · <a href="#">Impressum</a> · <a href="#">Datenschutz</a></p>
+  </div>
+</footer>
+
+<!-- ======= Mobiler CTA-Balken ======= -->
+<div class="mobil-bar">
+  <a href="#kontakt" class="btn btn-primaer">Erstgespräch</a>
+  <a href="tel:+4915792362812" class="btn btn-sekundaer">Anrufen</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"ProfessionalService",
+      "@id":"https://mpu-eifel.com/#betrieb",
+      "name":"MPU Beratung Burkhard Rau",
+      "legalName":"Psychologische Beratung Burkhard Rau",
+      "description":"Persönliche MPU-Vorbereitung bei Alkohol, Drogen, Punkten und Verkehrsdelikten. Einzelbetreuung durch Fachbuchautor Burkhard Rau, vor Ort in der Vulkaneifel und bundesweit online.",
+      "url":"https://mpu-eifel.com/",
+      "telephone":"+49 1579 2362812",
+      "email":"burkhard.rau@mpu-eifel.com",
+      "address":{"@type":"PostalAddress","streetAddress":"Higis-Ring 20","postalCode":"54578","addressLocality":"Wiesbaum","addressRegion":"Rheinland-Pfalz","addressCountry":"DE"},
+      "areaServed":[
+        {"@type":"AdministrativeArea","name":"Vulkaneifel"},
+        {"@type":"AdministrativeArea","name":"Rheinland-Pfalz"},
+        {"@type":"Country","name":"Deutschland"}
+      ],
+      "priceRange":"190 EUR bis 2450 EUR",
+      "founder":{"@id":"https://mpu-eifel.com/#burkhard-rau"},
+      "makesOffer":[
+        {"@type":"Offer","name":"Selbststudium","price":"190","priceCurrency":"EUR"},
+        {"@type":"Offer","name":"Beratung Light","price":"490","priceCurrency":"EUR"},
+        {"@type":"Offer","name":"Beratung Standard","price":"1150","priceCurrency":"EUR"},
+        {"@type":"Offer","name":"Beratung Premium","price":"2450","priceCurrency":"EUR"}
+      ]
+    },
+    {
+      "@type":"Person",
+      "@id":"https://mpu-eifel.com/#burkhard-rau",
+      "name":"Burkhard Rau",
+      "jobTitle":"MPU-Berater, Verkehrspädagoge und Fachbuchautor",
+      "knowsAbout":["MPU-Vorbereitung","Verkehrspädagogik","Mediation","Resilienztraining"]
+    },
+    {
+      "@type":"Book",
+      "name":"MPU Buch: Sicher durch die MPU",
+      "author":{"@id":"https://mpu-eifel.com/#burkhard-rau"},
+      "isbn":"9783819294587",
+      "numberOfPages":202,
+      "datePublished":"2026-03-03",
+      "inLanguage":"de",
+      "url":"https://buchshop.bod.de/mpu-buch-sicher-durch-die-mpu-burkhard-rau-9783819294587"
+    },
+    {
+      "@type":"Book",
+      "name":"MPU Workbook Alkohol",
+      "author":{"@id":"https://mpu-eifel.com/#burkhard-rau"},
+      "isbn":"9783695746460",
+      "inLanguage":"de",
+      "url":"https://buchshop.bod.de/mpu-workbook-alkohol-burkhard-rau-9783695746460"
+    },
+    {
+      "@type":"Book",
+      "name":"MPU Workbook Drogen",
+      "author":{"@id":"https://mpu-eifel.com/#burkhard-rau"},
+      "isbn":"9783695169528",
+      "inLanguage":"de",
+      "url":"https://buchshop.bod.de/mpu-workbook-drogen-burkhard-rau-9783695169528"
+    },
+    {
+      "@type":"Book",
+      "name":"MPU Workbook Punkte und Verkehrsdelikte",
+      "author":{"@id":"https://mpu-eifel.com/#burkhard-rau"},
+      "isbn":"9783695716173",
+      "inLanguage":"de",
+      "url":"https://buchshop.bod.de/mpu-workbook-punkte-und-verkehrsdilikte-burkhard-rau-9783695716173"
+    },
+    {
+      "@type":"Book",
+      "name":"Kuh vom Eis",
+      "author":{"@id":"https://mpu-eifel.com/#burkhard-rau"},
+      "isbn":"9783696393366",
+      "inLanguage":"de",
+      "url":"https://buchshop.bod.de/kuh-vom-eis-burkhard-rau-9783696393366"
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Was kostet eine MPU-Vorbereitung?","acceptedAnswer":{"@type":"Answer","text":"Bei Burkhard Rau kostet die Vorbereitung zwischen 190 Euro für das Selbststudium und 2.450 Euro für die Premium-Begleitung mit unbegrenzten Stunden. Die meisten Klienten wählen das Standard-Paket für 1.150 Euro mit 15 Stunden persönlicher Vorbereitung. Alle Preise sind Festpreise und werden vor Beginn schriftlich festgehalten. Die Gebühren der Begutachtungsstelle für die MPU selbst kommen separat hinzu."}},
+        {"@type":"Question","name":"Wie lange dauert die MPU-Vorbereitung?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Fall ab. Bei Punktefällen genügen oft wenige Wochen. Bei Alkohol- und Drogenfällen richtet sich die Dauer nach den erforderlichen Abstinenz- oder Kontrollzeiträumen, üblich sind sechs bis zwölf Monate. Diese Zeit ist genau der Zeitraum, in dem die Veränderung entsteht, die die Begutachtungsstelle sehen will."}},
+        {"@type":"Question","name":"Brauche ich überhaupt eine MPU-Vorbereitung?","acceptedAnswer":{"@type":"Answer","text":"Vorgeschrieben ist sie nicht. Rund vier von zehn Kandidaten bestehen die MPU beim ersten Versuch jedoch nicht, meist weil sie die Ursachen ihres Verhaltens nicht nachvollziehbar darstellen können. Genau daran arbeitet eine Vorbereitung."}},
+        {"@type":"Question","name":"Wie hoch ist die Erfolgsquote der MPU-Beratung?","acceptedAnswer":{"@type":"Answer","text":"Burkhard Rau nennt bewusst keine Erfolgsquote. Über das Ergebnis entscheidet allein die amtlich anerkannte Begutachtungsstelle, nicht der Berater. Wer eine Quote von 95 oder 98 Prozent nennt oder eine Erfolgsgarantie gibt, verspricht etwas, das er nicht einlösen kann."}},
+        {"@type":"Question","name":"Was ist der Unterschied zwischen MPU-Beratung und Begutachtungsstelle?","acceptedAnswer":{"@type":"Answer","text":"Die MPU wird ausschließlich von amtlich anerkannten Begutachtungsstellen durchgeführt, zum Beispiel TÜV, DEKRA oder GTÜ. Dort findet die Untersuchung statt und dort entsteht das Gutachten. Die MPU-Beratung ist davon vollständig unabhängig. Sie bereitet auf den Termin vor, hat aber keinen Einfluss auf das Ergebnis."}},
+        {"@type":"Question","name":"Wie läuft die MPU selbst ab?","acceptedAnswer":{"@type":"Answer","text":"Die Untersuchung dauert in der Regel zwei bis vier Stunden und besteht aus vier Teilen: der Prüfung der Identität, einer medizinischen Untersuchung, einem Leistungstest am Rechner zu Reaktion und Konzentration sowie dem psychologischen Gespräch."}},
+        {"@type":"Question","name":"Ich bin schon einmal durch die MPU gefallen. Hat eine Vorbereitung noch Sinn?","acceptedAnswer":{"@type":"Answer","text":"Ja. Ein negatives Gutachten enthält immer eine Begründung, und diese Begründung ist der Arbeitsauftrag für den zweiten Anlauf. Gemeinsam wird das Gutachten durchgegangen und gezielt an den Punkten gearbeitet, die gefehlt haben."}},
+        {"@type":"Question","name":"Erfährt mein Arbeitgeber von der MPU-Vorbereitung?","acceptedAnswer":{"@type":"Answer","text":"Nein. Was im Erstgespräch und in der Beratung besprochen wird, bleibt bei Burkhard Rau. Es gibt keine Meldung an Arbeitgeber, Behörden oder Versicherungen und keine Weitergabe von Daten. Auf Wunsch laufen alle Termine vollständig online."}},
+        {"@type":"Question","name":"Geht die MPU-Vorbereitung auch online?","acceptedAnswer":{"@type":"Answer","text":"Ja, vollständig. Die Beratung findet online, in Wiesbaum in der Vulkaneifel oder auf Wunsch beim Klienten zu Hause statt. Online-Termine sind flexibler neben dem Job und bundesweit möglich."}},
+        {"@type":"Question","name":"Wie schnell kann ich mit der MPU-Vorbereitung anfangen?","acceptedAnswer":{"@type":"Answer","text":"Nach der Anfrage gibt es zeitnah einen Termin für das kostenlose Erstgespräch. Wichtiger als Tempo ist der richtige Startzeitpunkt: Bei Abstinenznachweisen entscheidet der Beginn über den möglichen Termin bei der Begutachtungsstelle."}}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
