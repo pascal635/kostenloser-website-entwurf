@@ -32,6 +32,7 @@
   --weiss:#FFFFFF; --papier:#F7F8F5; --salbei-hell:#E4EDE0; --salbei:#C7DBC0;
   --gruen-tief:#256F3A; --gruen:#3B9E55; --gruen-hell:#E8F4E9;
   --rot:#C8281C; --rot-tief:#9E1D13; --rot-hell:#FBEAE7;
+  --gold:#BF9956;
   --tinte:#131A14; --tinte-2:#4B564D; --tinte-3:#79837A; --linie:#E1E6DE;
   --el-1:0 1px 2px rgba(19,26,20,.05), 0 2px 6px rgba(19,26,20,.04);
   --el-2:0 2px 4px rgba(19,26,20,.05), 0 8px 18px -6px rgba(19,26,20,.10), 0 18px 40px -18px rgba(37,111,58,.18);
@@ -110,13 +111,12 @@ a{color:var(--gruen-tief)}
 .kopf{position:sticky; top:0; z-index:30; background:rgba(247,248,245,.9);
   backdrop-filter:blur(12px); border-bottom:1px solid var(--linie)}
 .kopf__in{display:flex; align-items:center; gap:var(--s4); padding-block:12px}
-.marke{font-family:var(--display); font-weight:800; font-size:1.25rem; letter-spacing:-.03em;
-  color:var(--tinte); text-decoration:none; line-height:1.1}
-.marke span{display:block; font-family:var(--text); font-weight:500; font-size:.6875rem;
-  letter-spacing:.09em; text-transform:uppercase; color:var(--tinte-3); white-space:nowrap}
+.marke{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--tinte)}
+.marke img{height:50px; width:auto}
+/* Die Wortmarke steckt im Logo, eine getippte Zusatzzeile daneben ist nur Unruhe */
 /* Montserrat laeuft breiter: auf schmalen Screens wuerde der Kopf sonst dreizeilig */
-@media (max-width:560px){
-  .marke span{display:none}
+@media (max-width:620px){
+  .marke img{height:42px}
   .kopf__tel{font-size:1rem; gap:8px}
 }
 .kopf__nav{display:none; gap:var(--s5); margin-left:auto; font-size:.9375rem}
@@ -246,7 +246,11 @@ details.faq .faq__in{padding:0 var(--s5) var(--s5); color:var(--tinte-2); max-wi
 .kontaktzeile svg{color:var(--gruen-tief); flex:0 0 auto; margin-top:3px}
 
 /* Fuss */
-.fuss{background:var(--tinte); color:rgba(255,255,255,.72); padding:var(--s8) 0 calc(var(--s8) + 76px)}
+.fuss{background:var(--tinte); color:rgba(255,255,255,.72); padding:var(--s8) 0 calc(var(--s8) + 76px);
+  border-top:3px solid var(--gold)}
+.fuss__logo{height:86px; width:auto; margin-bottom:var(--s4)}
+.fuss__name{font-family:var(--display); font-weight:700; font-size:1.0625rem; color:#fff;
+  letter-spacing:-.02em; margin-bottom:var(--s3)}
 .fuss a{color:rgba(255,255,255,.9)}
 .fuss__grid{display:grid; gap:var(--s6)}
 .fuss h4{color:#fff; margin-bottom:var(--s3)}
