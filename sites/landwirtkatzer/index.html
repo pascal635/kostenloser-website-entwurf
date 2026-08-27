@@ -241,14 +241,14 @@ footer.site{border-top:1px solid var(--creme-200);padding:var(--s-16) 0 0;backgr
 .order-strip select option{color:var(--ink-900)}
 .order-strip input:focus,.order-strip select:focus{outline:none;border-color:var(--gelb-500);box-shadow:0 0 0 4px rgba(232,162,29,.25)}
 .order-strip .btn{white-space:nowrap}
-footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s-8);font-size:14px;color:var(--braun-500);padding:var(--s-12) 0}
+footer.site .cols{display:grid;grid-template-columns:170px 2fr 1fr 1fr;gap:var(--s-8);font-size:14px;color:var(--braun-500);padding:var(--s-12) 0;align-items:start}
 @media(max-width:760px){footer.site .cols{grid-template-columns:1fr}}
 footer.site h4{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink-900);margin-bottom:var(--s-3)}
-.foot-logo{padding-top:var(--s-4);margin-bottom:var(--s-8)}
+.foot-logo{padding-top:0}
 .foot-logo img{width:170px;height:170px;max-width:60vw;border-radius:50%;box-shadow:var(--shadow-elevated)}
 footer.site .cols a{color:var(--braun-500);text-decoration:none}
 footer.site .cols a:hover{color:var(--gruen-700)}
-footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--s-4)}
+footer.site .legal{font-size:11px;color:var(--braun-500);padding:var(--s-3) 0 var(--s-4);text-align:center}
 .wordmark{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,12.5vw,190px);letter-spacing:-0.04em;color:var(--gruen-700);line-height:.95;text-align:center;white-space:nowrap;overflow:hidden;padding-bottom:var(--s-6)}
 .wordmark span{color:var(--gelb-500);font-style:italic;font-weight:500}
 
@@ -548,10 +548,10 @@ body{overflow-x:clip}
         <button class="btn btn-primary" type="submit" style="grid-column:1/-1">Jetzt vorbestellen</button>
       </form>
     </div>
-    <div class="foot-logo">
-      <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="" width="170" height="170" loading="lazy">
-    </div>
     <div class="cols">
+      <div class="foot-logo">
+        <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="" width="170" height="170" loading="lazy">
+      </div>
       <div>
         <h4>Familienlandwirtschaftsbetrieb Katzer</h4>
         Bauernweg 12<br>01665 Klipphausen, OT Tanneberg<br>
@@ -571,9 +571,9 @@ body{overflow-x:clip}
         <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
-    <p class="legal">© 2026 Familienlandwirtschaftsbetrieb Katzer, Klipphausen · Entwurf B</p>
   </div>
   <div class="wordmark" aria-hidden="true">Hof <span>Katzer</span></div>
+  <p class="legal">© 2026 Familienlandwirtschaftsbetrieb Katzer, Klipphausen · Entwurf B</p>
 </footer>
 
 <div class="sticky-cta">
