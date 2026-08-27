@@ -253,6 +253,29 @@ footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--
 .sticky-cta .btn-dark{flex:0 0 auto}
 @media(max-width:760px){.sticky-cta{display:flex}body{padding-bottom:76px}}
 
+/* Gutter-Fix: Sektions-Padding-Shorthands hatten die Seitenabstände genullt */
+.wrap{padding-left:var(--s-6);padding-right:var(--s-6)}
+@media(max-width:760px){.wrap{padding-left:var(--s-4);padding-right:var(--s-4)}.finale{margin:0 var(--s-4)}}
+
+/* Burger-Menü (mobil) */
+.site-head{position:relative}
+.burger{display:none;margin-left:var(--s-2);width:44px;height:44px;border:0;border-radius:50%;background:var(--creme-50);box-shadow:var(--shadow-base);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0}
+.burger:focus-visible{outline:3px solid var(--gelb-500);outline-offset:2px}
+.burger span{display:block;width:18px;height:2px;background:var(--gruen-900);border-radius:2px;transition:transform .22s var(--ease-spring),opacity .18s ease}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobilenav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(250,246,238,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--creme-200);box-shadow:var(--shadow-floating);padding:var(--s-2) var(--s-4) var(--s-4)}
+.mobilenav.open{display:flex}
+.mobilenav a{padding:14px var(--s-2);font-weight:600;font-size:16px;color:var(--ink-900);text-decoration:none;border-bottom:1px solid var(--creme-200)}
+.mobilenav a:hover{color:var(--gruen-700)}
+.mobilenav a:focus-visible{outline:3px solid var(--gelb-500);outline-offset:-3px;border-radius:8px}
+.mobilenav a.tel{color:var(--gruen-700);border-bottom:0}
+@media(max-width:860px){.burger{display:flex}}
+@media(max-width:600px){.site-nav{display:none}}
+body{overflow-x:clip}
+.mobilenav .cta{margin-top:var(--s-3);border-bottom:0;background:var(--gelb-500);border-radius:var(--radius-pill);text-align:center;padding:14px;box-shadow:var(--shadow-elevated)}
+
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -271,6 +294,18 @@ footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--
       <a href="#anfahrt">Anfahrt</a>
       <a href="#faq">Fragen</a>
       <a class="btn btn-dark" href="#bestellen">Vorbestellen</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobilenav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobilenav" id="mobilenav" aria-label="Mobiles Menü">
+      <a href="#warum">Warum wir</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#wolle">Wolle</a>
+      <a href="#anfahrt">Anfahrt</a>
+      <a href="#faq">Fragen</a>
+      <a class="tel" href="tel:+4935245909956">Anrufen: 035245 909956</a>
+      <a class="cta" href="#bestellen">Jetzt vorbestellen</a>
     </nav>
   </div>
 </header>
@@ -536,6 +571,21 @@ footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--
 </div>
 
 <script>
+(function(){
+  var burger = document.querySelector('.burger'), panel = document.getElementById('mobilenav');
+  burger.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('open'); burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Menü öffnen');
+    });
+  });
+})();
 document.getElementById('orderform').addEventListener('submit', function(e){
   e.preventDefault();
   var el = this.elements;
