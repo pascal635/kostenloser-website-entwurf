@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immobilienmakler Husum &amp; Nordfriesland | Tine Immobilien</title>
+<meta name="description" content="Tine Immobilien: Ihr Immobilienmakler in Husum und Nordfriesland. Kostenlose Immobilienbewertung, persönliche Betreuung, Einzelbesichtigungen. Jetzt unverbindlich anfragen.">
+<meta name="robots" content="noindex,nofollow"><!-- ENTWURF: vor Livegang auf tine-immobilien.de entfernen -->
+<link rel="icon" href="assets/img/logo.png">
+<style>
+@font-face{font-family:"Cabinet Grotesk";src:url("assets/fonts/cabinet-grotesk-500.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Cabinet Grotesk";src:url("assets/fonts/cabinet-grotesk-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Cabinet Grotesk";src:url("assets/fonts/cabinet-grotesk-800.woff2") format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Satoshi";src:url("assets/fonts/satoshi-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Satoshi";src:url("assets/fonts/satoshi-700.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  --aussen1:#F6E3D3;       /* Seiten-Hintergrund, warmer Verlauf wie Moodboard */
+  --aussen2:#F3D4C4;
+  --blatt:#FFFFFF;         /* das weiße "Blatt", auf dem alles liegt */
+  --tinte:#0F1B24;
+  --tinte-tief:#0B141B;
+  --tinte-60:#4E6272;
+  --gold:#E0A83A;
+  --gold-tief:#C88F26;
+  --himmel:#CDE2EF;
+  --eis:#EFF5F9;
+  --linie:rgba(15,27,36,.1);
+  --r-pill:999px; --r-karte:20px; --r-panel:28px; --r-foto:26px;
+  --el-base:0 1px 2px rgba(15,27,36,.05),0 2px 8px rgba(15,27,36,.05);
+  --el-elevated:0 2px 4px rgba(15,27,36,.05),0 10px 24px rgba(15,27,36,.1),0 24px 48px rgba(15,27,36,.08);
+  --el-floating:0 4px 8px rgba(15,27,36,.07),0 18px 36px rgba(15,27,36,.13),0 44px 88px rgba(15,27,36,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Satoshi",system-ui,sans-serif;color:var(--tinte);line-height:1.65;background:var(--blatt)}
+img{max-width:100%}
+/* Das weiße Blatt (wie im Moodboard: Seite als Karte vor warmem Grund) */
+.blatt{width:100%;margin:0 auto;background:var(--blatt);overflow:hidden;position:relative}
+.blatt::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.025;z-index:50;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.rahmen{max-width:1180px;margin:0 auto;padding:0 clamp(18px,3.4vw,44px)}
+h2{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:clamp(1.9rem,4.2vw,3rem);letter-spacing:-.028em;line-height:1.05}
+h3{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;letter-spacing:-.015em}
+.stern{color:var(--gold)}
+.sektion{padding:clamp(52px,7.5vw,96px) 0}
+/* Sektions-Kopf im Estate-Stil: Headline links, Erklärtext rechts */
+.kopf-zeile{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(26px,4vw,46px)}
+.kopf-zeile h2{max-width:17ch}
+.kopf-zeile p{color:var(--tinte-60);font-size:.98rem;max-width:44ch;justify-self:end}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.98rem;border-radius:var(--r-pill);
+  padding:14px 26px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;color:inherit;
+  transition:transform .18s cubic-bezier(.34,1.56,.64,1),box-shadow .18s ease,background-color .18s ease,border-color .18s ease}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn-tinte{background:var(--tinte);color:#fff}
+.btn-tinte:hover{background:var(--tinte-tief);transform:translateY(-2px);box-shadow:var(--el-elevated)}
+.btn-gold{background:var(--gold);color:var(--tinte);box-shadow:0 2px 6px rgba(224,168,58,.35),0 10px 26px rgba(224,168,58,.28)}
+.btn-gold:hover{background:var(--gold-tief);transform:translateY(-2px)}
+.btn-weiss{background:#fff;color:var(--tinte);box-shadow:var(--el-base)}
+.btn-weiss:hover{transform:translateY(-2px);box-shadow:var(--el-elevated)}
+.kreis-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tinte);color:#fff;text-decoration:none;font-size:1rem;transition:transform .18s,background .18s}
+.kreis-btn:hover{transform:translateY(-2px) rotate(8deg);background:var(--tinte-tief)}
+
+/* ================= HERO (exakt nach hero.webp) ================= */
+/* Topbar: Logo links, Nav-Pills mittig, Kontakt-Pill + Burger rechts */
+.topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:clamp(16px,2.2vw,26px) clamp(18px,3vw,40px)}
+.topbar .logo img{height:clamp(48px,5vw,66px);display:block}
+.topbar .nav-pillen{display:flex;gap:8px;justify-self:center}
+.topbar .nav-pillen a{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.92rem;text-decoration:none;color:var(--tinte);padding:11px 22px;border-radius:var(--r-pill);border:1.5px solid var(--linie);transition:background .15s,transform .15s}
+.topbar .nav-pillen a:hover{background:var(--eis);transform:translateY(-1px)}
+.topbar .nav-pillen a.aktiv{background:var(--tinte);color:#fff;border-color:var(--tinte)}
+.topbar .rechts{display:flex;align-items:center;gap:14px;justify-self:end}
+.topbar .kontakt-pill{display:inline-flex;align-items:center;gap:10px;font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.92rem;text-decoration:none;color:var(--tinte);padding:11px 22px;border-radius:var(--r-pill);box-shadow:var(--el-base);transition:transform .15s}
+.topbar .kontakt-pill:hover{transform:translateY(-2px);box-shadow:var(--el-elevated)}
+.topbar .kontakt-pill .tel-ikon{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--tinte);color:#fff;font-size:.72rem}
+.topbar .burger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.topbar .burger span{display:block;width:24px;height:2.5px;border-radius:2px;background:var(--tinte)}
+
+/* Foto-Bühne mit Ausschnitten */
+.hero-buehne{position:relative;margin:0 clamp(12px,1.8vw,24px)}
+.hero-foto{position:relative;border-radius:var(--r-foto);overflow:hidden;min-height:min(82vh,700px);
+  background:linear-gradient(180deg,rgba(11,20,27,.22) 0%,rgba(11,20,27,.08) 45%,rgba(11,20,27,.45) 100%),
+             url("assets/img/immobilienmakler-nordfriesland-nordsee-strand.jpg") center/cover;
+  display:flex;flex-direction:column;justify-content:center}
+.hero-text{padding:clamp(24px,4vw,56px);padding-bottom:clamp(130px,16vw,170px);color:#fff;max-width:640px}
+.hero-eyebrow{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--himmel);margin-bottom:12px}
+.hero-text h1{font-family:"Cabinet Grotesk",sans-serif;font-weight:800;font-size:clamp(2.4rem,5.6vw,4.3rem);letter-spacing:-.032em;line-height:1.04;text-shadow:0 2px 24px rgba(11,20,27,.35)}
+.hero-text .sub{margin-top:18px;max-width:46ch;font-size:clamp(.96rem,1.25vw,1.08rem);color:rgba(255,255,255,.94)}
+/* Such-Bar wie im Moodboard: weiße Segmente + dunkler Button */
+.suchbar{margin-top:26px;display:flex;gap:10px;flex-wrap:nowrap;max-width:660px}
+.suchbar .segment{background:#fff;border-radius:14px;padding:8px 16px;display:flex;flex-direction:column;justify-content:center;min-width:150px;flex:1;box-shadow:var(--el-elevated)}
+.suchbar label{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--tinte-60)}
+.suchbar input,.suchbar select{font:inherit;font-weight:700;border:none;background:transparent;color:var(--tinte);padding:1px 0;width:100%;min-width:0}
+.suchbar input:focus,.suchbar select:focus{outline:none}
+.suchbar .btn{border-radius:14px;padding:0 24px;min-height:58px;align-self:stretch;white-space:nowrap;flex:none;box-shadow:var(--el-elevated)}
+/* Bottom-left: Bewertungs-Pill im weißen Notch */
+.notch-links{position:absolute;left:0;bottom:0;background:var(--blatt);border-radius:0 24px 0 0;padding:14px 20px 0 0}
+.notch-links::before,.notch-links::after{content:"";position:absolute;width:24px;height:24px;background:radial-gradient(circle at 100% 0,transparent 24px,var(--blatt) 25px)}
+.notch-links::before{left:0;top:-24px}
+.notch-links::after{right:-24px;bottom:0}
+.trust-pill{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--linie);border-radius:var(--r-pill);padding:9px 22px 9px 10px}
+.trust-pill .koepfe{display:flex}
+.trust-pill .kopf{width:36px;height:36px;border-radius:50%;border:2px solid #fff;margin-left:-10px;display:grid;place-items:center;font-family:"Cabinet Grotesk",sans-serif;font-weight:800;font-size:.6rem;color:#fff}
+.trust-pill .kopf:first-child{margin-left:0}
+.trust-pill .k1{background:var(--tinte)}
+.trust-pill .k2{background:var(--gold)}
+.trust-pill .k3{background:#5B7C90}
+.trust-pill span b{color:var(--gold-tief)}
+.trust-pill span{font-size:.84rem;font-weight:700;line-height:1.3;max-width:225px}
+/* Rechts: schwebende Info-Karte im weißen Notch */
+.notch-rechts{position:absolute;right:0;bottom:clamp(60px,10vw,110px);background:var(--blatt);border-radius:24px 0 0 24px;padding:12px 0 12px 12px}
+.notch-rechts::before,.notch-rechts::after{content:"";position:absolute;right:0;width:24px;height:24px}
+.notch-rechts::before{top:-24px;background:radial-gradient(circle at 0 0,transparent 24px,var(--blatt) 25px)}
+.notch-rechts::after{bottom:-24px;background:radial-gradient(circle at 0 100%,transparent 24px,var(--blatt) 25px)}
+.info-karte{background:#fff;border:1.5px solid var(--linie);border-radius:18px;padding:14px;width:210px;text-align:center}
+.info-karte .thumb{height:110px;border-radius:12px;background:linear-gradient(180deg,rgba(11,20,27,.05),rgba(11,20,27,.3)),url("assets/img/husum-hafen-abendstimmung.jpg") center/cover;margin-bottom:12px}
+.info-karte .zahl{font-family:"Cabinet Grotesk",sans-serif;font-weight:800;font-size:1.9rem;letter-spacing:-.03em}
+.info-karte .zahl span{color:var(--gold-tief);font-size:1.1rem}
+.info-karte p{font-size:.8rem;color:var(--tinte-60);line-height:1.4;margin:4px 0 10px}
+/* Bottom-center: großer weißer Notch mit Trust-Zeile ("Our trusted partner") */
+.notch-mitte{position:absolute;left:50%;bottom:0;transform:translateX(-50%);background:var(--blatt);border-radius:24px 24px 0 0;padding:16px 34px 0}
+.notch-mitte::before,.notch-mitte::after{content:"";position:absolute;bottom:0;width:24px;height:24px}
+.notch-mitte::before{left:-24px;background:radial-gradient(circle at 0 0,transparent 24px,var(--blatt) 25px)}
+.notch-mitte::after{right:-24px;background:radial-gradient(circle at 100% 0,transparent 24px,var(--blatt) 25px)}
+.notch-mitte p{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tinte-60);white-space:nowrap}
+/* Trust-Zeile unter dem Foto (Logoleisten-Ersatz) */
+.trust-zeile{display:flex;flex-wrap:wrap;gap:12px clamp(24px,5vw,72px);align-items:center;justify-content:center;padding:clamp(18px,2.6vw,26px) clamp(18px,3vw,40px) clamp(8px,1.4vw,10px)}
+.trust-zeile span{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:clamp(.95rem,1.4vw,1.15rem);color:rgba(15,27,36,.38);letter-spacing:.01em;display:flex;align-items:center;gap:9px}
+.trust-zeile span i{font-style:normal;color:rgba(224,168,58,.75)}
+
+/* ================= VERKAUFEN-CAROUSEL (Referenz: We're Here for your Needs) ================= */
+.anlass-kopf{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(26px,4vw,44px)}
+.anlass-kopf .pill{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--linie);border-radius:var(--r-pill);padding:9px 18px;font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.88rem;margin-bottom:18px}
+.anlass-kopf .pill .punkt{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.anlass-kopf h2 .grau{color:#A7B5BF}
+.anlass-kopf .rechts p{color:var(--tinte-60);font-size:.98rem;max-width:44ch}
+.anlass-kopf .rechts .btn{margin-top:20px}
+.carousel{position:relative}
+.carousel-fenster{overflow:hidden;margin:0 calc(-1*clamp(18px,3.4vw,44px));padding:0 clamp(18px,3.4vw,44px)}
+.carousel-spur{display:flex;gap:clamp(16px,2.2vw,28px);will-change:transform}
+.anlass-slide{flex:none;width:clamp(280px,32vw,420px)}
+.anlass-slide .bild{aspect-ratio:4/3;border-radius:var(--r-karte);overflow:hidden;background-size:cover;background-position:center;box-shadow:var(--el-base)}
+.anlass-slide .zeile{display:flex;gap:14px;align-items:baseline;margin-top:16px}
+.anlass-slide .nr{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:1.5rem;color:#B9C5CD;letter-spacing:-.02em}
+.anlass-slide h3{font-size:1.3rem;letter-spacing:-.02em}
+.anlass-slide p{color:var(--tinte-60);font-size:.93rem;margin-top:6px;max-width:44ch}
+.carousel-pfeil{position:absolute;top:29%;transform:translateY(-50%);z-index:3;width:56px;height:56px;border-radius:50%;background:#fff;border:none;box-shadow:var(--el-floating);display:grid;place-items:center;font-size:1.15rem;color:var(--tinte);cursor:pointer;transition:transform .18s,background .18s,color .18s}
+.carousel-pfeil:hover{transform:translateY(-50%) scale(1.08);background:var(--tinte);color:#fff}
+.carousel-pfeil.links{left:clamp(-6px,-.5vw,0px)}
+.carousel-pfeil.rechts{right:clamp(-6px,-.5vw,0px)}
+
+/* ================= REGION: Karte links als Hintergrund, Text rechts ================= */
+.region{background:linear-gradient(175deg,#151D24 0%,var(--tinte-tief) 100%);border-radius:var(--r-panel);color:#fff;overflow:hidden;position:relative;min-height:clamp(430px,46vw,580px);display:flex;align-items:center}
+.region-karte-bg{position:absolute;left:clamp(-50px,-2.5vw,-10px);top:50%;transform:translateY(-50%);width:min(58%,660px);pointer-events:none;z-index:1}
+.region-karte-bg img{display:block;width:100%;filter:drop-shadow(0 18px 44px rgba(0,0,0,.45))}
+.region-text{position:relative;z-index:2;margin-left:auto;width:min(54%,600px);padding:clamp(28px,4.5vw,64px) clamp(24px,4vw,64px) clamp(28px,4.5vw,64px) 0}
+.region-text h2{color:#fff;max-width:16ch}
+.region-text p{color:#A9BAC6;margin-top:16px;max-width:50ch;font-size:.98rem}
+.region-adresse{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--tinte);border-radius:16px;padding:14px 22px 14px 14px;margin-top:26px;box-shadow:var(--el-floating)}
+.region-adresse .ikon{width:42px;height:42px;border-radius:12px;background:var(--gold);display:grid;place-items:center;font-size:1.15rem;flex:none}
+.region-adresse b{display:block;font-family:"Cabinet Grotesk",sans-serif;font-size:1rem;line-height:1.2}
+.region-adresse span{font-size:.8rem;color:var(--tinte-60)}
+
+/* ================= AKTUELLE OBJEKTE (Referenz: #1 Site) ================= */
+.props{padding:clamp(52px,7.5vw,96px) 0;overflow:hidden}
+.props .kopf-mitte{text-align:center;max-width:720px;margin:0 auto}
+.props .kopf-mitte h2{margin:0 auto}
+.props .toggle{display:inline-flex;gap:4px;background:var(--eis);border-radius:var(--r-pill);padding:5px;margin-top:22px}
+.props .toggle a{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.9rem;text-decoration:none;color:var(--tinte-60);padding:8px 20px;border-radius:var(--r-pill)}
+.props .toggle a.aktiv{background:var(--himmel);color:var(--tinte)}
+.props .suche{display:flex;justify-content:center;margin-top:16px}
+.props .suche form{display:flex;align-items:center;gap:8px;border:1.5px solid var(--linie);border-radius:var(--r-pill);padding:6px 6px 6px 22px;min-width:min(420px,90%)}
+.props .suche input{font:inherit;border:none;background:transparent;color:var(--tinte);flex:1;min-width:0}
+.props .suche input:focus{outline:none}
+.props .suche button{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.9rem;color:#fff;background:var(--tinte);border:none;border-radius:var(--r-pill);padding:11px 22px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;transition:transform .15s}
+.props .suche button:hover{transform:translateY(-1px)}
+.props-strip{display:flex;gap:clamp(16px,2.4vw,32px);align-items:flex-start;margin-top:clamp(28px,4vw,48px);padding:0 0 10px;justify-content:center}
+.prop-karte{flex:none;width:clamp(240px,24vw,330px);text-decoration:none;color:inherit;transition:transform .2s}
+.prop-karte:hover{transform:translateY(-5px)}
+.prop-karte.rand{width:clamp(200px,18vw,250px)}
+.prop-karte.tief{margin-top:clamp(60px,8vw,110px)}
+.prop-karte.mittel{margin-top:clamp(30px,4vw,55px)}
+.prop-karte .bild{aspect-ratio:4/4.6;border-radius:var(--r-karte);background-size:cover;background-position:center;box-shadow:var(--el-base)}
+.prop-karte.rand .bild{aspect-ratio:4/5.6}
+.prop-karte .zeile{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.prop-karte .ort{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.015em}
+.prop-karte .preis{background:var(--eis);border-radius:var(--r-pill);padding:7px 15px;font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.86rem;white-space:nowrap}
+.prop-karte .specs{display:flex;gap:14px;margin-top:8px;font-size:.84rem;color:var(--tinte-60);flex-wrap:wrap}
+.prop-karte .specs span{display:inline-flex;gap:6px;align-items:center}
+.props .alle{display:flex;justify-content:center;margin-top:clamp(20px,3vw,32px)}
+.props .alle a{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.85rem;color:var(--tinte);text-decoration:none;border:1.5px solid var(--tinte);border-radius:var(--r-pill);padding:9px 22px;display:inline-flex;gap:10px;align-items:center;transition:background .15s,color .15s}
+.props .alle a:hover{background:var(--tinte);color:#fff}
+
+
+/* ================= VORSTELLUNG (Makler direkt nach dem Hero) ================= */
+.vorstellung{padding:clamp(52px,7.5vw,96px) 0}
+.vor-oben{display:grid;grid-template-columns:1.45fr auto .85fr;gap:clamp(24px,4vw,56px);align-items:center}
+.vor-oben h2{font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.08;max-width:22ch}
+.vor-oben h2 .grau{color:#A7B5BF}
+.vor-oben h2 .glyph{color:var(--gold);font-size:.85em}
+.badge-kreis{position:relative;width:clamp(120px,12vw,160px);height:clamp(120px,12vw,160px);flex:none;justify-self:center}
+.badge-kreis svg{width:100%;height:100%;animation:drehen 16s linear infinite}
+.badge-kreis svg text{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;fill:var(--gold-tief)}
+@keyframes drehen{to{transform:rotate(360deg)}}
+.badge-kreis .mitte{position:absolute;inset:0;margin:auto;width:54px;height:54px;border-radius:50%;background:#fff;border:1.5px solid var(--linie);display:grid;place-items:center;color:var(--tinte);text-decoration:none;font-size:1.1rem;box-shadow:var(--el-base);transition:transform .18s,background .18s,color .18s}
+.badge-kreis .mitte:hover{transform:rotate(12deg) scale(1.06);background:var(--tinte);color:#fff}
+.vor-foto{border-radius:var(--r-karte);overflow:hidden;aspect-ratio:.88;background:url("assets/img/jannik-cornils-immobilienmakler-husum.jpg") center 18%/cover;box-shadow:var(--el-elevated)}
+.vor-dots{display:flex;gap:7px;justify-content:center;margin-top:14px}
+.vor-dots span{width:7px;height:7px;border-radius:50%;background:rgba(15,27,36,.18)}
+.vor-dots span.aktiv{background:var(--gold);transform:scale(1.35)}
+.vor-unten{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(24px,4.5vw,72px);align-items:start;margin-top:clamp(30px,4.5vw,56px)}
+.ueber-pill{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--linie);border-radius:var(--r-pill);padding:10px 20px;font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.92rem;white-space:nowrap}
+.ueber-pill .punkt{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.vor-text p{color:var(--tinte-60);max-width:56ch;font-size:.98rem}
+.vor-text .btn{margin-top:22px}
+.vor-stat{text-align:left;display:flex;gap:14px;align-items:baseline}
+.vor-stat .grosse{font-family:"Cabinet Grotesk",sans-serif;font-weight:800;font-size:clamp(2.6rem,4.4vw,3.6rem);letter-spacing:-.03em;line-height:1}
+.vor-stat .grosse span{color:var(--gold-tief);font-size:.55em}
+.vor-stat p{color:var(--tinte-60);font-size:.9rem;max-width:14ch;line-height:1.4}
+
+/* ================= PROZESS (Referenz: Discover How We Can Help You) ================= */
+.prozess{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,80px);align-items:start}
+.prozess h2{font-size:clamp(2.2rem,4.8vw,3.6rem);max-width:12ch;position:sticky;top:32px}
+.pro-reihe{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:clamp(20px,2.6vw,30px) 4px;border-bottom:1px solid var(--linie)}
+.pro-reihe:first-of-type{border-top:1px solid var(--linie)}
+.pro-reihe .ikon{width:54px;height:54px;border-radius:50%;background:var(--tinte);color:#fff;display:grid;place-items:center;font-size:1.15rem;align-self:start}
+.pro-reihe h3{font-size:1.15rem;max-width:26ch}
+.pro-reihe p{font-size:.92rem;color:var(--tinte-60);max-width:46ch;margin-top:6px}
+.pro-reihe .pfeil-oval{width:76px;height:44px;border:1.5px solid var(--tinte);border-radius:var(--r-pill);display:grid;place-items:center;text-decoration:none;color:var(--tinte);font-size:1.05rem;transition:background .15s,color .15s,transform .15s}
+.pro-reihe .pfeil-oval:hover{background:var(--tinte);color:#fff;transform:translateX(4px)}
+.pro-nachsatz{margin-top:20px;color:var(--tinte-60);font-size:.95rem;max-width:56ch}
+
+/* ================= TINE-STORY (Texte aus Entwurf 1) ================= */
+.tine{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4.5vw,64px);align-items:center}
+.tine .eyebrow-o{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-tief)}
+.tine h2{margin-top:10px;max-width:16ch}
+.tine p{color:var(--tinte-60);margin-top:14px;max-width:58ch}
+.tine .zitat{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:clamp(1.15rem,1.9vw,1.45rem);letter-spacing:-.015em;color:var(--tinte);border-left:3px solid var(--gold);padding-left:16px;margin-top:20px;max-width:44ch}
+.tine-foto{position:relative;border-radius:var(--r-karte);overflow:hidden;min-height:clamp(380px,44vw,560px);background:linear-gradient(180deg,rgba(11,20,27,0) 60%,rgba(11,20,27,.35)),url("assets/img/tine-statue-husum-marktbrunnen.jpg") center 18%/cover;box-shadow:var(--el-elevated)}
+.tine-foto .funke{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.tine-foto .bildzeile{position:absolute;left:18px;bottom:16px;color:#fff;font-size:.82rem;background:rgba(11,20,27,.45);backdrop-filter:blur(6px);border-radius:12px;padding:8px 14px}
+
+/* ================= FAQ (Referenz: Common Question) ================= */
+.faq-band{background:#F3F6F9;padding:clamp(56px,8vw,104px) 0}
+.faq-kopf{text-align:center;max-width:640px;margin:0 auto clamp(30px,4.5vw,52px)}
+.faq-kopf .eyebrow-o{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-tief)}
+.faq-kopf h2{margin-top:12px}
+.faq-kopf p{color:var(--tinte-60);margin-top:14px;font-size:.98rem}
+.faq-kopf a{color:var(--tinte);font-weight:700;text-decoration:none}
+.faq-kopf a:hover{color:var(--gold-tief)}
+.faq-mitte{max-width:820px;margin:0 auto}
+.faq details{background:#fff;border-radius:18px;margin-bottom:14px;box-shadow:var(--el-base);transition:box-shadow .2s}
+.faq details:hover{box-shadow:var(--el-elevated)}
+.faq details:last-child{margin-bottom:0}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px;cursor:pointer;padding:22px 26px;font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:clamp(1.02rem,1.6vw,1.25rem);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .kreis{flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(15,27,36,.3);display:grid;place-items:center;font-size:1.25rem;font-weight:400;color:var(--tinte);transition:transform .2s,border-color .2s,color .2s;line-height:1}
+.faq summary .kreis::before{content:"+"}
+.faq details[open] summary .kreis{border-color:var(--gold-tief);color:var(--gold-tief);transform:rotate(180deg)}
+.faq details[open] summary .kreis::before{content:"−"}
+.faq .antwort{padding:0 26px 24px;color:var(--tinte-60);font-size:.96rem;max-width:64ch}
+
+/* ================= FOOTER (Estate: Ready To Work With Us?) ================= */
+.footer-panel{background:linear-gradient(170deg,#132836 0%,var(--tinte-tief) 100%);color:#fff;position:relative;overflow:hidden;margin:0 clamp(12px,1.8vw,24px) clamp(12px,1.8vw,24px);border-radius:var(--r-panel)}
+.footer-panel::after{content:"";position:absolute;inset:0;background:radial-gradient(640px 300px at 50% -8%,rgba(205,226,239,.14),transparent 60%);pointer-events:none}
+.footer-cta{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(36px,5vw,64px) clamp(24px,4vw,56px) clamp(24px,3.4vw,40px)}
+.footer-cta h2{color:#fff;max-width:16ch}
+.footer-cta p{color:var(--himmel);max-width:46ch;margin-top:12px;font-size:.96rem}
+.footer-cta .kreis-cta{justify-self:end;position:relative;width:130px;height:130px;border-radius:50%;background:var(--gold);color:var(--tinte);display:grid;place-items:center;text-decoration:none;font-family:"Cabinet Grotesk",sans-serif;font-weight:800;font-size:.8rem;text-align:center;line-height:1.3;padding:14px;transition:transform .2s}
+.footer-cta .kreis-cta:hover{transform:scale(1.06) rotate(6deg)}
+.footer-form{position:relative;z-index:2;padding:0 clamp(24px,4vw,56px) clamp(26px,3.4vw,40px)}
+.footer-form form{display:flex;gap:10px;flex-wrap:wrap;background:rgba(255,255,255,.07);border:1px solid rgba(205,226,239,.25);border-radius:18px;padding:10px}
+.footer-form .feld{flex:1;min-width:180px;display:flex;flex-direction:column;gap:2px;padding:6px 14px}
+.footer-form label{font-family:"Cabinet Grotesk",sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--himmel)}
+.footer-form input,.footer-form select{font:inherit;font-weight:700;border:none;background:transparent;color:#fff;padding:2px 0}
+.footer-form input::placeholder{color:rgba(205,226,239,.55)}
+.footer-form input:focus,.footer-form select:focus{outline:none}
+.footer-form select option{color:var(--tinte)}
+.footer-form .btn{border-radius:14px}
+.form-hinweis{display:none;margin-top:12px;background:rgba(224,168,58,.16);border-radius:12px;padding:10px 14px;font-size:.85rem;color:var(--gold)}
+.footer-raster{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(24px,4vw,48px);padding:clamp(24px,3.4vw,40px) clamp(24px,4vw,56px);border-top:1px solid rgba(205,226,239,.16)}
+.footer-raster .logo-box{background:#fff;border-radius:14px;padding:10px 14px;display:inline-block;margin-bottom:14px}
+.footer-raster .logo-box img{height:50px;display:block}
+.footer-raster p{font-size:.9rem;color:var(--himmel);max-width:34ch}
+.footer-raster h4{font-family:"Cabinet Grotesk",sans-serif;font-size:.98rem;margin-bottom:12px;color:#fff}
+.footer-raster ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-raster a{color:var(--himmel);text-decoration:none;font-size:.9rem}
+.footer-raster a:hover{color:var(--gold)}
+.footer-unten{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px clamp(24px,4vw,56px) 22px;font-size:.8rem;color:rgba(205,226,239,.65)}
+.footer-skyline{position:relative;z-index:1;margin-top:-6px}
+.footer-skyline img{display:block;width:100%;filter:invert(1);opacity:.13}
+
+/* Responsive */
+@media (max-width:1320px){
+  .notch-links{display:none}
+}
+@media (max-width:1000px){
+  .topbar .nav-pillen{display:none}
+  .topbar{grid-template-columns:auto 1fr}
+  .topbar .rechts{justify-self:end}
+  .notch-rechts{display:none}
+  .kopf-zeile{grid-template-columns:1fr}
+  .kopf-zeile p{justify-self:start}
+        .tine{grid-template-columns:1fr}
+  .vor-oben{grid-template-columns:1fr 1fr;grid-template-areas:"h h" "b f"}
+  .vor-oben h2{grid-area:h}
+  .badge-kreis{grid-area:b}
+  .vor-oben>div:last-child{grid-area:f}
+  .vor-unten{grid-template-columns:1fr}
+  .prozess{grid-template-columns:1fr}
+  .prozess h2{position:static}
+  .props-strip{overflow-x:auto;justify-content:flex-start;padding:0 18px 16px;scroll-snap-type:x mandatory}
+  .prop-karte{scroll-snap-align:center}
+  .prop-karte.tief,.prop-karte.mittel{margin-top:0}
+  .footer-cta{grid-template-columns:1fr}
+  .footer-cta .kreis-cta{justify-self:start}
+  .footer-raster{grid-template-columns:1fr 1fr}
+  .region{display:block;min-height:0}
+  .region-karte-bg{position:relative;left:0;top:0;transform:none;width:min(92%,480px);margin:0 auto}
+  .region-text{width:100%;padding:clamp(10px,2vw,20px) clamp(20px,4vw,32px) clamp(26px,5vw,40px)}
+}
+@media (max-width:600px){
+  .notch-mitte{display:none}
+  .notch-links{display:block}
+  .suchbar{flex-wrap:wrap}
+  .hero-foto{min-height:76vh}
+  .suchbar .btn{width:100%;padding:14px 24px}
+  .footer-raster{grid-template-columns:1fr}
+  .stat-kacheln{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"RealEstateAgent",
+  "name":"Tine Immobilien",
+  "founder":{"@type":"Person","name":"Jannik Cornils"},
+  "image":"assets/img/logo.png",
+  "url":"https://tine-immobilien.de/",
+  "telephone":"+49 4841 9377627",
+  "email":"kontakt@tine-immobilien.de",
+  "address":{"@type":"PostalAddress","streetAddress":"Brinckmannstrasse 16","postalCode":"25813","addressLocality":"Husum","addressRegion":"Schleswig-Holstein","addressCountry":"DE"},
+  "areaServed":["Husum","Nordfriesland","Bredstedt","Niebüll","Friedrichstadt","Tönning","St. Peter-Ording"],
+  "knowsAbout":["Immobilienbewertung","Hausverkauf","Wohnungsverkauf","Grundstücksverkauf","Gewerbeimmobilien"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Was kostet die Immobilienbewertung in Husum?","acceptedAnswer":{"@type":"Answer","text":"Nichts. Die Bewertung durch Tine Immobilien ist für Eigentümer in Nordfriesland kostenlos und unverbindlich. Sie verpflichten sich damit zu nichts."}},
+    {"@type":"Question","name":"Muss ich nach der Bewertung mit Tine Immobilien verkaufen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Sie erhalten unsere Einschätzung und entscheiden danach frei. Kein Alleinauftrag als Bedingung, kein Nachfassen mit Druck."}},
+    {"@type":"Question","name":"Wie lange dauert ein Hausverkauf in Husum und Umgebung?","acceptedAnswer":{"@type":"Answer","text":"Je nach Objekt und Preis meist wenige Wochen bis einige Monate. Im Erstgespräch geben wir eine realistische Einschätzung für Lage und Objekttyp."}},
+    {"@type":"Question","name":"Wer zahlt die Maklerprovision?","acceptedAnswer":{"@type":"Answer","text":"Beim Verkauf an Privatkäufer teilen sich Verkäufer und Käufer die Provision in der Regel je zur Hälfte. Die genauen Konditionen werden transparent im Erstgespräch besprochen."}},
+    {"@type":"Question","name":"Wir sind eine Erbengemeinschaft. Geht das trotzdem?","acceptedAnswer":{"@type":"Answer","text":"Ja. Tine Immobilien hat Erfahrung mit mehreren Eigentümern, klärt die nötigen Unterlagen und hält alle Beteiligten auf dem gleichen Stand."}},
+    {"@type":"Question","name":"Welche Unterlagen brauche ich für den Verkauf?","acceptedAnswer":{"@type":"Answer","text":"Grundbuchauszug, Energieausweis, Grundrisse und einige weitere Dokumente. Tine Immobilien sagt Ihnen genau, was fehlt, und beschafft Vieles für Sie."}},
+    {"@type":"Question","name":"Gibt es Massenbesichtigungen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Ausschließlich Einzelbesichtigungen mit vorab geprüften Interessenten, inklusive Bonitätsprüfung vor dem Kaufvertrag."}},
+    {"@type":"Question","name":"Vermarktet Tine Immobilien auch Gewerbeflächen und Grundstücke?","acceptedAnswer":{"@type":"Answer","text":"Ja. Wohnungen, Häuser, Gewerbeflächen und Grundstücke in Nordfriesland und Umgebung."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="blatt">
+
+  <!-- ===== HERO: Topbar wie hero.webp ===== -->
+  <div class="topbar">
+    <a class="logo" href="#"><img src="assets/img/logo.png" alt="Tine Immobilien, Immobilienmakler in Husum"></a>
+    <nav class="nav-pillen" aria-label="Hauptnavigation">
+      <a class="aktiv" href="#">Start</a>
+      <a href="#verkaufen">Verkaufen</a>
+      <a href="#angebote">Immobilien</a>
+      <a href="#makler">Über uns</a>
+    </nav>
+    <div class="rechts">
+      <a class="kontakt-pill" href="tel:+4948419377627"><span class="tel-ikon">☎</span> Kontakt</a>
+      <button class="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <!-- ===== HERO: Foto-Bühne mit Notches ===== -->
+  <div class="hero-buehne">
+    <header class="hero-foto">
+      <div class="hero-text">
+        <h1>Ihre Immobilie. In Händen, denen Sie vertrauen können.</h1>
+        <p class="sub">Ich bin Jannik Cornils, gebürtiger Nordfriese und geprüfter Immobilienmakler (IHK). Ich begleite Sie persönlich vom ersten Gespräch bis zur Übergabe.</p>
+        <form class="suchbar" id="herobar">
+          <div class="segment"><label for="h-ort">Ort der Immobilie</label><input id="h-ort" type="text" placeholder="z. B. Husum"></div>
+          <div class="segment"><label for="h-art">Immobilienart</label><select id="h-art"><option>Haus</option><option>Wohnung</option><option>Grundstück</option><option>Gewerbe</option></select></div>
+          <button class="btn btn-tinte" type="submit">✳ Kostenlose Bewertung anfragen</button>
+        </form>
+      </div>
+      <div class="notch-links">
+        <div class="trust-pill">
+          <span class="koepfe"><span class="kopf k1">IHK</span><span class="kopf k2">360°</span><span class="kopf k3">NF</span></span>
+          <span><b>Geprüfter Makler.</b><br>Ein Ansprechpartner für alles.</span>
+        </div>
+      </div>
+      <aside class="notch-rechts">
+        <div class="info-karte">
+          <div class="thumb" role="img" aria-label="Hafenhäuser an der nordfriesischen Küste am Abend"></div>
+          <div class="zahl">360<span>°</span></div>
+          <p>Rundgänge, Exposé und Vermarktung: alles aus einer Hand.</p>
+          <a class="kreis-btn" href="#ablauf" aria-label="Zu den Leistungen">↗</a>
+        </div>
+      </aside>
+      <div class="notch-mitte"><p>Worauf Sie sich verlassen können</p></div>
+    </header>
+  </div>
+
+  <!-- Trust-Zeile (Partner-Logoleiste im Original) -->
+  <div class="trust-zeile" aria-label="Vertrauensmerkmale">
+    <span><i>✳</i> Geprüfter Makler (IHK)</span>
+    <span><i>✳</i> Gebürtiger Nordfriese</span>
+    <span><i>✳</i> Einzelbesichtigungen, keine Massentermine</span>
+    <span><i>✳</i> Alles aus einer Hand, bis zur Übergabe</span>
+  </div>
+
+  <!-- ===== SEKTION 2: Der Makler (Layout nach Vorlage, Texte aus Entwurf 1) ===== -->
+  <section class="vorstellung" id="makler">
+    <div class="rahmen">
+      <div class="vor-oben">
+        <h2>Ihr persönlicher Makler für Husum <span class="glyph">✳</span> und Nordfriesland, <span class="grau">vom ersten Gespräch bis zur Übergabe.</span></h2>
+        <div class="badge-kreis">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="kreisbahn" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#kreisbahn">Kontakt aufnehmen · Kontakt aufnehmen ·</textPath></text>
+          </svg>
+          <a class="mitte" href="#kontakt" aria-label="Kontakt aufnehmen">↗</a>
+        </div>
+        <div>
+          <div class="vor-foto" role="img" aria-label="Jannik Cornils, Inhaber von Tine Immobilien, auf dem Deich in Nordfriesland"></div>
+          <div class="vor-dots" aria-hidden="true"><span></span><span class="aktiv"></span><span></span></div>
+        </div>
+      </div>
+      <div class="vor-unten">
+        <span class="ueber-pill"><span class="punkt"></span> Moin, ich bin Jannik Cornils</span>
+        <div class="vor-text">
+          <p>Als gebürtiger Friesenjung kenne ich die Region, die Leute und den Immobilienmarkt zwischen Husum und der Küste. Durch meine Familie und mein eigenes Immobilienportfolio weiß ich aus erster Hand, was Häuser hier wert sind und was Instandsetzung wirklich kostet. Als geprüfter Immobilienmakler (IHK) kümmere ich mich persönlich um Ihr Anliegen: Bei mir sprechen Sie immer mit dem, der Ihre Immobilie auch wirklich verkauft.</p>
+          <a class="btn btn-tinte" href="#kontakt">Lernen Sie mich kennen <span style="font-size:.85em">↗</span></a>
+        </div>
+        <div class="vor-stat"><div class="grosse">24<span>h</span></div><p>persönliche Rückmeldung auf Ihre Anfrage</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEKTION 3: Verkaufen (Anlass-Carousel, Referenz-Layout) ===== -->
+  <section class="sektion" id="verkaufen" style="padding-top:0">
+    <div class="rahmen">
+      <div class="anlass-kopf">
+        <div>
+          <span class="pill"><span class="punkt"></span> Verkaufen</span>
+          <h2><span class="grau">Immobilie verkaufen</span> bei Erbschaft, Verkleinerung oder Umzug</h2>
+        </div>
+        <div class="rechts">
+          <p>Hinter jedem Verkauf steht ein Anlass. Wir nehmen uns Zeit für Ihren: mit ehrlicher Bewertung, hochwertigem Exposé und Einzelbesichtigungen statt Massenterminen.</p>
+          <a class="btn btn-tinte" href="#kontakt">Bewertung anfragen <span style="font-size:.85em">↗</span></a>
+        </div>
+      </div>
+      <div class="carousel" id="anlass-carousel">
+        <button class="carousel-pfeil links" type="button" aria-label="Zurück">←</button>
+        <button class="carousel-pfeil rechts" type="button" aria-label="Weiter">→</button>
+        <div class="carousel-fenster">
+          <div class="carousel-spur" id="anlass-spur">
+            <article class="anlass-slide">
+              <div class="bild" style="background-image:url('assets/img/foto-erbschaft-reetdach.jpg')" role="img" aria-label="Reetdachhäuser in den Dünen an der Nordsee"></div>
+              <div class="zeile"><span class="nr">01</span><h3>Erbschaft</h3></div>
+              <p>Sie haben ein Haus geerbt und wollen es ordentlich und ohne Streit über die Bühne bringen. Wir klären Wert, Unterlagen und Ablauf, auch mit mehreren Erben.</p>
+            </article>
+            <article class="anlass-slide">
+              <div class="bild" style="background-image:url('assets/img/foto-verkleinerung-haus-garten.jpg')" role="img" aria-label="Gemütliches Haus mit Garten hinter einer Backsteinmauer"></div>
+              <div class="zeile"><span class="nr">02</span><h3>Verkleinerung</h3></div>
+              <p>Das Haus ist zu groß geworden. Wir finden den richtigen Preis und den richtigen Käufer, in Ihrem Tempo.</p>
+            </article>
+            <article class="anlass-slide">
+              <div class="bild" style="background-image:url('assets/img/foto-umzug-kartons.jpg')" role="img" aria-label="Paar trägt Umzugskartons in ein neues Zuhause"></div>
+              <div class="zeile"><span class="nr">03</span><h3>Umzug</h3></div>
+              <p>Der Job ruft oder die Familie zieht. Wir übernehmen den Verkauf, damit Sie den Kopf frei haben.</p>
+            </article>
+            <article class="anlass-slide">
+              <div class="bild" style="background-image:url('assets/img/foto-kaufen-schluessel.jpg')" role="img" aria-label="Schlüsselübergabe mit Haus-Anhänger"></div>
+              <div class="zeile"><span class="nr">04</span><h3>Kaufen</h3></div>
+              <p>Sie suchen Haus, Wohnung oder Grundstück in Nordfriesland? Wir begleiten Sie bis zum Traumobjekt und darüber hinaus.</p>
+            </article>
+            <article class="anlass-slide">
+              <div class="bild" style="background-image:url('assets/img/foto-gewerbe-hafen-wiese.jpg')" role="img" aria-label="Kutterhafen hinter grüner Deichwiese in Nordfriesland"></div>
+              <div class="zeile"><span class="nr">05</span><h3>Gewerbe &amp; Grundstücke</h3></div>
+              <p>Wohnungen, Häuser, Gewerbeflächen und Grundstücke: Wir vermarkten in ganz Nordfriesland und Umgebung, mit regionaler Marktkenntnis.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEKTION 4: Region (Karte links im Hintergrund, Text rechts) ===== -->
+  <section class="sektion" id="region" style="padding-top:0">
+    <div class="rahmen">
+      <div class="region">
+        <div class="region-karte-bg" aria-hidden="true">
+          <img src="assets/img/karte-sh.svg" alt="">
+        </div>
+        <div class="region-text">
+          <h2>Zuhause zwischen den Meeren<span class="stern">.</span></h2>
+          <p>Von Husum aus betreuen wir Eigentümer und Käufer in ganz Nordfriesland und Umgebung: Husum, Bredstedt, Niebüll, Friedrichstadt, Tönning, St. Peter-Ording und die Dörfer dazwischen. Wer hier verkauft, braucht jemanden, der die Lagen kennt: Marsch oder Geest, Altstadt oder Neubaugebiet, Ferienregion oder Dauerwohnen. Genau das ist unser Revier.</p>
+          <div class="region-adresse">
+            <span class="ikon">⌂</span>
+            <span><b>Tine Immobilien</b><span>Brinckmannstrasse 16 · 25813 Husum</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEKTION 5: Prozess (Referenz: "Discover How We Can Help You") ===== -->
+  <section class="sektion" id="ablauf" style="padding-top:0">
+    <div class="rahmen">
+      <div class="prozess">
+        <h2>So läuft der Verkauf Ihrer Immobilie ab</h2>
+        <div>
+          <div class="pro-reihe">
+            <span class="ikon">1</span>
+            <div><h3>Erstgespräch</h3><p>Kostenloses Vorgespräch und Begehung Ihrer Immobilie.</p></div>
+            <a class="pfeil-oval" href="#kontakt" aria-label="Erstgespräch anfragen">⟶</a>
+          </div>
+          <div class="pro-reihe">
+            <span class="ikon">2</span>
+            <div><h3>Bewertung</h3><p>Aufnahme aller Objektdaten und Marktanalyse. Sie bekommen eine ehrliche Zahl.</p></div>
+            <a class="pfeil-oval" href="#kontakt" aria-label="Bewertung anfragen">⟶</a>
+          </div>
+          <div class="pro-reihe">
+            <span class="ikon">3</span>
+            <div><h3>Exposé</h3><p>Professionelle Innen- und Außenaufnahmen, 360-Grad-Rundgang, ausführliche Beschreibung.</p></div>
+            <a class="pfeil-oval" href="#kontakt" aria-label="Mehr zum Exposé">⟶</a>
+          </div>
+          <div class="pro-reihe">
+            <span class="ikon">4</span>
+            <div><h3>Vermarktung</h3><p>Sichtbar in den wichtigsten Portalen und auf unserer Website. Einzelbesichtigungen mit ausgewählten Interessenten, keine Massentermine.</p></div>
+            <a class="pfeil-oval" href="#kontakt" aria-label="Mehr zur Vermarktung">⟶</a>
+          </div>
+          <div class="pro-reihe">
+            <span class="ikon">5</span>
+            <div><h3>Verkauf</h3><p>Bonitätsprüfung, Kaufvertrag, Notartermin, Übergabe. Wir übernehmen die Formalitäten, Sie behalten die Entscheidung.</p></div>
+            <a class="pfeil-oval" href="#kontakt" aria-label="Jetzt starten">⟶</a>
+          </div>
+          <p class="pro-nachsatz">Und danach? Wir bleiben ansprechbar. Auch nach der Übergabe, auch für Handwerker- und Versicherungsfragen.</p>
+          <a class="btn btn-tinte" style="margin-top:18px" href="#kontakt">Unverbindlich beraten lassen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEKTION 2: Aktuelle Objekte (Platzhalter, Referenz: "#1 Site") ===== -->
+  <!-- HINWEIS: Platzhalter-Karten. Echte Angebote kommen aus Propstack; nur das Mildstedt-Objekt ist echt (Stand 08/2026). -->
+  <section class="props" id="angebote">
+    <div class="kopf-mitte">
+      <h2>Aktuelle Immobilien in Husum und Nordfriesland<span class="stern">*</span></h2>
+      <div class="toggle">
+        <a class="aktiv" href="#angebote">Kaufen</a>
+        <a href="#angebote">Haus</a>
+        <a href="#angebote">Wohnung</a>
+      </div>
+      <div class="suche">
+        <form id="propsuche">
+          <input type="text" placeholder="Ort oder PLZ eingeben" aria-label="Ort oder PLZ">
+          <button type="submit">⌕ Suchen</button>
+        </form>
+      </div>
+    </div>
+    <div class="props-strip">
+      <a class="prop-karte rand mittel" href="#kontakt">
+        <div class="bild" style="background-image:linear-gradient(180deg,rgba(11,20,27,0),rgba(11,20,27,.12)),url('assets/img/objekt-wohnen-img4181.jpg')"></div>
+        <div class="zeile"><span class="ort">Husum</span><span class="preis">auf Anfrage</span></div>
+        <div class="specs"><span>⌂ 3 Zi</span><span>⛶ 95 m²</span></div>
+      </a>
+      <a class="prop-karte" href="#kontakt">
+        <div class="bild" style="background-image:linear-gradient(180deg,rgba(11,20,27,0),rgba(11,20,27,.12)),url('assets/img/objekt-terrasse-dsc0468.jpg')"></div>
+        <div class="zeile"><span class="ort">Mildstedt / Rosendahl</span><span class="preis">235.000 €</span></div>
+        <div class="specs"><span>⌂ 4,5 Zi</span><span>⛶ 117 m²</span><span>❖ 360 m² Grundstück</span></div>
+      </a>
+      <a class="prop-karte tief" href="#kontakt">
+        <div class="bild" style="background-image:linear-gradient(180deg,rgba(11,20,27,0),rgba(11,20,27,.12)),url('assets/img/objekt-mildstedt-reihenendhaus.jpg')"></div>
+        <div class="zeile"><span class="ort">Bredstedt</span><span class="preis">auf Anfrage</span></div>
+        <div class="specs"><span>⌂ 4 Zi</span><span>⛶ 120 m²</span></div>
+      </a>
+      <a class="prop-karte rand mittel" href="#kontakt">
+        <div class="bild" style="background-image:linear-gradient(180deg,rgba(11,20,27,0),rgba(11,20,27,.12)),url('assets/img/objekt-aussen-img4173.jpg')"></div>
+        <div class="zeile"><span class="ort">Friedrichstadt</span><span class="preis">auf Anfrage</span></div>
+        <div class="specs"><span>⌂ 2 Zi</span><span>⛶ 68 m²</span></div>
+      </a>
+    </div>
+    <div class="alle"><a href="#kontakt">Alle Angebote ansehen ⟶</a></div>
+  </section>
+
+  <!-- ===== SEKTION 6: Die Tine-Story (Texte aus Entwurf 1) ===== -->
+  <section class="sektion" id="tine" style="padding-top:0">
+    <div class="rahmen">
+      <div class="tine">
+        <div>
+          <span class="eyebrow-o">Warum wir so heißen</span>
+          <h2>Was steckt hinter der Tine?</h2>
+          <p>Die Tine ist das heimliche Wahrzeichen Husums: die Fischersfrau auf dem Marktbrunnen von 1902, errichtet vom Bildhauer Adolf Brütt. Der Sage nach rettete sie die Stadt vor der Flut, weil sie als Einzige das Wetter richtig las und ihr eigenes Hab und Gut opferte, um die Husumer zu warnen. Ihr Blick geht bis heute zur See.</p>
+          <p class="zitat">Hinsehen, ehrlich warnen, verlässlich handeln. So arbeiten wir mit Ihrer Immobilie.</p>
+          <p>Dieses Bild leitet uns bei jedem Auftrag: eine ehrliche Einschätzung statt schöner Versprechen, und ein Makler, der die See im Blick behält, bevor die Flut kommt.</p>
+        </div>
+        <div class="tine-foto" role="img" aria-label="Die Tine, Fischersfrau auf dem Husumer Marktbrunnen">
+          <span class="funke">✳</span>
+          <span class="bildzeile">Die Tine auf dem Husumer Marktbrunnen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEKTION 7: FAQ (Referenz: Common Question) ===== -->
+  <section class="faq-band" id="faq">
+    <div class="rahmen">
+      <div class="faq-kopf">
+        <span class="eyebrow-o">FAQ</span>
+        <h2>Häufige Fragen zum Immobilienverkauf in Nordfriesland</h2>
+        <p>Ihre Frage ist nicht dabei? Rufen Sie einfach an, wir antworten Klartext: <a href="tel:+4948419377627">04841 9377627</a></p>
+      </div>
+      <div class="faq-mitte">
+        <div class="faq">
+          <details open><summary>Was kostet die Immobilienbewertung? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Nichts. Die Bewertung durch Tine Immobilien ist für Eigentümer in Nordfriesland kostenlos und unverbindlich. Sie verpflichten sich damit zu nichts.</div></details>
+          <details><summary>Muss ich nach der Bewertung mit Ihnen verkaufen? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Nein. Sie erhalten unsere Einschätzung und entscheiden danach frei. Kein Alleinauftrag als Bedingung, kein Nachfassen mit Druck.</div></details>
+          <details><summary>Wie lange dauert ein Hausverkauf in Husum und Umgebung? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Je nach Objekt und Preis meist wenige Wochen bis einige Monate. Im Erstgespräch geben wir Ihnen eine realistische Einschätzung für Ihre Lage und Ihren Objekttyp.</div></details>
+          <details><summary>Wer zahlt die Maklerprovision? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Beim Verkauf an Privatkäufer teilen sich Verkäufer und Käufer die Provision in der Regel je zur Hälfte. Die genauen Konditionen besprechen wir transparent im Erstgespräch, bevor Sie irgendetwas unterschreiben.</div></details>
+          <details><summary>Wir sind eine Erbengemeinschaft. Geht das trotzdem? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Ja. Wir haben Erfahrung mit mehreren Eigentümern, klären die nötigen Unterlagen und halten alle Beteiligten auf dem gleichen Stand.</div></details>
+          <details><summary>Welche Unterlagen brauche ich für den Verkauf? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Grundbuchauszug, Energieausweis, Grundrisse und einige weitere Dokumente. Wir sagen Ihnen genau, was fehlt, und beschaffen Vieles für Sie.</div></details>
+          <details><summary>Macht ihr Massenbesichtigungen? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Nein. Wir führen ausschließlich Einzelbesichtigungen mit vorab geprüften Interessenten durch, inklusive Bonitätsprüfung vor dem Kaufvertrag.</div></details>
+          <details><summary>Vermarktet ihr auch Gewerbeflächen und Grundstücke? <span class="kreis" aria-hidden="true"></span></summary><div class="antwort">Ja. Wohnungen, Häuser, Gewerbeflächen und Grundstücke in Nordfriesland und Umgebung.</div></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (Estate: Ready To Work With Us?) ===== -->
+  <div class="footer-panel" id="kontakt">
+    <div class="footer-cta">
+      <div>
+        <h2>Bereit für ein ehrliches Gespräch über Ihre Immobilie?</h2>
+        <p>Rufen Sie an oder schreiben Sie uns. Sie bekommen innerhalb von 24 Stunden eine persönliche Rückmeldung. Von Jannik, nicht von einer Maschine.</p>
+      </div>
+      <a class="kreis-cta" href="tel:+4948419377627">JETZT<br>ANRUFEN<br>↗</a>
+    </div>
+    <div class="footer-form">
+      <form id="bewertungsformular">
+        <div class="feld"><label for="f-ort">Ort der Immobilie</label><input id="f-ort" name="ort" type="text" placeholder="z. B. Husum" required></div>
+        <div class="feld"><label for="f-art">Immobilienart</label><select id="f-art" name="art"><option>Haus</option><option>Wohnung</option><option>Grundstück</option><option>Gewerbe</option></select></div>
+        <div class="feld"><label for="f-kontakt">Telefon oder E-Mail</label><input id="f-kontakt" name="kontakt" type="text" placeholder="Wie erreichen wir Sie?" required></div>
+        <button class="btn btn-gold" type="submit">Kostenlose Bewertung anfragen</button>
+      </form>
+      <p class="form-hinweis" id="formhinweis">Danke! Das Formular wird beim Livegang angebunden. Bis dahin erreichen Sie uns telefonisch unter 04841 9377627 oder per E-Mail an kontakt@tine-immobilien.de.</p>
+    </div>
+    <div class="footer-raster">
+      <div>
+        <span class="logo-box"><img src="assets/img/logo.png" alt="Tine Immobilien Logo"></span>
+        <p>Tine Immobilien Jannik Cornils<br>Brinckmannstrasse 16<br>25813 Husum</p>
+        <p style="margin-top:8px"><a href="tel:+4948419377627" style="color:#fff;font-weight:700">04841 9377627</a><br><a href="mailto:kontakt@tine-immobilien.de" style="color:#fff;font-weight:700">kontakt@tine-immobilien.de</a></p>
+      </div>
+      <div>
+        <h4>Quicklinks</h4>
+        <ul>
+          <li><a href="#kontakt">Immobilienbewertung</a></li>
+          <li><a href="#ablauf">Leistungen</a></li>
+          <li><a href="#makler">Über uns</a></li>
+          <li><a href="#region">Einzugsgebiet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Widerrufsrecht</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-unten">
+      <span>© 2026 Tine Immobilien, Husum. Ihr Immobilienmakler für Nordfriesland und Umgebung.</span>
+      <span>Entwurf 2: LIKOVO</span>
+    </div>
+    <div class="footer-skyline"><img src="assets/img/husum-skyline-silhouette.png" alt="" aria-hidden="true" loading="lazy"></div>
+  </div>
+
+</div><!-- /blatt -->
+
+<script>
+function hinweis(e){e.preventDefault();var h=document.getElementById('formhinweis');h.style.display='block';h.scrollIntoView({block:'nearest',behavior:'smooth'});}
+document.getElementById('bewertungsformular').addEventListener('submit',hinweis);
+
+// Anlass-Carousel: laeuft automatisch, pausiert bei Hover/Fokus, Pfeile springen kartenweise
+(function(){
+  var spur=document.getElementById('anlass-spur');
+  var car=document.getElementById('anlass-carousel');
+  if(!spur) return;
+  var slides=[].slice.call(spur.children);
+  slides.forEach(function(sl){var c=sl.cloneNode(true);c.setAttribute('aria-hidden','true');spur.appendChild(c);});
+  var x=0, speed=0.4, paused=false, halbe=0;
+  function messen(){halbe=spur.scrollWidth/2;}
+  messen(); window.addEventListener('resize',messen);
+  function tick(){
+    if(!paused){x+=speed; if(x>=halbe){x-=halbe;} spur.style.transform='translateX('+(-x)+'px)';}
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  car.addEventListener('mouseenter',function(){paused=true;});
+  car.addEventListener('mouseleave',function(){paused=false;});
+  car.addEventListener('focusin',function(){paused=true;});
+  car.addEventListener('focusout',function(){paused=false;});
+  function schritt(r){
+    var w=slides[0].getBoundingClientRect().width+parseFloat(getComputedStyle(spur).columnGap||getComputedStyle(spur).gap||24);
+    x+=r*w; if(x<0)x+=halbe; if(x>=halbe)x-=halbe;
+    spur.style.transition='transform .45s cubic-bezier(.33,1,.68,1)';
+    spur.style.transform='translateX('+(-x)+'px)';
+    setTimeout(function(){spur.style.transition='';},480);
+  }
+  car.querySelector('.carousel-pfeil.links').addEventListener('click',function(){schritt(-1);});
+  car.querySelector('.carousel-pfeil.rechts').addEventListener('click',function(){schritt(1);});
+})();
+
+document.getElementById('propsuche').addEventListener('submit',function(e){e.preventDefault();document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});});
+document.getElementById('herobar').addEventListener('submit',function(e){
+  e.preventDefault();
+  var ort=document.getElementById('h-ort').value;
+  if(ort){document.getElementById('f-ort').value=ort;}
+  document.getElementById('f-art').value=document.getElementById('h-art').value;
+  document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
