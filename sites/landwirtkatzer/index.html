@@ -241,6 +241,9 @@ footer.site{border-top:1px solid var(--creme-200);padding:var(--s-16) 0 0;backgr
 footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s-8);font-size:14px;color:var(--braun-500);padding:var(--s-12) 0}
 @media(max-width:760px){footer.site .cols{grid-template-columns:1fr}}
 footer.site h4{font-family:var(--font-display);font-size:16px;font-weight:560;color:var(--ink-900);margin-bottom:var(--s-3)}
+.foot-brand{display:flex;align-items:center;gap:var(--s-3);margin-bottom:var(--s-3)}
+.foot-brand img{border-radius:50%;box-shadow:var(--shadow-base);flex-shrink:0}
+.foot-brand h4{margin-bottom:0}
 footer.site .cols a{color:var(--braun-500);text-decoration:none}
 footer.site .cols a:hover{color:var(--gruen-700)}
 footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--s-4)}
@@ -258,7 +261,6 @@ footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--
 @media(max-width:760px){.wrap{padding-left:var(--s-4);padding-right:var(--s-4)}.finale{margin:0 var(--s-4)}}
 
 /* Burger-Menü (mobil) */
-.site-head{position:relative}
 .burger{display:none;margin-left:var(--s-2);width:44px;height:44px;border:0;border-radius:50%;background:var(--creme-50);box-shadow:var(--shadow-base);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0}
 .burger:focus-visible{outline:3px solid var(--gelb-500);outline-offset:2px}
 .burger span{display:block;width:18px;height:2px;background:var(--gruen-900);border-radius:2px;transition:transform .22s var(--ease-spring),opacity .18s ease}
@@ -542,7 +544,10 @@ body{overflow-x:clip}
     </div>
     <div class="cols">
       <div>
-        <h4>Familienlandwirtschaftsbetrieb Katzer</h4>
+        <div class="foot-brand">
+          <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="" width="44" height="44" loading="lazy">
+          <h4>Familienlandwirtschaftsbetrieb Katzer</h4>
+        </div>
         Bauernweg 12<br>01665 Klipphausen, OT Tanneberg<br>
         Tel. 035245 909956 · Mobil 0176 81617723<br>
         <a href="mailto:ruedigerkatzer@gmail.com">ruedigerkatzer@gmail.com</a>
