@@ -85,7 +85,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--gruen-700)}
 .site-head{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--creme-200)}
 .site-head .bar{display:flex;align-items:center;gap:var(--s-6);padding:var(--s-3) var(--s-6);max-width:1120px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:var(--s-3);text-decoration:none;color:var(--ink-900)}
-.brand img{width:44px;height:44px;border-radius:50%;box-shadow:var(--shadow-base)}
+.brand img{width:60px;height:60px;border-radius:50%;box-shadow:var(--shadow-base)}
 .brand b{font-family:var(--font-display);font-weight:600;font-size:16.5px;line-height:1.15}
 .brand span{display:block;font-size:11.5px;color:var(--braun-500);font-weight:400;font-family:var(--font-sans)}
 .site-nav{margin-left:auto;display:flex;gap:var(--s-6);align-items:center}
@@ -244,7 +244,7 @@ footer.site{border-top:1px solid var(--creme-200);padding:var(--s-16) 0 0;backgr
 footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s-8);font-size:14px;color:var(--braun-500);padding:var(--s-12) 0}
 @media(max-width:760px){footer.site .cols{grid-template-columns:1fr}}
 footer.site h4{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--ink-900);margin-bottom:var(--s-3)}
-.foot-brand{display:flex;align-items:center;gap:var(--s-3);margin-bottom:var(--s-3)}
+.foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s-3);margin-bottom:var(--s-3)}
 .foot-brand img{border-radius:50%;box-shadow:var(--shadow-base);flex-shrink:0}
 .foot-brand h4{margin-bottom:0}
 footer.site .cols a{color:var(--braun-500);text-decoration:none}
@@ -276,7 +276,11 @@ footer.site .legal{font-size:12.5px;color:var(--braun-500);padding-bottom:var(--
 .mobilenav a:hover{color:var(--gruen-700)}
 .mobilenav a:focus-visible{outline:3px solid var(--gelb-500);outline-offset:-3px;border-radius:8px}
 .mobilenav a.tel{color:var(--gruen-700);border-bottom:0}
-@media(max-width:860px){.burger{display:flex}}
+@media(max-width:860px){
+  .burger{display:flex;margin-left:0}
+  .site-head .bar{justify-content:space-between;gap:var(--s-3)}
+  .site-nav{margin-left:0}
+}
 @media(max-width:600px){.site-nav{display:none}}
 body{overflow-x:clip}
 .mobilenav .cta{margin-top:var(--s-3);border-bottom:0;background:var(--gelb-500);border-radius:var(--radius-pill);text-align:center;padding:14px;box-shadow:var(--shadow-elevated)}
@@ -289,7 +293,7 @@ body{overflow-x:clip}
 <header class="site-head">
   <div class="bar">
     <a class="brand" href="#top">
-      <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="Logo Landwirtschaftsbetrieb Katzer" width="44" height="44">
+      <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="Logo Landwirtschaftsbetrieb Katzer" width="60" height="60">
       <b>Landwirtschaftsbetrieb Katzer<span>Tanneberg · Klipphausen</span></b>
     </a>
     <nav class="site-nav" aria-label="Hauptnavigation">
@@ -548,7 +552,7 @@ body{overflow-x:clip}
     <div class="cols">
       <div>
         <div class="foot-brand">
-          <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="" width="44" height="44" loading="lazy">
+          <img src="bilder/logo-landwirt-katzer-klipphausen.webp" alt="" width="76" height="76" loading="lazy">
           <h4>Familienlandwirtschaftsbetrieb Katzer</h4>
         </div>
         Bauernweg 12<br>01665 Klipphausen, OT Tanneberg<br>
