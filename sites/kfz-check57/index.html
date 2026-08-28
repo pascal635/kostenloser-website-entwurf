@@ -171,12 +171,18 @@ a{color:inherit}
   border-bottom:1px solid var(--line)}
 .head .wrap{display:flex;align-items:center;gap:var(--sp-5);padding-top:12px;padding-bottom:12px}
 .logo{display:inline-flex;align-items:center;gap:2px;font-family:var(--ff);font-weight:800;
-  font-size:1.25rem;letter-spacing:-.03em;text-decoration:none;color:var(--tx-1)}
+  font-size:1.25rem;letter-spacing:-.03em;text-decoration:none;color:var(--tx-1);
+  white-space:nowrap;flex:0 0 auto}
 .logo em{font-style:normal;color:var(--gold-hi)}
 .nav{display:flex;gap:var(--sp-6);margin:0 auto}
 .nav a{font-size:.875rem;color:var(--tx-2);text-decoration:none;transition:color .2s}
 .nav a:hover{color:var(--gold-hi)}
 @media (max-width:940px){.nav{display:none}.head .btn{margin-left:auto}}
+@media (max-width:620px){
+  /* Im Kopf reicht das Hoerersymbol, die Nummer steht gross in der Leiste unten */
+  .head .btn .num{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .head .btn{padding:12px 14px}
+}
 
 /* ---------- Hero, vollflaechiges Bild mit Text darauf ---------- */
 .hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;
@@ -189,17 +195,43 @@ a{color:inherit}
 .hero .shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.12) brightness(.72)}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(5,6,9,.96) 0%,rgba(5,6,9,.84) 16%,rgba(5,6,9,.52) 38%,rgba(5,6,9,.4) 52%,rgba(5,6,9,.8) 80%,rgba(5,6,9,.97) 100%),
-    linear-gradient(90deg,rgba(5,6,9,.55) 0%,transparent 46%),
+    linear-gradient(180deg,rgba(5,6,9,.96) 0%,rgba(5,6,9,.84) 15%,rgba(5,6,9,.5) 32%,rgba(5,6,9,.46) 44%,rgba(5,6,9,.72) 58%,rgba(5,6,9,.9) 76%,rgba(5,6,9,.97) 100%),
+    linear-gradient(90deg,rgba(5,6,9,.74) 0%,rgba(5,6,9,.34) 38%,transparent 64%),
     radial-gradient(80% 60% at 88% 8%,rgba(242,194,0,.1),transparent 62%)}
 .hero .p-s,.hero .xs{color:#C6CEDB}
 .hero .wrap{padding-top:var(--sp-8);padding-bottom:var(--sp-8);z-index:4;width:100%}
 .hero-top{display:flex;justify-content:space-between;gap:var(--sp-7);align-items:flex-start;
-  margin-bottom:clamp(120px,22vh,260px)}
-.hero-cols{display:grid;grid-template-columns:repeat(2,minmax(0,190px));gap:var(--sp-5)}
-.hero-bottom{display:flex;align-items:flex-end;gap:var(--sp-5)}
-@media (max-width:820px){.hero-top{flex-direction:column;gap:var(--sp-5);margin-bottom:120px}
-  .hero-cols{grid-template-columns:1fr}}
+  position:relative;isolation:isolate;
+  margin-bottom:clamp(80px,15vh,180px)}
+/* Schmale Label-Reihe am oberen Rand. Eine Zeile, kein Block. */
+.hero-tabs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.hero-tabs li{font-family:var(--ff-b);font-size:.6875rem;font-weight:600;line-height:1;
+  letter-spacing:.13em;text-transform:uppercase;padding:9px 15px;border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.2);color:#DCE2EC;background:rgba(5,6,9,.46);
+  backdrop-filter:blur(10px);white-space:nowrap}
+.hero-tabs li.on{color:var(--gold-hi);border-color:rgba(242,194,0,.5);background:rgba(242,194,0,.12);
+  box-shadow:0 0 22px -8px rgba(242,194,0,.7)}
+.hero-bottom{display:flex;align-items:flex-start;gap:var(--sp-5);position:relative;isolation:isolate}
+/* Lokaler Schleier nur hinter Headline und Subline. Das Foto bleibt daneben hell. */
+.hero-bottom::before{content:"";position:absolute;inset:-56px -18% -70px -8%;z-index:-1;pointer-events:none;
+  background:radial-gradient(64% 96% at 26% 60%,rgba(5,6,9,.9) 0%,rgba(5,6,9,.66) 42%,rgba(5,6,9,.22) 68%,rgba(5,6,9,0) 82%)}
+.hero-bottom .idx{padding-top:.9em}
+/* Subline direkt unter der Headline, dort wo der Blick nach dem Lesen landet */
+.hero-sub{margin:22px 0 0;max-width:44ch;font-size:clamp(1.0625rem,1.45vw,1.25rem);
+  line-height:1.55;color:#D6DCE7;text-shadow:0 1px 16px rgba(5,6,9,.95),0 0 42px rgba(5,6,9,.75);text-wrap:pretty}
+/* Milder Schleier hinter der Kopfzeile im Hero, damit die kleinen Texte auf dem Foto stehen bleiben */
+.hero-top::before{content:"";position:absolute;inset:-40px -14% -20px -8%;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(5,6,9,.6) 0%,rgba(5,6,9,.28) 70%,rgba(5,6,9,0) 100%)}
+@media (max-width:820px){.hero-top{flex-direction:column;gap:var(--sp-4);margin-bottom:80px}
+  .hero-sub{margin-top:18px;max-width:100%}
+  .hero-tabs li{font-size:.625rem;letter-spacing:.1em;padding:8px 12px}
+  .hero-top::before{inset:-30px -14% -18px -8%;
+    background:linear-gradient(180deg,rgba(5,6,9,.7) 0%,rgba(5,6,9,.34) 74%,rgba(5,6,9,0) 100%)}}
+@media (max-width:940px){
+  /* Platz fuer die fixierte Anruf-Leiste, sonst verschwindet die letzte Zeile darunter */
+  .hero .wrap{padding-bottom:calc(var(--sp-8) + 78px)}
+  .logo{font-size:1.125rem}
+}
 
 /* Geteilte Aktionsleiste direkt unter dem Hero, Karzone */
 .split{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);
@@ -263,8 +295,10 @@ a{color:inherit}
   box-shadow:0 0 44px -14px rgba(242,194,0,.6)}
 .make .ic{color:var(--gold-hi)}
 .make .t{font-family:var(--ff);font-weight:700;font-size:1rem;letter-spacing:-.02em}
-@media (max-width:1000px){.makes{grid-template-columns:repeat(3,1fr)}}
+.makes-4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1000px){.makes{grid-template-columns:repeat(3,1fr)}.makes-4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.makes{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.makes,.makes-4{grid-template-columns:1fr}}
 
 /* ---------- Halbes Bild, halber Text ---------- */
 .half{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-8);align-items:center}
@@ -287,7 +321,11 @@ a{color:inherit}
 .tile .n{font-family:var(--ff);font-weight:800;font-size:clamp(2rem,3.6vw,2.875rem);line-height:1;letter-spacing:-.045em}
 .tile .n em{font-style:normal;color:var(--gold-hi)}
 .tile .l{font-size:.8125rem;color:var(--tx-3);margin-top:8px;display:block}
+.tiles-3{grid-template-columns:repeat(3,1fr)}
+.tiles-2{grid-template-columns:repeat(2,1fr)}
 @media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tiles-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.tiles,.tiles-3,.tiles-2{grid-template-columns:1fr}}
 
 /* ---------- Laufband Orte ---------- */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;
@@ -311,6 +349,81 @@ a{color:inherit}
   transform:translateY(-70%) rotate(45deg);transition:transform .26s var(--ease)}
 .acc details[open] summary::after{transform:translateY(-25%) rotate(-135deg)}
 .acc .b{padding:0 var(--sp-7) 24px 0;color:var(--tx-2);max-width:76ch;font-size:.9375rem}
+
+
+/* ---------- Leistungs-Dock nach Moodboard ----------
+   Fuenf Kacheln in einer Reihe. Die aktive waechst wie ein Dock-Symbol,
+   ihr Text erscheint daneben, oberhalb der kleineren Nachbarn.
+   Ruhezustand: die mittlere Kachel ist offen. ------------------------ */
+.dock-h{font-family:var(--ff-b);font-weight:400;font-size:.9375rem;line-height:1.6;
+  color:var(--tx-2);max-width:28ch;margin:14px 0 0}
+.dock{--dgap:clamp(10px,1.3vw,18px);--dpush:calc(37% - var(--dgap) + 10px);
+  display:flex;justify-content:center;align-items:flex-end;gap:var(--dgap);
+  padding:clamp(124px,10vw,158px) 0 clamp(44px,4vw,60px)}
+.dock-item{position:relative;flex:0 0 auto;width:clamp(94px,10.6vw,138px);aspect-ratio:1;
+  transition:transform .42s cubic-bezier(.2,.86,.24,1)}
+.dock-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:11px;text-align:center;padding:12px;
+  border-radius:clamp(14px,1.5vw,22px);border:1px solid var(--line);
+  background:linear-gradient(168deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),var(--panel);
+  box-shadow:0 12px 34px -22px rgba(0,0,0,.95);cursor:default;transform-origin:bottom center;
+  transition:transform .42s cubic-bezier(.2,.86,.24,1),border-color .34s var(--ease),
+             box-shadow .42s var(--ease),background .34s var(--ease)}
+.dock-card:focus-visible{outline:3px solid var(--gold-hi);outline-offset:4px}
+.dock-card .ic{color:var(--gold-hi);opacity:.86;transition:opacity .34s var(--ease)}
+.dock-card .t{font-family:var(--ff);font-weight:700;font-size:.6875rem;line-height:1.22;
+  letter-spacing:.005em;color:var(--tx-2);transition:color .34s var(--ease);
+  max-width:100%;hyphens:manual;overflow-wrap:normal}
+.dock-desc{position:absolute;left:calc(100% + clamp(70px,6.6vw,92px));bottom:calc(100% + 42px);
+  width:clamp(292px,31vw,440px);margin:0;font-size:.75rem;line-height:1.55;color:#C8D0DC;
+  opacity:0;pointer-events:none;transform:translateX(-10px);
+  transition:opacity .36s var(--ease),transform .36s var(--ease)}
+/* Die beiden rechten Kacheln legen ihren Text nach links, sonst laeuft er aus dem Raster */
+.dock-item:nth-child(n+4) .dock-desc{left:auto;right:calc(100% + clamp(70px,6.6vw,92px));
+  transform:translateX(10px)}
+
+/* Aktiv, egal ob per Maus, Tastatur oder im Ruhezustand */
+.dock-item:hover .dock-card,.dock-item:focus-within .dock-card,
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on .dock-card{
+  transform:scale(1.74);border-color:rgba(242,194,0,.5);
+  background:linear-gradient(168deg,rgba(242,194,0,.14),rgba(242,194,0,.02)),var(--panel);
+  box-shadow:0 34px 78px -34px rgba(0,0,0,1),0 0 66px -22px rgba(242,194,0,.6)}
+.dock-item:hover,.dock-item:focus-within,
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on{z-index:5}
+.dock-item:hover .dock-card .t,.dock-item:focus-within .dock-card .t,
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on .dock-card .t{
+  color:var(--tx-1)}
+.dock-item:hover .dock-card .ic,.dock-item:focus-within .dock-card .ic,
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on .dock-card .ic{opacity:1}
+.dock-item:hover .dock-desc,.dock-item:focus-within .dock-desc,
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on .dock-desc{
+  opacity:1;transform:none}
+/* Die direkten Nachbarn heben leicht mit ab, das ist der Dock-Effekt */
+.dock-item:hover + .dock-item .dock-card,.dock-item:has(+ .dock-item:hover) .dock-card,
+.dock-item:focus-within + .dock-item .dock-card,.dock-item:has(+ .dock-item:focus-within) .dock-card{
+  transform:scale(1.08)}
+
+.dock-item:hover ~ .dock-item,.dock-item:focus-within ~ .dock-item,
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on ~ .dock-item{
+  transform:translateX(var(--dpush))}
+.dock-item:has(~ .dock-item:hover),.dock-item:has(~ .dock-item:focus-within),
+.dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item:has(~ .dock-item.on){
+  transform:translateX(calc(var(--dpush) * -1))}
+
+@media (max-width:900px){
+  /* Ohne Mauszeiger kein Dock. Auf dem Handy steht alles offen nebeneinander. */
+  .dock{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:var(--sp-6) 0 var(--sp-7)}
+  .dock-item{width:auto;aspect-ratio:auto;transform:none!important}
+  .dock-card{position:static;flex-direction:row;align-items:flex-start;justify-content:flex-start;
+    text-align:left;gap:12px;padding:16px;transform:none!important;box-shadow:none}
+  .dock-card .t{font-size:.875rem!important;color:var(--tx-1)}
+  .dock-card .ic{opacity:1}
+  .dock-desc{position:static;opacity:1!important;transform:none!important;width:auto;
+    margin-top:10px;padding:0 4px}
+  .dock-item.on .dock-card{border-color:rgba(242,194,0,.42);
+    background:linear-gradient(168deg,rgba(242,194,0,.12),rgba(242,194,0,.02)),var(--panel)}
+}
+@media (max-width:520px){.dock{grid-template-columns:1fr}}
 
 /* ---------- Formular ---------- */
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:var(--sp-4)}
@@ -348,7 +461,7 @@ a{color:inherit}
   .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;gap:10px;
     padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(5,6,9,.92);
     backdrop-filter:blur(18px);border-top:1px solid rgba(242,194,0,.3)}
-  .callbar .btn{flex:1 1 auto}
+  .callbar .btn{flex:1 1 0;min-width:0;padding:14px 12px;font-size:.9375rem;white-space:normal}
   body{padding-bottom:82px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -379,7 +492,7 @@ a{color:inherit}
       <a href="#kosten">Kosten</a><a href="#leistungen">Leistungen</a><a href="#weitere">Bewertung</a><a href="#ablauf">Ablauf</a>
       <a href="#person">Über mich</a><a href="#faq">Fragen</a>
     </nav>
-    <a class="btn btn-y" href="tel:+491772779861"><svg width="17" height="17" aria-hidden="true"><use href="#p"/></svg>0177 277 98 61</a>
+    <a class="btn btn-y" href="tel:+491772779861" aria-label="Anrufen unter 0177 277 98 61"><svg width="17" height="17" aria-hidden="true"><use href="#p"/></svg><span class="num">0177 277 98 61</span></a>
   </div>
 </header>
 
@@ -397,18 +510,18 @@ a{color:inherit}
        width="1920" height="1102" fetchpriority="high"></div>
   <div class="wrap">
     <div class="hero-top">
-      <div>
-        <p class="lab lab-plain" style="color:var(--tx-2)">Mudersbach, Raum 57</p>
-        <p class="xs" style="margin-top:6px">Kfz-Sachverständigenbüro<br>Hans Schäning</p>
-      </div>
-      <div class="hero-cols">
-        <p class="p-s">Unabhängiges Unfallgutachten, Wertgutachten und Gebrauchtwagencheck. Neutral, weisungsfrei, ohne Bindung an Versicherungen.</p>
-        <p class="p-s">Bei unverschuldetem Unfall trägt die gegnerische Haftpflicht die Kosten. Sie sprechen direkt mit dem Sachverständigen.</p>
-      </div>
+      <ul class="hero-tabs">
+        <li class="on">Unfallgutachten</li>
+        <li>Wertgutachten</li>
+        <li>Gebrauchtwagencheck</li>
+      </ul>
     </div>
     <div class="hero-bottom">
-      <span class="idx" style="padding-bottom:14px">001</span>
-      <h1 class="d1">Ihr Schaden.<br>Ihr Recht.<br><span class="gold">Ihr Gutachter.</span></h1>
+      <span class="idx">001</span>
+      <div>
+        <h1 class="d1">Ihr Schaden.<br>Ihr Recht.<br><span class="gold">Ihr Gutachter.</span></h1>
+        <p class="hero-sub">Bei unverschuldetem Unfall trägt die gegnerische Haftpflicht die Kosten. Sie sprechen direkt mit dem Sachverständigen.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -485,21 +598,48 @@ a{color:inherit}
 <!-- ================= LEISTUNGEN ALS KACHELREIHE ================= -->
 <section class="sec" id="leistungen">
   <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-7);flex-wrap:wrap;margin-bottom:var(--sp-6)">
-      <div>
-        <p class="lab">Weitere Leistungen</p>
-        <h2 class="d3" style="margin-top:14px;max-width:18ch">Nicht nur nach dem Unfall</h2>
+    <p class="lab">Weitere Leistungen</p>
+    <h2 class="dock-h">Nicht nur nach dem Unfall. Wert, Beweis und der Blick aufs Fahrzeug, bevor Sie unterschreiben.</h2>
+
+    <div class="dock">
+      <div class="dock-item">
+        <div class="dock-card" tabindex="0">
+          <span class="ic"><svg width="30" height="30" aria-hidden="true"><use href="#dc"/></svg></span>
+          <span class="t">Schaden&shy;gutachten</span>
+        </div>
+        <p class="dock-desc">Für jeden Schaden am Fahrzeug, unabhängig von der Ursache. Nachvollziehbar aufgebaut, damit das Gutachten auch vor Gericht trägt.</p>
       </div>
-      <p class="p-s" style="max-width:40ch">Wertgutachten, Beweissicherung und der Blick aufs Fahrzeug, bevor Sie unterschreiben. Jede Bewertung neutral, nachvollziehbar und so geschrieben, dass sie auch vor Gericht trägt.</p>
+      <div class="dock-item">
+        <div class="dock-card" tabindex="0">
+          <span class="ic"><svg width="30" height="30" aria-hidden="true"><use href="#sc"/></svg></span>
+          <span class="t">Wert&shy;gutachten</span>
+        </div>
+        <p class="dock-desc">Der belastbare Wert Ihres Fahrzeugs. Bei Verkauf, Erbschaft, Trennung, Leasingrückgabe oder Liebhaberfahrzeugen.</p>
+      </div>
+      <div class="dock-item on">
+        <div class="dock-card" tabindex="0">
+          <span class="ic"><svg width="34" height="34" aria-hidden="true"><use href="#sr"/></svg></span>
+          <span class="t">Gebraucht&shy;wagen&shy;check</span>
+        </div>
+        <p class="dock-desc">Vor dem Kauf oder Verkauf. Ich schaue mir das Fahrzeug an, bevor Sie unterschreiben, und sage Ihnen, was Sie wirklich vor sich haben.</p>
+      </div>
+      <div class="dock-item">
+        <div class="dock-card" tabindex="0">
+          <span class="ic"><svg width="30" height="30" aria-hidden="true"><use href="#ph"/></svg></span>
+          <span class="t">Beweis&shy;sicherung</span>
+        </div>
+        <p class="dock-desc">Dokumentiert den Zustand Ihres Fahrzeugs zu einem Zeitpunkt. Damit später nachweisbar bleibt, welcher Schaden wann bestand.</p>
+      </div>
+      <div class="dock-item">
+        <div class="dock-card" tabindex="0">
+          <span class="ic"><svg width="30" height="30" aria-hidden="true"><use href="#wr"/></svg></span>
+          <span class="t">Kosten&shy;vor&shy;anschlag</span>
+        </div>
+        <p class="dock-desc">Für kleinere Schäden, bei denen sich ein volles Gutachten nicht lohnt. Sachlich gerechnet, ohne Luft nach oben oder unten.</p>
+      </div>
     </div>
-    <div class="makes">
-      <a class="make" href="#kontakt"><span class="ic"><svg width="24" height="24" aria-hidden="true"><use href="#dc"/></svg></span><span class="t">Schadengutachten</span><span class="xs">Für jeden Schaden am Fahrzeug, unabhängig von der Ursache.</span></a>
-      <a class="make" href="#kontakt"><span class="ic"><svg width="24" height="24" aria-hidden="true"><use href="#sc"/></svg></span><span class="t">Wertgutachten</span><span class="xs">Bei Verkauf, Erbschaft, Trennung, Leasingrückgabe, Liebhaberfahrzeug.</span></a>
-      <a class="make on" href="#kontakt"><span class="ic"><svg width="24" height="24" aria-hidden="true"><use href="#sr"/></svg></span><span class="t">Gebrauchtwagencheck</span><span class="xs">Vor dem Kauf oder Verkauf. Ich sage Ihnen, was Sie wirklich vor sich haben.</span></a>
-      <a class="make" href="#kontakt"><span class="ic"><svg width="24" height="24" aria-hidden="true"><use href="#ph"/></svg></span><span class="t">Beweissicherung</span><span class="xs">Dokumentiert den Zustand zu einem bestimmten Zeitpunkt.</span></a>
-      <a class="make" href="#kontakt"><span class="ic"><svg width="24" height="24" aria-hidden="true"><use href="#wr"/></svg></span><span class="t">Kostenvoranschlag</span><span class="xs">Für kleine Schäden. Sachlich gerechnet, ohne Luft nach oben oder unten.</span></a>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:var(--sp-6)">
+
+    <div style="display:flex;justify-content:center">
       <a class="btn btn-y" href="#kontakt">Leistung anfragen <span class="arw" aria-hidden="true">&#8594;</span></a>
     </div>
   </div>
@@ -512,7 +652,7 @@ a{color:inherit}
       <p class="lab" style="justify-content:center">Die Kostenfrage</p>
       <h2 class="d2" style="margin-top:18px">Was kostet Sie das Gutachten? <span class="gold">Nichts.</span></h2>
       <p class="p" style="margin:20px auto 0;max-width:58ch">Bei einem unverschuldeten Unfall zahlt die Haftpflichtversicherung des Unfallgegners. Grundlage ist Paragraph 249 Absatz 2 BGB, bestätigt durch das BGH-Urteil VI ZR 67/06. Sie gehen nicht in Vorleistung, die Abrechnung läuft über eine Abtretung direkt an mich.</p>
-      <div class="tiles" style="grid-template-columns:repeat(3,1fr);margin-top:var(--sp-7);text-align:left">
+      <div class="tiles tiles-3" style="margin-top:var(--sp-7);text-align:left">
         <div class="tile on"><div class="n"><em>0</em>&thinsp;&euro;</div><span class="l">Unverschuldet</span></div>
         <div class="tile"><div class="n">Anteilig</div><span class="l">Bei Teilschuld</span></div>
         <div class="tile"><div class="n">&lt;&thinsp;<em>750</em></div><span class="l">Bagatellschaden, Kostenvoranschlag genügt</span></div>
@@ -564,7 +704,7 @@ a{color:inherit}
   <div class="wrap">
     <p class="lab">Ablauf</p>
     <h2 class="d3" style="margin-top:14px;margin-bottom:var(--sp-7);max-width:20ch">In vier Schritten zum Gutachten</h2>
-    <div class="makes" style="grid-template-columns:repeat(4,1fr)">
+    <div class="makes makes-4">
       <div class="make"><span class="idx">Schritt 001</span><span class="t">Sie rufen an</span><span class="xs">Sie schildern kurz, was passiert ist. Ich sage Ihnen sofort, welches Gutachten sinnvoll ist und wer es bezahlt. Kostet Sie nichts.</span></div>
       <div class="make"><span class="idx">Schritt 002</span><span class="t">Termin vor Ort</span><span class="xs">Ich komme zu Ihnen, zur Werkstatt oder zum Abstellort. Auch außerhalb der Geschäftszeiten nach Absprache.</span></div>
       <div class="make"><span class="idx">Schritt 003</span><span class="t">Begutachtung</span><span class="xs">Vollständige Aufnahme nach Herstellervorgaben, gemeinsam mit einer Kfz-Meisterwerkstatt.</span></div>
@@ -582,7 +722,7 @@ a{color:inherit}
         <h2 class="d2" style="margin-top:18px">Hans <span class="gold">Schäning</span></h2>
         <p class="say" style="margin-top:24px;max-width:22ch">„Bei mir sprechen Sie direkt mit dem Sachverständigen. <span class="off">Ohne Callcenter, ohne Weitergabe, ohne Umwege."</span></p>
         <p class="p" style="margin-top:22px;max-width:46ch">Hinter jedem Schaden steht eine Geschichte, und meistens auch Unsicherheit. Genau da fange ich an. Ich arbeite neutral, objektiv und weisungsfrei, ohne Bindung an Versicherungen. Wenn ein Gutachten sich nicht lohnt, sage ich Ihnen das auch.</p>
-        <div class="tiles" style="grid-template-columns:repeat(2,1fr);margin-top:var(--sp-6)">
+        <div class="tiles tiles-2" style="margin-top:var(--sp-6)">
           <div class="tile"><div class="n" style="font-size:1.125rem">VSD e.V.</div><span class="l">Mitglied und dort zum Schaden- und Wertgutachter ausgebildet</span></div>
           <div class="tile"><div class="n" style="font-size:1.125rem">Weisungsfrei</div><span class="l">Keine Bindung an Versicherungen</span></div>
           <div class="tile"><div class="n" style="font-size:1.125rem">Berufshaftpflicht</div><span class="l">BGVA Badische Versicherungen</span></div>
