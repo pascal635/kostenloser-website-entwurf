@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wohnung kaufen und mieten in {Stadt} · Immobilienbüro Andreas Klein</title>
+<meta name="description" content="Wohnungen kaufen, mieten und anlegen in {Stadt} und {Landkreis}. Suchprofil statt Massenbesichtigung, Objekte mit geprüften Unterlagen, dazu Bewertung und Verkehrswertgutachten vom Sachverständigen.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="likovo:status" content="Entwurf, nicht freigegeben">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wohnungen in {Stadt}, die zu Ihnen passen">
+<meta property="og:description" content="Suchprofil, Vorauswahl, Besichtigung, Abwicklung. Und Bewertung vom Sachverständigen, wenn Sie verkaufen wollen.">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="bilder/favicon-32.png" sizes="32x32">
+<link rel="icon" href="bilder/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
+<meta name="theme-color" content="#1D2A4D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* Variante B · Sachverständigen- und Immobilienbüro Andreas Klein
+   Komposition und Typo nah an den Moodboard-Referenzen (Huniant, Arcdev, Archidivi).
+   Farbwelt unverändert aus dem Logo. */
+
+:root{
+  --navy:#1D2A4D; --navy-700:#2E4272; --navy-300:#8492B4;
+  --rot:#8E2437; --rot-hover:#A32C42; --rot-100:#F2E2E4;
+  --papier:#F7F4EE; --sand:#EFE8DC; --sand-tief:#E4DACA; --stein:#D6CCBB; --grau:#F1F0EE;
+  --tinte:#15171D; --ink-900:#101319; --text:#1B1D22; --text-mut:#5E6068; --gruen:#3D6A53;
+
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+  --r-sm:10px; --r-md:18px; --r-lg:28px; --r-xl:40px; --r-pill:999px;
+  --e-base:0 1px 2px rgba(29,42,77,.06), 0 2px 6px rgba(29,42,77,.05);
+  --e-raised:0 1px 2px rgba(29,42,77,.07), 0 4px 10px rgba(29,42,77,.06), 0 12px 24px rgba(29,42,77,.05);
+  --e-float:0 2px 4px rgba(29,42,77,.08), 0 10px 20px rgba(29,42,77,.07), 0 28px 56px rgba(29,42,77,.12);
+  --sans:'Inter Tight',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:18px;line-height:1.6;color:var(--text);background:var(--papier)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s6)}
+@media(max-width:640px){.wrap{padding:0 var(--s4)}}
+section[id]{scroll-margin-top:84px}
+
+/* Typo, Moodboard: sehr grosse duenne Displays, weite Versalien-Labels */
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.03em;line-height:1;overflow-wrap:break-word;hyphens:auto}
+.d-hero{font-size:clamp(52px,15vw,230px);font-weight:300;letter-spacing:-.045em;line-height:.82;text-transform:none}
+.d-1{font-size:clamp(34px,6.4vw,86px);font-weight:400;letter-spacing:-.035em;line-height:1.02}
+.d-2{font-size:clamp(27px,3.9vw,54px);font-weight:400;letter-spacing:-.03em;line-height:1.06}
+.d-up{font-size:clamp(26px,4.6vw,64px);font-weight:400;letter-spacing:-.01em;line-height:1.05;text-transform:uppercase}
+.d-3{font-size:clamp(19px,1.7vw,25px);font-weight:500;letter-spacing:-.018em;line-height:1.2}
+.lab{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--navy-700)}
+.lab-rot{color:var(--rot)}
+.lead{font-size:clamp(18px,1.4vw,21px);line-height:1.55;color:var(--text-mut)}
+.lead .fade{color:var(--navy-300)}
+.small{font-size:14.5px;line-height:1.5;color:var(--text-mut)}
+.num{font-family:var(--serif);font-size:15px;letter-spacing:.1em;color:var(--rot)}
+.serif-it{font-family:var(--serif);font-style:italic;font-weight:400}
+.measure{max-width:62ch}
+.mono-meta{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mut)}
+
+/* Nav, Huniant: Links links, Marke mittig, Aktion rechts */
+.nav{position:absolute;top:0;left:0;right:0;z-index:40;padding:var(--s5) 0}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--s6);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--s5);color:#fff}
+.nav a{text-decoration:none}
+.nav-l,.nav-r{display:flex;align-items:center;gap:var(--s5);font-size:15px}
+.nav-l{justify-content:center}
+.nav-r{justify-content:flex-end}
+.nav-l a:hover,.nav-r a:hover{opacity:.7}
+.nav-brand{display:flex;align-items:center;gap:14px;justify-self:start}
+.nav-brand img{height:66px;background:#fff;border-radius:12px;padding:7px;box-shadow:var(--e-raised)}
+.nav-brand b{font-size:16px;letter-spacing:.01em;font-weight:600;white-space:nowrap}
+.nav-brand span{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.75;font-weight:500;margin-top:2px}
+.nav.solid{position:sticky;background:rgba(16,19,25,.92);backdrop-filter:blur(8px);padding:var(--s3) 0}
+.nav.solid .nav-brand img{height:54px}
+/* Burger, CSS-getrieben, JS nur zum Schliessen */
+.nav-toggle{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.45);cursor:pointer;background:rgba(255,255,255,.08);transition:background-color .2s var(--ease);flex-direction:column;align-items:center;justify-content:center}
+.burger:hover{background:rgba(255,255,255,.18)}
+.burger i{display:block;width:20px;height:1.6px;background:#fff;border-radius:2px;transition:transform .22s var(--ease),opacity .18s var(--ease)}
+.burger i + i{margin-top:5px}
+.nav-toggle:checked ~ .nav-r .burger i:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.nav-toggle:checked ~ .nav-r .burger i:nth-child(2){opacity:0}
+.nav-toggle:checked ~ .nav-r .burger i:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+.nav-toggle:focus-visible ~ .nav-r .burger{outline:3px solid #fff;outline-offset:3px}
+.nav-panel{display:none}
+
+@media(max-width:1020px){
+  .nav-l{display:none}
+  .nav-in{grid-template-columns:auto 1fr auto}
+  .burger{display:flex}
+  .nav-panel{position:absolute;left:0;right:0;top:100%;z-index:45;display:grid;gap:2px;background:var(--ink-900);padding:var(--s4) var(--s6) var(--s6);border-bottom:1px solid rgba(255,255,255,.16);box-shadow:var(--e-float);opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .2s var(--ease),transform .2s var(--ease)}
+  .nav-toggle:checked ~ .nav-panel{opacity:1;transform:none;pointer-events:auto}
+  .nav-panel a:not(.pill){color:#fff;font-size:19px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none}
+  .nav-panel a.pill{color:var(--tinte)}
+  .nav-panel a.tel-big{border-bottom:none}
+  .nav-panel .pill{margin-top:var(--s4);justify-self:start}
+  .nav-panel .tel-big{font-size:23px;font-weight:600;border-bottom:none;padding-top:var(--s4)}
+}
+@media(max-width:760px){.nav-r .tel{display:none}.nav-brand img{height:56px}.nav-brand span{display:none}}
+@media(max-width:520px){.nav-r .pill-sm{display:none}.nav-brand b{font-size:14.5px;white-space:nowrap}.nav-brand img{height:52px;padding:6px;border-radius:10px}.nav-in{gap:var(--s3)}.nav{padding:var(--s4) 0}}
+
+/* Pills */
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:var(--r-pill);font-size:15.5px;font-weight:600;padding:12px 12px 12px 22px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s var(--ease),background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.pill .arw{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-size:14px;background:rgba(255,255,255,.22);transition:transform .2s var(--ease)}
+.pill:hover .arw{transform:translate(2px,-2px)}
+.pill:focus-visible{outline:3px solid var(--navy-300);outline-offset:3px}
+.pill-white{background:#fff;color:var(--tinte);box-shadow:var(--e-raised)}
+.pill-white .arw{background:var(--rot);color:#fff}
+.pill-white:hover{transform:translateY(-1px);box-shadow:var(--e-float)}
+.pill-rot{background:var(--rot);color:#fff;box-shadow:var(--e-raised)}
+.pill-rot:hover{background:var(--rot-hover);transform:translateY(-1px);box-shadow:var(--e-float)}
+.pill-dark{background:var(--tinte);color:#fff}
+.pill-dark:hover{background:#000;transform:translateY(-1px)}
+.pill-line{border-color:currentColor;padding:12px 22px}
+.pill-line:hover{background:currentColor;transform:translateY(-1px)}
+.pill-line:hover span.t{color:var(--papier)}
+.pill-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.34);backdrop-filter:blur(6px)}
+.pill-ghost:hover{background:rgba(255,255,255,.24)}
+.pill-sm{font-size:14px;padding:9px 9px 9px 18px}
+.pill-sm .arw{width:24px;height:24px;font-size:12px}
+
+/* Hero, Archidivi: Vollbild, Riesenwort, Thumbnails unten rechts */
+.hero{position:relative;min-height:min(100vh,900px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink-900)}
+.hero > img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 60%;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(16,19,25,.72) 0%,rgba(16,19,25,.34) 34%,rgba(16,19,25,.86) 100%)}
+.hero-in{position:relative;z-index:2;width:100%;padding:var(--s10) 0 var(--s8)}
+.hero-word{color:#fff;opacity:.96;margin-bottom:var(--s5)}
+.hero-row{display:grid;grid-template-columns:1.25fr .75fr;gap:var(--s7);align-items:end;color:#fff}
+.hero-row p{margin:0}
+.hero-thumbs{display:flex;gap:var(--s3);justify-content:flex-end;align-items:flex-end}
+.hero-thumbs figure{position:relative;margin:0;width:132px;aspect-ratio:1/1;border-radius:var(--r-md);overflow:hidden;border:1px solid rgba(255,255,255,.35);box-shadow:var(--e-float)}
+.hero-thumbs img{width:100%;height:100%;object-fit:cover}
+.hero-scroll{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;margin-top:var(--s4)}
+.hero-scroll i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.5);font-style:normal}
+@media(max-width:900px){.hero-row{grid-template-columns:1fr;gap:var(--s5)}.hero-thumbs{justify-content:flex-start}.hero-thumbs figure{width:104px}}
+
+/* Statement, Huniant */
+.state{padding:var(--s10) 0}
+.state .d-1{max-width:26ch}
+.two-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:start}
+.two-head.tight{grid-template-columns:.9fr 1.1fr}
+@media(max-width:900px){.two-head,.two-head.tight{grid-template-columns:1fr;gap:var(--s5)}}
+
+/* Versetzte Karten, Archidivi */
+.stagger{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5);align-items:start}
+.stagger > *:nth-child(2){margin-top:var(--s8)}
+.stagger > *:nth-child(3){margin-top:var(--s5)}
+.stagger > *:nth-child(4){margin-top:var(--s9)}
+@media(max-width:960px){.stagger{grid-template-columns:repeat(2,1fr)}.stagger > *{margin-top:0!important}}
+@media(max-width:560px){.stagger{grid-template-columns:1fr}}
+.cards3{grid-template-columns:repeat(3,1fr)}
+.cards3 > *{margin-top:0!important}
+@media(max-width:960px){.cards3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cards3{grid-template-columns:1fr}}
+.sc{text-decoration:none;color:inherit;display:block}
+.sc figure{position:relative;margin:0 0 var(--s4);border-radius:var(--r-md);overflow:hidden;aspect-ratio:4/5;background:var(--sand-tief)}
+.sc figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.sc:hover figure img{transform:scale(1.04)}
+.sc .n{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--stein);padding-bottom:8px;margin-bottom:var(--s3)}
+.sc p{margin:0;font-size:16px;color:var(--text-mut)}
+.sc .go{margin-top:var(--s4);display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--rot)}
+.sc:hover .go{gap:12px}
+
+/* Feature-Karte mit Inset, Huniant */
+.feature{position:relative;border-radius:var(--r-xl);overflow:hidden;min-height:620px;display:flex;align-items:flex-end;box-shadow:var(--e-float)}
+.feature > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.feature::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(16,19,25,.9) 0%,rgba(16,19,25,.55) 48%,rgba(16,19,25,.22) 100%)}
+.feature-in{position:relative;z-index:2;width:100%;padding:var(--s8);display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:var(--s7);align-items:end;color:#fff}
+.inset{background:rgba(247,244,238,.96);color:var(--text);border-radius:var(--r-md);padding:var(--s5);box-shadow:var(--e-float)}
+.inset .row{display:flex;justify-content:space-between;gap:var(--s4);padding:12px 0;border-bottom:1px solid var(--stein);font-size:15.5px}
+.inset .row:last-child{border-bottom:none}
+.inset .row b{font-weight:600}
+.inset .row span{color:var(--text-mut);text-align:right}
+.tabs{position:absolute;z-index:3;top:var(--s6);right:var(--s6);display:flex;gap:8px}
+.tabs span{background:rgba(247,244,238,.9);border-radius:var(--r-pill);padding:7px 15px;font-size:12.5px;font-weight:600;color:var(--navy)}
+.tabs span.on{background:var(--rot);color:#fff}
+@media(max-width:900px){
+  .feature{display:block;min-height:0}
+  .feature-in{grid-template-columns:1fr;padding:var(--s5)}
+  .tabs{position:static;flex-wrap:wrap;padding:var(--s5) var(--s5) 0}
+}
+
+/* Watermark-Woerter, Archidivi */
+.marks{position:relative;padding:var(--s9) 0;overflow:hidden}
+.marks h3{font-size:clamp(30px,7.6vw,110px);line-height:1.02;letter-spacing:-.03em;text-transform:uppercase;font-weight:400;color:var(--navy);opacity:.13;margin:0}
+.marks h3.on{opacity:1;color:var(--text)}
+.marks .float{position:absolute;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--e-float);border:3px solid var(--papier)}
+.marks .f1{width:150px;aspect-ratio:1/1;right:9%;top:14%}
+.marks .f2{width:120px;aspect-ratio:3/4;left:44%;top:46%}
+.marks .f3{width:130px;aspect-ratio:4/3;right:24%;bottom:8%}
+.marks .float img{width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.marks .float{display:none}}
+
+/* Streu-Leistungen, Archidivi */
+.scatter{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:var(--s6);align-items:center}
+.scatter .col{display:flex;flex-direction:column;gap:var(--s6)}
+.scatter .col.mid{gap:var(--s5)}
+.item figure{position:relative;margin:0 0 var(--s3);border-radius:var(--r-md);overflow:hidden;aspect-ratio:5/4}
+.item figure img{width:100%;height:100%;object-fit:cover}
+.item .chip{position:absolute;left:10px;top:10px;z-index:2;background:rgba(247,244,238,.94);border-radius:var(--r-pill);padding:5px 12px;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--navy);display:inline-flex;align-items:center;gap:7px}
+.item .chip::after{content:"\2192";color:var(--rot)}
+.item p{margin:0;font-size:14.5px;color:var(--text-mut);padding-left:18px;position:relative}
+.item p::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--rot);opacity:.75}
+@media(max-width:900px){.scatter{grid-template-columns:1fr}}
+
+/* Vergleich als Meta-Zeilen, Arcdev */
+.cmp-rows{border-top:1px solid var(--stein)}
+.cmp-row{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;gap:var(--s5);padding:var(--s5) 0;border-bottom:1px solid var(--stein);align-items:center;font-size:16px}
+.cmp-row .h{font-weight:600;color:var(--navy)}
+.cmp-row .best{color:var(--gruen);font-weight:600}
+.cmp-row.head{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-700);font-weight:600}
+@media(max-width:860px){.cmp-row{grid-template-columns:1fr 1fr;gap:var(--s3)}.cmp-row.head{display:none}.cmp-row .h{grid-column:1/-1}}
+
+/* Bewertungen als Liste mit gekippter Karte, Archidivi */
+.says{position:relative}
+@media(min-width:1101px){.says{padding-right:300px}}
+.say{display:grid;grid-template-columns:1.1fr auto auto 1fr;gap:var(--s5);align-items:center;padding:var(--s5);border-radius:var(--r-md);font-size:16.5px}
+.say + .say{margin-top:6px}
+.say .who{font-weight:600}
+.say .who span{display:block;font-weight:400;font-size:14px;color:var(--text-mut)}
+.say .stars{color:var(--rot);letter-spacing:.14em;white-space:nowrap}
+.say .date{font-size:13.5px;color:var(--text-mut);white-space:nowrap}
+.say .txt{font-family:var(--serif);font-style:italic;color:var(--navy)}
+.say.on{background:var(--ink-900);color:#fff}
+.say.on .who span,.say.on .date{color:#A9AEB9}
+.say.on .txt{color:#EDEDED}
+.tilt{position:absolute;right:6%;top:28%;width:250px;transform:rotate(-5deg);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--e-float);border:4px solid var(--papier);z-index:3}
+.tilt img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tilt figcaption{background:#fff;padding:12px 14px;font-size:13.5px;color:var(--text-mut)}
+@media(max-width:1100px){.tilt{display:none}}
+@media(max-width:760px){.say{grid-template-columns:1fr;gap:var(--s2)}}
+
+/* Marquee, Huniant */
+.marquee{position:relative;overflow:hidden;background:var(--ink-900)}
+.marquee > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;z-index:0}
+.marquee-track{position:relative;z-index:2;display:flex;gap:var(--s7);align-items:center;padding:var(--s8) 0;white-space:nowrap;animation:slide 26s linear infinite;will-change:transform}
+.marquee a{display:inline-flex;align-items:center;gap:var(--s4);color:#fff;text-decoration:none;font-size:clamp(30px,5.4vw,68px);font-weight:400;letter-spacing:-.03em}
+.marquee a i{display:grid;place-items:center;width:clamp(38px,4vw,58px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.6);font-style:normal;font-size:.5em}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Formular als Glaskarte auf Bild, Arcdev */
+.contact{position:relative;overflow:hidden;background:var(--ink-900)}
+.contact > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.contact::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(16,19,25,.86),rgba(16,19,25,.94))}
+.contact-in{position:relative;z-index:2;padding:var(--s10) 0;display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:center;color:#fff}
+@media(max-width:900px){.contact-in{grid-template-columns:1fr;padding:var(--s8) 0}}
+.glass{background:rgba(247,244,238,.97);color:var(--text);border-radius:var(--r-lg);padding:var(--s6);box-shadow:var(--e-float)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+@media(max-width:560px){.f-row{grid-template-columns:1fr}}
+.f{display:block;margin-bottom:var(--s4)}
+.f > span{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-700);margin-bottom:7px}
+.inp,.sel,.ta{width:100%;font-family:var(--sans);font-size:16.5px;color:var(--text);background:#fff;border:1px solid var(--stein);border-radius:var(--r-sm);padding:13px 14px;transition:border-color .18s var(--ease),box-shadow .18s var(--ease)}
+.inp:focus,.sel:focus,.ta:focus{outline:none;border-color:var(--navy-700);box-shadow:0 0 0 3px rgba(46,66,114,.14)}
+.ta{min-height:104px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:0;height:0}
+.chips label{border:1px solid var(--stein);background:#fff;border-radius:var(--r-pill);padding:9px 15px;font-size:15px;cursor:pointer;transition:all .18s var(--ease)}
+.chips label:hover{border-color:var(--navy-300);transform:translateY(-1px)}
+.chips input:checked + label{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chips input:focus-visible + label{outline:3px solid var(--navy-300);outline-offset:2px}
+.tickline{display:flex;align-items:center;gap:10px;font-size:15.5px;color:#D8DBE1;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.tickline b{color:var(--gruen);background:#fff;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:13px}
+
+/* FAQ, Huniant-Liste mit Plus */
+.faq{border-top:1px solid var(--stein)}
+.faq details{border-bottom:1px solid var(--stein)}
+.faq summary{list-style:none;cursor:pointer;padding:var(--s5) var(--s7) var(--s5) 0;position:relative;font-size:19px;font-weight:500;letter-spacing:-.015em;color:var(--navy)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--rot)}
+.faq summary:focus-visible{outline:3px solid var(--navy-300);outline-offset:3px}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:25px;font-weight:300;color:var(--rot)}
+.faq details[open] summary::after{content:"\2013"}
+.faq .a{padding:0 var(--s8) var(--s5) 0;color:var(--text-mut);font-size:17px;max-width:80ch}
+@media(max-width:640px){.faq .a{padding-right:0}}
+
+/* Footer, Archidivi */
+.foot{background:var(--ink-900);color:#E8E8EA;padding:var(--s9) 0 0;overflow:hidden}
+.foot a{color:#B7BCC7;text-decoration:none}
+.foot a:hover{color:#fff}
+.foot-top{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s6);align-items:center;padding-bottom:var(--s7);border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot-brand img{height:42px;background:#fff;border-radius:8px;padding:5px}
+.foot-nav{display:flex;gap:var(--s5);justify-content:center;font-size:15px;flex-wrap:wrap}
+.foot-contact{text-align:center;padding:var(--s8) 0 var(--s7)}
+.foot-contact a{display:block;font-size:clamp(24px,4.4vw,58px);letter-spacing:-.03em;color:#fff;font-weight:400;line-height:1.15}
+.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s6);padding-bottom:var(--s7);font-size:15px}
+.foot-cols .lab{display:block;color:#93A3C6;margin-bottom:var(--s3)}
+.foot-cols > div{line-height:1.9}
+.foot-word{margin-top:var(--s5);font-size:clamp(64px,17vw,260px);line-height:.78;letter-spacing:-.055em;font-weight:500;color:rgba(255,255,255,.07);white-space:nowrap;margin:0 0 -.14em;user-select:none}
+.foot-legal{display:flex;flex-wrap:wrap;gap:var(--s5);justify-content:space-between;border-top:1px solid rgba(255,255,255,.12);padding:var(--s5) 0;font-size:13.5px;color:#9AA0AC}
+@media(max-width:900px){.foot-top{grid-template-columns:1fr;text-align:left}.foot-nav{justify-content:flex-start}.foot-cols{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-cols{grid-template-columns:1fr}}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;z-index:100}
+.skip:focus{left:0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.marquee-track{animation:none!important}}
+
+/* ============ Vermittlungs-Fokus, Ergaenzungen ============ */
+
+/* Suchleiste im Hero */
+.hsearch{margin-top:var(--s6);background:rgba(247,244,238,.95);border-radius:var(--r-lg);padding:var(--s4);display:grid;grid-template-columns:1.1fr .8fr .8fr .9fr auto;gap:var(--s3);align-items:end;box-shadow:var(--e-float);max-width:1000px}
+.hsearch .f{margin:0}
+.hsearch .f > span{color:var(--navy-700);font-size:11px}
+.hsearch .inp,.hsearch .sel{padding:11px 12px;font-size:15.5px}
+.hsearch .pill{white-space:nowrap}
+@media(max-width:1000px){.hsearch{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.hsearch{grid-template-columns:1fr}}
+
+/* Zwei gleichwertige Wege */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5)}
+.path{position:relative;overflow:hidden;border-radius:var(--r-lg);min-height:360px;display:flex;align-items:flex-end;text-decoration:none;color:#fff;box-shadow:var(--e-raised)}
+.path img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);z-index:0}
+.path:hover img{transform:scale(1.05)}
+.path::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(16,19,25,.18) 0%,rgba(16,19,25,.55) 52%,rgba(16,19,25,.9) 100%)}
+.path-in{position:relative;z-index:2;padding:var(--s6);width:100%}
+.path .go{display:inline-flex;align-items:center;gap:10px;font-weight:600;margin-top:var(--s5)}
+.path .go i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.6);font-style:normal;transition:transform .2s var(--ease)}
+.path:hover .go i{transform:translate(2px,-2px)}
+@media(max-width:800px){.paths{grid-template-columns:1fr}.path{min-height:280px}}
+
+/* Filter-Chips */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters span{border:1px solid var(--stein);background:#fff;border-radius:var(--r-pill);padding:8px 16px;font-size:14.5px;font-weight:600;color:var(--navy)}
+.filters span.on{background:var(--rot);color:#fff;border-color:var(--rot)}
+
+/* Objekt-Karten */
+.props{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+@media(max-width:1000px){.props{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.props{grid-template-columns:1fr}}
+.prop{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--stein);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--e-base);transition:transform .22s var(--ease),box-shadow .22s var(--ease)}
+.prop:hover{transform:translateY(-3px);box-shadow:var(--e-raised)}
+.prop figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--sand-tief)}
+.prop figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.prop:hover figure img{transform:scale(1.04)}
+.prop .status{position:absolute;left:12px;top:12px;z-index:2;background:var(--rot);color:#fff;border-radius:var(--r-pill);padding:5px 12px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.prop .status.res{background:var(--navy)}
+.prop .status.done{background:#6C6E76}
+.prop .price{position:absolute;right:12px;bottom:12px;z-index:2;background:rgba(247,244,238,.96);border-radius:var(--r-pill);padding:6px 14px;font-family:var(--serif);font-size:17px;color:var(--navy)}
+.prop .body{padding:var(--s4) var(--s5) var(--s5)}
+.prop h3{font-size:19px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.prop .loc{font-size:14px;color:var(--text-mut);margin:6px 0 0}
+.prop .meta{display:flex;flex-wrap:wrap;gap:var(--s4);margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--stein);font-size:14px;color:var(--text-mut)}
+.prop .meta b{color:var(--navy);font-weight:600}
+.prop .energy{font-size:12px;color:var(--text-mut);margin-top:var(--s3);line-height:1.45}
+.prop .go{margin-top:var(--s4);display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--rot)}
+.prop:hover .go{gap:12px}
+
+/* Merkzeile unter der Objektliste */
+.notice{background:var(--sand);border:1px solid var(--stein);border-radius:var(--r-md);padding:var(--s5);font-size:15.5px;color:var(--text-mut)}
+.notice b{color:var(--navy)}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"RealEstateAgent",
+  "name":"Sachverständigen- und Immobilienbüro Andreas Klein",
+  "description":"Immobilienbüro für Kauf, Miete und Kapitalanlage in {Stadt}, mit Bewertung und Verkehrswertgutachten vom Sachverständigen.",
+  "url":"https://klein-i.de/","telephone":"{Telefon}","email":"{E-Mail}",
+  "address":{"@type":"PostalAddress","streetAddress":"{Straße und Hausnummer}","postalCode":"{PLZ}","addressLocality":"{Stadt}","addressCountry":"DE"},
+  "areaServed":["{Stadt}","{Landkreis}"],
+  "founder":{"@type":"Person","name":"Andreas Klein","jobTitle":"Sachverständiger für Immobilienbewertung","hasCredential":"{Qualifikation und Bestellung}"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Was kostet mich die Wohnungssuche?","acceptedAnswer":{"@type":"Answer","text":"Suchprofil und Vorauswahl kosten nichts. Beim Kauf fällt eine Provision an, {Angabe} für die Käuferseite. Bei Mietwohnungen aus dem eigenen Bestand zahlen Mieter nichts."}},
+    {"@type":"Question","name":"Wie schnell bekomme ich passende Wohnungen?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von {X} Tagen nach dem Gespräch. Neue Objekte gehen zuerst an bestehende Suchprofile."}},
+    {"@type":"Question","name":"Werden Zustand und Unterlagen der Wohnung geprüft?","acceptedAnswer":{"@type":"Answer","text":"Ja: Grundbuch, Teilungserklärung, Protokolle der Eigentümerversammlung, Instandhaltungsrücklage und Sanierungsstand."}},
+    {"@type":"Question","name":"Was kostet ein Verkehrswertgutachten?","acceptedAnswer":{"@type":"Answer","text":"Ein Kurzgutachten beginnt bei {Betrag}, ein vollständiges Verkehrswertgutachten bei {Betrag}. Der Preis steht vorab schriftlich fest."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#anfrage">Zum Anfrageformular springen</a>
+
+<!-- HERO: Suche fuehrt -->
+<section class="hero" id="top">
+  <img class="bg" src="bilder/immobilienbewertung-fassade-himmel.webp" alt="Wohngebäude in {Stadt}">
+  <header class="nav">
+    <div class="nav-in">
+      <input class="nav-toggle" type="checkbox" id="navtoggle">
+      <a class="nav-brand" href="#top">
+        <img src="bilder/logo-andreas-klein-immobilienbuero.webp" alt="Sachverständigen- und Immobilienbüro Andreas Klein">
+        <b>Andreas Klein<span>Sachverständigen- und Immobilienbüro</span></b>
+      </a>
+      <nav class="nav-l">
+        <a href="#objekte">Objekte</a>
+        <a href="#suchprofil">Suchprofil</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#bewertung">Bewertung</a>
+        <a href="#fragen">Fragen</a>
+      </nav>
+      <div class="nav-r">
+        <a class="tel" href="tel:{Telefon}">{Telefon}</a>
+        <a class="pill pill-white pill-sm" href="#anfrage">Suchprofil anlegen <span class="arw">&#8599;</span></a>
+        <label class="burger" for="navtoggle" title="Menü"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="sr">Menü öffnen und schließen</span></label>
+      </div>
+      <nav class="nav-panel" id="navpanel">
+        <a href="#objekte">Objekte</a>
+        <a href="#suchprofil">Suchprofil</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#bewertung">Bewertung</a>
+        <a href="#stimmen">Stimmen</a>
+        <a href="#fragen">Fragen</a>
+        <a class="tel-big" href="tel:{Telefon}">{Telefon}</a>
+        <a class="pill pill-white" href="#anfrage">Suchprofil anlegen <span class="arw">&#8599;</span></a>
+      </nav>
+    </div>
+  </header>
+  <div class="hero-in">
+    <div class="wrap">
+      <span class="lab" style="color:rgba(255,255,255,.72)">Immobilienbüro · {Stadt} und {Landkreis}</span>
+      <div class="d-hero hero-word" aria-hidden="true">Zuhause</div>
+      <div class="hero-row">
+        <div>
+          <h1 class="d-2" style="color:#fff;max-width:26ch">Wohnungen in {Stadt}, die wirklich zu Ihnen passen.</h1>
+          <p class="lead" style="color:#D9DCE2;max-width:48ch;margin-top:var(--s4)">Ich suche mit Ihnen, nicht für den Katalog. Sie sehen vier Wohnungen, die in Frage kommen, nicht vierzig, die Ihre Zeit kosten.</p>
+          <div style="display:flex;gap:var(--s4);flex-wrap:wrap;align-items:center;margin-top:var(--s6)">
+            <a class="pill pill-white" href="#objekte">Aktuelle Objekte ansehen <span class="arw">&#8599;</span></a>
+            <a class="pill pill-ghost pill-line" href="#anfrage"><span class="t">Suchprofil anlegen</span></a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-thumbs">
+            <figure><img src="bilder/immobilienbewertung-balkon-hochkant.webp" alt="Wohnung mit Balkon"></figure>
+            <figure><img src="bilder/immobilienbewertung-fassade-detail.webp" alt="Wohnhaus"></figure>
+          </div>
+          <a class="hero-scroll" href="#wege">Nach unten <i>&#8595;</i></a>
+        </div>
+      </div>
+      <form class="hsearch" onsubmit="return false">
+        <label class="f"><span>Ich möchte</span>
+          <select class="sel"><option>Kaufen</option><option>Mieten</option><option>Kapital anlegen</option></select>
+        </label>
+        <label class="f"><span>Zimmer ab</span>
+          <select class="sel"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5 oder mehr</option></select>
+        </label>
+        <label class="f"><span>Fläche ab</span>
+          <select class="sel"><option>40 m²</option><option selected>60 m²</option><option>80 m²</option><option>100 m²</option></select>
+        </label>
+        <label class="f"><span>Ort oder Postleitzahl</span>
+          <input class="inp" placeholder="{PLZ} {Stadt}">
+        </label>
+        <button class="pill pill-rot" type="submit">Objekte zeigen <span class="arw">&#8594;</span></button>
+      </form>
+      <p class="small" style="color:#C3C7CF;margin-top:var(--s4)">Sie wollen verkaufen oder wissen, was Ihre Wohnung wert ist? <a href="#bewertung" style="color:#fff">Zur Bewertung &#8594;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ZWEI GLEICHWERTIGE WEGE -->
+<section class="state" id="wege" style="padding-bottom:var(--s8)">
+  <div class="wrap">
+    <div class="two-head tight" style="margin-bottom:var(--s7)">
+      <div>
+        <span class="lab lab-rot">Zwei Wege</span>
+        <h2 class="d-1" style="margin-top:var(--s5)">Sie suchen. Oder Sie besitzen.</h2>
+      </div>
+      <p class="lead" style="align-self:end">Beides bekommt hier den gleichen Platz. Vermittlung und Bewertung liegen in einer Hand, deshalb kommt der Preis aus dem Verfahren und nicht aus dem Bauchgefühl.</p>
+    </div>
+    <div class="paths">
+      <a class="path" href="#objekte">
+        <img src="bilder/immobilienbewertung-wohnhaus-balkon.webp" alt="Wohnhaus mit Balkonen">
+        <div class="path-in">
+          <span class="num" style="color:#fff;opacity:.75">/01</span>
+          <h3 class="d-2" style="color:#fff;margin-top:var(--s3);max-width:18ch">Sie suchen eine Wohnung</h3>
+          <p class="lead" style="color:#D9DCE2;max-width:38ch;margin-top:var(--s3)">Kauf, Miete oder Kapitalanlage. Suchprofil anlegen, Vorauswahl bekommen, besichtigen, abwickeln.</p>
+          <span class="go">Objekte und Suchprofil <i>&#8599;</i></span>
+        </div>
+      </a>
+      <a class="path" href="#bewertung">
+        <img src="bilder/immobilienbewertung-detail-hochkant.webp" alt="Wohngebäude" style="object-position:50% 62%">
+        <div class="path-in">
+          <span class="num" style="color:#fff;opacity:.75">/02</span>
+          <h3 class="d-2" style="color:#fff;margin-top:var(--s3);max-width:18ch">Sie besitzen eine Immobilie</h3>
+          <p class="lead" style="color:#D9DCE2;max-width:38ch;margin-top:var(--s3)">Verkehrswert, Kurzgutachten oder Verkauf mit Gutachten als Grundlage. Für Erbschaft, Scheidung, Finanzamt und Verkauf.</p>
+          <span class="go">Bewertung und Verkauf <i>&#8599;</i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AKTUELLE OBJEKTE -->
+<section class="state" id="objekte" style="background:var(--sand);padding-top:var(--s9)">
+  <div class="wrap">
+    <div class="two-head" style="margin-bottom:var(--s6)">
+      <div>
+        <span class="lab lab-rot">Aktuelle Objekte</span>
+        <h2 class="d-up" style="margin-top:var(--s5)">Wohnungen im Angebot</h2>
+      </div>
+      <p class="lead" style="align-self:end">Platzhalter-Objekte für den Entwurf. Später kommt hier Ihr echter Bestand, gepflegt aus {Software oder Portal}. Ein Teil der Objekte geht zuerst an Suchprofile, bevor er öffentlich wird.</p>
+    </div>
+    <div class="filters" style="margin-bottom:var(--s6)">
+      <span class="on">Alle</span><span>Kauf</span><span>Miete</span><span>Kapitalanlage</span><span>Neu</span>
+    </div>
+    <div class="props">
+      <a class="prop" href="#anfrage">
+        <figure>
+          <img src="bilder/immobilienbewertung-balkon-hochkant.webp" alt="3-Zimmer-Wohnung mit Balkon in {Ortsteil}">
+          <span class="status">Neu</span><span class="price">{385.000} €</span>
+        </figure>
+        <div class="body">
+          <h3>3-Zimmer-Wohnung mit Balkon</h3>
+          <p class="loc">{Ortsteil}, {Stadt} · Kauf</p>
+          <div class="meta"><span><b>3</b> Zimmer</span><span><b>{84}</b> m²</span><span><b>{2.}</b> OG</span><span>Baujahr <b>{1998}</b></span></div>
+          <p class="energy">Energieausweis: {Art}, {Endenergiebedarf} kWh/(m²·a), {Energieträger}, Klasse {A bis H} · Provision: {Angabe}</p>
+          <span class="go">Details und Besichtigung &#8594;</span>
+        </div>
+      </a>
+      <a class="prop" href="#anfrage">
+        <figure>
+          <img src="bilder/immobilienbewertung-fassade-detail.webp" alt="2-Zimmer-Wohnung saniert in {Ortsteil}">
+          <span class="status">Neu</span><span class="price">{1.150} € kalt</span>
+        </figure>
+        <div class="body">
+          <h3>2-Zimmer-Wohnung, saniert</h3>
+          <p class="loc">{Ortsteil}, {Stadt} · Miete</p>
+          <div class="meta"><span><b>2</b> Zimmer</span><span><b>{58}</b> m²</span><span><b>{1.}</b> OG</span><span>frei ab <b>{Datum}</b></span></div>
+          <p class="energy">Energieausweis: {Art}, {Endenergiebedarf} kWh/(m²·a), {Energieträger}, Klasse {A bis H} · Für Mieter provisionsfrei</p>
+          <span class="go">Details und Besichtigung &#8594;</span>
+        </div>
+      </a>
+      <a class="prop" href="#anfrage">
+        <figure>
+          <img src="bilder/immobilienbewertung-wohnhaus-balkon.webp" alt="4-Zimmer-Maisonette in {Ortsteil}" style="object-position:50% 30%">
+          <span class="status res">Reserviert</span><span class="price">{549.000} €</span>
+        </figure>
+        <div class="body">
+          <h3>4-Zimmer-Maisonette mit Dachterrasse</h3>
+          <p class="loc">{Ortsteil}, {Stadt} · Kauf</p>
+          <div class="meta"><span><b>4</b> Zimmer</span><span><b>{126}</b> m²</span><span><b>{3.}</b> OG</span><span>Baujahr <b>{2014}</b></span></div>
+          <p class="energy">Energieausweis: {Art}, {Endenergiebedarf} kWh/(m²·a), {Energieträger}, Klasse {A bis H} · Provision: {Angabe}</p>
+          <span class="go">Auf die Nachrückerliste &#8594;</span>
+        </div>
+      </a>
+      <a class="prop" href="#anfrage">
+        <figure>
+          <img src="bilder/immobilienbewertung-detail-hochkant.webp" alt="Vermietete 2-Zimmer-Wohnung als Kapitalanlage">
+          <span class="status">Kapitalanlage</span><span class="price">{219.000} €</span>
+        </figure>
+        <div class="body">
+          <h3>Vermietete 2-Zimmer-Wohnung</h3>
+          <p class="loc">{Ortsteil}, {Stadt} · Kapitalanlage</p>
+          <div class="meta"><span><b>2</b> Zimmer</span><span><b>{54}</b> m²</span><span>Miete <b>{690} €</b></span><span>Rendite <b>{4,1} %</b></span></div>
+          <p class="energy">Energieausweis: {Art}, {Endenergiebedarf} kWh/(m²·a), {Energieträger}, Klasse {A bis H} · Provision: {Angabe}</p>
+          <span class="go">Unterlagen anfordern &#8594;</span>
+        </div>
+      </a>
+      <a class="prop" href="#anfrage">
+        <figure>
+          <img src="bilder/immobilienbewertung-fassade-himmel.webp" alt="Dachgeschosswohnung in {Ortsteil}" style="object-position:60% 80%">
+          <span class="status">Neu</span><span class="price">{465.000} €</span>
+        </figure>
+        <div class="body">
+          <h3>Dachgeschosswohnung mit Aufzug</h3>
+          <p class="loc">{Ortsteil}, {Stadt} · Kauf</p>
+          <div class="meta"><span><b>3</b> Zimmer</span><span><b>{98}</b> m²</span><span><b>{4.}</b> OG</span><span>Baujahr <b>{2008}</b></span></div>
+          <p class="energy">Energieausweis: {Art}, {Endenergiebedarf} kWh/(m²·a), {Energieträger}, Klasse {A bis H} · Provision: {Angabe}</p>
+          <span class="go">Details und Besichtigung &#8594;</span>
+        </div>
+      </a>
+      <a class="prop" href="#anfrage">
+        <figure>
+          <img src="bilder/immobilienbewertung-fensterfassade-band.webp" alt="Verkaufte Referenzwohnung">
+          <span class="status done">Verkauft</span><span class="price">{342.000} €</span>
+        </figure>
+        <div class="body">
+          <h3>3-Zimmer-Wohnung, Referenz</h3>
+          <p class="loc">{Ortsteil}, {Stadt} · verkauft in {Wochen} Wochen</p>
+          <div class="meta"><span><b>3</b> Zimmer</span><span><b>{77}</b> m²</span><span>Angebot <b>{335.000} €</b></span><span>erzielt <b>{342.000} €</b></span></div>
+          <p class="energy">Referenzobjekt. Verkauf auf Grundlage eines Verkehrswertgutachtens.</p>
+          <span class="go">Ähnliches Objekt gesucht &#8594;</span>
+        </div>
+      </a>
+    </div>
+    <div style="display:flex;gap:var(--s4);flex-wrap:wrap;align-items:center;margin-top:var(--s6)">
+      <a class="pill pill-dark" href="#anfrage">Suchprofil anlegen <span class="arw">&#8599;</span></a>
+      <a class="pill pill-line" href="#anfrage" style="color:var(--navy)"><span class="t">Nichts dabei? Sagen Sie mir, was Sie suchen</span></a>
+    </div>
+    <p class="notice" style="margin-top:var(--s6)"><b>Pflichtangaben nicht vergessen:</b> Jede Anzeige braucht die Angaben aus dem Energieausweis, also Art, Endenergiebedarf oder Endenergieverbrauch, Energieträger, Baujahr und Effizienzklasse. Dazu die Provisionsangabe. In den Kacheln stehen dafür Platzhalter, die Werte kommen aus Ihren Unterlagen.</p>
+  </div>
+</section>
+
+<!-- SUCHPROFIL, Feature-Karte mit Inset -->
+<section id="suchprofil" style="padding:var(--s9) 0">
+  <div class="wrap">
+    <div class="feature">
+      <img src="bilder/immobilienbewertung-fensterfassade-band.webp" alt="Mehrfamilienhaus">
+      <div class="tabs"><span class="on">Kauf</span><span>Miete</span><span>Kapitalanlage</span></div>
+      <div class="feature-in">
+        <div class="inset">
+          <span class="lab lab-rot">Ihr Suchprofil</span>
+          <div class="row"><b>001 · Gespräch</b><span>15 Minuten</span></div>
+          <div class="row"><b>002 · Vorauswahl</b><span>3 bis 5 Objekte</span></div>
+          <div class="row"><b>003 · Besichtigung</b><span>mit Einschätzung</span></div>
+          <div class="row"><b>004 · Abwicklung</b><span>bis zum Notar</span></div>
+          <a class="pill pill-rot" href="#anfrage" style="margin-top:var(--s5)">Suchprofil anlegen <span class="arw">&#8599;</span></a>
+        </div>
+        <div>
+          <span class="num" style="color:#fff;opacity:.7">[01]</span>
+          <h2 class="d-2" style="color:#fff;margin-top:var(--s3);max-width:22ch">Sie besichtigen vier Wohnungen, nicht vierzig.</h2>
+          <p class="lead" style="color:#D9DCE2;max-width:46ch;margin-top:var(--s4)">Im Gespräch klären wir Lage, Zimmer, Fläche, Budget und die Punkte, die nicht verhandelbar sind. Danach bekommen Sie nur Objekte, die dazu passen, mit meiner Einschätzung zum Preis und zum Zustand. Neue Objekte gehen zuerst an Suchprofile.</p>
+          <p class="small" style="color:#B9BDC6;margin-top:var(--s4)">Das Suchprofil kostet nichts und verpflichtet zu nichts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WATERMARK -->
+<section class="marks">
+  <div class="wrap">
+    <h3>Kaufen</h3>
+    <h3 class="on">Passend &#8212; nicht irgendwas</h3>
+    <h3>Mieten</h3>
+    <h3>Anlegen</h3>
+    <figure class="float f1"><img src="bilder/immobilienbewertung-fassade-detail.webp" alt=""></figure>
+    <figure class="float f2"><img src="bilder/immobilienbewertung-detail-hochkant.webp" alt=""></figure>
+    <figure class="float f3"><img src="bilder/immobilienbewertung-wohnhaus-balkon.webp" alt=""></figure>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="state" id="leistungen" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="scatter">
+      <div class="col">
+        <div class="item">
+          <figure><img src="bilder/immobilienbewertung-detail-hochkant.webp" alt="Wohnung kaufen" style="object-position:50% 70%"><span class="chip">Wohnung kaufen</span></figure>
+          <p>Suchprofil, Vorauswahl, Besichtigung mit Einschätzung, Begleitung bis zum Notartermin.</p>
+        </div>
+        <div class="item">
+          <figure><img src="bilder/immobilienbewertung-fassade-detail.webp" alt="Wohnung mieten"><span class="chip">Wohnung mieten</span></figure>
+          <p>Passende Angebote statt Massenbesichtigung. Ich sage Ihnen vorher, welche Unterlagen der Vermieter sehen will.</p>
+        </div>
+      </div>
+      <div class="col mid" style="text-align:center;align-items:center">
+        <span class="lab lab-rot">&#8776; Leistungen</span>
+        <h2 class="d-up" style="max-width:16ch">Vier Wege, ein Ansprechpartner</h2>
+        <p class="lead" style="max-width:38ch">Suchen, mieten, verkaufen, anlegen. Und bei jedem Preis die Frage, die ein Makler selten beantwortet: wie kommt diese Zahl zustande?</p>
+        <a class="pill pill-line" href="#anfrage" style="color:var(--navy)"><span class="t">Anliegen schildern</span></a>
+        <div class="item" style="width:100%;margin-top:var(--s4)">
+          <figure><img src="bilder/immobilienbewertung-wohnhaus-balkon.webp" alt="Verkaufen mit Gutachten"><span class="chip">Verkaufen mit Gutachten</span></figure>
+          <p style="text-align:left">Erst der Wert, dann der Preis. Sie verkaufen mit einer Zahl, die Sie jedem Interessenten erklären können.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="item">
+          <figure><img src="bilder/immobilienbewertung-balkon-hochkant.webp" alt="Kapitalanlage" style="object-position:50% 40%"><span class="chip">Kapitalanlage</span></figure>
+          <p>Vermietete Wohnungen mit belastbarer Rendite. Mietwert und Ertragswert prüfe ich selbst.</p>
+        </div>
+        <div class="item">
+          <figure><img src="bilder/immobilienbewertung-fassade-himmel.webp" alt="Bewertung" style="object-position:60% 85%"><span class="chip">Bewertung und Gutachten</span></figure>
+          <p>Verkehrswert und Kurzgutachten für Erbschaft, Scheidung, Finanzamt und Verkauf.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNTERSCHIED -->
+<section class="state">
+  <div class="wrap">
+    <div class="two-head" style="margin-bottom:var(--s7)">
+      <div>
+        <span class="lab lab-rot">Der Unterschied</span>
+        <h2 class="d-1" style="margin-top:var(--s5);max-width:20ch">Ein Makler, der den Wert begründen kann.</h2>
+      </div>
+      <p class="lead" style="align-self:end">Drei Wege, eine Wohnung zu finden oder zu bewerten. Der Unterschied liegt nicht im Angebot, sondern in der Begründung.</p>
+    </div>
+    <div class="cmp-rows">
+      <div class="cmp-row head"><span>Kriterium</span><span>Portal allein</span><span>Makler</span><span>Klein: Makler und Sachverständiger</span></div>
+      <div class="cmp-row"><span class="h">Objektauswahl</span><span>alles, was online steht</span><span>eigener Bestand</span><span class="best">Bestand plus Vorauswahl nach Ihrem Profil</span></div>
+      <div class="cmp-row"><span class="h">Preiseinschätzung</span><span>Portalpreis</span><span>Erfahrung</span><span class="best">Wertermittlung nach anerkanntem Verfahren</span></div>
+      <div class="cmp-row"><span class="h">Zustand und Unterlagen</span><span>Ihre Sache</span><span>teilweise geprüft</span><span class="best">Grundbuch, Teilungserklärung, Sanierungsstand geprüft</span></div>
+      <div class="cmp-row"><span class="h">Besichtigung</span><span>Massentermin</span><span>Einzeltermin</span><span class="best">Einzeltermin mit ehrlicher Einschätzung</span></div>
+      <div class="cmp-row"><span class="h">Nach der Zusage</span><span>nichts</span><span>Vertragsabwicklung</span><span class="best">Abwicklung bis zum Notar, Ansprechpartner bleibt</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEWERTUNG, zweiter gleichwertiger Pfad -->
+<section class="state" id="bewertung" style="background:var(--grau)">
+  <div class="wrap">
+    <div class="two-head" style="margin-bottom:var(--s7)">
+      <div>
+        <span class="lab lab-rot">Sie besitzen</span>
+        <h2 class="d-up" style="margin-top:var(--s5)">Bewertung und Verkauf</h2>
+      </div>
+      <p class="lead" style="align-self:end">Der zweite Weg, gleichberechtigt. Ich bin {Qualifikation und Bestellung}, deshalb kommt der Preis aus dem Verfahren: Vergleichswert, Sachwert oder Ertragswert, je nach Objekt.</p>
+    </div>
+    <div class="stagger cards3">
+      <div class="inset" style="background:#fff">
+        <span class="num">001</span>
+        <h3 class="d-3" style="margin-top:var(--s3)">Kurzgutachten</h3>
+        <p class="lead" style="font-family:var(--serif);color:var(--rot);font-size:30px;margin:var(--s4) 0 var(--s2)">ab {Betrag}</p>
+        <p class="small">{Y} Werktage. Für die eigene Entscheidung, für die Familie, vor dem Verkauf.</p>
+      </div>
+      <div class="inset" style="background:#fff;border:1px solid var(--rot)">
+        <span class="num">002</span>
+        <h3 class="d-3" style="margin-top:var(--s3)">Verkehrswertgutachten</h3>
+        <p class="lead" style="font-family:var(--serif);color:var(--rot);font-size:30px;margin:var(--s4) 0 var(--s2)">ab {Betrag}</p>
+        <p class="small">{Y} Werktage. Für Finanzamt, Gericht, Erbengemeinschaft und Bank.</p>
+      </div>
+      <div class="inset" style="background:#fff">
+        <span class="num">003</span>
+        <h3 class="d-3" style="margin-top:var(--s3)">Verkauf mit Gutachten</h3>
+        <p class="lead" style="font-family:var(--serif);color:var(--gruen);font-size:30px;margin:var(--s4) 0 var(--s2)">Provision {Angabe}</p>
+        <p class="small">Erst der Wert, dann der Preis, dann der Verkauf. Die Bewertung wird angerechnet: {Regelung}.</p>
+      </div>
+    </div>
+    <div class="two-head" style="margin-top:var(--s8)">
+      <h3 class="d-2" style="max-width:24ch">Und wie unabhängig ist ein Makler, der auch bewertet?</h3>
+      <p class="lead" style="align-self:center">Berechtigte Frage. Das Gutachten ist eine bezahlte Leistung und steht für sich. Es endet mit einer Zahl, nicht mit einem Maklervertrag. Ob Sie danach verkaufen und mit wem, entscheiden Sie. Umgekehrt gilt dasselbe: Wenn ein Objekt nicht zu Ihnen passt, sage ich das, auch wenn es mein eigenes ist.</p>
+    </div>
+    <a class="pill pill-dark" href="#anfrage" style="margin-top:var(--s6)">Bewertung anfragen <span class="arw">&#8599;</span></a>
+  </div>
+</section>
+
+<!-- STIMMEN -->
+<section class="state" id="stimmen" style="padding-bottom:var(--s10)">
+  <div class="wrap">
+    <div class="two-head" style="margin-bottom:var(--s7)">
+      <h2 class="d-up">Was Kunden sagen</h2>
+      <p class="lead" style="align-self:end">Platzhalter. Die echten Bewertungen kommen wörtlich aus dem Google-Profil, mit Anlass und Datum.</p>
+    </div>
+    <div class="says">
+      <div class="say"><span class="who">{Name}<span>Wohnung gekauft, {Ortsteil}</span></span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="date">{Datum}</span><span class="txt">„{Zitat: passende Vorauswahl statt Massenbesichtigung}"</span></div>
+      <div class="say on"><span class="who">{Name}<span>Wohnung gemietet, {Ort}</span></span><span class="stars" style="color:#E0A6B0">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="date">{Datum}</span><span class="txt">„{Zitat: schnelle Rückmeldung, klare Ansage zu den Unterlagen}"</span></div>
+      <div class="say"><span class="who">{Name}<span>Wohnung verkauft, {Ort}</span></span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="date">{Datum}</span><span class="txt">„{Zitat: Preis war begründet und hat gehalten}"</span></div>
+      <div class="say"><span class="who">{Name}<span>Kapitalanlage, {Ort}</span></span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="date">{Datum}</span><span class="txt">„{Zitat: Rendite wurde vorher durchgerechnet, nicht behauptet}"</span></div>
+      <figure class="tilt">
+        <img src="bilder/immobilienbewertung-wohnhaus-balkon.webp" alt="Vermitteltes Objekt">
+        <figcaption>{Objektart} in {Ortsteil}: Angebot {Betrag}, erzielt {Betrag}, {Wochen} Wochen.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="marquee">
+  <img src="bilder/immobilienbewertung-fensterfassade-band.webp" alt="">
+  <div class="marquee-track">
+    <a href="#anfrage">Suchprofil anlegen <i>&#8599;</i></a>
+    <a href="#anfrage">Suchprofil anlegen <i>&#8599;</i></a>
+    <a href="#anfrage">Suchprofil anlegen <i>&#8599;</i></a>
+    <a href="#anfrage">Suchprofil anlegen <i>&#8599;</i></a>
+    <a href="#anfrage">Suchprofil anlegen <i>&#8599;</i></a>
+    <a href="#anfrage">Suchprofil anlegen <i>&#8599;</i></a>
+  </div>
+</section>
+
+<!-- ANFRAGE -->
+<section class="contact" id="anfrage">
+  <img src="bilder/immobilienbewertung-fassade-himmel.webp" alt="">
+  <div class="wrap">
+    <div class="contact-in">
+      <div>
+        <span class="lab" style="color:#93A3C6">Anfrage</span>
+        <h2 class="d-1" style="color:#fff;margin-top:var(--s5);max-width:22ch">Sagen Sie mir, was Sie suchen.</h2>
+        <p class="lead" style="color:#D9DCE2;max-width:46ch;margin-top:var(--s4)">Ein Formular für alle vier Wege. Ich melde mich innerhalb von 24 Stunden, werktags, und sage Ihnen ehrlich, ob ich passende Objekte habe.</p>
+        <div style="margin-top:var(--s6);max-width:440px">
+          <div class="tickline"><b>&#10003;</b> Antwort innerhalb von 24 Stunden, werktags</div>
+          <div class="tickline"><b>&#10003;</b> Neue Objekte zuerst an Suchprofile</div>
+          <div class="tickline"><b>&#10003;</b> Suchprofil kostenlos, keine Verpflichtung</div>
+          <div class="tickline" style="border-bottom:none"><b>&#10003;</b> Ihre Angaben bleiben im Büro</div>
+        </div>
+        <p class="lead" style="color:#fff;margin-top:var(--s6);font-size:26px"><a href="tel:{Telefon}" style="text-decoration:none">{Telefon}</a></p>
+      </div>
+      <form class="glass" onsubmit="return false">
+        <div class="f">
+          <span>Worum geht es?</span>
+          <div class="chips">
+            <input type="radio" id="b1" name="anlass" checked><label for="b1">Wohnung kaufen</label>
+            <input type="radio" id="b2" name="anlass"><label for="b2">Wohnung mieten</label>
+            <input type="radio" id="b3" name="anlass"><label for="b3">Kapitalanlage</label>
+            <input type="radio" id="b4" name="anlass"><label for="b4">Verkaufen</label>
+            <input type="radio" id="b5" name="anlass"><label for="b5">Bewertung</label>
+          </div>
+        </div>
+        <div class="f-row">
+          <label class="f"><span>Ort oder PLZ</span><input class="inp" placeholder="{PLZ} {Stadt}, gern mehrere Ortsteile"></label>
+          <label class="f"><span>Zimmer und Fläche</span><input class="inp" placeholder="z. B. ab 3 Zimmer, ab 80 m²"></label>
+        </div>
+        <div class="f-row">
+          <label class="f"><span>Budget</span><input class="inp" placeholder="Kaufpreis oder Kaltmiete"></label>
+          <label class="f"><span>Bis wann</span><input class="inp" placeholder="z. B. Einzug bis {Monat}"></label>
+        </div>
+        <div class="f-row">
+          <label class="f"><span>Name</span><input class="inp" placeholder="Vor- und Nachname"></label>
+          <label class="f"><span>Telefon oder E-Mail</span><input class="inp" placeholder="Damit ich antworten kann"></label>
+        </div>
+        <label class="f"><span>Was ist Ihnen wichtig? (optional)</span><textarea class="ta" placeholder="Balkon, Aufzug, Stellplatz, Schulweg, Etage. Zwei Sätze genügen."></textarea></label>
+        <button class="pill pill-rot" type="submit">Anfrage senden <span class="arw">&#8599;</span></button>
+        <p class="small" style="margin-top:var(--s4)">Mit dem Absenden stimmen Sie zu, dass ich Ihre Angaben zur Bearbeitung Ihrer Anfrage verwende. Details in der Datenschutzerklärung.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="state" id="fragen">
+  <div class="wrap">
+    <div class="two-head" style="margin-bottom:var(--s6)">
+      <h2 class="d-up">Häufige Fragen</h2>
+      <p class="lead" style="align-self:end">Wenn Ihre Frage fehlt, rufen Sie an. Zehn Minuten kosten nichts.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>Was kostet mich die Suche?</summary><div class="a">Das Suchprofil und die Vorauswahl kosten nichts. Beim Kauf fällt eine Provision an, {Angabe} für die Käuferseite. Bei Mietwohnungen aus meinem Bestand zahlen Mieter nichts, weil das Mandat vom Vermieter kommt. {Von Andreas Klein bestätigen}</div></details>
+      <details><summary>Wie schnell habe ich passende Objekte?</summary><div class="a">Nach dem Gespräch bekommen Sie in der Regel innerhalb von {X} Tagen die erste Vorauswahl. Neue Objekte gehen zuerst an Suchprofile, oft bevor sie im Portal stehen.</div></details>
+      <details><summary>Welche Unterlagen brauche ich als Mietinteressent?</summary><div class="a">Selbstauskunft, Einkommensnachweise der letzten drei Monate, Bonitätsauskunft und die Mietschuldenfreiheitsbescheinigung. Ich sage Ihnen vor der Besichtigung, was der Vermieter tatsächlich sehen will, damit Sie nicht unnötig Daten herausgeben.</div></details>
+      <details><summary>Und beim Kauf, was brauche ich vorab?</summary><div class="a">Eine Finanzierungsbestätigung Ihrer Bank oder eine Machbarkeitsauskunft. Ohne die geht es bei ernsthaften Objekten nicht mehr. Wenn Sie noch keine haben, sage ich Ihnen, in welcher Reihenfolge Sie vorgehen.</div></details>
+      <details><summary>Prüfen Sie Zustand und Unterlagen der Wohnung?</summary><div class="a">Ja. Grundbuch, Teilungserklärung, Protokolle der Eigentümerversammlung, Instandhaltungsrücklage, Sanierungsstand. Das ist der Teil, den ein Portal nicht liefert und in dem die teuren Überraschungen stecken.</div></details>
+      <details><summary>Ich will verkaufen. Brauche ich zuerst ein Gutachten?</summary><div class="a">Nicht zwingend, aber es ist der ruhigere Weg. Sie kennen die Untergrenze, bevor der erste Interessent kommt, und können jede Zahl begründen. {Regelung zur Anrechnung bei Verkaufsauftrag bestätigen}</div></details>
+      <details><summary>In welchem Gebiet arbeiten Sie?</summary><div class="a">{Stadt}, {Landkreis} und die Nachbarorte {Orte}. Größere Entfernungen auf Anfrage.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="#top"><img src="bilder/logo-andreas-klein-immobilienbuero.webp" alt=""><b style="font-size:15px">Andreas Klein<span style="display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#93A3C6;font-weight:500">Sachverständigen- und Immobilienbüro</span></b></a>
+      <nav class="foot-nav">
+        <a href="#objekte">Objekte</a><a href="#suchprofil">Suchprofil</a><a href="#leistungen">Leistungen</a><a href="#bewertung">Bewertung</a><a href="#stimmen">Stimmen</a><a href="#fragen">Fragen</a>
+      </nav>
+      <a class="pill pill-white pill-sm" href="#anfrage" style="justify-self:end">Suchprofil anlegen <span class="arw">&#8599;</span></a>
+    </div>
+    <div class="foot-contact">
+      <a href="tel:{Telefon}">{Telefon}</a>
+      <a href="mailto:{E-Mail}">{E-Mail}</a>
+      <p class="small" style="color:#9AA0AC;margin-top:var(--s4)">{Straße und Hausnummer} · {PLZ} {Stadt} · {Öffnungszeiten}</p>
+    </div>
+    <div class="foot-cols">
+      <div><span class="lab">Suchen</span><a href="#objekte">Wohnung kaufen</a><br><a href="#objekte">Wohnung mieten</a><br><a href="#objekte">Kapitalanlage</a><br><a href="#suchprofil">Suchprofil anlegen</a></div>
+      <div><span class="lab">Besitzen</span><a href="#bewertung">Verkehrswertgutachten</a><br><a href="#bewertung">Kurzgutachten</a><br><a href="#bewertung">Verkauf mit Gutachten</a><br><a href="#bewertung">Mietwert und Ertragswert</a></div>
+      <div><span class="lab">Einzugsgebiet</span><span style="color:#9AA0AC">{Stadt}, {Landkreis}, {Nachbarort 1}, {Nachbarort 2}, {Nachbarort 3}</span></div>
+      <div><span class="lab">Rechtliches</span><a href="#">Impressum</a><br><a href="#">Datenschutz</a><br><a href="#">Widerrufsbelehrung</a></div>
+    </div>
+    <p class="foot-word">Andreas Klein</p>
+  </div>
+  <div class="wrap">
+    <div class="foot-legal">
+      <span>© 2026 Sachverständigen- und Immobilienbüro Andreas Klein</span>
+      <span class="serif-it" style="color:#B7BCC7">Entwurf B von LIKOVO, kostenlos und unverbindlich</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Burger: schliesst nach Klick auf einen Link und mit Escape. Ohne JS bleibt der Umschalter nutzbar. */
+(function(){
+  var t=document.getElementById('navtoggle'), p=document.getElementById('navpanel');
+  if(!t||!p) return;
+  p.addEventListener('click',function(e){ if(e.target.closest('a')) t.checked=false; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') t.checked=false; });
+})();
+</script>
+
+</body>
+</html>
