@@ -1,0 +1,23 @@
+# Entwurf zurueckgezogen: Der Kunde hat abgelehnt, die Seite ist nicht mehr oeffentlich.
+#
+# Diese Datei sperrt den gesamten Ordner /mozaik/ auf dem Server.
+# Sie ist noetig, weil die Deploy-Action mit "mirror -R" OHNE --delete arbeitet:
+# Dateien, die im Repo geloescht werden, bleiben auf dem Webspace liegen.
+# Ein Loeschen im Repo allein nimmt die Seite also nicht offline.
+#
+# Nach dem manuellen Loeschen des Ordners /mozaik/ per FTP kann auch diese
+# Datei aus dem Repo entfernt werden.
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+
+# Apache 2.2 und aelter
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
+
+# Kein Verzeichnislisting, falls die Sperre je gelockert wird
+Options -Indexes
