@@ -1,0 +1,16 @@
+# Entwurf am 2026-08-28 auf Kundenwunsch offline genommen.
+# Achtung: die Deploy-Action laeuft ohne --delete, sie kann Dateien auf dem
+# Webspace nicht entfernen. Diese Sperre riegelt das Verzeichnis deshalb ab.
+# Endgueltig entfernt wird der Ordner nur durch Loeschen per FTP.
+
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+</IfModule>
