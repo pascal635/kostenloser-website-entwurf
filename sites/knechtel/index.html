@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objekteinrichtung und Objektmöbel vom Hersteller | KNECHTEL Oyten</title>
+<meta name="description" content="Seit 1910: Beratung, Planung, Fertigung, Lieferung und Aufstellen für Gastronomie, Hotellerie, Klinik und Pflege. Showroom mit 2.000 m² in Oyten an der A1.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://knechtel.de/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Objekteinrichtung vom Hersteller, seit 1910 | KNECHTEL Oyten">
+<meta property="og:description" content="Sie beschreiben Ihren Betrieb. Wir richten ihn ein. Beratung, Planung, Fertigung, Lieferung und Aufstellen aus einer Hand.">
+<meta property="og:locale" content="de_DE">
+
+<link rel="preload" href="assets/fonts/Esphimere-Semi-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  /* ===== Fonts: Brand-Bestand der alten Seite, selbst gehostet ===== */
+  @font-face { font-family: 'Esphimere'; src: url('assets/fonts/Esphimere-Semi-Bold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Esphimere'; src: url('assets/fonts/Esphimere-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Roboto'; src: url('assets/fonts/Roboto-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+
+  /* ===== Tokens ===== */
+  :root {
+    --paper: #F5F1E8;
+    --paper-deep: #EDE7D9;
+    --ink: #221E19;
+    --ink-soft: rgba(34,30,25,.76);
+    --line: #D9D1C0;
+    --line-soft: rgba(34,30,25,.10);
+    --green: #2F4A3A;
+    --green-deep: #253B2E;
+    --sage: #C2CBAA;
+    --sand: #E8DDBF;
+    --terra: #B5451F;
+    --terra-deep: #9A3915;
+    --white: #FFFFFF;
+
+    --head: 'Esphimere', 'Helvetica Neue', Arial, sans-serif;
+    --body: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+    --content: 1680px;
+    --pad-x: clamp(20px, 4.5vw, 88px);
+    --sec-y: clamp(64px, 8vw, 150px);
+
+    --sh-bar: 0 -1px 0 rgba(34,30,25,.10), 0 -10px 28px rgba(34,30,25,.16);
+    --sh-head: 0 1px 0 rgba(34,30,25,.07), 0 8px 22px rgba(34,30,25,.09);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.62;
+  }
+  @media (max-width: 900px) { body { padding-bottom: 64px; } }
+
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+
+  /* Fullwidth: Flaechen und Bilder von Kante zu Kante, Text lesbar begrenzt */
+  .sheet { background: var(--paper); overflow: clip; }
+
+  /* Full-Bleed-Grid: Kinder landen in der Inhaltsspalte, .bleed nutzt die volle Breite */
+  .band {
+    display: grid;
+    grid-template-columns: 1fr min(var(--content), 100% - 2 * var(--pad-x)) 1fr;
+  }
+  .band > * { grid-column: 2; }
+  .band > .bleed { grid-column: 1 / -1; }
+
+  /* Typografie */
+  h1, h2, h3, h4 { font-family: var(--head); font-weight: 600; line-height: 1.05; letter-spacing: -0.015em; }
+  .kicker { font-size: 12.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+  .kicker-light { color: var(--sage); }
+  h2 { font-size: clamp(30px, 4.4vw, 50px); }
+  h3 { font-size: clamp(20px, 2.1vw, 25px); line-height: 1.22; }
+  .light { font-weight: 300; }
+  .lead { font-size: clamp(17px, 1.5vw, 20px); color: var(--ink-soft); max-width: 60ch; }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 100;
+    background: var(--ink); color: var(--paper); padding: 12px 20px;
+  }
+  .skip:focus { left: 12px; top: 12px; }
+
+  a:focus-visible, button:focus-visible, summary:focus-visible,
+  input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--terra); outline-offset: 3px;
+  }
+
+  /* ===== Buttons ===== */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    font-family: var(--body); font-size: 16px; text-decoration: none; text-align: center;
+    padding: 17px 30px; border: 1px solid transparent; border-radius: 2px; cursor: pointer;
+    transition: background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn .arr { transition: transform .18s ease; }
+  .btn:hover .arr { transform: translateX(4px); }
+  .btn-primary { background: var(--terra); color: var(--white); }
+  .btn-primary:hover { background: var(--terra-deep); }
+  .btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+  .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,.68); }
+  .btn-ghost:hover { background: rgba(255,255,255,.14); border-color: var(--white); }
+  .btn-sm { padding: 12px 22px; font-size: 15px; }
+
+  /* ===== Header ===== */
+  .site-head {
+    position: sticky; top: 0; z-index: 40;
+    background: var(--paper); border-bottom: 1px solid var(--line);
+    transition: box-shadow .2s ease;
+  }
+  .site-head.is-stuck { box-shadow: var(--sh-head); }
+  .head-in {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    max-width: var(--content); margin: 0 auto; padding: 16px var(--pad-x);
+  }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .brand img { height: 40px; width: auto; }
+  @media (max-width: 600px) { .brand img { height: 32px; } }
+  .nav { display: flex; align-items: center; gap: 30px; }
+  .nav a { font-size: 15.5px; text-decoration: none; padding: 4px 0; border-bottom: 1px solid transparent; }
+  .nav a:hover { border-bottom-color: var(--terra); }
+  .head-cta { display: inline-flex; }
+  @media (max-width: 1020px) { .nav { display: none; } }
+  @media (max-width: 900px) { .head-cta { display: none; } }
+  .head-tel { display: none; font-size: 15px; text-decoration: none; }
+  @media (max-width: 1020px) and (min-width: 901px) { .head-tel { display: inline; } }
+
+  /* ===== Hero ===== */
+  .hero { position: relative; isolation: isolate; }
+  .hero > img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(to top, rgba(18,22,16,.74) 0%, rgba(18,22,16,.44) 46%, rgba(18,22,16,.26) 100%),
+      linear-gradient(to right, rgba(18,22,16,.44) 0%, rgba(18,22,16,.18) 56%, rgba(18,22,16,0) 82%);
+  }
+  /* Auf schmalen Schirmen nimmt der Text mehr Bildflaeche ein, Schleier gleichmaessiger */
+  @media (max-width: 820px) {
+    .hero::after {
+      background:
+        linear-gradient(to top, rgba(18,22,16,.76) 0%, rgba(18,22,16,.56) 55%, rgba(18,22,16,.42) 100%);
+    }
+  }
+  .hero-in {
+    display: flex; flex-direction: column; justify-content: flex-end;
+    min-height: clamp(540px, 84vh, 880px);
+    max-width: var(--content); margin: 0 auto;
+    padding: clamp(48px, 7vw, 96px) var(--pad-x) clamp(44px, 5vw, 76px);
+    color: var(--white);
+  }
+  .hero .h1-kick {
+    display: block; font-family: var(--body); font-weight: 400;
+    font-size: 12.5px; letter-spacing: .15em; line-height: 1.5; text-transform: uppercase;
+    color: rgba(255,255,255,.86); margin-bottom: 20px;
+  }
+  .hero .h1-main { display: block; font-size: clamp(33px, 5.1vw, 66px); line-height: 1.06; }
+  .hero .h1-main .l2 { display: block; }
+  .hero-sub { font-size: clamp(17px, 1.7vw, 21px); max-width: 46ch; margin-top: 24px; color: rgba(255,255,255,.94); }
+  .hero-act { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin-top: 34px; }
+  .hero-note { font-size: 14px; color: rgba(255,255,255,.82); }
+  .hero-trust {
+    margin-top: clamp(34px, 5vw, 56px); padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,.28);
+    font-size: 12.5px; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.9);
+    max-width: 58ch;
+  }
+
+  /* ===== Sektionen ===== */
+  .sec {
+    display: grid;
+    grid-template-columns: 1fr min(var(--content), 100% - 2 * var(--pad-x)) 1fr;
+    padding: var(--sec-y) 0; border-top: 1px solid var(--line);
+  }
+  .sec > * { grid-column: 2; }
+  .sec > .bleed { grid-column: 1 / -1; }
+  .sec-tight { padding-bottom: clamp(32px, 4vw, 54px); }
+  .sec-flush { padding: 0; }
+  .sec-deep { background: var(--paper-deep); }
+  .sec-green { background: var(--green); color: var(--paper); border-top: none; }
+  .sec-head { max-width: 62ch; }
+  .sec-head h2 + .lead { margin-top: 20px; }
+
+  /* Editorial 2-Spalten */
+  .editorial { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(24px, 4vw, 64px); align-items: start; }
+  @media (max-width: 860px) { .editorial { grid-template-columns: 1fr; } }
+  .editorial p + p { margin-top: 14px; }
+  .editorial .col-text { font-size: clamp(17px, 1.4vw, 19px); color: var(--ink-soft); max-width: 56ch; }
+
+  /* ===== 5 Schritte ===== */
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); margin-top: clamp(40px, 5vw, 64px); }
+  @media (max-width: 1000px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+  .step { padding: 32px 26px 38px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .step:last-child { border-right: none; }
+  @media (max-width: 1000px) { .step:nth-child(2n) { border-right: none; } .step:last-child { border-right: none; } }
+  @media (max-width: 560px) { .step { border-right: none; } }
+  .step .n { font-family: var(--head); font-weight: 300; font-size: 60px; line-height: .9; color: var(--terra); display: block; margin-bottom: 18px; }
+  .step p { font-size: 15.5px; color: var(--ink-soft); margin-top: 8px; }
+
+  .step-band { margin-top: clamp(44px, 5vw, 72px); }
+  .step-band figure { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .step-band img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+  .figcap {
+    font-size: 13.5px; color: var(--ink-soft); background: var(--paper);
+    padding: 12px var(--pad-x); border-top: 1px solid var(--line);
+    max-width: var(--content); margin: 0 auto;
+  }
+
+  /* ===== Betriebstyp-Kacheln ===== */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  @media (max-width: 1100px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } }
+  .tile {
+    display: block; text-decoration: none; background: var(--paper);
+    border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .tiles > .tile:nth-child(4n) { border-right: none; }
+  @media (max-width: 1100px) { .tiles > .tile { border-right: 1px solid var(--line); } .tiles > .tile:nth-child(3n) { border-right: none; } }
+  @media (max-width: 820px) { .tiles > .tile { border-right: 1px solid var(--line); } .tiles > .tile:nth-child(2n) { border-right: none; } }
+  @media (max-width: 520px) { .tiles > .tile { border-right: none; } }
+  .tile figure { overflow: hidden; aspect-ratio: 4 / 3; background: var(--paper-deep); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+  .tile:hover img { transform: scale(1.035); }
+  .tile-body { padding: 20px 22px 26px; border-top: 1px solid var(--line); transition: background .18s ease; }
+  .tile:hover .tile-body { background: var(--paper-deep); }
+  .tile h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 21px; }
+  .tile h3 .arr { color: var(--terra); font-size: 18px; transition: transform .18s ease; }
+  .tile:hover h3 .arr { transform: translateX(4px); }
+  .tile p { font-size: 15px; color: var(--ink-soft); margin-top: 8px; line-height: 1.5; }
+  .tile-last { grid-column: span 1; }
+
+  /* ===== Projekte ===== */
+  .projects { display: grid; grid-template-columns: 8fr 4fr; gap: clamp(16px, 2vw, 28px); margin-top: clamp(36px, 4vw, 56px); align-items: start; }
+  @media (max-width: 900px) { .projects { grid-template-columns: 1fr; } }
+  .proj { border: 1px solid var(--line); background: var(--paper); }
+  .proj figure { overflow: hidden; }
+  .proj-big figure { aspect-ratio: 3 / 2; }
+  .proj img { width: 100%; height: 100%; object-fit: cover; }
+  .proj-line {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    padding: 15px 20px; border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .proj-line strong { font-family: var(--head); font-weight: 600; color: var(--ink); font-size: 15px; }
+  .proj-line .sep { margin: 0 10px; color: var(--line); }
+  .proj-side { display: grid; gap: clamp(16px, 2vw, 28px); align-content: start; }
+  .proj-side figure { aspect-ratio: 3 / 2; }
+  .draft-note {
+    margin-top: 22px; padding: 14px 18px; border: 1px dashed var(--line);
+    font-size: 13.5px; color: var(--ink-soft); background: var(--paper-deep);
+  }
+
+  /* ===== Individuelle Fertigung ===== */
+  .split { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; border-top: 1px solid var(--line); }
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+  .split-text { padding: clamp(40px, 6vw, 96px) clamp(24px, 5vw, 96px); background: var(--sand); display: flex; flex-direction: column; justify-content: center; }
+  .split-text > * { max-width: 46ch; }
+  .split-text .kicker { color: var(--terra); }
+  .split-text p { color: rgba(34,30,25,.82); margin-top: 18px; max-width: 44ch; }
+  .pull {
+    font-family: var(--head); font-weight: 300; font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.24; margin-top: 30px; padding-top: 26px;
+    border-top: 1px solid rgba(34,30,25,.20); max-width: 30ch; color: var(--ink);
+  }
+  .split-img { position: relative; min-height: 340px; border-left: 1px solid var(--line); }
+  @media (max-width: 900px) { .split-img { border-left: none; border-top: 1px solid var(--line); } }
+  .split-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .split-img figcaption {
+    position: absolute; left: 0; bottom: 0; z-index: 2;
+    background: var(--paper); border-top: 1px solid var(--line); border-right: 1px solid var(--line);
+    padding: 9px 16px; font-size: 12.5px; color: var(--ink-soft);
+  }
+
+  /* ===== Showroom-Banner ===== */
+  .showroom {
+    background: var(--green); color: var(--paper);
+    display: grid; grid-template-columns: 1fr min(var(--content), 100% - 2 * var(--pad-x)) 1fr;
+    padding: clamp(56px, 7vw, 124px) 0;
+  }
+  .showroom > * { grid-column: 2; }
+  .showroom h2 { max-width: 26ch; font-size: clamp(30px, 4.8vw, 56px); }
+  .showroom h2 .light { color: var(--sage); }
+  .show-grid { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 5vw, 72px); margin-top: clamp(36px, 4vw, 52px); align-items: start; }
+  @media (max-width: 900px) { .show-grid { grid-template-columns: 1fr; } }
+  .show-facts { list-style: none; border-top: 1px solid rgba(245,241,232,.26); }
+  .show-facts li {
+    padding: 18px 0; border-bottom: 1px solid rgba(245,241,232,.26);
+    display: flex; gap: 16px; align-items: baseline; color: rgba(245,241,232,.92); font-size: 16.5px;
+  }
+  .show-facts li b { font-family: var(--head); font-weight: 600; color: var(--paper); white-space: nowrap; }
+  .show-side p { color: rgba(245,241,232,.86); font-size: 16px; }
+  .show-act { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+  /* ===== Zahlen-Leiste ===== */
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  @media (max-width: 820px) { .facts { grid-template-columns: repeat(2, 1fr); } }
+  .fact { padding: 30px 24px 34px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  @media (max-width: 820px) { .fact:nth-child(2n) { border-right: none; } }
+  .fact .v { font-family: var(--head); font-weight: 600; font-size: clamp(34px, 3.6vw, 46px); line-height: 1.02; display: block; }
+  .fact .l { font-size: 14px; color: var(--ink-soft); margin-top: 8px; display: block; }
+
+  .whys { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: clamp(40px, 5vw, 60px); border-top: 1px solid var(--line); }
+  @media (max-width: 760px) { .whys { grid-template-columns: 1fr; } }
+  .why { padding: 30px 30px 34px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .why:nth-child(2n) { border-right: none; }
+  @media (max-width: 760px) { .why { border-right: none; } }
+  .why p { font-size: 15.5px; color: var(--ink-soft); margin-top: 8px; }
+
+  /* ===== Stimmen ===== */
+  .voice { display: grid; grid-template-columns: 8fr 4fr; gap: clamp(28px, 4vw, 56px); align-items: start; margin-top: clamp(32px, 4vw, 48px); }
+  @media (max-width: 900px) { .voice { grid-template-columns: 1fr; } }
+  .quote { background: var(--sand); border: 1px solid var(--line); padding: clamp(32px, 4vw, 52px); }
+  .quote .mark { font-family: var(--head); font-weight: 600; font-size: 86px; line-height: .7; color: var(--terra); display: block; margin-bottom: 6px; }
+  .quote blockquote { font-family: var(--head); font-weight: 300; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.32; }
+  .quote figcaption { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(34,30,25,.20); font-size: 14.5px; color: rgba(34,30,25,.80); }
+  .quote figcaption b { font-family: var(--head); font-weight: 600; color: var(--ink); font-size: 15.5px; }
+  .rating { border: 1px solid var(--line); padding: 26px 24px; }
+  .rating .v { font-family: var(--head); font-weight: 600; font-size: 42px; line-height: 1; }
+  .rating .stars { color: var(--terra); letter-spacing: .12em; margin-top: 8px; font-size: 15px; }
+  .rating p { font-size: 14px; color: var(--ink-soft); margin-top: 12px; }
+
+  /* ===== FAQ ===== */
+  .faq { border-top: 1px solid var(--line); margin-top: clamp(32px, 4vw, 48px); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer; display: flex; gap: 20px; align-items: center; justify-content: space-between;
+    padding: 22px 0; font-family: var(--head); font-weight: 600; font-size: clamp(17.5px, 1.7vw, 21px); line-height: 1.3;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:hover { color: var(--terra); }
+  .faq .pm { flex: 0 0 auto; font-family: var(--head); font-weight: 300; font-size: 30px; line-height: 1; color: var(--terra); }
+  .faq details[open] .pm .plus { display: none; }
+  .faq details:not([open]) .pm .minus { display: none; }
+  .faq .answer { padding: 0 0 26px; max-width: 74ch; color: var(--ink-soft); }
+  .faq .answer .todo { color: var(--terra); }
+
+  /* ===== Kontakt / Formular ===== */
+  .contact { display: grid; grid-template-columns: 6fr 6fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+  @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } }
+  .contact-aside .nap { margin-top: 28px; border-top: 1px solid var(--line); }
+  .contact-aside .nap div { padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+  .contact-aside .nap b { font-family: var(--head); font-weight: 600; display: block; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+  .contact-aside .nap a { text-decoration: none; border-bottom: 1px solid var(--terra); }
+
+  form { border: 1px solid var(--line); background: var(--paper-deep); padding: clamp(24px, 3.4vw, 40px); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 620px) { .row { grid-template-columns: 1fr; } }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 13.5px; letter-spacing: .05em; margin-bottom: 7px; }
+  .field input, .field select, .field textarea {
+    width: 100%; font-family: var(--body); font-size: 16px; color: var(--ink);
+    padding: 14px 15px; background: var(--white); border: 1px solid var(--line); border-radius: 2px;
+  }
+  .field textarea { resize: vertical; min-height: 96px; }
+  form .btn { width: 100%; margin-top: 6px; }
+  .trust { font-size: 13.5px; color: var(--ink-soft); margin-top: 14px; }
+  .form-msg { display: none; margin-top: 16px; padding: 14px 16px; border: 1px solid var(--terra); background: var(--paper); font-size: 14.5px; }
+  .form-msg.is-on { display: block; }
+
+  /* ===== Footer ===== */
+  .foot {
+    border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 1fr min(var(--content), 100% - 2 * var(--pad-x)) 1fr;
+  }
+  .foot > * { grid-column: 2; }
+  .foot > .bleed { grid-column: 1 / -1; }
+  .foot-mark {
+    font-family: var(--head); font-weight: 600; letter-spacing: -0.025em; line-height: .86;
+    font-size: clamp(52px, 12.4vw, 220px); padding: clamp(40px, 5vw, 76px) 0 clamp(16px, 2vw, 24px);
+  }
+  .foot-claim { font-family: var(--head); font-weight: 300; font-size: clamp(15px, 1.5vw, 20px); color: var(--ink-soft); padding: 0 0 clamp(32px, 4vw, 56px); }
+  .foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+  @media (max-width: 820px) { .foot-cols { grid-template-columns: 1fr; } }
+  .foot-col { padding: 28px clamp(20px, 3vw, 44px) 34px; border-right: 1px solid var(--line); font-size: 15.5px; color: var(--ink-soft); }
+  .foot-col:first-child { padding-left: 0; }
+  .foot-col:last-child { border-right: none; }
+  @media (max-width: 820px) { .foot-col { border-right: none; border-bottom: 1px solid var(--line); } }
+  .foot-col b { font-family: var(--head); font-weight: 600; color: var(--ink); display: block; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+  .foot-col ul { list-style: none; }
+  .foot-col li { padding: 4px 0; }
+  .foot-col a { text-decoration: none; }
+  .foot-col a:hover { color: var(--terra); }
+  .foot-end {
+    background: var(--ink); color: rgba(245,241,232,.74); font-size: 13px;
+    display: grid; grid-template-columns: 1fr min(var(--content), 100% - 2 * var(--pad-x)) 1fr;
+    padding: 16px 0;
+  }
+  .foot-end-in { grid-column: 2; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+  .foot-end a { text-decoration: none; }
+  .foot-end a:hover { color: var(--paper); }
+
+  /* ===== Mobile CTA-Leiste ===== */
+  .mbar { display: none; }
+  @media (max-width: 900px) {
+    .mbar {
+      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      background: var(--paper); box-shadow: var(--sh-bar);
+    }
+    .mbar a { flex: 1; text-align: center; padding: 16px 8px; font-size: 15.5px; text-decoration: none; }
+    .mbar .tel { color: var(--ink); border-top: 1px solid var(--line); }
+    .mbar .cta { background: var(--terra); color: var(--white); flex: 1.35; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="sheet">
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-head" id="siteHead">
+    <div class="head-in">
+      <a class="brand" href="#" aria-label="OTTO KNECHTEL Möbel-Collektionen, zur Startseite">
+        <img src="assets/img/knechtel-logo.png" alt="OTTO KNECHTEL Möbel-Collektionen" width="500" height="130">
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="#betriebe">Betriebe</a>
+        <a href="#ablauf">So arbeiten wir</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#showroom">Showroom</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="head-tel" href="tel:+49420791540">04207 9154-0</a>
+      <a class="btn btn-primary btn-sm head-cta" href="#kontakt">Showroom-Termin</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero">
+      <img src="assets/img/gastronomieeinrichtung-restaurant-hero-1920.webp"
+           srcset="assets/img/gastronomieeinrichtung-restaurant-hero-800.webp 800w,
+                   assets/img/gastronomieeinrichtung-restaurant-hero-1280.webp 1280w,
+                   assets/img/gastronomieeinrichtung-restaurant-hero-1920.webp 1920w,
+                   assets/img/gastronomieeinrichtung-restaurant-hero-2112.webp 2112w"
+           sizes="100vw" width="2112" height="1400" fetchpriority="high" decoding="async"
+           alt="Von Knechtel eingerichteter Gastraum mit grünen Polstersesseln, Eichentischen und schwarzer Regalwand">
+      <div class="hero-in">
+        <h1>
+          <span class="h1-kick">Objekteinrichtung vom Spezialisten, seit 1910 in Oyten</span>
+          <span class="h1-main">Sie beschreiben Ihren Betrieb.<span class="light l2">Wir richten ihn ein.</span></span>
+        </h1>
+        <p class="hero-sub">Beratung, Planung, Fertigung, Lieferung und Aufstellen: alles aus einer Hand. Für Räume, in denen Gäste gern sitzen und Betreiber ruhig schlafen.</p>
+        <div class="hero-act">
+          <a class="btn btn-primary" href="#kontakt">Termin im Showroom vereinbaren <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <span class="hero-note">Unverbindlich und kostenlos. An der A1 in Oyten.</span>
+        </div>
+        <p class="hero-trust">Einrichtungspartner für Gastronomie, Hotellerie, Kliniken und öffentliche Einrichtungen</p>
+      </div>
+    </section>
+
+    <!-- ======================= DIE SITUATION ======================= -->
+    <section class="sec">
+      <div class="editorial">
+        <h2>Einrichtung ist ein Projekt, kein Einkauf.</h2>
+        <div class="col-text">
+          <p>Wer einen Betrieb einrichtet, entscheidet hunderte Details: Maße, Stoffe, Brandschutz, Liefertermin. Und das neben Umbau, Personal und Tagesgeschäft, ohne Möbelfachmann zu sein.</p>
+          <p>Genau dafür gibt es Knechtel: Sie sagen uns, was Sie vorhaben. Den Rest übernehmen wir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 5 SCHRITTE ======================= -->
+    <section class="sec sec-deep" id="ablauf">
+      <div class="sec-head">
+        <p class="kicker">So arbeiten wir</p>
+        <h2>Von der ersten Frage bis zum fertig eingerichteten Raum</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <h3>Beratung</h3>
+          <p>Wir hören zu: Ihr Konzept, Ihre Gäste, Ihre Abläufe. Im Showroom in Oyten oder bei Ihnen im Betrieb.</p>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <h3>Planung</h3>
+          <p>Bestuhlungsplan, Grundriss, Platzaufteilung. Sie sehen vorher, wie Ihr Raum funktioniert, nicht erst nach der Lieferung.</p>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <h3>Individualisierung</h3>
+          <p>Über 80 Tischmodelle, über 3.000 Stoffe, jede Farbe, Sondermaße. Abgestimmt auf Nutzung, Reinigung und Ihr Konzept.</p>
+        </div>
+        <div class="step">
+          <span class="n">4</span>
+          <h3>Fertigung</h3>
+          <p>Objektmöbel für den gewerblichen Dauerbetrieb. Gebaut, um Jahre voller Gäste auszuhalten, nicht eine Saison.</p>
+        </div>
+        <div class="step">
+          <span class="n">5</span>
+          <h3>Lieferung und Aufstellen</h3>
+          <p>Wir liefern zum vereinbarten Termin und stellen alles auf. Sie schließen auf, es ist fertig.</p>
+        </div>
+      </div>
+
+      <div class="step-band bleed">
+        <figure>
+          <img src="assets/img/materialmuster-holz-stoff-2000.webp"
+               srcset="assets/img/materialmuster-holz-stoff-1400.webp 1400w, assets/img/materialmuster-holz-stoff-2000.webp 2000w"
+               sizes="(max-width: 1680px) 100vw, 1680px" width="2000" height="857" loading="lazy" decoding="async"
+               alt="Holzmuster in Eiche, Nussbaum und Schwarz neben gefalteten Stoffproben auf einer Werkbank">
+          <figcaption class="figcap">Gestaltungsbeispiel: Materialauswahl aus Holz, Stoff und Farbe.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ======================= BETRIEBSTYPEN ======================= -->
+    <section class="sec sec-tight" id="betriebe">
+      <div class="sec-head">
+        <p class="kicker">Für welche Betriebe</p>
+        <h2>Einrichtung für Gastronomie, Hotellerie, Pflege und öffentliche Einrichtungen</h2>
+        <p class="lead">Jeder Betrieb hat eigene Anforderungen. Wir kennen sie, weil wir sie seit Jahrzehnten einrichten.</p>
+      </div>
+    </section>
+
+    <div class="sec-flush">
+      <div class="tiles">
+        <a class="tile" href="#kontakt" data-bereich="Restaurant">
+          <figure><img src="assets/img/restaurant-bestuhlung-einrichtung-800.webp" srcset="assets/img/restaurant-bestuhlung-einrichtung-480.webp 480w, assets/img/restaurant-bestuhlung-einrichtung-800.webp 800w, assets/img/restaurant-bestuhlung-einrichtung-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Restaurant mit gepolsterten Stühlen und eingedeckten Tischen, eingerichtet von Knechtel"></figure>
+          <div class="tile-body">
+            <h3>Restaurant <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Robuste Bestuhlung, die zu Ihrem Konzept passt und pünktlich zur Eröffnung steht.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="Hotel">
+          <figure><img src="assets/img/hoteleinrichtung-gastbereich-800.webp" srcset="assets/img/hoteleinrichtung-gastbereich-480.webp 480w, assets/img/hoteleinrichtung-gastbereich-800.webp 800w, assets/img/hoteleinrichtung-gastbereich-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Gastbereich eines Hotels mit roter Lederbank und dunklen Holzstühlen"></figure>
+          <div class="tile-body">
+            <h3>Hotel <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Ein Look für Lobby, Restaurant und Bar: langlebig und in großen Stückzahlen einheitlich.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="Bistro / Café">
+          <figure><img src="assets/img/bistro-cafe-einrichtung-800.webp" srcset="assets/img/bistro-cafe-einrichtung-480.webp 480w, assets/img/bistro-cafe-einrichtung-800.webp 800w, assets/img/bistro-cafe-einrichtung-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Großes Café mit grünen Polstersesseln, Holztischen und raumhoher Fensterfront"></figure>
+          <div class="tile-body">
+            <h3>Bistro &amp; Café <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Viele Plätze auf kleiner Fläche, innen wie außen, einladend vom ersten Kaffee an.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="Club / Lounge">
+          <figure><img src="assets/img/club-lounge-einrichtung-800.webp" srcset="assets/img/club-lounge-einrichtung-480.webp 480w, assets/img/club-lounge-einrichtung-800.webp 800w, assets/img/club-lounge-einrichtung-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Loungebereich mit heller Polsterbestuhlung und dunklen Tischen"></figure>
+          <div class="tile-body">
+            <h3>Club &amp; Lounge <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Wirkung am Abend, mit Bezügen, die volle Nächte und verschüttete Getränke aushalten.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="Klinik / Pflege">
+          <figure><img src="assets/img/pflegeheim-einrichtung-sessel-800.webp" srcset="assets/img/pflegeheim-einrichtung-sessel-480.webp 480w, assets/img/pflegeheim-einrichtung-sessel-800.webp 800w, assets/img/pflegeheim-einrichtung-sessel-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Sitzecke in einer Pflegeeinrichtung mit Armlehnensesseln aus hellem Holz"></figure>
+          <div class="tile-body">
+            <h3>Klinik &amp; Pflege <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Desinfektionsmittelbeständige Bezüge, Aufstehhilfen, wohnlich statt klinisch.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="Verein / öffentlich">
+          <figure><img src="assets/img/vereinssaal-konferenzbestuhlung-800.webp" srcset="assets/img/vereinssaal-konferenzbestuhlung-480.webp 480w, assets/img/vereinssaal-konferenzbestuhlung-800.webp 800w, assets/img/vereinssaal-konferenzbestuhlung-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Saal mit Konferenzbestuhlung in Rost und Grau, Tische in U-Form gestellt"></figure>
+          <div class="tile-body">
+            <h3>Vereine &amp; öffentlich <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Stapelbar, platzsparend gelagert, robust für viele Hände. Mit Unterlagen, die Gremien überzeugen.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="Außenbereich">
+          <figure><img src="assets/img/aussengastronomie-terrasse-moebel-800.webp" srcset="assets/img/aussengastronomie-terrasse-moebel-480.webp 480w, assets/img/aussengastronomie-terrasse-moebel-800.webp 800w, assets/img/aussengastronomie-terrasse-moebel-1200.webp 1200w" sizes="(max-width: 520px) 100vw, (max-width: 820px) 50vw, (max-width: 1100px) 33vw, 25vw" width="1200" height="900" loading="lazy" decoding="async" alt="Außenterrasse mit wetterfesten Loungemöbeln und Polsterauflagen"></figure>
+          <div class="tile-body">
+            <h3>Außenbereich <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Wetterfest und UV-beständig, stapelbar. Auf Wunsch aus recyceltem Kunststoff.</p>
+          </div>
+        </a>
+        <a class="tile" href="#kontakt" data-bereich="">
+          <figure style="display:grid;place-items:center;background:var(--sage);aspect-ratio:4/3;">
+            <span style="font-family:var(--head);font-weight:300;font-size:clamp(26px,3vw,40px);line-height:1.15;text-align:center;padding:24px;color:var(--ink)">Ihr Betrieb ist nicht dabei?</span>
+          </figure>
+          <div class="tile-body">
+            <h3>Fragen Sie uns <span class="arr" aria-hidden="true">&rarr;</span></h3>
+            <p>Wir richten seit über 100 Jahren Räume ein. Sagen Sie uns, worum es geht.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ======================= PROJEKTE ======================= -->
+    <section class="sec" id="projekte">
+      <div class="sec-head">
+        <p class="kicker">Referenzen</p>
+        <h2>Das haben wir schon eingerichtet.</h2>
+        <p class="lead">Echte Projekte, echte Betriebe, echter Alltag. Kein Showroom-Foto ersetzt den Beweis, dass es bei anderen seit Jahren funktioniert.</p>
+      </div>
+
+      <div class="projects">
+        <div class="proj proj-big">
+          <figure>
+            <img src="assets/img/projekt-bistro-cafe-posthausen-1200.webp"
+                 srcset="assets/img/projekt-bistro-cafe-posthausen-700.webp 700w, assets/img/projekt-bistro-cafe-posthausen-1200.webp 1200w, assets/img/projekt-bistro-cafe-posthausen-1400.webp 1400w"
+                 sizes="(max-width: 900px) 100vw, 62vw" width="1400" height="933" loading="lazy" decoding="async"
+                 alt="Bestuhlung eines großen Cafés mit grünen Polstersesseln und hellen Holztischen">
+          </figure>
+          <div class="proj-line"><strong>[Kunde bestätigen]</strong><span class="sep">·</span>Bistro &amp; Café<span class="sep">·</span>Posthausen</div>
+        </div>
+        <div class="proj-side">
+          <div class="proj">
+            <figure>
+              <img src="assets/img/projekt-bar-lounge-1000.webp" srcset="assets/img/projekt-bar-lounge-700.webp 700w, assets/img/projekt-bar-lounge-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 30vw" width="1000" height="663" loading="lazy" decoding="async"
+                   alt="Bar und Lounge mit grünen Chesterfield-Sesseln und dunklem Tresen">
+            </figure>
+            <div class="proj-line"><strong>[Kunde bestätigen]</strong><span class="sep">·</span>Bar &amp; Lounge<span class="sep">·</span>[Ort]</div>
+          </div>
+          <div class="proj">
+            <figure>
+              <img src="assets/img/projekt-saal-konferenz-1000.webp" srcset="assets/img/projekt-saal-konferenz-700.webp 700w, assets/img/projekt-saal-konferenz-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 30vw" width="1000" height="663" loading="lazy" decoding="async"
+                   alt="Konferenzsaal mit Tischreihen und Polsterstühlen in Rost und Grau">
+            </figure>
+            <div class="proj-line"><strong>[Kunde bestätigen]</strong><span class="sep">·</span>Saal &amp; Konferenz<span class="sep">·</span>[Ort]</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="draft-note">Hinweis zum Entwurf: Die Kundennamen sind laut Briefing freigegeben und werden nach Bestätigung durch Knechtel eingesetzt, je Projekt mit Betriebstyp und Ort. Diese Zeile entfällt vor dem Livegang.</p>
+    </section>
+
+    <!-- ======================= INDIVIDUELLE FERTIGUNG ======================= -->
+    <div class="split">
+      <div class="split-text">
+        <p class="kicker">Individuelle Fertigung</p>
+        <h2>Über 3.000 Stoffe, jede Farbe, Sondermaße.</h2>
+        <p>Sie bekommen genau das, was Sie sich vorstellen, nicht das, was gerade im Lager liegt. Stoff, Farbe, Holzton und Maß entstehen für Ihren Raum und Ihre Nutzung: abwischbar für die Pflege, strapazierfähig für den Gastraum, wetterfest für die Terrasse.</p>
+        <p class="pull">Und weil man Stoffe nicht am Bildschirm fühlen kann, gibt es Oyten.</p>
+      </div>
+      <figure class="split-img">
+        <img src="assets/img/stoffauswahl-objektmoebel-1800.webp"
+             srcset="assets/img/stoffauswahl-objektmoebel-800.webp 800w, assets/img/stoffauswahl-objektmoebel-1400.webp 1400w, assets/img/stoffauswahl-objektmoebel-1800.webp 1800w"
+             sizes="(max-width: 900px) 100vw, 58vw" width="1800" height="1208" loading="lazy" decoding="async"
+             alt="Stoffbahnen und Musterbücher in Tannengrün, Terracotta und Sand an einer Holzwand">
+        <figcaption>Gestaltungsbeispiel: Stoffe und Farben nach Wahl</figcaption>
+      </figure>
+    </div>
+
+    <!-- ======================= SHOWROOM ======================= -->
+    <section class="showroom" id="showroom">
+      <p class="kicker kicker-light">Showroom Oyten, direkt an der A1</p>
+      <h2>3.000 Stoffe kann Ihnen keine Website zeigen. <span class="light">In unserem Showroom fassen Sie sie an.</span></h2>
+
+      <div class="show-grid">
+        <ul class="show-facts">
+          <li><b>2.000 m²</b> <span>Ausstellungsfläche in Oyten, Ende 2024 neu gestaltet <span style="color:var(--sage)">[bestätigen]</span></span></li>
+          <li><b>A1</b> <span>gut erreichbar aus Bremen, Hamburg, Hannover und dem gesamten Nordwesten</span></li>
+          <li><b>Vor Ort</b> <span>probesitzen, Stoffe und Materialien vergleichen, mit jemandem sprechen, der das täglich macht</span></li>
+        </ul>
+        <div class="show-side">
+          <p><b style="font-family:var(--head)">Was Sie mitbringen sollten:</b> Grundriss oder Maße, ein paar Fotos vom Raum, Ihre Vorstellung. Den Rest haben wir da.</p>
+          <div class="show-act">
+            <a class="btn btn-primary" href="#kontakt">Termin im Showroom vereinbaren <span class="arr" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=An+der+Autobahn+48-50,+28876+Oyten" target="_blank" rel="noopener">Anfahrt ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= WARUM KNECHTEL ======================= -->
+    <section class="sec">
+      <div class="sec-head">
+        <p class="kicker">Warum Knechtel</p>
+        <h2>Objektmöbel vom Hersteller, seit 1910.</h2>
+      </div>
+
+      <div class="facts" style="margin-top:clamp(36px,4vw,52px)">
+        <div class="fact"><span class="v">1910</span><span class="l">gegründet, bis heute familiengeführt</span></div>
+        <div class="fact"><span class="v">2.000 m²</span><span class="l">Ausstellung in Oyten an der A1</span></div>
+        <div class="fact"><span class="v">3.000+</span><span class="l">Stoffe zum Anfassen</span></div>
+        <div class="fact"><span class="v">80+</span><span class="l">Tischmodelle, Sondermaße möglich</span></div>
+      </div>
+
+      <div class="whys">
+        <div class="why">
+          <h3>Hersteller statt Händler</h3>
+          <p>Sie sprechen mit den Leuten, die Ihre Möbel verantworten, nicht mit einem Zwischenhändler.</p>
+        </div>
+        <div class="why">
+          <h3>Eigene Planung</h3>
+          <p>Bestuhlungsplan und Grundriss gehören bei uns zur Einrichtung dazu. <span style="color:var(--terra)">[Aufpreis-Aussage bestätigen]</span></p>
+        </div>
+        <div class="why">
+          <h3>Alles aus einer Hand</h3>
+          <p>Von der Beratung bis zum Aufstellen, auf Wunsch mit Zubehör: Garderobenständer, Transportwagen, Service-Stationen.</p>
+        </div>
+        <div class="why">
+          <h3>Auch in Jahren noch da</h3>
+          <p>Modelle, Stoffe und Farben bleiben dokumentiert, damit Sie nachbestellen können, statt neu zu mischen. <span style="color:var(--terra)">[Zusage bestätigen]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= STIMMEN ======================= -->
+    <section class="sec sec-deep">
+      <div class="sec-head">
+        <p class="kicker">Aus dem Showroom</p>
+        <h2>Erst zuhören, dann einrichten.</h2>
+      </div>
+
+      <div class="voice">
+        <figure class="quote">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <blockquote>Danke für den eindrucksvollen Vormittag, den herzlichen Empfang und die guten Ideen. Es war einfach toll. Wir kommen sehr gerne wieder und geben die Empfehlung für einen unverbindlichen Besuch weiter!</blockquote>
+          <figcaption><b>Heike Kampen, ProSenis</b><br>Betreiberin von 14 Senioren-Residenzen in Niedersachsen und Schleswig-Holstein</figcaption>
+        </figure>
+        <div>
+          <div class="rating">
+            <span class="v">5,0</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>Durchschnitt aus 9 Google-Bewertungen, Stand August 2026.</p>
+          </div>
+          <p class="draft-note" style="margin-top:18px">Platz für 1 bis 2 weitere echte Kundenstimmen mit Name und Betrieb. <span style="color:var(--terra)">[von Knechtel einholen]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= FAQ ======================= -->
+    <section class="sec">
+      <div class="sec-head">
+        <p class="kicker">Häufige Fragen</p>
+        <h2>Klartext zu Preisen, Terminen und Nachbestellung</h2>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Warum stehen auf dieser Website keine Preise? <span class="pm" aria-hidden="true"><span class="plus">+</span><span class="minus">&minus;</span></span></summary>
+          <div class="answer"><p>Weil kein Projekt dem anderen gleicht. Der Preis entsteht aus Modell, Stoff, Stückzahl und Maß, deshalb wäre jede Preisliste falsch. Nach dem ersten Gespräch erhalten Sie ein konkretes Angebot, und vorher eine ehrliche Einschätzung, ob sich der Weg für Ihr Vorhaben lohnt.</p></div>
+        </details>
+        <details>
+          <summary>Was kostet der Termin im Showroom? <span class="pm" aria-hidden="true"><span class="plus">+</span><span class="minus">&minus;</span></span></summary>
+          <div class="answer"><p>Nichts. Der Besuch in Oyten ist kostenlos und unverbindlich. Sie bekommen Beratung, Muster in die Hand und gute Ideen mit nach Hause, entscheiden können Sie später.</p></div>
+        </details>
+        <details>
+          <summary>Wie früh sollte ich die Einrichtung für eine Eröffnung planen? <span class="pm" aria-hidden="true"><span class="plus">+</span><span class="minus">&minus;</span></span></summary>
+          <div class="answer"><p>So früh wie möglich: Planung, Stoffwahl und Fertigung brauchen Vorlauf. Nennen Sie uns im ersten Gespräch Ihren Eröffnungstermin, wir planen rückwärts und nennen Ihnen einen verbindlichen Liefertermin. <span class="todo">[Typische Vorlaufzeit von Knechtel ergänzen]</span></p></div>
+        </details>
+        <details>
+          <summary>Kann ich Stühle und Tische später nachbestellen? <span class="pm" aria-hidden="true"><span class="plus">+</span><span class="minus">&minus;</span></span></summary>
+          <div class="answer"><p>Ja. Ihre Modelle, Stoffe und Farben bleiben bei uns dokumentiert. Wenn Sie in drei Jahren zehn Stühle mehr brauchen, bekommen Sie zehn passende Stühle, keinen Flickenteppich. <span class="todo">[Zusage von Knechtel bestätigen]</span></p></div>
+        </details>
+        <details>
+          <summary>Sind die Möbel für den gewerblichen Dauerbetrieb geeignet? <span class="pm" aria-hidden="true"><span class="plus">+</span><span class="minus">&minus;</span></span></summary>
+          <div class="answer"><p>Ja, wir liefern Objektmöbel für Gewerbenutzung, keine Wohnmöbel. Auf Wunsch mit Nachweisen zu Belastbarkeit und Brandschutz für Ihr Bauamt, Ihre Versicherung oder Ihren Träger. <span class="todo">[Vorliegende Normnachweise bestätigen, etwa DIN EN 16139 und DIN EN 1021-1/-2]</span></p></div>
+        </details>
+        <details>
+          <summary>Arbeiten Sie auch für Kliniken, Pflegeheime und öffentliche Träger? <span class="pm" aria-hidden="true"><span class="plus">+</span><span class="minus">&minus;</span></span></summary>
+          <div class="answer"><p>Ja. Desinfektionsmittelbeständige Bezüge, Aufstehhilfen und Brandschutzanforderungen gehören dort zum Standard, ebenso Unterlagen für Gremien und Vergabestellen. <span class="todo">[Umfang der Vergabe-Unterstützung bestätigen]</span></p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ======================= KONTAKT ======================= -->
+    <section class="sec sec-deep" id="kontakt">
+      <div class="contact">
+        <div class="contact-aside">
+          <p class="kicker">Termin vereinbaren</p>
+          <h2>Kommen Sie vorbei und sagen Sie uns, was Sie vorhaben.</h2>
+          <p class="lead" style="margin-top:20px">Den Rest planen wir gemeinsam: im Showroom in Oyten, mit Mustern auf dem Tisch statt Bildern am Bildschirm.</p>
+
+          <div class="nap">
+            <div><b>Adresse</b>OTTO KNECHTEL Möbel-Collektionen GmbH<br>An der Autobahn 48-50, 28876 Oyten</div>
+            <div><b>Telefon</b><a href="tel:+49420791540">04207 9154-0</a></div>
+            <div><b>E-Mail</b><a href="mailto:info@knechtel.de">info@knechtel.de</a></div>
+            <div><b>Öffnungszeiten Showroom</b><span style="color:var(--terra)">[von Knechtel bestätigen]</span></div>
+          </div>
+        </div>
+
+        <form id="terminForm" novalidate>
+          <div class="field">
+            <label for="f-name">Name*</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-betrieb">Betrieb / Einrichtung*</label>
+            <input id="f-betrieb" name="betrieb" type="text" autocomplete="organization" required>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="f-kontakt">E-Mail oder Telefon*</label>
+              <input id="f-kontakt" name="kontakt" type="text" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-bereich">Um welchen Bereich geht es?</label>
+              <select id="f-bereich" name="bereich">
+                <option value="">Bitte wählen</option>
+                <option>Restaurant</option>
+                <option>Hotel</option>
+                <option>Bistro / Café</option>
+                <option>Club / Lounge</option>
+                <option>Klinik / Pflege</option>
+                <option>Verein / öffentlich</option>
+                <option>Außenbereich</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-termin">Wunschtermin (optional)</label>
+            <input id="f-termin" name="termin" type="text" placeholder="z. B. übernächste Woche vormittags">
+          </div>
+          <div class="field">
+            <label for="f-text">Was haben Sie vor? (optional)</label>
+            <textarea id="f-text" name="text" rows="3"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Termin im Showroom vereinbaren <span class="arr" aria-hidden="true">&rarr;</span></button>
+          <p class="trust">Unverbindlich und kostenlos. Rückmeldung innerhalb <span style="color:var(--terra)">[eines Werktags, bestätigen]</span>. Ihre Daten nutzen wir nur zur Terminabstimmung, siehe Datenschutz.</p>
+          <p class="form-msg" id="formMsg" role="status">Entwurf: Im Livebetrieb geht Ihre Anfrage direkt an Knechtel in Oyten.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="foot">
+    <div class="foot-mark">KNECHTEL</div>
+    <p class="foot-claim">wenn&rsquo;s um Stühle geht, seit 1910</p>
+
+    <div class="foot-cols">
+      <div class="foot-col">
+        <b>Kontakt</b>
+        OTTO KNECHTEL<br>Möbel-Collektionen GmbH<br>
+        An der Autobahn 48-50<br>28876 Oyten<br><br>
+        <a href="tel:+49420791540">04207 9154-0</a><br>
+        <a href="mailto:info@knechtel.de">info@knechtel.de</a>
+      </div>
+      <div class="foot-col">
+        <b>Betriebe</b>
+        <ul>
+          <li><a href="#betriebe">Restaurant</a></li>
+          <li><a href="#betriebe">Hotel</a></li>
+          <li><a href="#betriebe">Bistro &amp; Café</a></li>
+          <li><a href="#betriebe">Club &amp; Lounge</a></li>
+          <li><a href="#betriebe">Klinik &amp; Pflege</a></li>
+          <li><a href="#betriebe">Vereine &amp; öffentliche Einrichtungen</a></li>
+          <li><a href="#betriebe">Außenbereich</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <b>Unternehmen</b>
+        <ul>
+          <li><a href="#ablauf">So arbeiten wir</a></li>
+          <li><a href="#projekte">Projekte</a></li>
+          <li><a href="#showroom">Showroom Oyten</a></li>
+          <li><a href="#kontakt">Kontakt &amp; Termin</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-end bleed">
+      <div class="foot-end-in">
+        <span>© 2026 OTTO KNECHTEL Möbel-Collektionen GmbH</span>
+        <span><a href="#">Impressum</a> &nbsp;·&nbsp; <a href="#">Datenschutz</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Mobile CTA-Leiste -->
+<nav class="mbar" aria-label="Schnellkontakt">
+  <a class="tel" href="tel:+49420791540">04207 9154-0</a>
+  <a class="cta" href="#kontakt">Showroom-Termin</a>
+</nav>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://knechtel.de/#organisation",
+      "name": "OTTO KNECHTEL Möbel-Collektionen GmbH",
+      "alternateName": "KNECHTEL",
+      "url": "https://knechtel.de/",
+      "logo": "https://knechtel.de/assets/img/knechtel-logo.png",
+      "foundingDate": "1910",
+      "description": "Hersteller von Objektmöbeln und Einrichtungspartner für Gastronomie, Hotellerie, Kliniken, Pflegeeinrichtungen und öffentliche Einrichtungen."
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://knechtel.de/#showroom",
+      "name": "OTTO KNECHTEL Möbel-Collektionen GmbH",
+      "parentOrganization": { "@id": "https://knechtel.de/#organisation" },
+      "url": "https://knechtel.de/",
+      "telephone": "+49 4207 9154-0",
+      "email": "info@knechtel.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "An der Autobahn 48-50",
+        "postalCode": "28876",
+        "addressLocality": "Oyten",
+        "addressRegion": "Niedersachsen",
+        "addressCountry": "DE"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 53.057548, "longitude": 9.04746 },
+      "areaServed": ["Bremen", "Hamburg", "Hannover", "Niedersachsen"],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "9" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Warum stehen auf dieser Website keine Preise?", "acceptedAnswer": { "@type": "Answer", "text": "Weil kein Projekt dem anderen gleicht. Der Preis entsteht aus Modell, Stoff, Stückzahl und Maß, deshalb wäre jede Preisliste falsch. Nach dem ersten Gespräch erhalten Sie ein konkretes Angebot." } },
+        { "@type": "Question", "name": "Was kostet der Termin im Showroom?", "acceptedAnswer": { "@type": "Answer", "text": "Nichts. Der Besuch im Showroom in Oyten ist kostenlos und unverbindlich. Sie bekommen Beratung und Muster in die Hand, entscheiden können Sie später." } },
+        { "@type": "Question", "name": "Kann ich Stühle und Tische später nachbestellen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Modelle, Stoffe und Farben bleiben bei Knechtel dokumentiert, damit auch Jahre später passend nachbestellt werden kann." } },
+        { "@type": "Question", "name": "Sind die Möbel für den gewerblichen Dauerbetrieb geeignet?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Knechtel liefert Objektmöbel für die gewerbliche Nutzung, auf Wunsch mit Nachweisen zu Belastbarkeit und Brandschutz." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+  // Sticky-Header: geschichtete Kante erst nach dem Scrollen
+  (function () {
+    var head = document.getElementById('siteHead');
+    var onScroll = function () {
+      if (window.scrollY > 12) { head.classList.add('is-stuck'); }
+      else { head.classList.remove('is-stuck'); }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Betriebstyp-Kacheln belegen die Formular-Auswahl vor
+  (function () {
+    var sel = document.getElementById('f-bereich');
+    document.querySelectorAll('.tile[data-bereich]').forEach(function (tile) {
+      tile.addEventListener('click', function () {
+        var v = tile.getAttribute('data-bereich');
+        if (!v || !sel) return;
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].text === v) { sel.selectedIndex = i; break; }
+        }
+      });
+    });
+  })();
+
+  // Formular: im Entwurf kein Versand, nur ehrliche Rückmeldung
+  (function () {
+    var form = document.getElementById('terminForm');
+    var msg = document.getElementById('formMsg');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.classList.add('is-on');
+      msg.focus && msg.focus();
+    });
+  })();
+</script>
+
+</body>
+</html>
