@@ -84,6 +84,9 @@ header.stuck{background:rgba(7,10,14,.85);backdrop-filter:blur(16px);border-bott
 .nav .pill:hover{border-color:var(--red);color:var(--text)}
 .nav .mark{display:flex;align-items:center;gap:10px;justify-self:center}
 .nav .mark img{height:26px;width:auto}
+.brand{display:flex;align-items:center}
+.brand img{height:44px;width:auto;display:block}
+@media(max-width:820px){.brand img{height:34px}}
 @media(max-width:1080px){.nav .side .pill:nth-child(n+3){display:none}}
 @media(max-width:820px){.nav{grid-template-columns:auto 1fr auto}.nav .side.left{display:none}.nav .mark{justify-self:start}}
 .burger{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:none;color:#fff;display:none;place-items:center}

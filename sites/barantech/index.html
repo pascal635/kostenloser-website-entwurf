@@ -47,6 +47,7 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s5)}
 h1,h2,h3,h4,h5{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;margin:0;font-stretch:118%}
 p{margin:0 0 var(--s4)}
+.i{width:1em;height:1em;fill:currentColor;flex:none;display:block}
 .mono{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
 section[id]{scroll-margin-top:92px}
 
@@ -80,26 +81,27 @@ section[id]{scroll-margin-top:92px}
 .btn-o:hover{border-color:var(--red);background:rgba(214,18,28,.12)}
 .btn-g{border-color:var(--line-2);color:var(--dim)}
 .btn-g:hover{border-color:var(--text);color:var(--text)}
-.btn svg{width:14px;height:14px;flex:none}
+.btn .i{font-size:15px}
 
 /* header */
 header{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:background .3s var(--ease),border-color .3s var(--ease),backdrop-filter .3s var(--ease)}
 header.stuck{background:rgba(7,10,14,.85);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
-.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s5);padding:16px 0}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s5);padding:12px 0}
 .nav .side{display:flex;gap:10px;align-items:center}
 .nav .side.right{justify-content:flex-end}
 .nav .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:var(--pill);
  padding:8px 15px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
  transition:border-color .2s var(--ease),color .2s var(--ease)}
-.nav .pill::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);opacity:.8}
+.nav .pill .i{font-size:14px;color:var(--red);transition:color .2s var(--ease)}
+.nav .pill:hover .i{color:var(--red-hot)}
 .nav .pill:hover{border-color:var(--red);color:var(--text)}
 .nav .mark{display:flex;align-items:center;gap:10px;justify-self:center}
-.nav .mark img{height:36px;width:auto}
+.nav .mark img{height:54px;width:auto;display:block}
 @media(max-width:1080px){.nav .side .pill:nth-child(n+3){display:none}}
 @media(max-width:820px){.nav{grid-template-columns:auto 1fr auto}.nav .side.left{display:none}.nav .mark{justify-self:start}}
-.burger{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:none;color:#fff;display:none;place-items:center}
-@media(max-width:820px){.burger{display:grid}.nav .side.right .btn{display:none}}
-#mnav{display:none;position:fixed;inset:70px 0 auto;z-index:49;background:rgba(7,10,14,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:var(--s5) 0}
+.burger{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:none;color:#fff;display:none;place-items:center;font-size:19px}
+@media(max-width:820px){.nav .mark img{height:42px}.burger{display:grid}.nav .side.right .btn{display:none}}
+#mnav{display:none;position:fixed;inset:74px 0 auto;z-index:49;background:rgba(7,10,14,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:var(--s5) 0}
 #mnav.open{display:block}
 #mnav a{display:block;padding:14px 0;font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:22px;border-bottom:1px solid var(--line)}
 #mnav a:last-child{border-bottom:none}
@@ -139,8 +141,9 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--red-hot);outline-o
 .pillars .p{padding:var(--s7) var(--s5);border-right:1px solid var(--line);text-align:center}
 .pillars .p:last-child{border-right:none}
 @media(max-width:860px){.pillars .p:nth-child(2n){border-right:none}.pillars .p:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-.pillars .ic{width:42px;height:42px;margin:0 auto var(--s4);border-radius:50%;border:1px solid rgba(214,18,28,.4);display:grid;place-items:center;background:rgba(214,18,28,.08)}
-.pillars .ic svg{width:19px;height:19px;color:var(--red-hot)}
+.pillars .ic{width:70px;height:70px;margin:0 auto var(--s4);border-radius:50%;border:1px solid rgba(255,59,46,.55);display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,rgba(214,18,28,.30),rgba(214,18,28,.10) 70%);box-shadow:0 0 0 6px rgba(214,18,28,.05),inset 0 1px 0 rgba(255,255,255,.06)}
+.pillars .ic .i{font-size:42px;color:var(--text)}
+.pillars .p:hover .ic .i{color:var(--red-hot)}
 .pillars h3{font-size:14px;letter-spacing:.02em;margin-bottom:8px}
 .pillars p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0;line-height:1.7}
 
@@ -165,7 +168,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--red-hot);outline-o
 .frow{display:flex;gap:var(--s4);padding:var(--s5) 0;border-top:1px solid var(--line)}
 .frow:first-of-type{margin-top:var(--s5)}
 .frow .fi{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:rgba(214,18,28,.1);border:1px solid rgba(214,18,28,.3);flex:none}
-.frow .fi svg{width:16px;height:16px;color:var(--red-hot)}
+.frow .fi .i{font-size:17px;color:var(--red-hot)}
 .frow b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
 .frow p{margin:0;color:var(--dim);font-size:14px;line-height:1.6}
 
@@ -188,7 +191,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--red-hot);outline-o
 .pathbar p{color:var(--dim);font-size:15px;margin:0;max-width:60ch}
 .pathbar .arrow{width:48px;height:48px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;flex:none;transition:border-color .25s var(--ease),transform .25s var(--ease)}
 .pathbar:hover .arrow{border-color:var(--red);transform:translateX(4px)}
-.pathbar .arrow svg{width:17px;height:17px}
+.pathbar .arrow .i{font-size:18px}
 @media(max-width:700px){.pathbar{grid-template-columns:1fr;gap:var(--s4)}.pathbar .arrow{display:none}}
 
 /* timeline */
@@ -242,7 +245,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--red-hot);outline-o
 .contact .info{padding:var(--s7);background:var(--panel)}
 .contact .info p{color:var(--dim);font-size:15px}
 .contact .info .row{display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
-.contact .info .row svg{width:17px;height:17px;color:var(--red);flex:none}
+.contact .info .row .i{font-size:17px;color:var(--red);margin-top:2px}
 .contact .form{padding:var(--s7);background:var(--ink-2)}
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
 @media(max-width:560px){.fg{grid-template-columns:1fr}}
@@ -254,16 +257,16 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--red-hot);outline-o
 .f input::placeholder,.f textarea::placeholder{color:#5b6570}
 .f input:hover,.f select:hover,.f textarea:hover{border-color:var(--line-2)}
 .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--red);background:rgba(214,18,28,.06)}
-.f select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2398A1AD' stroke-width='1.6'><path d='M1 1l5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 15px center}
+.f select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2398A1AD'><path d='M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-6-6a1 1 0 1 1 1.414-1.414L12 13.586l5.293-5.293Z'/></svg>");background-repeat:no-repeat;background-position:right 15px center}
 .chk{display:flex;gap:11px;align-items:flex-start;font-size:13px;color:var(--dim);grid-column:1/-1}
 .chk input{width:18px;height:18px;accent-color:var(--red);margin-top:2px;flex:none}
 
 /* footer */
 footer{border-top:1px solid var(--line);background:var(--ink);position:relative;overflow:hidden}
 .foot-mark{padding:var(--s9) 0 var(--s7);text-align:center;position:relative}
-.foot-mark .big{font-family:var(--disp);font-weight:800;letter-spacing:-.05em;line-height:.82;font-size:clamp(48px,14vw,200px);
- background:linear-gradient(180deg,#fff 25%,#5c646f);-webkit-background-clip:text;background-clip:text;color:transparent}
-.foot-mark .tag{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);margin-top:var(--s4)}
+.foot-mark .big{display:block;width:min(58%,560px);height:auto;margin:0 auto}
+@media(max-width:700px){.foot-mark .big{width:min(80%,420px)}}
+.foot-mark .tag{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);margin-top:var(--s5)}
 .foot-cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:var(--s6);padding:var(--s7) 0;border-top:1px solid var(--line)}
 @media(max-width:900px){.foot-cols{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.foot-cols{grid-template-columns:1fr}}
@@ -275,8 +278,9 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
 .xs-note{font-size:12px;line-height:1.65;color:var(--mute);max-width:82ch;margin:0 0 10px}
 .xs-note:first-of-type{padding-top:var(--s5)}
 
-.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:55;display:none;gap:10px}
-.sticky-cta .btn{flex:1;justify-content:center}
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:55;display:none;gap:8px}
+.sticky-cta .btn{flex:1 1 0;min-width:0;justify-content:center;padding:14px 10px;gap:8px;font-size:11px;letter-spacing:.10em;white-space:nowrap}
+.sticky-cta .btn-g{background:rgba(11,15,21,.92);backdrop-filter:blur(8px);color:var(--text)}
 @media(max-width:640px){.sticky-cta{display:flex}body{padding-bottom:78px}}
 
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -285,20 +289,21 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
 </style>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-turbine" viewBox="0 0 64 64"><path d="m59,4h-2c-1.1,0-2,.9-2,2h-25c-13.79,0-25,11.21-25,25v25c-1.1,0-2,.9-2,2v2c0,1.1.9,2,2,2h10c1.1,0,2-.9,2-2v-2c0-1.1-.9-2-2-2v-5.01c4.18,3.15,9.38,5.01,15,5.01,13.79,0,25-11.21,25-25,0-5.44-1.76-10.69-5.01-15h5.01c0,1.1.9,2,2,2h2c1.1,0,2-.9,2-2V6c0-1.1-.9-2-2-2ZM15,60H5s0-2,0-2h10v2Zm-2-4h-6v-15.21c1.39,3.25,3.45,6.14,6,8.51v6.69ZM30,14c-9.37,0-17,7.63-17,17s7.63,17,17,17,17-7.63,17-17c0-6.49-3.66-12.14-9.02-15h9.42c3.6,4.17,5.59,9.48,5.59,15,0,12.68-10.32,23-23,23S7,43.68,7,31,17.32,8,30,8h25v6h-25Zm0,2c8.27,0,15,6.73,15,15s-6.73,15-15,15-15-6.73-15-15,6.73-15,15-15Zm27,0V6h2v10s-2,0-2,0Zm-33.38,21.34s0,.02.01.02.02,0,.02.01c1.63,1.62,3.87,2.62,6.34,2.62,4.96,0,9-4.04,9-9s-4.04-9-9-9c-2.47,0-4.71,1-6.34,2.62,0,0-.02,0-.02.01s0,.02-.01.02c-1.62,1.63-2.62,3.87-2.62,6.34s1,4.71,2.62,6.34Zm.78-10.53l3.18,3.18h-4.51c.17-1.18.64-2.27,1.32-3.18Zm12.52,3.18h-4.51l3.18-3.18c.69.92,1.15,2,1.32,3.18Zm-1.32,5.18l-3.18-3.18h4.51c-.17,1.18-.64,2.27-1.32,3.18Zm-6.6,2.74c-1.18-.17-2.27-.64-3.18-1.32l3.18-3.18v4.51Zm2-4.51l3.18,3.18c-.92.69-2,1.15-3.18,1.32v-4.51Zm0-4.83v-4.51c1.18.17,2.27.64,3.18,1.32l-3.18,3.18Zm-2,0l-3.18-3.18c.92-.69,2-1.15,3.18-1.32v4.51Zm-1.41,3.41l-3.18,3.18c-.69-.92-1.15-2-1.32-3.18h4.51Z"/></symbol><symbol id="i-gear" viewBox="0 0 64 64"><path d="m50,21h-22v-4h.16c1.55,0,2.86-1.21,2.99-2.75l.19-2.25h2.66c1.1,0,2-.9,2-2v-2c0-1.1-.9-2-2-2h-2.19c0-.75-.27-1.48-.78-2.03-.57-.62-1.37-.97-2.21-.97h-7.65c-.84,0-1.64.35-2.21.97-.57.62-.85,1.45-.78,2.28l.67,8c.13,1.54,1.44,2.75,2.99,2.75h.16v4h-8c-1.65,0-3,1.35-3,3v34c0,1.65,1.35,3,3,3h36c1.65,0,3-1.35,3-3V24c0-1.65-1.35-3-3-3Zm-29,17h-3v-10h4v4c0,1.65,1.35,3,3,3s3-1.35,3-3v-4h3v16h-2c-1.1,0-2,.9-2,2v8h-9v-8h3c1.1,0,2-.9,2-2v-4c0-1.1-.9-2-2-2Zm13-28h-2.5l.17-2h2.33v2Zm-13.16,4.08l-.67-8c-.02-.28.07-.55.26-.76.19-.21.45-.32.74-.32h7.65c.28,0,.54.11.74.32.19.21.28.48.26.76l-.67,8c-.04.51-.48.92-1,.92h-6.32c-.52,0-.95-.4-1-.92Zm5.16,2.92v15c0,.55-.45,1-1,1s-1-.45-1-1v-15h2Zm25,41c0,.55-.45,1-1,1H14c-.55,0-1-.45-1-1V24c0-.55.45-1,1-1h8v3h-4c-1.1,0-2,.9-2,2v10c0,1.1.9,2,2,2h3v4h-3c-1.1,0-2,.9-2,2v8c0,1.1.9,2,2,2h9c1.1,0,2-.9,2-2v-8h2c1.1,0,2-.9,2-2v-16c0-1.1-.9-2-2-2h-3v-3h22c.55,0,1,.45,1,1v34Zm-6-32h-5c-1.1,0-2,.9-2,2v26c0,1.1.9,2,2,2h5c1.1,0,2-.9,2-2v-26c0-1.1-.9-2-2-2Zm-5,9h5v5s-5,0-5,0v-5Zm0,7h5v5s-5,0-5,0v-5Zm5-14v5s-5,0-5,0v-5h5Zm-5,26v-5h5v5s-5,0-5,0Z"/></symbol><symbol id="i-engine" viewBox="0 0 64 64"><path d="m60.24,26.03l-4-1c-.3-.08-.62,0-.86.18-.24.19-.38.48-.38.79v5h-2v-4c0-1.1-.9-2-2-2h-5.28l-2.54-7.63c-.27-.82-1.04-1.37-1.9-1.37h-4.28v-2h4c1.1,0,2-.9,2-2v-2c0-1.1-.9-2-2-2h-22c-1.1,0-2,.9-2,2v2c0,1.1.9,2,2,2h4v2h-4.32c-.82,0-1.55.49-1.86,1.26l-1.5,3.74h-2.32c-1.1,0-2,.9-2,2v4h-2v-5c0-.31-.14-.6-.38-.79s-.56-.26-.86-.18l-4,1c-.44.11-.76.51-.76.97v22c0,.46.31.86.76.97l4,1c.08.02.16.03.24.03.22,0,.44-.07.62-.21.24-.19.38-.48.38-.79v-5h2v4c0,1.1.9,2,2,2h6.38l1.45,2.89c.34.68,1.03,1.11,1.79,1.11h28.38c1.1,0,2-.9,2-2v-4h2v5c0,.31.14.6.38.79.18.14.39.21.62.21.08,0,.16,0,.24-.03l4-1c.44-.11.76-.51.76-.97v-22c0-.46-.31-.86-.76-.97ZM19,10h22v2s-22,0-22,0v-2Zm6,4h10v2h-10v-2ZM7,44.72l-2-.5v-20.44l2-.5v21.44Zm2-5.72v-10h2v10h-2Zm42,10h-28.38l-1.45-2.89c-.34-.68-1.03-1.11-1.79-1.11h-6.38v-22h2.32c.82,0,1.55-.49,1.86-1.26l1.5-3.74h22.6l2.54,7.63c.27.82,1.04,1.37,1.9,1.37h5.28s0,22,0,22Zm2-6v-10h2v10h-2Zm6,5.22l-2,.5v-21.44l2,.5v20.44Zm-21.5-18.55h-2.87l2.32-5.26c.14-.31.11-.67-.08-.95-.18-.28-.5-.45-.84-.45h-5.87c-.42,0-.79.26-.94.66l-3.67,10c-.11.31-.07.65.12.92.19.27.49.43.82.43h2.42l-1.93,8.79c-.1.46.14.94.57,1.13.13.06.27.09.41.09.31,0,.62-.15.81-.42l9.53-13.33c.22-.31.25-.71.08-1.04-.17-.33-.51-.54-.89-.54Zm-7.51,9.78l1.15-5.23c.06-.3,0-.61-.2-.84-.19-.24-.48-.37-.78-.37h-2.23l2.93-8h3.64l-2.32,5.26c-.14.31-.11.67.08.95.18.28.5.45.84.45h2.46l-5.56,7.78Z"/></symbol><symbol id="i-diag" viewBox="0 0 64 64"><path d="m12,25h6c.55,0,1-.45,1-1v-6c0-.55-.45-1-1-1h-6c-.55,0-1,.45-1,1v6c0,.55.45,1,1,1Zm1-6h4v4h-4v-4Zm8.28,0c0-.55.45-1,1-1h9.72c.55,0,1,.45,1,1s-.45,1-1,1h-9.72c-.55,0-1-.45-1-1Zm0,4c0-.55.45-1,1-1h5.72c.55,0,1,.45,1,1s-.45,1-1,1h-5.72c-.55,0-1-.45-1-1Zm-9.28,13h6c.55,0,1-.45,1-1v-6c0-.55-.45-1-1-1h-6c-.55,0-1,.45-1,1v6c0,.55.45,1,1,1Zm1-6h4v4h-4v-4Zm8.28,4c0-.55.45-1,1-1h5.72c.55,0,1,.45,1,1s-.45,1-1,1h-5.72c-.55,0-1-.45-1-1Zm-9.28,13h6c.55,0,1-.45,1-1v-6c0-.55-.45-1-1-1h-6c-.55,0-1,.45-1,1v6c0,.55.45,1,1,1Zm1-6h4v4h-4v-4Zm45.96,9.17l-.45-8.45c-.11-1.74-1.25-3.15-2.74-3.58l-2.54-7.71c-.44-1.43-1.86-2.43-3.46-2.43h-8.77V9c0-1.65-1.35-3-3-3h-7v-1c0-1.1-.9-2-2-2h-14c-1.1,0-2,.9-2,2v1h-7c-1.65,0-3,1.35-3,3v43c0,1.65,1.35,3,3,3h17.78c.55.61,1.34,1,2.22,1v2c0,1.65,1.35,3,3,3h3c1.65,0,3-1.35,3-3v-2h14v2c0,1.65,1.35,3,3,3h3c1.65,0,3-1.35,3-3v-2c1.65,0,3-1.35,3-3,0-1.32-.86-2.43-2.04-2.83Zm-2.01-.17h-29.89l.43-8.15c.07-1.04.8-1.85,1.66-1.85h25.7c.87,0,1.6.81,1.66,1.84l.43,8.16Zm-21.95-22h-.77c-.98,0-1.9.38-2.56,1h-9.39c-.55,0-1,.45-1,1s.45,1,1,1h8.3l-2.35,7.15c-.95.27-1.74.95-2.23,1.85h-3.72c-.55,0-1,.45-1,1s.45,1,1,1h3.2l-.11,2h-3.09c-.55,0-1,.45-1,1s.45,1,1,1h2.98l-.16,3H9V15h26v13Zm16.33,3.04l2.29,6.96h-23.24l2.29-6.98c.18-.6.82-1.02,1.55-1.02h15.55c.73,0,1.37.42,1.56,1.04ZM15,5h14v4s-14,0-14,0v-4ZM6,53c-.55,0-1-.45-1-1V9c0-.55.45-1,1-1h7v1c0,1.1.9,2,2,2h14c1.1,0,2-.9,2-2v-1h7c.55,0,1,.45,1,1v19h-2v-14c0-.55-.45-1-1-1H8c-.55,0-1,.45-1,1v36c0,.55.45,1,1,1h15.78c-.48.53-.78,1.23-.78,2H6Zm27,5c0,.55-.45,1-1,1h-3c-.55,0-1-.45-1-1v-2h5v2Zm23,0c0,.55-.45,1-1,1h-3c-.55,0-1-.45-1-1v-2h5v2Zm2-4H26c-.55,0-1-.45-1-1s.45-1,1-1h32c.55,0,1,.45,1,1s-.45,1-1,1Zm-24-12h-3c-1.1,0-2,.9-2,2v2c0,1.1.9,2,2,2h3c1.1,0,2-.9,2-2v-2c0-1.1-.9-2-2-2Zm-3,4v-2h3v2s-3,0-3,0Zm22-4h-3c-1.1,0-2,.9-2,2v2c0,1.1.9,2,2,2h3c1.1,0,2-.9,2-2v-2c0-1.1-.9-2-2-2Zm0,4h-3v-2h3v2Zm-7-3c0,.55-.45,1-1,1h-6c-.55,0-1-.45-1-1s.45-1,1-1h6c.55,0,1,.45,1,1Zm0,4c0,.55-.45,1-1,1h-6c-.55,0-1-.45-1-1s.45-1,1-1h6c.55,0,1,.45,1,1Z"/></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M12.232 1.36a1 1 0 0 1 1.76.764L13.132 9h6.16c.252 0 .51-.001.72.018.188.017.55.062.863.315.359.29.565.729.558 1.19-.006.402-.203.709-.31.865-.12.172-.287.37-.448.564l-8.906 10.689a1 1 0 0 1-1.761-.765l.86-6.876h-6.16c-.252 0-.511.001-.72-.018-.19-.017-.55-.062-.863-.315a1.501 1.501 0 0 1-.557-1.19l.01-.146c.043-.33.206-.582.3-.719.12-.172.286-.37.447-.564l8.907-10.689ZM5.135 13H12a1 1 0 0 1 .992 1.124l-.577 4.614L18.865 11H12a1 1 0 0 1-.992-1.124l.576-4.615L5.134 13Z"/></symbol><symbol id="i-activity" viewBox="0 0 24 24"><path d="M9 2a1 1 0 0 1 .948.684L15 17.839l2.052-6.155.061-.147A1 1 0 0 1 18 11h4a1 1 0 1 1 0 2h-3.28l-2.772 8.316a1 1 0 0 1-1.896 0L9 6.161l-2.052 6.155A1 1 0 0 1 6 13H2a1 1 0 1 1 0-2h3.28l2.772-8.316.061-.147A1 1 0 0 1 9 2Z"/></symbol><symbol id="i-route" viewBox="0 0 24 24"><path d="M21 19a2 2 0 1 0-4 0 2 2 0 0 0 4 0ZM11.935 4c1.504 0 2.697-.001 3.582.071.445.037.858.095 1.22.198.36.102.73.265 1.034.552a3 3 0 0 1 .88 2.767c-.083.41-.29.757-.526 1.049-.236.292-.54.578-.882.865-.68.57-1.655 1.258-2.884 2.127l-4.064 2.875c-1.26.89-2.15 1.523-2.753 2.027-.298.25-.491.44-.61.588-.12.148-.125.204-.121.185a1 1 0 0 0 .293.923c-.015-.014.021.028.205.08.182.051.45.096.837.128.784.064 1.877.065 3.42.065h.934a1 1 0 1 1 0 2h-.935c-1.504 0-2.697.001-3.582-.071a6.488 6.488 0 0 1-1.22-.198c-.36-.102-.73-.265-1.034-.552a3 3 0 0 1-.88-2.767c.083-.41.29-.758.526-1.049.236-.292.54-.578.882-.865.68-.57 1.655-1.258 2.884-2.127l4.064-2.875c1.26-.89 2.15-1.523 2.753-2.027.298-.25.491-.44.61-.588.12-.148.125-.204.121-.185a1 1 0 0 0-.293-.923c.015.014-.021-.028-.205-.08a4.59 4.59 0 0 0-.837-.128C14.57 6.001 13.476 6 11.934 6H11.5a1 1 0 1 1 0-2h.435ZM7 5a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm16 14a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM9 5a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0Zm-8.99 4a1 1 0 1 1 0 2H12a1 1 0 1 1 0-2h.01ZM9.894 6.547A4.001 4.001 0 0 1 15.92 10c0 1.53-1.135 2.542-1.945 3.082a8.05 8.05 0 0 1-1.686.849l-.035.011-.01.004-.005.001-.002.001L11.92 13l.316.948a1 1 0 1 1-.633-1.896l.016-.006.074-.027a6.05 6.05 0 0 0 1.172-.6c.69-.46 1.055-.95 1.055-1.419v-.002a2 2 0 0 0-3.887-.666 1 1 0 0 1-1.887-.664 4.001 4.001 0 0 1 1.748-2.121ZM23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M11.293 4.293a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 1 1-1.414-1.414L16.586 13H5a1 1 0 1 1 0-2h11.586l-5.293-5.293a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M21 17a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h18Zm0-6a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h18Zm0-6a1 1 0 1 1 0 2H3a1 1 0 0 1 0-2h18Z"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M17.293 5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 1 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L10.586 12 5.293 6.707a1 1 0 1 1 1.414-1.414L12 10.586l5.293-5.293Z"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10a7 7 0 1 0-14 0c0 1.892.853 3.678 2.292 5.547 1.28 1.662 2.937 3.285 4.708 5.043 1.77-1.758 3.428-3.381 4.708-5.043C18.148 13.678 19 11.892 19 10Zm-5 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm5 0c0 2.526-1.147 4.74-2.708 6.767-1.551 2.014-3.618 3.973-5.585 5.94a1 1 0 0 1-1.414 0c-1.967-1.967-4.034-3.926-5.585-5.94C4.148 14.74 3 12.527 3 10a9 9 0 0 1 18 0Z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.1 1.878a3 3 0 0 1 2.708 0c.464.235.863.65 1.338 1.126l.195.195c.313.314.585.577.77.862a3 3 0 0 1 0 3.271c-.185.286-.457.549-.77.862l-.108.109-.002.011.014.03.037.077a13.602 13.602 0 0 0 2.652 3.735 13.602 13.602 0 0 0 3.735 2.652l.076.037c.013.005.022.01.03.012h.006l.005-.002a4.45 4.45 0 0 0 .11-.106c.313-.314.576-.585.862-.77a3 3 0 0 1 3.27 0c.286.185.55.457.863.77l.539.539c.329.335.606.646.782.994a3 3 0 0 1 0 2.708c-.235.464-.651.862-1.127 1.338l-.157.158c-.5.5-.867.878-1.372 1.161a4.35 4.35 0 0 1-1.971.513c-.572-.002-.983-.124-1.53-.28a20.04 20.04 0 0 1-8.717-5.128 20.04 20.04 0 0 1-5.129-8.718c-.155-.546-.278-.958-.28-1.53-.001-.63.205-1.42.513-1.97.284-.505.663-.873 1.162-1.372l.501-.502c.335-.329.647-.606.995-.782Zm1.805 1.784a1.001 1.001 0 0 0-.903 0c-.107.054-.24.17-.826.757l-.158.157c-.56.56-.712.723-.832.938a2.4 2.4 0 0 0-.256.985c0 .254.038.407.203.99a18.04 18.04 0 0 0 4.619 7.849 18.039 18.039 0 0 0 7.85 4.619c.581.165.735.202.989.203a2.4 2.4 0 0 0 .985-.256c.215-.12.378-.272.938-.832l.157-.158c.587-.587.703-.72.757-.826a1 1 0 0 0 0-.904c-.054-.106-.17-.239-.757-.826l-.194-.195c-.386-.386-.473-.465-.538-.508a1.001 1.001 0 0 0-1.091 0c-.066.043-.153.122-.538.508-.093.093-.215.219-.364.325a2.044 2.044 0 0 1-1.723.294c-.173-.05-.314-.12-.42-.17a15.607 15.607 0 0 1-4.284-3.042 15.605 15.605 0 0 1-3.04-4.284c-.051-.106-.12-.246-.171-.419a2.044 2.044 0 0 1 .294-1.723c.106-.149.232-.27.325-.364.385-.385.465-.472.508-.538.215-.331.215-.76 0-1.09-.043-.066-.123-.153-.508-.539L7.73 4.42c-.586-.587-.719-.703-.826-.757Z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="m21 8.92-6.592 4.615c-.593.415-1.1.79-1.682.935a3 3 0 0 1-1.452 0c-.582-.146-1.089-.52-1.682-.935L3 8.92v6.28c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C5.361 19 5.942 19 6.8 19h10.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8.92ZM6.8 5c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875 1.536 1.536 0 0 0-.134.446l7.654 5.358c.729.51.883.6 1.02.633.159.04.325.04.484 0 .136-.034.291-.123 1.02-.633l7.653-5.358a1.54 1.54 0 0 0-.133-.446 2 2 0 0 0-.874-.874c-.156-.08-.38-.145-.82-.18C18.639 5 18.058 5 17.2 5H6.8ZM23 15.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H6.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C.999 16.702 1 16.024 1 15.2V8.8c0-.618 0-1.153.019-1.614a.997.997 0 0 1 .033-.5c.048-.538.145-1.035.384-1.502a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C5.298 2.999 5.976 3 6.8 3h10.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.238.467.336.964.384 1.502a.996.996 0 0 1 .033.5c.02.46.019.996.019 1.614v6.4Z"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0ZM11 6a1 1 0 1 1 2 0v5.382l3.447 1.723a1 1 0 0 1-.894 1.79l-4-2A1 1 0 0 1 11 12V6Zm12 6c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol><symbol id="i-clockff" viewBox="0 0 24 24"><path d="M2 12C2 6.477 6.477 2 12 2c5.135 0 9.363 3.87 9.932 8.854l.061-.061a1 1 0 0 1 1.414 1.414l-1.999 2a1.001 1.001 0 0 1-1.415 0l-2-2a1 1 0 1 1 1.414-1.414l.565.564A7.998 7.998 0 0 0 4 12a8 8 0 0 0 14.223 5.028 1 1 0 0 1 1.554 1.258A9.983 9.983 0 0 1 12 22C6.477 22 2 17.523 2 12Zm9-5a1 1 0 1 1 2 0v4.465l2.555 1.703a1 1 0 1 1-1.11 1.664l-3-2A1 1 0 0 1 11 12V7Z"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M20.647 1.474c.16-.046.462-.125.8-.056l.148.04.163.064a1.5 1.5 0 0 1 .718.72l.066.163.039.147c.07.338-.01.64-.056.8-.06.21-.16.46-.258.71l-6.59 16.888a9.59 9.59 0 0 1-.317.76c-.085.173-.275.54-.669.744a1.5 1.5 0 0 1-1.384-.001c-.393-.205-.582-.572-.668-.744-.102-.209-.207-.482-.316-.76l-2.597-6.677-6.675-2.595c-.28-.109-.552-.214-.76-.317-.173-.085-.54-.274-.744-.668a1.5 1.5 0 0 1-.001-1.384c.204-.394.57-.583.743-.668.208-.103.48-.209.76-.318l16.887-6.59c.25-.098.502-.197.711-.258Zm-8.98 12.271 2.334 5.999 5.333-13.665-7.666 7.666ZM4.256 9.998l5.998 2.333 7.665-7.665L4.255 9.998Z"/></symbol><symbol id="i-verified" viewBox="0 0 24 24"><path d="M8.866 2.154a4.832 4.832 0 0 1 6.268 0c.453.387 1.018.62 1.612.668a4.831 4.831 0 0 1 4.432 4.432c.047.594.281 1.159.668 1.612a4.832 4.832 0 0 1 0 6.268 2.835 2.835 0 0 0-.668 1.612 4.831 4.831 0 0 1-4.432 4.432 2.835 2.835 0 0 0-1.612.668 4.832 4.832 0 0 1-6.268 0 2.835 2.835 0 0 0-1.612-.668 4.831 4.831 0 0 1-4.432-4.432 2.835 2.835 0 0 0-.668-1.612 4.832 4.832 0 0 1 0-6.268c.387-.453.62-1.018.668-1.612a4.831 4.831 0 0 1 4.432-4.432 2.835 2.835 0 0 0 1.612-.668Zm4.97 1.523a2.832 2.832 0 0 0-3.673 0 4.833 4.833 0 0 1-2.75 1.138 2.832 2.832 0 0 0-2.598 2.598 4.833 4.833 0 0 1-1.138 2.75 2.832 2.832 0 0 0 0 3.674l.234.299c.52.716.834 1.564.904 2.45a2.832 2.832 0 0 0 2.598 2.599 4.828 4.828 0 0 1 2.75 1.138 2.832 2.832 0 0 0 3.674 0l.299-.234a4.832 4.832 0 0 1 2.45-.904 2.832 2.832 0 0 0 2.599-2.598 4.833 4.833 0 0 1 1.138-2.75l.16-.204a2.833 2.833 0 0 0-.16-3.47 4.833 4.833 0 0 1-1.138-2.75 2.832 2.832 0 0 0-2.598-2.598 4.832 4.832 0 0 1-2.451-.904l-.3-.234Zm.957 5.116a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 12.586l3.793-3.793Z"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M19 7.218c0-.882-.016-1.058-.065-1.188a1.001 1.001 0 0 0-.274-.395c-.105-.092-.264-.168-1.089-.477l-5.361-2.01a3.997 3.997 0 0 0-.208-.077L12 3.07l-.003.001c-.04.013-.097.034-.208.076l-5.361 2.01c-.825.31-.984.386-1.09.478a1.002 1.002 0 0 0-.273.395C5.015 6.16 5 6.336 5 7.218V12c0 2.082 1.14 3.965 2.642 5.53 1.49 1.553 3.228 2.676 4.164 3.222l.134.077.06.032.06-.032a8.97 8.97 0 0 0 .134-.077c.936-.546 2.673-1.669 4.164-3.222C17.861 15.965 19 14.081 19 12V7.218Zm-4.207 1.075a1 1 0 0 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L11 12.086l3.793-3.793ZM21 12c0 2.826-1.537 5.184-3.2 6.915-1.672 1.742-3.586 2.973-4.598 3.563-.19.111-.442.269-.783.342-.26.056-.579.056-.838 0-.341-.073-.593-.231-.783-.342-1.012-.59-2.926-1.82-4.599-3.563C4.537 17.184 3 14.826 3 12V7.218c0-.718-.016-1.342.196-1.899a3 3 0 0 1 .82-1.184c.448-.393 1.038-.598 1.71-.85l5.36-2.01c.169-.064.39-.152.628-.186a2 2 0 0 1 .43-.016l.142.016.175.035c.17.042.326.103.452.15l5.361 2.01c.672.253 1.262.458 1.71.851a3 3 0 0 1 .82 1.184c.212.557.196 1.18.196 1.899V12Z"/></symbol><symbol id="i-save" viewBox="0 0 24 24"><path d="M16 14.6c0-.297-.001-.46-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 15.4 14H8.6c-.297 0-.459.001-.576.01l-.012.002-.001.012C8 14.141 8 14.304 8 14.6V20h8v-5.4ZM2 7.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392.34-.028.73-.036 1.172-.04A1.01 1.01 0 0 1 7 2c.022 0 .044.002.066.004.23-.001.475-.004.734-.004h6.875c.441 0 .825-.006 1.197.083.306.073.599.195.867.36.326.2.593.475.905.787l3.126 3.125c.312.313.588.58.788.906a3 3 0 0 1 .359.867c.09.372.083.756.083 1.197V16.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.001 4.001 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.34.028-.73.036-1.173.04A1.034 1.034 0 0 1 17 22c-.023 0-.045-.002-.067-.004-.23.001-.474.004-.733.004H7.8c-.259 0-.503-.003-.734-.004a1.01 1.01 0 0 1-.146 0 16.681 16.681 0 0 1-1.172-.04c-.562-.046-1.08-.144-1.564-.392a4 4 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 17.702 2 17.024 2 16.2V7.8Zm2 8.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18.028.003.058.004.088.006V14.6c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873 1.99 1.99 0 0 1 .77-.201c.216-.018.474-.017.738-.017h6.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.168.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v5.368l.089-.005c.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V9.325c0-.536-.006-.642-.027-.73a1.002 1.002 0 0 0-.12-.29c-.048-.077-.118-.156-.498-.535L18 6.413c0 .259.002.512-.016.726a2.023 2.023 0 0 1-.2.77 2 2 0 0 1-.875.873 2.022 2.022 0 0 1-.77.201c-.216.018-.474.017-.738.017H8.6c-.264 0-.522.001-.739-.017a2.022 2.022 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77C5.999 6.923 6 6.665 6 6.4V4.031l-.089.006c-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 6.361 4 6.942 4 7.8v8.4Zm4-9.8c0 .297.001.459.01.576l.002.011.012.002C8.141 7 8.304 7 8.6 7h6.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C16 6.859 16 6.696 16 6.4V4.42c-.19-.185-.247-.236-.306-.272a1.002 1.002 0 0 0-.289-.12c-.088-.02-.194-.027-.73-.027H8v2.4Z"/></symbol><symbol id="i-trend" viewBox="0 0 24 24"><path d="M23 14a1 1 0 1 1-2 0V9.414l-6.161 6.162c-.187.186-.369.37-.534.51a2.022 2.022 0 0 1-.687.402c-.402.13-.835.13-1.236 0a2.022 2.022 0 0 1-.687-.402c-.166-.14-.348-.323-.534-.51L8.424 12.84a8.319 8.319 0 0 0-.414-.4L8 12.43l-.01.008c-.089.075-.204.19-.414.4l-4.869 4.868a1 1 0 1 1-1.414-1.414l4.868-4.87c.186-.185.368-.368.534-.509.175-.148.397-.308.687-.402a2 2 0 0 1 1.084-.042l.152.042.205.082c.193.091.35.209.482.32.166.14.347.324.534.51l2.737 2.737c.21.21.325.325.414.4l.01.007.01-.006c.089-.076.204-.191.414-.4L19.586 8H15a1 1 0 1 1 0-2h7a1 1 0 0 1 1 1v7Z"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M17.293 8.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-6-6a1 1 0 1 1 1.414-1.414L12 13.586l5.293-5.293Z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M19 11.5a7.5 7.5 0 1 0-2.3 5.401 1.004 1.004 0 0 1 .201-.2A7.473 7.473 0 0 0 19 11.5Zm2 0a9.46 9.46 0 0 1-2.114 5.972l2.821 2.821a1 1 0 1 1-1.414 1.414l-2.821-2.821A9.5 9.5 0 1 1 21 11.5Z"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 16.5c0-2.508-1.978-4.5-4.368-4.5-2.39 0-4.37 1.992-4.37 4.5 0 .504.081.987.228 1.436.06.184.135.402.163.583.024.153.03.27.022.425-.01.18-.055.366-.087.51l-.302 1.36 1.573-.213c.13-.018.299-.044.46-.043l.189.01c.06.005.12.015.187.029.16.031.355.104.52.162.443.156.92.241 1.417.241C10.022 21 12 19.008 12 16.5Zm2 0c0 .168-.008.334-.02.498l.073.002a7.1 7.1 0 0 0 2.49-.448c.149-.056.335-.129.503-.164.139-.03.258-.043.4-.043.17-.001.343.027.476.047l2.925.428-.37-3.01c-.016-.128-.04-.296-.035-.46a1.89 1.89 0 0 1 .046-.386c.036-.162.107-.341.163-.486A6.945 6.945 0 0 0 21.106 10c0-3.86-3.152-7-7.053-7S7 6.14 7 10v.032A6.34 6.34 0 0 1 7.632 10C11.172 10 14 12.933 14 16.5Zm9.106-6.5a8.938 8.938 0 0 1-.586 3.191l-.073.193-.005.01v.008l.02.164.402 3.27c.02.159.044.344.05.503.005.166-.003.424-.127.695a1.5 1.5 0 0 1-.77.754 1.523 1.523 0 0 1-.698.11c-.16-.01-.344-.038-.502-.061l-3.185-.467a6.13 6.13 0 0 0-.17-.023l-.006-.001c-.003 0-.008.003-.012.005-.043.014-.1.037-.2.074a9.082 9.082 0 0 1-3.727.557C12.564 21.332 10.3 23 7.632 23a6.246 6.246 0 0 1-2.082-.355 14.379 14.379 0 0 0-.225-.079l-.018-.007h-.01l-.167.023-2.994.41a1.001 1.001 0 0 1-1.112-1.208l.61-2.761c.022-.096.034-.149.04-.187l.002-.007-.007-.022a7.241 7.241 0 0 0-.08-.25 6.62 6.62 0 0 1-.326-2.057c0-2.626 1.534-4.908 3.756-5.93A9.065 9.065 0 0 1 5 10c0-4.977 4.06-9 9.053-9 4.993 0 9.053 4.023 9.053 9Z"/></symbol></svg>
 
 <header id="hdr">
   <div class="wrap nav">
     <div class="side left">
-      <a class="pill" href="#leistung">Leistung</a>
-      <a class="pill" href="#diagnose">Diagnose</a>
-      <a class="pill" href="#ablauf">Ablauf</a>
+      <a class="pill" href="#leistung"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>Leistung</a>
+      <a class="pill" href="#diagnose"><svg class="i" aria-hidden="true"><use href="#i-activity"/></svg>Diagnose</a>
+      <a class="pill" href="#ablauf"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg>Ablauf</a>
     </div>
     <a class="mark" href="#top"><img src="bilder/chiptuning-maintal-logo.webp" alt="BaranTech"></a>
     <div class="side right">
-      <a class="pill" href="#faq">Fragen</a>
+      <a class="pill" href="#faq"><svg class="i" aria-hidden="true"><use href="#i-help"/></svg>Fragen</a>
       <a class="btn btn-o" href="#kontakt">Anfrage</a>
       <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mnav">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="19" height="19"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i" aria-hidden="true"><use href="#i-menu"/></svg>
       </button>
     </div>
   </div>
@@ -319,7 +324,7 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
         <h1>Performance<br>trifft<br><span class="r">Präzision.</span></h1>
         <p class="side-copy">Individuelle Stage 1 und Stage 2 Softwareoptimierung und professionelle Diagnose bei AdBlue, AGR und DPF. Jedes Fahrzeug wird einzeln abgestimmt, nichts kommt von der Stange.</p>
         <div class="cta-row">
-          <a class="btn btn-p" href="#kontakt">Anfrage stellen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-p" href="#kontakt">Anfrage stellen <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-g" href="#diagnose">Fehler diagnostizieren</a>
         </div>
       </div>
@@ -333,13 +338,13 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
 
 <section class="pillars">
   <div class="wrap"><div class="row">
-    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4.5 13.5H11l-1 8.5 9-12h-6.5z"/></svg></div>
+    <div class="p"><div class="ic"><svg class="i" aria-hidden="true"><use href="#i-turbine"/></svg></div>
       <h3>Mehr Leistung</h3><p>Spürbar mehr Power</p></div>
-    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 12l4-3"/></svg></div>
+    <div class="p"><div class="ic"><svg class="i" aria-hidden="true"><use href="#i-gear"/></svg></div>
       <h3>Optimiertes Drehmoment</h3><p>Besseres Ansprechen</p></div>
-    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></div>
+    <div class="p"><div class="ic"><svg class="i" aria-hidden="true"><use href="#i-engine"/></svg></div>
       <h3>Zuverlässig und sicher</h3><p>Saubere, stabile Abstimmung</p></div>
-    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></div>
+    <div class="p"><div class="ic"><svg class="i" aria-hidden="true"><use href="#i-diag"/></svg></div>
       <h3>Professionelle Diagnose</h3><p>Fehler finden, Probleme lösen</p></div>
   </div></div>
 </section>
@@ -356,12 +361,12 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
       <a class="pathbar reveal" href="#kontakt">
         <div class="num">01</div>
         <div><h3>Ich will mehr Leistung</h3><p>Stage 1 ohne Hardwareänderung oder Stage 2 abgestimmt auf deine vorhandene Performance-Hardware. Individuell geschrieben, nicht aus der Datenbank geladen.</p></div>
-        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></div>
       </a>
       <a class="pathbar reveal" href="#diagnose">
         <div class="num">02</div>
         <div><h3>Bei mir leuchtet etwas</h3><p>AdBlue-Warnung, Notlauf, AGR- oder DPF-Fehler. Wir messen erst und reparieren dann die Ursache, statt auf Verdacht Teile zu tauschen.</p></div>
-        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="arrow"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></div>
       </a>
     </div>
 
@@ -371,13 +376,13 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
         <div class="mono" style="color:var(--red)">Kennfeldoptimierung</div>
         <h3 style="margin-top:12px">Software, die zu deinem Motor passt</h3>
         <p>Wir lesen dein Steuergerät aus, sichern das Original und passen Ladedruck, Einspritzung und Drehmomentverlauf an dein Fahrzeug an. Gearbeitet wird mit AutoTuner, KESS und Magicmotorsport, je nach Fahrzeug und Steuergerät.</p>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4.5 13.5H11l-1 8.5 9-12h-6.5z"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg></div>
           <div><b>Stage 1</b><p>Mehr Drehmoment im nutzbaren Bereich, direkteres Ansprechverhalten, ohne Änderung an der Hardware.</p></div></div>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17l6-6 4 4 6-8"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></div>
           <div><b>Stage 2</b><p>Downpipe, Ladeluftkühler, Ansaugung verbaut? Software und Hardware werden aufeinander abgestimmt.</p></div></div>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8l7-5 7 5"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-save"/></svg></div>
           <div><b>Original gesichert</b><p>Dein Werkskennfeld wird vor jeder Arbeit gesichert. Zurück auf Serie geht jederzeit.</p></div></div>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></div>
           <div><b>Check vorab</b><p>Fehlerspeicher und Zustand werden geprüft, bevor Software auf dein Fahrzeug kommt.</p></div></div>
       </div>
     </div>
@@ -456,13 +461,13 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
     </div>
     <div class="split reveal" style="margin-top:var(--s8)">
       <div class="content">
-        <div class="frow" style="border-top:none;padding-top:0"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M4 8l8 5 8-5"/></svg></div>
+        <div class="frow" style="border-top:none;padding-top:0"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg></div>
           <div><b>01 · Anfrage</b><p>Fahrzeug, Motorisierung und dein Anliegen ins Formular oder per WhatsApp. Dauert zwei Minuten.</p></div></div>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-clockff"/></svg></div>
           <div><b>02 · Ersteinschätzung</b><p>Was bei deinem Fahrzeug möglich ist, was es kostet, wie lange es dauert. In der Regel am selben Werktag.</p></div></div>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></div>
           <div><b>03 · Termin in Maintal</b><p>Fahrzeug bringen, Zustand und Fehlerspeicher prüfen, dann wird gearbeitet.</p></div></div>
-        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="frow"><div class="fi"><svg class="i" aria-hidden="true"><use href="#i-verified"/></svg></div>
           <div><b>04 · Übergabe</b><p>Du bekommst erklärt, was gemacht wurde und was du danach beachten solltest.</p></div></div>
       </div>
       <div class="media"><img loading="lazy" decoding="async" src="bilder/chiptuning-maintal-werkstatt.webp" alt="Arbeit am Fahrzeug in der Werkstatt in Maintal"></div>
@@ -499,11 +504,11 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
     <div class="contact reveal">
       <div class="info">
         <div class="mono" style="color:var(--red);margin-bottom:var(--s5)">Werkstatt Maintal</div>
-        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Marie-Curie-Ring 1-3, 63477 Maintal</div>
-        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a1 1 0 01-1.1 1A16 16 0 014 5.1 1 1 0 015 4z"/></svg><a href="tel:+4917689722229">+49 176 89722229</a></div>
-        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@barantechperformance.de">info@barantechperformance.de</a></div>
-        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Antwort in der Regel am selben Werktag</div>
-        <a class="btn btn-g" style="margin-top:var(--s5)" href="https://wa.me/4917689722229" target="_blank" rel="noopener">Direkt per WhatsApp</a>
+        <div class="row"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Marie-Curie-Ring 1-3, 63477 Maintal</div>
+        <div class="row"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+4917689722229">+49 176 89722229</a></div>
+        <div class="row"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:info@barantechperformance.de">info@barantechperformance.de</a></div>
+        <div class="row"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Antwort in der Regel am selben Werktag</div>
+        <a class="btn btn-g" style="margin-top:var(--s5)" href="https://wa.me/4917689722229" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Direkt per WhatsApp</a>
       </div>
       <div class="form">
         <form class="fg" novalidate onsubmit="event.preventDefault();this.querySelector('.sent').hidden=false;">
@@ -517,7 +522,7 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
           <div class="f full"><label for="msg">Was ist los mit dem Fahrzeug?</label><textarea id="msg" name="nachricht" rows="4" placeholder="Fehlerbild, Warnleuchte, bisherige Werkstattbesuche, oder was du dir von der Optimierung erhoffst."></textarea></div>
           <label class="chk"><input type="checkbox" required><span>Ich habe die <a href="datenschutz.html" style="text-decoration:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben einverstanden.</span></label>
           <div class="f full" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-            <button class="btn btn-p" type="submit">Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button class="btn btn-p" type="submit">Anfrage senden <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
             <span class="mono sent" hidden style="color:var(--red)">Danke, die Anfrage ist raus.</span>
           </div>
         </form>
@@ -529,7 +534,7 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
 <footer>
   <div class="wrap">
     <div class="foot-mark">
-      <div class="big">BaranTech</div>
+      <img class="big" src="bilder/chiptuning-maintal-logo.webp" alt="BaranTech" width="1118" height="286" loading="lazy" decoding="async">
       <div class="tag">Performance trifft Präzision</div>
     </div>
     <div class="foot-cols">
@@ -553,7 +558,7 @@ footer{border-top:1px solid var(--line);background:var(--ink);position:relative;
 
 <div class="sticky-cta">
   <a class="btn btn-p" href="#kontakt">Anfrage stellen</a>
-  <a class="btn btn-g" href="https://wa.me/4917689722229" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-g" href="https://wa.me/4917689722229" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp</a>
 </div>
 
 <script type="application/ld+json">
