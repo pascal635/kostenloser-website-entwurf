@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#070A0E"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#D6121C" stroke-opacity=".45" stroke-width="2"/>
+  <path d="M14 24c6-7 30-7 36 0" fill="none" stroke="#D6121C" stroke-width="3.2" stroke-linecap="round"/>
+  <text x="32" y="50" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif"
+        font-size="30" font-weight="800" letter-spacing="-1.4" fill="#F2F3F5">BT</text>
+</svg>

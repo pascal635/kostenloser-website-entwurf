@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chiptuning Maintal | Stage 1 und 2, AdBlue, AGR, DPF | BaranTech</title>
+<meta name="description" content="Performance trifft Präzision. Individuelle Softwareoptimierung und Fahrzeugdiagnose in Maintal. Stage 1 und Stage 2, AdBlue-, AGR- und DPF-Probleme dauerhaft beheben.">
+<link rel="canonical" href="https://www.barantechperformance.de/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#070A0E">
+<link rel="icon" href="bilder/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="bilder/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="BaranTech">
+<meta property="og:url" content="https://www.barantechperformance.de/">
+<meta property="og:title" content="BaranTech | Performance trifft Präzision">
+<meta property="og:description" content="Chiptuning und Fahrzeugdiagnose in Maintal. Stage 1, Stage 2, AdBlue, AGR und DPF. Individuell abgestimmt, unverbindlich anfragen.">
+<meta property="og:image" content="https://dev.likovo.de/barantech/bilder/chiptuning-maintal-hero.webp">
+<meta property="og:image:alt" content="Fahrzeug mit offener Motorhaube und Programmiergeräten in der Werkstatt">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#070A0E; --ink-2:#0B0F15; --panel:#10151C; --panel-2:#161C24; --panel-3:#1E2630;
+  --text:#EEF1F5; --dim:#98A1AD; --mute:#646E7B;
+  --red:#D6121C; --red-hot:#FF3B2E; --red-deep:#7A0A10;
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.16); --grid:rgba(255,255,255,.05);
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:132px;
+  --r:10px; --r-l:16px; --pill:999px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --disp:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.045;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/></filter><rect width='150' height='150' filter='url(%23n)'/></svg>")}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--s5)}
+h1,h2,h3,h4,h5{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95;margin:0;font-stretch:118%}
+p{margin:0 0 var(--s4)}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+section[id]{scroll-margin-top:92px}
+
+/* dotted matrix + guides */
+.matrix{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.55;
+ background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1px);background-size:24px 24px}
+.matrix.fade-b{-webkit-mask-image:linear-gradient(180deg,#000,transparent 55%);mask-image:linear-gradient(180deg,#000,transparent 55%)}
+.guides{position:absolute;inset:0;pointer-events:none;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 var(--s5)}
+.guides i{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
+.guides i:nth-child(1){left:16.6%}.guides i:nth-child(2){left:50%}.guides i:nth-child(3){left:83.3%}
+@media(max-width:860px){.guides{display:none}}
+/* crosshair frame */
+.cross{position:relative}
+.cross::before,.cross::after{content:"";position:absolute;width:9px;height:9px;border:1px solid var(--line-2);z-index:3}
+.cross::before{left:-5px;top:-5px;border-right:none;border-bottom:none}
+.cross::after{right:-5px;bottom:-5px;border-left:none;border-top:none}
+.cross > .tick-a,.cross > .tick-b{position:absolute;width:9px;height:9px;border:1px solid var(--line-2);z-index:3}
+.cross > .tick-a{right:-5px;top:-5px;border-left:none;border-bottom:none}
+.cross > .tick-b{left:-5px;bottom:-5px;border-right:none;border-top:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+ padding:15px 26px;border-radius:var(--pill);border:1px solid transparent;cursor:pointer;
+ transition:transform .22s var(--ease),background .22s var(--ease),border-color .22s var(--ease),box-shadow .22s var(--ease),color .22s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn:focus-visible{outline:2px solid var(--red-hot);outline-offset:3px}
+.btn-p{background:var(--red);color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.6),0 12px 34px rgba(214,18,28,.28)}
+.btn-p:hover{background:var(--red-hot);box-shadow:0 2px 6px rgba(0,0,0,.6),0 18px 46px rgba(214,18,28,.38)}
+.btn-o{border-color:rgba(214,18,28,.6);color:var(--text);background:transparent}
+.btn-o:hover{border-color:var(--red);background:rgba(214,18,28,.12)}
+.btn-g{border-color:var(--line-2);color:var(--dim)}
+.btn-g:hover{border-color:var(--text);color:var(--text)}
+.btn svg{width:14px;height:14px;flex:none}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:background .3s var(--ease),border-color .3s var(--ease),backdrop-filter .3s var(--ease)}
+header.stuck{background:rgba(7,10,14,.85);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s5);padding:16px 0}
+.nav .side{display:flex;gap:10px;align-items:center}
+.nav .side.right{justify-content:flex-end}
+.nav .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:var(--pill);
+ padding:8px 15px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+ transition:border-color .2s var(--ease),color .2s var(--ease)}
+.nav .pill::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);opacity:.8}
+.nav .pill:hover{border-color:var(--red);color:var(--text)}
+.nav .mark{display:flex;align-items:center;gap:10px;justify-self:center}
+.nav .mark img{height:36px;width:auto}
+@media(max-width:1080px){.nav .side .pill:nth-child(n+3){display:none}}
+@media(max-width:820px){.nav{grid-template-columns:auto 1fr auto}.nav .side.left{display:none}.nav .mark{justify-self:start}}
+.burger{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:none;color:#fff;display:none;place-items:center}
+@media(max-width:820px){.burger{display:grid}.nav .side.right .btn{display:none}}
+#mnav{display:none;position:fixed;inset:70px 0 auto;z-index:49;background:rgba(7,10,14,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:var(--s5) 0}
+#mnav.open{display:block}
+#mnav a{display:block;padding:14px 0;font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:22px;border-bottom:1px solid var(--line)}
+#mnav a:last-child{border-bottom:none}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--red-hot);outline-offset:3px;border-radius:6px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 var(--s8);overflow:hidden;
+ background:radial-gradient(900px 600px at 60% 30%,rgba(214,18,28,.16),transparent 65%),
+            radial-gradient(700px 500px at 10% 90%,rgba(70,95,130,.12),transparent 60%),
+            linear-gradient(180deg,#080B10,#070A0E)}
+.hero .wrap{position:relative;z-index:3;width:100%}
+.hero-ghost{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:1;white-space:nowrap;
+ font-family:var(--disp);font-weight:800;font-size:clamp(120px,20.5vw,300px);letter-spacing:-.05em;
+ color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none;user-select:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s7);align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:var(--s6)}}
+.hero h1{font-size:clamp(40px,7.4vw,104px);line-height:.85;letter-spacing:-.04em;position:relative;z-index:4}
+.hero h1 .r{color:var(--red)}
+.hero .kicker{margin-bottom:var(--s5)}
+.hero .side-copy{color:var(--dim);font-size:15px;max-width:38ch;margin-top:var(--s6)}
+.hero .cta-row{display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s7)}
+.hero-shot{position:relative;border-radius:var(--r-l);overflow:hidden;aspect-ratio:4/5;max-height:66vh;margin-left:auto;width:100%}
+.hero-shot img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:saturate(.8) contrast(1.08) brightness(.92)}
+.hero-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,14,.35),transparent 30%,rgba(7,10,14,.55)),
+ linear-gradient(90deg,rgba(7,10,14,.6),transparent 45%)}
+.hero-badge{position:absolute;left:14px;bottom:14px;z-index:2;display:flex;gap:8px;flex-wrap:wrap}
+.hero-badge span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);
+ background:rgba(7,10,14,.7);border:1px solid var(--line-2);border-radius:var(--pill);padding:6px 12px;backdrop-filter:blur(6px)}
+.scrolltag{position:absolute;left:18px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;z-index:4;
+ font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:1080px){.scrolltag{display:none}}
+
+/* pillars */
+.pillars{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+.pillars .row{display:grid;grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.pillars .row{grid-template-columns:1fr 1fr}}
+.pillars .p{padding:var(--s7) var(--s5);border-right:1px solid var(--line);text-align:center}
+.pillars .p:last-child{border-right:none}
+@media(max-width:860px){.pillars .p:nth-child(2n){border-right:none}.pillars .p:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.pillars .ic{width:42px;height:42px;margin:0 auto var(--s4);border-radius:50%;border:1px solid rgba(214,18,28,.4);display:grid;place-items:center;background:rgba(214,18,28,.08)}
+.pillars .ic svg{width:19px;height:19px;color:var(--red-hot)}
+.pillars h3{font-size:14px;letter-spacing:.02em;margin-bottom:8px}
+.pillars p{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0;line-height:1.7}
+
+/* section head */
+.pad{padding:var(--s10) 0}
+.pad-s{padding:var(--s9) 0}
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--s4)}
+.head .mono{color:var(--red)}
+.head h2{font-size:clamp(28px,4.4vw,58px);max-width:20ch}
+.head p{color:var(--dim);max-width:60ch;font-size:16px;margin:0}
+.head-l{align-items:flex-start;text-align:left}
+
+/* split feature (VOSS instrument cluster) */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:var(--s8);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.split .media{position:relative;min-height:420px;background:var(--panel)}
+.split .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(.92) brightness(1.02) contrast(1.03)}
+.split .media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 68%,rgba(7,10,14,.55)),linear-gradient(0deg,rgba(7,10,14,.35),transparent 55%),linear-gradient(120deg,rgba(214,18,28,.10),transparent 60%)}
+.split .content{padding:var(--s7);background:var(--ink-2)}
+.split .content h3{font-size:clamp(22px,2.6vw,32px);margin-bottom:var(--s4)}
+.split .content > p{color:var(--dim);font-size:15px;max-width:46ch}
+.frow{display:flex;gap:var(--s4);padding:var(--s5) 0;border-top:1px solid var(--line)}
+.frow:first-of-type{margin-top:var(--s5)}
+.frow .fi{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:rgba(214,18,28,.1);border:1px solid rgba(214,18,28,.3);flex:none}
+.frow .fi svg{width:16px;height:16px;color:var(--red-hot)}
+.frow b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.frow p{margin:0;color:var(--dim);font-size:14px;line-height:1.6}
+
+/* data band */
+.data{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s6);margin-top:var(--s8)}
+@media(max-width:860px){.data{grid-template-columns:1fr 1fr;gap:var(--s5)}}
+.data .d{border-top:1px solid var(--line-2);padding-top:var(--s4)}
+.data .d b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(26px,3.4vw,44px);line-height:1;letter-spacing:-.03em}
+.data .d b em{font-style:normal;color:var(--red)}
+.data .d span{display:block;margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+
+/* path bars */
+.paths{display:grid;gap:var(--s4);margin-top:var(--s8)}
+.pathbar{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s5);align-items:center;
+ border:1px solid var(--line);border-radius:var(--r-l);padding:var(--s6);background:linear-gradient(100deg,var(--panel),var(--ink-2));
+ transition:transform .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease)}
+.pathbar:hover{transform:translateY(-3px);border-color:rgba(214,18,28,.5);background:linear-gradient(100deg,#161c24,#0d1218)}
+.pathbar .num{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--red)}
+.pathbar h3{font-size:clamp(19px,2.3vw,28px);margin-bottom:8px}
+.pathbar p{color:var(--dim);font-size:15px;margin:0;max-width:60ch}
+.pathbar .arrow{width:48px;height:48px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;flex:none;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.pathbar:hover .arrow{border-color:var(--red);transform:translateX(4px)}
+.pathbar .arrow svg{width:17px;height:17px}
+@media(max-width:700px){.pathbar{grid-template-columns:1fr;gap:var(--s4)}.pathbar .arrow{display:none}}
+
+/* timeline */
+.timeline{position:relative;margin-top:var(--s8);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5)}
+@media(max-width:900px){.timeline{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.timeline{grid-template-columns:1fr}}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--line-2)}
+@media(max-width:900px){.timeline::before{display:none}}
+.tl .dot{width:15px;height:15px;border-radius:50%;border:1px solid var(--red);background:var(--ink);position:relative;z-index:2;margin-bottom:var(--s5)}
+.tl .dot::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--red)}
+.tl b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--red);margin-bottom:10px}
+.tl h4{font-size:18px;margin-bottom:8px}
+.tl p{color:var(--dim);font-size:14px;margin:0}
+
+/* full bleed band */
+.band{position:relative;min-height:62vh;display:grid;place-items:center;text-align:center;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:saturate(.7) brightness(.95) contrast(1.05)}
+.band::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(214,18,28,.14),transparent 70%),linear-gradient(180deg,rgba(7,10,14,.86),rgba(7,10,14,.7),rgba(7,10,14,.92))}
+.band .inner{position:relative;z-index:2;padding:var(--s9) var(--s5);max-width:70ch}
+.band h2{font-size:clamp(26px,4.2vw,54px);margin-bottom:var(--s5)}
+.band p{color:var(--dim);margin:0 auto var(--s6);max-width:56ch}
+
+/* legal note */
+.note-box{border:1px solid rgba(214,18,28,.35);background:rgba(214,18,28,.05);border-radius:var(--r-l);padding:var(--s6);margin-top:var(--s8)}
+.note-box h3{font-size:clamp(18px,2.1vw,25px);margin:10px 0 12px}
+.note-box p{color:var(--dim);margin:0;max-width:74ch}
+
+/* spec */
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);margin-top:var(--s8)}
+@media(max-width:860px){.specs{grid-template-columns:1fr;gap:var(--s6)}}
+.spec{width:100%;border-collapse:collapse}
+.spec td{padding:15px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--dim)}
+.spec tr:first-child td{border-top:1px solid var(--line)}
+.spec td:last-child{text-align:right;font-family:var(--mono);font-size:12.5px;color:var(--text);letter-spacing:.06em}
+
+/* faq */
+.faq{max-width:960px;margin:var(--s8) auto 0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:var(--s5);padding:22px 0;
+ font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(15px,1.9vw,19px);letter-spacing:-.015em;transition:color .2s var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--red-hot)}
+.faq summary i{font-style:normal;font-family:var(--mono);color:var(--red);font-size:20px;line-height:1;transition:transform .25s var(--ease)}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq .a{padding:0 0 24px;color:var(--dim);font-size:15px;max-width:80ch}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:0;margin-top:var(--s8);border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden}
+@media(max-width:900px){.contact{grid-template-columns:1fr}}
+.contact .info{padding:var(--s7);background:var(--panel)}
+.contact .info p{color:var(--dim);font-size:15px}
+.contact .info .row{display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.contact .info .row svg{width:17px;height:17px;color:var(--red);flex:none}
+.contact .form{padding:var(--s7);background:var(--ink-2)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+@media(max-width:560px){.fg{grid-template-columns:1fr}}
+.f.full{grid-column:1/-1}
+.f label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.f input,.f select,.f textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;
+ padding:13px 15px;color:var(--text);font-family:var(--body);font-size:15px;transition:border-color .2s var(--ease),background .2s var(--ease)}
+
+.f input::placeholder,.f textarea::placeholder{color:#5b6570}
+.f input:hover,.f select:hover,.f textarea:hover{border-color:var(--line-2)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--red);background:rgba(214,18,28,.06)}
+.f select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2398A1AD' stroke-width='1.6'><path d='M1 1l5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 15px center}
+.chk{display:flex;gap:11px;align-items:flex-start;font-size:13px;color:var(--dim);grid-column:1/-1}
+.chk input{width:18px;height:18px;accent-color:var(--red);margin-top:2px;flex:none}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--ink);position:relative;overflow:hidden}
+.foot-mark{padding:var(--s9) 0 var(--s7);text-align:center;position:relative}
+.foot-mark .big{font-family:var(--disp);font-weight:800;letter-spacing:-.05em;line-height:.82;font-size:clamp(48px,14vw,200px);
+ background:linear-gradient(180deg,#fff 25%,#5c646f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot-mark .tag{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);margin-top:var(--s4)}
+.foot-cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:var(--s6);padding:var(--s7) 0;border-top:1px solid var(--line)}
+@media(max-width:900px){.foot-cols{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot-cols{grid-template-columns:1fr}}
+.foot-cols b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:var(--s4)}
+.foot-cols a,.foot-cols p{display:block;color:var(--dim);font-size:14px;padding:4px 0;margin:0;transition:color .2s var(--ease)}
+.foot-cols a:hover{color:var(--red-hot)}
+.foot-bottom{display:flex;justify-content:space-between;gap:var(--s5);flex-wrap:wrap;padding:var(--s5) 0 var(--s7);border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+.foot-bottom a:hover{color:var(--text)}
+.xs-note{font-size:12px;line-height:1.65;color:var(--mute);max-width:82ch;margin:0 0 10px}
+.xs-note:first-of-type{padding-top:var(--s5)}
+
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:55;display:none;gap:10px}
+.sticky-cta .btn{flex:1;justify-content:center}
+@media(max-width:640px){.sticky-cta{display:flex}body{padding-bottom:78px}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <div class="side left">
+      <a class="pill" href="#leistung">Leistung</a>
+      <a class="pill" href="#diagnose">Diagnose</a>
+      <a class="pill" href="#ablauf">Ablauf</a>
+    </div>
+    <a class="mark" href="#top"><img src="bilder/chiptuning-maintal-logo.webp" alt="BaranTech"></a>
+    <div class="side right">
+      <a class="pill" href="#faq">Fragen</a>
+      <a class="btn btn-o" href="#kontakt">Anfrage</a>
+      <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mnav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="19" height="19"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div id="mnav"><div class="wrap">
+  <a href="#leistung">Leistung</a><a href="#diagnose">Diagnose</a><a href="#ablauf">Ablauf</a><a href="#faq">Fragen</a><a href="#kontakt">Kontakt</a>
+</div></div>
+
+<section class="hero" id="top">
+  <div class="matrix fade-b"></div>
+  <div class="guides"><i></i><i></i><i></i></div>
+  <div class="hero-ghost">BARANTECH</div>
+  <div class="scrolltag">Scroll</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="mono kicker">Maintal · Rhein-Main · seit 2026</div>
+        <h1>Performance<br>trifft<br><span class="r">Präzision.</span></h1>
+        <p class="side-copy">Individuelle Stage 1 und Stage 2 Softwareoptimierung und professionelle Diagnose bei AdBlue, AGR und DPF. Jedes Fahrzeug wird einzeln abgestimmt, nichts kommt von der Stange.</p>
+        <div class="cta-row">
+          <a class="btn btn-p" href="#kontakt">Anfrage stellen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-g" href="#diagnose">Fehler diagnostizieren</a>
+        </div>
+      </div>
+      <div class="hero-shot cross"><span class="tick-a"></span><span class="tick-b"></span>
+        <img fetchpriority="high" src="bilder/chiptuning-maintal-fahrzeug.webp" alt="Fahrzeug in der Werkstatt von BaranTech in Maintal">
+        <div class="hero-badge"><span>Stage 1 · Stage 2</span><span>AdBlue · AGR · DPF</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap"><div class="row">
+    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4.5 13.5H11l-1 8.5 9-12h-6.5z"/></svg></div>
+      <h3>Mehr Leistung</h3><p>Spürbar mehr Power</p></div>
+    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 12l4-3"/></svg></div>
+      <h3>Optimiertes Drehmoment</h3><p>Besseres Ansprechen</p></div>
+    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></div>
+      <h3>Zuverlässig und sicher</h3><p>Saubere, stabile Abstimmung</p></div>
+    <div class="p"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></div>
+      <h3>Professionelle Diagnose</h3><p>Fehler finden, Probleme lösen</p></div>
+  </div></div>
+</section>
+
+<section class="pad-s" id="leistung">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="mono">01 / Leistungen</div>
+      <h2>Zwei Wege führen hierher</h2>
+      <p>Mehr Leistung wollen oder ein Problem loswerden. Beides bekommst du hier aus einer Hand, von derselben Person, mit demselben Werkzeug.</p>
+    </div>
+
+    <div class="paths">
+      <a class="pathbar reveal" href="#kontakt">
+        <div class="num">01</div>
+        <div><h3>Ich will mehr Leistung</h3><p>Stage 1 ohne Hardwareänderung oder Stage 2 abgestimmt auf deine vorhandene Performance-Hardware. Individuell geschrieben, nicht aus der Datenbank geladen.</p></div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </a>
+      <a class="pathbar reveal" href="#diagnose">
+        <div class="num">02</div>
+        <div><h3>Bei mir leuchtet etwas</h3><p>AdBlue-Warnung, Notlauf, AGR- oder DPF-Fehler. Wir messen erst und reparieren dann die Ursache, statt auf Verdacht Teile zu tauschen.</p></div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </a>
+    </div>
+
+    <div class="split reveal">
+      <div class="media"><img loading="lazy" decoding="async" src="bilder/chiptuning-maintal-tools-hoch.webp" alt="Steuergerät wird mit KESS am Fahrzeug ausgelesen"></div>
+      <div class="content">
+        <div class="mono" style="color:var(--red)">Kennfeldoptimierung</div>
+        <h3 style="margin-top:12px">Software, die zu deinem Motor passt</h3>
+        <p>Wir lesen dein Steuergerät aus, sichern das Original und passen Ladedruck, Einspritzung und Drehmomentverlauf an dein Fahrzeug an. Gearbeitet wird mit AutoTuner, KESS und Magicmotorsport, je nach Fahrzeug und Steuergerät.</p>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4.5 13.5H11l-1 8.5 9-12h-6.5z"/></svg></div>
+          <div><b>Stage 1</b><p>Mehr Drehmoment im nutzbaren Bereich, direkteres Ansprechverhalten, ohne Änderung an der Hardware.</p></div></div>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17l6-6 4 4 6-8"/></svg></div>
+          <div><b>Stage 2</b><p>Downpipe, Ladeluftkühler, Ansaugung verbaut? Software und Hardware werden aufeinander abgestimmt.</p></div></div>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8l7-5 7 5"/></svg></div>
+          <div><b>Original gesichert</b><p>Dein Werkskennfeld wird vor jeder Arbeit gesichert. Zurück auf Serie geht jederzeit.</p></div></div>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><b>Check vorab</b><p>Fehlerspeicher und Zustand werden geprüft, bevor Software auf dein Fahrzeug kommt.</p></div></div>
+      </div>
+    </div>
+
+    <div class="data reveal">
+      <div class="d"><b>Stage <em>1</em></b><span>ohne Hardwareänderung</span></div>
+      <div class="d"><b>Stage <em>2</em></b><span>mit vorhandener Hardware</span></div>
+      <div class="d"><b><em>3</em> Systeme</b><span>AutoTuner · KESS · Magic</span></div>
+      <div class="d"><b><em>24</em> h</b><span>Antwort in der Regel</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <img loading="lazy" decoding="async" src="bilder/chiptuning-maintal-hero.webp" alt="">
+  <div class="inner">
+    <div class="mono" style="color:var(--red);margin-bottom:var(--s4)">Anspruch</div>
+    <h2>Nicht der höchste Wert auf dem Papier. Der Unterschied auf der Straße.</h2>
+    <p>Performance, Fahrbarkeit und Zuverlässigkeit müssen zusammenpassen. Sonst haben wir unseren Job nicht gemacht.</p>
+    <a class="btn btn-o" href="#kontakt">Fahrzeug anfragen</a>
+  </div>
+</section>
+
+<section class="pad-s" id="diagnose">
+  <div class="matrix" style="opacity:.25"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="head reveal">
+      <div class="mono">02 / Diagnose</div>
+      <h2>Erst messen. Dann reparieren.</h2>
+      <p>Warnleuchte, Notlauf oder Countdown bis zum Startverbot: dahinter steckt fast immer ein konkretes Bauteil. Wir lesen aus, vergleichen Live-Daten und finden die Ursache.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl reveal"><div class="dot"></div><b>Schritt 01</b><h4>Auslesen</h4><p>Fehlerspeicher und Live-Daten im Betrieb, nicht nur der Code.</p></div>
+      <div class="tl reveal"><div class="dot"></div><b>Schritt 02</b><h4>Eingrenzen</h4><p>Sensor, Dosierventil, Pumpe, Differenzdruck, mechanisches AGR-Ventil.</p></div>
+      <div class="tl reveal"><div class="dot"></div><b>Schritt 03</b><h4>Befund und Preis</h4><p>Du weißt vorher, was es ist und was es kostet. Keine Überraschung auf der Rechnung.</p></div>
+      <div class="tl reveal"><div class="dot"></div><b>Schritt 04</b><h4>Instandsetzen</h4><p>Reinigen, regenerieren, tauschen, anlernen. Danach ist der Fehler weg, nicht nur gelöscht.</p></div>
+    </div>
+
+    <div class="specs">
+      <div>
+        <div class="mono" style="margin-bottom:var(--s4);color:var(--red)">Typische Symptome</div>
+        <table class="spec">
+          <tr><td>AdBlue-Warnung trotz vollem Tank</td><td>SCR</td></tr>
+          <tr><td>Countdown bis zum Startverbot</td><td>SCR</td></tr>
+          <tr><td>Notlaufprogramm, Leistung reduziert</td><td>Motor</td></tr>
+          <tr><td>Ständige Regeneration, Ruckeln</td><td>DPF</td></tr>
+          <tr><td>Fehler kommt nach kurzer Zeit wieder</td><td>AGR</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="mono" style="margin-bottom:var(--s4);color:var(--red)">Was inklusive ist</div>
+        <table class="spec">
+          <tr><td>Auslesen und Live-Daten</td><td>Standard</td></tr>
+          <tr><td>Befund und Preis vor der Reparatur</td><td>immer</td></tr>
+          <tr><td>Instandsetzung statt Abschaltung</td><td>grundsätzlich</td></tr>
+          <tr><td>Anlernen nach Bauteiltausch</td><td>inklusive</td></tr>
+          <tr><td>Diagnose Festpreis</td><td>auf Anfrage</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="note-box reveal">
+      <div class="mono" style="color:var(--red)">Klartext</div>
+      <h3>Wir setzen Abgasanlagen instand. Abschalten machen wir nicht.</h3>
+      <p>Ein deaktiviertes AdBlue-, AGR- oder DPF-System kostet dich die Betriebserlaubnis, die HU-Plakette und im Schadensfall den Versicherungsschutz. Wir bringen die Anlage zurück in den Zustand, in dem sie funktionieren soll. Das hält, und dein Auto bleibt legal auf der Straße.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s" id="ablauf">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="mono">03 / Ablauf</div>
+      <h2>Von der Anfrage bis zur Übergabe</h2>
+    </div>
+    <div class="split reveal" style="margin-top:var(--s8)">
+      <div class="content">
+        <div class="frow" style="border-top:none;padding-top:0"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M4 8l8 5 8-5"/></svg></div>
+          <div><b>01 · Anfrage</b><p>Fahrzeug, Motorisierung und dein Anliegen ins Formular oder per WhatsApp. Dauert zwei Minuten.</p></div></div>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><b>02 · Ersteinschätzung</b><p>Was bei deinem Fahrzeug möglich ist, was es kostet, wie lange es dauert. In der Regel am selben Werktag.</p></div></div>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><b>03 · Termin in Maintal</b><p>Fahrzeug bringen, Zustand und Fehlerspeicher prüfen, dann wird gearbeitet.</p></div></div>
+        <div class="frow"><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div><b>04 · Übergabe</b><p>Du bekommst erklärt, was gemacht wurde und was du danach beachten solltest.</p></div></div>
+      </div>
+      <div class="media"><img loading="lazy" decoding="async" src="bilder/chiptuning-maintal-werkstatt.webp" alt="Arbeit am Fahrzeug in der Werkstatt in Maintal"></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s" id="faq">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="mono">04 / Fragen</div>
+      <h2>Was Kunden vorher wissen wollen</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Geht mein Motor davon kaputt? <i>+</i></summary><div class="a">Nein, wenn sauber abgestimmt wird. Wir bleiben innerhalb der Toleranzen, die der Hersteller den Bauteilen mitgegeben hat, und prüfen vorher den Zustand deines Fahrzeugs. Ein Motor mit bestehendem Defekt bekommt bei uns keine Optimierung, sondern erst eine Diagnose.</div></details>
+      <details><summary>Muss die Leistungssteigerung eingetragen werden? <i>+</i></summary><div class="a">Ja. Eine Softwareoptimierung, die die Leistung erhöht, ist eine Änderung an der Bauart und muss über ein Teilegutachten oder eine Einzelabnahme legalisiert werden. Ohne Eintragung erlischt die Betriebserlaubnis und im Schadensfall kann der Versicherungsschutz entfallen. Wir sagen dir vor dem Termin, was in deinem Fall nötig ist.</div></details>
+      <details><summary>Was passiert mit meiner Herstellergarantie? <i>+</i></summary><div class="a">Ehrliche Antwort: Der Hersteller kann bei einem Schaden die Garantie verweigern, wenn ein Zusammenhang zur Optimierung besteht. Das entscheidet der Hersteller, nicht wir. Deshalb sichern wir dein Original-Kennfeld und geben dir Gewährleistung auf unsere Arbeit. Wer verspricht, die Herstellergarantie bleibe vollständig erhalten, sagt dir nicht die Wahrheit.</div></details>
+      <details><summary>Muss ich das meiner Versicherung melden? <i>+</i></summary><div class="a">Ja. Eine höhere Motorleistung ist eine Gefahrerhöhung und muss dem Versicherer gemeldet werden, der Beitrag kann sich dadurch ändern. Ohne Meldung riskierst du im Schadensfall den Schutz. Wir sagen dir, welche Angaben deine Versicherung braucht.</div></details>
+      <details><summary>Kann ich die Optimierung rückgängig machen? <i>+</i></summary><div class="a">Ja. Wir sichern vor jeder Arbeit dein Original-Kennfeld. Wenn du verkaufst, zur Vertragswerkstatt musst oder einfach zurück willst, spielen wir den Serienstand wieder auf.</div></details>
+      <details><summary>Steigt der Verbrauch? <i>+</i></summary><div class="a">Kommt darauf an, wie du fährst. Bei gleicher Fahrweise bleibt der Verbrauch meist gleich oder sinkt leicht, weil mehr Drehmoment früher anliegt. Wenn du die Mehrleistung nutzt, brauchst du mehr. Alles andere wäre gelogen.</div></details>
+      <details><summary>Schaltet ihr AdBlue, AGR oder DPF ab? <i>+</i></summary><div class="a">Nein. Das ist bei Fahrzeugen im öffentlichen Straßenverkehr nicht zulässig und kostet dich Betriebserlaubnis, HU-Plakette und Versicherungsschutz. Wir finden die Ursache und setzen das System instand, damit der Fehler dauerhaft weg ist.</div></details>
+      <details><summary>Was kostet das und wie lange dauert es? <i>+</i></summary><div class="a">Der Preis hängt an Fahrzeug, Steuergerät und Umfang. Schick uns Marke, Modell und Motorisierung, dann bekommst du eine konkrete Einschätzung mit Preis und Dauer, bevor du dich entscheidest.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="pad-s" id="kontakt">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="mono">05 / Kontakt</div>
+      <h2>Sag uns, was dein Fahrzeug braucht</h2>
+      <p>Marke, Modell, Motorisierung und dein Anliegen. Du bekommst eine ehrliche Einschätzung, was möglich ist und was es kostet. Kostenlos und unverbindlich.</p>
+    </div>
+    <div class="contact reveal">
+      <div class="info">
+        <div class="mono" style="color:var(--red);margin-bottom:var(--s5)">Werkstatt Maintal</div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Marie-Curie-Ring 1-3, 63477 Maintal</div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a1 1 0 01-1.1 1A16 16 0 014 5.1 1 1 0 015 4z"/></svg><a href="tel:+4917689722229">+49 176 89722229</a></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@barantechperformance.de">info@barantechperformance.de</a></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Antwort in der Regel am selben Werktag</div>
+        <a class="btn btn-g" style="margin-top:var(--s5)" href="https://wa.me/4917689722229" target="_blank" rel="noopener">Direkt per WhatsApp</a>
+      </div>
+      <div class="form">
+        <form class="fg" novalidate onsubmit="event.preventDefault();this.querySelector('.sent').hidden=false;">
+          <div class="f"><label for="marke">Marke und Modell</label><input id="marke" name="marke" placeholder="BMW 320d F31" required></div>
+          <div class="f"><label for="motor">Motorisierung</label><input id="motor" name="motorisierung" placeholder="190 PS, Baujahr 2018"></div>
+          <div class="f"><label for="anliegen">Anliegen</label><select id="anliegen" name="anliegen">
+            <option>Stage 1</option><option>Stage 2</option><option>AdBlue</option><option>AGR</option><option>DPF</option><option>Fahrzeugdiagnose</option><option>Etwas anderes</option></select></div>
+          <div class="f"><label for="name">Name</label><input id="name" name="name" placeholder="Vor- und Nachname" required></div>
+          <div class="f"><label for="tel">Telefon oder WhatsApp</label><input id="tel" name="telefon" placeholder="0176 12345678" required></div>
+          <div class="f"><label for="mail">E-Mail</label><input id="mail" name="email" type="email" placeholder="du@beispiel.de"></div>
+          <div class="f full"><label for="msg">Was ist los mit dem Fahrzeug?</label><textarea id="msg" name="nachricht" rows="4" placeholder="Fehlerbild, Warnleuchte, bisherige Werkstattbesuche, oder was du dir von der Optimierung erhoffst."></textarea></div>
+          <label class="chk"><input type="checkbox" required><span>Ich habe die <a href="datenschutz.html" style="text-decoration:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben einverstanden.</span></label>
+          <div class="f full" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            <button class="btn btn-p" type="submit">Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <span class="mono sent" hidden style="color:var(--red)">Danke, die Anfrage ist raus.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">
+      <div class="big">BaranTech</div>
+      <div class="tag">Performance trifft Präzision</div>
+    </div>
+    <div class="foot-cols">
+      <div><b>Werkstatt</b>
+        <p>BaranTech<br>Marie-Curie-Ring 1-3<br>63477 Maintal</p>
+        <a href="tel:+4917689722229">+49 176 89722229</a>
+        <a href="https://wa.me/4917689722229" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/Baran_tech1" target="_blank" rel="noopener">Instagram</a></div>
+      <div><b>Leistungen</b><a href="#leistung">Stage 1</a><a href="#leistung">Stage 2</a><a href="#diagnose">AdBlue</a><a href="#diagnose">AGR und DPF</a><a href="#diagnose">Fahrzeugdiagnose</a></div>
+      <div><b>Servicegebiet</b><a href="#kontakt">Maintal</a><a href="#kontakt">Hanau</a><a href="#kontakt">Frankfurt</a><a href="#kontakt">Offenbach</a><a href="#kontakt">Bad Vilbel</a><a href="#kontakt">Bruchköbel</a></div>
+      <div><b>Rechtliches</b><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+    </div>
+    <p class="xs-note">Zur visuellen Darstellung unserer Leistungen verwenden wir teilweise KI-generiertes Bildmaterial.</p>
+    <p class="xs-note">Leistungssteigerungen sind eintragungspflichtig und der Kfz-Versicherung zu melden. Abgasrelevante Systeme wie AdBlue, AGR und DPF werden ausschließlich instand gesetzt, nicht deaktiviert.</p>
+    <div class="foot-bottom">
+      <span>© 2026 BaranTech. Alle Rechte vorbehalten.</span>
+      <span>Entwurf von <a href="https://likovo.de" target="_blank" rel="noopener">LIKOVO</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-p" href="#kontakt">Anfrage stellen</a>
+  <a class="btn btn-g" href="https://wa.me/4917689722229" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["AutoRepair","LocalBusiness"],
+"@id":"https://www.barantechperformance.de/#business","name":"BaranTech","slogan":"Performance trifft Präzision",
+"url":"https://www.barantechperformance.de/","image":"https://www.barantechperformance.de/bilder/chiptuning-maintal-hero.webp",
+"telephone":"+4917689722229",
+"address":{"@type":"PostalAddress","streetAddress":"Marie-Curie-Ring 1-3","postalCode":"63477","addressLocality":"Maintal","addressRegion":"Hessen","addressCountry":"DE"},
+"areaServed":["Maintal","Hanau","Frankfurt am Main","Offenbach am Main","Bad Vilbel","Bruchköbel"],
+"sameAs":["https://instagram.com/Baran_tech1"],
+"hasOfferCatalog":{"@type":"OfferCatalog","name":"Leistungen","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Stage 1 Softwareoptimierung","serviceType":"Kennfeldoptimierung"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Stage 2 Softwareoptimierung","serviceType":"Kennfeldoptimierung"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"AdBlue Diagnose und Instandsetzung","serviceType":"Fahrzeugdiagnose"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"AGR und DPF Diagnose","serviceType":"Fahrzeugdiagnose"}}]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Geht mein Motor durch Chiptuning kaputt?","acceptedAnswer":{"@type":"Answer","text":"Nein, wenn sauber abgestimmt wird. Die Abstimmung bleibt innerhalb der Bauteiltoleranzen des Herstellers und der Fahrzeugzustand wird vorher geprüft."}},
+{"@type":"Question","name":"Muss eine Leistungssteigerung eingetragen werden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Eine leistungssteigernde Softwareoptimierung ist eine Änderung der Bauart und muss über ein Teilegutachten oder eine Einzelabnahme legalisiert werden."}},
+{"@type":"Question","name":"Wird AdBlue, AGR oder DPF abgeschaltet?","acceptedAnswer":{"@type":"Answer","text":"Nein. Das Abschalten von Abgasreinigungssystemen ist im öffentlichen Straßenverkehr nicht zulässig. BaranTech diagnostiziert die Ursache und setzt das System instand."}},
+{"@type":"Question","name":"Kann die Optimierung rückgängig gemacht werden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Das Original-Kennfeld wird vor jeder Arbeit gesichert und kann jederzeit wieder aufgespielt werden."}}]}
+</script>
+
+<script>
+(function(){
+  var h=document.getElementById('hdr');
+  var s=function(){h.classList.toggle('stuck',window.scrollY>40)};s();addEventListener('scroll',s,{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var mn=document.getElementById('mnav'),bg=document.getElementById('burger');
+  bg.addEventListener('click',function(){var o=mn.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+  mn.addEventListener('click',function(e){if(e.target.tagName==='A')mn.classList.remove('open')});
+  document.querySelectorAll('.faq details').forEach(function(d){
+    d.addEventListener('toggle',function(){
+      if(!d.open) return;
+      d.parentNode.querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
