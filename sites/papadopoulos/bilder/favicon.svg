@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Papadopoulos Consulting">
+  <rect width="32" height="32" rx="7" fill="#F8F8F8"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#1A1A1A" stroke-opacity=".08"/>
+  <path d="M6.5 22.5 16 9l9.5 13.5M11.2 22.5h9.6" fill="none" stroke="#8F7333" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
