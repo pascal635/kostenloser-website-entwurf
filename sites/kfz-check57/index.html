@@ -112,7 +112,7 @@
   --ff:'Archivo',system-ui,sans-serif; --ff-b:'Inter',system-ui,sans-serif;
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;
   --sp-7:48px;--sp-8:64px;--sp-9:96px;--sp-10:128px;--sp-11:160px;
-  --r-sm:6px;--r-md:14px;--r-lg:22px;--r-pill:999px;
+  --r-sm:6px;--r-md:8px;--r-lg:8px;--r-pill:6px;
   --ease:cubic-bezier(.2,.7,.25,1);
   --maxw:1240px;
 }
@@ -364,11 +364,11 @@ a{color:inherit}
   transition:transform .42s cubic-bezier(.2,.86,.24,1)}
 .dock-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
   justify-content:center;gap:11px;text-align:center;padding:12px;
-  border-radius:clamp(14px,1.5vw,22px);border:1px solid var(--line);
+  border-radius:8px;border:1px solid var(--line);
   background:linear-gradient(168deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),var(--panel);
   box-shadow:0 12px 34px -22px rgba(0,0,0,.95);cursor:default;transform-origin:bottom center;
   transition:transform .42s cubic-bezier(.2,.86,.24,1),border-color .34s var(--ease),
-             box-shadow .42s var(--ease),background .34s var(--ease)}
+             border-radius .42s var(--ease),box-shadow .42s var(--ease),background .34s var(--ease)}
 .dock-card:focus-visible{outline:3px solid var(--gold-hi);outline-offset:4px}
 .dock-card .ic{color:var(--gold-hi);opacity:.86;transition:opacity .34s var(--ease)}
 .dock-card .t{font-family:var(--ff);font-weight:700;font-size:.6875rem;line-height:1.22;
@@ -385,7 +385,7 @@ a{color:inherit}
 /* Aktiv, egal ob per Maus, Tastatur oder im Ruhezustand */
 .dock-item:hover .dock-card,.dock-item:focus-within .dock-card,
 .dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on .dock-card{
-  transform:scale(1.74);border-color:rgba(242,194,0,.5);
+  transform:scale(1.74);border-radius:4.6px;border-color:rgba(242,194,0,.5);
   background:linear-gradient(168deg,rgba(242,194,0,.14),rgba(242,194,0,.02)),var(--panel);
   box-shadow:0 34px 78px -34px rgba(0,0,0,1),0 0 66px -22px rgba(242,194,0,.6)}
 .dock-item:hover,.dock-item:focus-within,
@@ -401,7 +401,7 @@ a{color:inherit}
 /* Die direkten Nachbarn heben leicht mit ab, das ist der Dock-Effekt */
 .dock-item:hover + .dock-item .dock-card,.dock-item:has(+ .dock-item:hover) .dock-card,
 .dock-item:focus-within + .dock-item .dock-card,.dock-item:has(+ .dock-item:focus-within) .dock-card{
-  transform:scale(1.08)}
+  transform:scale(1.08);border-radius:7.4px}
 
 .dock-item:hover ~ .dock-item,.dock-item:focus-within ~ .dock-item,
 .dock:not(:has(.dock-item:hover)):not(:has(.dock-item:focus-within)) .dock-item.on ~ .dock-item{
@@ -438,20 +438,17 @@ a{color:inherit}
 .check input{margin-top:3px;width:17px;height:17px;accent-color:var(--gold);flex:0 0 auto}
 
 /* ---------- Footer, Karzone ---------- */
-.foot{background:var(--void);padding-top:var(--sp-9)}
+#kontakt{padding-bottom:var(--sp-7)}
+.foot{background:var(--void);padding-top:var(--sp-8)}
 .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:var(--sp-7);align-items:start;
   padding-bottom:var(--sp-8)}
-.totop{width:52px;height:52px;border-radius:50%;border:1px solid var(--line-2);display:grid;
+.totop{width:52px;height:52px;border-radius:6px;border:1px solid var(--line-2);display:grid;
   place-items:center;text-decoration:none;color:var(--tx-1);transition:border-color .22s,color .22s,transform .22s}
 .totop:hover{border-color:var(--gold-hi);color:var(--gold-hi);transform:translateY(-3px)}
 .foot-links{display:flex;flex-wrap:wrap;gap:var(--sp-6);padding:var(--sp-5) 0;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.875rem;color:var(--tx-2)}
 .foot-links a{text-decoration:none;transition:color .2s}
 .foot-links a:hover{color:var(--gold-hi)}
-.markword{font-family:var(--ff);font-weight:900;letter-spacing:-.05em;line-height:.8;
-  font-size:clamp(2.25rem,10.2vw,9rem);white-space:nowrap;margin:var(--sp-8) 0 0;
-  background:linear-gradient(180deg,rgba(244,246,250,.26),rgba(244,246,250,.03));
-  -webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
 @media (max-width:900px){.foot-top{grid-template-columns:1fr 1fr;gap:var(--sp-6)}}
 @media (max-width:560px){.foot-top{grid-template-columns:1fr}}
 
@@ -826,8 +823,7 @@ a{color:inherit}
       <a href="#person">Über mich</a><a href="#faq">Fragen</a><a href="#kontakt">Kontakt</a>
       <span style="margin-left:auto"><a href="https://kfz-check57.de/impressum/" rel="noopener">Impressum</a> &nbsp; <a href="https://kfz-check57.de/datenschutzerklarung/" rel="noopener">Datenschutzerklärung</a></span>
     </div>
-    <p class="markword">KFZ-CHECK57</p>
-    <p class="xs" style="padding:var(--sp-5) 0 0;max-width:80ch">Zur visuellen Darstellung unserer Leistungen verwenden wir teilweise KI-generiertes Bildmaterial.</p>
+    <p class="xs" style="padding:var(--sp-7) 0 0;max-width:80ch">Zur visuellen Darstellung unserer Leistungen verwenden wir teilweise KI-generiertes Bildmaterial.</p>
     <p class="xs" style="padding:var(--sp-2) 0 var(--sp-8);max-width:80ch">Die Tätigkeit von KFZ-Check57 umfasst ausschließlich die technische Begutachtung, Bewertung und Dokumentation von Fahrzeugen. Eine Rechtsberatung oder rechtliche Vertretung erfolgt ausschließlich durch den beauftragten Rechtsanwalt.</p>
   </div>
 </footer>
