@@ -13,7 +13,10 @@ on:
 
 concurrency:
   group: deploy-main
-  cancel-in-progress: true
+  # NICHT abbrechen. Beim Push wird nur der GEAENDERTE Kundenordner hochgeladen.
+  # Ein abgebrochener Lauf laesst seinen Ordner also fuer immer unvollstaendig zurueck,
+  # weil der naechste Push einen anderen Diff hat. Laeufe werden deshalb eingereiht.
+  cancel-in-progress: false
 
 jobs:
   deploy:
