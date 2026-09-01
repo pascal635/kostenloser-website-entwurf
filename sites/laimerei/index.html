@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pflegeberatung § 37.3 und Alltagshilfe in München | LAIMEREI</title>
+<meta name="description" content="Kostenloser Beratungseinsatz nach § 37.3 SGB XI bei Ihnen zu Hause in München, plus Alltagshilfe über den Entlastungsbetrag. Persönlich, ohne Warteschleife. Jetzt Termin anfragen.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0C2B2E">
+<link rel="icon" href="bilder/logo-laimerei-pflegeberatung-muenchen.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LAIMEREI Design B, "Bento"
+   Struktur nach moodboard/primary.jpg (Vitax)
+   Farbwelt nach moodboard/color.jpg (CareHaven), übersetzt in LAIMEREI-Petrol
+   Details nach moodboard/extra.jpg (Claré)
+   ============================================================ */
+:root{
+  --ground:#F4F6F5;      /* Grund, fast weiss mit Petrol-Stich */
+  --card:#FFFFFF;
+  --card-2:#EDF1F0;      /* zweite Kartenfläche, sehr leicht */
+  --deep:#0C2B2E;        /* dunkle Bänder */
+  --deep-2:#123A3C;
+  --brand:#1C5F63;       /* Logo-Petrol */
+  --dark:#0E2426;        /* die runden Pfeil-Badges, fast schwarz */
+  --lime:#C4DC42;        /* Akzent, nur auf dunklem Grund und in Badges */
+  --lime-hi:#D2E85C;
+  --on-lime:#17250A;
+  --ink:#101F20;
+  --muted:#5A6E6D;       /* Fliesstext gedämpft */
+  --grey:#768887;        /* das zweite Wort in zweifarbigen Headlines */
+  --muted-dark:#A8BEBD;  /* gedämpfter Text auf Dunkel */
+  --line:rgba(16,31,32,.10);
+  --line-d:rgba(244,246,245,.16);
+
+  --sans:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;
+  --r-sm:10px;--r-md:16px;--r-lg:24px;--r-xl:34px;--r-full:999px;
+  --e-1:0 1px 2px rgba(12,43,46,.04), 0 6px 18px -10px rgba(12,43,46,.10);
+  --e-2:0 1px 2px rgba(12,43,46,.05), 0 14px 34px -14px rgba(12,43,46,.16);
+  --e-3:0 2px 4px rgba(12,43,46,.07), 0 34px 64px -22px rgba(12,43,46,.26);
+  --ease:cubic-bezier(.2,.7,.3,1);--dur:220ms;
+  --rainbow:linear-gradient(90deg,#DB4B3F,#EE8B3D,#F1C64A,#6FAE5B,#4A82C4,#7E5AA8);
+  --wrap:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:18px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+p{margin:0 0 1em}
+img{max-width:100%;display:block;height:auto}
+ul{margin:0;padding:0;list-style:none}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s6)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--deep);color:var(--ground);padding:12px 20px;z-index:300}
+.skip:focus{left:0}
+
+/* ---------- Vitax-Signatur 1: Eyebrow-Chip mit Plus ---------- */
+.chip-label{display:inline-flex;align-items:center;gap:7px;background:var(--card-2);color:var(--muted);
+  font-size:12.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  padding:8px 15px;border-radius:var(--r-full)}
+.chip-label::before{content:"+";font-size:14px;line-height:1;color:var(--brand);font-weight:600}
+.chip-label-d{background:rgba(244,246,245,.10);color:var(--muted-dark)}
+.chip-label-d::before{color:var(--lime)}
+
+/* ---------- Vitax-Signatur 2: zweifarbige Headline ---------- */
+.h-xl{font-size:clamp(37px,4.9vw,62px);letter-spacing:-.038em;line-height:1.04;font-weight:400}
+.h-lg{font-size:clamp(31px,4.1vw,54px);letter-spacing:-.033em;line-height:1.06}
+.h-md{font-size:clamp(25px,2.7vw,34px);letter-spacing:-.025em;line-height:1.14}
+.h-sm{font-size:21px;letter-spacing:-.02em;line-height:1.2;font-weight:500}
+.g{color:var(--muted)}
+.h-xl .g,.h-lg .g,.h-md .g{color:var(--grey)}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+
+/* ---------- Vitax-Signatur 3: Pill-Button mit Pfeil-Badge ---------- */
+.pill{display:inline-flex;align-items:center;gap:0;text-decoration:none;
+  border-radius:var(--r-full);padding:5px 5px 5px 24px;min-height:56px;
+  font-size:16.5px;font-weight:500;line-height:1;
+  transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.pill .txt{padding-right:16px;white-space:nowrap}
+.pill .badge{flex:0 0 46px;height:46px;border-radius:var(--r-full);display:grid;place-items:center;
+  transition:transform var(--dur) var(--ease)}
+.pill:hover{transform:translateY(-2px)}
+.pill:hover .badge{transform:rotate(45deg)}
+.pill:active{transform:translateY(0) scale(.985)}
+/* primär auf hellem Grund: Petrol, Badge Lime  (Vitax: blaue Pill mit Badge) */
+.pill-brand{background:var(--brand);color:var(--ground);box-shadow:0 1px 2px rgba(12,43,46,.10),0 12px 26px -14px rgba(28,95,99,.7)}
+.pill-brand:hover{background:#17565A}
+.pill-brand .badge{background:var(--lime);color:var(--on-lime)}
+/* sekundär auf hellem Grund: weiss, Badge dunkel  (Vitax: "Contact Us") */
+.pill-light{background:var(--card);color:var(--ink);box-shadow:var(--e-1)}
+.pill-light:hover{background:#fff}
+.pill-light .badge{background:var(--dark);color:var(--ground)}
+/* primär auf dunklem Grund: Lime  (CareHaven) */
+.pill-lime{background:var(--lime);color:var(--on-lime)}
+.pill-lime:hover{background:var(--lime-hi)}
+.pill-lime .badge{background:var(--on-lime);color:var(--lime)}
+/* geist auf dunklem Grund */
+.pill-ghost{background:rgba(244,246,245,.08);color:var(--ground);box-shadow:inset 0 0 0 1px var(--line-d)}
+.pill-ghost:hover{background:rgba(244,246,245,.14)}
+.pill-ghost .badge{background:var(--ground);color:var(--dark)}
+/* Telefon-Pill mit Nummer */
+.pill-tel .txt{display:flex;flex-direction:column;gap:2px;line-height:1.25;text-align:left}
+.pill-tel .txt small{font-size:11.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.pill-ghost.pill-tel .txt small{color:var(--muted-dark)}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+
+/* runder Pfeil-Badge solo */
+.badge-solo{width:46px;height:46px;border-radius:var(--r-full);background:var(--dark);color:var(--ground);
+  display:grid;place-items:center;text-decoration:none;flex:0 0 46px;
+  transition:transform var(--dur) var(--ease),background var(--dur) var(--ease)}
+.badge-solo:hover{transform:rotate(45deg);background:var(--brand)}
+.badge-lime{background:var(--lime);color:var(--on-lime)}
+.badge-lime:hover{background:var(--lime-hi)}
+
+/* ---------- Header, Nav als Pill-Gruppe (Vitax) ---------- */
+header.site{position:sticky;top:0;z-index:200;background:rgba(244,246,245,.86);
+  backdrop-filter:saturate(150%) blur(14px)}
+/* Drei Zonen, gleichmässig: Logo links, Nav exakt mittig, Aktionen rechts.
+   Die Aussenzonen tragen flex:1, damit die Nav zentriert bleibt und die Aktionen
+   auch dann rechts stehen, wenn die Nav ausgeblendet ist. */
+.hdr{display:flex;align-items:center;gap:var(--s4);padding-block:var(--s3)}
+.brandmark{flex:1 1 auto;display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;
+  color:var(--ink);overflow:hidden}
+/* Die Wortmarke füllt die Lücke, die die Pillen-Navigation hinterlässt.
+   Oberhalb von 1180 sitzt dort die Navigation, dann bleibt sie aus. */
+.brandmark .nm{display:none;font-size:22px;font-weight:500;letter-spacing:.14em;line-height:1;
+  white-space:nowrap}
+.brandmark img{width:84px;transition:width var(--dur) var(--ease)}
+.navpills{flex:0 0 auto;display:flex;gap:4px;background:var(--card);padding:5px;
+  border-radius:var(--r-full);box-shadow:var(--e-1)}
+.navpills a{padding:11px 18px;border-radius:var(--r-full);font-size:15.5px;font-weight:500;
+  text-decoration:none;color:var(--muted);transition:background var(--dur) var(--ease),color var(--dur) var(--ease)}
+.navpills a:hover{background:var(--card-2);color:var(--ink)}
+.navpills a.on{background:var(--brand);color:var(--ground)}
+.hdr .pill{min-height:48px;padding:4px 4px 4px 20px;font-size:15.5px}
+.hdr .pill .badge{flex:0 0 40px;height:40px}
+.hdr-right{flex:1 1 auto;display:flex;gap:var(--s2);align-items:center;justify-content:flex-end;min-width:0}
+
+/* ---------- Burger ---------- */
+/* Die drei Balken sitzen absolut aus der Mitte. Damit ist die Geometrie unabhaengig
+   davon, wie der Button innen layoutet, und das Kreuz trifft sich exakt. */
+.burger{display:none;position:relative;flex:0 0 48px;width:48px;height:48px;border:0;padding:0;
+  cursor:pointer;border-radius:var(--r-full);background:var(--card);box-shadow:var(--e-1);
+  transition:background var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.burger:hover{background:#fff;transform:translateY(-1px)}
+.burger i{position:absolute;left:50%;top:50%;width:20px;height:2px;margin:-1px 0 0 -10px;
+  border-radius:2px;background:var(--ink);
+  transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.burger i:nth-child(1){transform:translateY(-6.5px)}
+.burger i:nth-child(3){transform:translateY(6.5px)}
+.burger[aria-expanded="true"] i:nth-child(1){transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){transform:rotate(-45deg)}
+
+/* ---------- Menü-Panel ---------- */
+.menu{border-top:1px solid var(--line);background:var(--ground);
+  padding:var(--s5) 0 var(--s6);max-height:calc(100vh - 96px);overflow-y:auto}
+.menu .wrap{display:grid;gap:var(--s5)}
+.menu nav{display:grid}
+.menu nav a{font-size:21px;font-weight:500;letter-spacing:-.02em;color:var(--ink);
+  text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line)}
+.menu nav a:hover,.menu nav a[aria-current="true"]{color:var(--brand)}
+.menu-cta{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.menu-cta .pill{flex:1 1 240px;justify-content:space-between}
+
+/* ---------- Hero, Collage (Vitax) ---------- */
+.hero{padding-block:var(--s8) var(--s9);display:grid;grid-template-columns:1.18fr .82fr;gap:var(--s7);align-items:center}
+.collage{position:relative}
+.collage h1{margin:var(--s5) 0 0}
+/* Die Headline ist ein durchlaufender Inline-Fluss. Badge, Pille und Kontur sind
+   Inline-Objekte, die mit den Wörtern umbrechen, damit jede Zeile die Breite füllt.
+   Alle Maße in em, damit sie an der clamp-Schriftgröße hängen. */
+.collage h1{text-wrap:wrap}
+.keep{white-space:nowrap}
+.inline-pill{display:inline-flex;align-items:center;gap:.42em;background:var(--dark);color:var(--ground);
+  font-family:var(--sans);font-size:max(13.5px,.31em);font-weight:500;letter-spacing:-.01em;line-height:1;
+  padding:.62em 1.05em;border-radius:var(--r-full);vertical-align:.32em;margin:0 .06em}
+.inline-pill svg{flex:0 0 1.05em;width:1.05em;height:1.05em}
+.inline-outline{display:inline-block;padding:.02em .34em .06em;border:1.5px solid rgba(16,31,32,.20);
+  border-radius:var(--r-full);line-height:inherit}
+.inline-dot{display:inline-grid;place-items:center;width:.82em;height:.82em;
+  border-radius:var(--r-full);background:var(--brand);color:var(--lime);
+  vertical-align:.06em;margin-left:.16em}
+.inline-dot svg{width:.42em;height:.42em}
+.notes{display:flex;flex-wrap:wrap;gap:var(--s5) var(--s7);margin:var(--s5) 0 0}
+.micro-note{font-size:15px;line-height:1.5;letter-spacing:normal;color:var(--muted);
+  max-width:31ch;margin:0;position:relative;padding-left:var(--s4)}
+.micro-note::before{content:"";position:absolute;left:0;top:5px;bottom:5px;width:2px;
+  border-radius:1px;background:var(--brand);opacity:.35}
+.collage .cta-row{margin-top:var(--s7)}
+@media (max-width:640px){ .notes{gap:var(--s4)} .micro-note{max-width:none} }
+
+.hero-panel{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--e-3);
+  aspect-ratio:1/1.12;background:var(--card-2)}
+.hero-panel img{width:100%;height:100%;object-fit:cover;object-position:50% 44%}
+.hero-panel::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(200deg,rgba(12,43,46,.34) 0%,rgba(12,43,46,.02) 42%,rgba(196,220,66,.14) 100%)}
+.float-pills{position:absolute;right:var(--s5);bottom:var(--s5);z-index:2;display:flex;flex-direction:column;
+  align-items:flex-end;gap:10px}
+.float-pill{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.96);
+  border-radius:var(--r-full);padding:6px 6px 6px 18px;text-decoration:none;color:var(--ink);
+  font-size:14.5px;font-weight:500;box-shadow:var(--e-2);
+  transition:transform var(--dur) var(--ease)}
+.float-pill:hover{transform:translateX(-4px)}
+.float-pill .b{width:32px;height:32px;border-radius:var(--r-full);background:var(--brand);color:var(--lime);
+  display:grid;place-items:center;flex:0 0 32px}
+.float-pill:nth-child(2){margin-right:22px}
+.float-pill:nth-child(3){margin-right:44px}
+
+/* ---------- Statement-Band (Vitax "About us") ---------- */
+.statement{display:grid;grid-template-columns:200px 1fr 70px;gap:var(--s7);align-items:start;
+  padding-block:var(--s8);border-top:1px solid var(--line)}
+.statement .big{font-size:clamp(23px,2.5vw,32px);line-height:1.34;letter-spacing:-.022em;font-weight:400;max-width:44ch}
+.statement .rail{display:flex;flex-direction:column;gap:10px;align-items:center;
+  background:var(--card);border-radius:var(--r-full);padding:10px;box-shadow:var(--e-1)}
+.rail .dot{width:44px;height:44px;border-radius:var(--r-full);display:grid;place-items:center;
+  border:1.5px solid var(--line);color:var(--brand)}
+.rail .dot.fill{background:var(--brand);color:var(--lime);border-color:var(--brand)}
+
+/* ---------- Stat-Band auf Dunkel (CareHaven) ---------- */
+.band-dark{position:relative;color:var(--ground);overflow:hidden;
+  background:radial-gradient(85% 120% at 88% 6%,#175056 0%,transparent 58%),
+             radial-gradient(70% 90% at -4% 100%,#1B5F62 0%,transparent 54%),var(--deep)}
+.band-dark h2,.band-dark h3{color:var(--ground)}
+.band-dark p{color:var(--muted-dark)}
+.band{padding:var(--s9) 0}
+.band-tight{padding:var(--s7) 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s5)}
+.stat{border-left:1px solid var(--line-d);padding-left:var(--s5)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat .n{font-size:clamp(34px,3.8vw,50px);letter-spacing:-.035em;line-height:1;color:var(--lime);font-weight:400}
+.stat .l{display:block;font-size:15px;color:var(--muted-dark);margin-top:var(--s3);line-height:1.4}
+
+/* ---------- Sektionskopf im Vitax-Muster ---------- */
+.sec-head{display:grid;grid-template-columns:200px 1fr 260px;gap:var(--s7);align-items:end;margin-bottom:var(--s7)}
+.sec-head .chip-label{align-self:start}
+.statement .chip-label{align-self:start}
+.sec-head .mp{font-size:14px;line-height:1.45;color:var(--muted);margin:0}
+
+/* ---------- Bento-Grid (Vitax Services) ---------- */
+.bento{display:grid;grid-template-columns:1fr 1.15fr 1fr;grid-template-rows:auto auto;gap:var(--s4)}
+.bcard{background:var(--card-2);border-radius:var(--r-lg);padding:var(--s6);position:relative}
+.bcard.white{background:var(--card);box-shadow:var(--e-1)}
+.bcard h3{margin-bottom:var(--s3)}
+.bcard p{font-size:15.5px;line-height:1.55;color:var(--muted);margin:0}
+.b-tall{grid-row:1/3;display:flex;flex-direction:column}
+.b-wide{grid-column:2/4}
+.circles{display:flex;align-items:center;margin-bottom:var(--s6)}
+.circles span{width:88px;height:88px;border-radius:var(--r-full);overflow:hidden;background:var(--card);
+  box-shadow:0 0 0 4px var(--card-2);display:grid;place-items:center}
+.circles span + span{margin-left:-22px}
+.circles span:nth-child(2){width:104px;height:104px;z-index:2}
+.circles img{width:100%;height:100%;object-fit:cover}
+.b-tall .foot{margin-top:auto;padding-top:var(--s6)}
+.centered{text-align:center}
+
+/* Mini-Mockup: Frist-Tracker (Vitax "Health Records") */
+.mock{background:var(--card);border-radius:var(--r-md);padding:var(--s4);box-shadow:var(--e-1);margin-top:var(--s5)}
+.mock-row{display:grid;grid-template-columns:1fr auto;gap:var(--s3);align-items:center;
+  padding:11px 0;border-top:1px solid var(--line)}
+.mock-row:first-child{border-top:0}
+.mock-row b{font-size:14.5px;font-weight:500}
+.mock-row .tag{font-size:12px;font-weight:500;color:var(--brand);background:var(--card-2);
+  padding:4px 10px;border-radius:var(--r-full);white-space:nowrap}
+.bar{grid-column:1/-1;height:6px;border-radius:3px;background:var(--card-2);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px;background:var(--brand)}
+.bar.lime i{background:var(--lime)}
+
+/* Mini-Mockup: Kosten */
+.mock-cost{display:grid;gap:var(--s3);margin-top:var(--s5)}
+.mc{background:var(--card);border-radius:var(--r-md);padding:var(--s4) var(--s5);box-shadow:var(--e-1);
+  display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3)}
+.mc .v{font-size:30px;letter-spacing:-.03em;line-height:1;color:var(--brand)}
+.mc .k{font-size:13.5px;color:var(--muted);text-align:right;line-height:1.35;max-width:16ch}
+
+/* ---------- Chip-Cluster (Vitax "Platform Sets") ---------- */
+.cluster{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:center;padding-block:var(--s8)}
+.chips-scatter{position:relative;min-height:300px}
+.chips-scatter span{position:absolute;background:var(--card);color:var(--ink);font-size:15px;font-weight:500;
+  padding:11px 19px;border-radius:var(--r-full);box-shadow:var(--e-1);white-space:nowrap;
+  transition:transform var(--dur) var(--ease)}
+.chips-scatter span:hover{transform:translateY(-3px)}
+.chips-scatter span:nth-child(1){left:6%;top:2%}
+.chips-scatter span:nth-child(2){left:47%;top:11%}
+.chips-scatter span:nth-child(3){left:12%;top:25%}
+.chips-scatter span:nth-child(4){left:55%;top:33%}
+.chips-scatter span:nth-child(5){left:2%;top:47%}
+.chips-scatter span:nth-child(6){left:40%;top:55%}
+.chips-scatter span:nth-child(7){left:15%;top:70%}
+.chips-scatter span:nth-child(8){left:52%;top:78%}
+.chips-scatter span:nth-child(9){left:5%;top:90%}
+
+/* ---------- Kreis-Sektion (Vitax-Signatur) ---------- */
+.orbit{position:relative;padding:var(--s9) 0 var(--s10);display:grid;place-items:center}
+.circle{position:relative;width:min(620px,86vw);aspect-ratio:1/1;border-radius:50%;
+  border:1px solid var(--line);display:grid;place-items:center;text-align:center;background:var(--ground)}
+.circle-in{width:min(74%,430px);padding:0}
+.circle-in h2{margin-bottom:var(--s6)}
+.orbit .ob{position:absolute}
+.orbit .ob-1{left:8%;top:14%}      /* Pfeil-Badge oben links auf der Kante */
+.orbit .ob-2{right:8%;top:14%}
+.orbit .ob-3{left:50%;bottom:-23px;transform:translateX(-50%)}
+.orbit .oc{position:absolute;background:var(--card);font-size:15px;font-weight:500;padding:11px 19px;
+  border-radius:var(--r-full);box-shadow:var(--e-1);white-space:nowrap}
+.orbit .oc-1{left:50%;top:-22px;transform:translateX(-50%)}
+.orbit .oc-2{left:-14%;top:33%}
+.orbit .oc-3{left:-24%;top:52%}
+.orbit .oc-4{right:-13%;top:29%}
+.orbit .oc-5{right:-19%;top:50%}
+.orbit .portrait{position:absolute;left:-9%;bottom:4%;width:31%;aspect-ratio:1/1;border-radius:50%;
+  overflow:hidden;box-shadow:var(--e-2);background:var(--card-2)}
+.orbit .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 34%}
+.orbit .side-note{position:absolute;right:-7%;bottom:7%;width:210px;font-size:13.5px;
+  line-height:1.45;color:var(--muted)}
+
+/* ---------- Listen-Reihen auf Dunkel (CareHaven) ---------- */
+.rows{margin-top:var(--s7)}
+.row{display:grid;grid-template-columns:64px 1.05fr 1.5fr 46px;gap:var(--s5);align-items:center;
+  padding:var(--s5) 0;border-top:1px solid var(--line-d)}
+.row .idx{font-size:15px;color:var(--lime);letter-spacing:.06em}
+.row h3{font-size:20.5px;letter-spacing:-.02em}
+.row p{margin:0;font-size:16px}
+.row .badge-solo{background:rgba(244,246,245,.10);color:var(--ground);box-shadow:inset 0 0 0 1px var(--line-d)}
+.row:hover .badge-solo{background:var(--lime);color:var(--on-lime);box-shadow:none}
+
+/* ---------- Triptychon "Wer zu Ihnen kommt" (Vitax "Who We Are") ---------- */
+.tri{display:grid;grid-template-columns:1fr 1.1fr .85fr;gap:var(--s4);align-items:stretch}
+.tri > *{border-radius:var(--r-lg)}
+.tri .t-text{background:var(--card);box-shadow:var(--e-1);padding:var(--s6);display:flex;flex-direction:column}
+.tri .t-text .cta-row{margin-top:auto;padding-top:var(--s6)}
+.tri .t-photo{overflow:hidden;background:var(--card-2)}
+.tri .t-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.tri .t-claim{background:var(--card-2);padding:var(--s6);display:flex;flex-direction:column;justify-content:center}
+.tri .t-claim .huge{font-size:clamp(38px,4.4vw,58px);letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.tri .t-claim .vr{width:1.5px;height:52px;background:var(--brand);margin:var(--s4) 0 var(--s5)}
+.tri .t-claim p{font-size:14.5px;color:var(--muted);margin:0}
+.creds{display:flex;flex-wrap:wrap;gap:var(--s2);margin:var(--s4) 0 var(--s5)}
+.creds span{font-size:13px;font-weight:500;background:var(--card-2);color:var(--brand);
+  padding:7px 14px;border-radius:var(--r-full)}
+.tri .t-text .creds span{background:var(--card-2)}
+
+/* ---------- Notch-Karten (Vitax) ---------- */
+.notchgrid{display:grid;grid-template-columns:1.25fr .85fr .9fr;gap:var(--s4);margin-top:var(--s7)}
+.notch{position:relative;border-radius:var(--r-lg);overflow:visible}
+.notch .inner{border-radius:var(--r-lg);overflow:hidden;height:100%}
+.notch .badge-solo{position:absolute;right:0;bottom:0;box-shadow:0 0 0 9px var(--ground)}
+.notch.top .badge-solo{top:0;bottom:auto}
+.notch-photo .inner{background:var(--card-2);aspect-ratio:4/3}
+.notch-photo img{width:100%;height:100%;object-fit:cover}
+.notch-card .inner{background:var(--card);box-shadow:var(--e-1);padding:var(--s6);display:flex;flex-direction:column}
+.notch-card p{font-size:15.5px;color:var(--muted)}
+.notch-dark .inner{background:var(--deep);color:var(--ground);padding:var(--s6);display:flex;flex-direction:column;justify-content:space-between}
+.notch-dark .q{font-size:19px;line-height:1.36;letter-spacing:-.015em}
+.notch-dark .src{font-size:13.5px;color:var(--muted-dark);margin:var(--s5) 0 0}
+.avatars{display:flex;margin-top:var(--s5)}
+.avatars span{width:44px;height:44px;border-radius:var(--r-full);overflow:hidden;background:var(--card-2);
+  box-shadow:0 0 0 3px var(--card);display:grid;place-items:center}
+.avatars span + span{margin-left:-12px}
+.avatars img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- FAQ (Claré) ---------- */
+.faqs{display:grid;gap:var(--s3);max-width:900px;margin:0 auto}
+details.q{background:var(--card);border-radius:var(--r-md);box-shadow:var(--e-1);
+  transition:box-shadow var(--dur) var(--ease)}
+details.q[open]{box-shadow:var(--e-2)}
+details.q summary{cursor:pointer;list-style:none;padding:var(--s5) 64px var(--s5) var(--s5);position:relative;
+  font-size:19px;font-weight:500;letter-spacing:-.018em;line-height:1.32}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"";position:absolute;right:var(--s4);top:50%;width:36px;height:36px;
+  margin-top:-18px;border-radius:var(--r-full);background:var(--card-2) no-repeat center/13px
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13'%3E%3Cpath d='M6.5 1v11M1 6.5h11' stroke='%231C5F63' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+  transition:transform var(--dur) var(--ease)}
+details.q[open] summary::after{transform:rotate(45deg)}
+details.q .a{padding:0 64px var(--s5) var(--s5);color:var(--muted);font-size:17px}
+details.q .a p:last-child{margin:0}
+
+/* ---------- Formular im Farbblock (Claré) ---------- */
+.formband{border-radius:var(--r-xl);overflow:hidden;position:relative;color:var(--ground);
+  background:radial-gradient(80% 120% at 90% 0%,#175056 0%,transparent 58%),var(--deep);
+  padding:var(--s8);display:grid;grid-template-columns:.92fr 1.08fr;gap:var(--s8);align-items:start}
+.formband h2{color:var(--ground)}
+.formband .lead{color:var(--muted-dark);font-size:17.5px;max-width:40ch}
+.fcard{background:var(--card);border-radius:var(--r-lg);padding:var(--s6);color:var(--ink)}
+.field{margin-bottom:var(--s4)}
+.field label,.field legend{display:block;font-size:14.5px;font-weight:500;margin-bottom:7px;padding:0;color:var(--ink)}
+.field .hint{font-size:14px;color:var(--muted);margin:-3px 0 8px}
+fieldset{border:0;padding:0;margin:0 0 var(--s4)}
+.inp{width:100%;font-family:var(--sans);font-size:16.5px;color:var(--ink);background:var(--ground);
+  border:1.5px solid transparent;border-radius:var(--r-sm);padding:14px 16px;min-height:54px;
+  transition:border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background var(--dur) var(--ease)}
+.inp:hover{background:var(--card-2)}
+.inp:focus{outline:none;background:var(--card);border-color:var(--brand);box-shadow:0 0 0 4px rgba(28,95,99,.15)}
+textarea.inp{min-height:104px;resize:vertical;line-height:1.5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.opts{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.opt{position:relative}
+.opt input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.opt span{display:block;padding:12px 18px;min-height:48px;border-radius:var(--r-full);background:var(--ground);
+  font-size:15.5px;font-weight:500;transition:background var(--dur) var(--ease),color var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.opt input:hover + span{background:var(--card-2);transform:translateY(-1px)}
+.opt input:checked + span{background:var(--brand);color:var(--ground)}
+.opt input:focus-visible + span{outline:3px solid var(--brand);outline-offset:3px}
+.consent{display:flex;gap:var(--s3);align-items:flex-start;font-size:14.5px;color:var(--muted);
+  line-height:1.5;margin-bottom:var(--s5)}
+.consent input{width:24px;height:24px;margin:2px 0 0;accent-color:var(--brand);flex:0 0 auto}
+.side-facts{margin-top:var(--s7);display:grid;gap:var(--s4)}
+.sf{display:flex;gap:var(--s4);align-items:flex-start}
+.sf .ic{flex:0 0 44px;height:44px;border-radius:var(--r-full);background:rgba(196,220,66,.16);
+  color:var(--lime);display:grid;place-items:center}
+.sf b{display:block;font-size:16px;font-weight:500}
+.sf span{display:block;font-size:14.5px;color:var(--muted-dark);line-height:1.45;margin-top:2px}
+.formnote{font-size:14px;color:var(--muted);margin:var(--s4) 0 0}
+
+/* ---------- Footer (Vitax) plus Wortmarke (Claré) ---------- */
+footer.site{padding:var(--s9) 0 var(--s7)}
+.f-top{display:flex;align-items:center;gap:16px;margin-bottom:var(--s8)}
+.f-top img{width:96px}
+.f-top .nm{font-size:28px;font-weight:500;letter-spacing:.14em}
+.fgrid{display:grid;grid-template-columns:1.55fr .62fr 1.18fr .52fr;gap:var(--s7)}
+.fgrid h3{font-size:25px;font-weight:500;letter-spacing:-.025em;margin-bottom:var(--s3)}
+.fgrid p{font-size:15.5px;color:var(--muted);max-width:40ch;margin:0}
+.f-col a{display:block;font-size:15.5px;color:var(--muted);text-decoration:none;padding:9px 0}
+.f-col a:hover{color:var(--brand)}
+.f-right{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;gap:var(--s7)}
+.socials{display:flex;gap:10px}
+.socials a{width:38px;height:38px;border-radius:var(--r-full);background:var(--card);color:var(--muted);
+  display:grid;place-items:center;box-shadow:var(--e-1);
+  transition:transform var(--dur) var(--ease),color var(--dur) var(--ease),background var(--dur) var(--ease)}
+.socials a:hover{transform:translateY(-2px);color:var(--brand);background:#fff}
+.f-disclaimer{margin-top:var(--s8);font-size:13.5px;color:var(--muted);max-width:86ch}
+.f-lab{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+  margin-bottom:var(--s3)}
+.f-contact a{display:flex;align-items:center;gap:12px;font-size:15.5px;color:var(--ink);
+  text-decoration:none;padding:9px 0}
+.f-contact a:hover{color:var(--brand)}
+.f-contact .ic{width:30px;height:30px;border-radius:var(--r-full);background:var(--card);
+  display:grid;place-items:center;flex:0 0 30px;box-shadow:var(--e-1);color:var(--brand)}
+.f-underline{display:flex;align-items:center;gap:var(--s3);border-bottom:1.5px solid var(--line);
+  padding-bottom:10px;margin-top:var(--s5);max-width:340px}
+.f-underline input{flex:1;border:0;background:transparent;font-family:var(--sans);font-size:16px;
+  color:var(--ink);padding:8px 0;min-height:40px}
+.f-underline input:focus{outline:none}
+.f-underline .badge-solo{width:44px;height:44px;flex:0 0 44px;background:var(--brand);color:var(--lime)}
+.totop{font-size:15px;color:var(--muted);text-decoration:none;padding:11px 0;display:inline-block}
+.totop:hover{color:var(--brand)}
+.f-bottom{margin-top:var(--s5);background:var(--card);border-radius:var(--r-lg);padding:var(--s4) var(--s6);
+  display:flex;flex-wrap:wrap;gap:var(--s4);justify-content:space-between;align-items:center;
+  font-size:14px;color:var(--muted)}
+.f-legal{display:flex;gap:var(--s4);align-items:center}
+.f-legal span{opacity:.4}
+.f-bottom a{color:var(--muted);text-decoration:none;padding:11px 0;display:inline-block}
+.f-bottom a:hover{color:var(--brand)}
+.rainbow-rule{height:3px;background:var(--rainbow);border-radius:2px;width:88px}
+
+/* ---------- Sticky Mobil ---------- */
+.sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:250;gap:var(--s2);
+  padding:var(--s3) var(--s3) calc(var(--s3) + env(safe-area-inset-bottom));
+  background:rgba(244,246,245,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.sticky .pill{flex:1;justify-content:center;min-height:54px;padding:4px 4px 4px 18px;font-size:15.5px}
+.sticky .pill .badge{flex:0 0 44px;height:44px}
+.sticky .pill-tel .txt small{display:none}
+
+/* ---------- Reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+/* Kopfzeile schaltet frueher als das Layout, weil 5 Nav-Pillen plus zwei
+   Aktions-Pillen ab hier nicht mehr nebeneinander passen. */
+@media (max-width:1180px){
+  .navpills{display:none}
+  .burger{display:block}
+  .brandmark .nm{display:block}
+  .hdr-right .pill-tel{padding:4px;min-height:48px}
+  .hdr-right .pill-tel .txt{display:none}
+}
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr;gap:var(--s6);padding-bottom:var(--s8)}
+  .hero-panel{aspect-ratio:16/11}
+  .statement,.sec-head{grid-template-columns:1fr;gap:var(--s5)}
+  .statement .rail{flex-direction:row;width:max-content;border-radius:var(--r-full)}
+  .bento{grid-template-columns:1fr 1fr}
+  .b-tall{grid-row:auto}
+  .b-wide{grid-column:1/-1}
+  .cluster{grid-template-columns:1fr;gap:var(--s6)}
+  .tri{grid-template-columns:1fr 1fr}
+  .tri .t-claim{grid-column:1/-1}
+  .notchgrid{grid-template-columns:1fr 1fr}
+  .notch-dark{grid-column:1/-1}
+  .formband{grid-template-columns:1fr;padding:var(--s6)}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .f-lead{grid-column:1/-1}
+  .f-right{align-items:flex-start;flex-direction:row;justify-content:space-between;grid-column:1/-1}
+  .row{grid-template-columns:44px 1fr 46px;gap:var(--s4)}
+  .row p{grid-column:2/3}
+  .stats{grid-template-columns:1fr 1fr;gap:var(--s6)}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  /* Kreis-Sektion wird zu einem ruhigen Block */
+  .circle{border-radius:var(--r-xl);aspect-ratio:auto;padding:var(--s8) var(--s5);width:100%}
+  .circle-in{padding:0;max-width:34ch}
+  .orbit{padding:var(--s7) 0}
+  .orbit .ob,.orbit .portrait,.orbit .side-note{display:none}
+  .orbit .oc{position:static;transform:none;display:inline-block;margin:0 6px 8px 0}
+  .oc-wrap{margin-top:var(--s5);text-align:center}
+  .chips-scatter{min-height:0;display:flex;flex-wrap:wrap;gap:10px}
+  .chips-scatter span{position:static}
+}
+/* Zwischenstufe: was bei zwei Spalten schon gedrängt wirkt, geht hier auf eine. */
+@media (max-width:980px){
+  .brandmark img{width:72px}
+  .brandmark .nm{font-size:20px}
+  .bento,.tri,.notchgrid{grid-template-columns:1fr}
+  .b-tall,.b-wide,.tri .t-claim,.notch-dark{grid-column:auto}
+  .tri .t-photo{aspect-ratio:16/10}
+  .tri .t-claim{flex-direction:row;align-items:center;gap:var(--s6)}
+  .tri .t-claim .vr{margin:0;height:64px;flex:0 0 auto}
+  .circles span{width:74px;height:74px}
+  .circles span:nth-child(2){width:88px;height:88px}
+  .menu nav a{font-size:19px}
+  .formband{padding:var(--s6)}
+  .band{padding:var(--s8) 0}
+}
+@media (max-width:720px){
+  body{font-size:17.5px;padding-bottom:78px}
+  .wrap{padding:0 var(--s5)}
+  .hdr-right .pill-brand{display:none}
+  .brandmark img{width:64px}
+  .brandmark .nm{font-size:18px;letter-spacing:.12em}
+  .brandmark{gap:11px}
+  .menu{max-height:calc(100vh - 80px)}
+  .sticky{display:flex}
+  .bento,.tri,.notchgrid,.two{grid-template-columns:1fr}
+  .b-wide,.tri .t-claim,.notch-dark{grid-column:auto}
+  .fgrid{grid-template-columns:1fr}
+  .f-lead,.f-right{grid-column:auto}
+  .f-top img{width:58px}
+  .f-top .nm{font-size:23px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-left:0;padding-left:0;border-top:1px solid var(--line-d);padding-top:var(--s4)}
+  .stat:first-child{border-top:0;padding-top:0}
+  .band{padding:var(--s7) 0}
+  .bcard,.notch-card .inner,.notch-dark .inner,.tri .t-text,.tri .t-claim,.fcard{padding:var(--s5)}
+  .float-pills{right:var(--s4);bottom:var(--s4)}
+  .float-pill:nth-child(2),.float-pill:nth-child(3){margin-right:0}
+  .collage .cta-row{margin-top:var(--s6)}
+  .pill{min-width:0}
+  .pill .txt{white-space:normal}
+  .hdr .pill .txt{white-space:nowrap}
+  .cta-row .pill,.fcard .pill{width:100%;justify-content:space-between}
+  /* Sticky-Leiste: Text darf umbrechen, sonst laeuft der Badge unter 380 Pixel raus */
+  .sticky .pill{padding:4px 4px 4px 15px;font-size:15px;justify-content:space-between}
+  .sticky .pill .txt{white-space:normal;padding-right:10px;line-height:1.2}
+  .sticky .pill .badge{flex:0 0 40px;height:40px}
+}
+@media (max-width:480px){
+  .brandmark img{width:56px}
+  .brandmark .nm{font-size:16px;letter-spacing:.09em}
+  .brandmark{gap:9px}
+  .menu nav a{font-size:18px;padding:12px 0}
+  .h-xl{font-size:clamp(32px,8.6vw,40px)}
+  .inline-outline{padding:.02em .3em .06em}
+}
+@media (max-width:400px){
+  .brandmark img{width:50px}
+  .brandmark .nm{font-size:15px;letter-spacing:.06em}
+  .brandmark{gap:8px}
+  .hdr{gap:var(--s3)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .rv{opacity:1;transform:none}
+  .pill:hover .badge{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#anfrage">Direkt zum Anfrageformular</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <g id="i-arrow"><path d="M8 22 22 8M12 8h10v10"/></g>
+ <g id="i-arrow-r"><path d="M4 15h20M17 8l7 7-7 7"/></g>
+ <g id="i-arrow-l"><path d="M26 15H6M13 8l-7 7 7 7"/></g>
+ <g id="i-phone"><path d="M8 4h5l2 5.5-3 2c1 3 3.5 5.5 6.5 6.5l2-3 5.5 2v5c0 1.1-.9 2-2 2C13.6 24 6 16.4 6 6c0-1.1.9-2 2-2Z"/></g>
+ <g id="i-mail"><rect x="4" y="7" width="22" height="16" rx="3"/><path d="m5 9 10 7 10-7"/></g>
+ <g id="i-pin"><path d="M15 27s9-8.5 9-15A9 9 0 0 0 6 12c0 6.5 9 15 9 15Z"/><circle cx="15" cy="12" r="3.5"/></g>
+ <g id="i-home"><path d="M4 13.5 15 4.5l11 9M7 11.5V25h16V11.5"/><path d="M11.6 17.4c0-1.2 1-2.1 2.1-2.1.6 0 1.1.2 1.5.7.4-.5.9-.7 1.5-.7 1.2 0 2.1 1 2.1 2.1 0 2-3.6 4-3.6 4s-3.6-2-3.6-4Z"/></g>
+ <g id="i-two"><circle cx="11" cy="10" r="4.6"/><path d="M3 25.5c.9-4.8 4.2-7.4 8-7.4s7.1 2.6 8 7.4"/><path d="M20.4 6.2a4.6 4.6 0 0 1 0 8.4M22.5 18.6c2.6.9 4.4 3.4 5 6.9"/></g>
+ <g id="i-shield"><path d="M15 4 25 7.5v8c0 6-4.5 10.5-10 13-5.5-2.5-10-7-10-13v-8Z"/><path d="M10.5 15.5 14 19l6-6.5"/></g>
+ <g id="i-clock"><circle cx="15" cy="15" r="11"/><path d="M15 8.5V15l4.5 3"/></g>
+ <g id="i-euro"><circle cx="15" cy="15" r="11"/><path d="M19.5 10c-1-1-2.4-1.6-3.9-1.6-3.4 0-6.1 3-6.1 6.6s2.7 6.6 6.1 6.6c1.5 0 2.9-.6 3.9-1.6M8 13h8M8 17h8"/></g>
+ <g id="i-doc"><path d="M7 4.5h11l5 5v20H7z"/><path d="M18 4.5v5h5M11 17h8M11 21h8M11 13h4"/></g>
+ <g id="i-heart"><path d="M15 25s-9-5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 11-9 11Z"/></g>
+ <g id="i-ig"><rect x="7" y="7" width="16" height="16" rx="4.6"/><circle cx="15" cy="15" r="3.7"/><circle cx="19.7" cy="10.3" r="1" fill="currentColor" stroke="none"/></g>
+</defs></svg>
+
+<!-- ================= HEADER ================= -->
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brandmark" href="#top" aria-label="LAIMEREI, Pflegeberatung und Alltagshilfe in München, zur Startseite">
+      <img src="bilder/logo-laimerei-pflegeberatung-muenchen.webp" alt="">
+      <span class="nm">LAIMEREI</span>
+    </a>
+    <nav class="navpills" aria-label="Hauptnavigation">
+      <a class="on" href="#top">Start</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#person">Wer kommt</a>
+      <a href="#fragen">Fragen</a>
+    </nav>
+    <div class="hdr-right">
+      <a class="pill pill-light pill-tel" href="tel:+4917675862758" aria-label="Anrufen: 0176 75862758">
+        <span class="txt"><small>Anrufen</small>0176 75862758</span>
+        <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+      </a>
+      <a class="pill pill-brand" href="#anfrage">
+        <span class="txt">Termin anfragen</span>
+        <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+      </a>
+      <button class="burger" type="button" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <div class="wrap">
+      <nav aria-label="Menü">
+        <a href="#top">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#person">Wer kommt</a>
+        <a href="#fragen">Fragen</a>
+      </nav>
+      <div class="menu-cta">
+        <a class="pill pill-brand" href="#anfrage">
+          <span class="txt">Kostenlosen Termin anfragen</span>
+          <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="pill pill-light pill-tel" href="tel:+4917675862758">
+          <span class="txt"><small>Oder rufen Sie an</small>0176 75862758</span>
+          <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO, Collage ================= -->
+<section>
+  <div class="wrap hero">
+    <div class="collage">
+      <span class="chip-label">Pflegeberatung und Alltagshilfe in München</span>
+      <h1 class="h-xl"><span class="keep">Pflegeberatung,<span class="inline-dot"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg></span></span> <span class="inline-pill"><svg viewBox="0 0 30 30" fill="none" stroke="var(--lime)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-heart"/></svg>§ 37.3 SGB XI</span> die zu Ihnen <span class="inline-outline">nach Hause</span> <span class="g">kommt.</span></h1>
+      <div class="notes">
+        <p class="micro-note">Bei Pflegegeld ab Pflegegrad 2 ist der Beratungseinsatz Pflicht. Wir behalten die Frist im Blick.</p>
+        <p class="micro-note">Kostenlos für Sie, Ihre Pflegekasse rechnet direkt mit uns ab.</p>
+      </div>
+      <div class="cta-row">
+        <a class="pill pill-brand" href="#anfrage">
+          <span class="txt">Kostenlosen Termin anfragen</span>
+          <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="pill pill-light pill-tel" href="tel:+4917675862758">
+          <span class="txt"><small>Oder rufen Sie an</small>0176 75862758</span>
+          <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <img src="bilder/pflegeberatung-muenchen-haende-gespraech.webp" alt="Zwei Menschen halten sich bei einem Gespräch am Tisch die Hände" width="1500" height="2250">
+      <div class="float-pills">
+        <a class="float-pill" href="#leistungen">Beratungseinsatz § 37.3 <span class="b"><svg width="13" height="13" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span></a>
+        <a class="float-pill" href="#leistungen">Alltagshilfe <span class="b"><svg width="13" height="13" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span></a>
+        <a class="float-pill" href="#leistungen">Hilfe im Haushalt <span class="b"><svg width="13" height="13" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATEMENT ================= -->
+<section>
+  <div class="wrap statement rv">
+    <span class="chip-label">Worum es geht</span>
+    <div>
+      <p class="big">Zwischen Job, Anträgen und dem schlechten Gewissen bleibt kaum Zeit, einmal durchzuatmen. <span class="g">Wir kommen zu Ihnen nach Hause, hören zu und erklären in Ruhe, was jetzt wirklich wichtig ist. Kein Aktenkoffer, keine Prüfung.</span></p>
+      <a class="pill pill-light" href="#ablauf">
+        <span class="txt">So läuft der Termin ab</span>
+        <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+    <div class="rail" aria-hidden="true">
+      <span class="dot fill"><svg width="16" height="16" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow-r"/></svg></span>
+      <span class="dot"><svg width="16" height="16" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow-l"/></svg></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STAT-BAND ================= -->
+<section class="band band-tight band-dark">
+  <div class="wrap stats rv">
+    <div class="stat"><span class="n">0 Euro</span><span class="l">kostet Sie der Beratungseinsatz. Ihre Pflegekasse trägt ihn.</span></div>
+    <div class="stat"><span class="n">131 Euro</span><span class="l">Entlastungsbetrag pro Monat für Alltagshilfe und Haushalt.</span></div>
+    <div class="stat"><span class="n">30 bis 45</span><span class="l">Minuten dauert der Hausbesuch. Sie müssen nichts vorbereiten.</span></div>
+    <div class="stat"><span class="n">1 Person</span><span class="l">kommt zu Ihnen, immer dieselbe. Kein wechselndes Team.</span></div>
+  </div>
+</section>
+
+<!-- ================= BENTO, Leistungen ================= -->
+<section class="band" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="chip-label">Leistungen</span>
+      <h2 class="h-lg">Was wir für Sie tun, <span class="g">und was es Sie kostet</span></h2>
+      <p class="mp">Zwei Leistungen, beide über Ihre Pflegekasse finanziert. Die eine ist Pflicht und kostenlos, die andere zahlen Sie aus einem Budget, das Ihnen ohnehin zusteht.</p>
+    </div>
+
+    <div class="bento rv">
+      <!-- tall -->
+      <div class="bcard b-tall">
+        <div class="circles" aria-hidden="true">
+          <span><svg width="34" height="34" viewBox="0 0 30 30" fill="none" stroke="#1C5F63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-two"/></svg></span>
+          <span><img src="bilder/pflegeberatung-muenchen-pascal-pottberg-inhaber.webp" alt=""></span>
+          <span><svg width="34" height="34" viewBox="0 0 30 30" fill="none" stroke="#1C5F63" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><use href="#i-home"/></svg></span>
+        </div>
+        <h3 class="h-md">Zwei Wege, <span class="it">ein</span> Termin</h3>
+        <p>Angehörige suchen aus Zeitnot und Fristendruck, Pflegebedürftige aus dem Wunsch, zu Hause zu bleiben. Beide Wege beginnen mit demselben Hausbesuch, nur mit anderen Fragen.</p>
+        <div class="foot">
+          <a class="pill pill-light" href="#anfrage" data-fuer="angehoeriger">
+            <span class="txt">Für einen Angehörigen</span>
+            <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- middle top: Frist-Tracker -->
+      <div class="bcard white centered">
+        <h3 class="h-sm">Beratungseinsatz § 37.3 SGB XI</h3>
+        <p>Gesetzlich vorgeschrieben, wenn Sie Pflegegeld beziehen. Wir behalten die Fristen im Blick und melden uns rechtzeitig, damit Sie nichts verpassen.</p>
+        <div class="mock" style="text-align:left">
+          <div class="mock-row"><b>Pflegegrad 2 und 3</b><span class="tag">halbjährlich</span><span class="bar"><i style="width:50%"></i></span></div>
+          <div class="mock-row"><b>Pflegegrad 4 und 5</b><span class="tag">vierteljährlich</span><span class="bar"><i style="width:25%"></i></span></div>
+          <div class="mock-row"><b>Nächster Termin</b><span class="tag">wir erinnern Sie</span><span class="bar lime"><i style="width:82%"></i></span></div>
+        </div>
+      </div>
+
+      <!-- right top: Kosten -->
+      <div class="bcard white centered">
+        <h3 class="h-sm">Was Sie zahlen</h3>
+        <p>Der Pflichttermin kostet Sie nichts. Die Alltagshilfe rechnen Sie über den Entlastungsbetrag ab.</p>
+        <div class="mock-cost" style="text-align:left">
+          <div class="mc"><span class="v">0 €</span><span class="k">Beratungseinsatz, die Pflegekasse zahlt direkt</span></div>
+          <div class="mc"><span class="v">131 €</span><span class="k">Entlastungsbetrag pro Monat, jeder Pflegegrad</span></div>
+          <div class="mc"><span class="v">30.06.</span><span class="k">bis dahin ist nicht genutztes Budget aus dem Vorjahr noch nutzbar</span></div>
+        </div>
+      </div>
+
+      <!-- wide bottom -->
+      <div class="bcard b-wide">
+        <h3 class="h-md">Alltagshilfe <span class="g">und Hilfe im Haushalt</span></h3>
+        <p style="max-width:62ch">Für alles, was den Alltag leichter macht. Abrechenbar über den Entlastungsbetrag Ihrer Pflegekasse. Es kommt dieselbe Person wieder, die Sie schon kennen.</p>
+        <div class="opts" style="margin-top:var(--s5)">
+          <span class="chip-label" style="text-transform:none;letter-spacing:0;font-size:14.5px;background:var(--card)">Begleitung zu Arzt und Behörde</span>
+          <span class="chip-label" style="text-transform:none;letter-spacing:0;font-size:14.5px;background:var(--card)">Einkäufe und Besorgungen</span>
+          <span class="chip-label" style="text-transform:none;letter-spacing:0;font-size:14.5px;background:var(--card)">Spaziergänge</span>
+          <span class="chip-label" style="text-transform:none;letter-spacing:0;font-size:14.5px;background:var(--card)">Wohnräume, Küche und Bad</span>
+          <span class="chip-label" style="text-transform:none;letter-spacing:0;font-size:14.5px;background:var(--card)">Wäsche und Bettenwechsel</span>
+          <span class="chip-label" style="text-transform:none;letter-spacing:0;font-size:14.5px;background:var(--card)">Ordnung im Papierkram</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHIP-CLUSTER ================= -->
+<section>
+  <div class="wrap cluster rv">
+    <div>
+      <span class="chip-label">Wobei wir helfen</span>
+      <h2 class="h-lg" style="margin-top:var(--s5)"><span class="g">Wir sortieren den</span> Papierkram, <span class="g">der Ihnen</span> die Kraft nimmt</h2>
+      <p style="color:var(--muted);max-width:46ch;margin-top:var(--s5)">Kein Amt, kein Fachchinesisch. Wir sagen Ihnen in normalen Worten, was Ihnen zusteht und was als Nächstes zu tun ist.</p>
+    </div>
+    <div class="chips-scatter" aria-label="Themen, bei denen wir unterstützen">
+      <span>Pflegegrad beantragen</span>
+      <span>Widerspruch</span>
+      <span>MD-Gutachten vorbereiten</span>
+      <span>Entlastungsbetrag</span>
+      <span>Verhinderungspflege</span>
+      <span>Kurzzeitpflege</span>
+      <span>Pflegehilfsmittel</span>
+      <span>Wohnraumanpassung</span>
+      <span>Pflegeunterstützungsgeld</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KREIS-SEKTION ================= -->
+<section class="orbit">
+  <div class="circle rv">
+    <div class="circle-in">
+      <h2 class="h-md">Für Menschen, die <span class="g">zu Hause bleiben wollen,</span> und für die, <span class="g">die sich kümmern.</span></h2>
+      <a class="pill pill-brand" href="#anfrage">
+        <span class="txt">Termin anfragen</span>
+        <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+    <a class="badge-solo ob ob-1" href="#leistungen" aria-label="Zu den Leistungen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+    <a class="badge-solo ob ob-2 badge-lime" href="#ablauf" aria-label="Zum Ablauf"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+    <a class="badge-solo ob ob-3" href="#fragen" aria-label="Zu den häufigen Fragen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow-r"/></svg></a>
+    <span class="oc oc-1">Pflegegrad 2 bis 5</span>
+    <span class="oc oc-2">Pflegende Angehörige</span>
+    <span class="oc oc-3">Berufstätig</span>
+    <span class="oc oc-4">Alleinstehend</span>
+    <span class="oc oc-5">Demenz im Haus</span>
+    <div class="portrait"><img src="bilder/pflegeberatung-muenchen-pascal-pottberg-inhaber.webp" alt="Pascal Pottberg, Inhaber von LAIMEREI"></div>
+    <p class="side-note">Der Beratungseinsatz nach § 37 Absatz 3 SGB XI ist ein gesetzlich vorgeschriebener Hausbesuch für Menschen, die Pflegegeld beziehen. Er ist für Sie kostenlos.</p>
+  </div>
+</section>
+
+<!-- ================= ABLAUF, Listen-Reihen ================= -->
+<section class="band band-dark" id="ablauf">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="chip-label chip-label-d">So läuft es ab</span>
+      <h2 class="h-lg">Fünf Schritte, <span class="g" style="color:var(--muted-dark)">dann ist es erledigt</span></h2>
+      <p class="mp" style="color:var(--muted-dark)">Vorhersehbarkeit nimmt mehr Angst als jede Erklärung. Deshalb steht hier, was genau passiert.</p>
+    </div>
+    <div class="rows rv">
+      <div class="row"><span class="idx">01</span><h3>Sie melden sich</h3><p>Formular ausfüllen oder anrufen. Zwei Minuten, mehr braucht es nicht.</p><a class="badge-solo" href="#anfrage" aria-label="Zum Formular"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a></div>
+      <div class="row"><span class="idx">02</span><h3>Wir rufen zurück</h3><p>Am selben oder nächsten Werktag. Wir klären kurz, worum es geht, und finden einen Termin, der in Ihren Tag passt.</p><a class="badge-solo" href="tel:+4917675862758" aria-label="Anrufen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></a></div>
+      <div class="row"><span class="idx">03</span><h3>Wir kommen zu Ihnen</h3><p>Rund 30 bis 45 Minuten. Wir schauen uns die Situation an, hören zu und beantworten Ihre Fragen. Sie müssen nichts vorbereiten.</p><a class="badge-solo" href="#fragen" aria-label="Häufige Fragen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a></div>
+      <div class="row"><span class="idx">04</span><h3>Wir erledigen den Papierteil</h3><p>Den Nachweis für Ihre Pflegekasse füllen wir aus und leiten ihn weiter. Fachliche Empfehlungen gehen nur mit Ihrem Einverständnis mit.</p><a class="badge-solo" href="#fragen" aria-label="Häufige Fragen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a></div>
+      <div class="row"><span class="idx">05</span><h3>Sie hören wieder von uns</h3><p>Wir merken uns, wann der nächste Termin fällig ist, und melden uns rechtzeitig. Sie müssen keine Frist im Kopf behalten.</p><a class="badge-solo" href="#anfrage" aria-label="Zum Formular"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="cta-row" style="margin-top:var(--s7)">
+      <a class="pill pill-lime" href="#anfrage">
+        <span class="txt">Schritt 1 starten</span>
+        <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="pill pill-ghost pill-tel" href="tel:+4917675862758">
+        <span class="txt"><small>Direkt anrufen</small>0176 75862758</span>
+        <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRIPTYCHON, Wer kommt ================= -->
+<section class="band" id="person">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="chip-label">Wer zu Ihnen kommt</span>
+      <h2 class="h-lg">Ein Name, <span class="g">ein Gesicht, eine Nummer</span></h2>
+      <p class="mp">Bei den großen Anbietern in München findet man keine einzelne Person. Hier schon.</p>
+    </div>
+    <div class="tri rv">
+      <div class="t-text">
+        <h3 class="h-md">Pascal Pottberg</h3>
+        <div class="creds"><span>Examinierte Pflegefachkraft</span><span>Erfahrung als Pflegedienstleitung</span></div>
+        <p style="font-size:16px;color:var(--muted)">Ich habe LAIMEREI gegründet, weil ich immer dasselbe gesehen habe: Menschen geraten unvorbereitet in eine Pflegesituation und werden mit Anträgen, Leistungsansprüchen und Fristen allein gelassen. Bei mir sind Sie keine Nummer in einem Dienstplan. Gute Unterstützung beginnt mit Zuhören.</p>
+        <div class="cta-row">
+          <a class="pill pill-light pill-tel" href="tel:+4917675862758">
+            <span class="txt"><small>Rufen Sie mich an</small>0176 75862758</span>
+            <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="t-photo"><img src="bilder/pflegeberatung-muenchen-pascal-pottberg-inhaber.webp" alt="Porträt von Pascal Pottberg"></div>
+      <div class="t-claim">
+        <span class="huge">§ 37.3</span>
+        <span class="vr" aria-hidden="true"></span>
+        <p>Der Paragraf, der viele Angehörige nervös macht. Für uns ist es der Termin, bei dem endlich jemand zuhört und die Formulare mitnimmt.</p>
+      </div>
+    </div>
+
+    <!-- Notch-Karten -->
+    <div class="notchgrid rv">
+      <div class="notch notch-photo">
+        <div class="inner"><img src="bilder/pflegeberatung-muenchen-haende-gespraech.webp" alt="Hände, die sich über einem Tisch halten"></div>
+        <a class="badge-solo" href="#anfrage" aria-label="Termin anfragen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="notch notch-card">
+        <div class="inner">
+          <h3 class="h-sm">In München zu Hause</h3>
+          <p>Sitz in Fürstenried, unterwegs im gesamten Stadtgebiet: Laim, Sendling, Sendling-Westpark, Hadern, Pasing, Obermenzing, Neuhausen-Nymphenburg, Schwanthalerhöhe und weiter.</p>
+          <div class="avatars" aria-hidden="true">
+            <span><img src="bilder/pflegeberatung-muenchen-pascal-pottberg-inhaber.webp" alt=""></span>
+            <span><svg width="20" height="20" viewBox="0 0 30 30" fill="none" stroke="#1C5F63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-pin"/></svg></span>
+            <span><svg width="20" height="20" viewBox="0 0 30 30" fill="none" stroke="#1C5F63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-home"/></svg></span>
+          </div>
+        </div>
+        <a class="badge-solo" href="tel:+4917675862758" aria-label="Nach Ihrem Stadtteil fragen"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></a>
+      </div>
+      <div class="notch notch-dark">
+        <div class="inner">
+          <p class="q">Kein Callcenter, keine Warteschleife. Sie erreichen uns persönlich, von der ersten bis zur letzten Frage.</p>
+          <p class="src">Und es kommt dieselbe Person wieder. Wechselnde Kräfte sind der häufigste Grund, warum Menschen mit Pflegediensten unzufrieden sind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="band" id="fragen">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="chip-label">Häufige Fragen</span>
+      <h2 class="h-lg">Was Sie sich <span class="g">jetzt vermutlich fragen</span></h2>
+      <p class="mp">Die Sorgen, die fast jeder mitbringt, einmal offen beantwortet.</p>
+    </div>
+    <div class="faqs rv">
+      <details class="q" open><summary>Wird das eine Prüfung? Muss ich vorher aufräumen?</summary><div class="a"><p>Nein, und nein. Der Besuch ist keine Kontrolle Ihrer Wohnung und keine Prüfung Ihrer Person. Sie müssen nichts vorbereiten und nichts herrichten. Wir bringen die richtigen Fragen mit.</p></div></details>
+      <details class="q"><summary>Muss ich den Beratungseinsatz wirklich machen, oder ist das freiwillig?</summary><div class="a"><p>Wenn Sie Pflegegeld beziehen und mindestens Pflegegrad 2 haben, ist der Beratungseinsatz nach § 37 Absatz 3 SGB XI gesetzlich vorgeschrieben. Gleichzeitig ist er eine kostenlose Beratung, die für Sie gedacht ist. Sie erfüllen also nicht nur eine Pflicht, Sie holen sich auch Hilfe, die Ihnen zusteht.</p></div></details>
+      <details class="q"><summary>Wie oft muss der Termin stattfinden?</summary><div class="a"><p>Bei Pflegegrad 2 und 3 einmal pro Halbjahr, bei Pflegegrad 4 und 5 einmal pro Vierteljahr. Wir behalten diese Fristen für Sie im Blick und melden uns rechtzeitig.</p></div></details>
+      <details class="q"><summary>Was passiert, wenn ich den Termin verpasse?</summary><div class="a"><p>Ihre Pflegekasse erinnert Sie zuerst schriftlich. Wenn der Termin weiter ausbleibt, kann das Pflegegeld gekürzt und im Wiederholungsfall ganz eingestellt werden. Genau deshalb übernehmen wir die Terminplanung für Sie.</p></div></details>
+      <details class="q"><summary>Kostet mich der Beratungseinsatz etwas?</summary><div class="a"><p>Nein. Der Beratungseinsatz nach § 37.3 wird vollständig von Ihrer Pflegekasse getragen und direkt mit ihr abgerechnet. Wenn Sie privat versichert sind, gehen Sie in Vorkasse und reichen die Rechnung bei Ihrer Versicherung ein.</p></div></details>
+      <details class="q"><summary>Werde ich danach ins Heim eingewiesen, wenn im Bericht etwas Kritisches steht?</summary><div class="a"><p>Nein. Der Beratungseinsatz führt zu keiner Entscheidung über einen Heimplatz. Fachliche Empfehlungen gehen nur mit Ihrer ausdrücklichen Zustimmung an die Pflegekasse. Sie entscheiden, was weitergegeben wird.</p></div></details>
+      <details class="q"><summary>Kommt jedes Mal jemand anderes?</summary><div class="a"><p>Nein. Sie bekommen eine feste Ansprechperson, die Sie kennenlernen und die wiederkommt. Wechselnde Kräfte sind der häufigste Grund, warum Menschen mit Pflegediensten unzufrieden sind. Deshalb machen wir es anders.</p></div></details>
+      <details class="q"><summary>Was ist der Unterschied zwischen dem Beratungseinsatz und dem Entlastungsbetrag?</summary><div class="a"><p>Der Beratungseinsatz ist der Pflichttermin, der Ihr Pflegegeld sichert. Der Entlastungsbetrag ist ein zusätzliches Budget von 131 Euro im Monat, mit dem Sie zum Beispiel Alltagshilfe oder Hilfe im Haushalt bezahlen können. Das eine kostet Sie nichts, das andere zahlt Ihre Kasse aus einem Topf, der Ihnen ohnehin zusteht.</p></div></details>
+      <details class="q"><summary>Helfen Sie auch im Alltag, nicht nur bei der Beratung?</summary><div class="a"><p>Ja. Neben dem Beratungseinsatz übernehmen wir Alltagshilfe und haushaltsnahe Dienstleistungen, von der Begleitung zum Arzt bis zur Wäsche. Vieles davon lässt sich über den Entlastungsbetrag Ihrer Pflegekasse abrechnen.</p></div></details>
+      <details class="q"><summary>Kann der Termin auch abends sein? Ich arbeite tagsüber.</summary><div class="a"><p>Ja. Ein Teil unserer Termine liegt bewusst außerhalb der klassischen Bürozeiten, weil die meisten pflegenden Angehörigen berufstätig sind. Sagen Sie einfach im Formular, wann Sie am besten erreichbar sind.</p></div></details>
+      <details class="q"><summary>Wer kommt zu mir und welche Qualifikation hat diese Person?</summary><div class="a"><p>Pascal Pottberg, examinierte Pflegefachkraft mit Erfahrung als Pflegedienstleitung. Sie erreichen ihn vorher persönlich am Telefon, damit Sie wissen, wer vor Ihrer Tür steht.</p></div></details>
+      <details class="q"><summary>Sind Sie wirklich in meinem Stadtteil unterwegs?</summary><div class="a"><p>Unser Sitz ist in Fürstenried und wir sind im gesamten Stadtgebiet München unterwegs. Fragen Sie einfach nach Ihrem Stadtteil, ein kurzer Anruf klärt das schneller als jede Karte.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMULAR ================= -->
+<section class="band band-tight" id="anfrage">
+  <div class="wrap">
+    <div class="formband rv">
+      <div>
+        <span class="chip-label chip-label-d">Anfrage</span>
+        <h2 class="h-lg" style="margin:var(--s5) 0 var(--s4);max-width:22ch">Ein Anruf, und Sie müssen es nicht mehr <span class="it">alleine</span> sortieren.</h2>
+        <p class="lead">Der Beratungstermin kostet Sie nichts, verpflichtet Sie zu nichts und dauert eine gute halbe Stunde. Rufen Sie an oder schreiben Sie kurz, was los ist.</p>
+        <div class="cta-row" style="margin-top:var(--s5)">
+          <a class="pill pill-lime pill-tel" href="tel:+4917675862758">
+            <span class="txt"><small>Lieber telefonieren</small>0176 75862758</span>
+            <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+          </a>
+        </div>
+        <div class="side-facts">
+          <div class="sf"><span class="ic"><svg width="21" height="21" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-shield"/></svg></span><span><b>Keine Prüfung</b><span>Kein Aktenkoffer, kein Urteil über Ihre Wohnung.</span></span></div>
+          <div class="sf"><span class="ic"><svg width="21" height="21" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-clock"/></svg></span><span><b>30 bis 45 Minuten</b><span>Ein Termin, der in Ihren Tag passt.</span></span></div>
+          <div class="sf"><span class="ic"><svg width="21" height="21" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-euro"/></svg></span><span><b>0 Euro</b><span>Die Pflegekasse trägt den Beratungseinsatz.</span></span></div>
+        </div>
+      </div>
+      <form class="fcard" action="#" method="post" novalidate>
+        <div class="field"><label for="b-name">Name</label><input class="inp" id="b-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="two">
+          <div class="field"><label for="b-tel">Telefonnummer</label><input class="inp" id="b-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="b-zeit">Wann erreichen wir Sie?</label><select class="inp" id="b-zeit" name="zeit"><option>vormittags</option><option>nachmittags</option><option>abends</option></select></div>
+        </div>
+        <fieldset class="field"><legend>Für wen suchen Sie Unterstützung?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="fuerwen" value="angehoeriger" checked><span>Für einen Angehörigen</span></label>
+            <label class="opt"><input type="radio" name="fuerwen" value="selbst"><span>Für mich selbst</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field"><legend>Worum geht es?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="thema" value="beratung" checked><span>Beratungseinsatz § 37.3</span></label>
+            <label class="opt"><input type="radio" name="thema" value="unklar"><span>Ich weiß nicht, ob er fällig ist</span></label>
+            <label class="opt"><input type="radio" name="thema" value="alltag"><span>Alltagshilfe und Haushalt</span></label>
+            <label class="opt"><input type="radio" name="thema" value="beides"><span>Beides</span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="b-txt">Ihre Situation in ein paar Worten</label>
+          <p class="hint">Optional. Ein Satz reicht.</p>
+          <textarea class="inp" id="b-txt" name="situation" placeholder="Meine Mutter hat Pflegegrad 3 und ich weiß nicht, wann der nächste Termin fällig ist."></textarea></div>
+        <div class="field"><label for="b-mail">E-Mail</label><p class="hint">Optional, wir rufen sonst einfach an.</p><input class="inp" id="b-mail" name="email" type="email" autocomplete="email"></div>
+        <label class="consent"><input type="checkbox" name="datenschutz" required> <span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. <a href="https://www.laimerei.com/impressum" target="_blank" rel="noopener">Datenschutzerklärung</a></span></label>
+        <button class="pill pill-brand" type="submit" style="border:0;cursor:pointer;font-family:var(--sans)">
+          <span class="txt">Kostenlosen Termin anfragen</span>
+          <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+        </button>
+        <p class="formnote">Rückruf am selben oder nächsten Werktag. Kein Verkaufsgespräch, keine Kosten, keine Verpflichtung.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="f-top">
+      <img src="bilder/logo-laimerei-pflegeberatung-muenchen.webp" alt="">
+      <span class="nm">LAIMEREI</span>
+    </div>
+    <div class="fgrid">
+      <div class="f-lead">
+        <h3>Rückruf anfordern</h3>
+        <p>Lassen Sie einfach Ihre Nummer da. Wir melden uns am selben oder nächsten Werktag,<br>
+        ohne Verkaufsgespräch und ohne Verpflichtung.</p>
+        <div class="f-underline">
+          <input id="b-quick" type="tel" placeholder="Ihre Nummer" aria-label="Ihre Telefonnummer für einen Rückruf">
+          <a class="badge-solo" href="#anfrage" aria-label="Rückruf anfragen"><svg width="14" height="14" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <nav class="f-col" aria-label="Footer-Navigation">
+        <a href="#top">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#person">Wer kommt</a>
+        <a href="#fragen">Fragen</a>
+      </nav>
+      <div class="f-contact">
+        <a href="tel:+4917675862758"><span class="ic"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>0176 75862758</a>
+        <a href="mailto:info@laimerei.com"><span class="ic"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-mail"/></svg></span>info@laimerei.com</a>
+        <a href="https://maps.google.com/?q=F%C3%BCrstenriederstr.+279A+81377+M%C3%BCnchen" target="_blank" rel="noopener"><span class="ic"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-pin"/></svg></span>Fürstenriederstr. 279A, 81377 München</a>
+      </div>
+      <div class="f-right">
+        <a class="totop" href="#top">Nach oben</a>
+        <div class="socials">
+          <a href="https://www.instagram.com/laimerei/" target="_blank" rel="noopener" aria-label="LAIMEREI auf Instagram"><svg width="17" height="17" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ig"/></svg></a>
+          <a href="https://www.facebook.com/people/Laimerei/" target="_blank" rel="noopener" aria-label="LAIMEREI auf Facebook"><svg width="17" height="17" viewBox="0 0 30 30" fill="currentColor"><path d="M17.5 25v-8.9h3l.45-3.48h-3.45v-2.22c0-1.01.28-1.7 1.73-1.7h1.85V5.58c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.62v2.56H10.8v3.48h3.08V25h3.62Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <p class="f-disclaimer">Angaben zu Gesetzen und Beträgen ohne Gewähr, Stand September 2026. Was in Ihrem Fall gilt, erfahren Sie bei Ihrer Pflegekasse oder im Beratungstermin.</p>
+    <div class="f-bottom">
+      <span>© 2026 LAIMEREI, Inhaber Pascal Pottberg</span>
+      <span class="f-legal">
+        <a href="https://www.laimerei.com/impressum" target="_blank" rel="noopener">Impressum</a>
+        <span aria-hidden="true">|</span>
+        <a href="https://www.laimerei.com/impressum" target="_blank" rel="noopener">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="pill pill-light pill-tel" href="tel:+4917675862758">
+    <span class="txt">Anrufen</span>
+    <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-phone"/></svg></span>
+  </a>
+  <a class="pill pill-brand" href="#anfrage">
+    <span class="txt">Termin anfragen</span>
+    <span class="badge"><svg width="15" height="15" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></span>
+  </a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"LocalBusiness","@id":"https://www.laimerei.com/#org","name":"LAIMEREI",
+  "description":"Pflegeberatung nach § 37 Absatz 3 SGB XI und Alltagshilfe mit Hausbesuchen in München.",
+  "url":"https://www.laimerei.com/","telephone":"+4917675862758","email":"info@laimerei.com",
+  "address":{"@type":"PostalAddress","streetAddress":"Fürstenriederstr. 279A","postalCode":"81377","addressLocality":"München","addressRegion":"Bayern","addressCountry":"DE"},
+  "geo":{"@type":"GeoCoordinates","latitude":48.1188,"longitude":11.4926},
+  "areaServed":[{"@type":"City","name":"München"},{"@type":"Place","name":"Fürstenried"},{"@type":"Place","name":"Laim"},{"@type":"Place","name":"Sendling"},{"@type":"Place","name":"Sendling-Westpark"},{"@type":"Place","name":"Hadern"},{"@type":"Place","name":"Pasing"},{"@type":"Place","name":"Obermenzing"},{"@type":"Place","name":"Neuhausen-Nymphenburg"},{"@type":"Place","name":"Schwanthalerhöhe"}]},
+ {"@type":"Person","@id":"https://www.laimerei.com/#inhaber","name":"Pascal Pottberg",
+  "jobTitle":"Inhaber, examinierte Pflegefachkraft","worksFor":{"@id":"https://www.laimerei.com/#org"},"telephone":"+4917675862758"},
+ {"@type":"Service","name":"Beratungseinsatz nach § 37 Absatz 3 SGB XI","serviceType":"Pflegeberatung",
+  "description":"Gesetzlich vorgeschriebener Hausbesuch für Menschen, die Pflegegeld beziehen. Bei Pflegegrad 2 und 3 halbjährlich, bei Pflegegrad 4 und 5 vierteljährlich. Für gesetzlich Versicherte kostenlos, die Pflegekasse rechnet direkt mit dem Anbieter ab.",
+  "provider":{"@id":"https://www.laimerei.com/#org"},"areaServed":{"@type":"City","name":"München"}},
+ {"@type":"Service","name":"Alltagshilfe und haushaltsnahe Dienstleistungen","serviceType":"Alltagsbegleitung",
+  "description":"Begleitung zu Arzt- und Behördenterminen, Einkäufe, Spaziergänge, Reinigung von Wohnräumen, Wäsche und Haushaltsorganisation in München. Abrechenbar über den Entlastungsbetrag nach § 45b SGB XI von 131 Euro monatlich.",
+  "provider":{"@id":"https://www.laimerei.com/#org"},"areaServed":{"@type":"City","name":"München"}},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Ist der Beratungseinsatz eine Prüfung? Muss man vorher aufräumen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Besuch ist keine Kontrolle der Wohnung und keine Prüfung der Person. Es muss nichts vorbereitet und nichts hergerichtet werden. Der Termin dauert in der Regel 30 bis 45 Minuten."}},
+  {"@type":"Question","name":"Muss ich den Beratungseinsatz wirklich machen, oder ist das freiwillig?","acceptedAnswer":{"@type":"Answer","text":"Wenn Sie Pflegegeld beziehen und mindestens Pflegegrad 2 haben, ist der Beratungseinsatz nach § 37 Absatz 3 SGB XI gesetzlich vorgeschrieben. Gleichzeitig ist er eine kostenlose Beratung, die für Sie gedacht ist."}},
+  {"@type":"Question","name":"Wie oft muss der Beratungseinsatz stattfinden?","acceptedAnswer":{"@type":"Answer","text":"Bei Pflegegrad 2 und 3 einmal pro Halbjahr, bei Pflegegrad 4 und 5 einmal pro Vierteljahr."}},
+  {"@type":"Question","name":"Was passiert, wenn ich den Beratungstermin verpasse?","acceptedAnswer":{"@type":"Answer","text":"Die Pflegekasse erinnert zuerst schriftlich. Wenn der Termin weiter ausbleibt, kann das Pflegegeld gekürzt und im Wiederholungsfall ganz eingestellt werden."}},
+  {"@type":"Question","name":"Kostet der Beratungseinsatz nach § 37.3 etwas?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Beratungseinsatz nach § 37 Absatz 3 SGB XI wird vollständig von der Pflegekasse getragen und direkt mit ihr abgerechnet. Privat Versicherte gehen in Vorkasse und reichen die Rechnung bei ihrer Versicherung ein."}},
+  {"@type":"Question","name":"Führt der Beratungseinsatz zu einer Einweisung ins Pflegeheim?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Beratungseinsatz führt zu keiner Entscheidung über einen Heimplatz. Fachliche Empfehlungen gehen nur mit ausdrücklicher Zustimmung der pflegebedürftigen Person an die Pflegekasse."}},
+  {"@type":"Question","name":"Wird bei jedem Termin eine andere Person geschickt?","acceptedAnswer":{"@type":"Answer","text":"Nein. Bei LAIMEREI kommt eine feste Ansprechperson, die wiederkommt, kein wechselndes Team."}},
+  {"@type":"Question","name":"Was ist der Unterschied zwischen Beratungseinsatz und Entlastungsbetrag?","acceptedAnswer":{"@type":"Answer","text":"Der Beratungseinsatz nach § 37 Absatz 3 SGB XI ist der Pflichttermin, der das Pflegegeld sichert. Der Entlastungsbetrag nach § 45b SGB XI ist ein zusätzliches Budget von 131 Euro im Monat, mit dem Alltagshilfe oder haushaltsnahe Dienstleistungen bezahlt werden können."}}]}
+]}
+</script>
+
+<script>
+(function(){
+  // ---------- Burger-Menü ----------
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  function setMenu(open){
+    if(!burger||!menu) return;
+    burger.setAttribute('aria-expanded', open?'true':'false');
+    burger.setAttribute('aria-label', open?'Menü schliessen':'Menü öffnen');
+    menu.hidden=!open;
+  }
+  if(burger&&menu){
+    burger.addEventListener('click',function(){
+      setMenu(burger.getAttribute('aria-expanded')!=='true');
+    });
+    menu.addEventListener('click',function(e){
+      if(e.target.closest('a')){ setMenu(false); }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&burger.getAttribute('aria-expanded')==='true'){ setMenu(false); burger.focus(); }
+    });
+    document.addEventListener('click',function(e){
+      if(burger.getAttribute('aria-expanded')!=='true') return;
+      if(!e.target.closest('#menu')&&!e.target.closest('#burger')){ setMenu(false); }
+    });
+    // Wechselt der Viewport zurück auf die Pillen-Navigation, Menü zu
+    var mq=window.matchMedia('(min-width:1181px)');
+    var onMQ=function(){ if(mq.matches){ setMenu(false); } };
+    if(mq.addEventListener){ mq.addEventListener('change',onMQ); } else if(mq.addListener){ mq.addListener(onMQ); }
+  }
+
+  document.querySelectorAll('[data-fuer]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var r=document.querySelector('input[name="fuerwen"][value="'+el.getAttribute('data-fuer')+'"]');
+      if(r){ r.checked=true; }
+    });
+  });
+
+  // aktive Nav-Pille mitziehen
+  var secs=['top','leistungen','ablauf','person','fragen'];
+  var links={}; document.querySelectorAll('.navpills a').forEach(function(a){ links[a.getAttribute('href').slice(1)]=a; });
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window){
+    var mlinks={}; document.querySelectorAll('.menu nav a').forEach(function(a){ mlinks[a.getAttribute('href').slice(1)]=a; });
+    var nav=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          for(var k in links){ links[k].classList.remove('on'); }
+          for(var m in mlinks){ mlinks[m].removeAttribute('aria-current'); }
+          var a=links[e.target.id]; if(a){ a.classList.add('on'); }
+          var b=mlinks[e.target.id]; if(b){ b.setAttribute('aria-current','true'); }
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(id){ var el=document.getElementById(id); if(el){ nav.observe(el); } });
+
+    var els=document.querySelectorAll('.rv');
+    if(reduce){ els.forEach(function(e){ e.classList.add('in'); }); }
+    else {
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      },{rootMargin:'0px 0px -12% 0px',threshold:0.06});
+      els.forEach(function(e){ io.observe(e); });
+    }
+  } else {
+    document.querySelectorAll('.rv').forEach(function(e){ e.classList.add('in'); });
+  }
+
+  var form=document.querySelector('form.fcard');
+  if(form){
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var n=document.getElementById('bnote');
+      if(!n){ n=document.createElement('p'); n.id='bnote'; n.className='formnote';
+        n.style.cssText='background:#EDF1F0;color:#1C5F63;padding:14px 18px;border-radius:10px;font-weight:500;font-size:15px';
+        form.appendChild(n); }
+      n.textContent='Das ist ein Entwurf, das Formular ist noch nicht angeschlossen. In der fertigen Seite geht die Anfrage direkt an info@laimerei.com.';
+    });
+  }
+})();
+</script>
+</body>
+</html>
