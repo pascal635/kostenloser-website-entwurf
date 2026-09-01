@@ -84,6 +84,7 @@
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
+  hyphens:manual;-webkit-hyphens:manual;
   background:var(--bg);
   color:var(--ink);
   font-family:'Figtree','Segoe UI',system-ui,-apple-system,sans-serif;
@@ -93,7 +94,7 @@ body{
   overflow-x:hidden;
 }
 figure,blockquote,dl,dd{margin:0}
-h1,h2,h3,h4{margin:0;font-family:'Outfit','Figtree',system-ui,sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+h1,h2,h3,h4{margin:0;font-family:'Outfit','Figtree',system-ui,sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.1;color:var(--ink);text-wrap:balance}
 p{margin:0}
 img{display:block;max-width:100%}
 a{color:var(--gold);text-decoration:none}
@@ -119,9 +120,9 @@ ul{margin:0;padding:0;list-style:none}
 .d2{font-size:clamp(1.9rem,4vw,3rem);font-weight:400;line-height:1.1;letter-spacing:-.024em}
 .d3{font-size:clamp(1.4rem,2.2vw,1.85rem);font-weight:400;line-height:1.18;letter-spacing:-.018em}
 .d4{font-size:1.18rem;font-weight:500;line-height:1.3;letter-spacing:-.012em}
-.lead{font-size:clamp(1.02rem,1.5vw,1.16rem);line-height:1.6;color:var(--ink-2)}
-.body{font-size:1rem;line-height:1.62;color:var(--muted)}
-.small{font-size:.875rem;line-height:1.55;color:var(--muted)}
+.lead{font-size:clamp(1.02rem,1.5vw,1.16rem);line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.body{font-size:1rem;line-height:1.62;color:var(--muted);text-wrap:pretty}
+.small{font-size:.875rem;line-height:1.55;color:var(--muted);text-wrap:pretty}
 .tiny{font-size:.78rem;line-height:1.5;color:var(--muted-2)}
 .dim{color:var(--muted-2)}
 .num{font-family:'Outfit',sans-serif;font-weight:300;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1}
@@ -602,21 +603,45 @@ header,section,footer{position:relative;z-index:1}
 .marqsec .marquee+.marquee{margin-top:4px}
 .marquee__item::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.6;margin-left:26px;vertical-align:middle}
 
-/* ---------- Krankenversicherung: 2x2 dunkle Karten mit hohem Bild (source2) ---------- */
-.procgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.72fr) minmax(0,1fr);gap:clamp(14px,1.8vw,20px);align-items:stretch}
-.pcol{display:grid;grid-template-rows:1fr 1fr;gap:clamp(14px,1.8vw,20px);min-width:0}
-.pcard{display:flex;flex-direction:column;padding:clamp(22px,2.6vw,30px)}
-.pcard h3{margin-top:26px}
-.pcard .body{margin-top:11px}
-.pic--tall{min-height:100%}
-.pic--tall img{width:100%;height:100%;object-fit:cover;object-position:76% 20%}
-@media (max-width:980px){
-  .procgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .pcol{display:contents}
-  .pic--tall{grid-column:1/-1;min-height:0}
-  .pic--tall img{height:clamp(200px,42vw,300px)}
+/* ---------- Schwerpunkt: Bildband plus Vierer-Kartenreihe (source2) ---------- */
+.kvband{
+  margin-top:clamp(28px,4vw,52px);border-radius:22px;
+  aspect-ratio:1100/483;box-shadow:var(--sh-2)
 }
-@media (max-width:620px){.procgrid{grid-template-columns:minmax(0,1fr)}}
+.kvband img{width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+.kvband .pic__chip{left:16px;bottom:16px}
+
+.kvcards{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(10px,1.4vw,16px);margin-top:clamp(10px,1.4vw,16px)
+}
+.svc4{
+  display:flex;flex-direction:column;min-height:245px;
+  padding:clamp(20px,2.2vw,26px);border-radius:16px;border:1px solid transparent;
+  background:linear-gradient(180deg,#F3F3F2 0%,#E9E9E7 100%)
+}
+.svc4__txt{padding-top:clamp(22px,2.2vw,32px)}
+.svc4 h3{letter-spacing:-.015em}
+.svc4 .body{margin-top:10px;font-size:.9rem;line-height:1.55}
+.svc4.card--dark{
+  background:linear-gradient(180deg,#474445 0%,#2D2B2C 100%);
+  border-color:rgba(255,255,255,.08);color:var(--on-dark);box-shadow:var(--sh-dark)
+}
+.svc4.card--dark h3{color:var(--on-dark)}
+.svc4.card--dark .body{color:var(--on-dark-muted)}
+
+@media (max-width:1000px){
+  .kvcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc4{min-height:215px}
+  .svc4__txt{padding-top:26px}
+}
+@media (max-width:620px){
+  .kvcards{grid-template-columns:minmax(0,1fr)}
+  .svc4{min-height:0}
+  .svc4__txt{padding-top:26px}
+  .kvband{aspect-ratio:4/3}
+  .kvband img{object-position:62% 18%}
+}
 
 /* ---------- Beweis ---------- */
 .proofcard{padding:clamp(20px,2.4vw,30px);box-shadow:var(--sh-2)}
@@ -772,9 +797,32 @@ header,section,footer{position:relative;z-index:1}
 .waypic{display:block;color:var(--ink)}
 .waypic:hover{color:var(--ink)}
 .waypic .pic{border-radius:20px;box-shadow:var(--sh-2);transition:box-shadow .18s var(--ease),transform .18s var(--ease)}
-.waypic .pic__chip{left:12px;bottom:12px;font-size:.75rem;padding:.34em .68em}
+/* Hover-Overlay mit rotierendem Badge */
+.waypic__ov{
+  position:absolute;inset:0;z-index:3;display:grid;place-items:center;border-radius:inherit;
+  background:linear-gradient(rgba(20,19,18,.34),rgba(20,19,18,.5));
+  opacity:0;transition:opacity .22s var(--ease)
+}
+.waypic:hover .waypic__ov,.waypic:focus-visible .waypic__ov{opacity:1}
+.turn--sm{
+  width:118px;height:118px;margin:0;
+  background:rgba(255,255,255,.95);box-shadow:0 6px 26px rgba(0,0,0,.3);
+  transform:scale(.86);transition:transform .24s var(--ease)
+}
+.turn--sm,.turn--sm:hover{background:rgba(255,255,255,.96);color:var(--ink);border:0}
+.waypic:hover .turn--sm,.waypic:focus-visible .turn--sm{transform:scale(1)}
+.turn--sm .turn__ring{width:118px;height:118px}
+.turn--sm .turn__spin{transform-origin:59px 59px}
+.turn--sm .turn__ring text{font-size:8.4px;letter-spacing:.16em}
+.turn--sm .turn__arr{width:22px;height:22px}
+@media (max-width:760px){
+  .waypic__ov{opacity:1;background:linear-gradient(rgba(20,19,18,0) 55%,rgba(20,19,18,.28) 100%);place-items:end center;padding-bottom:14px}
+  .turn--sm{width:86px;height:86px;transform:none}
+  .turn--sm .turn__ring{width:86px;height:86px}
+  .turn--sm .turn__arr{width:17px;height:17px}
+}
 .waypic:hover .pic{box-shadow:var(--sh-3);transform:translateY(-3px)}
-.waypic img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+.waypic img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .waypic--a .pic{aspect-ratio:4/5;margin-top:clamp(18px,3vw,42px)}
 .waypic--b .pic{aspect-ratio:4/3.35}
 .waypic__cap{margin-top:14px}
@@ -793,7 +841,7 @@ header,section,footer{position:relative;z-index:1}
   .waypics{grid-column:auto;grid-template-columns:minmax(0,1fr);gap:26px}
   .waypic--a .pic{margin-top:0;aspect-ratio:16/10}
   .waypic--b .pic{aspect-ratio:16/10}
-  .waypic img{object-position:50% 10%}
+  .waypic img{object-position:50% 38%}
 }
 
 </style>
@@ -833,12 +881,12 @@ header,section,footer{position:relative;z-index:1}
         <svg class="brand__mark" aria-hidden="true"><use href="#i-mark"/></svg>
         <span class="brand__txt">
           <span class="brand__name">Papadopoulos</span>
-          <span class="brand__sub">Continentale Gesch&auml;ftsstelle</span>
+          <span class="brand__sub">Continentale Gesch&auml;fts&shy;stelle</span>
         </span>
       </a>
       <nav class="mainnav" aria-label="Hauptnavigation">
         <a href="#leistungen">Leistungen</a>
-        <a href="#kv">Krankenversicherung</a>
+        <a href="#kv">Kran&shy;ken&shy;ver&shy;siche&shy;rung</a>
         <a href="#ueber">&Uuml;ber uns</a>
         <a href="#faq">Fragen</a>
       </nav>
@@ -855,8 +903,8 @@ header,section,footer{position:relative;z-index:1}
 <!-- 1 Hero: zentrierte Headline mit Gold-Phrase, exakt wie source1 -->
 <section class="hero2">
   <div class="wrap">
-    <h1 class="hero2__h">Versicherung und Vorsorge<br>in <span class="gold">Forst und Bruchsal.</span></h1>
-    <p class="hero2__sub">Seit 1994 sitzt hier derselbe Ansprechpartner. Panos Papadopoulos und sein Team beraten Sie zu Gesundheit, Absicherung und Vorsorge. Pers&ouml;nlich, im B&uuml;ro, am Telefon oder per Video.</p>
+    <h1 class="hero2__h">Ver&shy;siche&shy;rung und Vor&shy;sorge<br>in <span class="gold">Forst und Bruchsal.</span></h1>
+    <p class="hero2__sub">Seit 1994 sitzt hier derselbe Ansprech&shy;partner. Panos Papadopoulos und sein Team beraten Sie zu Gesundheit, Absiche&shy;rung und Vor&shy;sorge. Pers&ouml;nlich, im B&uuml;ro, am Telefon oder per Video.</p>
   </div>
   <a class="turn" href="#anfrage" aria-label="Termin anfragen">
     <svg class="turn__ring" viewBox="0 0 132 132" aria-hidden="true">
@@ -874,7 +922,7 @@ header,section,footer{position:relative;z-index:1}
     <div class="band__wash" aria-hidden="true"></div>
     <div class="band__in">
       <span class="label">Ihr erster Schritt</span>
-      <h2 class="d2">Finden Sie die Absicherung, die zu Ihnen passt</h2>
+      <h2 class="d2">Finden Sie die Absiche&shy;rung, die zu Ihnen passt</h2>
       <p class="small">Ein Gespr&auml;ch, eine Stunde, kostenfrei. Danach wissen Sie, wo Sie stehen. Was Sie damit machen, entscheiden Sie.</p>
     </div>
   </div>
@@ -886,8 +934,8 @@ header,section,footer{position:relative;z-index:1}
     <div class="card achcard">
       <div class="achcard__l">
         <span class="label">Warum hier</span>
-        <h2 class="achcard__h">Seit 1994 derselbe Ansprechpartner in Forst und Bruchsal</h2>
-        <p class="small">Kein Callcenter, keine wechselnden Berater. Vier Ansprechpartner mit eigener Durchwahl, zwei B&uuml;ros im Landkreis Karlsruhe.</p>
+        <h2 class="achcard__h">Seit 1994 derselbe Ansprech&shy;partner in Forst und Bruchsal</h2>
+        <p class="small">Kein Callcenter, keine wechselnden Berater. Vier Ansprech&shy;partner mit eigener Durchwahl, zwei B&uuml;ros im Landkreis Karlsruhe.</p>
         <div class="flexrow achcard__btns">
           <a class="btn btn--dark" href="#anfrage">Beratung anfragen<span class="arrow"><svg aria-hidden="true"><use href="#i-arr"/></svg></span></a>
           <a class="btn btn--ghost" href="tel:+4972513266911"><svg style="width:15px;height:15px" aria-hidden="true"><use href="#i-phone"/></svg><span class="sr">Anrufen: </span>07251 3266911</a>
@@ -895,20 +943,20 @@ header,section,footer{position:relative;z-index:1}
       </div>
       <div class="achstats">
         <div class="ach"><span class="v num">30 <small>+</small></span><span class="k">Jahre am selben Ort</span></div>
-        <div class="ach"><span class="v num">25 <small>+</small></span><span class="k">Jahre Schwerpunkt Krankenversicherung</span></div>
+        <div class="ach"><span class="v num">25 <small>+</small></span><span class="k">Jahre Schwerpunkt Kran&shy;ken&shy;ver&shy;siche&shy;rung</span></div>
         <div class="ach"><span class="v num">2</span><span class="k">B&uuml;ros in der Region</span></div>
-        <div class="ach"><span class="v num">2</span><span class="k">Muttersprachen, Deutsch und Griechisch</span></div>
+        <div class="ach"><span class="v num">2</span><span class="k">Mutter&shy;sprachen, Deutsch und Griechisch</span></div>
       </div>
     </div>
 
     <p class="trustline">Was Sie nachpr&uuml;fen k&ouml;nnen, statt es uns glauben zu m&uuml;ssen</p>
     <ul class="factrow">
-      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Panos Papadopoulos f&uuml;hrt die Gesch&auml;ftsstelle seit 1994. Derselbe Name, dieselbe Nummer, seit &uuml;ber 30 Jahren.</li>
-      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Private und betriebliche Krankenversicherung ist hier kein Nebenthema, sondern der Schwerpunkt.</li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Panos Papadopoulos f&uuml;hrt die Gesch&auml;fts&shy;stelle seit 1994. Derselbe Name, dieselbe Nummer, seit &uuml;ber 30 Jahren.</li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Private und betrieb&shy;liche Kran&shy;ken&shy;ver&shy;siche&shy;rung ist hier kein Nebenthema, sondern der Schwerpunkt.</li>
       <li><svg aria-hidden="true"><use href="#i-check"/></svg>Rheinstr. 8 in Forst und Kaiserstr. 54 in Bruchsal. Kurze Wege im Landkreis Karlsruhe.</li>
-      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Beratung in zwei Muttersprachen, auf Wunsch auch Englisch.</li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg>Beratung in zwei Mutter&shy;sprachen, auf Wunsch auch Englisch.</li>
     </ul>
-    <p class="tiny reg">Vermittlerregister-Nr. 5303143, eingetragen im Vermittlerregister der DIHK.</p>
+    <p class="tiny reg">Ver&shy;mittler&shy;register-Nr. 5303143, eingetragen im Ver&shy;mittler&shy;register der DIHK.</p>
   </div>
 </section>
 
@@ -918,22 +966,38 @@ header,section,footer{position:relative;z-index:1}
     <div class="waygrid__tag"><span class="chip chip--white">Zwei Einstiege</span></div>
     <div class="waytext">
       <h2 class="d2">Privat oder Betrieb, Sie w&auml;hlen den Weg.</h2>
-      <p>Zwei Einstiege, ein Ansprechpartner. Privat geht es um Gesundheit, Familie und Vorsorge. Im Betrieb um Mitarbeiter, Haftung und Ausfall. Sagen Sie uns nur, worum es geht.</p>
+      <p>Zwei Einstiege, ein Ansprech&shy;partner. Privat geht es um Gesundheit, Familie und Vor&shy;sorge. Im Betrieb um Mitarbeiter, Haftung und Ausfall. Sagen Sie uns nur, worum es geht.</p>
       <a class="btn btn--dark" href="#leistungen">Zu den Leistungen<span class="arrow"><svg aria-hidden="true"><use href="#i-ne"/></svg></span></a>
     </div>
     <div class="waypics">
       <a class="waypic waypic--a" href="#leistungen-privat">
-        <figure class="pic"><img src="bilder/versicherungsmakler-forst-larisa-papadopoulos-portrait.webp" width="532" height="531" alt="Larisa Papadopoulos, Innendienst"><span class="chip chip--onimage pic__chip">Larisa Papadopoulos</span></figure>
+        <figure class="pic">
+          <img src="bilder/beratungsgespraech-privatkunden-versicherung-forst.webp" width="460" height="575" alt="Beratungsgespr&auml;ch mit Privatkunden zu Gesundheit, Familie und Vorsorge" loading="lazy">
+          <span class="waypic__ov" aria-hidden="true">
+            <span class="turn turn--sm">
+              <svg class="turn__ring" viewBox="0 0 118 118"><defs><path id="ring-a" d="M59,59 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"></path></defs><g class="turn__spin"><text><textPath href="#ring-a" startOffset="0">LEISTUNGEN ANSEHEN &#183; LEISTUNGEN ANSEHEN &#183; </textPath></text></g></svg>
+              <svg class="turn__arr"><use href="#i-ne"/></svg>
+            </span>
+          </span>
+        </figure>
         <div class="waypic__cap">
-          <b>F&uuml;r Privatkunden</b>
-          <span>Gesundheit, Familie, Vorsorge. Von der privaten Krankenversicherung bis zur Haftpflicht.</span>
+          <b>F&uuml;r Privat&shy;kunden</b>
+          <span>Gesundheit, Familie, Vor&shy;sorge. Von der privaten Kran&shy;ken&shy;ver&shy;siche&shy;rung bis zur Haft&shy;pflicht.</span>
         </div>
       </a>
       <a class="waypic waypic--b" href="#leistungen-gewerbe">
-        <figure class="pic"><img src="bilder/versicherungsmakler-forst-panos-papadopoulos-portrait.webp" width="532" height="532" alt="Panos Papadopoulos, Inhaber"><span class="chip chip--onimage pic__chip">Panos Papadopoulos</span></figure>
+        <figure class="pic">
+          <img src="bilder/beratungsgespraech-betriebe-versicherung-bruchsal.webp" width="480" height="402" alt="Beratungsgespr&auml;ch mit einem Unternehmer zu Betrieb und Mitarbeitern" loading="lazy">
+          <span class="waypic__ov" aria-hidden="true">
+            <span class="turn turn--sm">
+              <svg class="turn__ring" viewBox="0 0 118 118"><defs><path id="ring-b" d="M59,59 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"></path></defs><g class="turn__spin"><text><textPath href="#ring-b" startOffset="0">LEISTUNGEN ANSEHEN &#183; LEISTUNGEN ANSEHEN &#183; </textPath></text></g></svg>
+              <svg class="turn__arr"><use href="#i-ne"/></svg>
+            </span>
+          </span>
+        </figure>
         <div class="waypic__cap">
           <b>F&uuml;r Betriebe</b>
-          <span>Mitarbeiter binden, Betrieb und Inhaber absichern. Vom Fachkr&auml;fte-Baustein bis Cyber.</span>
+          <span>Mitarbeiter binden, Betrieb und Inhaber absichern. Vom Fach&shy;kr&auml;fte-Baustein bis Cyber.</span>
         </div>
       </a>
     </div>
@@ -945,17 +1009,17 @@ header,section,footer{position:relative;z-index:1}
   <div class="wrap rowlabel">
     <span class="label label--plain">Das Problem</span>
     <div class="twotone">
-      <h2 class="d2">Die meisten Menschen wissen nicht genau, <span class="grey">was in ihren Vertr&auml;gen steht.</span></h2>
+      <h2 class="d2">Die meisten Menschen wissen nicht genau, <span class="grey">was in ihren Ver&shy;tr&auml;gen steht.</span></h2>
       <div class="probtext">
-        <p class="lead">Ein Ordner im Schrank, gewachsen &uuml;ber zwanzig Jahre. Einmal im Jahr kommt ein Brief mit einer Beitragserh&ouml;hung, den niemand richtig liest. Bei der Frage, was im Ernstfall eigentlich gezahlt wird, zuckt man mit den Schultern.</p>
-        <p class="body">Das ist keine Nachl&auml;ssigkeit. Das passiert, weil Versicherung so erkl&auml;rt wird, dass man sie nicht versteht, und weil auf der anderen Seite meistens niemand sitzt, den man einfach anrufen kann.</p>
+        <p class="lead">Ein Ordner im Schrank, gewachsen &uuml;ber zwanzig Jahre. Einmal im Jahr kommt ein Brief mit einer Beitrags&shy;erh&ouml;hung, den niemand richtig liest. Bei der Frage, was im Ernstfall eigentlich gezahlt wird, zuckt man mit den Schultern.</p>
+        <p class="body">Das ist keine Nachl&auml;ssig&shy;keit. Das passiert, weil Ver&shy;siche&shy;rung so erkl&auml;rt wird, dass man sie nicht versteht, und weil auf der anderen Seite meistens niemand sitzt, den man einfach anrufen kann.</p>
       </div>
       <p class="label mt-l">Drei S&auml;tze, die wir fast w&ouml;rtlich h&ouml;ren</p>
       <div class="card card--flat quotewrap">
       <ul class="quotecols">
         <li><span class="q" aria-hidden="true">&bdquo;</span><p>Ich zahle seit Jahren und wei&szlig; nicht mal genau, wof&uuml;r.</p></li>
         <li><span class="q" aria-hidden="true">&bdquo;</span><p>Im Ernstfall zahlt die doch eh nicht.</p></li>
-        <li><span class="q" aria-hidden="true">&bdquo;</span><p>Als Selbstst&auml;ndiger habe ich Angst, dass die Beitr&auml;ge im Alter durch die Decke gehen.</p></li>
+        <li><span class="q" aria-hidden="true">&bdquo;</span><p>Als Selbst&shy;st&auml;ndiger habe ich Angst, dass die Beitr&auml;ge im Alter durch die Decke gehen.</p></li>
       </ul>
       </div>
       <p class="lead mt-l">Der letzte Satz ist der h&auml;ufigste. Und der, f&uuml;r den es L&ouml;sungen gibt.</p>
@@ -971,26 +1035,26 @@ header,section,footer{position:relative;z-index:1}
     <div class="sechead">
       <span class="label label--dark">Offenheit</span>
       <h2 class="d2">Damit Sie wissen, mit wem Sie sprechen</h2>
-      <p class="lead">Wir sind als Versicherungsvertreter ausschlie&szlig;lich f&uuml;r die Gesellschaften des Continentale Versicherungsverbundes t&auml;tig. Wir vergleichen also nicht den ganzen Markt. Das sagen wir gleich am Anfang, nicht im Kleingedruckten.</p>
+      <p class="lead">Wir sind als Ver&shy;siche&shy;rungs&shy;ver&shy;treter ausschlie&szlig;&shy;lich f&uuml;r die Gesell&shy;schaften des Continentale Ver&shy;siche&shy;rungs&shy;ver&shy;bundes t&auml;tig. Wir vergleichen also nicht den ganzen Markt. Das sagen wir gleich am Anfang, nicht im Klein&shy;gedruckten.</p>
     </div>
     <div class="grid4 mt-xl">
       <div class="openitem">
         <span class="ibadge ibadge--cream"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
         <span class="ix">01</span>
         <h3 class="d4">Wir kennen die Tarife bis in die Bedingungen</h3>
-        <p class="body">Nicht die &Uuml;berschriften, sondern die Ausschl&uuml;sse, die Wartezeiten und die Stellen, an denen es im Schadenfall eng wird.</p>
+        <p class="body">Nicht die &Uuml;ber&shy;schriften, sondern die Ausschl&uuml;sse, die Wartezeiten und die Stellen, an denen es im Schadenfall eng wird.</p>
       </div>
       <div class="openitem">
         <span class="ibadge ibadge--cream"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
         <span class="ix">02</span>
-        <h3 class="d4">Ein Haus, eine Verantwortung</h3>
+        <h3 class="d4">Ein Haus, eine Verant&shy;wortung</h3>
         <p class="body">Wenn etwas passiert, gibt es keine Diskussion dar&uuml;ber, wer zust&auml;ndig ist.</p>
       </div>
       <div class="openitem">
         <span class="ibadge ibadge--cream"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>
         <span class="ix">03</span>
         <h3 class="d4">Im Schadenfall rufen Sie uns an, nicht eine Hotline</h3>
-        <p class="body">Wir sprechen mit der Gesellschaft, nicht Sie.</p>
+        <p class="body">Wir sprechen mit der Gesell&shy;schaft, nicht Sie.</p>
       </div>
       <div class="openitem">
         <span class="ibadge ibadge--cream"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
@@ -1011,22 +1075,22 @@ header,section,footer{position:relative;z-index:1}
       <h2 class="d2">Was wir f&uuml;r Sie tun</h2>
     </div>
 
-    <div class="subhead" id="leistungen-privat"><span class="chip chip--gold"><svg style="width:14px;height:14px" aria-hidden="true"><use href="#i-user"/></svg>F&uuml;r Privatkunden</span><hr class="hair"></div>
+    <div class="subhead" id="leistungen-privat"><span class="chip chip--gold"><svg style="width:14px;height:14px" aria-hidden="true"><use href="#i-user"/></svg>F&uuml;r Privat&shy;kunden</span><hr class="hair"></div>
     <div class="grid3">
       <div class="card card--dark svc">
         <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-health"/></svg></span>
         <h3 class="d4">Gesundheit</h3>
-        <p class="body">Private Krankenversicherung f&uuml;r Angestellte, f&uuml;r Beamte mit Beihilfe und f&uuml;r Selbstst&auml;ndige. Zahnzusatz, Krankenzusatz, Auslandsreise. Der Schwerpunkt des Hauses.</p>
+        <p class="body">Private Kran&shy;ken&shy;ver&shy;siche&shy;rung f&uuml;r Angestellte, f&uuml;r Beamte mit Beihilfe und f&uuml;r Selbst&shy;st&auml;ndige. Zahn&shy;zusatz, Kranken&shy;zusatz, Auslands&shy;reise. Der Schwerpunkt des Hauses.</p>
       </div>
       <div class="card card--flat svc">
         <span class="ibadge"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
         <h3 class="d4">Absichern, was da ist</h3>
-        <p class="body">Hausrat, Wohngeb&auml;ude, private Haftpflicht, Kfz, Rechtsschutz, Unfall. Die Vertr&auml;ge, die selten gebraucht werden und dann alles entscheiden.</p>
+        <p class="body">Hausrat, Wohn&shy;geb&auml;ude, private Haft&shy;pflicht, Kfz, Rechts&shy;schutz, Unfall. Die Vertr&auml;ge, die selten gebraucht werden und dann alles entscheiden.</p>
       </div>
       <div class="card card--flat svc">
         <span class="ibadge"><svg aria-hidden="true"><use href="#i-trend"/></svg></span>
         <h3 class="d4">Vorsorgen und ordnen</h3>
-        <p class="body">Berufsunf&auml;higkeit, private Altersvorsorge, Basisrente, Riester. Wir rechnen Ihnen aus, was am Ende &uuml;brig bleibt, und was fehlt.</p>
+        <p class="body">Berufs&shy;un&shy;f&auml;hig&shy;keit, private Alters&shy;vorsorge, Basis&shy;rente, Riester. Wir rechnen Ihnen aus, was am Ende &uuml;brig bleibt, und was fehlt.</p>
       </div>
     </div>
 
@@ -1035,17 +1099,17 @@ header,section,footer{position:relative;z-index:1}
       <div class="card card--dark svc">
         <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
         <h3 class="d4">Mitarbeiter binden</h3>
-        <p class="body">Betriebliche Altersvorsorge und betriebliche Krankenversicherung. Zwei Bausteine, mit denen kleine Betriebe im Wettbewerb um Fachkr&auml;fte punkten, ohne die L&ouml;hne zu erh&ouml;hen.</p>
+        <p class="body">Betrieb&shy;liche Alters&shy;vorsorge und betrieb&shy;liche Kran&shy;ken&shy;ver&shy;siche&shy;rung. Zwei Bausteine, mit denen kleine Betriebe im Wettbewerb um Fach&shy;kr&auml;fte punkten, ohne die L&ouml;hne zu erh&ouml;hen.</p>
       </div>
       <div class="card card--flat svc">
         <span class="ibadge"><svg aria-hidden="true"><use href="#i-building"/></svg></span>
         <h3 class="d4">Betrieb absichern</h3>
-        <p class="body">Betriebs- und Berufshaftpflicht, Gesch&auml;ftsinhalt, Geb&auml;ude, Cyber, Elektronik, Ertragsausfall, Firmenrechtsschutz.</p>
+        <p class="body">Betriebs- und Berufs&shy;haft&shy;pflicht, Gesch&auml;fts&shy;inhalt, Geb&auml;ude, Cyber, Elektronik, Ertrags&shy;ausfall, Firmen&shy;rechts&shy;schutz.</p>
       </div>
       <div class="card card--flat svc">
         <span class="ibadge"><svg aria-hidden="true"><use href="#i-user"/></svg></span>
         <h3 class="d4">Inhaber absichern</h3>
-        <p class="body">Als Selbstst&auml;ndiger sind Sie Ihre eigene Personalabteilung. Krankenversicherung, Berufsunf&auml;higkeit und Vorsorge, abgestimmt auf Gewinn und Steuer.</p>
+        <p class="body">Als Selbst&shy;st&auml;ndiger sind Sie Ihre eigene Perso&shy;nal&shy;abteilung. Kran&shy;ken&shy;ver&shy;siche&shy;rung, Berufs&shy;un&shy;f&auml;hig&shy;keit und Vor&shy;sorge, abgestimmt auf Gewinn und Steuer.</p>
       </div>
     </div>
   </div>
@@ -1059,7 +1123,7 @@ header,section,footer{position:relative;z-index:1}
       <img class="marquee__pic" src="bilder/versicherungsmakler-forst-panos-papadopoulos-portrait.webp" width="532" height="532" alt="">
       <span class="marquee__item">Seit 1994 in Forst</span>
       <img class="marquee__pic" src="bilder/versicherungsmakler-forst-team-papadopoulos-hero.webp" width="1100" height="483" alt="">
-      <span class="marquee__item">Schwerpunkt Krankenversicherung</span>
+      <span class="marquee__item">Schwerpunkt Kran&shy;ken&shy;ver&shy;siche&shy;rung</span>
       <img class="marquee__pic" src="bilder/versicherungsmakler-forst-larisa-papadopoulos-portrait.webp" width="532" height="531" alt="">
     </div>
     <div class="marquee__grp">
@@ -1067,7 +1131,7 @@ header,section,footer{position:relative;z-index:1}
       <img class="marquee__pic" src="bilder/versicherungsmakler-forst-panos-papadopoulos-portrait.webp" width="532" height="532" alt="">
       <span class="marquee__item">Seit 1994 in Forst</span>
       <img class="marquee__pic" src="bilder/versicherungsmakler-forst-team-papadopoulos-hero.webp" width="1100" height="483" alt="">
-      <span class="marquee__item">Schwerpunkt Krankenversicherung</span>
+      <span class="marquee__item">Schwerpunkt Kran&shy;ken&shy;ver&shy;siche&shy;rung</span>
       <img class="marquee__pic" src="bilder/versicherungsmakler-forst-larisa-papadopoulos-portrait.webp" width="532" height="531" alt="">
     </div>
   </div></div>
@@ -1075,59 +1139,66 @@ header,section,footer{position:relative;z-index:1}
     <div class="marquee__grp">
       <span class="marquee__item">Anrufen statt Hotline</span>
       <span class="marquee__item">Deutsch und Griechisch</span>
-      <span class="marquee__item">Kostenfrei und unverbindlich</span>
+      <span class="marquee__item">Kostenfrei und unver&shy;bindlich</span>
       <span class="marquee__item">Forst und Bruchsal</span>
     </div>
     <div class="marquee__grp">
       <span class="marquee__item">Anrufen statt Hotline</span>
       <span class="marquee__item">Deutsch und Griechisch</span>
-      <span class="marquee__item">Kostenfrei und unverbindlich</span>
+      <span class="marquee__item">Kostenfrei und unver&shy;bindlich</span>
       <span class="marquee__item">Forst und Bruchsal</span>
     </div>
   </div></div>
 </section>
 
-<!-- 8 Schwerpunkt Krankenversicherung: 2x2 dunkle Karten mit hohem Bild (source2) -->
+<!-- 8 Schwerpunkt: zentrierter Kopf, Bildband, Vierer-Kartenreihe mit einer dunklen Karte (source2) -->
 <section class="sec" id="kv">
   <div class="wrap">
     <div class="sechead">
       <span class="label">Schwerpunkt</span>
-      <h2 class="d2">Private und betriebliche Krankenversicherung</h2>
-      <p class="lead">Panos Papadopoulos ber&auml;t seit &uuml;ber 25 Jahren zur privaten Krankenversicherung. Das ist der Grund, warum viele Kunden aus dem ganzen Landkreis Karlsruhe hier anrufen und nicht bei der Agentur zwei Stra&szlig;en weiter.</p>
+      <h2 class="d2">Private und betrieb&shy;liche Kran&shy;ken&shy;ver&shy;siche&shy;rung</h2>
+      <p class="lead">Panos Papadopoulos ber&auml;t seit &uuml;ber 25 Jahren zur privaten Kran&shy;ken&shy;ver&shy;siche&shy;rung. Das ist der Grund, warum viele Kunden aus dem ganzen Landkreis Karlsruhe hier anrufen und nicht bei der Agentur zwei Stra&szlig;en weiter.</p>
     </div>
-    <div class="procgrid mt-xl">
-      <div class="pcol">
-        <div class="card card--dark pcard">
-          <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-trend"/></svg></span>
-          <h3 class="d4">Sie sind schon privat versichert und die Beitr&auml;ge steigen</h3>
-          <p class="body">Sie m&uuml;ssen nicht wechseln, um etwas zu &auml;ndern. In den meisten Tarifen gibt es Optionen, die kaum jemand kennt. Wir sehen sie uns an.</p>
-        </div>
-        <div class="card card--dark pcard">
-          <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-scale"/></svg></span>
-          <h3 class="d4">Sie werden selbstst&auml;ndig oder &uuml;berschreiten die Grenze</h3>
-          <p class="body">Die Entscheidung gesetzlich oder privat trifft man einmal und tr&auml;gt sie jahrzehntelang. Sie sollten wissen, was Sie da entscheiden.</p>
+
+    <figure class="pic kvband">
+      <img src="bilder/versicherungsmakler-forst-team-papadopoulos-hero.webp" width="1100" height="483" alt="Panos und Larisa Papadopoulos in der Continentale Gesch&auml;ftsstelle Forst" loading="lazy">
+      <span class="chip chip--onimage pic__chip">&Uuml;ber 25 Jahre private Kran&shy;ken&shy;ver&shy;siche&shy;rung</span>
+    </figure>
+
+    <div class="kvcards">
+      <div class="svc4">
+        <span class="ibadge"><svg aria-hidden="true"><use href="#i-trend"/></svg></span>
+        <div class="svc4__txt">
+          <h3 class="d4">Beitr&auml;ge steigen</h3>
+          <p class="body">Sie sind schon privat versichert. Wechseln m&uuml;ssen Sie nicht. In den meisten Tarifen gibt es Optionen, die kaum jemand kennt.</p>
         </div>
       </div>
-      <figure class="pic pic--tall">
-        <img src="bilder/versicherungsmakler-forst-team-papadopoulos-hero.webp" width="1100" height="483" alt="Panos Papadopoulos, Schwerpunkt private Krankenversicherung">
-        <span class="chip chip--onimage pic__chip">&Uuml;ber 25 Jahre PKV</span>
-      </figure>
-      <div class="pcol">
-        <div class="card card--dark pcard">
-          <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
-          <h3 class="d4">Sie sind Beamter oder Beamtenanw&auml;rter</h3>
-          <p class="body">Beihilfe plus Restkostentarif ist ein eigenes Thema mit eigenen Fehlerquellen.</p>
+      <div class="svc4 card--dark">
+        <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-scale"/></svg></span>
+        <div class="svc4__txt">
+          <h3 class="d4">Gesetzlich oder privat</h3>
+          <p class="body">Sie werden selbstst&auml;ndig oder &uuml;ber&shy;schreiten die Grenze. Diese Entschei&shy;dung trifft man einmal und tr&auml;gt sie jahr&shy;zehnte&shy;lang.</p>
         </div>
-        <div class="card card--dark pcard">
-          <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
-          <h3 class="d4">Sonderfall Fitnessbranche</h3>
-          <p class="body">F&uuml;r Betriebe der Fitnessbranche gibt es spezielle Deckungskonzepte, die Panos Papadopoulos seit Jahren begleitet.</p>
+      </div>
+      <div class="svc4">
+        <span class="ibadge"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+        <div class="svc4__txt">
+          <h3 class="d4">Beihilfe und Restkosten</h3>
+          <p class="body">Sie sind Beamter oder Beamten&shy;anw&auml;rter. Beihilfe plus Rest&shy;kosten&shy;tarif ist ein eigenes Thema mit eigenen Fehler&shy;quellen.</p>
+        </div>
+      </div>
+      <div class="svc4">
+        <span class="ibadge"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
+        <div class="svc4__txt">
+          <h3 class="d4">Sonderfall Fitness&shy;branche</h3>
+          <p class="body">F&uuml;r Betriebe der Fitness&shy;branche gibt es spezielle Deckungs&shy;konzepte, die Panos Papadopoulos seit Jahren begleitet.</p>
         </div>
       </div>
     </div>
+
     <div class="center mt-l">
-      <a class="btn btn--bronze btn--lg" href="#anfrage">Krankenversicherung besprechen<span class="arrow"><svg aria-hidden="true"><use href="#i-arr"/></svg></span></a>
-      <p class="tiny mt-s">Kostenfrei und unverbindlich. Auch wenn Sie nur eine Frage haben.</p>
+      <a class="btn btn--bronze btn--lg" href="#anfrage">Kran&shy;ken&shy;ver&shy;siche&shy;rung besprechen<span class="arrow"><svg aria-hidden="true"><use href="#i-arr"/></svg></span></a>
+      <p class="tiny mt-s">Kostenfrei und unver&shy;bindlich. Auch wenn Sie nur eine Frage haben.</p>
     </div>
   </div>
 </section>
@@ -1139,19 +1210,19 @@ header,section,footer{position:relative;z-index:1}
     <span class="label label--plain">Beweis</span>
     <div>
       <h2 class="d2">Woran Sie uns messen k&ouml;nnen</h2>
-      <p class="lead mt-m">Wir k&ouml;nnten hier Kundenstimmen hinschreiben. Wir haben aber bisher kaum Bewertungen gesammelt, und erfundene Zitate kommen uns nicht auf die Seite. Deshalb Fakten, die Sie selbst nachpr&uuml;fen k&ouml;nnen.</p>
+      <p class="lead mt-m">Wir k&ouml;nnten hier Kunden&shy;stimmen hin&shy;schreiben. Wir haben aber bisher kaum Bewertungen gesammelt, und erfundene Zitate kommen uns nicht auf die Seite. Deshalb Fakten, die Sie selbst nachpr&uuml;fen k&ouml;nnen.</p>
       <div class="card proofcard mt-l">
       <ol class="prooflist">
         <li><span class="n">01</span><p><b>Seit 1994</b> f&uuml;hrt Panos Papadopoulos Papadopoulos Consulting e.K.</p></li>
-        <li><span class="n">02</span><p><b>Eingetragen im Vermittlerregister</b> unter der Nummer 5303143, pr&uuml;fbar auf vermittlerregister.info.</p></li>
-        <li><span class="n">03</span><p><b>Zwei B&uuml;ros mit Adresse und &Ouml;ffnungszeiten</b>, Forst und Bruchsal, Montag bis Freitag von 09:00 bis 17:00 Uhr.</p></li>
-        <li><span class="n">04</span><p><b>Vier Ansprechpartner mit eigener Durchwahl.</b> Sie landen nicht in einer Warteschlange.</p></li>
-        <li><span class="n">05</span><p><b>&Uuml;ber uns steht der Versicherungsombudsmann</b> als neutrale Beschwerdestelle. Auch das ist eine Auskunft, die Sie einholen k&ouml;nnen.</p></li>
+        <li><span class="n">02</span><p><b>Eingetragen im Ver&shy;mittler&shy;register</b> unter der Nummer 5303143, pr&uuml;fbar auf vermittlerregister.info.</p></li>
+        <li><span class="n">03</span><p><b>Zwei B&uuml;ros mit Adresse und &Ouml;ffnungs&shy;zeiten</b>, Forst und Bruchsal, Montag bis Freitag von 09:00 bis 17:00 Uhr.</p></li>
+        <li><span class="n">04</span><p><b>Vier Ansprech&shy;partner mit eigener Durchwahl.</b> Sie landen nicht in einer Warte&shy;schlange.</p></li>
+        <li><span class="n">05</span><p><b>&Uuml;ber uns steht der Ver&shy;siche&shy;rungs&shy;ombuds&shy;mann</b> als neutrale Beschwerde&shy;stelle. Auch das ist eine Auskunft, die Sie einholen k&ouml;nnen.</p></li>
       </ol>
       </div>
       <div class="card card--flat asknote mt-l">
         <svg aria-hidden="true"><use href="#i-star"/></svg>
-        <p class="body">Wenn Sie Kunde bei uns sind und mit uns zufrieden waren: eine Bewertung hilft den N&auml;chsten, die vor derselben Entscheidung stehen.</p>
+        <p class="body">Wenn Sie Kunde bei uns sind und mit uns zufrieden waren: eine Bewertung hilft den N&auml;chsten, die vor derselben Entschei&shy;dung stehen.</p>
       </div>
     </div>
   </div>
@@ -1165,13 +1236,13 @@ header,section,footer{position:relative;z-index:1}
       <span class="chip chip--onimage pic__chip">Panos Papadopoulos, Inhaber</span>
     </figure>
     <div class="card personcard">
-      <span class="label">Ihr Ansprechpartner</span>
-      <h2 class="d3">Panos Papadopoulos, Ihr Ansprechpartner in Forst und Bruchsal</h2>
-      <p>Ich habe Wirtschaftsingenieurwesen in Karlsruhe studiert und bin 1994 in die eigene Gesch&auml;ftsstelle gegangen. Seither berate ich Menschen im Landkreis Karlsruhe zu Krankenversicherung, Absicherung und Vorsorge. Mir ist wichtig, dass Sie nach dem Gespr&auml;ch verstanden haben, was Sie unterschreiben. Wenn Sie danach nichts unterschreiben, ist das auch in Ordnung.</p>
-      <p>Deutsch und Griechisch sind meine Muttersprachen. Wenn es Ihnen leichter f&auml;llt, sprechen wir Griechisch.</p>
+      <span class="label">Ihr Ansprech&shy;partner</span>
+      <h2 class="d3">Panos Papadopoulos, Ihr Ansprech&shy;partner in Forst und Bruchsal</h2>
+      <p>Ich habe Wirt&shy;schafts&shy;ingenieur&shy;wesen in Karlsruhe studiert und bin 1994 in die eigene Gesch&auml;fts&shy;stelle gegangen. Seither berate ich Menschen im Landkreis Karlsruhe zu Kran&shy;ken&shy;ver&shy;siche&shy;rung, Absiche&shy;rung und Vor&shy;sorge. Mir ist wichtig, dass Sie nach dem Gespr&auml;ch verstanden haben, was Sie unter&shy;schreiben. Wenn Sie danach nichts unter&shy;schreiben, ist das auch in Ordnung.</p>
+      <p>Deutsch und Griechisch sind meine Mutter&shy;sprachen. Wenn es Ihnen leichter f&auml;llt, sprechen wir Griechisch.</p>
       <div class="minifeat">
-        <div><span class="k">Studium</span><span class="v">Wirtschaftsingenieurwesen, Universit&auml;t Karlsruhe</span></div>
-        <div><span class="k">Eigene Gesch&auml;ftsstelle</span><span class="v">seit M&auml;rz 1994, Schwerpunkt PKV seit 1990</span></div>
+        <div><span class="k">Studium</span><span class="v">Wirt&shy;schafts&shy;ingenieur&shy;wesen, Universit&auml;t Karlsruhe</span></div>
+        <div><span class="k">Eigene Gesch&auml;fts&shy;stelle</span><span class="v">seit M&auml;rz 1994, Schwerpunkt PKV seit 1990</span></div>
       </div>
     </div>
   </div>
@@ -1182,25 +1253,25 @@ header,section,footer{position:relative;z-index:1}
       <div class="card card--flat member">
         <span class="av"><img src="bilder/versicherungsmakler-forst-panos-papadopoulos-portrait.webp" width="532" height="532" alt="Panos Papadopoulos"></span>
         <h4>Panos Papadopoulos</h4>
-        <p class="role">Inhaber. Krankenversicherung, Vorsorge, Gewerbe.</p>
+        <p class="role">Inhaber. Kran&shy;ken&shy;ver&shy;siche&shy;rung, Vor&shy;sorge, Gewerbe.</p>
         <a class="tel" href="tel:+4972513266911"><svg aria-hidden="true"><use href="#i-phone"/></svg>07251 3266911</a>
       </div>
       <div class="card card--flat member">
         <span class="av"><img src="bilder/versicherungsmakler-forst-larisa-papadopoulos-portrait.webp" width="532" height="531" alt="Larisa Papadopoulos"></span>
         <h4>Larisa Papadopoulos</h4>
-        <p class="role">Innendienst. Vertr&auml;ge, Unterlagen und alles, was schnell gehen muss.</p>
+        <p class="role">Innen&shy;dienst. Vertr&auml;ge, Unter&shy;lagen und alles, was schnell gehen muss.</p>
         <a class="tel" href="tel:+4972513266912"><svg aria-hidden="true"><use href="#i-phone"/></svg>07251 3266912</a>
       </div>
       <div class="card card--flat member">
         <span class="av"><span>WH</span></span>
         <h4>Willi Hemberle</h4>
-        <p class="role">Vertriebspartner.</p>
+        <p class="role">Vertriebs&shy;partner.</p>
         <a class="tel" href="tel:+49152530490 77"><svg aria-hidden="true"><use href="#i-phone"/></svg>0152 53049077</a>
       </div>
       <div class="card card--flat member">
         <span class="av"><span>KS</span></span>
         <h4>Katja Erika Schmidt</h4>
-        <p class="role">Vertriebsassistenz.</p>
+        <p class="role">Ver&shy;triebs&shy;assistenz.</p>
         <a class="tel" href="tel:+4972513266911"><svg aria-hidden="true"><use href="#i-phone"/></svg>07251 3266911</a>
       </div>
     </div>
@@ -1214,7 +1285,7 @@ header,section,footer{position:relative;z-index:1}
       </div>
       <div class="card office">
         <h4>Bruchsal</h4>
-        <p>Kaiserstr. 54, 76646 Bruchsal<br>&Ouml;ffnungszeiten und Durchwahl folgen.</p>
+        <p>Kaiserstr. 54, 76646 Bruchsal<br>&Ouml;ffnungs&shy;zeiten und Durchwahl folgen.</p>
         <a class="tel" href="tel:+4972513266911"><svg aria-hidden="true"><use href="#i-phone"/></svg>07251 3266911</a>
       </div>
     </div>
@@ -1246,7 +1317,7 @@ header,section,footer{position:relative;z-index:1}
         <p class="body">Sie bekommen von uns eine klare Empfehlung und die Begr&uuml;ndung dazu. Was Sie damit machen, entscheiden Sie in Ruhe.</p>
       </div>
     </div>
-    <p class="center lead mt-l">Kostenfrei und unverbindlich. Kein Abschlusszwang. Wenn Ihre Vertr&auml;ge passen, sagen wir Ihnen das.</p>
+    <p class="center lead mt-l">Kostenfrei und unver&shy;bindlich. Kein Abschluss&shy;zwang. Wenn Ihre Vertr&auml;ge passen, sagen wir Ihnen das.</p>
   </div>
 </section>
 
@@ -1259,18 +1330,18 @@ header,section,footer{position:relative;z-index:1}
     </div>
     <div class="faq-cols mt-xl">
       <div class="stack" style="--s:14px">
-        <details class="faq" open><summary>Was kostet das Beratungsgespr&auml;ch?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Nichts. Das Gespr&auml;ch ist kostenfrei und unverbindlich, auch wenn danach kein Vertrag zustande kommt. Wir werden von den Gesellschaften des Continentale Versicherungsverbundes verg&uuml;tet, nicht von Ihnen.</p></details>
-        <details class="faq"><summary>Sind Sie unabh&auml;ngig?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Nein, und das sagen wir offen. Wir sind als Versicherungsvertreter ausschlie&szlig;lich f&uuml;r die Gesellschaften des Continentale Versicherungsverbundes t&auml;tig. Wir vergleichen also nicht den ganzen Markt, kennen daf&uuml;r aber die Tarife, die wir anbieten, bis in die Bedingungen. Wenn ein bestehender Vertrag bei einer anderen Gesellschaft gut ist, sagen wir Ihnen das.</p></details>
-        <details class="faq"><summary>Meine Beitr&auml;ge in der privaten Krankenversicherung steigen. Muss ich wechseln?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Meistens nicht. In den meisten Tarifen gibt es Optionen, den Beitrag zu ver&auml;ndern, ohne den Schutz zu verlieren. Wir sehen uns Ihren Tarif an und sagen Ihnen, welche M&ouml;glichkeiten Sie haben.</p></details>
-        <details class="faq"><summary>Ich habe Angst, dass ich die Beitr&auml;ge im Alter nicht mehr zahlen kann.<span class="pm" aria-hidden="true"></span></summary><p class="ans">Diese Sorge ist berechtigt, und man kann etwas dagegen tun. Es gibt Bausteine, die den Beitrag im Alter abfedern, und Entscheidungen, die man besser fr&uuml;h trifft als sp&auml;t. Genau dar&uuml;ber sprechen wir im Erstgespr&auml;ch.</p></details>
-        <details class="faq"><summary>Bekomme ich als Selbstst&auml;ndiger &uuml;berhaupt eine private Krankenversicherung?<span class="pm" aria-hidden="true"></span></summary><p class="ans">In der Regel ja. Entscheidend sind Ihr Gesundheitszustand und Ihr Alter, nicht Ihr Status. Wir kl&auml;ren vorher, was realistisch ist, damit Sie keinen Antrag stellen, der abgelehnt wird.</p></details>
+        <details class="faq" open><summary>Was kostet das Bera&shy;tungs&shy;gespr&auml;ch?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Nichts. Das Gespr&auml;ch ist kostenfrei und unver&shy;bindlich, auch wenn danach kein Vertrag zustande kommt. Wir werden von den Gesell&shy;schaften des Continentale Ver&shy;siche&shy;rungs&shy;ver&shy;bundes verg&uuml;tet, nicht von Ihnen.</p></details>
+        <details class="faq"><summary>Sind Sie unabh&auml;ngig?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Nein, und das sagen wir offen. Wir sind als Ver&shy;siche&shy;rungs&shy;ver&shy;treter ausschlie&szlig;&shy;lich f&uuml;r die Gesell&shy;schaften des Continentale Ver&shy;siche&shy;rungs&shy;ver&shy;bundes t&auml;tig. Wir vergleichen also nicht den ganzen Markt, kennen daf&uuml;r aber die Tarife, die wir anbieten, bis in die Bedingungen. Wenn ein bestehender Vertrag bei einer anderen Gesell&shy;schaft gut ist, sagen wir Ihnen das.</p></details>
+        <details class="faq"><summary>Meine Beitr&auml;ge in der privaten Kran&shy;ken&shy;ver&shy;siche&shy;rung steigen. Muss ich wechseln?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Meistens nicht. In den meisten Tarifen gibt es Optionen, den Beitrag zu ver&auml;ndern, ohne den Schutz zu verlieren. Wir sehen uns Ihren Tarif an und sagen Ihnen, welche M&ouml;glich&shy;keiten Sie haben.</p></details>
+        <details class="faq"><summary>Ich habe Angst, dass ich die Beitr&auml;ge im Alter nicht mehr zahlen kann.<span class="pm" aria-hidden="true"></span></summary><p class="ans">Diese Sorge ist berechtigt, und man kann etwas dagegen tun. Es gibt Bausteine, die den Beitrag im Alter abfedern, und Entschei&shy;dungen, die man besser fr&uuml;h trifft als sp&auml;t. Genau dar&uuml;ber sprechen wir im Erst&shy;gespr&auml;ch.</p></details>
+        <details class="faq"><summary>Bekomme ich als Selbst&shy;st&auml;ndiger &uuml;berhaupt eine private Kran&shy;ken&shy;ver&shy;siche&shy;rung?<span class="pm" aria-hidden="true"></span></summary><p class="ans">In der Regel ja. Entschei&shy;dend sind Ihr Gesund&shy;heits&shy;zustand und Ihr Alter, nicht Ihr Status. Wir kl&auml;ren vorher, was realistisch ist, damit Sie keinen Antrag stellen, der abgelehnt wird.</p></details>
       </div>
       <div class="stack" style="--s:14px">
-        <details class="faq"><summary>Was passiert, wenn ich einen Schaden habe?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Sie rufen uns an. Wir nehmen den Schaden auf und sprechen mit der Gesellschaft. Sie m&uuml;ssen sich nicht durch eine Hotline arbeiten und keine Formulare deuten.</p></details>
+        <details class="faq"><summary>Was passiert, wenn ich einen Schaden habe?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Sie rufen uns an. Wir nehmen den Schaden auf und sprechen mit der Gesell&shy;schaft. Sie m&uuml;ssen sich nicht durch eine Hotline arbeiten und keine Formulare deuten.</p></details>
         <details class="faq"><summary>Kann ich mich auch beraten lassen, ohne ins B&uuml;ro zu kommen?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Ja. Wir beraten telefonisch und per Video- oder Text-Chat. Sie brauchen daf&uuml;r keine Software, nur einen Termin und einen Zugangscode, den Sie von uns bekommen.</p></details>
-        <details class="faq"><summary>Was ist, wenn Sie im Urlaub sind?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Der Innendienst ist besetzt und Sie erreichen immer jemanden, der Ihre Unterlagen kennt. Wir sind vier Personen an zwei Standorten, nicht ein Einzelk&auml;mpfer.</p></details>
+        <details class="faq"><summary>Was ist, wenn Sie im Urlaub sind?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Der Innen&shy;dienst ist besetzt und Sie erreichen immer jemanden, der Ihre Unter&shy;lagen kennt. Wir sind vier Personen an zwei Standorten, nicht ein Einzel&shy;k&auml;mpfer.</p></details>
         <details class="faq"><summary>Ich habe schon Vertr&auml;ge und will eigentlich nichts &auml;ndern.<span class="pm" aria-hidden="true"></span></summary><p class="ans">Dann lassen Sie sie einmal durchsehen. Wir sagen Ihnen, was gut ist, was doppelt l&auml;uft und wo eine L&uuml;cke ist. Ohne dass Sie etwas &auml;ndern m&uuml;ssen.</p></details>
-        <details class="faq"><summary>Ist ein Online-Vergleich nicht billiger?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Billiger im Beitrag, oft teurer im Schadenfall. Der Beitrag steht auf der ersten Seite, die Bedingungen auf Seite zwanzig. Und wenn etwas passiert, erreichen Sie beim Portal ein Ticketsystem und bei uns eine Person, die Ihren Vertrag kennt.</p></details>
+        <details class="faq"><summary>Ist ein Online-Vergleich nicht billiger?<span class="pm" aria-hidden="true"></span></summary><p class="ans">Billiger im Beitrag, oft teurer im Schadenfall. Der Beitrag steht auf der ersten Seite, die Bedingungen auf Seite zwanzig. Und wenn etwas passiert, erreichen Sie beim Portal ein Ticket&shy;system und bei uns eine Person, die Ihren Vertrag kennt.</p></details>
       </div>
     </div>
   </div>
@@ -1291,8 +1362,8 @@ header,section,footer{position:relative;z-index:1}
           <label class="field"><span class="lab">Telefon oder E-Mail</span><input type="text" name="kontakt" autocomplete="tel" placeholder="So erreichen wir Sie" required></label>
           <label class="field wide"><span class="lab">Thema</span>
             <select name="thema">
-              <option>Krankenversicherung</option>
-              <option>Vorsorge und Berufsunf&auml;higkeit</option>
+              <option>Kran&shy;ken&shy;ver&shy;siche&shy;rung</option>
+              <option>Vor&shy;sorge und Berufs&shy;un&shy;f&auml;hig&shy;keit</option>
               <option>Haus und Familie</option>
               <option>Kfz</option>
               <option>Betrieb und Mitarbeiter</option>
@@ -1301,9 +1372,9 @@ header,section,footer{position:relative;z-index:1}
           </label>
           <label class="field wide"><span class="lab">Ihre Nachricht <span class="dim">(optional)</span></span><textarea name="nachricht" placeholder="Worum geht es? Ein Satz reicht."></textarea></label>
         </div>
-        <button class="btn btn--dark btn--lg" type="submit">Kostenloses Beratungsgespr&auml;ch anfragen<span class="arrow"><svg aria-hidden="true"><use href="#i-arr"/></svg></span></button>
-        <p class="tiny formnote">Kostenfrei und unverbindlich. Kein Abschlusszwang. Wir melden uns am n&auml;chsten Werktag.</p>
-        <p class="draftnote" role="status">Entwurf: Das Formular ist noch nicht angeschlossen. Vor dem Livegang Empf&auml;nger, Datenschutzhinweis und Einwilligung erg&auml;nzen.</p>
+        <button class="btn btn--dark btn--lg" type="submit">Kostenloses Bera&shy;tungs&shy;gespr&auml;ch anfragen<span class="arrow"><svg aria-hidden="true"><use href="#i-arr"/></svg></span></button>
+        <p class="tiny formnote">Kostenfrei und unver&shy;bindlich. Kein Abschluss&shy;zwang. Wir melden uns am n&auml;chsten Werktag.</p>
+        <p class="draftnote" role="status">Entwurf: Das Formular ist noch nicht ange&shy;schlossen. Vor dem Livegang Empf&auml;nger, Daten&shy;schutz&shy;hinweis und Einwilli&shy;gung erg&auml;nzen.</p>
       </form>
 
       <div class="card card--dark contactcard">
@@ -1324,7 +1395,7 @@ header,section,footer{position:relative;z-index:1}
           </div>
           <div>
             <span class="ibadge ibadge--white"><svg aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <div><b>Vorbeikommen</b><p>Rheinstr. 8, 76694 Forst<br>Kaiserstr. 54, 76646 Bruchsal</p></div>
+            <div><b>Vorbei&shy;kommen</b><p>Rheinstr. 8, 76694 Forst<br>Kaiserstr. 54, 76646 Bruchsal</p></div>
           </div>
         </div>
       </div>
@@ -1338,7 +1409,7 @@ header,section,footer{position:relative;z-index:1}
 <section class="ctabar">
   <div class="wrap ctabar__in">
     <p class="ctabar__gold">Noch eine Frage offen?</p>
-    <p class="body">Rufen Sie an. Sie sprechen direkt mit dem Innendienst, nicht mit einer Warteschlange.</p>
+    <p class="body">Rufen Sie an. Sie sprechen direkt mit dem Innen&shy;dienst, nicht mit einer Warte&shy;schlange.</p>
     <a class="btn btn--bronze" href="tel:+4972513266911"><svg style="width:15px;height:15px" aria-hidden="true"><use href="#i-phone"/></svg>07251 3266911<span class="arrow"><svg aria-hidden="true"><use href="#i-arr"/></svg></span></a>
   </div>
 </section>
@@ -1356,13 +1427,13 @@ header,section,footer{position:relative;z-index:1}
               <span class="brand__sub">Consulting e.K.</span>
             </span>
           </a>
-          <p>Continentale Gesch&auml;ftsstelle f&uuml;r Versicherung und Vorsorge in Forst und Bruchsal. Seit 1994.</p>
+          <p>Continentale Gesch&auml;fts&shy;stelle f&uuml;r Ver&shy;siche&shy;rung und Vor&shy;sorge in Forst und Bruchsal. Seit 1994.</p>
         </div>
         <div class="footcol">
           <h4>Leistungen</h4>
           <ul>
-            <li><a href="#kv">Krankenversicherung</a></li>
-            <li><a href="#leistungen-privat">Vorsorge und BU</a></li>
+            <li><a href="#kv">Kran&shy;ken&shy;ver&shy;siche&shy;rung</a></li>
+            <li><a href="#leistungen-privat">Vor&shy;sorge und BU</a></li>
             <li><a href="#leistungen-privat">Haus und Familie</a></li>
             <li><a href="#leistungen-gewerbe">Betrieb und Mitarbeiter</a></li>
           </ul>
@@ -1381,7 +1452,7 @@ header,section,footer{position:relative;z-index:1}
           <ul>
             <li><a href="#">Impressum</a></li>
             <li><a href="#">Datenschutz</a></li>
-            <li><a href="#">Erstinformation (PDF)</a></li>
+            <li><a href="#">Erst&shy;infor&shy;mation (PDF)</a></li>
             <li><a href="#">Widerruf</a></li>
           </ul>
         </div>
@@ -1397,19 +1468,19 @@ header,section,footer{position:relative;z-index:1}
           <p>Rheinstr. 8, 76694 Forst<br>Kaiserstr. 54, 76646 Bruchsal</p>
         </div>
         <div>
-          <h4>Einzugsgebiet</h4>
+          <h4>Einzugs&shy;gebiet</h4>
           <div class="orte">
             <span class="chip chip--ondark">Forst</span><span class="chip chip--ondark">Bruchsal</span><span class="chip chip--ondark">Hambr&uuml;cken</span><span class="chip chip--ondark">Ubstadt-Weiher</span><span class="chip chip--ondark">Karlsdorf-Neuthard</span><span class="chip chip--ondark">Bad Sch&ouml;nborn</span><span class="chip chip--ondark">Weingarten</span><span class="chip chip--ondark">Kronau</span><span class="chip chip--ondark">&Ouml;stringen</span><span class="chip chip--ondark">Landkreis Karlsruhe</span>
           </div>
         </div>
       </div>
 
-      <p class="footnote"><strong style="color:var(--on-dark)">Hinweis zur T&auml;tigkeit:</strong> Wir sind als Versicherungsvertreter ausschlie&szlig;lich f&uuml;r die Gesellschaften des Continentale Versicherungsverbundes t&auml;tig. Vermittlerregister-Nr. 5303143, Registerstelle DIHK, vermittlerregister.info. Schlichtungsstelle: Versicherungsombudsmann e.V.</p>
+      <p class="footnote"><strong style="color:var(--on-dark)">Hinweis zur T&auml;tigkeit:</strong> Wir sind als Ver&shy;siche&shy;rungs&shy;ver&shy;treter ausschlie&szlig;&shy;lich f&uuml;r die Gesell&shy;schaften des Continentale Ver&shy;siche&shy;rungs&shy;ver&shy;bundes t&auml;tig. Ver&shy;mittler&shy;register-Nr. 5303143, Register&shy;stelle DIHK, vermittlerregister.info. Schlich&shy;tungs&shy;stelle: Ver&shy;siche&shy;rungs&shy;ombuds&shy;mann e.V.</p>
 
       <div class="footbot">
         <span>&copy; 2026 Papadopoulos Consulting e.K.</span>
         <nav aria-label="Rechtliche Links">
-          <a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Erstinformation</a><a href="#">Versicherungsombudsmann e.V.</a>
+          <a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Erst&shy;infor&shy;mation</a><a href="#">Ver&shy;siche&shy;rungs&shy;ombuds&shy;mann e.V.</a>
         </nav>
       </div>
     </div>
