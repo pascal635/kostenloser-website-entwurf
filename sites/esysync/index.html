@@ -18,10 +18,10 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-sans.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp" imagesrcset="assets/bilder/esysync-schaufenster-nacht-betrachter-700w.webp 700w, assets/bilder/esysync-schaufenster-nacht-betrachter-1100w.webp 1100w, assets/bilder/esysync-schaufenster-nacht-betrachter.webp 1800w, assets/bilder/esysync-schaufenster-nacht-betrachter-2400w.webp 2400w, assets/bilder/esysync-schaufenster-nacht-betrachter-2560w.webp 2560w" imagesizes="100vw" fetchpriority="high">
-<script src="assets/tracking.js"></script>
+<script src="assets/tracking.js?v=20260819b"></script>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20260819b">
 </head>
 <body>
 <a class="skip" href="#demo">Direkt zur Demo-Anfrage</a>
@@ -559,6 +559,8 @@
               <option>mehr als 20 Standorte</option>
             </select>
           </div>
+          <!-- Honeypot gegen Bots. Fuer Menschen unsichtbar, Web3Forms verwirft ausgefuellte Eintraege. -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <button class="btn btn--primary btn--lg btn--block" type="submit">Live-Demo anfordern</button>
           <p class="form__foot">Unverbindlich · keine Kosten · Hergestellt in Bremen</p>
         </div>
@@ -629,7 +631,7 @@
 }
 </script>
 
-<script src="assets/consent.js" defer></script>
-<script src="assets/app.js" defer></script>
+<script src="assets/consent.js?v=20260819b" defer></script>
+<script src="assets/app.js?v=20260819b" defer></script>
 </body>
 </html>

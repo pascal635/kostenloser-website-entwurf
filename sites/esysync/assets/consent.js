@@ -46,8 +46,8 @@
           '</div>' +
         '</div>' +
         '<div class="cc__btns">' +
-          '<button class="btn btn--primary" data-cc="all">Alle akzeptieren</button>' +
-          '<button class="btn btn--secondary" data-cc="necessary">Nur notwendige</button>' +
+          '<button class="cc__btn" data-cc="all">Alle akzeptieren</button>' +
+          '<button class="cc__btn" data-cc="necessary">Nur notwendige</button>' +
           '<button class="cc__link" data-cc="' + (openSettings ? "save" : "settings") + '">' +
             (openSettings ? "Auswahl speichern" : "Einstellungen") + '</button>' +
         '</div>' +

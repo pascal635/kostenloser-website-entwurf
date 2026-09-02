@@ -39,81 +39,121 @@
   }
 
   /* ------------------------------------------------------------
-     Formular: an den Endpoint senden, danach die Ads-Conversion.
-     Ohne LEAD_ENDPOINT wird nichts verschickt, dann bleibt es beim
-     Erfolgszustand und in der Konsole steht ein Hinweis.
+     Formular: Lead an Web3Forms, danach die Ads-Conversion.
+     Drei Sperren gegen Mehrfach-Conversions:
+       1. laeuft      verhindert parallele Absendungen (Doppelklick)
+       2. abgeschickt verhindert eine zweite Absendung auf dieser Seite
+       3. sessionStorage verhindert ein erneutes Feuern nach Reload
+     Google Ads zaehlt zusaetzlich serverseitig "Einmalig" pro Klick.
      ------------------------------------------------------------ */
   var E = window.ESY || {};
   var form = document.getElementById("demoForm");
+  var CONV_KEY = "esy_conv_sent";
+  var laeuft = false, abgeschickt = false;
 
-  function fireConversion(){
+  function conversionSchonGefeuert(){
+    if (abgeschickt) return true;
+    try { return sessionStorage.getItem(CONV_KEY) === "1"; } catch (e) { return false; }
+  }
+  function conversionMerken(){
+    abgeschickt = true;
+    try { sessionStorage.setItem(CONV_KEY, "1"); } catch (e) {}
+  }
+
+  function fireConversion(txId){
+    if (conversionSchonGefeuert()) return;
+    conversionMerken();
     if (typeof gtag !== "function") return;
     if (!/^AW-\d{9,12}$/.test(E.ADS_ID || "")) return;
     var label = E.ADS_LABEL || "";
-    if (!label || /^X+$/.test(label)) {          // Platzhalter, noch kein echtes Label
+    if (!label || /^X+$/.test(label)) {
       console.warn("[ESY] ADS_LABEL fehlt, Conversion wird nicht gesendet.");
-      gtag("event", "generate_lead", { currency: "EUR", value: 1.0 });
       return;
     }
     gtag("event", "conversion", {
-      send_to: E.ADS_ID + "/" + E.ADS_LABEL,
+      send_to: E.ADS_ID + "/" + label,
       value: 1.0,
       currency: "EUR",
-      transaction_id: "lead-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8)
+      transaction_id: txId          // stabile ID, damit Ads sicher dedupliziert
     });
     gtag("event", "generate_lead", { currency: "EUR", value: 1.0 });
   }
 
-  function payload(f){
-    var d = {};
-    new FormData(f).forEach(function(v,k){ d[k] = v; });
-    var attr = {};
-    try { attr = JSON.parse(sessionStorage.getItem("esy_attr") || "{}"); } catch(e) {}
-    d.attribution = attr;
-    d.seite = /leuchtrahmen-alternative/.test(location.pathname) ? "leuchtrahmen-alternative" : "hauptseite";
-    d.url = location.href;
-    d.referrer = document.referrer || "";
-    d.gesendet_am = new Date().toISOString();
-    return d;
+  function payload(f, txId){
+    var v = {};
+    new FormData(f).forEach(function (val, k) { v[k] = val; });
+    var a = {};
+    try { a = JSON.parse(sessionStorage.getItem("esy_attr") || "{}"); } catch (e) {}
+    var seite = /leuchtrahmen-alternative/.test(location.pathname) ? "Leuchtrahmen-Alternative" : "Hauptseite";
+    return {
+      access_key: E.W3F_KEY,
+      subject: "Neue Demo-Anfrage über die Landingpage (" + seite + ")",
+      from_name: "ESYSYNC Landingpage",
+      replyto: v.email || "",
+      botcheck: v.botcheck || "",
+      "Name": v.name || "",
+      "E-Mail": v.email || "",
+      "Maklerbüro oder Filiale": v.org || "",
+      "Anzahl Standorte": v.standorte || "",
+      "Seite": seite,
+      "URL": location.href,
+      "Google Klick-ID": a.gclid || a.gbraid || a.wbraid || "kein Anzeigenklick",
+      "Kampagne": a.utm_campaign || "",
+      "Quelle": a.utm_source || "",
+      "Medium": a.utm_medium || "",
+      "Keyword": a.utm_term || "",
+      "Referrer": document.referrer || "",
+      "Vorgangsnummer": txId
+    };
+  }
+
+  function fehlerZeigen(f, text){
+    var err = f.querySelector(".form__err");
+    if (!err) {
+      err = document.createElement("p");
+      err.className = "form__err";
+      f.querySelector(".form__body").appendChild(err);
+    }
+    err.innerHTML = text;
   }
 
   if (form) form.addEventListener("submit", function (ev) {
     ev.preventDefault();
+    if (laeuft || abgeschickt) return;                 // Doppelklick und Zweitversand
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
+    laeuft = true;
     var btn = form.querySelector('button[type="submit"]');
     var label = btn ? btn.textContent : "";
-    if (btn) { btn.disabled = true; btn.textContent = "Wird gesendet …"; }
+    if (btn) { btn.disabled = true; btn.setAttribute("aria-busy", "true"); btn.textContent = "Wird gesendet …"; }
 
-    var done = function (ok) {
-      if (btn) { btn.disabled = false; btn.textContent = label; }
+    var txId = "esy-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
+
+    var fertig = function (ok, meldung) {
+      laeuft = false;
+      if (btn) { btn.disabled = false; btn.removeAttribute("aria-busy"); btn.textContent = label; }
       if (ok) {
-        fireConversion();
+        fireConversion(txId);
         form.classList.add("is-sent");
         form.scrollIntoView({ block: "center", behavior: "smooth" });
       } else {
-        var err = form.querySelector(".form__err");
-        if (!err) {
-          err = document.createElement("p");
-          err.className = "form__err";
-          form.querySelector(".form__body").appendChild(err);
-        }
-        err.innerHTML = 'Das hat gerade nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an <a href="mailto:support@avanto-vr.com">support@avanto-vr.com</a>.';
+        fehlerZeigen(form, meldung || 'Das hat gerade nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an <a href="mailto:support@avanto-vr.com">support@avanto-vr.com</a>.');
       }
     };
 
-    if (!E.LEAD_ENDPOINT) {
-      console.warn("[ESY] Kein LEAD_ENDPOINT gesetzt, der Lead wird nicht uebertragen.");
-      done(true);
+    if (!E.LEAD_ENDPOINT || !E.W3F_KEY) {
+      console.warn("[ESY] Kein Endpoint konfiguriert, der Lead wird nicht uebertragen.");
+      fertig(true);
       return;
     }
 
     fetch(E.LEAD_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload(form))
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload(form, txId))
     })
-    .then(function (r) { done(r.ok); })
-    .catch(function () { done(false); });
+    .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
+    .then(function (d) { fertig(!!d.success); })
+    .catch(function () { fertig(false); });
   });
 })();

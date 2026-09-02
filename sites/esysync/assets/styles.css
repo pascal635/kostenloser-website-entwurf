@@ -623,8 +623,20 @@ ul{margin:0; padding:0}
 .cc__opt input{margin-top:3px; width:17px; height:17px; accent-color:var(--violet-700); flex:0 0 auto}
 .cc__opt input:disabled{opacity:.55}
 .cc__opt b{display:block; color:var(--ink-100); font-weight:600; font-size:14.5px}
-.cc__btns{display:flex; flex-direction:column; gap:12px; min-width:min(100%,232px)}
-.cc__btns .btn{width:100%}
+.cc__btns{display:flex; flex-direction:column; gap:12px; min-width:min(100%,248px)}
+/* DSGVO: Annehmen und Ablehnen muessen gleich prominent sein. Gleiche Groesse,
+   gleiche Farbe, gleiches Gewicht. Kein Violett, das ist laut CI der einen
+   Handlung pro Ansicht vorbehalten und wuerde hier eine Hierarchie erzeugen. */
+.cc__btn{
+  width:100%; min-height:var(--ctl-h); padding:0 22px; border-radius:var(--r-sm);
+  background:var(--ink-800); color:var(--ink-100); border:1px solid var(--ink-400);
+  font-family:var(--f-text); font-weight:600; font-size:15px; letter-spacing:-.005em;
+  cursor:pointer; white-space:nowrap;
+  transition:background-color .18s var(--ease), border-color .18s var(--ease), transform .18s var(--ease);
+}
+.cc__btn:hover{background:var(--ink-700); border-color:var(--ink-200); transform:translateY(-1px)}
+.cc__btn:active{transform:translateY(0)}
+.cc__btn:focus-visible{outline:2px solid var(--violet-400); outline-offset:3px}
 .cc__link{
   background:none; border:0; cursor:pointer; padding:6px 0;
   font-size:13.5px; color:var(--ink-400); text-decoration:underline; text-underline-offset:3px;

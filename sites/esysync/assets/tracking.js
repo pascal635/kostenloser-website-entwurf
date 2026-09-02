@@ -7,9 +7,10 @@
    ============================================================ */
 window.ESY = {
   ADS_ID:        "AW-792272931",           // Google-Ads-Conversion-ID
-  ADS_LABEL:     "XXXXXXXXXXXXXXXXXXX",    // Label der Conversion-Aktion "Demo-Anfrage"
+  ADS_LABEL:     "4-lKCOCI2ewcEKPA5PkC",   // Conversion "lp-likovo-form-send"
   GA4_ID:        "",                       // optional, z. B. "G-XXXXXXXXXX". Leer = GA4 aus.
-  LEAD_ENDPOINT: "",                       // n8n-Webhook o. ae. Leer = Formular sendet nicht.
+  LEAD_ENDPOINT: "https://api.web3forms.com/submit",
+  W3F_KEY:       "31267008-8b4b-486f-8cbd-e9713e405544", // Web3Forms, oeffentlich per Design
   CONSENT_KEY:   "esy_consent_v1"
 };
 
