@@ -176,6 +176,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 .hero .right .comp .ph:first-child{aspect-ratio:1/1.12}
 .hero .right .comp .col{display:grid;gap:14px}
 .hero .right .comp .col .ph{aspect-ratio:1}
+.hero .right .comp .hero-tags{display:contents}
 .hero .right .comp .pill.float:nth-of-type(1){top:-18px;right:-10px}
 .hero .right .comp .pill.float:nth-of-type(2){bottom:30%;left:-26px}
 .hero .right .comp .pill.float:nth-of-type(3){bottom:-18px;right:8%}
@@ -189,8 +190,28 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
   .hero .left .veil{height:100%;background:linear-gradient(0deg,rgba(42,13,10,.92) 0%,rgba(42,13,10,.78) 34%,rgba(42,13,10,.6) 62%,rgba(42,13,10,.44) 100%)}
   .hero .left .shot::after{top:auto;bottom:auto;opacity:0}
   .hero .right{padding:44px 22px 56px}
-  .hero .right .comp{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
-  .hero .right .comp .pill.float{position:static;margin:0;grid-column:span 2;white-space:normal;justify-content:center}
+  .hero .right .comp{max-width:620px;grid-template-columns:1fr 1fr;
+    grid-template-areas:"big side" "tags side"}
+  .hero .right .comp>.ph:first-child{grid-area:big;aspect-ratio:4/3}
+  .hero .right .comp>.col{grid-area:side;grid-template-rows:1fr 1fr}
+  .hero .right .comp>.col .ph{aspect-ratio:auto}
+  .hero .right .comp .hero-tags{grid-area:tags;display:flex;flex-direction:column;
+    align-items:flex-start;justify-content:flex-end;gap:10px}
+  .hero .right .comp .pill.float{position:static;margin:0;box-shadow:var(--e1)}
+}
+
+@media(max-width:620px){
+  .hero .right .comp{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-areas:none;gap:10px}
+  .hero .right .comp>.ph:first-child{grid-area:auto;aspect-ratio:1}
+  .hero .right .comp>.col{grid-area:auto;display:contents}
+  .hero .right .comp>.col .ph{aspect-ratio:1}
+  .hero .right .comp .hero-tags{grid-area:auto;grid-column:1/-1;margin-top:6px;
+    flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px}
+  .hero .right .comp .pill{padding:8px 14px;font-size:12.5px}
+  .hero .right .comp .pill .dot{width:20px;height:20px;flex:0 0 20px}
+  /* Anrufen ist unten in der festen Leiste schon da, im Hero doppelt */
+  .hero .right .cta .btn-outline{display:none}
 }
 
 /* ---------- Statement, zentriert ---------- */
@@ -406,9 +427,11 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
         <div class="ph b square" data-m="Hairdreams"><img src="bilder/friseur-neuenstein-haar-kaemmen.webp" alt="Langes, dichtes Haar wird nach einer Haarverlängerung gekämmt" loading="lazy" decoding="async"></div>
         <div class="ph c square" data-m="Haar-Spa"><img src="bilder/friseur-neuenstein-kopfmassage.webp" alt="Kopfmassage während einer Haar-Spa-Behandlung" loading="lazy" decoding="async"></div>
       </div>
-      <span class="pill float"><span class="dot"></span> Exklusiver Hairdreams-Partner</span>
-      <span class="pill float"><span class="dot"></span> 4,9 bei Google</span>
-      <span class="pill float"><span class="dot"></span> Tierversuchsfrei</span>
+      <div class="hero-tags">
+        <span class="pill float"><span class="dot"></span> Exklusiver Hairdreams-Partner</span>
+        <span class="pill float"><span class="dot"></span> 4,9 bei Google</span>
+        <span class="pill float"><span class="dot"></span> Tierversuchsfrei</span>
+      </div>
     </div>
 
     <div class="cta">
