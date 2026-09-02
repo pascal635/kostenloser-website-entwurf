@@ -296,6 +296,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 /* ---------- Ablauf als Kreis ---------- */
 .circleflow{background:var(--peach-soft);padding:clamp(52px,7vw,104px) 0}
 .cf{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.cf-intro .lede{margin-top:20px;max-width:46ch}
+.cf-intro .btn{margin-top:28px}
 .ring{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);width:100%}
 .ring .line{display:none}
 .ring .core{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
@@ -384,6 +386,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 /* ---------- Kontakt ---------- */
 .contact{background:var(--peach);padding:clamp(52px,7vw,104px) 0}
 .cgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:start}
+.ct-intro .lede{margin-top:20px;max-width:44ch}
 .form{background:var(--paper);border-radius:var(--r-xl);padding:30px 28px 32px;box-shadow:var(--e3)}
 .field{display:block;margin-bottom:15px}
 .field>span{display:block;font-family:var(--sans);font-weight:500;font-size:13px;margin-bottom:7px}
@@ -430,20 +433,22 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
   /* Unser Versprechen */
   .value .bigtype{text-align:center}
   .value .bigtype .mega{text-align:center}
-  /* Ablauf */
+  /* Label ohne Bezug, sobald Bilder und Text umbrechen */
+  .value .row3>.lbl{display:none}
+}
+
+/* Sektionen, die erst bei 860px umbrechen, werden auch erst dort zentriert */
+@media(max-width:860px){
   .cf-intro{text-align:center}
+  .cf-intro .lede{margin-inline:auto}
   .ring .core{justify-content:center;text-align:center}
-  /* Kontakt */
   .ct-intro{text-align:center}
-  .ct-intro .lede{max-width:none}
+  .ct-intro .lede{margin-inline:auto}
   .napline{grid-template-columns:1fr;justify-items:center;text-align:center;gap:0}
   .napline dt{padding-top:16px}
   .napline dt:first-of-type{padding-top:0}
   .napline dd{margin-top:4px}
-  /* FAQ */
   .faqwrap>div:last-child>.h-sec{text-align:center}
-  /* Label ohne Bezug, sobald Bilder und Text umbrechen */
-  .value .row3>.lbl{display:none}
 }
 
 /* Ueber: ab Tablet hochkant umbrechen, Bild liegend, Text darunter zentriert */
@@ -666,7 +671,7 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
   <div class="wrap cf">
     <div class="cf-intro">
       <h2 class="h-sec">Ein Weg, der bei dir anfängt, <span class="dim">nicht bei der Schere.</span></h2>
-      <p class="lede" style="margin-top:20px;max-width:46ch">Die kostenlose Typberatung dauert 20 Minuten und verpflichtet dich zu nichts. Danach weißt du, was möglich ist, was es kostet und wie lange es dauert.</p>
+      <p class="lede">Die kostenlose Typberatung dauert 20 Minuten und verpflichtet dich zu nichts. Danach weißt du, was möglich ist, was es kostet und wie lange es dauert.</p>
       <a class="btn btn-primary" style="margin-top:28px" href="#termin">Kostenlose Typberatung buchen</a>
     </div>
     <div class="ring">
@@ -788,7 +793,7 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
   <div class="wrap cgrid">
     <div class="ct-intro">
       <h2 class="h-sec">Lass uns <span class="dim">zuerst reden.</span></h2>
-      <p class="lede" style="margin-top:20px;max-width:44ch">Du musst dich heute für nichts entscheiden. Buch dir 20 Minuten, erzähl uns, was du dir vorstellst, und du bekommst eine ehrliche Einschätzung.</p>
+      <p class="lede">Du musst dich heute für nichts entscheiden. Buch dir 20 Minuten, erzähl uns, was du dir vorstellst, und du bekommst eine ehrliche Einschätzung.</p>
       <dl class="napline">
         <dt>Adresse</dt><dd>Salon Gudrun Edelgard<br>Vorstadt 11, 74632 Neuenstein</dd>
         <dt>Telefon</dt><dd><a href="tel:+4979429476868">07942 94 76 868</a><br><a href="tel:+4915256942138">0152 56942138</a></dd>
