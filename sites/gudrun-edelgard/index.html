@@ -117,8 +117,11 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 .ph>img,.hero .left .shot>img,.treat .t>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
 .ph.img-ok::after,.hero .left .shot.img-ok::after{content:none}
 .ring .node .ph>img{border-radius:0}
-.ph.logo{background:#fff;box-shadow:var(--e1)}
-.ph.logo>img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78%;height:auto;object-fit:contain}
+.ph.logo{background:#fff;box-shadow:var(--e1);
+  display:grid;place-items:center;padding:clamp(10px,1.2vw,16px)}
+.value .row2 .duo .ph.logo{aspect-ratio:5/2}
+.ph.logo>img{position:static;transform:none;width:auto;height:auto;
+  max-width:100%;max-height:100%;object-fit:contain}
 
 /* ---------- Topbar ---------- */
 .topbar{position:sticky;top:0;z-index:200;background:rgba(250,248,247,.92);backdrop-filter:blur(10px)}
@@ -277,7 +280,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 .value .feature{position:relative}
 .value .feature .ph{aspect-ratio:1/1.02}
 .value .feature .txt{margin-top:16px}
-.value .row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,320px);gap:26px;
+.value .row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,400px);gap:26px;
   align-items:center;margin-top:clamp(30px,4vw,60px)}
 .value .bigtype .mega{font-size:clamp(38px,6.6vw,96px)}
 .value .bigtype{position:relative}
@@ -435,6 +438,8 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
   .napline dd{margin-top:4px}
   /* FAQ */
   .faqwrap>div:last-child>.h-sec{text-align:center}
+  /* Label ohne Bezug, sobald Bilder und Text umbrechen */
+  .value .row3>.lbl{display:none}
 }
 
 /* Ueber: ab Tablet hochkant umbrechen, Bild liegend, Text darunter zentriert */
@@ -608,11 +613,11 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
       </div>
       <div class="duo">
         <div>
-          <div class="ph b square logo" data-m="Jean Paul Mynè" style="aspect-ratio:1"><img src="bilder/logo-jean-paul-myne.webp" alt="Jean Paul Mynè, Partnermarke des Salons" loading="lazy" decoding="async"></div>
+          <div class="ph b square logo" data-m="Jean Paul Mynè"><img src="bilder/logo-jean-paul-myne.webp" alt="Jean Paul Mynè, Partnermarke des Salons" loading="lazy" decoding="async"></div>
           <div class="lbl" style="margin-top:12px"><span class="cap">Jean Paul Mynè, tierversuchsfrei</span></div>
         </div>
         <div>
-          <div class="ph square logo" data-m="Hairdreams" style="aspect-ratio:1"><img src="bilder/logo-hairdreams.webp" alt="Hairdreams, Partnermarke für Haarverlängerung" loading="lazy" decoding="async"></div>
+          <div class="ph square logo" data-m="Hairdreams"><img src="bilder/logo-hairdreams.webp" alt="Hairdreams, Partnermarke für Haarverlängerung" loading="lazy" decoding="async"></div>
           <div class="lbl" style="margin-top:12px"><span class="cap">Hairdreams, Originalmaterial</span></div>
         </div>
       </div>
