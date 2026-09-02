@@ -166,6 +166,9 @@ a.more:hover .circ{border-color:var(--ink); transform:translateX(3px)}
         <a href="#feiern" class="chip dark">Feiern</a>
         <a href="tel:+493944350958" class="chip dark num">03944 350958</a>
       </nav>
+      <button class="burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mnav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="bottom">
       <h1 class="t1">Sieben Zimmer am Waldrand. <span class="g">Und eine Küche, für die Gäste extra herfahren.</span></h1>
@@ -583,7 +586,7 @@ details .ans{padding:0 var(--s5) var(--s5); font-size:.9rem; color:var(--grey); 
   <div class="wrap">
     <div class="center">
       <span class="chip g">Gästestimmen</span>
-      <h2 class="t2" style="margin:var(--s5) 0 var(--s5)"><span class="num">636</span> Bewertungen, 4,4 von 5. <span class="g">Eine Kritik lassen wir stehen.</span></h2>
+      <h2 class="t2" style="margin:var(--s5) 0 var(--s5)"><span class="num">636</span> Bewertungen, 4,4 von 5. <span class="g">Vier davon stehen hier.</span></h2>
     </div>
     <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s4); margin-top:var(--s8)" class="qgrid">
       <div style="border:1px solid var(--line); border-radius:var(--r-card); padding:var(--s5)">
@@ -599,9 +602,8 @@ details .ans{padding:0 var(--s5) var(--s5); font-size:.9rem; color:var(--grey); 
         <p class="tiny" style="margin:0">Monika, 5 von 5</p>
       </div>
       <div style="border:1px solid var(--line); border-radius:var(--r-card); padding:var(--s5); background:var(--tint)">
-        <p style="font-size:.98rem; letter-spacing:-.018em; margin:0 0 var(--s3)">Essen war sehr gut, aber die Wartezeit war lang.</p>
-        <p class="tiny" style="margin:0 0 var(--s4)">Ein Gast, 1 von 5</p>
-        <p style="font-size:.86rem; color:var(--grey); margin:0; padding-top:var(--s4); border-top:1px solid var(--line)"><b style="color:var(--ink); font-weight:500; display:block; margin-bottom:5px">Unsere Antwort</b>Wir kochen frisch, zu Stoßzeiten dauert ein Hauptgang 30 bis 40 Minuten. Sagen Sie es uns bei der Bestellung, wenn Sie es eilig haben.</p>
+        <p style="font-size:.98rem; letter-spacing:-.018em; margin:0 0 var(--s3)">Wir haben hier unser alljährliches Adventsessen mit Freunden stattfinden lassen, und wir haben alles richtig gemacht. Zum Nachmittag ein mega Käsekuchen, zum Abendessen tolle Gerichte aus der Karte.</p>
+        <p class="tiny" style="margin:0">Nicole, 5 von 5</p>
       </div>
     </div>
     <div class="railfoot">
@@ -613,6 +615,40 @@ details .ans{padding:0 var(--s5) var(--s5); font-size:.9rem; color:var(--grey); 
 <style>
 @media(max-width:1000px){.qgrid{grid-template-columns:1fr 1fr !important}}
 @media(max-width:600px){.qgrid{grid-template-columns:1fr !important}}
+/* ---------- Burger und Menue-Ebene, nur mobil ---------- */
+.burger{display:none; margin-left:auto; width:46px; height:46px; border-radius:50%; flex:none; cursor:pointer;
+  background:rgba(14,15,14,.62); border:1px solid rgba(255,255,255,.24); backdrop-filter:blur(6px);
+  place-items:center; align-content:center; justify-items:center; padding:0;
+  transition:background-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease)}
+.burger span{display:block; width:17px; height:1.5px; background:#fff; border-radius:2px}
+.burger span+span{margin-top:4px}
+.burger:active{transform:scale(.94)}
+.burger:focus-visible{outline:2px solid #fff; outline-offset:3px}
+@media(max-width:720px){.burger{display:grid}}
+
+.mnav{position:fixed; inset:0; z-index:200; background:var(--black); color:#EDEDE7;
+  display:none; flex-direction:column; padding:var(--s5) var(--s5) calc(var(--s6) + env(safe-area-inset-bottom));
+  opacity:0; transition:opacity var(--t-mid) var(--ease)}
+.mnav[data-open="true"]{display:flex; opacity:1}
+.mnav .head{display:flex; align-items:center; gap:var(--s4)}
+.mnav .head .w{display:flex; align-items:center; gap:var(--s3); font-size:1.05rem; letter-spacing:-.03em; line-height:1.1}
+.mnav .head .w img{height:40px; width:auto}
+.mnav .head .w small{display:block; font-size:.7rem; color:rgba(237,237,231,.6)}
+.mnav .close{margin-left:auto; width:46px; height:46px; border-radius:50%; flex:none; cursor:pointer; padding:0;
+  background:transparent; border:1px solid rgba(237,237,231,.28); display:grid; place-items:center}
+.mnav .close svg{width:16px; height:16px; stroke:#EDEDE7; fill:none; stroke-width:1.5}
+.mnav .close:focus-visible{outline:2px solid #EDEDE7; outline-offset:3px}
+.mnav ul{list-style:none; margin:var(--s7) 0 0; padding:0; flex:1}
+.mnav li{border-bottom:1px solid rgba(237,237,231,.14)}
+.mnav li a{display:flex; align-items:baseline; gap:var(--s4); padding:17px 0; text-decoration:none; color:#EDEDE7;
+  font-size:1.6rem; letter-spacing:-.032em; line-height:1.1}
+.mnav li a .n{font-size:.72rem; color:rgba(237,237,231,.42); width:2.4em; flex:none; font-variant-numeric:tabular-nums}
+.mnav li a:active{color:rgba(237,237,231,.6)}
+.mnav .tail{margin-top:var(--s6); display:grid; gap:var(--s3)}
+.mnav .tail .btn{width:100%}
+.mnav .tail .meta{font-size:.82rem; color:rgba(237,237,231,.5); margin:var(--s3) 0 0}
+body.menu-open{overflow:hidden}
+
 /* Mobil-Korrekturen, absichtlich am Ende, damit sie die Basisregeln ueberschreiben */
 @media(max-width:720px){
   .underhero{padding-top:var(--s6); gap:var(--s6)}
@@ -736,6 +772,29 @@ details .ans{padding:0 var(--s5) var(--s5); font-size:.9rem; color:var(--grey); 
   </div>
 </footer>
 
+<nav class="mnav" id="mnav" data-open="false" aria-label="Menü" aria-hidden="true">
+  <div class="head">
+    <span class="w"><img src="bilder/logo.png" alt="">St. Hubertus<small>Wienrode im Harz</small></span>
+    <button class="close" id="mnav-close" type="button" aria-label="Menü schließen">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="#zimmer"><span class="n">01</span>Zimmer</a></li>
+    <li><a href="#restaurant"><span class="n">02</span>Restaurant</a></li>
+    <li><a href="#lage"><span class="n">03</span>Lage</a></li>
+    <li><a href="#feiern"><span class="n">04</span>Feiern</a></li>
+    <li><a href="#stimmen"><span class="n">05</span>Bewertungen</a></li>
+    <li><a href="#faq"><span class="n">06</span>Fragen</a></li>
+    <li><a href="#kontakt"><span class="n">07</span>Kontakt</a></li>
+  </ul>
+  <div class="tail">
+    <a class="btn btn-white" href="#anfrage">Zimmer anfragen</a>
+    <a class="btn btn-line num" href="tel:+493944350958" style="color:#EDEDE7; border-color:rgba(237,237,231,.34)">03944 350958</a>
+    <p class="meta">Küche 12 bis 21 Uhr, Donnerstag ist Ruhetag</p>
+  </div>
+</nav>
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":["Hotel","LodgingBusiness"],"@id":"https://dev.likovo.de/hotel-hubertus/#hotel",
@@ -776,6 +835,23 @@ details .ans{padding:0 var(--s5) var(--s5); font-size:.9rem; color:var(--grey); 
 
 <script>
 (function(){
+  // Burger-Menue
+  var burger=document.getElementById('burger'), mnav=document.getElementById('mnav'),
+      mclose=document.getElementById('mnav-close');
+  function setMenu(open){
+    if(!mnav) return;
+    mnav.dataset.open = open ? 'true' : 'false';
+    mnav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    if(burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', open);
+    if(open){ var f=mnav.querySelector('a'); if(f) f.focus(); }
+    else if(burger){ burger.focus(); }
+  }
+  if(burger) burger.addEventListener('click', function(){ setMenu(mnav.dataset.open !== 'true'); });
+  if(mclose) mclose.addEventListener('click', function(){ setMenu(false); });
+  if(mnav) mnav.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && mnav && mnav.dataset.open === 'true') setMenu(false); });
+
   // Ausflugsliste: aktives Ziel wechseln
   var list=document.getElementById('exlist');
   if(list){
