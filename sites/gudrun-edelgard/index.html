@@ -243,17 +243,17 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 /* ---------- VALUE-Raster mit Riesentype ---------- */
 .value{padding:clamp(52px,7vw,104px) 0}
 .value .row1{display:grid;grid-template-columns:1.05fr 1fr 1.5fr;gap:22px;align-items:end;
-  grid-template-areas:"a b c" "a b t"}
+  grid-template-areas:"a b c" "a b t";grid-template-rows:1fr auto}
 .value .row1 .r1-a{grid-area:a}
 .value .row1 .r1-b{grid-area:b}
 .value .row1 .r1-c{grid-area:c}
-.value .row1 .r1-text{grid-area:t;margin-top:18px}
+.value .row1 .r1-text{grid-area:t;margin-top:12px;align-self:start}
 .value .row1 .r1-a .duo{grid-template-columns:1fr}
 .value .row1 .r1-c>.ph{aspect-ratio:1/.92}
 
 /* Bis zum Tablet hochkant bleibt die Bildanordnung, der Text rutscht darunter */
 @media(max-width:1000px) and (min-width:768px){
-  .value .row1{grid-template-areas:"t t t" "a b c";gap:16px;align-items:stretch}
+  .value .row1{grid-template-areas:"t t t" "a b c";gap:16px;align-items:stretch;grid-template-rows:auto auto}
   .value .row1 .r1-a,.value .row1 .r1-b{display:flex;flex-direction:column;min-height:0}
   .value .row1 .r1-a .duo{gap:10px}
   .value .row1 .r1-a .duo .ph{aspect-ratio:3/2}
@@ -266,7 +266,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 /* Ab Handy quer: vier Bilder als 2x2, Text darunter */
 @media(max-width:767px){
   .value .row1{grid-template-columns:1fr 1fr;grid-template-areas:"t t" "a a" "b c";
-    gap:12px;align-items:start}
+    gap:12px;align-items:start;grid-template-rows:auto auto auto}
   .value .row1 .r1-a .duo{grid-template-columns:1fr 1fr;gap:12px}
   .value .row1 .r1-a .duo .ph,
   .value .row1 .r1-b>.ph,
@@ -281,7 +281,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 .value .feature .ph{aspect-ratio:1/1.02}
 .value .feature .txt{margin-top:16px}
 .value .row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,400px);gap:26px;
-  align-items:center;margin-top:clamp(30px,4vw,60px)}
+  align-items:center;margin-top:clamp(52px,7vw,112px)}
 .value .bigtype .mega{font-size:clamp(38px,6.6vw,96px)}
 .value .bigtype{position:relative}
 .value .bigtype .pill{margin-bottom:clamp(14px,1.6vw,22px)}
@@ -302,6 +302,9 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
   padding-bottom:12px;margin-bottom:2px;border-bottom:1px solid var(--rule)}
 .ring .node{text-align:left}
 .ring .node .ph{aspect-ratio:1;box-shadow:var(--e2)}
+.stepno{position:absolute;left:0;top:0;z-index:3;background:rgba(42,13,10,.74);
+  color:var(--peach-soft);font-family:var(--sans);font-weight:500;font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 11px}
 .ring .node .cap{margin-top:10px;font-size:13.5px}
 @media(max-width:860px){.cf{grid-template-columns:1fr}}
 
@@ -332,8 +335,23 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 /* ---------- Bewertungen ---------- */
 .rev-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;
   padding-bottom:clamp(24px,3vw,40px);border-bottom:1px solid var(--rule)}
-.revgrid{display:grid;grid-template-columns:repeat(5,1fr)}
-.revgrid article{padding:clamp(24px,2.6vw,34px) clamp(15px,1.5vw,22px);border-left:1px solid var(--rule)}
+.rev-nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center}
+@media(max-width:620px){
+  .rev-nav{width:100%}
+  .rev-nav .pill{white-space:normal;text-align:center;flex:1 1 100%;justify-content:center}
+}
+.cbtn{width:44px;height:44px;padding:0;border:1px solid var(--rule);background:transparent;
+  color:var(--maroon);font-family:var(--sans);font-size:20px;line-height:1;cursor:pointer;
+  transition:background .16s ease,border-color .16s ease,opacity .16s ease}
+.cbtn:hover:not(:disabled){background:var(--peach-soft);border-color:var(--clay)}
+.cbtn:disabled{opacity:.3;cursor:default}
+
+.revgrid{display:flex;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.revgrid::-webkit-scrollbar{display:none}
+.revgrid:focus-visible{outline:2px solid var(--clay);outline-offset:4px}
+.revgrid article{flex:0 0 clamp(250px,30%,340px);scroll-snap-align:start;
+  padding:clamp(24px,2.6vw,34px) clamp(15px,1.5vw,22px);border-left:1px solid var(--rule)}
 .revgrid article:first-child{border-left:none;padding-left:0}
 .revgrid .badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;
   border:1px solid var(--rule);color:var(--clay);font-size:13px;margin-bottom:clamp(14px,1.6vw,20px)}
@@ -341,22 +359,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 .revgrid p{font-size:13px;line-height:1.55;color:var(--maroon-soft)}
 .revgrid footer{margin-top:12px;font-family:var(--sans);font-weight:500;font-size:11px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--maroon-mute)}
-@media(max-width:1060px){
-  .revgrid{grid-template-columns:repeat(3,1fr)}
-  .revgrid article:nth-child(3n+1){border-left:none;padding-left:0}
-  .revgrid article:nth-child(n+4){border-top:1px solid var(--rule)}
-}
-@media(max-width:740px){
-  .revgrid{grid-template-columns:repeat(2,1fr)}
-  .revgrid article{border-left:1px solid var(--rule);padding-left:clamp(15px,1.5vw,22px)}
-  .revgrid article:nth-child(odd){border-left:none;padding-left:0}
-  .revgrid article:nth-child(n+3){border-top:1px solid var(--rule)}
-}
-@media(max-width:480px){
-  .revgrid{grid-template-columns:1fr}
-  .revgrid article{border-left:none;padding-left:0;border-top:1px solid var(--rule)}
-  .revgrid article:first-child{border-top:none}
-}
+@media(max-width:740px){.revgrid article{flex:0 0 78%}}
+@media(max-width:480px){.revgrid article{flex:0 0 88%}}
 
 /* ---------- FAQ mit Bild ---------- */
 .faqwrap{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(26px,4vw,60px);align-items:start}
@@ -535,6 +539,18 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
   </div>
 </section>
 
+<!-- ZAHLEN -->
+<section class="sec slim">
+  <div class="wrap">
+    <div class="stats">
+      <div><b>4,9</b><span>Google-Bewertung</span></div>
+      <div><b>24</b><span>Bewertungen</span></div>
+      <div><b>4</b><span>Fashion Weeks</span></div>
+      <div><b>2</b><span>Exklusive Partnermarken</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- LEISTUNGEN -->
 <section class="sec slim" id="leistungen">
   <div class="wrap">
@@ -659,22 +675,10 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
         <span class="idx">Dein Termin</span>
         <p class="cap">in vier Schritten</p>
       </div>
-      <div class="node n1"><div class="ph b" data-m=""><img src="bilder/friseur-neuenstein-farbberatung.webp" alt="Schritt 1: das Gespräch" loading="lazy" decoding="async"></div><p class="cap">Reden</p></div>
-      <div class="node n2"><div class="ph" data-m=""><img src="bilder/friseur-neuenstein-farbauftrag.webp" alt="Schritt 2: Analyse und Farbauswahl" loading="lazy" decoding="async"></div><p class="cap">Analyse</p></div>
-      <div class="node n3"><div class="ph c" data-m=""><img src="bilder/friseur-neuenstein-kopfmassage.webp" alt="Schritt 3: die Umsetzung" loading="lazy" decoding="async"></div><p class="cap">Umsetzung</p></div>
-      <div class="node n4"><div class="ph d" data-m=""><img src="bilder/friseur-neuenstein-produktregal.webp" alt="Schritt 4: Pflege für zuhause" loading="lazy" decoding="async"></div><p class="cap">Pflege danach</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ZAHLEN -->
-<section class="sec slim">
-  <div class="wrap">
-    <div class="stats">
-      <div><b>4,9</b><span>Google-Bewertung</span></div>
-      <div><b>24</b><span>Bewertungen</span></div>
-      <div><b>4</b><span>Fashion Weeks</span></div>
-      <div><b>2</b><span>Exklusive Partnermarken</span></div>
+      <div class="node n1"><div class="ph b" data-m=""><img src="bilder/friseur-neuenstein-farbberatung.webp" alt="Schritt 1: das Gespräch" loading="lazy" decoding="async"><span class="stepno">Schritt 1</span></div><p class="cap">Reden</p></div>
+      <div class="node n2"><div class="ph" data-m=""><img src="bilder/friseur-neuenstein-farbauftrag.webp" alt="Schritt 2: Analyse und Farbauswahl" loading="lazy" decoding="async"><span class="stepno">Schritt 2</span></div><p class="cap">Analyse</p></div>
+      <div class="node n3"><div class="ph c" data-m=""><img src="bilder/friseur-neuenstein-kopfmassage.webp" alt="Schritt 3: die Umsetzung" loading="lazy" decoding="async"><span class="stepno">Schritt 3</span></div><p class="cap">Umsetzung</p></div>
+      <div class="node n4"><div class="ph d" data-m=""><img src="bilder/friseur-neuenstein-produktregal.webp" alt="Schritt 4: Pflege für zuhause" loading="lazy" decoding="async"><span class="stepno">Schritt 4</span></div><p class="cap">Pflege danach</p></div>
     </div>
   </div>
 </section>
@@ -699,9 +703,13 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
   <div class="wrap">
     <div class="rev-top">
       <h2 class="h-sec">Das sagen <span class="dim">unsere Kundinnen.</span></h2>
-      <span class="pill">4,9 von 5 aus 24 Google-Bewertungen</span>
+      <div class="rev-nav">
+        <span class="pill">4,9 von 5 aus 24 Google-Bewertungen</span>
+        <button class="cbtn" type="button" data-dir="-1" aria-label="Vorherige Bewertung">&lsaquo;</button>
+        <button class="cbtn" type="button" data-dir="1" aria-label="Nächste Bewertung">&rsaquo;</button>
+      </div>
     </div>
-    <div class="revgrid">
+    <div class="revgrid" id="revtrack" tabindex="0" role="region" aria-label="Bewertungen unserer Kundinnen, horizontal scrollbar">
       <article>
         <span class="badge">&#9733;</span>
         <h3>Meine Haare absolut gerettet.</h3>
@@ -892,6 +900,28 @@ document.querySelectorAll('.ph>img,.shot>img,.treat .t>img').forEach(function(im
   m.addEventListener('click', function(e){ if(e.target.closest('a')) set(false); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
   window.addEventListener('resize', function(){ if(window.innerWidth>1040) set(false); });
+})();
+</script>
+<script>
+(function(){
+  var t=document.getElementById('revtrack');
+  if(!t) return;
+  var btns=[].slice.call(document.querySelectorAll('.cbtn'));
+  function schritt(){ var a=t.querySelector('article'); return a?a.getBoundingClientRect().width:300; }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      t.scrollBy({left: parseInt(b.dataset.dir,10)*schritt(), behavior:'smooth'});
+    });
+  });
+  function status(){
+    var max=t.scrollWidth-t.clientWidth-2;
+    btns.forEach(function(b){
+      b.disabled = parseInt(b.dataset.dir,10)<0 ? t.scrollLeft<=2 : t.scrollLeft>=max;
+    });
+  }
+  t.addEventListener('scroll', status, {passive:true});
+  window.addEventListener('resize', status);
+  status();
 })();
 </script>
 </body>
