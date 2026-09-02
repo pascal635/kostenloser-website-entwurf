@@ -369,6 +369,11 @@ h1,h2,h3,h4{margin:0;font-family:var(--sans);font-weight:500;letter-spacing:-.01
 .faq .ans{padding:0 42px 22px 0;color:var(--maroon-soft);font-size:15px}
 @media(max-width:860px){.faqwrap{grid-template-columns:1fr}.faqwrap .ph{aspect-ratio:16/10}}
 
+/* ---------- Ueber ---------- */
+.about2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,60px);align-items:center}
+.about2 .ph{aspect-ratio:4/3.4}
+.pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+
 /* ---------- Kontakt ---------- */
 .contact{background:var(--peach);padding:clamp(52px,7vw,104px) 0}
 .cgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);align-items:start}
@@ -409,12 +414,36 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
 .sec{padding:clamp(52px,7vw,104px) 0}
 .sec.slim{padding:clamp(38px,5vw,68px) 0}
 .sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:clamp(24px,3vw,42px);flex-wrap:wrap}
-@media(max-width:767px){
+@media(max-width:900px){
   .sechead{justify-content:center;text-align:center}
   .sechead .btn{margin-left:0 !important}
   .lbl{justify-content:center;text-align:center}
   .rev-top{justify-content:center;text-align:center}
   .stats div{text-align:center}
+  /* Unser Versprechen */
+  .value .bigtype{text-align:center}
+  .value .bigtype .mega{text-align:center}
+  /* Ablauf */
+  .cf-intro{text-align:center}
+  .ring .core{justify-content:center;text-align:center}
+  /* Kontakt */
+  .ct-intro{text-align:center}
+  .ct-intro .lede{max-width:none}
+  .napline{grid-template-columns:1fr;justify-items:center;text-align:center;gap:0}
+  .napline dt{padding-top:16px}
+  .napline dt:first-of-type{padding-top:0}
+  .napline dd{margin-top:4px}
+  /* FAQ */
+  .faqwrap>div:last-child>.h-sec{text-align:center}
+}
+
+/* Ueber: ab Tablet hochkant umbrechen, Bild liegend, Text darunter zentriert */
+@media(max-width:768px){
+  .about2{grid-template-columns:1fr;gap:clamp(20px,3vw,32px)}
+  .about2 .ph{aspect-ratio:3/2}
+  .about2-txt{text-align:center}
+  .about2-txt .lede{max-width:none}
+  .pillrow{justify-content:center}
 }
 </style>
 </head>
@@ -614,8 +643,8 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
 <!-- ABLAUF ALS KREIS -->
 <section class="circleflow" id="ablauf">
   <div class="wrap cf">
-    <div>
-      <h2 class="h-sec" style="margin-top:12px">Ein Weg, der bei dir anfängt, <span class="dim">nicht bei der Schere.</span></h2>
+    <div class="cf-intro">
+      <h2 class="h-sec">Ein Weg, der bei dir anfängt, <span class="dim">nicht bei der Schere.</span></h2>
       <p class="lede" style="margin-top:20px;max-width:46ch">Die kostenlose Typberatung dauert 20 Minuten und verpflichtet dich zu nichts. Danach weißt du, was möglich ist, was es kostet und wie lange es dauert.</p>
       <a class="btn btn-primary" style="margin-top:28px" href="#termin">Kostenlose Typberatung buchen</a>
     </div>
@@ -704,13 +733,13 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
 
 <!-- ÜBER -->
 <section class="sec slim" id="ueber">
-  <div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,60px);align-items:center">
-    <div class="ph" data-m="Gudrun Edelgard Vollmer" style="aspect-ratio:4/3.4"><img src="bilder/gudrun-edelgard-vollmer-portrait.webp" alt="Gudrun Edelgard Vollmer bei der Fashion Week in New York" loading="lazy" decoding="async"></div>
-    <div>
-      <h2 class="h-serif" style="margin-top:14px">Wer dir die Haare macht</h2>
+  <div class="wrap about2">
+    <div class="ph" data-m="Gudrun Edelgard Vollmer"><img src="bilder/gudrun-edelgard-vollmer-portrait.webp" alt="Gudrun Edelgard Vollmer bei der Fashion Week in New York" loading="lazy" decoding="async"></div>
+    <div class="about2-txt">
+      <h2 class="h-serif">Wer dir die Haare macht</h2>
       <p class="lede" style="margin-top:18px">Ich bin Gudrun Edelgard Vollmer. Ich mache diesen Beruf, weil ich sehe, was mit einer Frau passiert, wenn sie in den Spiegel schaut und sich zum ersten Mal seit Langem wiedererkennt.</p>
       <p class="body" style="margin-top:14px">Und ich bin nicht allein. Fabienne, Romy und Aimee stehen mit im Salon, und sie werden in unseren Bewertungen genauso oft namentlich gelobt wie ich.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+      <div class="pillrow">
         <span class="pill ghost">Exklusiver Hairdreams-Partner</span>
         <span class="pill ghost">Jean Paul Myne</span>
         <span class="pill ghost">Samstags nach Absprache</span>
@@ -744,8 +773,8 @@ footer.site ul{list-style:none;margin:0;padding:0;line-height:2}
 <!-- KONTAKT -->
 <section class="contact" id="termin">
   <div class="wrap cgrid">
-    <div>
-      <h2 class="h-sec" style="margin-top:12px">Lass uns <span class="dim">zuerst reden.</span></h2>
+    <div class="ct-intro">
+      <h2 class="h-sec">Lass uns <span class="dim">zuerst reden.</span></h2>
       <p class="lede" style="margin-top:20px;max-width:44ch">Du musst dich heute für nichts entscheiden. Buch dir 20 Minuten, erzähl uns, was du dir vorstellst, und du bekommst eine ehrliche Einschätzung.</p>
       <dl class="napline">
         <dt>Adresse</dt><dd>Salon Gudrun Edelgard<br>Vorstadt 11, 74632 Neuenstein</dd>
