@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJ mit Live-Tabla für Hochzeiten in NRW | DJ SAID, Gütersloh</title>
+<meta name="description" content="DJ und Live-Trommler in einem. Afghanische, persische, türkische und internationale Musik an einem Abend. Aus Gütersloh, im Einsatz in ganz NRW. Termin unverbindlich anfragen.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DJ mit Live-Tabla für Hochzeiten in NRW | DJ SAID">
+<meta property="og:description" content="DJ und Live-Trommler in einem. Afghanisch, persisch, türkisch, arabisch, international. Aus Gütersloh, im Einsatz in ganz NRW.">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="bilder/dj-said-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400;75..125,500;75..125,600;75..125,700;75..125,800;75..125,900&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   DJ SAID · Startseiten-Entwurf, Variante B "Editorial Black"
+   Art-Direction hart am Moodboard: schwarzer Grund, Versal-
+   Grotesk als Bauelement, harte Schnitte, ein Farbakzent.
+   ========================================================== */
+:root{
+  --bg:#060507;
+  --bg-2:#0B0A0C;
+  --surface:#111013;
+  --surface-2:#17161A;
+  --paper:#F2F0EC;
+  --muted:#8E8880;
+  --faint:#615C56;
+  --gold:#C9A24D;
+  --gold-lt:#E8CE8E;
+  --line:rgba(242,240,236,.13);
+  --line-soft:rgba(242,240,236,.07);
+  --light-bg:#EAE6DD;
+  --light-ink:#0A090B;
+  --light-muted:#5C574F;
+  --f:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --wrap:1280px;
+  --sh:0 2px 6px rgba(0,0,0,.6),0 18px 44px rgba(0,0,0,.5),inset 0 1px 0 rgba(242,240,236,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--paper);font-family:var(--f);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.95}
+
+/* Feines Korn über allem, damit Schwarz nicht tot wirkt */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.14;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.75rem;position:relative}
+.sec{padding:5.5rem 0;position:relative}
+.sec--airy{padding:8.5rem 0}
+.sec--tight{padding:3rem 0}
+.hr{height:1px;background:var(--line);border:0;margin:0}
+
+/* ---- Mikro-Typo aus dem Moodboard: Klammern, Slashes, weite Sperrung ---- */
+.mk{font-size:.68rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:inline-block}
+.mk--slash::before{content:"// ";color:var(--faint)}
+.mk--par::before{content:"( "}
+.mk--par::after{content:" )"}
+.mk--dim{color:var(--muted)}
+
+/* ---- Rotierte Rails links und rechts ---- */
+.rail{display:none}
+@media(min-width:1400px){
+  .rail{display:block;position:absolute;top:0;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--faint);writing-mode:vertical-rl;white-space:nowrap}
+  .rail--l{left:-2.6rem;transform:rotate(180deg)}
+  .rail--r{right:-2.6rem}
+}
+
+/* ---- Typoskala: Grotesk, Versalien, sehr groß ---- */
+.d0{font-size:clamp(3.4rem,12.5vw,11rem);line-height:.9;letter-spacing:-.045em}
+.d1{font-size:clamp(2.6rem,7.4vw,6rem);line-height:.9;letter-spacing:-.038em}
+.d2{font-size:clamp(2rem,4.6vw,3.6rem);line-height:.95;letter-spacing:-.03em}
+.d3{font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.15;letter-spacing:-.02em}
+.outline{color:transparent;-webkit-text-stroke:1px rgba(242,240,236,.34)}
+.gold{color:var(--gold)}
+
+.body{color:var(--muted);font-size:1rem;line-height:1.68}
+.body--up{text-transform:uppercase;font-size:.8rem;letter-spacing:.06em;line-height:1.85;color:var(--muted)}
+.lead{font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.6;color:var(--muted)}
+.small{font-size:.8rem;color:var(--faint);line-height:1.6}
+.measure{max-width:52ch}
+
+/* ---- Buttons: Pill hell, Ghost dünn, Kreis mit Pfeil ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--f);
+  font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;
+  padding:1.05rem 2rem;border-radius:0;border:1px solid transparent;min-height:50px;
+  transition:background .18s,color .18s,border-color .18s,transform .16s}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn--solid{background:var(--paper);color:var(--light-ink)}
+.btn--solid:hover{background:var(--gold-lt)}
+.btn--gold{background:var(--gold);color:#100D06}
+.btn--gold:hover{background:var(--gold-lt)}
+.btn--ghost{border-color:var(--line);color:var(--paper)}
+.btn--ghost:hover{border-color:var(--gold);color:var(--gold-lt)}
+.btn--sm{padding:.72rem 1.35rem;min-height:44px;font-size:.68rem}
+.btn--block{width:100%}
+.circ{width:54px;height:54px;border-radius:0;border:1px solid var(--line);display:inline-grid;place-items:center;
+  color:var(--paper);text-decoration:none;transition:border-color .18s,background .18s,color .18s;flex:none}
+.circ:hover{border-color:var(--gold);background:var(--gold);color:#100D06}
+.row{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+
+/* ---- Kopfzeile ---- */
+.top{position:sticky;top:0;z-index:60;background:rgba(6,5,7,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
+.top__in{max-width:var(--wrap);margin:0 auto;padding:.75rem 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand img{width:34px;height:34px}
+.brand b{font-size:.78rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase}
+.nav{display:none;gap:2rem}
+.nav a{text-decoration:none;font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .16s}
+.nav a:hover{color:var(--gold-lt)}
+@media(min-width:1000px){.nav{display:flex}}
+
+/* ---- HERO: Riesen-Wortmarke oben, harter Schnitt, Foto darunter ---- */
+.hero{position:relative;background:var(--bg)}
+.hero__type{padding:2.5rem 0 0;overflow:hidden}
+.hero__word{display:block;text-align:center;font-weight:900;font-stretch:112%;
+  font-size:clamp(3.6rem,15.5vw,14rem);line-height:.8;letter-spacing:-.05em;text-transform:uppercase;
+  white-space:nowrap;margin-bottom:-.06em}
+.hero__dj{font-style:normal;color:transparent;-webkit-text-stroke:.022em rgba(242,240,236,.62);
+  paint-order:stroke fill}
+@supports not (-webkit-text-stroke:1px black){.hero__dj{color:rgba(242,240,236,.34)}}
+.hero__type{padding-top:clamp(1.5rem,4vw,3.2rem)}
+.hero__cut{position:relative;min-height:clamp(420px,58vw,640px);overflow:hidden;
+  margin-top:calc(-1 * clamp(.5rem,2.4vw,2.1rem));border-top:1px solid rgba(242,240,236,.22)}
+.hero__ph{position:absolute;inset:0;background-image:url("bilder/dj-tanzflaeche-hochzeit-nrw.webp");
+  background-size:cover;background-position:center 45%;background-color:#0E0B14;filter:grayscale(.35) contrast(1.06)}
+.hero__ph::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(75% 100% at 26% 30%,rgba(201,162,77,.30),transparent 60%),
+             radial-gradient(80% 110% at 82% 70%,rgba(60,44,96,.55),transparent 62%);mix-blend-mode:soft-light}
+.hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,7,.72),rgba(6,5,7,.30) 40%,rgba(6,5,7,.88))}
+.hero__grid{position:relative;height:100%;display:flex;align-items:flex-end}
+.hero__in{width:100%;max-width:var(--wrap);margin:0 auto;padding:2.5rem 1.75rem}
+.hero__claim{max-width:700px;margin-left:auto;text-align:left}
+@media(min-width:1000px){.hero__claim{text-align:right}}
+.hero__claim h1{margin:.9rem 0 1.1rem}
+.hero__def{margin-left:auto;max-width:58ch;text-align:left;font-size:clamp(.86rem,1vw,.98rem);
+  line-height:1.75;letter-spacing:.01em;color:var(--muted);border-left:2px solid rgba(201,162,77,.45);padding-left:1.1rem}
+
+/* Faktenzeile mit dünnen Oberlinien je Spalte */
+.facts{border-top:1px solid var(--line);background:var(--bg)}
+.facts__in{max-width:var(--wrap);margin:0 auto;padding:0 1.75rem;display:grid;grid-template-columns:repeat(2,1fr)}
+.facts__c{padding:1.4rem 0 1.6rem;border-top:2px solid var(--paper);margin-top:-1px;position:relative}
+.facts__c+.facts__c{margin-left:0}
+.facts__c:nth-child(n+2){border-top-color:var(--gold)}
+.facts__c:nth-child(n+3){border-top-color:var(--line)}
+.facts__n{display:block;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;text-transform:uppercase;line-height:1}
+.facts__l{display:block;margin-top:.35rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);line-height:1.5}
+@media(min-width:820px){
+  .facts__in{grid-template-columns:repeat(4,1fr);gap:0 2rem}
+}
+@media(max-width:819px){.facts__in{gap:0 1.5rem}}
+
+/* ---- Laufband mit Städten (Konturschrift) ---- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.4rem 0;overflow:hidden;background:var(--bg-2)}
+.ticker__t{display:flex;width:max-content;animation:slide 42s linear infinite}
+.ticker__t span{font-weight:800;font-size:clamp(1.6rem,4.4vw,3.2rem);line-height:1;text-transform:uppercase;
+  letter-spacing:-.02em;padding:0 1.4rem;color:transparent;-webkit-text-stroke:1px rgba(242,240,236,.28);white-space:nowrap}
+.ticker__t span.on{color:var(--gold);-webkit-text-stroke:0}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---- Medien: Zwei-Klick-Player ---- */
+.mgrid{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(min-width:760px){.mgrid{grid-template-columns:repeat(2,1fr)}}
+.mcard{position:relative;background:var(--bg)}
+.mcard__btn{all:unset;display:block;width:100%;cursor:pointer;position:relative;
+  background:radial-gradient(115% 115% at 24% 16%,rgba(70,52,112,.65),transparent 62%),
+             radial-gradient(100% 100% at 84% 90%,rgba(201,162,77,.26),transparent 60%),var(--surface-2)}
+.mcard__btn:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
+.mcard__thumb{position:relative;aspect-ratio:16/9;background-size:cover;background-position:center;display:grid;place-items:center}
+.mcard__thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,7,.18),rgba(6,5,7,.82))}
+.mcard__play{position:relative;z-index:2;width:62px;height:62px;border-radius:0;border:1px solid rgba(242,240,236,.5);
+  display:grid;place-items:center;background:rgba(6,5,7,.35);transition:background .18s,border-color .18s,transform .18s}
+.mcard__btn:hover .mcard__play{background:var(--gold);border-color:var(--gold);transform:scale(1.05)}
+.mcard__btn:hover .mcard__play svg path{fill:#100D06}
+.mcard__meta{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:1rem 1.3rem;border-top:1px solid var(--line)}
+.mcard__t{font-weight:800;text-transform:uppercase;letter-spacing:-.015em;font-size:1rem}
+.mcard__s{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.mcard iframe{display:block;width:100%;border:0;aspect-ratio:16/9}
+.mcard--audio .mcard__thumb{aspect-ratio:21/9;background-image:url('bilder/buehnenlicht-strahler-dunkel.webp');background-size:cover;background-position:center 55%}
+.mcard--audio iframe{aspect-ratio:auto;height:166px}
+
+/* ---- Bilder ---- */
+.pic{position:relative;overflow:hidden;background:var(--surface)}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.42) contrast(1.12) brightness(.70)}
+.pic::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(6,5,7,.12) 0%,rgba(6,5,7,0) 45%,rgba(6,5,7,.58) 100%)}
+.pic::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
+  background:linear-gradient(150deg,rgba(201,162,77,.42),rgba(70,52,112,.5))}
+.pic--tall{aspect-ratio:4/5}
+.pic--wide{aspect-ratio:16/10}
+
+
+/* ---- Leistungen als Hover-Liste ---- */
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.svc__i{border-bottom:1px solid var(--line);padding:1rem 0;cursor:default;transition:padding-left .22s ease,border-color .22s ease}
+.svc__i:hover,.svc__i:focus-visible{padding-left:.85rem;border-color:var(--line-gold);outline:none}
+.svc__t{display:block;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(1.05rem,2vw,1.5rem);line-height:1.06;color:var(--paper);transition:color .22s ease}
+.svc__i:hover .svc__t,.svc__i:focus-visible .svc__t{color:var(--gold)}
+.svc__d{display:block;font-size:.86rem;line-height:1.6;color:var(--muted);
+  max-height:0;opacity:0;overflow:hidden;transition:max-height .28s ease,opacity .22s ease,margin-top .28s ease}
+.svc__i:hover .svc__d,.svc__i:focus-visible .svc__d{max-height:6rem;opacity:1;margin-top:.45rem}
+@media(hover:none){.svc__d{max-height:none;opacity:1;margin-top:.45rem}}
+
+/* ---- Kopfzeile: Burger und Panel ---- */
+.top__end{display:flex;align-items:center;gap:.6rem}
+.burger{all:unset;display:grid;place-content:center;gap:5px;width:44px;height:44px;cursor:pointer;flex:none}
+.burger span{display:block;width:22px;height:2px;background:var(--paper);transition:transform .24s ease,opacity .18s ease}
+.burger:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:1000px){.burger{display:none}}
+@media(max-width:999px){.top__cta{padding:.55rem .85rem;font-size:.7rem;letter-spacing:.08em}}
+@media(max-width:400px){.top__cta{padding:.5rem .6rem;font-size:.62rem}.brand b{display:none}}
+.mnav{position:fixed;inset:0;z-index:45;background:rgba(6,5,7,.98);backdrop-filter:blur(18px);
+  display:flex;flex-direction:column;justify-content:space-between;padding:6rem 1.75rem 2rem;overflow-y:auto}
+.mnav[hidden]{display:none}
+.mnav nav{display:flex;flex-direction:column}
+.mnav nav a{font-weight:800;text-transform:uppercase;letter-spacing:-.03em;
+  font-size:clamp(1.9rem,9vw,3rem);line-height:1;color:var(--paper);text-decoration:none;
+  padding:.75rem 0;border-bottom:1px solid var(--line)}
+.mnav nav a:hover,.mnav nav a:focus-visible{color:var(--gold)}
+.mnav__foot{padding-top:2rem}
+body.navopen{overflow:hidden}
+
+/* ---- Karussell ---- */
+.car{position:relative}
+.car__t{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:.5rem}
+.car__t::-webkit-scrollbar{display:none}
+.car__t:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+.car__i{flex:0 0 100%;scroll-snap-align:start;margin:0;padding:0 0 0 1.4rem;border-left:1px solid var(--line-gold)}
+.car__i p{font-weight:500;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.55;color:var(--paper)}
+.car__i cite{display:block;margin-top:1rem;font-style:normal;font-size:.62rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+@media(min-width:760px){.car__i{flex:0 0 calc(50% - .75rem)}}
+@media(min-width:1100px){.car__i{flex:0 0 calc(33.333% - 1rem)}}
+.car__nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:2.2rem;border-top:1px solid var(--line);padding-top:1.3rem}
+.car__dots{display:flex;gap:.5rem;flex-wrap:wrap}
+.car__d{all:unset;width:28px;height:3px;background:var(--line);cursor:pointer;transition:background .2s}
+.car__d:hover{background:var(--muted)}
+.car__d[aria-current="true"]{background:var(--gold)}
+.car__d:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.car__arrows{display:flex;gap:.5rem}
+.car__b{all:unset;width:46px;height:46px;display:grid;place-items:center;cursor:pointer;
+  border:1px solid var(--line);color:var(--paper);transition:border-color .2s,background .2s,color .2s}
+.car__b:hover{border-color:var(--gold);background:var(--gold);color:#100D06}
+.car__b:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.car__b[disabled]{opacity:.3;pointer-events:none}
+
+/* ---- FAQ zweispaltig ---- */
+.faqgrid{display:grid;gap:0 3rem}
+@media(min-width:900px){.faqgrid{grid-template-columns:1fr 1fr}}
+.faqgrid .faq{max-width:none}
+
+
+/* ---- Musikwelten: Kopf mit Bild, Leistungen als Raster ---- */
+.mw__head{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:860px){.mw__head{grid-template-columns:minmax(0,1fr) minmax(0,360px)}}
+.mw__pic{aspect-ratio:4/5;width:100%}
+.svc--grid{display:grid;border-top:0;margin-top:clamp(3.5rem,7vw,7rem);gap:0 2.5rem}
+@media(min-width:640px){.svc--grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.svc--grid{grid-template-columns:repeat(4,1fr);gap:0 2rem}}
+.svc--grid .svc__i{position:relative;border-top:1px solid var(--line);border-bottom:0;
+  padding:1.1rem 1.6rem 1.6rem 0;display:flex;flex-direction:column;
+  transition:border-color .22s ease}
+/* Hinweis, dass hier mehr steckt */
+.svc--grid .svc__i::after{content:"+";position:absolute;right:0;top:.95rem;line-height:1;
+  font-size:.95rem;font-weight:700;color:var(--gold);opacity:.4;
+  transition:opacity .22s ease,transform .28s cubic-bezier(.2,.7,.3,1)}
+.svc--grid .svc__i:hover::after,.svc--grid .svc__i:focus-visible::after{opacity:1;transform:scale(1.35)}
+.svc--grid .svc__i:hover,.svc--grid .svc__i:focus-visible{padding-left:0;border-color:var(--gold)}
+.svc--grid .svc__t{font-size:clamp(1rem,1.35vw,1.18rem);line-height:1.16;min-height:0;
+  color:var(--paper);-webkit-text-stroke:0;transition:color .22s ease}
+.svc--grid .svc__i:hover .svc__t,.svc--grid .svc__i:focus-visible .svc__t{color:var(--gold)}
+.svc--grid .svc__d{max-height:none;margin-top:.3rem;font-size:.82rem;line-height:1.55;
+  opacity:.1;overflow:visible;transition:opacity .24s ease}
+.svc--grid .svc__i:hover .svc__d,.svc--grid .svc__i:focus-visible .svc__d{opacity:1;margin-top:.3rem}
+/* Kein Hover-Verhalten auf Touchgeräten UND in schmalen Fenstern */
+@media(hover:none),(max-width:999px){
+  .svc--grid .svc__i{padding-right:0}
+  .svc--grid .svc__i,
+  .svc--grid .svc__i:hover,
+  .svc--grid .svc__i:focus-visible{border-color:var(--line)}
+  .svc--grid .svc__i::after{display:none}
+  .svc--grid .svc__t,
+  .svc--grid .svc__i:hover .svc__t,
+  .svc--grid .svc__i:focus-visible .svc__t{color:var(--paper)}
+  .svc--grid .svc__d,
+  .svc--grid .svc__i:hover .svc__d,
+  .svc--grid .svc__i:focus-visible .svc__d{opacity:1}
+  .svc__i:hover,.svc__i:focus-visible{padding-left:0}
+}
+
+@media(prefers-reduced-motion:reduce){.ticker__t{animation:none}}
+
+/* ---- Zweifarbige Riesen-Headline ---- */
+.split{display:block}
+.split em{display:block;font-style:normal}
+
+/* ---- Nummerierte Liste (Anlässe) ---- */
+.nlist{border-top:1px solid var(--line)}
+.nlist a{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;align-items:baseline;
+  padding:1.5rem 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .22s,color .22s}
+.nlist a:hover{padding-left:.7rem}
+.nlist a:hover .nlist__t,.nlist a:focus-visible .nlist__t{color:var(--gold);-webkit-text-stroke-color:transparent}
+.nlist__n{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--faint);padding-top:.55rem}
+.nlist__t{font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.98;
+  font-size:clamp(1.7rem,4.4vw,3.1rem);color:transparent;
+  -webkit-text-stroke:1px rgba(242,240,236,.66);
+  transition:color .22s ease,-webkit-text-stroke-color .22s ease}
+@supports not (-webkit-text-stroke:1px black){.nlist__t{color:var(--paper)}}
+.nlist__d{display:block;margin-top:.55rem;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);line-height:1.7;max-width:46ch}
+@media(min-width:900px){
+  .nlist a{grid-template-columns:3.5rem minmax(0,1fr) minmax(0,22rem);align-items:center}
+  .nlist__d{margin-top:0}
+}
+
+/* ---- Kachel-Reihe randlos (Angello) ---- */
+.tiles{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line)}
+@media(min-width:760px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;min-height:clamp(320px,34vw,440px);display:flex;align-items:flex-end;overflow:hidden;background:var(--surface)}
+.tile__ph{position:absolute;inset:0;
+  background:radial-gradient(110% 90% at 28% 18%,rgba(201,162,77,.30),transparent 60%),
+             radial-gradient(100% 100% at 78% 88%,rgba(70,52,112,.60),transparent 62%),var(--surface-2)}
+.tile__ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,7,.15),rgba(6,5,7,.85))}
+.tile__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.05) brightness(.92)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,5,7,.05) 0%,rgba(6,5,7,.12) 45%,rgba(6,5,7,.80) 100%)}
+.tile__in{position:relative;z-index:2;padding:1.6rem;width:100%}
+.tile__t{font-weight:800;text-transform:uppercase;letter-spacing:-.025em;font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1}
+.tile__c{margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.pill{display:inline-flex;padding:.34rem .8rem;border-radius:0;border:1px solid var(--line);
+  font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:rgba(6,5,7,.5)}
+.tile__note{position:absolute;top:1.2rem;right:1.3rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);z-index:2}
+
+/* ---- Chips ---- */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{display:inline-flex;padding:.6rem 1.15rem;border-radius:0;border:1px solid var(--line);
+  font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.chip--on{border-color:var(--gold);color:var(--gold-lt)}
+
+/* ---- Zitate ---- */
+.q{max-width:26ch}
+.q p{font-weight:700;text-transform:uppercase;letter-spacing:-.02em;line-height:1.08;
+  font-size:clamp(1.25rem,2.4vw,1.95rem)}
+.q cite{display:block;margin-top:1.1rem;font-style:normal;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.q--wide{max-width:34ch}
+.q--xl p{font-size:clamp(1.7rem,4.2vw,3.2rem);line-height:1.02}
+.q--plain{max-width:46ch}
+.q--plain p{text-transform:none;font-weight:500;letter-spacing:0;line-height:1.55;font-size:clamp(1rem,1.5vw,1.15rem);color:var(--paper)}
+
+/* ---- Schritte ---- */
+.steps{border-top:1px solid var(--line)}
+.stp{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+.stp__n{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--gold);padding-top:.3rem}
+.stp h3{font-size:1.05rem;letter-spacing:.02em;margin-bottom:.45rem}
+.stp p{font-size:.94rem;color:var(--muted);line-height:1.7}
+@media(min-width:900px){.stp{grid-template-columns:3rem minmax(0,16rem) minmax(0,1fr);align-items:start}.stp h3{margin-bottom:0}}
+
+/* ---- Heller Block als harter Bruch ---- */
+.light{background:var(--light-bg);color:var(--light-ink)}
+.light h2,.light h3{color:var(--light-ink)}
+.light .body,.light .lead{color:var(--light-muted)}
+.light .mk{color:#8A6F22}
+.light .mk--dim{color:var(--light-muted)}
+.light .hrl{height:1px;background:rgba(10,9,11,.16);border:0}
+.light .btn--ghost{border-color:rgba(10,9,11,.28);color:var(--light-ink)}
+.light .btn--ghost:hover{border-color:var(--light-ink);background:var(--light-ink);color:var(--light-bg)}
+.light .q p{color:var(--light-ink)}
+.light .pic img{filter:grayscale(.18) contrast(1.04) brightness(1)}
+.light .pic::before{opacity:.35}
+.light .pic::after{background:linear-gradient(180deg,rgba(6,5,7,0),rgba(6,5,7,.28))}
+.light .q cite{color:var(--light-muted)}
+.portrait{aspect-ratio:3/4;display:grid;place-items:center;text-align:center;padding:1.5rem;
+  background:repeating-linear-gradient(45deg,rgba(10,9,11,.05) 0 12px,transparent 12px 24px),rgba(10,9,11,.06);
+  border:1px solid rgba(10,9,11,.18);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--light-muted)}
+
+/* ---- FAQ ---- */
+.faq{border-top:1px solid var(--line);max-width:900px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:1.25rem 3rem 1.25rem 0;position:relative;
+  font-weight:700;text-transform:uppercase;letter-spacing:-.005em;font-size:1rem;line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:.2rem;top:50%;transform:translateY(-50%);
+  font-size:1.35rem;font-weight:400;color:var(--gold);transition:transform .2s}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:hover{color:var(--gold-lt)}
+.faq__a{padding:0 2.5rem 1.5rem 0;color:var(--muted);font-size:.95rem;line-height:1.7}
+
+/* ---- Formular ---- */
+.grid{display:grid;gap:1.1rem}
+@media(min-width:660px){.g2{grid-template-columns:repeat(2,1fr)}}
+.field{display:flex;flex-direction:column;gap:.45rem}
+.label{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.input,.select,.textarea{width:100%;font-family:var(--f);font-size:.95rem;color:var(--paper);background:transparent;
+  border:0;border-bottom:1px solid var(--line);border-radius:0;padding:.75rem 0;min-height:48px;transition:border-color .18s}
+.input::placeholder,.textarea::placeholder{color:var(--faint)}
+.input:focus,.select:focus,.textarea:focus{outline:0;border-bottom-color:var(--gold)}
+.textarea{min-height:90px;resize:vertical}
+.select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--faint) 50%),linear-gradient(135deg,var(--faint) 50%,transparent 50%);
+  background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.select option{background:var(--surface);color:var(--paper)}
+
+/* ---- Footer ---- */
+.foot{border-top:1px solid var(--line);padding:4rem 0}
+.foot a{color:var(--muted);text-decoration:none}
+.foot a:hover{color:var(--gold-lt)}
+.foot__word{font-weight:900;font-size:clamp(2.6rem,11vw,8rem);line-height:.82;letter-spacing:-.05em;text-transform:uppercase;
+  color:transparent;-webkit-text-stroke:1px rgba(242,240,236,.16);margin-bottom:2.5rem}
+
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:var(--gold);color:#100D06;padding:.7rem 1.2rem;border-radius:0}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="#top" aria-label="DJ SAID, zur Startseite">
+      <img src="bilder/dj-said-logo.png" alt="Logo DJ SAID" width="34" height="34"><b>DJ Said</b>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#musik">Musik</a><a href="#hoeren">Hören</a><a href="#anlaesse">Anlässe</a><a href="#ablauf">Ablauf</a>
+      <a href="#stimmen">Stimmen</a><a href="#faq">Fragen</a>
+    </nav>
+    <div class="top__end">
+      <a class="btn btn--solid btn--sm top__cta" href="#anfrage">Termin anfragen</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobilnav" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mobilnav" hidden>
+  <nav aria-label="Mobile Navigation">
+    <a href="#musik">Musik</a><a href="#hoeren">Hören</a><a href="#anlaesse">Anlässe</a>
+    <a href="#ablauf">Ablauf</a><a href="#stimmen">Stimmen</a><a href="#faq">Fragen</a>
+  </nav>
+  <div class="mnav__foot">
+    <a class="btn btn--solid btn--block" href="#anfrage">Termin anfragen</a>
+    <a class="btn btn--ghost btn--block" style="margin-top:.6rem" href="https://wa.me/4917637027322">WhatsApp: 0176 3702 7322</a>
+  </div>
+</div>
+
+<main id="inhalt">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero__type">
+    <span class="hero__word" aria-hidden="true"><i class="hero__dj">DJ</i>&nbsp;SAID</span>
+  </div>
+
+  <div class="hero__cut">
+    <div class="hero__ph" role="img" aria-label="DJ-Pult mit Tabla und Dholak auf einer Hochzeitsbühne, violettes Bühnenlicht und goldene Lichtbögen"></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__grid">
+      <div class="hero__in">
+        <div class="hero__claim">
+          <span class="mk mk--par mk--dim">Live Tabla und Dholak</span>
+          <h1 class="d1 split">DJ und<em class="gold">Live-Trommler</em></h1>
+          <p class="hero__def">DJ SAID ist ein Event-DJ aus Gütersloh, der orientalische und internationale Feiern in ganz Nordrhein-Westfalen bespielt und dabei live Tabla und Dholak spielt. Gebucht wird für Hochzeiten, Verlobungen, Henna-Abende, Shirni Dadan, Geburtstage und Firmenfeiern, inklusive Beschallung, Licht- und Nebelanlage sowie Moderation auf Wunsch.</p>
+          <div class="row" style="margin-top:1.6rem;justify-content:flex-start">
+            <a class="btn btn--solid" href="#anfrage">Termin anfragen</a>
+            <a class="btn btn--ghost" href="https://wa.me/4917637027322">WhatsApp</a>
+            <a class="circ" href="#musik" aria-label="Weiter zum Inhalt">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v12M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="facts__in">
+      <div class="facts__c"><span class="facts__n">13 Jahre</span><span class="facts__l">Hinter dem Pult</span></div>
+      <div class="facts__c"><span class="facts__n">Live</span><span class="facts__l">Tabla und Dholak zum Set</span></div>
+      <div class="facts__c"><span class="facts__n">Zu zweit</span><span class="facts__l">Said und sein Onkel</span></div>
+      <div class="facts__c"><span class="facts__n">Alles dabei</span><span class="facts__l">Ton, Licht, Nebel</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LAUFBAND ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__t">
+    <span>Gütersloh</span><span class="on">Bielefeld</span><span>Paderborn</span><span>Herford</span><span>Detmold</span><span class="on">Hamm</span><span>Dortmund</span><span>Essen</span><span>Münster</span><span class="on">Düsseldorf</span><span>Köln</span>
+    <span>Gütersloh</span><span class="on">Bielefeld</span><span>Paderborn</span><span>Herford</span><span>Detmold</span><span class="on">Hamm</span><span>Dortmund</span><span>Essen</span><span>Münster</span><span class="on">Düsseldorf</span><span>Köln</span>
+  </div>
+</div>
+
+<!-- ================= MUSIKWELTEN ================= -->
+<section class="sec" id="musik">
+  <div class="wrap">
+    <span class="rail rail--l">Musik</span>
+    <span class="rail rail--r">Alles aus einer Hand</span>
+
+    <div class="mw__head">
+      <div>
+        <span class="mk mk--slash">Musikwelten und Leistungen</span>
+        <h2 class="d2" style="margin:1.2rem 0 1.2rem;max-width:14ch">Afghanisch, persisch, türkisch. Und alles dazwischen.</h2>
+        <p class="body" style="max-width:52ch">Auf den meisten Feiern sitzt nicht nur eine Kultur im Saal. Alle sollen tanzen. Und alles, was dafür nötig ist, kommt aus einer Hand.</p>
+      </div>
+      <figure class="pic mw__pic" style="margin:0">
+        <img src="bilder/tabla-trommeln-nahaufnahme.webp" width="1300" height="1728" loading="lazy"
+             alt="Tabla-Trommeln in Nahaufnahme">
+      </figure>
+    </div>
+
+    <ul class="svc svc--grid">
+        <li class="svc__i" tabindex="0"><span class="svc__t">DJ-Set</span><span class="svc__d">Über den ganzen Abend, nach Ihren Wünschen zusammengestellt.</span></li>
+        <li class="svc__i" tabindex="0"><span class="svc__t">Live-Tabla und Dholak</span><span class="svc__d">Gespielt zum laufenden Set, in Echtzeit. Kein Playback.</span></li>
+        <li class="svc__i" tabindex="0"><span class="svc__t">Live-Piano</span><span class="svc__d">Auf Wunsch, für die ruhigen Momente des Abends.</span></li>
+        <li class="svc__i" tabindex="0"><span class="svc__t">Beschallung</span><span class="svc__d">Professionell, passend zu Ihrer Saalgröße.</span></li>
+        <li class="svc__i" tabindex="0"><span class="svc__t">Licht- und Nebelanlage</span><span class="svc__d">Wird mitgebracht, aufgebaut und eingerichtet.</span></li>
+        <li class="svc__i" tabindex="0"><span class="svc__t">Mikrofon und Moderation</span><span class="svc__d">Wenn Sie jemanden brauchen, der durch den Abend führt.</span></li>
+        <li class="svc__i" tabindex="0"><span class="svc__t">Film und Fotografie</span><span class="svc__d">Über unseren Partner, auf Wunsch mitgebucht.</span></li>
+    </ul>
+    <p class="small" style="margin-top:1.4rem">Aufgebaut wird, bevor Ihre Gäste kommen. Nicht währenddessen.</p>
+  </div>
+</section>
+
+<!-- ================= MEDIEN ================= -->
+<section class="sec" id="hoeren" style="padding-bottom:0">
+  <div class="wrap">
+    <span class="rail rail--l">Hören</span>
+    <span class="mk mk--slash">Mixe und Videos</span>
+    <h2 class="d1" style="margin:1.3rem 0 2.2rem">Hören Sie<br><span class="gold">selbst</span></h2>
+  </div>
+  <div class="mgrid">
+    <div class="mcard" data-embed="https://www.youtube-nocookie.com/embed/japkHLkozvI?autoplay=1&amp;rel=0">
+      <button class="mcard__btn" type="button" aria-label="Video abspielen: Afghan DJ, Promo">
+        <span class="mcard__thumb" style="background-image:url('bilder/dj-pult-pioneer-controller.webp')">
+          <span class="mcard__play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M2 1.6 18.4 11 2 20.4V1.6Z" fill="#F2F0EC"/></svg></span>
+        </span>
+      </button>
+      <div class="mcard__meta"><span class="mcard__t">Afghan DJ, Promo</span><span class="mcard__s">Video · 0:20</span></div>
+    </div>
+    <div class="mcard" data-embed="https://www.youtube-nocookie.com/embed/lWQkDvqY-VQ?autoplay=1&amp;rel=0">
+      <button class="mcard__btn" type="button" aria-label="Video abspielen: DJ SAID Mix 2020">
+        <span class="mcard__thumb" style="background-image:url('bilder/dj-tanzflaeche-hochzeit-nrw.webp')">
+          <span class="mcard__play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M2 1.6 18.4 11 2 20.4V1.6Z" fill="#F2F0EC"/></svg></span>
+        </span>
+      </button>
+      <div class="mcard__meta"><span class="mcard__t">DJ SAID Mix 2020</span><span class="mcard__s">Video · Mix</span></div>
+    </div>
+    <div class="mcard mcard--audio" data-embed="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/304936900&amp;color=%23C9A24D&amp;auto_play=true&amp;hide_related=true&amp;show_comments=false&amp;show_reposts=false">
+      <button class="mcard__btn" type="button" aria-label="Mix abspielen: Afghan Mix">
+        <span class="mcard__thumb"><span class="mcard__play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M2 1.6 18.4 11 2 20.4V1.6Z" fill="#F2F0EC"/></svg></span></span>
+      </button>
+      <div class="mcard__meta"><span class="mcard__t">Afghan Mix</span><span class="mcard__s">SoundCloud</span></div>
+    </div>
+    <div class="mcard mcard--audio" data-embed="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245775073&amp;color=%23C9A24D&amp;auto_play=true&amp;hide_related=true&amp;show_comments=false&amp;show_reposts=false">
+      <button class="mcard__btn" type="button" aria-label="Mix abspielen: Afghan Qataghani Mix 2015">
+        <span class="mcard__thumb"><span class="mcard__play"><svg width="18" height="20" viewBox="0 0 20 22" aria-hidden="true"><path d="M2 1.6 18.4 11 2 20.4V1.6Z" fill="#F2F0EC"/></svg></span></span>
+      </button>
+      <div class="mcard__meta"><span class="mcard__t">Afghan Qataghani Mix 2015</span><span class="mcard__s">SoundCloud</span></div>
+    </div>
+  </div>
+  <div class="wrap"><p class="small" style="padding:1.2rem 0 0">Ein Klick startet. Vorher wird nichts von YouTube oder SoundCloud geladen, auch kein Vorschaubild. Die Vorschauen sind eigene Fotos.</p></div>
+</section>
+
+<!-- ================= KACHELN ================= -->
+<section class="tiles" aria-label="Eindrücke">
+  <figure class="tile" style="margin:0">
+    <img class="tile__img" src="bilder/hochzeit-tanz-lichter-warm.webp" width="1600" height="2400" loading="lazy"
+         alt="Tanzende Braut vor warmen Lichtern">
+    <div class="tile__in"><div class="tile__t">Die Tanzfläche</div>
+      <div class="tile__c"><span class="pill">Hochzeit</span><span class="pill">Bis zum Schluss</span></div></div>
+  </figure>
+  <figure class="tile" style="margin:0">
+    <img class="tile__img" src="bilder/live-percussion-buehne-dunkel.webp" width="1500" height="1000" loading="lazy"
+         alt="Perkussionist spielt live auf einer dunklen Bühne">
+    <div class="tile__in"><div class="tile__t">Live gespielt</div>
+      <div class="tile__c"><span class="pill">Tabla</span><span class="pill">Dholak</span></div></div>
+  </figure>
+  <figure class="tile" style="margin:0">
+    <img class="tile__img" src="bilder/buehnenlicht-strahler-dunkel.webp" width="1400" height="2114" loading="lazy"
+         alt="Bühnenstrahler werfen Lichtkegel in einen dunklen Saal">
+    <div class="tile__in"><div class="tile__t">Licht und Nebel</div>
+      <div class="tile__c"><span class="pill">Technik</span><span class="pill">Inklusive</span></div></div>
+  </figure>
+</section>
+
+<!-- ================= ANLÄSSE ================= -->
+<section class="sec" id="anlaesse">
+  <div class="wrap">
+    <span class="rail rail--l">Anlässe</span>
+    <span class="mk mk--slash">Anlässe</span>
+    <h2 class="d2" style="margin:1.2rem 0 2.2rem">Für welchen Abend<br>suchen Sie einen DJ?</h2>
+    <div class="nlist">
+      <a href="#anfrage"><span class="nlist__n">I</span><span class="nlist__t">Hochzeit</span><span class="nlist__d">Von der Ankunft bis zum letzten Lied.</span></a>
+      <a href="#anfrage"><span class="nlist__n">II</span><span class="nlist__t">Verlobung und Nikah</span><span class="nlist__d">Ruhiger Anfang, volle Tanzfläche am Ende.</span></a>
+      <a href="#anfrage"><span class="nlist__n">III</span><span class="nlist__t">Henna-Abend</span><span class="nlist__d">Traditionell begleitet, mit Live-Tabla.</span></a>
+      <a href="#anfrage"><span class="nlist__n">IV</span><span class="nlist__t">Shirni Dadan</span><span class="nlist__d">Musik, die beide Familien abholt.</span></a>
+      <a href="#anfrage"><span class="nlist__n">V</span><span class="nlist__t">Geburtstag</span><span class="nlist__d">Drei Generationen im Raum. Kein Problem.</span></a>
+      <a href="#anfrage"><span class="nlist__n">VI</span><span class="nlist__t">Firmenfeier</span><span class="nlist__d">Gesetzter Einstieg, klare Absprachen.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABLAUF ================= -->
+<section class="sec" id="ablauf">
+  <div class="wrap">
+    <span class="rail rail--l">Ablauf</span>
+    <span class="mk mk--slash">Ablauf</span>
+    <h2 class="d2" style="margin:1.2rem 0 2.2rem">So läuft das bei uns</h2>
+    <div class="steps">
+      <div class="stp"><span class="stp__n">01</span><h3>Anfrage und Datum</h3><p>Sie schicken Datum, Ort und Anlass. Wir sagen kurzfristig, ob es geht.</p></div>
+      <div class="stp"><span class="stp__n">02</span><h3>Vorgespräch</h3><p>Wunschlieder, Ablauf, No-Gos. Sie bestimmen die Musik.</p></div>
+      <div class="stp"><span class="stp__n">03</span><h3>Aufbau vor der Feier</h3><p>Wir sind fertig, bevor der erste Gast da ist.</p></div>
+      <div class="stp"><span class="stp__n">04</span><h3>Der Abend</h3><p>Wir lesen den Saal und reagieren. Die Wunschliste ist der Plan, nicht das Gesetz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STIMMEN ================= -->
+<section class="sec sec--airy" id="stimmen">
+  <div class="wrap">
+    <span class="rail rail--l">Stimmen</span>
+    <span class="rail rail--r">Acht Rückmeldungen</span>
+    <span class="mk mk--slash">Kundenstimmen</span>
+    <h2 class="d1" style="margin:1.3rem 0 2.5rem;max-width:14ch">Was Gastgeber danach geschrieben haben</h2>
+    <div class="car" aria-roledescription="Karussell" aria-label="Kundenstimmen">
+      <div class="car__t" id="carTrack" tabindex="0">
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="1 von 7">
+          <p>„Besonders der Tabla-Einsatz und die Lichtanlage haben einen bleibenden Eindruck hinterlassen. Alles hat reibungslos geklappt, pünktlich, stressfrei.“</p><cite>J. und E., Feier</cite>
+        </blockquote>
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="2 von 7">
+          <p>„Ich habe von meinen afghanischen sowie türkischen Gästen sehr viel positives Feedback bekommen. Dein Trommeln ist der Hammer.“</p><cite>Hochzeit</cite>
+        </blockquote>
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="3 von 7">
+          <p>„Vorallem das du bei jedem Lied Tabla eingesetzt hast, top! Man hat gar nicht bemerkt, dass ein Sänger fehlt.“</p><cite>Feier</cite>
+        </blockquote>
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="4 von 7">
+          <p>„Durch deine tolle Musik und Tabla hast du ordentlich für Stimmung gesorgt, unsere Gäste waren total begeistert.“</p><cite>Samira R., Henna-Abend</cite>
+        </blockquote>
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="5 von 7">
+          <p>„Am Anfang dachte ich, es wäre nicht einfach, Musik zweier Kulturen unter einen Hut zu bringen, aber du hast mir das Gegenteil gezeigt.“</p><cite>Verlobung</cite>
+        </blockquote>
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="6 von 7">
+          <p>„Obwohl wir anfangs Bedenken hatten, einen DJ statt einen Sänger zu buchen, bin ich einfach nur erleichtert. Das war die beste Entscheidung, die wir treffen konnten.“</p><cite>Hochzeitsfeier</cite>
+        </blockquote>
+        <blockquote class="car__i" role="group" aria-roledescription="Kundenstimme" aria-label="7 von 7">
+          <p>„Du hast am Freitag die Tanzfläche am Start gehalten. Hast die Übergänge der Lieder gut hingekriegt. Außerdem fand ich deine Stereoanlage sowie deine Lichteffekte top.“</p><cite>Gast einer Feier</cite>
+        </blockquote>
+      </div>
+      <div class="car__nav">
+        <div class="car__dots">
+          <button class="car__d" type="button" data-go="0" aria-label="Stimme 1"></button>
+          <button class="car__d" type="button" data-go="1" aria-label="Stimme 2"></button>
+          <button class="car__d" type="button" data-go="2" aria-label="Stimme 3"></button>
+          <button class="car__d" type="button" data-go="3" aria-label="Stimme 4"></button>
+          <button class="car__d" type="button" data-go="4" aria-label="Stimme 5"></button>
+          <button class="car__d" type="button" data-go="5" aria-label="Stimme 6"></button>
+          <button class="car__d" type="button" data-go="6" aria-label="Stimme 7"></button>
+        </div>
+        <div class="car__arrows">
+          <button class="car__b" type="button" data-dir="-1" aria-label="Vorherige Stimme">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 2 4 8l6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <button class="car__b" type="button" data-dir="1" aria-label="Nächste Stimme">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HELLER BLOCK: PREIS ================= -->
+<section class="light">
+  <div class="sec wrap">
+    <div class="grid g2" style="gap:3rem;align-items:center">
+      <div>
+        <span class="mk mk--slash">Preis</span>
+        <h2 class="d1" style="margin:1.2rem 0 1.2rem">Was kostet<br>das</h2>
+        <p class="body">Pauschale statt Stundenzähler. Der Preis hängt an Dauer, Leistungen und Anfahrt. Sie bekommen ein festes Angebot mit allem drin, keine Nachforderungen.</p>
+        <a class="btn btn--ghost" style="margin-top:1.8rem" href="#anfrage">Angebot anfragen</a>
+      </div>
+      <figure class="pic pic--tall" style="margin:0">
+        <img src="bilder/hochzeit-tanz-lichter-warm.webp" width="1600" height="2400" loading="lazy"
+             alt="Tanzende Braut vor warmen Lichtern">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <span class="rail rail--l">Fragen</span>
+    <span class="mk mk--slash">Häufige Fragen</span>
+    <h2 class="d2" style="margin:1.2rem 0 2.2rem">Was Gastgeber vorher wissen wollen</h2>
+    <div class="faqgrid">
+      <div class="faq">
+        <details open><summary>Ersetzt ein DJ einen Live-Sänger?</summary><div class="faq__a">Bei uns ja. Said spielt Tabla und Dholak live zum Set. Mehrere Kunden haben geschrieben, dass ihre Gäste gar nicht bemerkt haben, dass kein Sänger da war.</div></details>
+        <details><summary>Spielen Sie auch türkische, arabische oder deutsche Musik?</summary><div class="faq__a">Ja. Afghanisch, persisch, türkisch, arabisch, indisch, internationale Charts und deutsche Titel.</div></details>
+        <details><summary>Wie weit fahren Sie?</summary><div class="faq__a">Sitz ist Gütersloh, in NRW fahren wir standardmäßig. Bisher unter anderem Bielefeld, Paderborn, Essen, Hamm und Groß-Gerau.</div></details>
+        <details><summary>Wie läuft das Vorgespräch?</summary><div class="faq__a">Telefonisch vor dem Termin. Wunschlieder, Ablauf und alles, was auf keinen Fall laufen soll.</div></details>
+        <details><summary>Was, wenn wir spontan andere Musik wollen?</summary><div class="faq__a">Kein Problem. Die Wunschliste ist der Plan, nicht das Gesetz.</div></details>
+        <details><summary>Bringen Sie Technik mit?</summary><div class="faq__a">Ja, alles: Beschallung, Licht, Nebel, Mikrofone. Sie brauchen nur Strom.</div></details>
+      </div>
+      <div class="faq">
+        <details><summary>Wann sind Sie vor Ort?</summary><div class="faq__a">So früh, dass alles steht, bevor Ihre Gäste kommen.</div></details>
+        <details><summary>Wie früh sollte man buchen?</summary><div class="faq__a">So früh wie möglich, Samstage in der Saison sind zuerst weg.</div></details>
+        <details><summary>Was passiert bei Ausfall?</summary><div class="faq__a">Wir kommen zu zweit. Beide kennen Ablauf und Technik.</div></details>
+        <details><summary>Was ist ein Henna-Abend?</summary><div class="faq__a">Der traditionelle Abend vor der Hochzeit, an dem die Braut mit Henna bemalt wird. Musikalisch ruhiger und traditioneller im Anfang, oft mit Live-Tabla, und im Verlauf offener.</div></details>
+        <details><summary>Übernehmen Sie die Moderation?</summary><div class="faq__a">Auf Wunsch ja.</div></details>
+        <details><summary>Machen Sie Foto und Video?</summary><div class="faq__a">Über unseren Partner, auf Wunsch mitgebucht.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANFRAGE ================= -->
+<section class="sec sec--airy" id="anfrage">
+  <div class="wrap">
+    <span class="rail rail--l">Anfrage</span>
+    <div class="grid g2" style="gap:3.5rem;align-items:start">
+      <div>
+        <span class="mk mk--slash">Verfügbarkeit</span>
+        <h2 class="d0" style="margin:1.3rem 0 1.4rem">Datum<br><span class="gold">frei?</span></h2>
+        <p class="body measure">Schicken Sie uns Anlass, Datum und Ort. Sie bekommen schnell eine klare Antwort, ob der Termin geht, und ein Angebot mit allem drin.</p>
+        <div class="row" style="margin-top:1.8rem">
+          <a class="btn btn--ghost" href="https://wa.me/4917637027322">WhatsApp: 0176 3702 7322</a>
+          <a class="circ" href="tel:+4917637027322" aria-label="Anrufen">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3.5c0 5 4.5 9.5 9.5 9.5l1-2.2-2.8-1.2-1.2 1.3A9.2 9.2 0 0 1 5.1 6.5L6.4 5.3 5.2 2.5 3 3.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <form id="anfrageform" novalidate>
+        <div class="grid g2">
+          <div class="field"><label class="label" for="anlass">Anlass</label>
+            <select class="select" id="anlass" name="anlass">
+              <option>Hochzeit</option><option>Verlobung / Nikah</option><option>Henna-Abend</option>
+              <option>Shirni Dadan</option><option>Geburtstag</option><option>Firmenfeier</option><option>Anderes</option>
+            </select></div>
+          <div class="field"><label class="label" for="datum">Datum</label><input class="input" id="datum" name="datum" type="date"></div>
+          <div class="field"><label class="label" for="ort">Ort oder PLZ</label><input class="input" id="ort" name="ort" placeholder="33330 Gütersloh"></div>
+          <div class="field"><label class="label" for="gaeste">Gäste, ungefähr</label><input class="input" id="gaeste" name="gaeste" placeholder="150"></div>
+          <div class="field"><label class="label" for="name">Name</label><input class="input" id="name" name="name"></div>
+          <div class="field"><label class="label" for="tel">Telefon oder WhatsApp</label><input class="input" id="tel" name="tel" type="tel"></div>
+        </div>
+        <div class="field" style="margin-top:1.1rem"><label class="label" for="mail">E-Mail</label><input class="input" id="mail" name="mail" type="email"></div>
+        <div class="field" style="margin-top:1.1rem"><label class="label" for="msg">Nachricht, optional</label><textarea class="textarea" id="msg" name="msg" placeholder="Was ist Ihnen für den Abend wichtig?"></textarea></div>
+        <button class="btn btn--gold btn--block" style="margin-top:1.8rem" type="submit">Termin unverbindlich anfragen</button>
+        <p class="small" style="text-align:center;margin-top:.8rem">Kostenlos und unverbindlich. Wir melden uns persönlich zurück.</p>
+        <p id="formhinweis" class="small" role="status" style="display:none;text-align:center;margin-top:.9rem;color:var(--gold)">
+          Dies ist ein Entwurf, das Formular ist noch nicht an ein Postfach angebunden. Schreiben Sie solange direkt an
+          <a class="lnk" href="https://wa.me/4917637027322">WhatsApp 0176 3702 7322</a>.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__word" aria-hidden="true">DJ&nbsp;SAID</div>
+    <div class="grid" style="grid-template-columns:1fr;gap:2rem">
+      <div class="grid g2" style="gap:2rem">
+        <div>
+          <span class="mk mk--par mk--dim">Kontakt</span>
+          <p class="small" style="margin-top:.7rem;color:var(--muted)">Gneisenaustr. 13, 33330 Gütersloh<br>
+            <a href="tel:+4917637027322">0176 3702 7322</a><br><a href="mailto:info@dj-said.com">info@dj-said.com</a></p>
+        </div>
+        <div>
+          <span class="mk mk--par mk--dim">Im Einsatz in</span>
+          <p class="small" style="margin-top:.7rem;color:var(--muted)">Gütersloh, Bielefeld, Paderborn, Rheda-Wiedenbrück, Herford, Detmold, Hamm, Dortmund, Essen, Münster, Düsseldorf und Köln. Darüber hinaus auf Anfrage.</p>
+        </div>
+      </div>
+      <div class="row" style="justify-content:space-between;border-top:1px solid var(--line);padding-top:1.5rem">
+        <span class="small">DJ SAID. Alle Rechte vorbehalten.</span>
+        <span class="row" style="gap:1.5rem"><span class="small">Impressum</span><span class="small">Datenschutz</span><span class="small">Widerruf</span></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+document.querySelectorAll('.mcard').forEach(function(card){
+  var btn=card.querySelector('.mcard__btn');
+  if(!btn) return;
+  btn.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src=card.dataset.embed;
+    f.title=btn.getAttribute('aria-label')||'Player';
+    f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    f.loading='lazy';
+    btn.replaceWith(f);
+  });
+});
+</script>
+
+<script>
+(function(){var b=document.querySelector('.burger'),p=document.getElementById('mobilnav');if(!b||!p)return;
+ function set(o){b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');p.hidden=!o;document.body.classList.toggle('navopen',o);}
+ b.addEventListener('click',function(){set(p.hidden);});
+ p.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!p.hidden){set(false);b.focus();}});
+ matchMedia('(min-width:1000px)').addEventListener('change',function(e){if(e.matches)set(false);});})();
+
+(function(){var t=document.getElementById('carTrack');if(!t)return;
+ var items=[].slice.call(t.children),dots=[].slice.call(document.querySelectorAll('.car__d'));
+ var prev=document.querySelector('.car__b[data-dir="-1"]'),next=document.querySelector('.car__b[data-dir="1"]');
+ function idx(){var l=t.scrollLeft,best=0,d=1e9;items.forEach(function(el,i){var x=Math.abs(el.offsetLeft-t.offsetLeft-l);if(x<d){d=x;best=i;}});return best;}
+ function go(i){i=Math.max(0,Math.min(items.length-1,i));t.scrollTo({left:items[i].offsetLeft-t.offsetLeft,behavior:'smooth'});}
+ function sync(){var i=idx();dots.forEach(function(d,n){d.setAttribute('aria-current',n===i?'true':'false');});
+  if(prev)prev.disabled=t.scrollLeft<=2; if(next)next.disabled=t.scrollLeft>=t.scrollWidth-t.clientWidth-2;}
+ document.querySelectorAll('.car__b').forEach(function(b){b.addEventListener('click',function(){go(idx()+parseInt(b.dataset.dir,10));});});
+ dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(d.dataset.go,10));});});
+ t.addEventListener('scroll',function(){clearTimeout(t.__s);t.__s=setTimeout(sync,90);});
+ t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx()+1);}if(e.key==='ArrowLeft'){e.preventDefault();go(idx()-1);}});
+ window.addEventListener('resize',sync);sync();})();
+</script>
+
+<script>
+(function(){var f=document.getElementById('anfrageform');if(!f)return;
+ f.addEventListener('submit',function(e){e.preventDefault();
+   var n=document.getElementById('formhinweis'); if(n){n.style.display='block';n.scrollIntoView({block:'center',behavior:'smooth'});}});})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":["LocalBusiness","EntertainmentBusiness"],
+      "@id":"https://www.dj-said.com/#business",
+      "name":"DJ SAID",
+      "description":"Event-DJ aus Gütersloh für orientalische und internationale Feiern, mit Live-Tabla und Dholak. Hochzeiten, Verlobungen, Henna-Abende, Geburtstage und Firmenfeiern in ganz Nordrhein-Westfalen.",
+      "url":"https://www.dj-said.com/",
+      "telephone":"+49 176 37027322",
+      "email":"info@dj-said.com",
+      "image":"bilder/dj-tanzflaeche-hochzeit-nrw.webp",
+      "address":{"@type":"PostalAddress","streetAddress":"Gneisenaustr. 13","postalCode":"33330","addressLocality":"Gütersloh","addressRegion":"NRW","addressCountry":"DE"},
+      "geo":{"@type":"GeoCoordinates","latitude":51.9066,"longitude":8.3789},
+      "areaServed":[
+        {"@type":"City","name":"Gütersloh"},{"@type":"City","name":"Bielefeld"},{"@type":"City","name":"Paderborn"},
+        {"@type":"City","name":"Herford"},{"@type":"City","name":"Detmold"},{"@type":"City","name":"Hamm"},
+        {"@type":"City","name":"Dortmund"},{"@type":"City","name":"Essen"},{"@type":"City","name":"Münster"},
+        {"@type":"City","name":"Düsseldorf"},{"@type":"City","name":"Köln"},
+        {"@type":"State","name":"Nordrhein-Westfalen"}
+      ],
+      "makesOffer":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hochzeits-DJ mit Live-Tabla"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"DJ für Verlobung und Nikah"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"DJ für Henna-Abend und Shirni Dadan"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"DJ für Geburtstage und Firmenfeiern"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Beschallung, Licht- und Nebelanlage"}}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://www.dj-said.com/#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"Ersetzt ein DJ wirklich einen Live-Sänger?","acceptedAnswer":{"@type":"Answer","text":"Bei DJ SAID ja, weil live mitgespielt wird. Said spielt Tabla und Dholak zum laufenden Set, auf Wunsch auch Piano. Mehrere Kunden berichten, dass ihre Gäste gar nicht bemerkt haben, dass kein Sänger da war. Das spart die Gage für einen zusätzlichen Musiker."}},
+        {"@type":"Question","name":"Spielt DJ SAID auch türkische, arabische oder deutsche Musik?","acceptedAnswer":{"@type":"Answer","text":"Ja. Afghanisch, persisch, türkisch, arabisch, indisch, internationale Charts und deutsche Titel. Auf kulturell gemischten Feiern werden alle Gästegruppen abgeholt."}},
+        {"@type":"Question","name":"Wie weit fährt DJ SAID?","acceptedAnswer":{"@type":"Answer","text":"Der Sitz ist Gütersloh. Innerhalb von Nordrhein-Westfalen wird standardmäßig gefahren, darüber hinaus auf Anfrage. Bisherige Einsätze unter anderem in Bielefeld, Paderborn, Essen, Hamm und Groß-Gerau."}},
+        {"@type":"Question","name":"Bringt DJ SAID die Technik mit?","acceptedAnswer":{"@type":"Answer","text":"Ja. Beschallung passend zur Saalgröße, Licht- und Nebelanlage sowie Mikrofone werden mitgebracht. Vor Ort werden nur Strom und ein Platz für das DJ-Pult benötigt."}},
+        {"@type":"Question","name":"Was passiert, wenn der DJ ausfällt?","acceptedAnswer":{"@type":"Answer","text":"Zu jedem Termin kommen zwei Personen, Said und sein Onkel. Beide kennen den Ablauf und die Technik."}},
+        {"@type":"Question","name":"Was ist ein Henna-Abend und welche Musik läuft dort?","acceptedAnswer":{"@type":"Answer","text":"Der Henna-Abend ist der traditionelle Abend vor der Hochzeit, an dem die Braut mit Henna bemalt wird. Musikalisch beginnt er ruhiger und traditioneller, oft mit Live-Tabla zu klassischen Liedern, und öffnet sich im Verlauf des Abends."}},
+        {"@type":"Question","name":"Wie früh sollte man einen Hochzeits-DJ buchen?","acceptedAnswer":{"@type":"Answer","text":"So früh wie möglich. Samstage in der Hochzeitssaison sind zuerst vergeben. Eine unverbindliche Terminanfrage klärt zuerst, ob das Wunschdatum noch frei ist."}}
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
