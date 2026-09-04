@@ -53,6 +53,7 @@ a{color:inherit}
 .skip{position:absolute; left:-9999px}
 .skip:focus{left:var(--s5); top:var(--s3); z-index:60; background:#fff; padding:10px 14px; border:1px solid var(--ink); border-radius:var(--r-sq)}
 section{padding:var(--s8) 0}
+#zonen{padding-top:calc(var(--s9) + var(--s5))}
 
 /* Kopfzeile */
 .topbar{position:sticky; top:0; z-index:30; background:rgba(255,255,255,.93); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
@@ -88,8 +89,9 @@ section{padding:var(--s8) 0}
 
 /* Hero mit Vollbreite-Bildband */
 .hero{padding:var(--s7) 0 0}
-.hero .top{display:grid; grid-template-columns:minmax(0,6fr) minmax(0,6fr); gap:var(--s7); align-items:end; margin-bottom:var(--s5)}
-.hero .aside{display:grid; grid-template-columns:1fr; gap:var(--s5); justify-items:start; align-items:start}
+.hero .top{display:grid; grid-template-columns:minmax(0,6fr) minmax(0,6fr); gap:var(--s7); align-items:start; margin-bottom:var(--s5)}
+.hero .aside p{font-size:.88rem; line-height:1.62}
+.hero .aside{display:grid; grid-template-columns:1fr; gap:var(--s5); justify-items:start; align-items:start; padding-top:6px}
 .fullband{position:relative; width:100vw; margin-left:calc(50% - 50vw); aspect-ratio:24/9; overflow:hidden; background:var(--grey-100)}
 .fullband img{width:100%; height:100%; object-fit:cover; object-position:center 38%; display:block}
 .fullband .tag{position:absolute; left:var(--s5); bottom:var(--s5); background:rgba(255,255,255,.95); border-radius:var(--r-sq); padding:7px 12px; font-size:.78rem; font-weight:500}
@@ -271,6 +273,7 @@ footer .legal-links a:hover{color:var(--ink)}
 }
 @media (max-width:620px){
   section{padding:var(--s7) 0}
+  #zonen{padding-top:var(--s8)}
   .g2,.g4,.vgrid,.scards,.problem .items,.factrow,footer .cols{grid-template-columns:1fr}
   .factrow .it + .it{border-left:none; border-top:1px solid var(--line); padding-left:0}
   .hero .aside{grid-template-columns:1fr}
