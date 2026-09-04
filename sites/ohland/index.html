@@ -196,7 +196,10 @@ details.q .a{padding:0 0 var(--s5); color:var(--ink-2); font-size:.93rem; max-wi
 .formhint[hidden]{display:none}
 .formhint a{color:var(--accent-deep)}
 footer{border-top:1px solid var(--line); padding:var(--s7) 0 var(--s8)}
-footer .logobox img{height:34px}
+footer .logobox img{height:44px}
+footer .brand{display:flex; flex-wrap:wrap; align-items:center; gap:var(--s4) var(--s5)}
+footer .brand .logobox{flex:0 0 auto}
+footer .brand p{margin:0; flex:1 1 240px; min-width:0}
 footer .top{display:grid; grid-template-columns:minmax(0,4fr) minmax(0,8fr); gap:var(--s6); align-items:start}
 footer .big{font-family:"Inter Tight",Arial,sans-serif; font-weight:500; font-size:clamp(1.4rem,2.4vw,2rem); letter-spacing:-.02em; text-decoration:none}
 footer .cols{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s5)}
@@ -548,9 +551,9 @@ footer .legal{border-top:1px solid var(--line); margin-top:var(--s7); padding-to
 
 <footer><div class="wrap">
   <div class="top">
-    <div>
+    <div class="brand">
       <span class="logobox"><img src="bilder/ohland-logo.svg" alt="OHLAND Warensicherungs-Technologie" width="185" height="54" loading="lazy"></span>
-      <p class="small" style="margin-top:var(--s4)">OHLAND Warensicherungs-Technologie<br>Engerode 56<br>30880 Laatzen</p>
+      <p class="small">OHLAND Warensicherungs-Technologie<br>Engerode 56<br>30880 Laatzen</p>
     </div>
     <div>
       <a class="big" href="tel:+49511825130">0511 825130</a>
