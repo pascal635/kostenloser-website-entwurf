@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photovoltaik Berlin: Festpreis vorab, Zahlung nach Inbetriebnahme | Solartechnik Fritz</title>
+<meta name="description" content="Photovoltaik in Berlin und Brandenburg mit Festpreis vor Ihrer Entscheidung. 0 Euro Anzahlung, Zahlung erst nach der Inbetriebnahme, die ersten 12 Monate zinsfrei. Drohnenaufmaß, Netzanmeldung, Montage in der Regel an einem Tag.">
+<link rel="canonical" href="https://solartechnik-fritz.de/">
+<!-- dev-Vorschau: nicht indexieren. Vor Go-Live auf "index,follow" stellen. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Photovoltaik Berlin: Festpreis vorab, Zahlung nach Inbetriebnahme">
+<meta property="og:description" content="0 Euro Anzahlung. Sie zahlen erst, wenn Ihre Anlage läuft.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   Solartechnik Fritz, Startseiten-Entwurf
+   Art-Direction nach dem Moodboard-Screenshot (EcoVolt):
+   Weiss, ein blauer Akzent, eine Schriftfamilie, Haarlinien
+   statt Schatten, eckige Kaesten, runde Bilder, Pill-Buttons,
+   Riesenzahlen zweifarbig, ein tiefschwarzer Block.
+   ========================================================== */
+:root{
+  --white:#FFFFFF;
+  --paper:#FCFCFC;
+  --ink:#082620;   /* Wortmarke im Logo */
+  --ink-2:#3A3A3A;
+  --ink-3:#6E6E6E;
+  --mute:#C6C6C6;      /* zurueckgenommene Headline-Woerter */
+  --line:#E8E8E8;
+  --line-2:#D8D8D8;
+  --fill:#F4F4F4;
+  /* Marken-Orange, aus bilder/logo.png gemessen: #FD5719 */
+  --accent:#FD5719;
+  --accent-600:#E04A11;
+  --accent-txt:#C93F0A;   /* dunkler, fuer kleine Schrift auf Weiss, Kontrast 4,97:1 */
+  --accent-050:#FFF1EB;
+  --black:#071B17;
+  --black-2:#141414;
+  --line-dark:rgba(255,255,255,.14);
+  --ink-dark-2:rgba(255,255,255,.66);
+  --r-img:24px; --r-img-sm:16px; --r-pill:999px;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;--s11:176px;
+  --font:"Instrument Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  /* Akzentschrift: Pinselduktus wie das "Fritz" im Logo */
+  --script:"Caveat Brush","Caveat","Segoe Script","Bradley Hand",cursive;
+  --maxw:1280px;--gut:20px;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--white);font-size:16px;line-height:1.55;overflow-x:hidden;padding-bottom:80px}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+@media(min-width:768px){:root{--gut:36px}body{padding-bottom:0}}
+@media(min-width:1200px){:root{--gut:48px}}
+
+/* ---------- Typo, eine Familie, enge Laufweite ---------- */
+.d0{font-size:clamp(2.3rem,5.6vw,5rem);font-weight:500;letter-spacing:-.038em;line-height:1.04;margin:0}
+.d1{font-size:clamp(2rem,4.6vw,4rem);font-weight:500;letter-spacing:-.034em;line-height:1.06;margin:0}
+.d2{font-size:clamp(1.7rem,3.4vw,2.9rem);font-weight:500;letter-spacing:-.03em;line-height:1.1;margin:0}
+.d3{font-size:clamp(1.35rem,2.2vw,1.85rem);font-weight:500;letter-spacing:-.025em;line-height:1.2;margin:0}
+.h4{font-size:1.05rem;font-weight:600;letter-spacing:-.015em;line-height:1.3;margin:0}
+p{margin:0}
+.mute{color:var(--mute)}
+/* Akzentwort im Duktus der Wortmarke. Sparsam, maximal eines pro Sektion */
+.script{font-family:var(--script);font-weight:400;color:var(--accent);letter-spacing:0;
+  font-size:1.16em;line-height:.9;padding-right:.04em}
+.black .script,.foot .script{color:#FF6A2E}
+.lead{font-size:clamp(16px,1.45vw,18px);line-height:1.55;color:var(--ink-2);max-width:58ch}
+.lead.center{margin-left:auto;margin-right:auto}
+.body{font-size:15.5px;line-height:1.6;color:var(--ink-2);max-width:62ch}
+.small{font-size:14px;line-height:1.5;color:var(--ink-3)}
+.tiny{font-size:12.5px;line-height:1.45;color:var(--ink-3)}
+.label{font-size:13px;font-weight:600;letter-spacing:-.005em;color:var(--accent-txt)}
+.label-g{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+/* Riesenzahl, zweifarbig */
+.figure{font-size:clamp(3.1rem,7vw,7rem);font-weight:500;letter-spacing:-.05em;line-height:.86;margin:0}
+.figure em{font-style:normal;color:var(--accent)}
+.center{text-align:center}
+.row{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center}
+
+/* ---------- Buttons: kleine Pille plus schwarzer Kreis ---------- */
+.cta{display:inline-flex;align-items:center;gap:8px}
+.pill{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 22px;border-radius:var(--r-pill);
+  background:var(--accent);color:var(--ink);font-size:14px;font-weight:600;letter-spacing:-.01em;text-decoration:none;border:0;cursor:pointer;transition:.15s}
+.pill:hover{background:var(--accent-600)}
+.pill.dark{background:var(--ink);color:#fff}
+.pill.dark:hover{background:#0C3A31}
+.pill.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.pill.ghost:hover{border-color:var(--ink)}
+.pill.white{background:#fff;color:var(--ink)}
+.pill.lg{height:52px;padding:0 28px;font-size:15px}
+.circ{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:0;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;flex:0 0 auto;transition:.15s}
+.circ:hover{transform:translate(2px,-2px)}
+.circ.accent{background:var(--accent)}
+.circ.outline{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
+.circ.outline-w{background:transparent;color:#fff;border:1px solid var(--line-dark)}
+.circ.sm{width:36px;height:36px}
+.circ.lg{width:54px;height:54px}
+.circ svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.circ.sm svg{width:15px;height:15px}
+.circ.lg svg{width:20px;height:20px}
+.pill:focus-visible,.circ:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.under{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;font-size:14px;font-weight:500}
+.under:hover{text-decoration-color:var(--accent)}
+
+/* ---------- Haarlinien-Raster, eckige Kaesten ---------- */
+.hl{border-top:1px solid var(--line)}
+.hlb{border-bottom:1px solid var(--line)}
+.cells{display:grid;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cells > *{padding:var(--s6) var(--s5);border-bottom:1px solid var(--line);min-width:0}
+.cells > *:last-child{border-bottom:0}
+/* Spalten erst, wenn wirklich Platz ist. minmax(0,1fr) verhindert, dass
+   lange Zahlen die Spur aufsprengen und die Seite querscrollen laesst. */
+@media(min-width:860px){
+  .cells.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cells.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cells.c2 > *,.cells.c3 > *{border-bottom:0;border-left:1px solid var(--line)}
+  .cells.c2 > *:first-child,.cells.c3 > *:first-child{border-left:0;padding-left:0}
+  .cells.c2 > *:last-child,.cells.c3 > *:last-child{padding-right:0}
+}
+@media(min-width:1000px){
+  .cells.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cells.c4 > *{border-bottom:0;border-left:1px solid var(--line)}
+  .cells.c4 > *:first-child{border-left:0;padding-left:0}
+  .cells.c4 > *:last-child{padding-right:0}
+}
+@media(min-width:1140px){
+  .cells.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .cells.c5 > *{border-bottom:0;border-left:1px solid var(--line)}
+  .cells.c5 > *:first-child{border-left:0;padding-left:0}
+  .cells.c5 > *:last-child{padding-right:0}
+}
+.cell-black{background:var(--black);color:#fff}
+.cell-black .small,.cell-black .body,.cell-black .tiny{color:var(--ink-dark-2)}
+.vlabel{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10.5px;letter-spacing:.1em;color:var(--ink-3);white-space:nowrap}
+/* gestreifter Balken, aus dem Screenshot */
+.stripes{height:22px;background:repeating-linear-gradient(90deg,var(--accent) 0 1px,transparent 1px 4px);opacity:.5}
+/* feiner Punktkreis hinter den Rechner-Werten */
+.dotring{position:relative;display:flex;align-items:center;justify-content:center;min-height:190px}
+.dotring::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;border:1px dotted #E4E4E4;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1),border-color .3s;animation:spin 90s linear infinite}
+.dotring span{position:relative;font-size:15px;font-weight:500;text-align:center;max-width:13ch;
+  transition:transform .35s cubic-bezier(.22,.61,.36,1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Rechner-Kachel: Hover hebt Wert, Ring und Icon ============ */
+.calcell{transition:background-color .3s}
+.calcell .arrow{display:inline-block;transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+.calcell .circ{transition:background-color .25s,transform .3s cubic-bezier(.22,.61,.36,1)}
+.calcell:hover{background:#FCFBFA}
+.calcell:hover .dotring::before{transform:scale(1.06);border-color:var(--accent);border-style:dashed}
+.calcell:hover .dotring span{transform:translateY(-4px)}
+.calcell:hover .arrow{transform:translateX(6px)}
+.calcell:hover .circ{background:var(--accent);color:var(--ink);transform:translateY(-3px)}
+.calcell:hover .bdot{transform:scale(1.6)}
+.bdot{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+
+/* Sanftes Einblenden beim Scrollen ============ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.is-in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .dotring::before{animation:none}
+  .calcell:hover .dotring::before,.calcell:hover .dotring span,.calcell:hover .arrow,.calcell:hover .circ{transform:none}
+}
+
+/* ---------- Bilder ---------- */
+.shot{position:relative;border-radius:var(--r-img);overflow:hidden;background:linear-gradient(168deg,#B9C6CE 0%,#CFC6BC 42%,#E4D4C4 72%,#EFE2D2 100%)}
+.shot.sky{background:linear-gradient(178deg,#9FB6C4 0%,#C3C9C6 34%,#DBC7B4 62%,#EEDCC7 86%,#F5E9DA 100%)}
+.shot.dark{background:linear-gradient(160deg,#2A2A2A,#4A423A 55%,#6A5B48)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shot .note{position:absolute;left:18px;bottom:16px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:rgba(20,20,19,.34)}
+.shot .obj{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);width:58%;max-width:660px;height:auto}
+.herohot{aspect-ratio:4/3}
+@media(min-width:760px){.herohot{aspect-ratio:16/7}}
+@media(max-width:759px){.shot .note{display:none}}
+@media(max-width:760px){.shot .obj{width:88%}}
+.shot .tag{position:absolute;right:14px;top:14px;background:rgba(255,255,255,.94);border-radius:var(--r-pill);padding:7px 14px;font-size:12.5px;font-weight:600}
+
+/* ---------- Avatar-Cluster ---------- */
+.avs{display:flex;justify-content:center}
+.avs i{width:62px;height:62px;border-radius:50%;border:3px solid #fff;margin-left:-16px;background:linear-gradient(150deg,#8A98A3,#C2B49C)}
+.avs i:first-child{margin-left:0;background:linear-gradient(150deg,#4E4A44,#8A7F6B)}
+.avs i:nth-child(2){width:74px;height:74px;margin-top:-6px;z-index:2;background:linear-gradient(150deg,#7C8896,#B9C3CB)}
+.avs i:nth-child(3){background:linear-gradient(150deg,#B0A48E,#E0CFAE)}
+.avs i:nth-child(4){background:linear-gradient(150deg,#96A3AE,#D3C7B6)}
+
+/* ---------- Sektionen ---------- */
+.sec{padding:var(--s8) 0}
+@media(min-width:768px){.sec{padding:var(--s10) 0}}
+.sec.sm{padding:var(--s7) 0}
+@media(min-width:768px){.sec.sm{padding:var(--s9) 0}}
+.split{display:grid;gap:var(--s6);grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s8)}
+  .split.wide-r{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+  .split.wide-l{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .split.narrow-l{grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr)}}
+/* senkrechte Trennlinie zwischen zwei Spalten, aus dem Screenshot */
+@media(min-width:900px){.split.divided{position:relative}
+  .split.divided > *:last-child{padding-left:var(--s8);border-left:1px solid var(--line)}}
+
+/* ---------- Kopfzeile: schwebende Pille ---------- */
+.topbar{position:sticky;top:0;z-index:60;padding:var(--s4) 0 var(--s3);background:linear-gradient(180deg,#fff 0%,#fff 62%,rgba(255,255,255,0) 100%)}
+/* Kopfzeile: Logo frei links, rechts zwei getrennte Leisten */
+.headrow{display:flex;align-items:center;gap:var(--s4)}
+.brand{display:flex;align-items:center;flex:0 0 auto;text-decoration:none;margin-right:auto}
+.brand img{height:32px;width:auto}
+@media(min-width:768px){.brand img{height:38px}}
+@media(min-width:1200px){.brand img{height:42px}}
+/* Beide Leisten rechtsbuendig, nebeneinander */
+.bars{display:flex;align-items:center;gap:8px;margin-left:auto;flex:0 0 auto}
+.nav{display:flex;align-items:center;gap:var(--s4);background:var(--fill);border-radius:var(--r-pill);padding:7px 8px}
+.navlinks{display:none;align-items:center;gap:2px}
+.navlinks a{font-size:13.5px;font-weight:500;color:var(--ink-3);text-decoration:none;padding:9px 13px;border-radius:var(--r-pill);white-space:nowrap}
+.navlinks a:hover{color:var(--ink);background:#fff}
+.navlinks a.on{background:var(--ink);color:#fff;font-weight:600}
+.navicons{display:flex;gap:6px}
+.navicons a{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--ink);text-decoration:none;flex:0 0 auto}
+.navicons a svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.navicons a.on{background:var(--ink);color:#fff}
+/* Burger, eigene Leiste, nur auf kleinen Bildschirmen */
+.burgerbar{display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:var(--r-pill);
+  background:var(--fill);cursor:pointer;flex:0 0 auto}
+.burgerbar i,.burgerbar i::before,.burgerbar i::after{display:block;width:16px;height:1.8px;background:var(--ink);border-radius:2px;transition:.18s}
+.burgerbar i{position:relative}
+.burgerbar i::before,.burgerbar i::after{content:"";position:absolute;left:0}
+.burgerbar i::before{top:-5px}
+.burgerbar i::after{top:5px}
+.navtoggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.navtoggle:checked + .headrow .burgerbar i{background:transparent}
+.navtoggle:checked + .headrow .burgerbar i::before{top:0;transform:rotate(45deg)}
+.navtoggle:checked + .headrow .burgerbar i::after{top:0;transform:rotate(-45deg)}
+.navtoggle:focus-visible + .headrow .burgerbar{outline:2px solid var(--accent);outline-offset:2px}
+/* Klappmenue, ebenfalls rechtsbuendig unter den Leisten */
+.mobnav{display:none;margin:var(--s3) 0 0 auto;max-width:420px;background:var(--fill);border-radius:26px;padding:var(--s3)}
+.navtoggle:checked ~ .mobnav{display:block}
+.mobnav a{display:block;padding:12px 14px;border-radius:14px;text-decoration:none;font-size:15.5px;font-weight:500;color:var(--ink-2)}
+.mobnav a:hover{background:#fff;color:var(--ink)}
+.mobnav a.hl1{margin-top:var(--s3);background:var(--accent);color:var(--ink);text-align:center;font-weight:600;border-radius:var(--r-pill)}
+.mobnav a.hl2{margin-top:6px;background:var(--ink);color:#fff;text-align:center;font-weight:600;border-radius:var(--r-pill)}
+/* Unter 1000: nur Telefon und Anfrage in der Leiste, Rechner-Icon raus */
+@media(max-width:999px){.navicons a:nth-child(2){display:none}}
+@media(min-width:1000px){.navlinks{display:flex}.burgerbar{display:none}.mobnav,.navtoggle:checked ~ .mobnav{display:none}}
+.mobar{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;display:flex;gap:8px;background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:7px}
+.mobar a{flex:1;text-align:center;padding:12px;border-radius:var(--r-pill);font-size:14px;font-weight:600;text-decoration:none}
+.mobar a.a1{background:var(--fill);color:var(--ink)}
+.mobar a.a2{background:var(--accent);color:var(--ink)}
+@media(min-width:768px){.mobar{display:none}}
+
+/* ---------- schwarzer Block ---------- */
+.black{background:var(--black);color:#fff}
+.black .body,.black .small{color:var(--ink-dark-2)}
+.black .label-g{color:rgba(255,255,255,.45)}
+.logorow{display:flex;flex-wrap:wrap;gap:var(--s7);align-items:center;justify-content:center;opacity:.42}
+.logorow span{font-size:20px;font-weight:700;letter-spacing:-.02em;color:#fff}
+</style>
+</head>
+<body id="top">
+
+<!-- ================= Kopfzeile ================= -->
+<header class="topbar">
+  <div class="wrap">
+    <input type="checkbox" id="navtoggle" class="navtoggle">
+    <div class="headrow">
+      <a class="brand" href="#top" aria-label="Solartechnik Fritz, zur Startseite"><img src="data:image/png;base64,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" alt="Solartechnik Fritz" width="336" height="89"></a>
+      <div class="bars">
+      <div class="nav">
+      <nav class="navlinks" aria-label="Hauptnavigation">
+        <a href="#top" class="on">Start</a>
+        <a href="#technik">Technik</a>
+        <a href="#preise">Kosten</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#foerderung">Förderung</a>
+        <a href="#team">Über uns</a>
+      </nav>
+      <div class="navicons">
+        <a href="tel:+493054820545" aria-label="Anrufen"><svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2-3-4-2-2 2c-3-1-6-4-7-7l2-2-2-4z"/></svg></a>
+        <a href="#rechner" aria-label="Zum Rechner"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M16 12h.01M8 16h2M12 16h4"/></svg></a>
+        <a href="#anfrage" class="on" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></a>
+      </div>
+      </div>
+      <label for="navtoggle" class="burgerbar" aria-label="Menü öffnen und schließen"><i></i></label>
+      </div>
+    </div>
+    <nav class="mobnav" aria-label="Navigation">
+      <a href="#technik">Technik</a><a href="#preise">Kosten</a><a href="#rechner">Rechner</a>
+      <a href="#referenzen">Referenzen</a><a href="#foerderung">Förderung</a><a href="#fragen">Häufige Fragen</a><a href="#team">Über uns</a>
+      <a href="#anfrage" class="hl1">Festpreis-Angebot anfordern</a>
+      <a href="tel:+493054820545" class="hl2">030 548 205 45</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= Hero ================= -->
+<section style="padding:var(--s7) 0 0">
+  <div class="wrap center">
+    <div class="avs">
+      <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+    </div>
+    <p style="margin-top:var(--s5);font-size:15px;font-weight:500"><span style="color:var(--accent)">4 Anlagen</span> <span style="color:var(--ink-2)">in Berlin und Brandenburg</span></p>
+    <h1 class="d0" style="max-width:21ch;margin:var(--s4) auto 0">Photovoltaik in Berlin: <span class="mute">Festpreis vorab,</span> Zahlung <span class="script">danach</span></h1>
+    <p class="lead center" style="margin:var(--s5) auto 0;max-width:52ch">0 Euro Anzahlung, die ersten 12 Monate zinsfrei. Sie zahlen erst, wenn die Anlage montiert, angemeldet ist und Strom liefert.</p>
+    <div class="cta" style="margin-top:var(--s6);justify-content:center">
+      <a class="pill" href="#anfrage">Festpreis-Angebot anfordern</a>
+      <a class="circ" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></a>
+    </div>
+    <p class="tiny" style="margin-top:var(--s4)">Kostenlos, unverbindlich, Rückmeldung in 24 Stunden.</p>
+  </div>
+
+  <div class="wrap" style="margin-top:var(--s7)">
+    <div class="shot sky herohot">
+      <!-- Ersetzen durch ein echtes Dachfoto: bilder/photovoltaik-berlin-pankow-anlage-11-4-kwp-1.jpg -->
+      <svg class="obj" viewBox="0 0 800 520" role="img" aria-label="Einfamilienhaus mit Photovoltaikanlage">
+        <defs>
+          <linearGradient id="rf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E4DCD0"/><stop offset="1" stop-color="#BDB2A2"/></linearGradient>
+          <linearGradient id="rb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A79C8E"/><stop offset="1" stop-color="#8B8175"/></linearGradient>
+          <linearGradient id="wf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFDFA"/><stop offset="1" stop-color="#EDE7DE"/></linearGradient>
+          <linearGradient id="wr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DFD7CB"/><stop offset="1" stop-color="#C3B9AB"/></linearGradient>
+          <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F3EC"/><stop offset="1" stop-color="#E3DBCF"/></linearGradient>
+          <linearGradient id="pv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#31435A"/><stop offset=".5" stop-color="#18212C"/><stop offset="1" stop-color="#3C5069"/></linearGradient>
+          <linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C8894"/><stop offset=".55" stop-color="#3E4954"/><stop offset="1" stop-color="#93A0AC"/></linearGradient>
+          <filter id="gsh" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="16"/></filter>
+        </defs>
+        <g transform="translate(30,10)">
+          <ellipse cx="398" cy="474" rx="250" ry="26" fill="rgba(28,25,20,.22)" filter="url(#gsh)"/>
+          <path d="M170 400 L430 460 L430 350 L170 290 Z" fill="url(#wf)"/>
+          <path d="M430 460 L620 370 L620 260 L430 350 Z" fill="url(#wr)"/>
+          <path d="M201 376 L258 390 L258 346 L201 332 Z" fill="url(#gw)"/>
+          <path d="M284 396 L342 409 L342 365 L284 352 Z" fill="url(#gw)"/>
+          <path d="M201 376 L258 390 L258 346 L201 332 Z" fill="none" stroke="rgba(255,255,255,.72)" stroke-width="2.5"/>
+          <path d="M284 396 L342 409 L342 365 L284 352 Z" fill="none" stroke="rgba(255,255,255,.72)" stroke-width="2.5"/>
+          <path d="M368 446 L414 456 L414 396 L368 385 Z" fill="#FD5719"/>
+          <path d="M468 409 L525 382 L525 338 L468 365 Z" fill="url(#gw)" opacity=".9"/>
+          <path d="M170 290 L360 200 L265 155 Z" fill="url(#gb)"/>
+          <path d="M430 350 L620 260 L525 215 Z" fill="url(#gb)" opacity=".82"/>
+          <path d="M360 200 L620 260 L525 215 L265 155 Z" fill="url(#rb)"/>
+          <path d="M170 290 L430 350 L525 215 L265 155 Z" fill="url(#rf)"/>
+          <path d="M265 155 L525 215" stroke="rgba(255,255,255,.78)" stroke-width="3" fill="none"/>
+          <path d="M218.3 272.9 L415.9 318.5 L476.7 232.1 L279.1 186.5 Z" fill="url(#pv)"/>
+          <g stroke="rgba(255,255,255,.17)" stroke-width="1.6">
+            <path d="M267.7 284.3 L328.5 197.9"/><path d="M317.1 295.7 L377.9 209.3"/><path d="M366.5 307.1 L427.3 220.7"/>
+            <path d="M238.6 244.1 L436.2 289.7"/><path d="M258.8 215.3 L456.4 260.9"/>
+          </g>
+          <path d="M455 215 L485 222 L485 180 L455 173 Z" fill="#C7BCAC"/>
+          <path d="M485 222 L503 212 L503 170 L485 180 Z" fill="#AA9F8F"/>
+          <path d="M455 173 L485 180 L503 170 L473 163 Z" fill="#DCD3C5"/>
+        </g>
+      </svg>
+      <span class="tag">Berlin-Pankow · 11,40 kWp</span>
+      <span class="note">Platz für ein echtes Dachfoto</span>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:var(--s6)">
+    <div class="cells c4">
+      <div><p class="d3">0 €</p><p class="small" style="margin-top:8px">Anzahlung. Sie zahlen keinen Cent, bevor die Anlage läuft. Auch nicht 10 Prozent.</p></div>
+      <div><p class="d3">2 bis 4 Wochen</p><p class="small" style="margin-top:8px">Von der Anfrage bis zur Inbetriebnahme.</p></div>
+      <div><p class="d3">1 Tag</p><p class="small" style="margin-top:8px">Dachmontage, in der Regel.</p></div>
+      <div><p class="d3">24 Stunden</p><p class="small" style="margin-top:8px">Rückmeldung auf Ihre Anfrage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Editorial: Risiko-Umkehr mit Riesenzahl ================= -->
+<section class="sec sm" id="risiko">
+  <div class="wrap">
+    <div class="split divided wide-l">
+      <div>
+        <p class="label">Warum ohne Anzahlung</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch"><span class="script">Wir</span> tragen das Risiko, <span class="mute">bis Ihre Anlage Strom liefert</span></h2>
+        <p class="body" style="margin-top:var(--s6)">Der häufigste Schaden in dieser Branche ist nicht die schlechte Anlage, es ist die verlorene Anzahlung. Üblich sind 30 bis 70 Prozent Vorkasse, und bei einer Insolvenz kommt davon fast nichts zurück.</p>
+        <div class="row" style="margin-top:var(--s6)">
+          <span class="circ accent" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 13 5 5L20 7"/></svg></span>
+          <p class="small" style="max-width:22ch;color:var(--ink)">Entspricht einem Vorkasse-Risiko von 0 Euro für Sie.</p>
+        </div>
+      </div>
+      <div>
+        <p class="body">Wir verlangen keine Anzahlung. Sie zahlen keinen Cent, bevor Ihre Anlage montiert, angemeldet ist und Strom liefert. Auch keine Teilzahlung, auch nicht 10 Prozent. Die ersten 12 Monate nach der Inbetriebnahme sind zinsfrei. Das ist keine Marketingaussage, das ist eine Kondition, die im Angebot genauso steht.</p>
+        <p class="figure" style="margin-top:var(--s6)"><em>0</em> €</p>
+      </div>
+    </div>
+
+    <!-- Infografik, volle Breite -->
+    <div style="margin-top:var(--s8)" data-reveal>
+      <div class="cells c2 infog" style="border-bottom:0">
+        <div class="infocell">
+          <span class="vlabel">Zinsfrei</span>
+          <div><p class="d3">12 Monate</p><p class="small" style="margin-top:6px">zinsfrei nach der Inbetriebnahme</p></div>
+        </div>
+        <div class="cell-black infocell-b">
+          <h3 class="h4">Festpreis vor Ihrer Entscheidung</h3>
+          <p class="small" style="margin-top:8px">Schriftlicher Gesamtpreis, bevor Sie unterschreiben. Keine Monatsrate ohne Summe dahinter.</p>
+        </div>
+      </div>
+      <div class="stripes" style="margin-top:var(--s4)"></div>
+      <p class="small center" style="margin-top:var(--s4)">Bezahlt wird nach der Inbetriebnahme. Nicht vorher.</p>
+    </div>
+  </div>
+</section>
+<style>
+.infog > *{padding:var(--s6) var(--s5)}
+.infocell{display:flex;gap:var(--s5);align-items:flex-start}
+@media(min-width:860px){.infog > *:first-child{padding-left:0}.infocell-b{padding:var(--s6) !important}}
+</style>
+
+<!-- ================= Einwaende ================= -->
+<section class="sec sm">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <h2 class="d2" style="max-width:22ch">Warum viele Hauseigentümer <span class="mute">zögern,</span> und was wir <span class="script">dagegen</span> tun</h2>
+      <p class="body" style="margin-left:auto">Vier Sätze, die uns in Beratungsgesprächen fast jeder sagt. Sie stehen hier, weil sie berechtigt sind.</p>
+    </div>
+    <div class="cells c2" style="margin-top:var(--s7)" data-reveal>
+      <div>
+        <h3 class="h4">„Wenn ich anzahle und die Firma geht pleite, ist mein Geld weg."</h3>
+        <p class="small" style="margin-top:var(--s3)">Berechtigt. Üblich sind in dieser Branche 30 bis 70 Prozent Vorkasse, und bei einer Insolvenz kommt davon fast nichts zurück. Wir verlangen keine Anzahlung. Das Risiko liegt bei uns, nicht bei Ihnen.</p>
+      </div>
+      <div>
+        <h3 class="h4">„Ich will beraten werden, nicht überredet."</h3>
+        <p class="small" style="margin-top:var(--s3)">Wir schließen im Erstgespräch nichts ab. Sie bekommen die Zahlen, die Annahmen dahinter und Zeit, das in Ruhe anzusehen. Wenn sich Ihre Anlage nicht rechnet, sagen wir Ihnen das vorher, nicht nachher.</p>
+      </div>
+      <div>
+        <h3 class="h4">„Was passiert mit meinem Dach?"</h3>
+        <p class="small" style="margin-top:var(--s3)">Wir messen das Dach vor der Montage per Drohne auf und prüfen Ausrichtung, Neigung, Verschattung und Bauzustand. Montiert wird nach den geltenden Normen.<!-- KLÄREN: Betriebshaftpflicht und Montageversicherung ergaenzen --></p>
+      </div>
+      <div>
+        <h3 class="h4">„Und dann hängt die Anlage fertig da und speist trotzdem nicht ein."</h3>
+        <p class="small" style="margin-top:var(--s3)">Der klassische Frust dieser Branche. Wir erstellen die Unterlagen, übermitteln sie an Stromnetz Berlin und melden die Anlage im Marktstammdatenregister an. Was wir nicht versprechen können, ist die Bearbeitungszeit des Netzbetreibers. Die liegt nicht bei uns, und wir sagen ehrlich, wenn es dort dauert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Leistungsumfang ================= -->
+<section class="sec sm">
+  <div class="wrap">
+    <div class="split divided narrow-l">
+      <div>
+        <p class="label">Leistungsumfang</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Was der Festpreis enthält, <span class="mute">und was</span> <span class="script">nicht</span></h2>
+        <p class="body" style="margin-top:var(--s6)">Ein Festpreis ist nur so gut wie die Liste dahinter. Deshalb steht hier beides: was wir machen, und was nicht enthalten ist.</p>
+        <div class="cta" style="margin-top:var(--s6)">
+          <a class="pill" href="#anfrage">Festpreis-Angebot anfordern</a>
+          <a class="circ" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <ul class="checks">
+          <li>Beratungstermin bei Ihnen zu Hause, mit Blick auf Ihren echten Stromverbrauch</li>
+          <li>Wirtschaftlichkeitsrechnung mit Investition, Ersparnis und Amortisation, Annahmen daneben</li>
+          <li>Dachaufmaß per Drohne und ein Modul-Layout für Ihr Dach, nicht für den Katalog</li>
+          <li>Auslegung von Anlage, Speicher und Wallbox auf Ihren Verbrauch, herstellerunabhängig</li>
+          <li>Montage von Modulen, Wechselrichter, Speicher und Zählertechnik nach den geltenden Normen</li>
+          <li>Unterlagen und Anmeldung beim Netzbetreiber, Anmeldung im Marktstammdatenregister</li>
+          <li>Inbetriebnahme und Einrichtung der Fernüberwachung</li>
+          <li>Ein Ansprechpartner mit Namen und Durchwahl, auch nach der Inbetriebnahme</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Nicht enthalten, volle Breite, drei Punkte im Raster ============ -->
+    <div style="margin-top:var(--s8)" data-reveal>
+      <p class="label-g">Nicht enthalten, und das sagen wir vorher</p>
+      <div class="cells c3" style="margin-top:var(--s4)">
+        <div>
+          <h3 class="h4">Zählerschrank</h3>
+          <p class="small" style="margin-top:var(--s3)">Falls Ihr Schrank getauscht werden muss. Wir prüfen das beim Aufmaß und nennen die Kosten im Angebot.<!-- KLÄREN: enthalten oder Aufpreis --></p>
+        </div>
+        <div>
+          <h3 class="h4">Gerüst</h3>
+          <p class="small" style="margin-top:var(--s3)">Falls Ihr Dach eines braucht. Steht im Angebot, nicht in einer Nachforderung.</p>
+        </div>
+        <div>
+          <h3 class="h4">Wärmepumpe</h3>
+          <p class="small" style="margin-top:var(--s3)">Wir legen Ihre Anlage so aus, dass eine Wärmepumpe später dazu passt.<!-- KLÄREN: angeboten, vermittelt oder nicht --></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.checks{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.checks li{position:relative;padding:14px 0 14px 30px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink-2);line-height:1.5}
+.checks li::before{content:"";position:absolute;left:0;top:20px;width:8px;height:5px;border-left:1.8px solid var(--accent);border-bottom:1.8px solid var(--accent);transform:rotate(-45deg)}
+</style>
+
+<!-- ================= Kosten ================= -->
+<section class="sec sm" id="preise">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div>
+        <p class="label">Kosten</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Was kostet eine Photovoltaikanlage <span class="mute">in</span> <span class="script">Berlin</span>?</h2>
+      </div>
+      <p class="body" style="margin-left:auto">Die meisten Anbieter beantworten diese Frage nicht und nennen stattdessen eine Monatsrate. Wir nennen Zahlen. Verbindlich wird davon nur Ihr Festpreis-Angebot, und das steht schriftlich da, bevor Sie sich entscheiden.</p>
+    </div>
+    <div class="cells c3" style="margin-top:var(--s7)" data-reveal>
+      <div>
+        <div class="row" style="justify-content:space-between"><h3 class="h4">Kleines Dach</h3><span class="label-g">bis 6 kWp</span></div>
+        <p class="d1" style="margin-top:var(--s5);font-size:clamp(1.8rem,2.6vw,2.4rem)">8.700 <span class="mute">bis</span> 11.200 €</p>
+        <ul class="tab">
+          <li><span>Jahresertrag</span><b>5.400 bis 6.600 kWh</b></li>
+          <li><span>Speicher</span><b>ohne</b></li>
+          <li><span>Passt zu Verbrauch</span><b>3.000 bis 4.000 kWh</b></li>
+        </ul>
+      </div>
+      <div class="cell-black">
+        <div class="row" style="justify-content:space-between"><h3 class="h4">Eigenheim mit Speicher</h3><span class="label-g">8 bis 10 kWp</span></div>
+        <p class="d1" style="margin-top:var(--s5);font-size:clamp(1.8rem,2.6vw,2.4rem)">18.000 <span style="color:rgba(255,255,255,.42)">bis</span> 20.300 €</p>
+        <ul class="tab dark">
+          <li><span>Jahresertrag</span><b>7.200 bis 11.000 kWh</b></li>
+          <li><span>Speicher</span><b>10 kWh</b></li>
+          <li><span>Eigenverbrauch</span><b>70 bis 80 %</b></li>
+          <li><span>Ersparnis im Jahr</span><b>1.200 bis 1.800 €</b></li>
+        </ul>
+        <div class="cta" style="margin-top:var(--s5)">
+          <a class="pill" href="#anfrage">Festpreis anfordern</a>
+          <a class="circ accent" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <p class="tiny" style="margin-top:var(--s4);color:rgba(255,255,255,.5)">Häufigster Fall. 0 Euro Anzahlung, Zahlung nach der Inbetriebnahme.</p>
+      </div>
+      <div>
+        <div class="row" style="justify-content:space-between"><h3 class="h4">Mit Speicher und Wallbox</h3><span class="label-g">ab 10 kWp</span></div>
+        <p class="d1" style="margin-top:var(--s5);font-size:clamp(1.8rem,2.6vw,2.4rem)">auf Anfrage</p>
+        <ul class="tab">
+          <li><span>Ausgelegt auf</span><b>E-Auto, Wärmepumpe</b></li>
+          <li><span>Speicher</span><b>ab 10 kWh</b></li>
+          <li><span>Netzentgelt</span><b>§ 14a EnWG</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hl fullnote" style="margin-top:var(--s6);padding-top:var(--s5)">
+      <p class="tiny" style="max-width:none">Alle Angaben ohne Umsatzsteuer, weil auf Photovoltaikanlagen und Speicher bis 30 kWp seit 2023 keine anfällt. Was Ihre Anlage kostet, hängt vom Dach ab, von der Ausrichtung, vom Zählerschrank und davon, wie viel Sie selbst verbrauchen wollen.<!-- KLÄREN: Bandbreiten sind Marktwerte, durch eigene Kalkulation ersetzen --></p>
+    </div>
+  </div>
+</section>
+<style>
+.tab{list-style:none;padding:0;margin:var(--s5) 0 0;font-size:14px;color:var(--ink-3)}
+.tab li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+.tab li b{color:var(--ink);font-weight:600;text-align:right}
+.tab.dark li{border-top-color:var(--line-dark);color:rgba(255,255,255,.55)}
+.tab.dark li b{color:#fff}
+</style>
+
+<!-- ================= Rechner, nach dem Screenshot-Muster ================= -->
+<section class="sec sm" id="rechner">
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between;align-items:flex-start">
+      <h2 class="d1" style="max-width:16ch"><span class="script">Einfache</span> Wirtschaftlichkeits&shy;rechnung</h2>
+      <span class="circ lg" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M12 12h2M16 12h.01M8 16h2M12 16h4"/></svg></span>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:var(--s9)">
+    <div class="cells c4">
+      <div class="calcell" style="padding-top:var(--s5)" data-reveal>
+        <div class="row" style="justify-content:space-between"><span class="small" style="color:var(--ink)">Gebäude</span><span class="arrow" style="color:var(--accent-txt)">&#8594;</span></div>
+        <div class="dotring"><span>Einfamilienhaus</span></div>
+        <div class="row"><span class="circ sm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5h6v5"/></svg></span><span class="bdot"></span></div>
+      </div>
+      <div class="calcell" style="padding-top:var(--s5)" data-reveal>
+        <div class="row" style="justify-content:space-between"><span class="small" style="color:var(--ink)">Stromverbrauch</span><span class="arrow" style="color:var(--accent-txt)">&#8594;</span></div>
+        <div class="dotring"><span>4.500 kWh im Jahr</span></div>
+        <div class="row"><span class="circ sm blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span><span class="bdot dark"></span></div>
+      </div>
+      <div class="calcell" style="padding-top:var(--s5)" data-reveal>
+        <div class="row" style="justify-content:space-between"><span class="small" style="color:var(--ink)">Speicher</span><span class="arrow" style="color:var(--accent-txt)">&#8594;</span></div>
+        <div class="dotring"><span>10 kWh, geplant</span></div>
+        <div class="row"><span class="circ sm" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 7h4"/></svg></span><span class="bdot"></span></div>
+      </div>
+      <div style="padding-top:var(--s5)">
+        <p class="d3" style="max-width:20ch">Adresse und Stromverbrauch eingeben, wir rechnen die Ersparnis für Ihr Dach vor.</p>
+        <div class="cta" style="margin-top:var(--s5)">
+          <a class="pill" href="#anfrage">Rechnung anfordern</a>
+          <a class="circ" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></a>
+        </div>
+        <p class="tiny" style="margin-top:var(--s4)">Kostenlos, unverbindlich, Rückmeldung in 24 Stunden.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rechenbeispiel mit Riesenzahl -->
+  <div class="wrap" style="margin-top:var(--s9)">
+    <div class="split divided wide-l">
+      <div>
+        <p class="label">Rechenbeispiel</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Einfamilienhaus Berlin, <span class="script">nachgerechnet</span> <span class="mute">für 9 kWp mit Speicher</span></h2>
+        <p class="body" style="margin-top:var(--s6)">Strom vom eigenen Dach ersetzt teuren Netzstrom. Jede selbst genutzte Kilowattstunde spart 30 bis 40 Cent. Jede eingespeiste bringt 7,70 Cent. Das ist der Faktor vier bis fünf, und er entscheidet über die Auslegung. Deshalb planen wir auf Eigenverbrauch, nicht auf Maximalfläche.</p>
+        <div class="hl" style="margin-top:var(--s6);padding-top:var(--s5)">
+          <p class="label-g">Was wir vorher sagen</p>
+          <p class="small" style="margin-top:var(--s3);color:var(--ink)">Ein Speicher lohnt sich nicht immer. Wenn Sie den größten Teil Ihres Stroms tagsüber verbrauchen, zum Beispiel im Homeoffice, kann eine Anlage ohne Speicher wirtschaftlicher sein. Wir rechnen Ihnen beide Varianten vor und sagen Ihnen, welche besser dasteht, auch wenn das die günstigere ist.</p>
+        </div>
+      </div>
+      <div>
+        <p class="figure"><em>1.640</em> €</p>
+        <p class="small" style="margin-top:var(--s4)">Ersparnis im Jahr, gerechnet mit 78 Prozent Eigenverbrauch.</p>
+        <div class="cells c2" style="margin-top:var(--s6)">
+          <div style="padding:var(--s5) var(--s5) var(--s5) 0"><p class="d3">78 %</p><p class="small" style="margin-top:6px">Eigenverbrauch mit 10-kWh-Speicher. Ohne Speicher rund 30 Prozent.</p></div>
+          <div style="padding:var(--s5)"><p class="d3">11 Jahre</p><p class="small" style="margin-top:6px">Amortisation mit Speicher. Ohne Speicher 8 bis 10 Jahre.</p></div>
+        </div>
+        <div class="graph" style="margin-top:var(--s6)">
+          <div class="row" style="justify-content:space-between;margin-bottom:var(--s4)">
+            <span class="label-g">Erzeugung über den Tag</span><span class="small" style="color:var(--ink)">Spitze 4,2 kW</span>
+          </div>
+          <svg viewBox="0 0 320 96" style="width:100%;height:auto" role="img" aria-label="Tagesverlauf der Erzeugung">
+            <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FD5719" stop-opacity=".22"/><stop offset="1" stop-color="#FD5719" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0,84 C34,82 44,50 74,40 C104,30 118,15 152,12 C186,9 206,30 238,46 C268,60 292,78 320,82 L320,96 L0,96 Z" fill="url(#ag)"/>
+            <path d="M0,84 C34,82 44,50 74,40 C104,30 118,15 152,12 C186,9 206,30 238,46 C268,60 292,78 320,82" fill="none" stroke="#FD5719" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="152" cy="12" r="4.2" fill="#fff" stroke="#FD5719" stroke-width="2.2"/>
+          </svg>
+          <div class="row" style="justify-content:space-between;margin-top:8px"><span class="tiny">06:00</span><span class="tiny">13:00</span><span class="tiny">21:00</span></div>
+        </div>
+        <p class="tiny" style="margin-top:var(--s5)">Stand September 2026. Einspeisevergütung 7,70 ct/kWh für Anlagen bis 10 kW bei Überschusseinspeisung, Quelle Bundesnetzagentur. Ersparnis pro selbst verbrauchter Kilowattstunde nach Angabe der Verbraucherzentrale. Keine Steuer- oder Rechtsberatung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.bdot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-left:-6px;margin-top:-14px;position:relative;z-index:2}
+.bdot.dark{background:var(--ink)}
+.graph{border-top:1px solid var(--line);padding-top:var(--s5)}
+</style>
+
+<!-- ================= Ablauf ================= -->
+<section class="sec sm">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div>
+        <p class="label">Ablauf</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Von der Anfrage zur <span class="script">fertigen</span> Anlage <span class="mute">in 2 bis 4 Wochen</span></h2>
+      </div>
+      <p class="body" style="margin-left:auto">Fünf Schritte. Bezahlt wird nach Schritt fünf, nicht vorher.</p>
+    </div>
+    <div class="cells c5" style="margin-top:var(--s7)" data-reveal>
+      <div>
+        <div class="row" style="justify-content:space-between"><span class="label-g">Schritt 1</span><span style="color:var(--accent-txt)">&#8594;</span></div>
+        <h3 class="h4" style="margin-top:var(--s5)">Anfrage</h3>
+        <p class="small" style="margin-top:8px">Vier Angaben oder ein Anruf. Wir melden uns innerhalb eines Werktags.</p>
+        <p class="tiny" style="margin-top:var(--s4);color:var(--accent-txt)">Rückmeldung 24 Stunden</p>
+      </div>
+      <div>
+        <div class="row" style="justify-content:space-between"><span class="label-g">Schritt 2</span><span style="color:var(--accent-txt)">&#8594;</span></div>
+        <h3 class="h4" style="margin-top:var(--s5)">Termin und Drohnenaufmaß</h3>
+        <p class="small" style="margin-top:8px">Dach, Zählerschrank und Verbrauch vor Ort. Kein Abschluss, keine Unterschrift.</p>
+        <p class="tiny" style="margin-top:var(--s4);color:var(--accent-txt)">rund 1 Stunde</p>
+      </div>
+      <div>
+        <div class="row" style="justify-content:space-between"><span class="label-g">Schritt 3</span><span style="color:var(--accent-txt)">&#8594;</span></div>
+        <h3 class="h4" style="margin-top:var(--s5)">Festpreis-Angebot</h3>
+        <p class="small" style="margin-top:8px">Modul-Layout, erwarteter Ertrag, Wirtschaftlichkeitsrechnung, Gesamtpreis.</p>
+        <p class="tiny" style="margin-top:var(--s4);color:var(--accent-txt)">schriftlich</p>
+      </div>
+      <div>
+        <div class="row" style="justify-content:space-between"><span class="label-g">Schritt 4</span><span style="color:var(--accent-txt)">&#8594;</span></div>
+        <h3 class="h4" style="margin-top:var(--s5)">Montage</h3>
+        <p class="small" style="margin-top:8px">Module, Wechselrichter, Speicher, Zählertechnik. Der Strom ist nur kurz weg.</p>
+        <p class="tiny" style="margin-top:var(--s4);color:var(--accent-txt)">in der Regel 1 Tag</p>
+      </div>
+      <div>
+        <div class="row" style="justify-content:space-between"><span class="label-g">Schritt 5</span><span style="color:var(--ink-3)">&#9679;</span></div>
+        <h3 class="h4" style="margin-top:var(--s5)">Anmeldung und Inbetriebnahme</h3>
+        <p class="small" style="margin-top:8px">Unterlagen an Stromnetz Berlin, Anmeldung im Marktstammdatenregister.</p>
+        <p class="tiny" style="margin-top:var(--s4);color:var(--accent-txt)">dann läuft sie</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Technik ================= -->
+<section class="sec sm" id="technik">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div>
+        <p class="label">Technik</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Herstellerunabhängig geplant, <span class="mute">Technik für</span> <span class="script">Ihr Dach</span></h2>
+      </div>
+      <p class="body" style="margin-left:auto">Wir sind an keinen Hersteller gebunden. Das heißt nicht, dass wir alles verbauen, sondern dass die Komponenten zu Ihrem Dach ausgewählt werden und nicht Ihr Dach zur Komponente.</p>
+    </div>
+    <div class="cells c3" style="margin-top:var(--s7)" id="speicher">
+      <div>
+        <p class="label-g">Module</p>
+        <h3 class="h4" style="margin-top:var(--s4)">Aiko und Luxra</h3>
+        <p class="small" style="margin-top:8px">475 bis 500 Watt. Welche auf Ihr Dach kommen, entscheidet die Fläche, die Ausrichtung und die Verschattung.</p>
+        <p class="d3" style="margin-top:var(--s5)">500 W</p>
+      </div>
+      <div>
+        <p class="label-g">Speicher</p>
+        <h3 class="h4" style="margin-top:var(--s4)">EcoFlow und Sigenergy</h3>
+        <p class="small" style="margin-top:8px">Ein Speicher hebt den Eigenverbrauch von rund 30 auf 70 bis 80 Prozent. Ob er sich bei Ihnen rechnet, sagt die Rechnung, nicht der Katalog.</p>
+        <p class="d3" style="margin-top:var(--s5)">10 kWh</p>
+      </div>
+      <div id="wallbox">
+        <p class="label-g">Wallbox</p>
+        <h3 class="h4" style="margin-top:var(--s4)">EcoFlow und Sigenergy</h3>
+        <p class="small" style="margin-top:8px">Angebunden an die Anlage, damit Ihr Auto möglichst mit eigenem Strom lädt. Über 4,2 kW gilt Paragraf 14a EnWG, dafür gibt es reduzierte Netzentgelte. Wir melden das mit an.</p>
+        <p class="d3" style="margin-top:var(--s5)">11 kW</p>
+      </div>
+    </div>
+    <div class="hl fullnote" style="margin-top:var(--s6);padding-top:var(--s5)">
+      <p class="label-g">Garantien</p>
+      <p class="small" style="margin-top:var(--s3);max-width:none">Auf die Komponenten gelten Herstellergarantien von 15 bis 30 Jahren. Das ist die Leistung der Hersteller. Von uns kommt die gesetzliche Gewährleistung auf die handwerkliche Arbeit und die Fernüberwachung, mit der wir eine Störung meist sehen, bevor Sie sie merken.<!-- KLÄREN: Bosch und Viessmann, hier nur die vier belegten Marken --></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Referenzen ================= -->
+<section class="sec sm" id="referenzen">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div>
+        <p class="label">Referenzen</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch"><span class="script">Unsere</span> Anlagen in Berlin <span class="mute">und Brandenburg</span></h2>
+      </div>
+      <div style="margin-left:auto">
+        <p class="body">Vier Anlagen, die wir gebaut haben, mit den Zahlen dahinter. Keine Renderings, keine Katalogbilder.</p>
+        <div class="cta" style="margin-top:var(--s5)">
+          <a class="pill" href="#anfrage">Ähnliche Anlage anfragen</a>
+          <a class="circ" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel" data-carousel="refcar" data-interval="7000" style="margin-top:var(--s8)">
+    <div class="wrap">
+      <div class="refouter">
+        <div class="refctrl">
+          <div class="carctrl">
+            <span class="carcount" data-count="refcar">1 / 4</span>
+            <div class="carbar inline"><span data-bar="refcar"></span></div>
+            <button class="circ outline" type="button" data-car="refcar" data-dir="-1" aria-label="Vorherige Referenz"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <button class="circ" type="button" data-car="refcar" data-dir="1" aria-label="Nächste Referenz"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      <div class="cartrack" id="refcar" tabindex="0" role="group" aria-label="Referenzen, seitlich scrollbar">
+      <article class="rslide">
+        <div class="rcard">
+          <div class="rleft">
+            <div class="shot rshot">
+              <!-- Ersetzen durch bilder/photovoltaik-berlin-pankow-anlage-11-4-kwp-1.jpg -->
+              <span class="tag">11,40 kWp</span><span class="note">Foto folgt</span>
+            </div>
+          </div>
+          <div class="rright">
+            <h3 class="d3">Berlin-Pankow</h3>
+            <p class="body" style="margin-top:var(--s3)">Einfamilienhaus, drei Personen, Homeoffice. Die Anlage deckt den Tagesbedarf inklusive Arbeitszimmer.</p>
+            <div class="rfacts">
+              <p class="label-g">Anlagendaten</p>
+              <ul class="tab" style="margin-top:var(--s4)">
+                <li><span>Leistung</span><b>11,40 kWp</b></li>
+                <li><span>Gebäude</span><b>Einfamilienhaus</b></li>
+                <li><span>Haushalt</span><b>3 Personen</b></li>
+                <li><span>Speicher</span><b class="tbd">offen</b></li>
+                <li><span>Module</span><b class="tbd">offen</b></li>
+                <li><span>Jahresertrag</span><b class="tbd">offen</b></li>
+                <li><span>Montage</span><b class="tbd">offen</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="rslide">
+        <div class="rcard">
+          <div class="rleft">
+            <div class="shot rshot">
+              <!-- Ersetzen durch ein Foto der Anlage Weissensee -->
+              <span class="tag">7,60 kWp</span><span class="note">Foto folgt</span>
+            </div>
+          </div>
+          <div class="rright">
+            <h3 class="d3">Berlin-Weißensee</h3>
+            <p class="body" style="margin-top:var(--s3)">Mehrfamilienhaus mit mehreren Parteien. Ziel war, den gemeinschaftlichen Strombedarf zu senken.</p>
+            <div class="rfacts">
+              <p class="label-g">Anlagendaten</p>
+              <ul class="tab" style="margin-top:var(--s4)">
+                <li><span>Leistung</span><b>7,60 kWp</b></li>
+                <li><span>Gebäude</span><b>Mehrfamilienhaus</b></li>
+                <li><span>Parteien</span><b class="tbd">offen</b></li>
+                <li><span>Speicher</span><b class="tbd">offen</b></li>
+                <li><span>Module</span><b class="tbd">offen</b></li>
+                <li><span>Jahresertrag</span><b class="tbd">offen</b></li>
+                <li><span>Zählerkonzept</span><b class="tbd">offen</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="rslide">
+        <div class="rcard">
+          <div class="rleft">
+            <div class="shot rshot">
+              <!-- Ersetzen durch bilder/photovoltaik-berlin-kladow-anlage-7-6-kwp.jpg -->
+              <span class="tag">7,60 kWp</span><span class="note">Foto folgt</span>
+            </div>
+          </div>
+          <div class="rright">
+            <h3 class="d3">Berlin-Kladow</h3>
+            <p class="body" style="margin-top:var(--s3)">Einfamilienhaus, drei Personen. Ein Großteil des Tagesbedarfs kommt jetzt vom eigenen Dach.</p>
+            <div class="rfacts">
+              <p class="label-g">Anlagendaten</p>
+              <ul class="tab" style="margin-top:var(--s4)">
+                <li><span>Leistung</span><b>7,60 kWp</b></li>
+                <li><span>Gebäude</span><b>Einfamilienhaus</b></li>
+                <li><span>Haushalt</span><b>3 Personen</b></li>
+                <li><span>Speicher</span><b class="tbd">offen</b></li>
+                <li><span>Module</span><b class="tbd">offen</b></li>
+                <li><span>Jahresertrag</span><b class="tbd">offen</b></li>
+                <li><span>Montage</span><b class="tbd">offen</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="rslide">
+        <div class="rcard">
+          <div class="rleft">
+            <div class="shot rshot">
+              <!-- Ersetzen durch bilder/photovoltaik-neuenhagen-anlage-5-7-kwp.jpg -->
+              <span class="tag">5,70 kWp</span><span class="note">Foto folgt</span>
+            </div>
+          </div>
+          <div class="rright">
+            <h3 class="d3">Neuenhagen bei Berlin</h3>
+            <p class="body" style="margin-top:var(--s3)">Zwei Personen, Fokus auf Eigenverbrauch. Bewusst klein gehalten, weil größer sich hier nicht gerechnet hätte.</p>
+            <div class="rfacts">
+              <p class="label-g">Anlagendaten</p>
+              <ul class="tab" style="margin-top:var(--s4)">
+                <li><span>Leistung</span><b>5,70 kWp</b></li>
+                <li><span>Gebäude</span><b>Einfamilienhaus</b></li>
+                <li><span>Haushalt</span><b>2 Personen</b></li>
+                <li><span>Speicher</span><b class="tbd">offen</b></li>
+                <li><span>Module</span><b class="tbd">offen</b></li>
+                <li><span>Jahresertrag</span><b class="tbd">offen</b></li>
+                <li><span>Montage</span><b class="tbd">offen</b></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+/* ---------- Karussell, gemeinsame Bausteine ---------- */
+.carctrl{display:flex;align-items:center;gap:12px}
+.carcount{font-size:13px;font-weight:600;color:var(--ink-3);font-variant-numeric:tabular-nums;flex:0 0 auto}
+.cartrack{display:flex;gap:var(--s6);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  scrollbar-width:none;-ms-overflow-style:none}
+.cartrack::-webkit-scrollbar{display:none}
+.cartrack:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+.rslide{flex:0 0 100%;scroll-snap-align:start;min-width:0}
+/* Fortschrittsleiste, direkt neben den Bedienknoepfen */
+.carbar{height:2px;background:var(--line);overflow:hidden}
+.carbar.inline{flex:1 1 auto;min-width:60px;margin-left:var(--s3)}
+.carbar span{display:block;height:100%;width:0;background:var(--accent)}
+.carbar span.run{transition:width linear}
+
+/* ---------- Aussenraster: Steuerzeile in der rechten Spalte, Spur darunter ---------- */
+.refouter{display:grid;grid-template-columns:minmax(0,1fr);row-gap:var(--s5)}
+.refctrl{min-width:0}
+@media(min-width:820px){
+  .refouter{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:var(--s8);row-gap:var(--s6)}
+  .refctrl{grid-column:2;padding-left:var(--s7)}
+  .refouter .cartrack{grid-column:1 / -1}
+}
+
+/* ---------- Referenzkarte: Foto links, Text und Daten rechts, gleiche Hoehe ---------- */
+.rcard{display:grid;gap:var(--s6);grid-template-columns:minmax(0,1fr);align-items:stretch}
+.rleft{display:flex;flex-direction:column;min-width:0}
+.rshot{aspect-ratio:16/10;flex:1 1 auto;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.rright{display:flex;flex-direction:column;min-width:0}
+.rfacts{margin-top:var(--s6)}
+@media(min-width:820px){
+  .rcard{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--s8)}
+  .rright{border-left:1px solid var(--line);padding-left:var(--s7)}
+  .rshot{aspect-ratio:auto;min-height:400px}
+  .rfacts{margin-top:auto;padding-top:var(--s7)}
+}
+.rcard:hover .rshot{transform:scale(1.015)}
+.tbd{color:var(--mute);border-bottom:1px dashed var(--line-2);font-weight:500}
+</style>
+
+<!-- ================= Schwarzer Block: Kundenstimmen und Team ================= -->
+<section class="black" id="stimmen">
+  <div class="wrap" style="padding-top:var(--s9);padding-bottom:var(--s8)">
+    <div class="split" style="align-items:end">
+      <h2 class="d1" style="max-width:16ch"><span class="script">Echte</span> Kundenstimmen</h2>
+      <p class="small" style="margin-left:auto;max-width:46ch">Wörtlich zitierte Google-Bewertungen. Zwei der Texte sind auf dem öffentlichen Profil abgeschnitten, die Volltexte folgen.<!-- KLÄREN: Volltexte aus dem eingeloggten Google-Profil, keine Anzahl anzeigen --></p>
+    </div>
+
+    <div class="stimrow" style="margin-top:var(--s8)" data-carousel="stimcar" data-mode="slide" data-interval="8000">
+      <!-- links, bleibt stehen -->
+      <div class="qbox">
+        <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <p class="d2" style="margin-top:var(--s4)">5,0 bei Google</p>
+        <p class="small" style="margin-top:var(--s3)">Der Inhaber antwortet persönlich auf jede Bewertung.</p>
+        <div class="cta" style="margin-top:var(--s6)">
+          <a class="pill" href="#stimmen">Alle Bewertungen ansehen</a>
+          <a class="circ outline-w" href="#stimmen" aria-label="Alle Bewertungen ansehen"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></a>
+        </div>
+      </div>
+
+      <!-- rechts, ein Zitat nach dem anderen, ohne Kasten -->
+      <div class="qside">
+        <div class="qview">
+          <div class="qstack" id="stimcar">
+            <figure class="qslide">
+              <blockquote>„Vom ersten Gespräch bis zur fertigen Solaranlage sind keine sechs Wochen vergangen. Das ging deutlich schneller, als ich erwartet hatte. Herr Fritz war die ganze Zeit über gut erreichbar, hat alles verständlich erklärt."</blockquote>
+              <figcaption>Nicolas T. <span>· Google-Bewertung, April 2026</span></figcaption>
+            </figure>
+            <figure class="qslide">
+              <blockquote>„Ich hatte vorher ehrlich gesagt noch nicht viel Berührung mit dem Thema Photovoltaik und entsprechend viele Fragen. Die Beratung durch Herrn Fritz war von Anfang an sehr verständlich und ohne Druck, es wurde eher gemeinsam geschaut."</blockquote>
+              <figcaption>Jessy830 <span>· Google-Bewertung, April 2026</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="carctrl dark" style="margin-top:var(--s6)">
+          <button class="circ outline-w" type="button" data-car="stimcar" data-dir="-1" aria-label="Vorherige Bewertung"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+          <button class="circ accent" type="button" data-car="stimcar" data-dir="1" aria-label="Nächste Bewertung"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <span class="carcount" data-count="stimcar">1 / 2</span>
+          <div class="carbar inline dark"><span data-bar="stimcar"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split even hlD" id="team" style="margin-top:var(--s9);padding-top:var(--s7);align-items:center">
+      <div class="shot dark" style="aspect-ratio:4/5;border-radius:var(--r-img-sm)">
+        <!-- Ersetzen durch ein echtes Foto von Julian Fritz. Kein Stock-Portrait -->
+        <span class="note" style="color:rgba(255,255,255,.5)">Foto Julian Fritz folgt</span>
+      </div>
+      <div>
+        <p class="label-g">Ihr Ansprechpartner</p>
+        <h3 class="d2" style="margin-top:var(--s4);max-width:20ch">Ihr Ansprechpartner, <span class="script">nicht</span> <span style="color:rgba(255,255,255,.38)">Ihr Callcenter</span></h3>
+        <p class="body" style="margin-top:var(--s5);color:rgba(255,255,255,.8)">Ich bin Julian Fritz und arbeite seit über sieben Jahren in der Photovoltaik. Seit 2026 mache ich das im eigenen Betrieb, hier in Berlin. Wenn Sie anrufen, sprechen Sie mit mir oder mit jemandem, der Ihr Dach kennt. Wir sind ein junger Betrieb. Deshalb ist unser Angebot so gebaut, wie es gebaut ist: Sie zahlen erst, wenn die Anlage läuft.<!-- KLÄREN: Formulierung bestaetigen, GmbH seit 28.01.2026 --></p>
+        <ul class="tab dark" style="margin-top:var(--s6)">
+          <li><span>Betrieb</span><b>Solartechnik Fritz GmbH</b></li>
+          <li><span>Sitz</span><b>Prenzlauer Promenade 49b, 13089 Berlin</b></li>
+          <li><span>Handelsregister</span><b>HRB 283382 B, AG Charlottenburg</b></li>
+          <li><span>Rückmeldung</span><b>innerhalb 24 Stunden</b></li>
+          <li><span>Erreichbar</span><b class="tbd" style="color:rgba(255,255,255,.4)">offen</b></li>
+        </ul>
+        <div class="cta" style="margin-top:var(--s6)">
+          <a class="pill" href="tel:+493054820545">030 548 205 45</a>
+          <a class="circ outline-w" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="logorow" style="margin-top:var(--s9)">
+      <span>Aiko</span><span>Luxra</span><span>EcoFlow</span><span>Sigenergy</span>
+    </div>
+  </div>
+</section>
+<style>
+.hlD{border-top:1px solid var(--line-dark)}
+/* Kundenstimmen: links fester Kasten, rechts ein Zitat nach dem anderen */
+.stimrow{display:grid;gap:var(--s7);grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.stimrow{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:var(--s8);align-items:start}}
+.qbox{background:rgba(253,87,25,.10);border:1px solid rgba(253,87,25,.34);border-radius:var(--r-img-sm);padding:var(--s6)}
+.qbox .stars{color:var(--accent);letter-spacing:3px;font-size:15px}
+@media(min-width:900px){.qbox{position:sticky;top:96px}}
+.qside{min-width:0}
+.qview{overflow:hidden}
+.qstack{display:grid;grid-auto-flow:column;grid-auto-columns:100%;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.qslide{margin:0;min-width:0;padding-right:var(--s5)}
+.qslide blockquote{margin:0;font-size:clamp(19px,2.1vw,27px);font-weight:500;line-height:1.4;letter-spacing:-.022em;color:#fff}
+.qslide figcaption{margin-top:var(--s6);font-size:14.5px;font-weight:600;color:#fff}
+.qslide figcaption span{font-weight:500;color:rgba(255,255,255,.45)}
+.carctrl.dark .carcount{color:rgba(255,255,255,.55)}
+.carbar.dark{background:rgba(255,255,255,.14)}
+@media(prefers-reduced-motion:reduce){.qstack{transition:none}}
+</style>
+
+<!-- ================= Förderung und Recht ================= -->
+<section class="sec sm" id="foerderung">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div>
+        <p class="label">Förderung und Recht</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Förderung, Steuern und <span class="script">Pflichten</span> <span class="mute">in Berlin</span></h2>
+      </div>
+      <p class="small" style="margin-left:auto;max-width:52ch"><b style="color:var(--ink)">Stand: September 2026.</b> Förder- und Steuerrecht ändert sich mehrmals im Jahr. Wir prüfen Ihre Möglichkeiten im Beratungstermin. Diese Übersicht ist keine Steuer- oder Rechtsberatung.</p>
+    </div>
+    <div class="cells c3" style="margin-top:var(--s7)" data-reveal>
+      <div style="display:flex;gap:var(--s4)">
+        <span class="vlabel">SolarPLUS S</span>
+        <div><p class="d3">4.750 €</p><p class="small" style="margin-top:8px">maximale Speicherförderung für Ein- und Zweifamilienhäuser</p></div>
+      </div>
+      <div style="display:flex;gap:var(--s4)">
+        <span class="vlabel">Umsatzsteuer</span>
+        <div><p class="d3">0 %</p><p class="small" style="margin-top:8px">auf Anlage und Speicher bis 30 kWp, seit 2023</p></div>
+      </div>
+      <div style="display:flex;gap:var(--s4)">
+        <span class="vlabel">Einspeisung</span>
+        <div><p class="d3">7,70 ct</p><p class="small" style="margin-top:8px">pro kWh, Überschusseinspeisung bis 10 kW, Stand 08.2026</p></div>
+      </div>
+    </div>
+    <div class="faq" style="margin-top:var(--s7)">
+      <details><summary><h3 class="h4">Was fördert SolarPLUS in Berlin?</h3><i aria-hidden="true"></i></summary><p>Berlin fördert nicht die Anlage selbst, sondern vor allem den Speicher dazu. Für Ein- und Zweifamilienhäuser sowie Reihenhäuser gibt es über SolarPLUS S je nach Anlagengröße 500 bis 4.750 Euro für einen Stromspeicher, der zusammen mit einer neuen Anlage installiert wird, und 750 Euro Pauschale für einen neuen Zählerschrank ab 1.160 Euro Kosten. Für Mehrfamilienhäuser, Eigentümergemeinschaften und vermietende Eigentümer greift SolarPLUS L mit bis zu 30.000 Euro. Die Richtlinie 2026 gilt bis 31.12.2026. Wichtig: keine Doppelförderung mit KfW-Programmen, und der Projektstart darf nicht vor dem Antrag liegen. Quelle: IBB Business Team, abgerufen 03.09.2026.</p></details>
+      <details><summary><h3 class="h4">Zahle ich Umsatzsteuer auf die Anlage?</h3><i aria-hidden="true"></i></summary><p>Nein. Auf Lieferung und Installation von Photovoltaikanlagen und Speichern bis 30 kWp gilt seit 2023 ein Umsatzsteuersatz von 0 Prozent, Paragraf 12 Absatz 3 UStG. Anlagen bis 30 kW auf Einfamilienhäusern sind außerdem von Einkommen- und Gewerbesteuer befreit. Für Ihre persönliche Situation fragen Sie bitte Ihre Steuerberatung.</p></details>
+      <details><summary><h3 class="h4">Wie hoch ist die Einspeisevergütung?</h3><i aria-hidden="true"></i></summary><p>Für Anlagen bis 10 kW an oder auf Gebäuden: 7,70 Cent pro kWh bei Überschusseinspeisung, 12,22 Cent bei Volleinspeisung, gültig für Inbetriebnahmen vom 01.08.2026 bis 31.01.2027. Der Anspruch läuft 20 Jahre plus das Inbetriebnahmejahr. Die Sätze sinken halbjährlich um 1 Prozent. Quelle: Bundesnetzagentur, abgerufen 03.09.2026.</p></details>
+      <details><summary><h3 class="h4">Was schreibt das Solarspitzengesetz vor?</h3><i aria-hidden="true"></i></summary><p>Seit 25.02.2025 brauchen neue Anlagen ab 7 kWp ein intelligentes Messsystem und eine Steuerbox. Ohne diese Ausstattung muss die Einspeiseleistung auf 60 Prozent begrenzt werden. Wir legen die Anlage von Anfang an so aus, dass Sie nicht gedrosselt werden.</p></details>
+      <details><summary><h3 class="h4">Wer meldet die Anlage an?</h3><i aria-hidden="true"></i></summary><p>Wir. Die Unterlagen für Stromnetz Berlin erstellen und übermitteln wir, und wir melden die Anlage innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister an. Ohne diese Registrierung entfällt die Vergütung. Was wir nicht steuern können, ist die Bearbeitungszeit beim Netzbetreiber.</p></details>
+      <details><summary><h3 class="h4">Gilt in Berlin eine Solarpflicht?</h3><i aria-hidden="true"></i></summary><p>Das Solargesetz Berlin gilt seit 2023 für Neubauten und für wesentliche Dachumbauten im Bestand ab 50 Quadratmetern Nutzfläche. Dann müssen mindestens 30 Prozent der Dachfläche mit Photovoltaik belegt werden. Für einen freiwilligen Aufbau auf einem bestehenden Dach gilt die Pflicht nicht.</p></details>
+    </div>
+  </div>
+</section>
+<style>
+.faq{border-bottom:1px solid var(--line)}
+@media(min-width:860px){
+  .faq{column-count:2;column-gap:var(--s8);column-rule:1px solid var(--line)}
+}
+.faq details{border-top:1px solid var(--line);break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
+.faq summary{cursor:pointer;list-style:none;padding:var(--s5) 0;display:flex;justify-content:space-between;gap:var(--s4);align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);position:relative}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;background:var(--accent);left:50%;top:50%;transform:translate(-50%,-50%)}
+.faq summary i::before{width:11px;height:1.6px}
+.faq summary i::after{width:1.6px;height:11px;transition:.16s}
+.faq details[open] summary i::after{height:0}
+.faq p{margin:0 0 var(--s5);font-size:15px;color:var(--ink-2);line-height:1.6;max-width:56ch}
+</style>
+
+<!-- ================= Häufige Fragen ================= -->
+<section class="sec sm" id="fragen">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <h2 class="d2" style="max-width:16ch"><span class="script">Häufige</span> Fragen <span class="mute">vor der Entscheidung</span></h2>
+      <p class="body" style="margin-left:auto">Wenn Ihre Frage hier nicht steht, rufen Sie an. Sie sprechen direkt mit Julian Fritz.</p>
+    </div>
+    <div class="faq" style="margin-top:var(--s7)">
+      <details open><summary><h3 class="h4">Was kostet eine Photovoltaikanlage wirklich?</h3><i aria-hidden="true"></i></summary><p>Das hängt von der Dachfläche, der Ausrichtung, dem Zählerschrank und davon ab, ob ein Speicher dazukommt. Deshalb bekommen Sie von uns keinen Katalogpreis, sondern einen Festpreis für Ihr Dach, schriftlich und bevor Sie sich entscheiden. Die Größenordnungen stehen weiter oben auf dieser Seite.</p></details>
+      <details><summary><h3 class="h4">Muss ich wirklich nichts anzahlen?</h3><i aria-hidden="true"></i></summary><p>Nein. Sie zahlen keinen Cent vor der Inbetriebnahme, auch keine Teilzahlung. Die Rechnung kommt, wenn die Anlage läuft. Die ersten 12 Monate danach sind zinsfrei.</p></details>
+      <details><summary><h3 class="h4">Wie lange dauert das von der Anfrage bis zum Strom?</h3><i aria-hidden="true"></i></summary><p>In der Regel 2 bis 4 Wochen. Die Dachmontage selbst dauert meist einen Tag, bei größeren Anlagen zwei. Was die Gesamtzeit verlängern kann, ist die Bearbeitung beim Netzbetreiber. Das sagen wir vorher, statt es zu verschweigen.</p></details>
+      <details><summary><h3 class="h4">Wie viel Strom bringt meine Anlage?</h3><i aria-hidden="true"></i></summary><p>In Berlin rechnen wir mit 900 bis 1.100 kWh pro installiertem kWp und Jahr. Eine 9-kWp-Anlage liefert also etwa 8.100 bis 9.900 kWh. Was Sie davon selbst nutzen, entscheidet über die Ersparnis: 30 bis 40 Cent pro selbst verbrauchter Kilowattstunde, 7,70 Cent für eingespeisten Strom.</p></details>
+      <details><summary><h3 class="h4">Lohnt sich ein Speicher?</h3><i aria-hidden="true"></i></summary><p>Oft, aber nicht immer. Er hebt den Eigenverbrauch von rund 30 auf 70 bis 80 Prozent und verlängert die Amortisation um einige Jahre. Wenn Sie Ihren Strom überwiegend tagsüber verbrauchen, kann die Anlage ohne Speicher wirtschaftlicher sein. Wir rechnen beide Varianten und sagen Ihnen, welche besser dasteht.</p></details>
+      <details><summary><h3 class="h4">Brauche ich eine Baugenehmigung?</h3><i aria-hidden="true"></i></summary><p>In den meisten Fällen nicht. Bei Sonderfällen, etwa Denkmalschutz oder auffälliger Dachstatik, prüfen wir das vorab und sagen es Ihnen, bevor etwas geplant wird.</p></details>
+      <details><summary><h3 class="h4">Was passiert bei einem Stromausfall?</h3><i aria-hidden="true"></i></summary><p>Eine Standardanlage schaltet sich ab, das schreibt die Netzsicherheit vor. Mit einer Ersatzstromlösung versorgt die Anlage Ihr Haus weiter, auch ohne öffentliches Netz. Ob das sinnvoll ist, hängt von Ihrem Bedarf ab.</p></details>
+      <details><summary><h3 class="h4">Wer steigt auf mein Dach?</h3><i aria-hidden="true"></i></summary><p>Diese Frage beantworten wir Ihnen im Erstgespräch konkret, mit Namen.<!-- KLÄREN: eigene Monteure oder Partnerbetrieb --></p></details>
+      <details><summary><h3 class="h4">Was ist, wenn nach der Montage etwas nicht funktioniert?</h3><i aria-hidden="true"></i></summary><p>Wir sehen Ihre Anlage über die Fernüberwachung. Eine Störung erkennen wir meist, bevor Sie sie merken, und melden uns dann bei Ihnen. Wenn wir vor Ort müssen, kommen wir. Sie haben eine Nummer und einen Namen, keine Ticket-Hotline.</p></details>
+      <details><summary><h3 class="h4">Wie muss ich die Anlage warten?</h3><i aria-hidden="true"></i></summary><p>Praktisch nicht. Die Komponenten sind wartungsfrei, die Fernüberwachung übernimmt die Kontrolle. Eine Sichtprüfung nach starkem Unwetter ist sinnvoll, mehr nicht.</p></details>
+      <details><summary><h3 class="h4">Brauche ich eine Versicherung?</h3><i aria-hidden="true"></i></summary><p>Sinnvoll ja, gegen Sturm, Hagel und Überspannung. Meist lässt sich die Anlage günstig in die bestehende Wohngebäudeversicherung aufnehmen. Sprechen Sie vorher mit Ihrem Versicherer, wir sagen Ihnen, welche Angaben er braucht.</p></details>
+      <details><summary><h3 class="h4">Macht ihr auch Wärmepumpen?</h3><i aria-hidden="true"></i></summary><p>Wir legen Ihre Photovoltaikanlage so aus, dass eine Wärmepumpe später dazu passt, inklusive Netzanmeldung nach Paragraf 14a EnWG.<!-- KLÄREN: angeboten, vermittelt oder nicht --></p></details>
+      <details><summary><h3 class="h4">Bekomme ich Förderung in Berlin?</h3><i aria-hidden="true"></i></summary><p>Für den Speicher zu einer neuen Anlage in der Regel ja, über SolarPLUS. Wir sagen Ihnen im Beratungstermin, welche Stufe für Ihre Anlagengröße greift und was der Antrag braucht. Wichtig: erst beantragen, dann bauen.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Mehrfamilienhäuser ================= -->
+<section class="sec sm" id="mfh">
+  <div class="wrap">
+    <div class="split" style="align-items:end">
+      <div>
+        <p class="label">Vermieter und Eigentümergemeinschaften</p>
+        <h2 class="d2" style="margin-top:var(--s4);max-width:20ch">Photovoltaik für <span class="script">Mehrfamilien&shy;häuser</span> <span class="mute">in Berlin</span></h2>
+      </div>
+      <p class="body" style="margin-left:auto">Beim Mehrfamilienhaus entscheidet nicht das Dach, sondern das Zählerkonzept. Wir haben in Berlin-Weißensee eine Anlage auf einem Mehrfamilienhaus gebaut und wissen, wo es hakt.</p>
+    </div>
+    <div class="cells c4" style="margin-top:var(--s7)" data-reveal>
+      <div>
+        <span class="circ sm outline" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 11h16M9 6V4M15 6V4"/></svg></span>
+        <h3 class="h4" style="margin-top:var(--s4)">Zählerkonzept zuerst</h3>
+        <p class="small" style="margin-top:8px">Wer bekommt welchen Strom, und wie wird abgerechnet? Das klären wir, bevor ein Modul geplant wird.</p>
+      </div>
+      <div>
+        <span class="circ sm outline" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-5h6v5"/></svg></span>
+        <h3 class="h4" style="margin-top:var(--s4)">Gemeinschaftliche Gebäudeversorgung</h3>
+        <p class="small" style="margin-top:8px">Bleibt der Strom im Haus, ohne öffentliches Netz, ist es rechtlich gemeinschaftliche Gebäudeversorgung. Seit dem Solarpaket I 2024 deutlich einfacher als Mieterstrom.</p>
+      </div>
+      <div>
+        <span class="circ sm outline" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="12" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M10 11l4-3M10 13l4 3"/></svg></span>
+        <h3 class="h4" style="margin-top:var(--s4)">Energy Sharing</h3>
+        <p class="small" style="margin-top:8px">Seit Juni 2026 dürfen Sie Solarstrom über das öffentliche Netz mit Nachbarn teilen. Voraussetzung sind ein Liefervertrag und Smart Meter bei allen Beteiligten. Netzentgelte fallen an.</p>
+      </div>
+      <div>
+        <span class="circ sm blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 10l7-7 7 7"/></svg></span>
+        <h3 class="h4" style="margin-top:var(--s4)">SolarPLUS L, bis 30.000 €</h3>
+        <p class="small" style="margin-top:8px">Für Eigentümergemeinschaften, vermietende Eigentümer, Genossenschaften und Wohnungsgesellschaften. Speicherförderung 30 bis 50 Prozent, Messplätze und Zählerkonzepte bis 15.000 Euro.</p>
+      </div>
+    </div>
+    <div class="split" style="margin-top:var(--s6);align-items:center">
+      <p class="body"><b style="color:var(--ink)">Ablauf mit Beschluss.</b> Bei einer WEG hängt der Zeitplan an der Beschlussfassung. Wir liefern die Unterlagen so, dass Sie damit in die Versammlung gehen können: Layout, Ertrag, Kosten, Förderung, Amortisation.</p>
+      <div class="cta" style="margin-left:auto">
+        <a class="pill" href="#anfrage">Anfrage für Mehrfamilienhaus</a>
+        <a class="circ" href="#anfrage" aria-label="Zum Anfrageformular"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Anfrage ================= -->
+<section class="sec sm" id="anfrage">
+  <div class="wrap">
+    <div class="split divided" style="align-items:start">
+      <div>
+        <p class="label">Anfrage</p>
+        <h2 class="d1" style="margin-top:var(--s4);max-width:14ch">Festpreis-Angebot <span class="script">anfordern</span></h2>
+        <p class="body" style="margin-top:var(--s6)">Vier Angaben genügen. Wir melden uns innerhalb von 24 Stunden, machen einen Termin und messen Ihr Dach auf. Danach bekommen Sie einen schriftlichen Festpreis. Bezahlt wird erst, wenn die Anlage läuft.</p>
+        <ul class="trust">
+          <li>0 Euro Anzahlung</li>
+          <li>Zahlung erst nach der Inbetriebnahme</li>
+          <li>Rückmeldung in 24 Stunden</li>
+        </ul>
+        <div class="hl" style="margin-top:var(--s6);padding-top:var(--s5)">
+          <p class="small">Lieber telefonisch:</p>
+          <div class="cta" style="margin-top:var(--s3)">
+            <a class="pill dark" href="tel:+493054820545">030 548 205 45</a>
+            <a class="under" href="#anfrage">Rückruf anfordern</a>
+          </div>
+        </div>
+      </div>
+      <form novalidate>
+        <div class="ftabs" role="group" aria-label="Gebäudeart">
+          <input type="radio" name="geb" id="g1" checked><label for="g1">Einfamilienhaus</label>
+          <input type="radio" name="geb" id="g2"><label for="g2">Mehrfamilienhaus</label>
+          <input type="radio" name="geb" id="g3"><label for="g3">Gewerbe</label>
+        </div>
+        <div class="fld"><label for="a1">Adresse des Hauses</label><input id="a1" name="adresse" placeholder="Straße, Hausnummer, PLZ" autocomplete="street-address"></div>
+        <div class="fld"><label for="a2">Stromverbrauch pro Jahr</label><input id="a2" name="verbrauch" placeholder="4500" inputmode="numeric"><span class="hint">In kWh. Steht auf Ihrer Stromrechnung.</span></div>
+        <div class="fld"><label for="a3">Name</label><input id="a3" name="name" placeholder="Vor- und Nachname" autocomplete="name"></div>
+        <div class="fld"><label for="a4">Telefon oder E-Mail</label><input id="a4" name="kontakt" placeholder="Nummer oder E-Mail"></div>
+        <div class="fld">
+          <label for="a5">Foto vom Dach, optional</label>
+          <div class="drop"><span class="tiny">Datei auswählen oder hierher ziehen</span></div>
+          <input id="a5" name="dachfoto" type="file" accept="image/*" style="position:absolute;opacity:0;width:1px;height:1px">
+        </div>
+        <button class="pill lg" type="submit" style="width:100%;margin-top:var(--s4)">Festpreis-Angebot anfordern</button>
+        <p class="tiny center" style="margin-top:var(--s4)">Kostenlos und unverbindlich. Wir rufen nicht mehrfach an.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+.trust{list-style:none;padding:0;margin:var(--s6) 0 0;border-top:1px solid var(--line)}
+.trust li{position:relative;padding:12px 0 12px 30px;border-bottom:1px solid var(--line);font-size:15px}
+.trust li::before{content:"";position:absolute;left:0;top:19px;width:8px;height:5px;border-left:1.8px solid var(--accent);border-bottom:1.8px solid var(--accent);transform:rotate(-45deg)}
+form{display:flex;flex-direction:column;gap:var(--s4)}
+.ftabs{display:flex;gap:5px;background:var(--fill);border-radius:var(--r-pill);padding:5px}
+.ftabs input{position:absolute;opacity:0;pointer-events:none}
+.ftabs label{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:var(--r-pill);font-size:13px;font-weight:600;color:var(--ink-3);cursor:pointer;transition:.14s}
+.ftabs input:checked + label{background:#fff;color:var(--ink)}
+.fld{position:relative}
+.fld label{display:block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.fld input{width:100%;font-family:var(--font);font-size:15.5px;color:var(--ink);background:#fff;border:0;border-bottom:1px solid var(--line-2);border-radius:0;padding:12px 2px;transition:.15s}
+.fld input::placeholder{color:var(--mute)}
+.fld input:hover{border-bottom-color:var(--ink-3)}
+.fld input:focus{outline:none;border-bottom-color:var(--accent);border-bottom-width:2px}
+.fld .hint{font-size:12px;color:var(--ink-3);margin-top:7px;display:block}
+.drop{border:1px dashed var(--line-2);padding:var(--s5);text-align:center}
+</style>
+
+<!-- ================= Footer ================= -->
+<footer class="black">
+  <div class="wrap" style="padding-top:var(--s9);padding-bottom:var(--s6)">
+    <div class="split" style="align-items:start">
+      <div>
+        <h2 class="d2" style="max-width:16ch"><span class="script">Bereit</span> für Ihr Festpreis-Angebot?</h2>
+        <p class="small" style="margin-top:var(--s5);max-width:40ch">0 Euro Anzahlung, Zahlung erst nach der Inbetriebnahme. Photovoltaik, Speicher und Wallbox in Berlin und Brandenburg.</p>
+        <address style="font-style:normal;margin-top:var(--s6);font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.66)">
+          <span class="lockup">Solartechnik <span class="script">Fritz</span></span> <span style="color:rgba(255,255,255,.5)">GmbH</span><br>
+          Prenzlauer Promenade 49b, 13089 Berlin<br>
+          <a href="tel:+493054820545" style="color:inherit">030 548 205 45</a> · <a href="mailto:info@solartechnik-fritz.de" style="color:inherit">info@solartechnik-fritz.de</a><br>
+          Erreichbar: <span class="tbd" style="color:rgba(255,255,255,.4)">offen</span><br>
+          HRB 283382 B, AG Charlottenburg, USt-IdNr. DE462126640
+        </address>
+      </div>
+      <div class="footcols">
+        <div>
+          <p class="fh">Leistungen</p>
+          <a href="#technik">Photovoltaik</a><a href="#speicher">Stromspeicher</a><a href="#wallbox">Wallbox</a><a href="#foerderung">Netzanmeldung</a>
+        </div>
+        <div>
+          <p class="fh">Unternehmen</p>
+          <a href="#team">Über uns</a><a href="#referenzen">Referenzen</a><a href="#rechner">Rechner</a><a href="#fragen">Häufige Fragen</a>
+        </div>
+        <div>
+          <p class="fh">Gebiet</p>
+          <a href="#referenzen">Pankow</a><a href="#referenzen">Weißensee</a><a href="#referenzen">Kladow</a><a href="#referenzen">Neuenhagen</a>
+        </div>
+        <div>
+          <p class="fh">Rechtliches</p>
+          <a href="https://solartechnik-fritz.de/impressum/">Impressum</a><a href="https://solartechnik-fritz.de/datenschutz/">Datenschutz</a><a href="https://solartechnik-fritz.de/agbs/">AGB</a>
+        </div>
+      </div>
+    </div>
+    <p class="tiny" style="margin-top:var(--s7);color:rgba(255,255,255,.4);max-width:96ch">Wir bauen Photovoltaikanlagen in Berlin und im Umland, unter anderem in Pankow, Weißensee, Prenzlauer Berg, Kladow, Spandau, Reinickendorf, Lichtenberg und Treptow-Köpenick, sowie in Brandenburg in Neuenhagen, Hoppegarten, Bernau, Falkensee, Königs Wusterhausen und Potsdam. Angaben zu Förderung, Steuern und Einspeisevergütung: Stand September 2026. Keine Steuer- oder Rechtsberatung.<!-- KLÄREN: Liste auf das echte Einzugsgebiet kuerzen --></p>
+    <div class="hlD row" style="margin-top:var(--s6);padding-top:var(--s5);justify-content:space-between">
+      <p class="tiny legal" style="color:rgba(255,255,255,.5)"><a href="https://solartechnik-fritz.de/impressum/">Impressum</a> · <a href="https://solartechnik-fritz.de/datenschutz/">Datenschutz</a> · <a href="https://solartechnik-fritz.de/agbs/">AGB</a></p>
+      <a class="pill white" href="#anfrage">Jetzt anfragen</a>
+    </div>
+  </div>
+</footer>
+<style>
+.footcols{display:grid;gap:var(--s6) var(--s7);grid-template-columns:repeat(2,minmax(0,1fr))}
+.footcols > *{min-width:0}
+@media(min-width:1100px){.footcols{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s6)}}
+.fh{font-size:14.5px;font-weight:600;color:#fff;margin:0 0 var(--s4)}
+.lockup{font-size:19px;font-weight:600;letter-spacing:-.02em;color:#fff}
+.lockup .script{font-size:1.24em}
+.footcols a{display:block;font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;padding:5px 0;overflow-wrap:normal;hyphens:auto}
+.footcols a:hover{color:#fff}
+.legal a{color:inherit;text-decoration:none}
+.legal a:hover{color:#fff;text-decoration:underline}
+</style>
+
+<nav class="mobar" aria-label="Schnellzugriff">
+  <a class="a1" href="tel:+493054820545">Anrufen</a>
+  <a class="a2" href="#anfrage">Festpreis anfordern</a>
+</nav>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://solartechnik-fritz.de/#betrieb","name":"Solartechnik Fritz GmbH","url":"https://solartechnik-fritz.de/","telephone":"+49 30 54820545","email":"info@solartechnik-fritz.de","address":{"@type":"PostalAddress","streetAddress":"Prenzlauer Promenade 49b","postalCode":"13089","addressLocality":"Berlin","addressCountry":"DE"},"areaServed":[{"@type":"City","name":"Berlin"},{"@type":"AdministrativeArea","name":"Brandenburg"}],"description":"Fachbetrieb für Photovoltaikanlagen, Stromspeicher und Wallboxen in Berlin und Brandenburg. Festpreis vor der Entscheidung, 0 Euro Anzahlung, Zahlung erst nach der Inbetriebnahme.","founder":{"@type":"Person","name":"Julian Fritz"},"knowsAbout":["Photovoltaik","Stromspeicher","Wallbox","Netzanmeldung","SolarPLUS Berlin"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet eine Photovoltaikanlage in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Das hängt von der Dachfläche, der Ausrichtung, dem Zählerschrank und davon ab, ob ein Speicher dazukommt. Sie bekommen einen Festpreis für Ihr Dach, schriftlich und bevor Sie sich entscheiden."}},
+{"@type":"Question","name":"Muss ich bei Solartechnik Fritz etwas anzahlen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Sie zahlen keinen Cent vor der Inbetriebnahme, auch keine Teilzahlung. Die Rechnung kommt, wenn die Anlage läuft. Die ersten 12 Monate danach sind zinsfrei."}},
+{"@type":"Question","name":"Wie lange dauert die Installation einer Photovoltaikanlage?","acceptedAnswer":{"@type":"Answer","text":"In der Regel 2 bis 4 Wochen von der Anfrage bis zur Inbetriebnahme. Die Dachmontage dauert meist einen Tag, bei größeren Anlagen zwei. Die Bearbeitungszeit beim Netzbetreiber kann die Gesamtzeit verlängern."}},
+{"@type":"Question","name":"Wie viel Strom bringt eine Photovoltaikanlage in Berlin?","acceptedAnswer":{"@type":"Answer","text":"In Berlin rechnen wir mit 900 bis 1.100 kWh pro installiertem kWp und Jahr. Eine 9-kWp-Anlage liefert etwa 8.100 bis 9.900 kWh. Selbst verbrauchter Strom spart 30 bis 40 Cent pro Kilowattstunde, eingespeister bringt 7,70 Cent."}},
+{"@type":"Question","name":"Lohnt sich ein Stromspeicher?","acceptedAnswer":{"@type":"Answer","text":"Oft, aber nicht immer. Ein Speicher hebt den Eigenverbrauch von rund 30 auf 70 bis 80 Prozent und verlängert die Amortisation um einige Jahre. Wer seinen Strom überwiegend tagsüber verbraucht, fährt ohne Speicher unter Umständen wirtschaftlicher."}},
+{"@type":"Question","name":"Was fördert SolarPLUS in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Berlin fördert über SolarPLUS S für Ein- und Zweifamilienhäuser je nach Anlagengröße 500 bis 4.750 Euro für einen Stromspeicher zu einer neuen Anlage und 750 Euro Pauschale für einen neuen Zählerschrank. Für Mehrfamilienhäuser und Eigentümergemeinschaften greift SolarPLUS L mit bis zu 30.000 Euro. Stand September 2026."}},
+{"@type":"Question","name":"Wie hoch ist die Einspeisevergütung 2026?","acceptedAnswer":{"@type":"Answer","text":"Für Anlagen bis 10 kW an oder auf Gebäuden 7,70 Cent pro kWh bei Überschusseinspeisung und 12,22 Cent bei Volleinspeisung, für Inbetriebnahmen vom 1. August 2026 bis 31. Januar 2027. Der Anspruch läuft 20 Jahre plus Inbetriebnahmejahr."}},
+{"@type":"Question","name":"Wer meldet die Photovoltaikanlage beim Netzbetreiber an?","acceptedAnswer":{"@type":"Answer","text":"Solartechnik Fritz erstellt und übermittelt die Unterlagen an Stromnetz Berlin und meldet die Anlage innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister an. Ohne diese Registrierung entfällt die Vergütung."}},
+{"@type":"Question","name":"Zahle ich Umsatzsteuer auf eine Photovoltaikanlage?","acceptedAnswer":{"@type":"Answer","text":"Nein. Auf Lieferung und Installation von Photovoltaikanlagen und Speichern bis 30 kWp gilt seit 2023 ein Umsatzsteuersatz von 0 Prozent nach Paragraf 12 Absatz 3 UStG."}},
+{"@type":"Question","name":"Gilt in Berlin eine Solarpflicht?","acceptedAnswer":{"@type":"Answer","text":"Das Solargesetz Berlin gilt seit 2023 für Neubauten und wesentliche Dachumbauten im Bestand ab 50 Quadratmetern Nutzfläche. Dann müssen mindestens 30 Prozent der Dachfläche mit Photovoltaik belegt werden. Für einen freiwilligen Aufbau auf einem bestehenden Dach gilt die Pflicht nicht."}}]}
+</script>
+<script>
+/* Kleine Helfer: Einblenden beim Scrollen und zwei Karussells. Kein Framework. */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Einblenden ---- */
+  var rev = [].slice.call(document.querySelectorAll('[data-reveal]'));
+  if (rev.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      rev.forEach(function(e){ e.classList.add('reveal','is-in'); });
+    } else {
+      rev.forEach(function(e){ e.classList.add('reveal'); });
+      var io = new IntersectionObserver(function(en){
+        en.forEach(function(x){ if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
+      }, { rootMargin:'0px 0px -10% 0px', threshold:0.12 });
+      rev.forEach(function(e){ io.observe(e); });
+    }
+  }
+
+  /* ---- Karussells ---- */
+  [].slice.call(document.querySelectorAll('[data-carousel]')).forEach(function(root){
+    var id = root.getAttribute('data-carousel');
+    var track = document.getElementById(id);
+    if (!track) return;
+    var slides = [].slice.call(track.children);
+    var n = slides.length;
+    if (n < 2) return;
+    var mode = root.getAttribute('data-mode') || 'scroll';
+    var interval = parseInt(root.getAttribute('data-interval') || '7000', 10);
+    var i = 0, timer = null, paused = false;
+    var count  = document.querySelector('[data-count="'+id+'"]');
+    var bar    = document.querySelector('[data-bar="'+id+'"]');
+    var dotbox = document.querySelector('[data-dots="'+id+'"]');
+    var dots = [];
+
+    if (dotbox) {
+      for (var k = 0; k < n; k++) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Zu Eintrag ' + (k+1));
+        b.addEventListener('click', (function(x){ return function(){ go(x, true); }; })(k));
+        dotbox.appendChild(b);
+        dots.push(b);
+      }
+    }
+
+    function paint(){
+      if (count) count.textContent = (i+1) + ' / ' + n;
+      dots.forEach(function(d, x){ if (x === i) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
+      if (mode === 'slide') slides.forEach(function(sl, x){ sl.setAttribute('aria-hidden', x === i ? 'false' : 'true'); });
+    }
+    function move(){
+      if (mode === 'slide') {
+        track.style.transform = 'translateX(' + (-100*i) + '%)';
+      } else {
+        var left = slides[i].getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+        if (track.scrollTo) track.scrollTo({ left: left, behavior: reduce ? 'auto' : 'smooth' });
+        else track.scrollLeft = left;
+      }
+      paint();
+    }
+    function go(x, manual){ i = (x + n) % n; move(); if (manual) restart(); }
+    function runbar(){
+      if (!bar) return;
+      bar.classList.remove('run');
+      bar.style.width = '0%';
+      if (reduce || paused) return;
+      void bar.offsetWidth;
+      bar.style.transitionDuration = interval + 'ms';
+      bar.classList.add('run');
+      bar.style.width = '100%';
+    }
+    function start(){ if (reduce) return; stop(); runbar(); timer = setInterval(function(){ if (!paused) { go(i+1); runbar(); } }, interval); }
+    function stop(){ if (timer) { clearInterval(timer); timer = null; } }
+    function restart(){ stop(); start(); }
+
+    [].slice.call(document.querySelectorAll('[data-car="'+id+'"]')).forEach(function(btn){
+      btn.addEventListener('click', function(){ go(i + parseInt(btn.getAttribute('data-dir'), 10), true); });
+    });
+
+    root.addEventListener('mouseenter', function(){
+      paused = true;
+      if (bar) { var w = getComputedStyle(bar).width; bar.classList.remove('run'); bar.style.width = w; }
+    });
+    root.addEventListener('mouseleave', function(){ paused = false; runbar(); });
+    root.addEventListener('focusin',  function(){ paused = true; });
+    root.addEventListener('focusout', function(){ paused = false; });
+
+    if (mode === 'scroll') {
+      var t = null;
+      track.addEventListener('scroll', function(){
+        clearTimeout(t);
+        t = setTimeout(function(){
+          var best = 0, bd = 1e9, tl = track.getBoundingClientRect().left;
+          slides.forEach(function(sl, x){
+            var d = Math.abs(sl.getBoundingClientRect().left - tl);
+            if (d < bd) { bd = d; best = x; }
+          });
+          if (best !== i) { i = best; paint(); }
+        }, 130);
+      }, { passive: true });
+    }
+
+    track.setAttribute('tabindex', '0');
+    track.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(i+1, true); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i-1, true); }
+    });
+
+    paint();
+    if (!('IntersectionObserver' in window)) { start(); return; }
+    var vis = new IntersectionObserver(function(en){
+      en.forEach(function(x){ if (x.isIntersecting) start(); else stop(); });
+    }, { threshold: 0.25 });
+    vis.observe(root);
+  });
+})();
+</script>
+</body>
+</html>
