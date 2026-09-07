@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gebäudereinigung &amp; Hausmeisterservice in Erfurt · Nauendorff</title>
+<meta name="description" content="Treppenhaus, Fenster, Außenanlage und Winterdienst in Erfurt. Ein Ansprechpartner, Festangebot in einem Werktag, jeder Termin dokumentiert.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="bilder/logo-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;--ground:#F8F7F4;--ink:#101215;--soft:#1A1D21;--grey:#7A7F86;--grey2:#9AA0A7;
+  --line:#E8E5DF;--line2:#F0EEE9;--signal:#DD5F13;
+  --maxw:1200px;--r:12px;--r2:16px;--r3:22px;
+  --sh:0 1px 2px rgba(16,18,21,.04),0 8px 24px rgba(16,18,21,.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:400 15.5px/1.62 "DM Sans",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.025em;line-height:1.08}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative}
+
+/* feine senkrechte Hilfslinien wie in der Referenz */
+.rules{position:absolute;inset:0;pointer-events:none;z-index:0}
+.rules i{position:absolute;top:0;bottom:0;width:1px;background:var(--line2)}
+.rules i:nth-child(1){left:33.333%}
+.rules i:nth-child(2){left:66.666%}
+.z{position:relative;z-index:1}
+
+/* Pillen, Buttons */
+.pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--paper);
+  border-radius:999px;padding:7px 15px;font-size:12.5px;color:var(--ink)}
+.pill.dim{color:var(--grey)}
+.btn{display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;font-family:inherit;
+  font-size:14.5px;font-weight:500;padding:14px 24px;border-radius:999px;transition:.18s}
+.btn-d{background:var(--ink);color:#fff}
+.btn-d:hover{background:#000}
+.btn-o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-o:hover{border-color:var(--ink)}
+.btn-w{background:#fff;color:var(--ink);box-shadow:0 6px 22px rgba(0,0,0,.18)}
+.btn-w:hover{transform:translateY(-1px)}
+.arrows{display:flex;align-items:center;gap:14px}
+.arrows button{background:none;border:0;cursor:pointer;font-size:17px;color:var(--grey);padding:6px}
+.arrows button.c{border:1px solid var(--line);border-radius:999px;width:44px;height:44px;color:var(--ink);
+  display:grid;place-items:center;background:var(--paper)}
+.arrows button.c:hover{border-color:var(--ink)}
+
+/* Sektionskopf */
+.sec{padding:104px 0}
+.sec.tight{padding-top:0}
+.shead{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end}
+.shead .lead{font-size:clamp(28px,3.9vw,46px)}
+.shead .side p{margin:0;color:var(--grey);font-size:14.5px;max-width:44ch}
+.shead .side{padding-bottom:6px}
+.shead .side .btn{margin-top:20px}
+@media(max-width:900px){.shead{grid-template-columns:1fr;gap:18px;align-items:start}}
+.mark-pill{margin-bottom:22px}
+
+/* NAVBAR, schwebende Pille */
+.nav{position:sticky;top:0;z-index:70;padding:18px 22px 0;background:linear-gradient(180deg,var(--ground) 62%,rgba(248,247,244,0))}
+.nav .bar{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:26px;background:var(--paper);
+  border:1px solid var(--line);border-radius:999px;padding:9px 10px 9px 14px;box-shadow:0 1px 2px rgba(16,18,21,.04),0 10px 30px rgba(16,18,21,.06)}
+.nav .mk{display:flex;align-items:center;gap:11px;flex:none}
+.nav .badge2{width:38px;height:38px;border-radius:999px;background:var(--signal);color:#fff;display:grid;place-items:center;
+  font-weight:700;font-size:17px;line-height:1;flex:none}
+.nav .mk b{font-size:19px;font-weight:700;letter-spacing:-.02em}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{font-size:14.5px;color:var(--grey)}
+.nav ul a:hover,.nav ul a[aria-current]{color:var(--ink)}
+.nav .right{display:flex;align-items:center;gap:10px;flex:none}
+.nav .icon{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);flex:none}
+.nav .icon:hover{border-color:var(--ink)}
+.burger{display:none;width:42px;height:42px;border-radius:999px;border:1px solid var(--line);background:var(--paper);
+  cursor:pointer;position:relative;flex:none}
+.burger span{position:absolute;left:12px;right:12px;height:1.6px;background:var(--ink);border-radius:2px;transition:.24s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:25px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.mpanel{display:none;max-width:1120px;margin:10px auto 0;background:var(--paper);border:1px solid var(--line);
+  border-radius:22px;box-shadow:0 1px 2px rgba(16,18,21,.04),0 18px 44px rgba(16,18,21,.1);padding:14px;overflow:hidden}
+.mpanel[data-open="true"]{display:block}
+.mpanel a.mnav{display:flex;align-items:center;justify-content:space-between;padding:13px 12px;font-size:16.5px;
+  border-radius:12px}
+.mpanel a.mnav:after{content:"→";color:var(--grey2)}
+.mpanel a.mnav:hover{background:var(--ground)}
+.mpanel a.mnav+a.mnav{border-top:1px solid var(--line2)}
+.mpanel .macts{display:grid;gap:10px;margin-top:12px;padding-top:14px;border-top:1px solid var(--line)}
+.mpanel .macts .btn{justify-content:center;width:100%}
+@media(max-width:1080px){.nav ul{display:none}.burger{display:block}}
+@media(max-width:1080px){.nav .right .btn,.nav .right .icon{display:none}}
+@media(max-width:560px){.nav{padding:14px 16px 0}.nav .mk b{font-size:17px}.nav .badge2{width:34px;height:34px;font-size:15px}.nav .bar{padding:8px 8px 8px 12px}.hero{padding-top:46px}}
+
+/* HERO, zentriert mit Bento */
+.hero{padding:74px 0 0;text-align:center}
+.hero h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.06;
+  font-size:clamp(31px,4.3vw,52px);max-width:25ch;margin:0 auto;text-wrap:balance}
+.hero .sub{color:var(--grey);font-size:16px;max-width:64ch;margin:26px auto 0}
+.hero .acts{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:34px;flex-wrap:wrap}
+.hero .acts .split{display:flex;align-items:center;gap:6px}
+.hero .acts .round{width:52px;height:52px;border-radius:999px;background:var(--signal);color:#fff;display:grid;place-items:center;font-size:17px;flex:none}
+.hero .acts .round:hover{background:#c9530c}
+.btn-soft{background:#ECEBE7;color:var(--ink)}
+.btn-soft:hover{background:#E3E1DC}
+
+.bento{display:grid;grid-template-columns:1fr 1.06fr 1fr;gap:18px;margin-top:60px;text-align:left}
+.bento>*{min-width:0}
+.bcol{display:grid;gap:18px;grid-template-rows:auto 1fr}
+.tile{background:#EFEEEB;border-radius:var(--r2);padding:26px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:center}
+.tile .num{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(38px,4.4vw,54px);line-height:1;letter-spacing:-.02em}
+.tile .num i{font-style:normal;font-size:.5em;color:var(--signal)}
+.tile .cap2{display:block;margin-top:10px;font-size:13.5px;color:var(--grey)}
+.avrow{display:flex;align-items:center;gap:0;margin-top:22px}
+.avrow span{width:38px;height:38px;border-radius:999px;background:#fff;border:2px solid #EFEEEB;display:grid;place-items:center;
+  font-size:12px;font-weight:700;margin-left:-10px}
+.avrow span:first-child{margin-left:0}
+.avrow em{font-style:normal;margin-left:12px;font-size:13px;color:var(--grey)}
+.cloud{display:grid;gap:8px;margin:20px -26px 0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 13%,#000 87%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 13%,#000 87%,transparent 100%)}
+.gw-row{overflow:hidden}
+.gw-track{display:flex;width:max-content;will-change:transform;
+  animation:gw-pan var(--dur,32s) linear infinite}
+.gw-row:nth-child(1) .gw-track{--dur:34s}
+.gw-row:nth-child(2) .gw-track{--dur:41s}
+.gw-row:nth-child(3) .gw-track{--dur:28s}
+.gw-rev .gw-track{animation-direction:reverse}
+.cloud:hover .gw-track,.cloud:focus-within .gw-track{animation-play-state:paused}
+@keyframes gw-pan{from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(calc(-100% / var(--reps,2)),0,0)}}
+.gw-track span{margin-right:8px}
+.cloud span{background:#fff;border-radius:999px;padding:7px 13px;font-size:12.5px;white-space:nowrap;display:inline-flex;gap:6px;align-items:center;color:#3B4046}
+.cloud span:before{content:"✳";color:var(--signal);font-size:11px}
+@media(prefers-reduced-motion:reduce){.gw-track{animation:none}
+  .gw-row{overflow-x:auto;scrollbar-width:none}.gw-row::-webkit-scrollbar{display:none}}
+.shotbig{border-radius:var(--r2);overflow:hidden;background:#EFEEEB;height:100%;min-height:420px;position:relative}
+.shotbig img{width:100%;height:100%;object-fit:cover}
+.shotwrap{border-radius:var(--r2);overflow:hidden;position:relative}
+.shotwrap img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.glass{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);display:inline-flex;align-items:center;gap:13px;
+  background:rgba(16,18,21,.46);border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(12px);
+  border-radius:12px;padding:12px 14px;color:#fff}
+.glass b{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:34px;line-height:1;flex:none}
+.glass span{font-size:12.5px;line-height:1.35}
+@media(max-width:1000px){.bento{grid-template-columns:1fr 1fr}.shotbig{min-height:320px}.cloud{margin:20px -34px 0}}
+@media(max-width:620px){.bento{grid-template-columns:1fr}}
+
+/* ÜBER UNS, zentriert */
+.center{text-align:center}
+.center h2{font-size:clamp(28px,3.9vw,44px);margin:22px 0 16px}
+.center p{margin:0 auto;color:var(--grey);max-width:62ch;font-size:14.5px}
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:780px;margin:56px auto 0}
+.mosaic figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--line2)}
+.mosaic img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:.4s}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figure:nth-child(2),.mosaic figure:nth-child(5){transform:translateY(-26px)}
+@media(max-width:640px){.mosaic{gap:10px;max-width:none;margin-top:38px}
+  .mosaic figure:nth-child(2),.mosaic figure:nth-child(5){transform:translateY(-14px)}}
+
+/* LEISTUNGEN: dunkles Panel mit waagerecht scrollenden Karten */
+.pdark{background:var(--ink);border-radius:30px;padding:56px 40px 44px;position:relative;overflow:hidden}
+.pdark:before{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 50% -10%,rgba(255,255,255,.06),transparent 60%);pointer-events:none}
+.pd-head{text-align:center;position:relative;max-width:760px;margin:0 auto 38px}
+.pd-head h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:#fff;letter-spacing:-.02em;
+  line-height:1.1;font-size:clamp(26px,3.4vw,42px)}
+.pd-head p{margin:18px auto 0;color:#A9AEB4;font-size:15px;max-width:56ch}
+.scroller{position:relative;margin:0 -40px;padding:0 40px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x proximity;scroll-padding-inline:40px;scrollbar-width:thin;scrollbar-color:#3A3F45 transparent;-webkit-overflow-scrolling:touch}
+.scroller:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:#3A3F45;border-radius:99px}
+.scroller::-webkit-scrollbar-track{background:transparent}
+.srow{display:flex;gap:18px;padding-bottom:18px;width:max-content}
+.lcard{flex:0 0 clamp(212px,17.2vw,252px);scroll-snap-align:start;background:var(--paper);
+  border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s}
+.lcard:hover{transform:translateY(-3px)}
+.lpic{position:relative;overflow:hidden;background:#22262A}
+.lpic img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .45s}
+.lcard:hover .lpic img{transform:scale(1.05)}
+.lpic .badge{position:absolute;top:10px;left:10px;background:rgba(16,18,21,.72);color:#fff;border-radius:999px;
+  padding:5px 10px;font-size:10.5px;backdrop-filter:blur(5px)}
+.lpic .det2{position:absolute;inset:auto 0 0 0;padding:26px 12px 11px;color:#fff;font-size:12.5px;line-height:1.35;
+  background:linear-gradient(0deg,rgba(16,18,21,.9),transparent);opacity:0;transition:opacity .22s}
+.lcard:hover .det2,.lcard:focus-visible .det2{opacity:1}
+.lbar{display:flex;align-items:center;gap:10px;padding:13px 13px 13px 15px;margin-top:auto;min-height:58px}
+.lbar span{font-size:14.5px;font-weight:500;line-height:1.25;flex:1;min-width:0}
+.lbar i{width:30px;height:30px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;
+  font-style:normal;font-size:12px;color:var(--ink);flex:none;transition:.2s}
+.lcard:hover .lbar i{background:var(--signal);border-color:var(--signal);color:#fff}
+.pd-foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin-top:34px;position:relative}
+.pd-foot .mid{grid-column:2;display:flex;align-items:center;gap:6px}
+.pd-foot .mid .round{width:52px;height:52px;border-radius:999px;background:var(--signal);color:#fff;
+  display:grid;place-items:center;font-size:17px;flex:none;transition:.18s}
+.pd-foot .mid .round:hover{background:#c9530c}
+.pd-foot .sarrows{grid-column:3;justify-self:end;display:flex;gap:9px}
+.pd-foot .sarrows button{width:40px;height:40px;border-radius:999px;border:1px solid #33383D;background:transparent;
+  color:#E7E9EB;cursor:pointer;font-size:15px;display:grid;place-items:center;transition:.2s}
+.pd-foot .sarrows button:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.pd-foot .sarrows button[disabled]{opacity:.32;cursor:default}
+@media(max-width:820px){.pdark{padding:38px 20px 30px;border-radius:22px}
+  .scroller{margin:0 -20px;padding:0 20px;scroll-padding-inline:20px}
+  .pd-foot{grid-template-columns:1fr;justify-items:center}
+  .pd-foot .mid{grid-column:1}.pd-foot .sarrows{grid-column:1;justify-self:center}}
+
+/* VORHER-NACHHER-KARUSSELL, volle Breite */
+.bacar{margin-top:42px}
+.bacar-view{width:100%;overflow:hidden}
+.bacar-track{display:flex;will-change:transform;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.baslide{flex:0 0 100%;padding:0 22px}
+.cmp{position:relative;overflow:hidden;border-radius:var(--r2);border:1px solid var(--line);
+  background:#EFEEEB;aspect-ratio:4/3;max-height:76vh;max-width:1320px;margin:0 auto;
+  cursor:ew-resize;touch-action:none;user-select:none;box-shadow:var(--sh)}
+.cmp:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;
+  pointer-events:none;-webkit-user-drag:none}
+.cmp img.b{clip-path:inset(0 0 0 var(--pos,50%))}
+.knob{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--signal);pointer-events:none}
+.knob i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:999px;
+  background:var(--signal);color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.34);
+  font-size:15px;font-style:normal}
+.knob i:after{content:"↔"}
+.tg{position:absolute;top:14px;background:rgba(16,18,21,.72);color:#fff;border-radius:999px;padding:5px 12px;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(5px);pointer-events:none}
+.tg.l{left:14px}.tg.r{right:14px}
+.cmp.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;cursor:default;background:none;border:0;box-shadow:none;padding:0}
+.cmp.pair figure{margin:0;position:relative;border-radius:var(--r2);overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh)}
+.cmp.pair img{position:absolute;clip-path:none}
+.bactrl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 34px;align-items:center;margin-top:26px}
+.bametas{min-width:0}
+.bameta{display:flex;align-items:baseline;gap:15px}
+.bameta[hidden]{display:none}
+.bameta .idx{font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1;color:var(--grey2);flex:none}
+.bameta b{font-weight:500;font-size:16.5px;display:block}
+.bameta span.txt{display:block;color:var(--grey);font-size:14px;margin-top:3px;max-width:70ch}
+.bacontrols{display:flex;align-items:center;gap:18px;flex:none}
+.badots{display:flex;gap:8px}
+.badots button{width:9px;height:9px;padding:0;border-radius:999px;border:0;background:#D8D5CE;cursor:pointer;transition:.2s}
+.badots button[aria-selected="true"]{background:var(--ink);width:26px}
+.bacount{font-family:"Playfair Display",Georgia,serif;font-size:19px;color:var(--grey)}
+.bacount b{color:var(--ink);font-weight:500}
+.baplay{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);
+  border-radius:999px;padding:9px 15px;font:400 13px "DM Sans",sans-serif;color:var(--grey);cursor:pointer}
+.baplay:hover{border-color:var(--ink);color:var(--ink)}
+.baplay:before{content:"❚❚";font-size:9px;color:var(--signal)}
+.baplay[aria-pressed="false"]:before{content:"▶"}
+.bafoot{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.bafoot .btn{margin-left:auto}
+@media(max-width:980px){.bactrl{grid-template-columns:1fr;gap:18px}.bacontrols{flex-wrap:wrap}}
+@media(max-width:760px){.baslide{padding:0 16px}.cmp{aspect-ratio:3/4;max-height:none}
+  .cmp.pair{aspect-ratio:3/4;grid-template-columns:1fr 1fr}
+  .knob i{width:40px;height:40px}.bafoot .btn{margin-left:0;width:100%;justify-content:center}}
+
+/* STIMMEN */
+.voices{display:grid;grid-template-columns:1fr 1fr .7fr;gap:18px;margin-top:44px}
+.voice{background:var(--paper);border:1px solid var(--line);border-radius:var(--r2);padding:24px;box-shadow:var(--sh)}
+.voice .who{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.voice .av{width:38px;height:38px;border-radius:999px;background:var(--ground);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:12.5px;font-weight:700;color:var(--ink);flex:none}
+.voice .who b{display:block;font-size:14.5px;font-weight:500}
+.voice .who span{display:block;font-size:12px;color:var(--grey)}
+.voice .stars{color:var(--signal);font-size:12.5px;letter-spacing:2px}
+.voice q{display:block;quotes:none;margin-top:10px;font-size:15px;color:var(--ink)}
+.voice .src{display:block;margin-top:14px;font-size:11.5px;color:var(--grey2)}
+@media(max-width:940px){.voices{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:start;margin-top:44px}
+.qrow{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);margin-bottom:10px;overflow:hidden}
+.qrow summary{list-style:none;cursor:pointer;padding:16px 18px;font-size:15.5px;display:flex;
+  justify-content:space-between;gap:14px;align-items:center}
+.qrow summary::-webkit-details-marker{display:none}
+.qrow summary:after{content:"+";color:var(--grey2);font-size:17px;line-height:1}
+.qrow[open] summary:after{content:"–"}
+.qrow p{margin:0;padding:0 18px 17px;color:var(--grey);font-size:14px}
+.faq .side{border-radius:var(--r2);overflow:hidden;position:relative;margin-top:8px}
+.faq .side img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.faq .side .mini{position:absolute;bottom:12px;left:12px;background:rgba(16,18,21,.72);color:#fff;
+  border-radius:999px;padding:5px 11px;font-size:11px;backdrop-filter:blur(5px)}
+@media(max-width:900px){.faq{grid-template-columns:1fr}}
+
+/* WINTERDIENST BAND */
+.band{position:relative;border-radius:var(--r2);overflow:hidden;margin-top:40px}
+.band img{width:100%;height:clamp(280px,34vw,420px);object-fit:cover}
+.band:after{content:"";position:absolute;inset:0;background:rgba(10,12,15,.28)}
+.band .mid{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.fact b{display:block;font-size:24px;font-weight:500;letter-spacing:-.02em}
+.fact span{display:block;margin-top:8px;color:var(--grey);font-size:13.5px}
+@media(max-width:760px){.facts{grid-template-columns:1fr}}
+
+/* KONTAKT: helle Karte, die in den Footer ragt */
+.csec{padding-top:0;padding-bottom:0;position:relative;z-index:2}
+.ccard{display:grid;grid-template-columns:1.04fr .96fr;background:var(--paper);border:1px solid var(--line);
+  border-radius:26px;overflow:hidden;box-shadow:0 2px 6px rgba(16,18,21,.05),0 26px 60px rgba(16,18,21,.1);
+  margin-bottom:-130px}
+.cform{padding:44px 40px 40px}
+.cform h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em}
+.cform .lead2{margin:14px 0 26px;color:var(--grey);font-size:14.5px;max-width:48ch}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-size:13px;font-weight:500;margin-bottom:7px}
+.fld input,.fld select,.fld textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;
+  background:var(--paper);font:400 14.5px "DM Sans",sans-serif;color:var(--ink)}
+.fld input::placeholder,.fld textarea::placeholder{color:var(--grey2)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:0;border-color:var(--signal);box-shadow:0 0 0 3px rgba(221,95,19,.14)}
+.fld textarea{resize:vertical;min-height:104px}
+.cons{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--grey);margin:2px 0 22px}
+.csub{display:flex;align-items:center;gap:6px}
+.csub .round{width:46px;height:46px;border-radius:999px;background:var(--signal);color:#fff;display:grid;
+  place-items:center;font-size:16px;flex:none;border:0;cursor:pointer;transition:.18s}
+.csub .round:hover{background:#c9530c}
+.cpic{position:relative;background:#EFEEEB;min-height:420px}
+.cpic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.ccard{grid-template-columns:1fr;margin-bottom:-90px}.cform{padding:30px 22px 26px;order:2}
+  .cpic{order:1;min-height:240px}.frow{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--ink);color:#A9AEB4;padding:190px 0 0;margin-top:0}
+footer .fmk{display:flex;align-items:center;gap:11px;margin-bottom:46px}
+footer .fmk .badge3{width:38px;height:38px;border-radius:999px;background:var(--signal);color:#fff;display:grid;
+  place-items:center;font-weight:700;font-size:17px;flex:none}
+footer .fmk b{color:#fff;font-size:19px;font-weight:700;letter-spacing:-.02em}
+footer .frow2{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+footer h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:#fff;letter-spacing:-.02em;
+  line-height:1.12;font-size:clamp(27px,3.4vw,40px)}
+footer .fclaim{margin:20px 0 28px;max-width:46ch;font-size:14.5px}
+footer .fcta{display:flex;align-items:center;gap:6px}
+footer .fcta .round{width:46px;height:46px;border-radius:999px;background:var(--signal);color:#fff;display:grid;
+  place-items:center;font-size:16px;flex:none}
+footer .fcta .round:hover{background:#c9530c}
+footer .fcon h3{color:#fff;font-size:17px;font-weight:500;margin-bottom:22px}
+footer .fcon .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+footer .fcon dt{color:#fff;font-size:13.5px;margin-bottom:5px}
+footer .fcon dd{margin:0 0 18px;font-size:14px;line-height:1.5}
+footer .fcon a{border-bottom:1px solid rgba(221,95,19,.6)}
+footer .fnav{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  border-top:1px solid #24282C;margin-top:62px;padding:22px 0}
+footer .fnav a{font-size:14.5px}
+footer .fnav a:hover,footer .fcon a:hover{color:#fff}
+footer .fbot{border-top:1px solid #24282C;padding:18px 0 28px;display:flex;justify-content:space-between;
+  gap:16px;font-size:12.5px;flex-wrap:wrap}
+footer .fbot .links{display:flex;gap:10px 16px;flex-wrap:wrap}
+@media(max-width:900px){footer{padding-top:150px}footer .frow2{grid-template-columns:1fr;gap:34px}
+  footer .fnav{justify-content:flex-start;gap:14px 24px;margin-top:40px}}
+@media(max-width:520px){footer .fcon .cols{grid-template-columns:1fr}}
+
+@media(max-width:760px){.sec{padding:72px 0}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+  <div class="bar">
+    <a class="mk" href="#top"><span class="badge2">N</span><b>Nauendorff</b></a>
+    <ul>
+      <li><a href="#top" aria-current="page">Start</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#beweise">Vorher / Nachher</a></li>
+      <li><a href="#winterdienst">Winterdienst</a></li>
+      <li><a href="#fragen">Fragen</a></li>
+    </ul>
+    <div class="right">
+      <a class="btn btn-o" style="border-color:var(--line)" href="#kontakt">Angebot anfragen</a>
+      <a class="icon" href="tel:+4917657919746" aria-label="Anrufen">☎</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mpanel" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mpanel" id="mpanel" data-open="false" aria-label="Hauptmenü">
+    <a class="mnav" href="#top">Start</a>
+    <a class="mnav" href="#leistungen">Leistungen</a>
+    <a class="mnav" href="#beweise">Vorher / Nachher</a>
+    <a class="mnav" href="#winterdienst">Winterdienst</a>
+    <a class="mnav" href="#fragen">Fragen</a>
+    <a class="mnav" href="#kontakt">Kontakt</a>
+    <div class="macts">
+      <a class="btn btn-o" style="background:var(--signal);color:#fff;border:0" href="#kontakt">Kostenloses Angebot</a>
+      <a class="btn btn-o" href="tel:+4917657919746">0176 57919746 anrufen</a>
+    </div>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z">
+      <h1>Gebäudereinigung und Hausmeisterservice in Erfurt.</h1>
+      <p class="sub">Treppenhaus, Fenster, Außenanlage und Winterdienst für Hausverwaltungen, Praxen, Büros und Eigentümer. Ein Ansprechpartner statt vier Dienstleistern, ein Festpreis, der auch im dritten Monat noch gilt.</p>
+      <div class="acts">
+        <div class="split">
+          <a class="btn btn-o" style="background:var(--signal);color:#fff;border:0" href="#kontakt">Kostenloses Angebot</a>
+          <a class="round" href="#kontakt" aria-label="Zum Anfrageformular">↗</a>
+        </div>
+        <a class="btn btn-soft" href="#beweise">Beweise ansehen</a>
+      </div>
+
+      <div class="bento">
+        <div class="bcol">
+          <div class="tile">
+            <span class="num">4,5<i> ★</i></span>
+            <span class="cap2">Bewertung bei Google</span>
+            <div class="avrow"><span>SK</span><span>NH</span><span>FN</span><span>+3</span><em>6 Rezensionen</em></div>
+          </div>
+          <div class="tile">
+            <span class="num">7</span>
+            <span class="cap2">Gewerke aus einer Hand</span>
+            <div class="cloud" aria-label="Leistungen aus einer Hand">
+              <div class="gw-row"><div class="gw-track" style="--reps:2"><span>Treppenhausreinigung</span><span>Fensterreinigung</span><span>Grundreinigung</span><span>Hausmeisterservice</span><span aria-hidden="true">Treppenhausreinigung</span><span aria-hidden="true">Fensterreinigung</span><span aria-hidden="true">Grundreinigung</span><span aria-hidden="true">Hausmeisterservice</span></div></div>
+              <div class="gw-row gw-rev"><div class="gw-track" style="--reps:2"><span>Gartenpflege</span><span>Winterdienst</span><span>Hochdruckreinigung</span><span>Malerarbeiten</span><span aria-hidden="true">Gartenpflege</span><span aria-hidden="true">Winterdienst</span><span aria-hidden="true">Hochdruckreinigung</span><span aria-hidden="true">Malerarbeiten</span></div></div>
+              <div class="gw-row"><div class="gw-track" style="--reps:3"><span>Auszugsreinigung</span><span>Kontrollgänge</span><span>Schließdienst</span><span aria-hidden="true">Auszugsreinigung</span><span aria-hidden="true">Kontrollgänge</span><span aria-hidden="true">Schließdienst</span><span aria-hidden="true">Auszugsreinigung</span><span aria-hidden="true">Kontrollgänge</span><span aria-hidden="true">Schließdienst</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shotbig">
+          <img src="bilder/hochdruckreinigung-erfurt-hauswand-fassade.webp" style="object-position:52% center" alt="Arbeiten mit dem Hochdruckreiniger an einer Hausfassade, Symbolbild" fetchpriority="high" decoding="async">
+        </div>
+
+        <div class="bcol">
+          <div class="shotwrap">
+            <img src="bilder/gartenpflege-erfurt-heckenpflege-leiter.webp" style="object-position:72% center" alt="Heckenpflege von der Leiter, Arbeiten an der Außenanlage" decoding="async">
+            <div class="glass"><b>1</b><span>Werktag bis zur<br>Rückmeldung</span></div>
+          </div>
+          <div class="tile">
+            <span class="num">0 €</span>
+            <span class="cap2">Aufnahme vor Ort, rund 20 Minuten, unverbindlich</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="sec">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z center">
+      <span class="pill">Über uns</span>
+      <h2>Ein Ansprechpartner für Ihr ganzes Objekt</h2>
+      <p>Derselbe Mensch nimmt Ihr Objekt auf, plant es, arbeitet daran und übergibt es. Sieben Gewerke laufen über einen Vertrag und eine Rechnung. Kein Callcenter, keine wechselnden Kräfte, keine Subunternehmer.</p>
+      <div class="mosaic">
+        <figure><img src="bilder/unterhaltsreinigung-erfurt-sanitaerreinigung.webp" alt="Sanitärbereich wird gereinigt, Waschbecken und Armatur" loading="lazy" decoding="async"></figure>
+        <figure><img src="bilder/gartenpflege-erfurt-heckenschere-schnitt.webp" alt="Hecke wird mit der Heckenschere in Form geschnitten" loading="lazy" decoding="async"></figure>
+        <figure><img src="bilder/winterdienst-erfurt-raeumfahrzeug-schnee.webp" alt="Räumfahrzeug im Einsatz auf verschneitem Weg" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="sec tight" id="leistungen">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z">
+      <div class="pdark">
+        <div class="pd-head">
+          <h2>Sieben Leistungen,<br>ein Ansprechpartner</h2>
+          <p>Gegliedert nach Objekten statt nach Verfahren. Jede Karte nennt den Turnus, damit Sie sofort sehen, was zu Ihrem Objekt passt.</p>
+        </div>
+
+        <div class="scroller" id="lscroll" tabindex="0" role="region" aria-label="Leistungen, waagerecht scrollbar">
+          <div class="srow">
+          <a class="lcard" href="#kontakt">
+            <div class="lpic">
+              <img src="bilder/treppenhausreinigung-erfurt-stufen.webp" alt="Treppenhausreinigung in Erfurt, gepflegte Stufen im Aufgang" loading="lazy" decoding="async">
+              <span class="badge">1x bis 2x pro Woche</span>
+              <span class="det2">Treppen, Flure, Keller, Hof und Glas im Aufgang, jeder Termin mit Foto belegt.</span>
+            </div>
+            <div class="lbar"><span>Treppenhaus und Wohnanlage</span><i>↗</i></div>
+          </a>
+          <a class="lcard" href="#kontakt">
+            <div class="lpic">
+              <img src="bilder/grundreinigung-erfurt-bueroflaeche.webp" alt="Büro- und Praxisreinigung in Erfurt" loading="lazy" decoding="async">
+              <span class="badge">nach Absprache</span>
+              <span class="det2">Auch abends, früh oder samstags, damit kein Patient im nassen Flur steht.</span>
+            </div>
+            <div class="lbar"><span>Büro und Praxis</span><i>↗</i></div>
+          </a>
+          <a class="lcard" href="#winterdienst">
+            <div class="lpic">
+              <img src="bilder/gartenpflege-erfurt-rasenmaeher-rasenpflege.webp" alt="Rasenmäher auf einer gepflegten Rasenfläche, Pflege der Außenanlage" loading="lazy" decoding="async">
+              <span class="badge">14-täglich · Winter in Bereitschaft</span>
+              <span class="det2">Rasen, Hecken, Laub, und im Winter räumen und streuen vor Fristbeginn.</span>
+            </div>
+            <div class="lbar"><span>Außenanlage und Winterdienst</span><i>↗</i></div>
+          </a>
+          <a class="lcard" href="#kontakt">
+            <div class="lpic">
+              <img src="bilder/fensterreinigung-erfurt-fensterfluegel-reinigung.webp" alt="Fensterflügel wird gereinigt, Fenster- und Glasreinigung" loading="lazy" decoding="async">
+              <span class="badge">einmalig bis quartalsweise</span>
+              <span class="det2">Fenster, Rahmen, Fensterbänke und Schaufenster, mit Teleskopstange bis zum 2. OG.</span>
+            </div>
+            <div class="lbar"><span>Fenster und Glas</span><i>↗</i></div>
+          </a>
+          <a class="lcard" href="#kontakt">
+            <div class="lpic">
+              <img src="bilder/unterhaltsreinigung-erfurt-wischmopp-boden.webp" alt="Wischmopp auf Holzboden, Symbolbild Grundreinigung und Unterhaltsreinigung" loading="lazy" decoding="async">
+              <span class="badge">einmalig</span>
+              <span class="det2">Nach Bau, Sanierung oder Auszug, mit Übergabeprotokoll auf Wunsch.</span>
+            </div>
+            <div class="lbar"><span>Grundreinigung</span><i>↗</i></div>
+          </a>
+          <a class="lcard" href="#beweise">
+            <div class="lpic">
+              <img src="bilder/gebaeudeservice-erfurt-wohnanlage-gruenanlage.webp" alt="Gepflasterter Weg und Flächen einer Wohnanlage, Symbolbild Hochdruckreinigung von Wegen und Höfen" loading="lazy" decoding="async">
+              <span class="badge">einmalig oder jährlich</span>
+              <span class="det2">Pflaster, Wege, Terrassen, Hofflächen und Einfahrten, ohne Fugenschaden.</span>
+            </div>
+            <div class="lbar"><span>Hochdruckreinigung</span><i>↗</i></div>
+          </a>
+          <a class="lcard" href="#kontakt">
+            <div class="lpic">
+              <img src="bilder/hausmeisterservice-erfurt-werkzeug-set.webp" alt="Werkzeug für Hausmeisterservice und Kleinreparaturen" loading="lazy" decoding="async">
+              <span class="badge">wöchentlich bis auf Abruf</span>
+              <span class="det2">Kontrollgänge mit Mängelliste, Kleinreparaturen, Schließdienst, Anstrich.</span>
+            </div>
+            <div class="lbar"><span>Hausmeister und Anstrich</span><i>↗</i></div>
+          </a>
+          </div>
+        </div>
+
+        <div class="pd-foot">
+          <div class="mid">
+            <a class="btn btn-o" style="background:var(--signal);color:#fff;border:0" href="#kontakt">Alle Leistungen anfragen</a>
+            <a class="round" href="#kontakt" aria-label="Zum Anfrageformular">↗</a>
+          </div>
+          <div class="sarrows">
+            <button type="button" id="lprev" aria-label="Karten nach links">←</button>
+            <button type="button" id="lnext" aria-label="Karten nach rechts">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEWEISE -->
+<section class="sec tight" id="beweise">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z">
+      <div class="shead">
+        <div>
+          <span class="pill mark-pill">Vorher / Nachher</span>
+          <h2 class="lead">Saubere Arbeit, sichtbar gemacht</h2>
+        </div>
+        <div class="side"><p>Echte Aufträge aus Erfurt, fotografiert vor und nach dem Einsatz. Griff verschieben oder laufen lassen. Handyaufnahmen, unretuschiert, genau deshalb sind sie etwas wert.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bacar" id="bacar" role="group" aria-roledescription="Karussell" aria-label="Vorher und Nachher, echte Aufträge aus Erfurt">
+    <div class="bacar-view">
+      <div class="bacar-track" id="batrack">
+
+        <div class="baslide" role="tabpanel" aria-label="1 von 3, Hofeinfahrt">
+          <div class="cmp" tabindex="0" role="group" aria-label="Hofeinfahrt, Vorher und Nachher vergleichen. Mit den Pfeiltasten verschieben.">
+            <img class="a" src="bilder/hochdruckreinigung-erfurt-hofeinfahrt-vorher-gross.webp" alt="Hofeinfahrt in Erfurt vor der Hochdruckreinigung, Pflaster vermoost und verfärbt" loading="lazy" decoding="async">
+            <img class="b" src="bilder/hochdruckreinigung-erfurt-hofeinfahrt-nachher-gross.webp" alt="Dieselbe Hofeinfahrt nach der Hochdruckreinigung, Farbe des Steins wieder sichtbar" loading="lazy" decoding="async">
+            <span class="tg l">Vorher</span><span class="tg r">Nachher</span>
+            <div class="knob"><i></i></div>
+          </div>
+        </div>
+
+        <div class="baslide" role="tabpanel" aria-label="2 von 3, Gehweg">
+          <div class="cmp" tabindex="0" role="group" aria-label="Gehweg, Vorher und Nachher vergleichen. Mit den Pfeiltasten verschieben.">
+            <img class="a" src="bilder/hochdruckreinigung-erfurt-gehweg-pflaster-vorher-gross.webp" alt="Gepflasterter Gehweg in Erfurt vor der Reinigung, vermoost und verfärbt" loading="lazy" decoding="async">
+            <img class="b" src="bilder/hochdruckreinigung-erfurt-gehweg-pflaster-nachher-gross.webp" alt="Derselbe Gehweg nach der Reinigung, Fugen und Steinfarbe wieder klar" loading="lazy" decoding="async">
+            <span class="tg l">Vorher</span><span class="tg r">Nachher</span>
+            <div class="knob"><i></i></div>
+          </div>
+        </div>
+
+        <div class="baslide" role="tabpanel" aria-label="3 von 3, Fensterbrett">
+          <div class="cmp pair">
+            <figure><img src="bilder/gebaeudereinigung-erfurt-fensterbrett-vorher.webp" alt="Fensterbrett in Erfurt vor der Reinigung, veralgt, verschmutzt, mit Vogelkot" loading="lazy" decoding="async"><span class="tg l">Vorher</span></figure>
+            <figure><img src="bilder/gebaeudereinigung-erfurt-fensterbrett-nachher.webp" alt="Dasselbe Fenster nach der Reinigung, Brett und Rahmen sauber" loading="lazy" decoding="async"><span class="tg r">Nachher</span></figure>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="bactrl">
+        <div class="bametas" id="bametas" aria-live="polite">
+          <div class="bameta">
+            <span class="idx">01</span>
+            <div><b>Hofeinfahrt, Pflasterstein, Erfurt</b><span class="txt">Moos und Verfärbung raus, klare Fugen rein, ohne Fugenschaden. Ein Termin, Hochdruck. <span class="flag">Quadratmeter und Dauer bestätigen</span></span></div>
+          </div>
+          <div class="bameta" hidden>
+            <span class="idx">02</span>
+            <div><b>Gehweg und Fußweg, Pflaster</b><span class="txt">Moos und Verfärbung entfernt, die Fugen sind wieder sichtbar. Derselbe Standpunkt vor und nach dem Einsatz. <span class="flag">Quadratmeter bestätigen</span></span></div>
+          </div>
+          <div class="bameta" hidden>
+            <span class="idx">03</span>
+            <div><b>Fensterbrett und Rahmen, Wohnhaus Erfurt</b><span class="txt">Algen, Schmutz und Vogelkot entfernt. Zwei Aufnahmen mit unterschiedlichem Abstand, deshalb als Paar statt als Schieber. <span class="flag">Dauer bestätigen</span></span></div>
+          </div>
+        </div>
+        <div class="bacontrols">
+          <div class="arrows">
+            <button type="button" id="baprev" aria-label="Vorheriger Fall">←</button>
+            <button type="button" class="c" id="banext" aria-label="Nächster Fall">→</button>
+          </div>
+          <div class="badots" id="badots" role="tablist" aria-label="Fall wählen"></div>
+          <span class="bacount"><b id="bacur">01</b> / 03</span>
+          <button type="button" class="baplay" id="baplay" aria-pressed="true">Automatik</button>
+        </div>
+      </div>
+
+      <div class="bafoot">
+        <span class="pill dim">Termintreu</span>
+        <span class="pill dim">Jeder Termin dokumentiert</span>
+        <span class="pill dim">Festpreis schriftlich</span>
+        <span class="pill dim">Erfurt und Umgebung</span>
+        <a class="btn btn-d" href="#kontakt">Ihr Objekt dokumentieren lassen<span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STIMMEN -->
+<section class="sec tight">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z">
+      <div class="shead">
+        <div>
+          <span class="pill mark-pill">Stimmen</span>
+          <h2 class="lead">Was Kunden aus Erfurt sagen</h2>
+        </div>
+        <div class="side"><p>Echte Google-Rezensionen im Wortlaut, nativ eingebunden und verlinkt, nicht als Screenshot.</p></div>
+      </div>
+      <div class="voices">
+        <div class="voice">
+          <div class="who"><span class="av">SK</span><span><b>Stefanie Klähne</b><span>Einfamilienhaus nach Sanierung</span></span></div>
+          <span class="stars">★★★★★</span>
+          <q>Im Einfamilienhaus nach einer Sanierung Fenster und einen Kellerraum putzen lassen. Alles super sauber. Preis und Leistung haben gestimmt. Bestimmt nehmen wir den Dienst wieder in Anspruch.</q>
+          <span class="src">Google-Rezension</span>
+        </div>
+        <div class="voice">
+          <div class="who"><span class="av">NH</span><span><b>Nattagan Hoffmann</b><span>Ladengeschäft in Erfurt</span></span></div>
+          <span class="stars">★★★★★</span>
+          <q>Sehr gute Arbeit. Die Fenster unseres Geschäfts wurden schnell gereinigt und spiegelblank hinterlassen. Sehr zu empfehlen.</q>
+          <span class="src">Google-Rezension</span>
+        </div>
+        <div class="voice" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <span class="pill dim" style="border:0;padding:0;background:none">Google-Profil</span>
+            <div style="font-size:44px;font-weight:500;letter-spacing:-.03em;margin:10px 0 2px">4,5</div>
+            <span class="stars">★★★★★</span>
+            <p style="margin:12px 0 0;color:var(--grey);font-size:13.5px">6 Rezensionen. <span class="flag">Eigenbewertung des Inhabers löschen</span></p>
+          </div>
+          <a class="btn btn-o" style="margin-top:18px" href="#">Alle ansehen<span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec tight" id="fragen">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z">
+      <div class="shead">
+        <div>
+          <span class="pill mark-pill">Fragen</span>
+          <h2 class="lead">Fragen offen?<br>Hier die Antworten.</h2>
+        </div>
+        <div class="side"><p>Jede Antwort beginnt mit einem Satz, der für sich allein steht. Das hilft Ihnen beim Überfliegen und den Suchmaschinen beim Zitieren.</p></div>
+      </div>
+      <div class="faq">
+        <div>
+          <details class="qrow" open><summary>Was kostet Gebäudereinigung in Erfurt?</summary><p>Der Preis für Gebäudereinigung in Erfurt richtet sich nach Fläche, Turnus und Leistungsumfang. Wir besichtigen das Objekt kostenlos, rechnen danach und nennen einen Festpreis, der schriftlich im Angebot steht. Nachträgliche Zuschläge gibt es nicht.</p></details>
+          <details class="qrow"><summary>Übernehmen Sie die Räum- und Streupflicht?</summary><p>Ja, die Räum- und Streupflicht kann vertraglich auf uns übertragen werden. In Erfurt gilt nach der Straßenreinigungssatzung, Stadtrecht 2.035: nach 20 Uhr entstandene Glätte und gefallener Schnee sind bis 7 Uhr des folgenden Tages zu beseitigen, und die Beseitigung ist bis 20 Uhr aufrechtzuerhalten. Wir sind vor Fristbeginn auf der Fläche und dokumentieren jeden Einsatz mit Uhrzeit.</p></details>
+          <details class="qrow"><summary>In welchen Intervallen reinigen Sie Treppenhäuser?</summary><p>Treppenhäuser reinigen wir wöchentlich, zweimal wöchentlich, 14-täglich oder monatlich, je nach Nutzung und Anzahl der Parteien. Der Turnus steht im Leistungsverzeichnis, zusammen mit den Flächen und den einzelnen Arbeiten. Jeder Termin wird fotografisch dokumentiert.</p></details>
+          <details class="qrow"><summary>Ist Hausmeisterservice nach BetrKV umlagefähig?</summary><p>Kosten für Hausmeister, Treppenhausreinigung, Gartenpflege und Winterdienst gehören nach der Betriebskostenverordnung grundsätzlich zu den umlagefähigen Betriebskosten, sofern die Umlage im Mietvertrag vereinbart ist. Reparaturen und Instandhaltung sind nicht umlagefähig. Wir weisen die Positionen getrennt aus.</p></details>
+          <details class="qrow"><summary>Reinigen Sie Praxen außerhalb der Öffnungszeiten?</summary><p>Ja, Praxen und Büros reinigen wir auf Wunsch abends, früh morgens oder samstags. Der Zugang wird vorher schriftlich geregelt, ebenso der Umgang mit Schlüsseln und Alarmanlagen. Für Wartebereiche und Sanitärräume gilt ein fester Reinigungsplan.</p></details>
+          <details class="qrow"><summary>Sind Sie haftpflichtversichert?</summary><p><span class="flag">Antwort offen</span> Wird erst formuliert, wenn Deckungssumme und Versicherer bekannt sind. Für Hausverwaltungen ist das ein hartes Kriterium, deshalb steht hier nichts Vages.</p></details>
+          <details class="qrow"><summary>Wer kommt, wenn Sie krank sind oder Urlaub haben?</summary><p><span class="flag">Antwort offen</span> Die häufigste Frage von Verwaltungen. Eine ehrliche Antwort wirkt stärker als keine.</p></details>
+          <details class="qrow"><summary>Wie lange bindet mich ein Vertrag?</summary><p><span class="flag">Antwort offen</span> Laufzeit, Kündigungsfrist und Probemonat. Kurze Fristen sind das stärkste Argument gegen den Einwand, man habe schon mehrfach gewechselt.</p></details>
+        </div>
+        <div class="side">
+          <img src="bilder/malerarbeiten-erfurt-handwerker-farbroller.webp" alt="Platzhalter für ein Portrait des Inhabers Florian Nauendorff" loading="lazy" decoding="async">
+          <span class="mini">Florian Nauendorff, Inhaber <span class="flag" style="border-color:#a86a3a;color:#ffc99f;background:rgba(255,217,190,.13)">Platzhalter</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINTERDIENST -->
+<section class="sec tight" id="winterdienst">
+  <div class="wrap">
+    <div class="rules"><i></i><i></i></div>
+    <div class="z">
+      <div class="shead">
+        <div>
+          <span class="pill mark-pill">Winterdienst</span>
+          <h2 class="lead">Räum- und Streupflicht in Erfurt</h2>
+        </div>
+        <div class="side"><p>Die Pflicht liegt beim Anlieger, also beim Eigentümer oder bei der Verwaltung, solange sie nicht schriftlich übertragen ist. Wir übernehmen sie vertraglich und dokumentieren jeden Einsatz mit Uhrzeit.</p></div>
+      </div>
+      <div class="band">
+        <img src="bilder/winterdienst-erfurt-streufahrzeug-daemmerung.webp" alt="Streufahrzeug im Winterdienst in der Dämmerung auf einer Wohnstraße" loading="lazy" decoding="async">
+        <div class="mid"><a class="btn btn-w" href="#kontakt">Räumpflicht übertragen<span>→</span></a></div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>bis 07:00</b><span>Nach 20 Uhr entstandene Glätte und gefallener Schnee sind bis 7 Uhr des folgenden Tages zu beseitigen. Satzung 2.035 der Stadt Erfurt.</span></div>
+        <div class="fact"><b>bis 20:00</b><span>Die Beseitigung ist über den Tag bis 20 Uhr aufrechtzuerhalten.</span></div>
+        <div class="fact"><b>Nachweis</b><span>Jeder Einsatz mit Uhrzeit dokumentiert. Wenn jemand stürzt, haben Sie einen Nachweis und nicht nur eine Erinnerung. <span class="flag">Bereitschaft und Streugut bestätigen</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="sec csec" id="kontakt">
+  <div class="wrap">
+    <div class="ccard">
+      <div class="cform">
+        <h2>Sprechen wir über Ihr Objekt</h2>
+        <p class="lead2">Schreiben Sie kurz, was zu tun ist. Wir melden uns innerhalb eines Werktags, schauen es uns kostenlos an und nennen danach einen Festpreis.</p>
+        <form onsubmit="return false">
+          <div class="frow">
+            <div class="fld"><label for="n">Ihr Name *</label><input id="n" placeholder="Vor- und Nachname" required></div>
+            <div class="fld"><label for="e">E-Mail *</label><input id="e" type="email" placeholder="name@firma.de" required></div>
+          </div>
+          <div class="frow">
+            <div class="fld"><label for="t">Telefon</label><input id="t" type="tel" placeholder="Für den Rückruf"></div>
+            <div class="fld"><label for="fi">Firma oder Hausverwaltung</label><input id="fi" placeholder="Optional"></div>
+          </div>
+          <div class="frow">
+            <div class="fld"><label for="o2">Objekt: Adresse oder Stadtteil *</label><input id="o2" placeholder="z. B. Kasseler Straße, Rieth" required></div>
+            <div class="fld"><label for="ty">Objekttyp</label><select id="ty"><option>Mehrfamilienhaus</option><option>Büro</option><option>Praxis</option><option>Ladengeschäft</option><option>Einfamilienhaus</option><option>Außenfläche</option></select></div>
+          </div>
+          <div class="fld"><label for="m">Ihre Nachricht *</label><textarea id="m" rows="4" placeholder="Wie viele Etagen, welcher Turnus, ab wann?" required></textarea></div>
+          <div class="cons"><input type="checkbox" id="c" required><label for="c" style="margin:0;font-weight:400;font-size:12.5px;color:var(--grey)">Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und per E-Mail übermittelt werden.</label></div>
+          <div class="csub">
+            <button class="btn btn-o" type="submit" style="background:var(--signal);color:#fff;border:0">Anfrage senden</button>
+            <button class="round" type="submit" aria-label="Anfrage senden">↗</button>
+          </div>
+          <p style="margin:14px 0 0;font-size:12.5px;color:var(--grey)">Unverbindlich. Rückmeldung innerhalb eines Werktags. Kein Captcha, kein Vertreterbesuch.</p>
+        </form>
+      </div>
+      <div class="cpic">
+        <img src="bilder/gebaeudeservice-erfurt-mehrfamilienhaus.webp" style="object-position:center 38%" alt="Mehrfamilienhaus, Symbolbild für ein Objekt in laufender Betreuung" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fmk"><span class="badge3">N</span><b>Nauendorff</b></div>
+
+    <div class="frow2">
+      <div>
+        <h2>Ihr Objekt in<br>verlässlichen Händen</h2>
+        <p class="fclaim">Gebäudereinigung, Hausmeisterservice und Außenanlagen in Erfurt. Ein Ansprechpartner, ein Festpreis, jeder Termin dokumentiert.</p>
+        <div class="fcta">
+          <a class="btn btn-o" style="background:var(--signal);color:#fff;border:0" href="#kontakt">Kostenloses Angebot</a>
+          <a class="round" href="#kontakt" aria-label="Zum Anfrageformular">↗</a>
+        </div>
+      </div>
+
+      <div class="fcon">
+        <h3>Kontakt</h3>
+        <div class="cols">
+          <dl>
+            <dt>Telefon</dt>
+            <dd><a href="tel:+4917657919746">0176 57919746</a></dd>
+            <dt>E-Mail</dt>
+            <dd><span class="flag" style="border-color:#a86a3a;color:#ffc99f;background:rgba(255,217,190,.13)">Geschäftsadresse bestätigen</span></dd>
+            <dt>Ansprechpartner</dt>
+            <dd>Florian Nauendorff, Inhaber</dd>
+          </dl>
+          <dl>
+            <dt>Erreichbarkeit</dt>
+            <dd><span class="flag" style="border-color:#a86a3a;color:#ffc99f;background:rgba(255,217,190,.13)">bestätigen</span><br>Website, Google-Profil und Portale widersprechen sich.</dd>
+            <dt>Adresse</dt>
+            <dd>Kasseler Straße 7<br>99089 Erfurt</dd>
+            <dt>Einsatzgebiet</dt>
+            <dd>Erfurt und Umgebung<br>99084 bis 99099</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="fnav">
+      <a href="#top">Start</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#beweise">Vorher / Nachher</a>
+      <a href="#winterdienst">Winterdienst</a>
+      <a href="#fragen">Fragen</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+
+    <div class="fbot">
+      <span>© 2026 Gebäudeservice Nauendorff · Kleinunternehmer nach §19 UStG</span>
+      <span class="links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Cookie-Einstellungen</a><a href="#">Instagram</a><a href="#">Google-Profil</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Burger-Menü */
+(function(){
+  const b=document.getElementById('burger'), p=document.getElementById('mpanel');
+  if(!b||!p) return;
+  const set=o=>{b.setAttribute('aria-expanded',o?'true':'false');p.dataset.open=o?'true':'false';
+    b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen')};
+  b.addEventListener('click',()=>set(p.dataset.open!=='true'));
+  p.addEventListener('click',e=>{if(e.target.closest('a')) set(false)});
+  addEventListener('keydown',e=>{if(e.key==='Escape') set(false)});
+  addEventListener('click',e=>{if(!e.target.closest('.nav')) set(false)});
+  addEventListener('resize',()=>{if(innerWidth>1080) set(false)});
+})();
+
+/* Leistungen: waagerechter Scroller mit Pfeilen */
+(function(){
+  const sc=document.getElementById('lscroll'); if(!sc) return;
+  const prev=document.getElementById('lprev'), next=document.getElementById('lnext');
+  const step=()=>{const c=sc.querySelector('.lcard'); return c?c.getBoundingClientRect().width+18:260;};
+  const upd=()=>{
+    prev.disabled = sc.scrollLeft<=2;
+    next.disabled = sc.scrollLeft >= sc.scrollWidth-sc.clientWidth-2;
+  };
+  prev.addEventListener('click',()=>sc.scrollBy({left:-step()*2,behavior:'smooth'}));
+  next.addEventListener('click',()=>sc.scrollBy({left:step()*2,behavior:'smooth'}));
+  sc.addEventListener('scroll',upd,{passive:true});
+  addEventListener('resize',upd);
+  upd();
+})();
+
+/* Vorher-Nachher-Karussell: Schieber, Pfeile, Punkte, Automatik */
+(function(){
+  const car=document.getElementById('bacar'); if(!car) return;
+  const track=document.getElementById('batrack');
+  const slides=[...track.children];
+  const dots=document.getElementById('badots');
+  const cur=document.getElementById('bacur');
+  const play=document.getElementById('baplay');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i=0, auto=!reduce, hover=false, dragging=false, t0=performance.now(), lastAdvance=performance.now();
+  const SWEEP=7000, HOLD=9000;
+
+  slides.forEach((s,n)=>{
+    const b=document.createElement('button');
+    b.type='button'; b.setAttribute('role','tab'); b.setAttribute('aria-label','Fall '+(n+1));
+    b.addEventListener('click',()=>{go(n);nudge()});
+    dots.appendChild(b);
+  });
+
+  const metas=[...document.getElementById('bametas').children];
+  // Die Folien liegen seitlich versetzt, deshalb greift loading="lazy" bei der
+  // dritten erst, wenn sie hereinfaehrt: sichtbar leeres Bild beim Umschalten.
+  // Also laedt jede Folie ihre Nachfolgerin vor.
+  function preload(n){
+    const s=slides[(n+slides.length)%slides.length];
+    if(!s||s.dataset.pre) return;
+    s.dataset.pre='1';
+    s.querySelectorAll('img[loading="lazy"]').forEach(im=>im.loading='eager');
+  }
+  function paint(){
+    track.style.transform='translateX('+(-i*100)+'%)';
+    cur.textContent=String(i+1).padStart(2,'0');
+    [...dots.children].forEach((d,n)=>d.setAttribute('aria-selected',n===i?'true':'false'));
+    metas.forEach((m,n)=>m.hidden = n!==i);
+  }
+  function go(n){ i=(n+slides.length)%slides.length; paint(); preload(i+1); }
+  function nudge(){ lastAdvance=performance.now(); }
+
+  document.getElementById('baprev').addEventListener('click',()=>{go(i-1);nudge()});
+  document.getElementById('banext').addEventListener('click',()=>{go(i+1);nudge()});
+  play.addEventListener('click',()=>{ auto=!auto; play.setAttribute('aria-pressed',auto?'true':'false'); nudge(); });
+  car.addEventListener('pointerenter',()=>hover=true);
+  car.addEventListener('pointerleave',()=>hover=false);
+
+  /* Schieber je Slide */
+  document.querySelectorAll('.cmp:not(.pair)').forEach(cmp=>{
+    const set=x=>{const r=cmp.getBoundingClientRect();
+      cmp.style.setProperty('--pos',Math.max(0,Math.min(100,(x-r.left)/r.width*100))+'%')};
+    let on=false;
+    cmp.addEventListener('pointerdown',e=>{e.preventDefault();on=true;dragging=true;cmp.dataset.manual='1';
+      set(e.clientX);try{cmp.setPointerCapture(e.pointerId)}catch(_){}});
+    cmp.addEventListener('pointermove',e=>{if(on)set(e.clientX)});
+    cmp.addEventListener('pointerup',()=>{on=false;dragging=false});
+    cmp.addEventListener('lostpointercapture',()=>{on=false;dragging=false});
+    cmp.addEventListener('keydown',e=>{
+      const p=parseFloat(cmp.style.getPropertyValue('--pos'))||50;
+      if(e.key==='ArrowLeft'){cmp.dataset.manual='1';cmp.style.setProperty('--pos',Math.max(0,p-5)+'%');e.preventDefault()}
+      if(e.key==='ArrowRight'){cmp.dataset.manual='1';cmp.style.setProperty('--pos',Math.min(100,p+5)+'%');e.preventDefault()}
+    });
+  });
+
+  /* Automatik: Griff pendelt auf dem sichtbaren Slide, danach weiterblättern */
+  function frame(now){
+    if(auto && !hover && !dragging){
+      const cmp=slides[i].querySelector('.cmp:not(.pair)');
+      if(cmp && !cmp.dataset.manual){
+        const ph=((now-t0)%SWEEP)/SWEEP;
+        const e=0.5-0.5*Math.cos(ph*2*Math.PI);
+        cmp.style.setProperty('--pos',(24+e*54).toFixed(2)+'%');
+      }
+      if(now-lastAdvance>HOLD){ go(i+1); lastAdvance=now; }
+    } else { lastAdvance=now; }
+    requestAnimationFrame(frame);
+  }
+  paint();
+  if(!auto) play.setAttribute('aria-pressed','false');
+  requestAnimationFrame(frame);
+})();
+
+const f=document.getElementById('obj'), t=document.getElementById('o2');
+if(f&&t) f.addEventListener('change',()=>{t.value=f.value});
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://nauendorff-gebaeudeservice.de/#business",
+"name":"Gebäudeservice Nauendorff","url":"https://nauendorff-gebaeudeservice.de/","telephone":"+4917657919746",
+"founder":{"@type":"Person","name":"Florian Nauendorff"},"priceRange":"€€",
+"address":{"@type":"PostalAddress","streetAddress":"Kasseler Straße 7","postalCode":"99089","addressLocality":"Erfurt","addressRegion":"Thüringen","addressCountry":"DE"},
+"geo":{"@type":"GeoCoordinates","latitude":51.0048,"longitude":11.0180},
+"areaServed":[{"@type":"City","name":"Erfurt"}],
+"makesOffer":[
+ {"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Unterhaltsreinigung und Treppenhausreinigung","areaServed":"Erfurt"}},
+ {"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Glas- und Fensterreinigung","areaServed":"Erfurt"}},
+ {"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Grundreinigung und Bauendreinigung","areaServed":"Erfurt"}},
+ {"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Hausmeisterservice und Objektbetreuung","areaServed":"Erfurt"}},
+ {"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Winterdienst, Räum- und Streudienst","areaServed":"Erfurt"}},
+ {"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Hochdruckreinigung von Pflaster, Wegen und Einfahrten","areaServed":"Erfurt"}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet Gebäudereinigung in Erfurt?","acceptedAnswer":{"@type":"Answer","text":"Der Preis für Gebäudereinigung in Erfurt richtet sich nach Fläche, Turnus und Leistungsumfang. Wir besichtigen das Objekt kostenlos, rechnen danach und nennen einen Festpreis, der schriftlich im Angebot steht. Nachträgliche Zuschläge gibt es nicht."}},
+{"@type":"Question","name":"Übernehmen Sie die Räum- und Streupflicht?","acceptedAnswer":{"@type":"Answer","text":"Ja, die Räum- und Streupflicht kann vertraglich übertragen werden. In Erfurt gilt nach der Straßenreinigungssatzung, Stadtrecht 2.035: nach 20 Uhr entstandene Glätte und gefallener Schnee sind bis 7 Uhr des folgenden Tages zu beseitigen, und die Beseitigung ist bis 20 Uhr aufrechtzuerhalten."}},
+{"@type":"Question","name":"In welchen Intervallen reinigen Sie Treppenhäuser?","acceptedAnswer":{"@type":"Answer","text":"Treppenhäuser reinigen wir wöchentlich, zweimal wöchentlich, 14-täglich oder monatlich, je nach Nutzung und Anzahl der Parteien. Der Turnus steht im Leistungsverzeichnis, zusammen mit den Flächen und den einzelnen Arbeiten."}},
+{"@type":"Question","name":"Ist Hausmeisterservice nach BetrKV umlagefähig?","acceptedAnswer":{"@type":"Answer","text":"Kosten für Hausmeister, Treppenhausreinigung, Gartenpflege und Winterdienst gehören nach der Betriebskostenverordnung grundsätzlich zu den umlagefähigen Betriebskosten, sofern die Umlage im Mietvertrag vereinbart ist. Reparaturen und Instandhaltung sind nicht umlagefähig."}},
+{"@type":"Question","name":"Reinigen Sie Praxen außerhalb der Öffnungszeiten?","acceptedAnswer":{"@type":"Answer","text":"Ja, Praxen und Büros reinigen wir auf Wunsch abends, früh morgens oder samstags. Der Zugang wird vorher schriftlich geregelt, ebenso der Umgang mit Schlüsseln und Alarmanlagen."}}
+]}
+</script>
+</body>
+</html>
