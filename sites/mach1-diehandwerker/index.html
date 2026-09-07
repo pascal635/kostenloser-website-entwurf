@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kernsanierung Stuttgart | Mach1 die Handwerker GmbH</title>
+<meta name="description" content="Kernsanierung und Innenausbau in Stuttgart. Ein Ansprechpartner, Festpreis vor Baubeginn, Bauzeitenplan mit Datum. Kostenlose Besichtigung vereinbaren.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://mach1-diehandwerker.de/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ihre Kernsanierung in Stuttgart, aus einer Hand">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="bilder/hero-wohnraum-umbau-werkzeug.webp">
+<meta name="theme-color" content="#141A20">
+
+<!-- Schriften selbst gehostet, kein Google-Fonts-CDN (DSGVO) -->
+<link rel="preload" href="fonts/chakrapetch-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrainsmono-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Chakra Petch";font-style:normal;font-weight:700;font-display:swap;
+  src:url("fonts/chakrapetch-700.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/jetbrainsmono-400.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;
+  src:url("fonts/jetbrainsmono-500.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:700;font-display:swap;
+  src:url("fonts/jetbrainsmono-700.woff2") format("woff2")}
+
+:root{
+  --blau:#2793FE;        /* Logo-Blau, Marken und Akzente */
+  --blau-fl:#0F72D6;     /* gefüllte Flächen, weisse Schrift lesbar */
+  --blau-tief:#0B5AA8;
+  --schiefer:#363E47;    /* Logo-Grau */
+  --tinte:#141A20;
+  --tinte2:#1E252C;
+  --grund:#E9ECEF;
+  --grund2:#F3F5F7;
+  --linie:rgba(20,26,32,.17);
+  --linie-d:rgba(233,236,239,.17);
+  --cut:28px; --cut-m:16px; --cut-s:9px;
+  --kopf-dx:215px;
+  --disp:'Chakra Petch',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--grund);color:var(--tinte);font-family:var(--mono);font-size:12.5px;line-height:1.9;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+p{margin:0 0 1.15em}
+
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:1.02;letter-spacing:0;margin:0}
+h1{font-size:clamp(31px,4.6vw,62px)}
+h2{font-size:clamp(25px,3.4vw,44px)}
+h3{font-size:clamp(19px,2.1vw,26px)}
+h4{font-size:15px;line-height:1.2}
+.lab{font-family:var(--mono);font-size:9.5px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(20,26,32,.5);margin:0}
+.lab.a{color:var(--blau-fl)}
+.dunkel .lab,.aufdunkel .lab{color:rgba(233,236,239,.5)}
+.dunkel .lab.a,.aufdunkel .lab.a{color:var(--blau)}
+.txt{max-width:52ch;color:rgba(20,26,32,.74)}
+.dunkel .txt,.aufdunkel .txt{color:rgba(233,236,239,.72)}
+.mini{font-size:11px;line-height:1.75}
+
+/* ---------- Raster ---------- */
+.wrap{max-width:1340px;margin:0 auto;padding-inline:24px;position:relative}
+.wrap>*{position:relative;z-index:1}
+.band{padding-block:clamp(40px,4.6vw,74px)}
+.band-s{padding-block:clamp(26px,2.6vw,40px)}
+.dunkel{background:var(--tinte);color:#E9ECEF}
+.linie-o{border-top:1px solid var(--linie)}
+.dunkel .linie-o{border-top-color:var(--linie-d)}
+
+/* ---------- Fasen ---------- */
+.c-tr{clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+.c-br{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
+.c-bl{clip-path:polygon(0 0,100% 0,100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+.c-tl{clip-path:polygon(var(--cut) 0,100% 0,100% 100%,0 100%,0 var(--cut))}
+.c-m{clip-path:polygon(0 0,calc(100% - var(--cut-m)) 0,100% var(--cut-m),100% 100%,0 100%)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:9.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.16em;padding:14px 20px;border:0;cursor:pointer;
+  clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%);transition:background .15s,color .15s}
+.btn::after{content:"→";letter-spacing:0;font-size:12px}
+.btn-a{background:var(--blau-fl);color:#fff}
+.btn-a:hover{background:var(--blau-tief)}
+.btn-d{background:var(--tinte);color:#E9ECEF}
+.btn-d:hover{background:var(--schiefer)}
+.btn-h{background:#fff;color:var(--tinte)}
+.btn-h:hover{background:var(--grund2)}
+.btn-o{background:transparent;box-shadow:inset 0 0 0 1px var(--linie);color:inherit}
+.dunkel .btn-o{box-shadow:inset 0 0 0 1px var(--linie-d)}
+.btn-o:hover{background:rgba(20,26,32,.06)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--blau);outline-offset:3px}
+.q{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:none;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);background:var(--tinte);color:#fff;cursor:pointer;border:0}
+.q.a{background:var(--blau-fl)}
+.q.hell{background:#fff;color:var(--tinte)}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:700;background:var(--grund);border-bottom:1px solid var(--linie)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:11px}
+.hd img{height:clamp(44px,4.2vw,58px);width:auto;display:block}
+.hd nav{display:flex;gap:22px;align-items:center}
+.hd nav a{font-size:9.5px;text-transform:uppercase;letter-spacing:.16em;padding:3px 0;border-bottom:1px solid transparent}
+.hd nav a:hover{border-color:var(--blau)}
+.hd-akt{display:flex;align-items:center;gap:10px}
+.ruf{width:42px;height:42px;flex:none;display:grid;place-items:center;background:var(--tinte);color:#E9ECEF;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);transition:background .15s}
+.ruf svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ruf:hover{background:var(--blau-fl);color:#fff}
+.burger{display:none;width:42px;height:42px;flex:none;background:var(--grund2);border:1px solid var(--linie);
+  cursor:pointer;padding:0;place-items:center;align-content:center;gap:5px;grid-auto-flow:row}
+.burger i{display:block;width:18px;height:1.5px;background:var(--tinte);transition:transform .2s,opacity .15s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:1120px){
+  .hd{position:static}
+  .burger{display:grid}
+  .hd nav{position:absolute;left:0;right:0;top:100%;display:none;flex-direction:column;gap:0;
+    align-items:stretch;background:var(--grund);border-bottom:1px solid var(--linie);padding:0 0 10px;
+    box-shadow:0 18px 30px rgba(20,26,32,.13)}
+  .hd nav[data-offen]{display:flex}
+  .hd nav a{padding:15px max(24px,calc((100vw - 1340px)/2 + 24px));font-size:11px;
+    border-bottom:1px solid var(--linie)}
+  .hd nav a:hover{border-color:var(--linie);background:var(--grund2)}
+}
+@media(max-width:430px){.hd-akt .btn{display:none}}
+[id]{scroll-margin-top:92px}
+.draft{background:var(--tinte);color:#E9ECEF;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 24px;text-align:center;line-height:1.8}
+.draft b{color:var(--blau);font-weight:500}
+.pl{border-bottom:1px dotted var(--blau);cursor:help}
+
+/* ---------- Statement ---------- */
+/* ---------- Hero: ein Foto, darueber weisses Kopffeld und schwarzes Panel ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;background:var(--schiefer);
+  min-height:100dvh;display:flex;flex-direction:column}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 34%;
+  filter:grayscale(1) contrast(1.1) brightness(.8);z-index:0}
+.hero-kopf{position:relative;z-index:2;background:var(--grund2);
+  clip-path:polygon(0 0,100% 0,calc(100% - var(--kopf-dx)) 100%,0 100%)}
+.hero-kopf::after{content:"";position:absolute;left:var(--kopf-linie,50%);top:0;bottom:0;width:1px;
+  background:var(--linie);pointer-events:none;z-index:3}
+.hero-kopf .state{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:end;
+  padding-block:clamp(24px,3vw,46px);padding-right:clamp(150px,16vw,240px);min-height:clamp(150px,15vw,215px)}
+.hero-kopf .kopfzeile{grid-column:1/4}
+.hero-kopf .zelle{align-self:end;padding-bottom:6px}
+.hero-kopf h1{font-size:clamp(26px,3.2vw,46px);line-height:1.04}
+
+.hero-unten{position:relative;z-index:2;flex:1;min-height:clamp(240px,26vw,330px)}
+.hero-unten::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:rgba(255,255,255,.2);pointer-events:none;z-index:3}
+.hero-panel{background:var(--tinte);color:#E9ECEF;width:100%;height:100%;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:clamp(24px,2.8vw,40px) calc(50% + 40px) clamp(40px,5vw,64px)
+          max(24px,calc((100vw - 1340px)/2 + 24px));
+  clip-path:polygon(0 0,50% 0,50% var(--knick-y,58%),calc(50% - var(--knick-dx,150px)) 100%,0 100%)}
+.hero-panel h3{color:#fff;margin:0 0 12px;max-width:19ch}
+.hero-panel .txt{max-width:42ch}
+.hero-foto-mobil{display:none}
+@media(max-width:900px){
+  .hero{background:var(--grund2)}
+  .hero-bg{display:none}
+  .hero-kopf{clip-path:none}
+  .hero-kopf::after,.hero-unten::after{display:none}
+  .hero-kopf .state{grid-template-columns:1fr 1fr;min-height:0;padding-right:0}
+  .hero-kopf .kopfzeile{grid-column:1/-1}
+  .hero-unten{min-height:0}
+  .hero-panel{clip-path:polygon(0 0,100% 0,100% calc(100% - 44px),calc(100% - 44px) 100%,0 100%);
+    padding:26px 24px 44px;height:auto}
+  .hero-foto-mobil{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--schiefer)}
+  .hero-foto-mobil img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+    filter:grayscale(1) contrast(1.07)}
+}
+/* Bild-Kerbe unten links, wie in der Referenz */
+.kerbe{--nx:42px;--ny:32px;
+  clip-path:polygon(0 0,100% 0,100% 100%,var(--nx) 100%,var(--nx) calc(100% - var(--ny)),0 calc(100% - var(--ny)))}
+.kerbe-s{--nx:28px;--ny:22px;
+  clip-path:polygon(0 0,100% 0,100% 100%,var(--nx) 100%,var(--nx) calc(100% - var(--ny)),0 calc(100% - var(--ny)))}
+/* Flankenkerbe links, dieselbe Sprache wie bei den grossen Blockbildern */
+.kerbe-l{clip-path:polygon(0 0,100% 0,100% 100%,0 100%,
+  0 72%,20px calc(72% - 13px),20px calc(28% + 13px),0 28%)}
+
+/* ---------- Bilder ---------- */
+.bild{position:relative;overflow:hidden;background:var(--schiefer)}
+.bild img{width:100%;height:100%;object-fit:cover}
+.sw img{filter:grayscale(1) contrast(1.07) brightness(.98)}
+.sw-hover img{transition:filter .35s}
+.sw-hover:hover img{filter:none}
+.r34{aspect-ratio:3/4}.r43{aspect-ratio:4/3}.r11{aspect-ratio:1/1}.r169{aspect-ratio:16/9}
+.tagchip{position:absolute;top:12px;left:12px;background:var(--grund);color:var(--tinte);font-size:8.5px;
+  letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;
+  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,0 100%)}
+.tagchip.a{background:var(--blau-fl);color:#fff}
+.bildunter{position:absolute;left:0;right:0;bottom:0;padding:14px;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:12px;background:linear-gradient(transparent,rgba(20,26,32,.82));color:#fff}
+.bildunter h4{font-size:14px}
+
+/* ---------- Hero-Band ---------- */
+/* ---------- Kennzahl-Kacheln ---------- */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.stats{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.tile{background:var(--blau-fl);color:#fff;padding:22px;aspect-ratio:1.14;min-height:0;
+  display:flex;flex-direction:column;justify-content:space-between}
+@media(max-width:520px){.tile{aspect-ratio:auto;min-height:130px}}
+.tile b{font-family:var(--disp);font-weight:700;font-size:clamp(28px,3.2vw,42px);line-height:1;display:block}
+.tile b em{font-style:normal;font-size:.42em;margin-left:.16em}
+.tile>span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.tile:nth-child(1),.tile:nth-child(4){clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.tile:nth-child(2),.tile:nth-child(3){clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+.tile:nth-child(4){background:var(--schiefer)}
+.kar{background:var(--grund2);padding:28px;display:flex;flex-direction:column;justify-content:space-between;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 44px),calc(100% - 44px) 100%,0 100%)}
+/* Kennzahlen-Band, dunkel mit Stufe unten links */
+.kennzahlen{background:var(--tinte);position:relative;z-index:1;
+  --nk:46px;
+  margin-top:calc(var(--nk) * -1);margin-bottom:calc(var(--nk) * -1);
+  clip-path:polygon(
+    0 var(--nk),
+    var(--d2,66%) var(--nk),
+    calc(var(--d2,66%) + var(--nk)) 0,
+    100% 0,
+    100% 100%,
+    calc(var(--d1,33%) + var(--nk)) 100%,
+    var(--d1,33%) calc(100% - var(--nk)),
+    0 calc(100% - var(--nk)))}
+.kennzahlen>.wrap{padding-block:calc(clamp(40px,4.6vw,74px) + var(--nk))}
+@media(max-width:860px){.kennzahlen{clip-path:none;margin-top:0;margin-bottom:0}
+  .kennzahlen>.wrap{padding-block:clamp(40px,4.6vw,74px)}}
+.kennzahlen .kar h2{color:var(--tinte)}
+.kennzahlen .kar .txt{color:rgba(20,26,32,.74)}
+
+/* durchgehende Mittellinie */
+.mitte{position:relative}
+.mitte::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--linie);
+  pointer-events:none;z-index:0}
+.mitte.hell::before{background:rgba(255,255,255,.17)}
+@media(max-width:860px){.mitte::before{display:none}}
+
+/* ---------- Drei Spalten mit senkrechten Linien ---------- */
+.spalten3{position:relative}
+.spalten3::before{content:"";position:absolute;top:0;bottom:0;left:24px;right:24px;pointer-events:none;z-index:0;
+  background:
+    linear-gradient(var(--linie),var(--linie)) calc((100% - 16px)/3 + 4px) 0/1px 100% no-repeat,
+    linear-gradient(var(--linie),var(--linie)) calc((100% - 16px)/3*2 + 12px) 0/1px 100% no-repeat}
+.s3-kopf{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:26px;align-items:center}
+.s3-kopf>div{padding-right:22px}
+.s3-kopf>div+div{padding-left:22px}
+@media(max-width:1000px){.spalten3::before{display:none}
+  .s3-kopf{grid-template-columns:1fr;gap:14px}
+  .s3-kopf>div{padding:0}.s3-kopf>div+div{padding-left:0}}
+
+/* ---------- Leistungskarten ---------- */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:1000px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.svc{grid-template-columns:1fr}}
+.svc article{background:var(--tinte2);color:#E9ECEF;display:flex;flex-direction:column;min-height:290px;
+  background-image:linear-gradient(rgba(233,236,239,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(233,236,239,.055) 1px,transparent 1px);
+  background-size:24px 24px;
+  clip-path:polygon(0 0,calc(100% - var(--cut-m)) 0,100% var(--cut-m),100% 100%,0 100%)}
+.svc article.a{background-color:var(--blau-fl);
+  background-image:linear-gradient(rgba(255,255,255,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.11) 1px,transparent 1px)}
+.svc .kz{display:flex;justify-content:space-between;padding:15px 17px 0;font-size:9px;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(233,236,239,.55)}
+.svc article.a .kz{color:rgba(255,255,255,.85)}
+.svc h4{padding:8px 17px 0;max-width:15ch}
+.svc .mid{flex:1;display:flex;align-items:center;justify-content:center;padding:16px}
+.svc .mid svg{width:66px;height:66px;stroke:rgba(233,236,239,.5);fill:none;stroke-width:1.1}
+.svc article.a .mid svg{stroke:rgba(255,255,255,.8)}
+.svc .fuss{border-top:1px solid rgba(233,236,239,.14);padding:13px 17px;font-size:10.5px;line-height:1.7;color:rgba(233,236,239,.7)}
+.svc article.a .fuss{border-top-color:rgba(255,255,255,.28);color:rgba(255,255,255,.88)}
+
+/* ---------- Akkordeon ---------- */
+.akk details{border-bottom:1px solid var(--linie)}
+.akk details:first-child{border-top:1px solid var(--linie)}
+.akk summary{cursor:pointer;list-style:none;padding:22px 0;display:flex;justify-content:space-between;gap:18px;align-items:center}
+.akk summary::-webkit-details-marker{display:none}
+.akk summary h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;
+  font-size:clamp(18px,1.9vw,25px);line-height:1.05;letter-spacing:0}
+.akk summary::after{content:"+";font-size:24px;font-weight:400;color:var(--blau-fl);flex:none;line-height:1}
+.akk details[open] summary::after{content:"\2013"}
+.faq-grid .akk summary h4{font-size:clamp(14.5px,1.35vw,18px)}
+.faq-grid .akk summary{padding:17px 0}
+.faq-grid .akk summary::after{font-size:19px}
+.akk .inh{padding:0 0 26px;display:grid;grid-template-columns:1fr 218px;gap:26px;align-items:start}
+@media(max-width:760px){.akk .inh{grid-template-columns:1fr}
+  .kerbe-l{clip-path:polygon(0 0,28% 0,calc(28% + 13px) 20px,
+    calc(72% - 13px) 20px,72% 0,100% 0,100% 100%,0 100%)}}
+/* Durchgehende Senkrechte, deckungsgleich mit der Rasterfuge */
+.linie50::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;
+  background:var(--linie);pointer-events:none;z-index:0}
+.linie13::before{content:"";position:absolute;top:0;bottom:0;left:calc(24px + (100% - 48px)/3);width:1px;
+  background:var(--linie);pointer-events:none;z-index:0}
+.aufdunkel.linie13::before,.aufdunkel.linie50::before{background:var(--linie-d)}
+@media(max-width:880px){.linie50::before,.linie13::before{display:none}}
+
+/* Ablauf-Raster, Halbe zu Halbe */
+.ablauf-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.ablauf-grid .links{padding-right:48px;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:clamp(340px,32vw,470px)}
+/* Fragen-Raster, Akkordeon auf zwei Dritteln */
+.faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:0}
+.faq-grid .links{padding-right:48px}
+/* Waagerechte des Akkordeons stossen an die Senkrechte */
+.ablauf-grid .akk summary,.ablauf-grid .akk .inh,
+.faq-grid .akk summary,.faq-grid .akk .inh{padding-left:48px}
+@media(max-width:880px){.ablauf-grid,.faq-grid{grid-template-columns:1fr}
+  .ablauf-grid .links,.faq-grid .links{padding-right:0;min-height:0;gap:18px;margin-bottom:26px}
+  .ablauf-grid .akk summary,.ablauf-grid .akk .inh,
+  .faq-grid .akk summary,.faq-grid .akk .inh{padding-left:0}}
+.akk .inh p{margin:0;color:rgba(20,26,32,.72)}
+.dunkel .akk details{border-color:var(--linie-d)}
+.dunkel .akk .inh p{color:rgba(233,236,239,.72)}
+
+/* ---------- Foto-Band mit Overlay ---------- */
+.fotoband{position:relative;overflow:hidden;min-height:clamp(520px,56vw,740px);background:var(--tinte);display:flex}
+.fotoband>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.08) brightness(.42);z-index:0}
+/* Schleier, damit der weisse Text auf hellen Motiven sicher liest */
+.fotoband::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(158deg,rgba(20,26,32,.72) 0%,rgba(20,26,32,.28) 52%,rgba(20,26,32,.66) 100%)}
+.fb-linien{position:absolute;inset:0;z-index:2;pointer-events:none}
+.fb-linien::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.17)}
+.fb-inhalt{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:space-between;
+  padding:clamp(30px,4vw,58px) max(24px,calc((100vw - 1340px)/2 + 24px))}
+.fb-oben{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.fotoband h2{color:#fff;max-width:19ch}
+.fb-oben .pfeile{justify-self:end;margin-top:8px}
+.fb-unten{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:end;margin-top:44px}
+.fb-marke{background:var(--blau-fl);color:#fff;margin:0;padding:22px 26px;max-width:min(500px,100%);
+  font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(15px,1.4vw,20px);line-height:1.2;
+  clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px)}
+.fb-rechts{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.fb-rechts>p{margin:0;color:rgba(255,255,255,.78);max-width:46ch}
+.fb-rechts .btn{align-self:flex-end}
+@media(max-width:860px){
+  .fotoband{min-height:0}
+  .fb-oben,.fb-unten{grid-template-columns:1fr}
+  .fb-oben .pfeile{justify-self:start}
+  .fb-linien::before{display:none}
+  .fb-rechts .btn{align-self:flex-start}
+}
+
+/* ---------- Projekt-Karussell ---------- */
+.kar-kopf{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.kar-steuer{display:flex;align-items:center;gap:8px;flex:none}
+.kar-fenster{overflow:hidden;margin-top:26px}
+.kar-spur{display:flex;gap:12px;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform}
+.kar-spur>*{flex:0 0 calc((100% - 12px)/2)}
+@media(max-width:900px){
+  .kar-spur>*{flex:0 0 100%}
+  .kar-kopf{flex-direction:column;align-items:flex-start;gap:16px}
+}
+.fb-karten{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+@media(max-width:760px){.fb-karten{grid-template-columns:1fr}}
+.fb-karte{padding:20px 22px;clip-path:polygon(0 0,calc(100% - var(--cut-m)) 0,100% var(--cut-m),100% 100%,0 100%)}
+.fb-karte.a{background:var(--blau-fl);color:#fff}
+.fb-karte.d{background:rgba(20,26,32,.9);color:#E9ECEF}
+.fb-karte p{margin:0;font-size:11px;line-height:1.75}
+.pfeile{display:flex;gap:6px}
+
+/* ---------- Vorher/Nachher ---------- */
+.vn-liste{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:1000px){.vn-liste{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.vn-liste{grid-template-columns:1fr}}
+.vnk{background:#fff;clip-path:polygon(0 0,calc(100% - var(--cut-m)) 0,100% var(--cut-m),100% 100%,0 100%)}
+.vn{position:relative;aspect-ratio:4/3;overflow:hidden;user-select:none;touch-action:pan-y;background:var(--schiefer)}
+.vn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vn .na{clip-path:inset(0 0 0 50%)}
+.vn .griff{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;pointer-events:none}
+.vn .griff i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;background:var(--blau-fl);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;
+  clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+.vn input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.vn .tg{position:absolute;top:11px;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px;color:#fff;
+  pointer-events:none;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,0 100%)}
+.tg-v{left:11px;background:rgba(20,26,32,.85)}
+.tg-n{right:11px;background:var(--blau-fl)}
+.vn-meta{padding:15px 17px 17px;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+
+/* ---------- Listen mit Rauten ---------- */
+.rlist{list-style:none;padding:0;margin:18px 0 0}
+.rlist li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--linie);font-size:11.5px}
+.rlist li::before{content:"";width:7px;height:7px;background:var(--blau-fl);transform:rotate(45deg);flex:none;margin-top:6px}
+.dunkel .rlist li{border-bottom-color:var(--linie-d)}
+
+/* ---------- Duoton: Graustufe in der Akzentfarbe, Vollfarbe beim Zeigen ---------- */
+@property --duo{syntax:'<number>';inherits:true;initial-value:1}
+.duo{isolation:isolate;--duo:1}
+.duo>img{
+  filter:grayscale(var(--duo))
+         sepia(var(--duo))
+         hue-rotate(calc(var(--duo) * 185deg))
+         saturate(calc(1 + var(--duo) * 1.25))
+         contrast(calc(1.02 + var(--duo) * .3))
+         brightness(calc(1 - var(--duo) * .07));
+  transition:filter .5s ease}
+.duo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(158deg,rgba(11,90,168,.7),rgba(11,90,168,0) 70%);
+  mix-blend-mode:multiply;opacity:calc(var(--duo) * .55);transition:opacity .5s ease}
+.duo .tagchip{z-index:2}
+@media(hover:hover){.bk:hover .duo,.duo:hover{--duo:0}}
+@media(hover:none){.duo>img,.duo::after{transition-duration:.12s;transition-timing-function:linear}}
+@media(prefers-reduced-motion:reduce){.duo>img,.duo::after{transition:none}}
+
+/* ---------- Blockfolge: Bild eine Seite, Text die andere ---------- */
+.bloecke{border-top:1px solid var(--linie)}
+.bk{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--linie)}
+.bk-bild{position:relative;overflow:hidden;background:var(--schiefer);min-height:clamp(380px,40vw,540px)}
+.bk-bild img{width:100%;height:100%;object-fit:cover}
+.bk-bild:not(.duo) img{filter:grayscale(1) contrast(1.07) brightness(.92)}
+.bk-text{padding-block:clamp(30px,3.6vw,56px);display:flex;flex-direction:column;justify-content:center}
+.bild-links .bk-bild{clip-path:polygon(
+  0 0,
+  100% 0,
+  100% 30%,
+  calc(100% - 44px) calc(30% + 26px),
+  calc(100% - 44px) calc(70% - 26px),
+  100% 70%,
+  100% 100%,
+  0 100%)}
+.bild-links .bk-text{padding-left:clamp(28px,3.4vw,54px);padding-right:max(24px,calc((100vw - 1340px)/2 + 24px))}
+.bild-rechts .bk-bild{clip-path:polygon(
+  0 0,
+  100% 0,
+  100% 100%,
+  0 100%,
+  0 70%,
+  44px calc(70% - 26px),
+  44px calc(30% + 26px),
+  0 30%)}
+.bild-rechts .bk-text{padding-right:clamp(28px,3.4vw,54px);padding-left:max(24px,calc((100vw - 1340px)/2 + 24px))}
+.bk-bild .tagchip{top:22px;left:24px}
+.bild-rechts .bk-bild .tagchip{left:auto;right:24px}
+
+.dlist{list-style:none;padding:0;margin:20px 0 26px}
+.dlist li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;
+  border-bottom:1px solid var(--linie);font-size:10px;letter-spacing:.16em;text-transform:uppercase;line-height:1.5}
+.dlist li:first-child{border-top:1px solid var(--linie)}
+.dlist li span{display:flex;align-items:center;gap:14px}
+.dlist li span::before{content:"";width:8px;height:8px;background:var(--blau-fl);transform:rotate(45deg);flex:none}
+.dlist li b{font-weight:700;white-space:nowrap;color:var(--tinte);letter-spacing:.08em}
+
+.bk-schluss{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--linie)}
+.bk-schluss .l{padding:clamp(30px,3.6vw,56px) clamp(28px,3.4vw,54px) clamp(30px,3.6vw,56px)
+  max(24px,calc((100vw - 1340px)/2 + 24px))}
+.bk-schluss .r{border-left:1px solid var(--linie);display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(30px,3.6vw,56px) max(24px,calc((100vw - 1340px)/2 + 24px)) clamp(30px,3.6vw,56px) clamp(28px,3.4vw,54px)}
+@media(max-width:900px){
+  .bk,.bk-schluss{grid-template-columns:1fr}
+  .bk-bild{min-height:270px}
+  /* Kerbe kippt auf die Waagerechte und zeigt zum Text der Sektion */
+  .bild-links .bk-bild{clip-path:polygon(0 0,100% 0,100% 100%,70% 100%,
+    calc(70% - 20px) calc(100% - 32px),calc(30% + 20px) calc(100% - 32px),30% 100%,0 100%)}
+  .bild-rechts .bk-bild{clip-path:polygon(0 0,30% 0,calc(30% + 20px) 32px,
+    calc(70% - 20px) 32px,70% 0,100% 0,100% 100%,0 100%)}
+  .bk-text,.bk-schluss .l,.bk-schluss .r{padding-inline:24px!important}
+  .bk-schluss .r{border-left:0;border-top:1px solid var(--linie)}
+}
+
+/* ---------- Tabelle ---------- */
+.tabsc{overflow-x:auto;max-width:100%;min-width:0}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linie);vertical-align:top;font-size:11.5px}
+th{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(20,26,32,.5);font-weight:500;border-bottom-color:var(--tinte)}
+td:first-child{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:14px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* ---------- Platzhalter Stimmen ---------- */
+.phst{background:#fff;padding:22px;border:1px dashed rgba(39,147,254,.55);
+  clip-path:polygon(0 0,calc(100% - var(--cut-m)) 0,100% var(--cut-m),100% 100%,0 100%)}
+.skel{height:9px;background:var(--grund);margin-bottom:9px}
+.skel.k{width:56%}
+
+/* ---------- Funnel ---------- */
+.funnel{background:var(--tinte2);color:#E9ECEF;padding:clamp(22px,2.8vw,32px);
+  background-image:linear-gradient(rgba(233,236,239,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(233,236,239,.045) 1px,transparent 1px);
+  background-size:26px 26px;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%)}
+.bal{height:2px;background:rgba(233,236,239,.2);margin-bottom:18px}
+.bal i{display:block;height:100%;background:var(--blau);width:25%;transition:width .25s}
+.wahl{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 20px}
+.wahl button{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:11px 14px;
+  background:transparent;color:#E9ECEF;cursor:pointer;border:1px solid rgba(233,236,239,.3);
+  clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,0 100%)}
+.wahl button:hover{border-color:#E9ECEF}
+.wahl button[aria-pressed=true]{background:var(--blau-fl);border-color:var(--blau-fl);color:#fff}
+.feld{display:block;margin-bottom:13px}
+.feld span{display:block;margin-bottom:5px}
+.feld input,.feld textarea{width:100%;font-family:var(--mono);font-size:12px;padding:11px 13px;
+  background:rgba(233,236,239,.06);border:1px solid rgba(233,236,239,.26);color:#E9ECEF;
+  clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,0 100%)}
+.feld input:focus,.feld textarea:focus{border-color:var(--blau);outline:0}
+.sbox[hidden]{display:none}
+.zur{background:none;border:0;font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.16em;
+  color:rgba(233,236,239,.55);cursor:pointer;padding:10px 0}
+
+/* ---------- Kontakt mit Foto im Hintergrund ---------- */
+.kontakt{position:relative;overflow:hidden;isolation:isolate;background:var(--tinte);color:#E9ECEF}
+.kontakt-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  filter:grayscale(1) contrast(1.05) brightness(.55)}
+.kontakt::after{content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(100deg,rgba(20,26,32,.9) 0%,rgba(20,26,32,.72) 46%,rgba(20,26,32,.45) 100%)}
+.kontakt>.wrap{position:relative;z-index:1}
+
+/* ---------- Fusszeile: vollbreit, Akzentfarbe, Kerbe an der Senkrechten ---------- */
+.seitenfuss{--nk:34px;background:var(--blau);color:var(--tinte);position:relative;z-index:2;
+  margin-top:calc(var(--nk) * -1);
+  clip-path:polygon(0 0,calc(var(--fx,33.3%) - var(--nk)) 0,var(--fx,33.3%) var(--nk),
+    100% var(--nk),100% 100%,0 100%)}
+.seitenfuss .wrap{padding-top:calc(var(--nk) + 30px)}
+.f-unten::before{content:"";position:absolute;top:calc((var(--nk) + 30px) * -1);bottom:0;
+  left:33.3333%;width:1px;background:rgba(20,26,32,.32);pointer-events:none;z-index:0}
+.seitenfuss .pl{border-bottom-color:rgba(20,26,32,.55)}
+.seitenfuss a:hover{color:#fff}
+/* Anfrage in der Fusszeile: Kopf oben links, Formular unten rechts.
+   Sechserraster, damit der Kopf an der Drittellinie endet und das Formular
+   auf der Mittelachse der Seite beginnt. */
+.fa-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;
+  padding-block:clamp(34px,4vw,64px) calc(clamp(34px,4vw,64px) + 34px)}
+.fa-kopf{grid-column:1 / 3;padding-right:48px;align-self:start}
+.fa-kopf h2{max-width:13ch}
+.fa-btn{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.fa-daten{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--linie-d)}
+.fa-daten>div{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--linie-d)}
+.fa-daten dt{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(233,236,239,.5)}
+.fa-daten dd{margin:0;font-size:11.5px;line-height:1.7;color:rgba(233,236,239,.8);text-align:right}
+.fa-form{grid-column:4 / 7;align-self:end}
+@media(max-width:880px){.fa-grid{grid-template-columns:1fr;gap:28px}
+  .fa-kopf{grid-column:auto;padding-right:0}
+  .fa-form{grid-column:auto}}
+.f-unten{display:grid;grid-template-columns:1fr 2fr}
+.f-marke{padding:0 40px 30px 0;display:flex;flex-direction:column;justify-content:space-between;
+  gap:26px;min-height:260px}
+.f-marke .lab{color:rgba(20,26,32,.86)}
+.f-marke .m1{font-family:var(--disp);font-weight:700;font-size:clamp(74px,11vw,150px);line-height:.8;letter-spacing:-.02em}
+.f-links{padding:0 0 30px 40px}
+.f-links a{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(20,26,32,.26);
+  font-size:9.5px;text-transform:uppercase;letter-spacing:.16em}
+.f-links a:first-child{border-top:1px solid rgba(20,26,32,.26)}
+.f-links a::after{content:"↗";opacity:.45}
+.f-nap{display:flex;flex-wrap:wrap;gap:10px 30px;padding-block:18px 30px;font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(20,26,32,.78);border-top:1px solid rgba(20,26,32,.26)}
+@media(max-width:880px){
+  .seitenfuss{clip-path:polygon(0 0,calc(50% - var(--nk)) 0,50% var(--nk),100% var(--nk),100% 100%,0 100%)}
+  .f-unten::before{display:none}
+  .f-unten{grid-template-columns:1fr}
+  .f-marke{padding:0 0 24px;min-height:0}
+  .f-links{padding:0 0 24px}}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:24px;top:8px;background:var(--blau-fl);color:#fff;padding:10px 16px;z-index:999}
+.zwei>*,.drei>*{min-width:0}
+@media(max-width:880px){.zwei{grid-template-columns:1fr!important;gap:20px!important}}
+@media(max-width:880px){.drei{grid-template-columns:1fr!important}}
+@media(max-width:1000px){#orte{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:560px){#orte{grid-template-columns:repeat(2,1fr)!important}}
+/* ============================================================
+   Zwischenbreiten: Kopf und Fliesstext nebeneinander, statt
+   untereinander mit leerer rechter Haelfte. Darunter mittig.
+   ============================================================ */
+@media(max-width:1000px) and (min-width:640px){
+  .s3-kopf{grid-template-columns:1fr 1fr;gap:14px 30px}
+  .s3-kopf>div:nth-child(2){display:none}
+  .s3-kopf>div{padding-right:0}
+  .s3-kopf>div+div{padding-left:0}
+}
+@media(max-width:900px) and (min-width:640px){
+  /* Held */
+  .hero-panel{display:grid;grid-template-columns:1fr 1fr;column-gap:34px;align-content:start}
+  .hero-panel>.lab{grid-area:1/1/2/2}
+  .hero-panel>h3{grid-area:2/1/3/2;max-width:none}
+  .hero-panel>.txt{grid-area:1/2/3/3;max-width:none;align-self:end;margin:0}
+  .hero-panel>div{grid-area:3/1/4/3;margin-top:24px}
+
+  /* Blocktexte: Warum, Preise, Betrieb */
+  .bk-text{display:grid;grid-template-columns:1fr 1fr;column-gap:34px;align-content:start}
+  .bk-text>.lab{grid-area:1/1/2/2}
+  .bk-text>h2{grid-area:2/1/3/2;margin:12px 0 0!important}
+  .bk-text>.txt{grid-area:1/2/3/3;max-width:none;align-self:end;margin:0}
+  .bk-text>.dlist{grid-area:3/1/4/3}
+  .bk-text>.btn{grid-area:4/1/5/3;justify-self:start}
+
+  /* Kundenstimmen bleiben zweispaltig */
+  .bk-schluss{grid-template-columns:1fr 1fr}
+  .bk-schluss .r{border-left:1px solid var(--linie);border-top:0}
+}
+@media(max-width:880px) and (min-width:640px){
+  /* Ablauf: Ueberschrift und Fliesstext nebeneinander */
+  .ablauf-grid .links{display:grid;grid-template-columns:1fr 1fr;column-gap:34px;align-items:start;
+    min-height:0;gap:0 34px}
+  /* Anfrage in der Fusszeile */
+  .fa-kopf{display:grid;grid-template-columns:1fr 1fr;column-gap:34px;align-content:start}
+  .fa-kopf>.lab{grid-area:1/1/2/2}
+  .fa-kopf>h2{grid-area:2/1/4/2;margin:14px 0 0!important;max-width:none}
+  .fa-kopf>.txt{grid-area:1/2/3/3;max-width:none;margin:0}
+  .fa-kopf>.fa-btn{grid-area:3/2/4/3;align-self:end}
+  .fa-kopf>.fa-daten{grid-area:4/1/5/3}
+  /* Einsatzgebiet */
+  #gebiet .zwei{grid-template-columns:1fr 1fr!important;gap:30px!important;align-items:end!important}
+}
+@media(max-width:639px){
+  /* Vollstaendig umgebrochen: mittig ausrichten */
+  .hero-panel{align-items:center;text-align:center}
+  .hero-panel h3,.hero-panel .txt{max-width:38ch;margin-left:auto;margin-right:auto}
+  .hero-panel>div{justify-content:center}
+  .hero-kopf .state{text-align:center}
+  .hero-kopf .kopfzeile h1{max-width:none}
+
+  .bk-text>.lab,.bk-text>h2,.bk-text>.txt,.bk-text>.btn{text-align:center}
+  .bk-text>.txt{max-width:44ch;margin-left:auto;margin-right:auto}
+  .bk-text>.btn{align-self:center}
+
+  .ablauf-grid .links,.faq-grid .links{text-align:center}
+  .ablauf-grid .links .txt{max-width:44ch;margin-left:auto;margin-right:auto}
+  .bk-schluss .l,.bk-schluss .r{text-align:center}
+  .bk-schluss .r .txt{max-width:44ch;margin-left:auto;margin-right:auto}
+  .bk-schluss .r .pfeile{justify-content:center}
+  #gebiet .zwei{text-align:center}
+  #gebiet .zwei .txt{max-width:44ch;margin-left:auto;margin-right:auto}
+  .fa-kopf{text-align:center}
+  .fa-kopf .txt{max-width:44ch;margin-left:auto;margin-right:auto}
+  .fa-kopf .fa-btn{justify-content:center}
+  .fa-kopf h2{max-width:none}
+  .fb-oben>div:first-child,.fb-unten .fb-rechts{text-align:center}
+  .fb-oben .pfeile{justify-self:center}
+  .fb-rechts{align-items:center}
+  .fb-rechts .btn{align-self:center}
+  .fb-marke{margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="draft">Entwurf für Mach1 die Handwerker · <b>Blau gepunktete Angaben sind Platzhalter</b> und werden durch echte Zahlen ersetzt</div>
+
+<header>
+  <div class="wrap hd">
+    <a href="#inhalt" aria-label="Mach1 die Handwerker, Startseite"><img src="bilder/logo-mach1-die-handwerker.webp" alt="Mach1 die Handwerker GmbH"></a>
+    <nav id="hauptnav">
+      <a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#ablauf">Ablauf</a>
+      <a href="#preise">Preise</a><a href="#gebiet">Gebiet</a>
+    </nav>
+    <div class="hd-akt">
+      <a class="ruf" href="tel:+4917683034813" title="0176 83034813" aria-label="Anrufen, 0176 83034813">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 3.4h3.2l1.6 4.1-2.1 1.5a12.7 12.7 0 0 0 5.9 5.9l1.5-2.1 4.1 1.6v3.2a2.1 2.1 0 0 1-2.3 2.1A17 17 0 0 1 4.3 5.7a2.1 2.1 0 0 1 2.1-2.3z"/></svg>
+      </a>
+      <a class="btn btn-d" href="#anfrage">Kontakt</a>
+      <button class="burger" type="button" id="burger" aria-label="Menü" aria-expanded="false" aria-controls="hauptnav"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <img class="hero-bg" src="bilder/hero-wohnraum-umbau-werkzeug.webp"
+       alt="Heller Wohnraum im Umbau mit Werkzeugtisch, Leiter und grossen Fenstern">
+  <div class="hero-kopf">
+    <div class="wrap raster">
+      <div class="state">
+        <div class="kopfzeile">
+          <p class="lab a">Stuttgart DE</p>
+          <h1 style="margin-top:14px">Aus der alten Wohnung<br>wird Ihr Zuhause.</h1>
+        </div>
+        <div class="zelle"><p class="lab">Seit <span class="pl" title="Platzhalter">20XX</span></p></div>
+        <div class="zelle"><p class="lab">GmbH · HRB 785253</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-unten">
+    <div class="hero-panel aufdunkel">
+      <p class="lab a">Kernsanierung &amp; Innenausbau</p>
+      <h3 style="margin-top:12px">Ein Ansprechpartner, ein Festpreis, ein Termin.</h3>
+      <p class="txt">Wir sanieren Ihre Wohnung oder Ihr Haus komplett, vom Rückbau bis zur Übergabe. Sie koordinieren keine sechs Firmen. Sie reden mit einem.</p>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:4px">
+        <a class="btn btn-a" href="#anfrage">Kostenlose Besichtigung</a>
+        <a class="btn btn-o" href="tel:+4917683034813">0176 83034813</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-foto-mobil">
+    <img src="bilder/hero-wohnraum-umbau-werkzeug.webp" alt="" aria-hidden="true">
+  </div>
+</section>
+
+<!-- ============ KENNZAHLEN ============ -->
+<section class="kennzahlen">
+  <div class="wrap band mitte hell">
+    <div class="stats">
+      <div class="tiles">
+        <div class="tile"><b><span class="pl" title="Platzhalter">12</span></b><span>Jahre am Bau</span></div>
+        <div class="tile"><b><span class="pl" title="Platzhalter">140</span></b><span>Objekte übergeben</span></div>
+        <div class="tile"><b><span class="pl" title="Platzhalter">30</span><em>km</em></b><span>Radius um Stuttgart</span></div>
+        <div class="tile"><b>5</b><span>Jahre Gewährleistung</span></div>
+      </div>
+      <div class="kar">
+        <h2>Sanierung aus einer Hand</h2>
+        <p class="txt" style="margin:18px 0 0">Wir planen und führen komplette Sanierungen aus. Vom Aufmaß über die Koordination der Gewerke bis zur Abnahme. Die Kerngewerke machen unsere eigenen Leute, alles andere steuern wir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEISTUNGEN ============ -->
+<div id="leistungen" class="wrap band spalten3">
+  <div class="s3-kopf">
+    <div>
+      <p class="lab a">Leistungen</p>
+      <h2 style="margin-top:12px">Ihre Wohnung, fertig übergeben</h2>
+    </div>
+    <div></div>
+    <div>
+      <p class="txt mini" style="margin:0">Sechs Leistungen, ein Vertrag, ein Preis, ein Termin. Sortiert nach dem, was Kunden suchen, nicht nach Gewerkesystematik.</p>
+    </div>
+  </div>
+  <div class="svc">
+    <article class="a">
+      <div class="kz"><span>001</span><span><span class="pl" title="Platzhalter">8 bis 16 Wo.</span></span></div>
+      <h4 style="color:#fff">Kernsanierung</h4>
+      <div class="mid"><svg viewBox="0 0 64 64"><path d="M6 26 32 6l26 20"/><path d="M12 24v34h40V24"/><path d="M25 58V38h14v20M38 30h10v8H38z"/></svg></div>
+      <div class="fuss">Entkernen, Grundriss neu denken, Leitungen und Elektrik erneuern, Böden, Bäder, Oberflächen. Am Ende übergeben wir besenrein.</div>
+    </article>
+    <article>
+      <div class="kz"><span>002</span><span><span class="pl" title="Platzhalter">3 Wochen</span></span></div>
+      <h4>Bad komplett</h4>
+      <div class="mid"><svg viewBox="0 0 64 64"><path d="M6 34h52v11a9 9 0 0 1-9 9H15a9 9 0 0 1-9-9z"/><path d="M18 34V16a6 6 0 0 1 12 0"/><circle cx="24" cy="16" r="2.2"/><path d="M15 54l-3 7M49 54l3 7"/></svg></div>
+      <div class="fuss">Vom alten Bad mit Wanne zum bodengleichen Bad. Rückbau, Abdichtung, Fliesen, Sanitär, Elektrik, Licht.</div>
+    </article>
+    <article>
+      <div class="kz"><span>003</span><span>Mit Statik</span></div>
+      <h4>Grundriss ändern</h4>
+      <div class="mid"><svg viewBox="0 0 64 64"><rect x="6" y="8" width="52" height="48"/><path d="M6 32h22V8M28 32v24M40 32h18M34 20h6M34 44h18"/></svg></div>
+      <div class="fuss">Wände raus, Wände rein, Räume zusammenlegen. Bei tragenden Wänden holen wir die Statik dazu, bevor jemand die Flex ansetzt.</div>
+    </article>
+    <article>
+      <div class="kz"><span>004</span><span>Eigene Leute</span></div>
+      <h4>Trocken- und Innenausbau</h4>
+      <div class="mid"><svg viewBox="0 0 64 64"><rect x="6" y="10" width="23" height="44"/><rect x="35" y="10" width="23" height="44"/><path d="M6 26h23M35 40h23M17.5 10v44M46.5 10v44"/></svg></div>
+      <div class="fuss">Neue Wände, abgehängte Decken, Dämmung, Vorsatzschalen. Sauber gespachtelt bis Q3 oder Q4.</div>
+    </article>
+    <article>
+      <div class="kz"><span>005</span><span>Eigene Leute</span></div>
+      <h4>Boden und Parkett</h4>
+      <div class="mid"><svg viewBox="0 0 64 64"><path d="M4 40l14-14 14 14-14 14zM32 26l14-14 14 14-14 14z"/><path d="M18 26v28M46 12v28"/></svg></div>
+      <div class="fuss">Parkett, Fischgrät, Vinyl, Fliesen. Übergänge und Sockel sind das, was man später jeden Tag sieht.</div>
+    </article>
+    <article>
+      <div class="kz"><span>006</span><span>Eigene Leute</span></div>
+      <h4>Maler und Oberflächen</h4>
+      <div class="mid"><svg viewBox="0 0 64 64"><rect x="14" y="6" width="26" height="15"/><path d="M27 21v11M20 32h14v11H20z"/><path d="M27 43v15M40 13h12v13"/></svg></div>
+      <div class="fuss">Putz, Spachtel, Anstrich. Der letzte Arbeitsgang, an dem alle vorherigen sichtbar werden.</div>
+    </article>
+  </div>
+</div>
+
+<!-- ============ ABLAUF, AKKORDEON ============ -->
+<div id="ablauf" class="wrap raster band linie-o linie50">
+  <div class="ablauf-grid">
+    <div class="links">
+      <div>
+        <p class="lab a">Ablauf</p>
+        <h2 style="margin:12px 0 0;max-width:12ch">So läuft Ihr Projekt</h2>
+      </div>
+      <div>
+        <p class="txt mini">Sechs Schritte mit Zeitangaben. Sie wissen an jedem Tag, wo Sie stehen, und vorher, wann Sie einziehen können. Der Bauzeitenplan steht vor Baubeginn, mit Kalenderwochen je Gewerk.</p>
+        <a class="btn btn-a" href="#anfrage">Schritt eins starten</a>
+      </div>
+    </div>
+    <div class="rechts akk" data-solo>
+      <details name="ablauf" open>
+        <summary><h4>01 · Anfrage und Besichtigung</h4></summary>
+        <div class="inh">
+          <p>Sie schreiben oder rufen an, wir melden uns am selben Werktag zurück. Dann kommen wir ins Objekt, messen auf und hören zu. Kostenlos und unverbindlich. Ohne diesen Termin kann Ihnen niemand seriös einen Preis nennen, und wir tun es auch nicht. Dauer etwa <span class="pl" title="Platzhalter">45 Minuten</span>.</p>
+          <div class="bild r43 sw kerbe-l"><img src="bilder/ablauf-01-aufmass-bandmass.webp" alt="Bandmaß auf dem Grundriss beim Aufmaß vor Ort" loading="lazy"></div>
+        </div>
+      </details>
+      <details name="ablauf"><summary><h4>02 · Festpreis-Angebot</h4></summary><div class="inh"><p>Sie bekommen ein Leistungsverzeichnis, in dem jede Position steht. Kein Pauschalbetrag ohne Inhalt. Innerhalb von <span class="pl" title="Platzhalter">5 Werktagen</span> nach der Besichtigung.</p><div class="bild r43 sw kerbe-l"><img src="bilder/ablauf-02-angebot-helm-wasserwaage.webp" alt="Helm und Wasserwaage auf dem Grundriss beim Kalkulieren" loading="lazy"></div></div></details>
+      <details name="ablauf"><summary><h4>03 · Bauzeitenplan mit Datum</h4></summary><div class="inh"><p>Vor Baubeginn wissen Sie, welches Gewerk in welcher Kalenderwoche arbeitet und wann Sie einziehen können.</p><div class="bild r43 sw kerbe-l"><img src="bilder/ablauf-03-bauzeitenplan-schreibtisch.webp" alt="Grundriss, Bandmaß und Brille auf dem Tisch bei der Terminplanung" loading="lazy"></div></div></details>
+      <details name="ablauf"><summary><h4>04 · Rückbau und Rohbau</h4></summary><div class="inh"><p>Entkernen, Schutt raus, Leitungen und Elektrik neu. Das ist der Moment, in dem sich entscheidet, ob es am Ende hält.</p><div class="bild r43 sw kerbe-l"><img src="bilder/ablauf-04-rueckbau-rohbau.webp" alt="Wohnung im Rohbau mit offenen Durchbrüchen und Leitungen" loading="lazy"></div></div></details>
+      <details name="ablauf"><summary><h4>05 · Ausbau und Oberflächen</h4></summary><div class="inh"><p>Trockenbau, Estrich, Bad, Boden, Maler. Ein fester Ansprechpartner, <span class="pl" title="Platzhalter">wöchentlich</span> ein Update. Die Baustelle wird täglich aufgeräumt, das Treppenhaus bleibt sauber.</p><div class="bild r43 sw kerbe-l"><img src="bilder/ablauf-05-ausbau-trockenbau.webp" alt="Handwerker setzt ein Profil beim Innenausbau" loading="lazy"></div></div></details>
+      <details name="ablauf"><summary><h4>06 · Abnahme</h4></summary><div class="inh"><p>Gemeinsamer Rundgang, Protokoll, Übergabe. Danach fünf Jahre Gewährleistung nach § 634a BGB.</p><div class="bild r43 sw kerbe-l"><img src="bilder/ablauf-06-abnahme-heller-raum.webp" alt="Heller, fertiger Raum mit neuen Fenstern vor der Abnahme" loading="lazy"></div></div></details>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOTO-BAND MIT OVERLAY ============ -->
+<section class="fotoband">
+  <img src="bilder/warum-flur-baustelle-kabel.webp" alt="Flur einer Baustelle mit Kabeln, Werkzeug und offenen Türen">
+  <div class="fb-linien"></div>
+  <div class="fb-inhalt">
+    <div class="fb-oben">
+      <div>
+        <p class="lab" style="color:rgba(255,255,255,.6)">Warum wir das anders machen</p>
+        <h2 style="margin-top:14px">Warum Sanierungen schiefgehen, und woran es selten liegt.</h2>
+      </div>
+      <div class="pfeile">
+        <button class="q hell" aria-label="Zurück">←</button><button class="q a" aria-label="Weiter">→</button>
+      </div>
+    </div>
+    <div class="fb-unten">
+      <p class="fb-marke">Bei uns ist genau eine Person zuständig. Für den Preis, für den Termin, für das Ergebnis.</p>
+      <div class="fb-rechts">
+        <p>Der Preis steht, dann kommen die Nachträge. Der Termin steht, dann steht die Baustelle. Und wenn es klemmt, meldet sich niemand zurück. Das liegt selten am Handwerk. Es liegt daran, dass fünf Firmen auf einer Baustelle arbeiten und keine für das Ganze zuständig ist.</p>
+        <a class="btn btn-a" href="#anfrage">Besichtigung vereinbaren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOCKFOLGE: WARUM, PREISE, STIMMEN ============ -->
+<section class="bloecke">
+
+  <!-- Block 1 · Bild links, Text rechts -->
+  <div class="bk bild-links">
+    <div class="bk-bild duo">
+      <img src="bilder/innenausbau-stuttgart-dielenboden-fertig.webp" alt="Fertig sanierter Raum mit neuem Dielenboden in Stuttgart" loading="lazy">
+      <span class="tagchip">Nach der Übergabe</span>
+    </div>
+    <div class="bk-text">
+      <p class="lab a">Warum Mach1</p>
+      <h2 style="margin:12px 0 14px">Sechs Gründe,<br>die Sie nachprüfen können</h2>
+      <p class="txt mini">Jeder Punkt steht gegen einen konkreten Zweifel. Adjektive haben wir weggelassen, prüfen können Sie alles davon vor der Beauftragung.</p>
+      <ul class="dlist">
+        <li><span>Ein Ansprechpartner, kein Callcenter</span></li>
+        <li><span>Eigene Leute in den Kerngewerken</span></li>
+        <li><span>Festpreis mit Leistungsverzeichnis</span></li>
+        <li><span>Bauzeitenplan mit Kalenderwochen</span></li>
+        <li><span>Baustelle täglich aufgeräumt</span></li>
+        <li><span>Fünf Jahre Gewährleistung nach BGB</span></li>
+      </ul>
+      <a class="btn btn-a" href="#anfrage">Besichtigung vereinbaren</a>
+    </div>
+  </div>
+
+  <!-- Block 2 · Text links, Bild rechts -->
+  <div class="bk bild-rechts">
+    <div class="bk-text">
+      <p class="lab a">Preise</p>
+      <h2 style="margin:12px 0 14px">Was eine<br>Sanierung kostet</h2>
+      <p class="txt mini">Den genauen Preis kennt niemand vor der Besichtigung, dafür sind Objekte zu verschieden. Eine Orientierung geben wir trotzdem, damit Sie wissen, ob wir zusammenpassen.</p>
+      <ul class="dlist">
+        <li><span>Bad komplett</span><b class="pl" title="Platzhalter">ab 18.000 €</b></li>
+        <li><span>Kernsanierung Wohnung</span><b class="pl" title="Platzhalter">900 bis 1.600 €/qm</b></li>
+        <li><span>Einzelnes Gewerk</span><b>Nach Aufmaß</b></li>
+        <li><span>Preistreiber: Baujahr, Grundriss, Elektrik</span></li>
+        <li><span>Nachträge nur schriftlich und nur vorher</span></li>
+      </ul>
+      <a class="btn btn-a" href="#anfrage">Festpreis anfragen</a>
+    </div>
+    <div class="bk-bild duo">
+      <img src="bilder/badsanierung-stuttgart-bad-dunkle-fliesen.webp" alt="Bad mit dunklen Großformatfliesen nach der Sanierung in Stuttgart" loading="lazy">
+      <span class="tagchip">Bad komplett</span>
+    </div>
+  </div>
+
+  <!-- Block 3 · Abschluss mit Pfeilen -->
+  <div class="bk-schluss">
+    <div class="l">
+      <p class="lab a">Kundenstimmen</p>
+      <h2 style="margin-top:14px">Was Kunden<br>über uns sagen.</h2>
+    </div>
+    <div class="r">
+      <p class="txt mini">Hier stehen später drei bis fünf echte Zitate mit Vorname, Stadtteil und Objektart. Wir erfinden keine Bewertungen, deshalb ist die Sektion bis dahin bewusst leer.</p>
+      <div class="pfeile" style="margin-top:18px"><button class="q hell" aria-label="Zurück">←</button><button class="q a" aria-label="Weiter">→</button></div>
+    </div>
+  </div>
+
+  <div class="wrap raster" style="padding-block:clamp(26px,3vw,44px)">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" class="drei">
+      <div class="phst"><p class="lab a">Platzhalter · echtes Zitat</p><div style="margin-top:14px"><div class="skel"></div><div class="skel"></div><div class="skel k"></div></div><p class="lab" style="margin-top:14px">Vorname · Stadtteil · Objekt</p></div>
+      <div class="phst"><p class="lab a">Platzhalter · echtes Zitat</p><div style="margin-top:14px"><div class="skel"></div><div class="skel k"></div></div><p class="lab" style="margin-top:14px">Vorname · Stadtteil · Objekt</p></div>
+      <div class="phst"><p class="lab a">Platzhalter · Google-Bewertung</p><div style="margin-top:14px"><div class="skel"></div><div class="skel"></div><div class="skel k"></div></div><p class="lab" style="margin-top:14px">Sterne und Anzahl aus dem Profil</p></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ VORHER / NACHHER, KARUSSELL ============ -->
+<div id="projekte" class="wrap band linie-o mitte">
+  <div class="kar-kopf">
+    <div>
+      <p class="lab a">Projekte</p>
+      <h2 style="margin-top:12px;max-width:18ch">Dieselben Räume, vorher und nachher</h2>
+    </div>
+    <div class="kar-steuer">
+      <span class="lab" id="karzaehler">01 / 04</span>
+      <button class="q hell" id="karzurueck" aria-label="Vorheriges Projekt">←</button>
+      <button class="q a" id="karweiter" aria-label="Nächstes Projekt">→</button>
+    </div>
+  </div>
+  <p class="txt mini" style="margin:14px 0 0">Wir fotografieren jede Baustelle, bevor wir anfangen. Nicht fürs Marketing, sondern weil wir wissen wollen, wo wir hergekommen sind. Regler ziehen und vergleichen.</p>
+  <div class="kar-fenster"><div class="kar-spur" id="vnliste"></div></div>
+</div>
+
+<!-- ============ BETRIEB ============ -->
+<section class="bloecke">
+  <div class="bk bild-links">
+    <div class="bk-bild duo">
+      <img src="bilder/kernsanierung-stuttgart-rohbau-decke.webp" alt="Rohbau mit offener Decke während der Kernsanierung in Stuttgart" loading="lazy">
+      <span class="tagchip">Auf der Baustelle</span>
+    </div>
+    <div class="bk-text">
+      <p class="lab a">Der Betrieb</p>
+      <h2 style="margin:12px 0 14px">Wer bei Ihnen auf<br>der Baustelle steht</h2>
+      <p class="txt mini">Mach1 die Handwerker ist ein Betrieb aus Stuttgart-Zuffenhausen. <span class="pl" title="Platzhalter">B. Gökmen</span> führt das Unternehmen seit <span class="pl" title="Platzhalter">20XX</span> und ist bei jedem Projekt selbst vor Ort.</p>
+      <ul class="dlist">
+        <li><span>Inhaber</span><b class="pl" title="Platzhalter">B. Gökmen</b></li>
+        <li><span>Betrieb seit</span><b class="pl" title="Platzhalter">20XX</b></li>
+        <li><span>Team</span><b class="pl" title="Platzhalter">X Handwerker</b></li>
+        <li><span>Eigene Gewerke</span><b>Trockenbau, Maler, Boden, Fliesen</b></li>
+        <li><span>Sitz</span><b>Stuttgart-Zuffenhausen</b></li>
+      </ul>
+      <a class="btn btn-a" href="#anfrage">Besichtigung vereinbaren</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GEBIET ============ -->
+<div id="gebiet" class="wrap raster band linie-o">
+  <div class="zwei" style="display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end;margin-bottom:22px">
+    <div><p class="lab a">Einsatzgebiet</p><h2 style="margin-top:12px">Wo wir arbeiten</h2></div>
+    <p class="txt mini" style="margin:0">Stuttgart und Umkreis von <span class="pl" title="Platzhalter">30 Kilometern</span>. Ihr Ort ist nicht dabei? Fragen Sie trotzdem, oft geht es.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--linie);border:1px solid var(--linie)" id="orte"></div>
+</div>
+
+<!-- ============ FAQ ============ -->
+<div class="wrap raster band linie-o linie13">
+  <div class="faq-grid">
+    <div class="links">
+      <p class="lab a">Fragen</p>
+      <h2 style="margin:12px 0 0;max-width:16ch">Häufige Fragen zur Sanierung</h2>
+    </div>
+    <div class="rechts akk" data-solo>
+      <details name="faq" open><summary><h4>Was kostet eine Kernsanierung?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p><span class="pl" title="Platzhalter">900 bis 1.600 Euro je Quadratmeter Wohnfläche</span> ist die übliche Orientierung, der tatsächliche Preis hängt vom Baujahr, vom Zustand der Leitungen, von Grundrissänderungen und vom Ausstattungsniveau ab. Verbindlich wird der Preis nach Besichtigung und Aufmaß, dann als Festpreis mit Leistungsverzeichnis.</p></div></details>
+      <details name="faq"><summary><h4>Wie lange dauert eine Kernsanierung?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Eine komplette Wohnungssanierung dauert in der Regel <span class="pl" title="Platzhalter">8 bis 16 Wochen</span>, ein einzelnes Bad etwa <span class="pl" title="Platzhalter">3 Wochen</span>. Den verbindlichen Bauzeitenplan bekommen Sie vor Baubeginn, mit Kalenderwochen je Gewerk.</p></div></details>
+      <details name="faq"><summary><h4>Was gehört alles zu einer Kernsanierung?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Rückbau bis auf den Rohbau, neue Elektroinstallation, neue Sanitärleitungen, Grundrissanpassung, Estrich und Bodenaufbau, Trockenbau, Bäder, Innentüren, Maler- und Oberflächenarbeiten. Was in Ihrem Fall nötig ist, steht nach der Besichtigung im Leistungsverzeichnis.</p></div></details>
+      <details name="faq"><summary><h4>Kann ich während der Sanierung in der Wohnung bleiben?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Bei einer Kernsanierung in der Regel nicht, weil Wasser, Strom und Boden zeitweise fehlen. Bei einzelnen Gewerken oder in Etappen ist es möglich. Wir sagen Ihnen bei der Besichtigung ehrlich, was in Ihrem Objekt geht.</p></div></details>
+      <details name="faq"><summary><h4>Kann eine tragende Wand entfernt werden?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Oft ja, aber nur mit statischem Nachweis und je nach Gebäude mit Genehmigung. Wir klären das mit einem Statiker, bevor gearbeitet wird, und rechnen es in das Angebot ein.</p></div></details>
+      <details name="faq"><summary><h4>Übernehmen Sie auch die Koordination der anderen Gewerke?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Ja, das ist der Kern unserer Arbeit. Elektrik, Sanitär, Heizung und Fenster steuern wir, die Ausbaugewerke machen unsere eigenen Leute. Sie haben einen Ansprechpartner und einen Vertrag.</p></div></details>
+      <details name="faq"><summary><h4>Wie lange haften Sie für Mängel?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Fünf Jahre ab Abnahme, so sieht es § 634a BGB für Bauwerke vor. Die Abnahme protokollieren wir gemeinsam.</p></div></details>
+      <details name="faq"><summary><h4>Kann ich die Sanierung steuerlich absetzen?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Für selbst genutztes Wohneigentum können Privatpersonen den Lohnanteil von Handwerkerleistungen nach § 35a EStG anteilig absetzen, energetische Maßnahmen fallen unter § 35c EStG. <span class="pl" title="Platzhalter">Wir weisen den Lohnanteil auf der Rechnung getrennt aus.</span> Ob und in welcher Höhe es bei Ihnen greift, klärt Ihr Steuerberater.</p></div></details>
+      <details name="faq"><summary><h4>Arbeiten Sie auch für Vermieter und Kapitalanleger?</h4></summary><div class="inh" style="grid-template-columns:1fr"><p>Ja. Bei Objekten, die vermietet werden sollen, zählt vor allem der Termin, weil jeder Leerstandsmonat Miete kostet. Deshalb bekommen Sie den Bauzeitenplan mit Datum.</p></div></details>
+    </div>
+  </div>
+</div>
+
+<section id="anfrage" class="kontakt aufdunkel">
+  <img class="kontakt-foto" src="bilder/anfrage-architekturmodell-plaene.webp" alt="" aria-hidden="true">
+  <div class="wrap raster aufdunkel linie13">
+<div class="fa-grid">
+      <div class="fa-kopf">
+        <p class="lab a">Anfrage</p>
+        <h2 style="margin:14px 0 16px">Kostenlose Besichtigung anfragen</h2>
+        <p class="txt mini">Vier Fragen, etwa eine Minute. Wir melden uns am selben Werktag, meistens telefonisch. Ihre Daten gehen an uns, nicht an ein Vergleichsportal.</p>
+        <div class="fa-btn">
+          <a class="btn btn-a" href="tel:+4917683034813">0176 83034813 anrufen</a>
+          <a class="btn btn-o" href="mailto:info@mach1-diehandwerker.de">Nachricht schreiben</a>
+        </div>
+        <dl class="fa-daten">
+          <div><dt>Adresse</dt><dd>Taläckerstr. 14<br>70437 Stuttgart</dd></div>
+          <div><dt>Erreichbar</dt><dd><span class="pl" title="Platzhalter">Mo bis Fr 7 bis 18 Uhr</span></dd></div>
+          <div><dt>Antwort</dt><dd>am selben Werktag</dd></div>
+        </dl>
+      </div>
+      <form class="funnel aufdunkel fa-form" novalidate>
+      <div class="bal"><i id="balken"></i></div>
+      <p class="lab" id="schrittlabel" style="color:rgba(233,236,239,.55)">Schritt 1 von 4</p>
+      <div class="sbox" data-s="1">
+        <h3 style="color:#fff;margin:12px 0 0">Um was für ein Objekt geht es?</h3>
+        <div class="wahl" data-gruppe="objekt"><button type="button" aria-pressed="false">Wohnung</button><button type="button" aria-pressed="false">Haus</button><button type="button" aria-pressed="false">Gewerbefläche</button><button type="button" aria-pressed="false">Weiß ich noch nicht</button></div>
+      </div>
+      <div class="sbox" data-s="2" hidden>
+        <h3 style="color:#fff;margin:12px 0 0">Was soll gemacht werden?</h3>
+        <div class="wahl" data-gruppe="umfang"><button type="button" aria-pressed="false">Kernsanierung komplett</button><button type="button" aria-pressed="false">Bad</button><button type="button" aria-pressed="false">Boden</button><button type="button" aria-pressed="false">Trockenbau</button><button type="button" aria-pressed="false">Maler</button><button type="button" aria-pressed="false">Mehreres, unklar</button></div>
+      </div>
+      <div class="sbox" data-s="3" hidden>
+        <h3 style="color:#fff;margin:12px 0 0">Wann soll es losgehen?</h3>
+        <div class="wahl" data-gruppe="zeit"><button type="button" aria-pressed="false">So schnell wie möglich</button><button type="button" aria-pressed="false">In 3 Monaten</button><button type="button" aria-pressed="false">In diesem Jahr</button><button type="button" aria-pressed="false">Ich plane noch</button></div>
+      </div>
+      <div class="sbox" data-s="4" hidden>
+        <h3 style="color:#fff;margin:12px 0 16px">Wie erreichen wir Sie?</h3>
+        <label class="feld"><span class="lab" style="color:rgba(233,236,239,.55)">Name</span><input type="text" autocomplete="name"></label>
+        <label class="feld"><span class="lab" style="color:rgba(233,236,239,.55)">Telefon</span><input type="tel" autocomplete="tel"></label>
+        <label class="feld"><span class="lab" style="color:rgba(233,236,239,.55)">E-Mail</span><input type="email" autocomplete="email"></label>
+        <label class="feld"><span class="lab" style="color:rgba(233,236,239,.55)">Objektadresse oder Stadtteil</span><input type="text"></label>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <button type="button" class="zur" id="zurueck" hidden>← Zurück</button>
+        <button type="button" class="btn btn-a" id="weiter"><span id="weitertext">Weiter</span></button>
+      </div>
+      <p class="lab a" id="danke" hidden style="margin-top:14px">Demo-Formular im Entwurf. Im Livebetrieb geht die Anfrage an info@mach1-diehandwerker.de.</p>
+    </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="seitenfuss">
+  <div class="wrap raster">
+    <div class="f-unten">
+      <div class="f-marke">
+        <span class="lab">Mach1 die Handwerker GmbH</span>
+        <div class="m1">M1</div>
+      </div>
+      <div class="f-links">
+        <a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#ablauf">Ablauf</a>
+        <a href="#preise">Preise</a><a href="#gebiet">Einsatzgebiet</a><a href="#anfrage">Anfrage</a>
+        <a href="#">Impressum</a><a href="#">Datenschutz</a>
+      </div>
+    </div>
+    <div class="f-nap">
+      <span>Taläckerstr. 14 · 70437 Stuttgart</span><span>0176 83034813</span>
+      <span>info@mach1-diehandwerker.de</span><span class="pl" title="Platzhalter">Mo bis Fr 7 bis 18 Uhr</span>
+      <span>HRB 785253 · Amtsgericht Stuttgart</span><span>USt-IdNr. DE 353871560</span><span>Handwerkskammer Stuttgart</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Mach1 die Handwerker GmbH",
+"description":"Kernsanierung, Umbau und Innenausbau in Stuttgart. Komplettsanierung aus einer Hand mit Festpreis und Bauzeitenplan.",
+"url":"https://mach1-diehandwerker.de/","telephone":"+49 176 83034813","email":"info@mach1-diehandwerker.de",
+"address":{"@type":"PostalAddress","streetAddress":"Taläckerstr. 14","postalCode":"70437","addressLocality":"Stuttgart","addressCountry":"DE"},
+"areaServed":["Stuttgart","Fellbach","Kornwestheim","Ludwigsburg","Waiblingen","Esslingen","Sindelfingen","Böblingen","Leonberg","Gerlingen"],
+"knowsAbout":["Kernsanierung","Altbausanierung","Badsanierung","Trockenbau","Innenausbau","Parkett","Malerarbeiten"]}
+</script>
+
+<script>
+/* Orte-Raster */
+var orte=["Zuffenhausen","Feuerbach","Weilimdorf","Bad Cannstatt","Botnang","Stuttgart-Nord","Stuttgart-West","Stuttgart-Mitte","Stuttgart-Ost","Degerloch","Möhringen","Vaihingen","Fellbach","Kornwestheim","Ludwigsburg","Waiblingen","Esslingen","Sindelfingen","Böblingen","Leonberg","Gerlingen","Korntal-Münchingen","Ditzingen","Remseck"];
+var og=document.getElementById('orte');
+orte.forEach(function(o){var d=document.createElement('div');
+  d.style.cssText='background:var(--grund);padding:13px 14px;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase';
+  d.textContent=o; og.appendChild(d);});
+
+/* Vorher/Nachher */
+var projekte=[
+ {t:"Bad komplett, alt und braun zu bodengleich",v:"kernsanierung-stuttgart-bad-vorher-altfliesen.webp",n:"badsanierung-stuttgart-bad-nachher-bodengleiche-dusche.webp",txt:"Wanne raus, Fliesen bis auf den Putz runter, neue Abdichtung, bodengleiche Dusche."},
+ {t:"Bad im Rückbau zu Großformat und Wand-WC",v:"kernsanierung-stuttgart-bad-vorher-rueckbau.webp",n:"badsanierung-stuttgart-bad-nachher-grossformat.webp",txt:"Dunkle Großformatfliesen, Wand-WC, neue Elektrik und Spots."},
+ {t:"Entkerntes Bad zur Dusche mit Glas",v:"kernsanierung-stuttgart-bad-vorher-entkernt.webp",n:"badsanierung-stuttgart-dusche-nachher-glas.webp",txt:"So sieht ein Bad aus, wenn alles runter ist. Das ist der Moment, in dem sich entscheidet, ob es am Ende hält."},
+ {t:"Fischgrätparkett, Verlegung und Ergebnis",v:"parkett-stuttgart-fischgraet-verlegung.webp",n:"innenausbau-stuttgart-fischgraet-parkett-fertig.webp",txt:"Untergrund vorbereiten, Muster einmessen, verlegen. Die Übergänge sind das, was man täglich sieht."},
+ {t:"Wohnraum vom Rohbau zum fertigen Zimmer",v:"kernsanierung-stuttgart-wohnraum-rohbau.webp",n:"innenausbau-stuttgart-wohnzimmer-parkett-fertig.webp",txt:"Estrich, Farbeimer, kahle Wände. Danach Parkett, Licht und fertige Oberflächen."}
+];
+var liste=document.getElementById('vnliste');
+var regler=[];
+projekte.forEach(function(p,i){
+  var nr='0'+(i+1);
+  var el=document.createElement('article'); el.className='vnk';
+  el.innerHTML='<div class="vn">'+
+    '<img src="bilder/'+p.v+'" alt="Vorher: '+p.t+'" loading="lazy">'+
+    '<img class="na" src="bilder/'+p.n+'" alt="Nachher: '+p.t+'" loading="lazy">'+
+    '<div class="griff"><i>↔</i></div>'+
+    '<span class="tg tg-v">Vorher</span><span class="tg tg-n">Nachher</span>'+
+    '<input type="range" min="4" max="96" value="50" aria-label="Vorher-Nachher-Regler Projekt '+nr+'"></div>'+
+    '<div class="vn-meta"><div><p class="lab a">Projekt '+nr+'</p>'+
+    '<h4 style="margin-top:7px">'+p.t+'</h4>'+
+    '<p class="mini" style="color:rgba(20,26,32,.7);margin:7px 0 7px">'+p.txt+'</p>'+
+    '<p class="lab pl" title="Platzhalter">Stadtteil · Fläche · Bauzeit</p></div>'+
+    '<span class="lab">'+nr+'/05</span></div>';
+  liste.appendChild(el);
+  var r=el.querySelector('input'),na=el.querySelector('.na'),g=el.querySelector('.griff'),
+      feld=el.querySelector('.vn');
+  function stelle(v){ na.style.clipPath='inset(0 0 0 '+v+'%)'; g.style.left=v+'%'; }
+  r.addEventListener('input',function(){ feld.dataset.hand='1'; stelle(r.value); });
+  r.addEventListener('pointerdown',function(){ feld.dataset.hand='1'; });
+  r.addEventListener('keydown',function(){ feld.dataset.hand='1'; });
+  regler.push({feld:feld,eingabe:r,setze:stelle,phase:i*0.29});
+});
+
+/* Der Vorher/Nachher-Regler wandert von allein, damit man sieht, dass er sich
+   ziehen laesst. Er haelt an, sobald jemand mit dem Zeiger drangeht, und bleibt
+   stehen, sobald jemand ihn wirklich gezogen hat. */
+(function(){
+  if(!regler.length) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var imBild=new WeakSet();
+  if('IntersectionObserver' in window){
+    var beob=new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if(e.isIntersecting) imBild.add(e.target); else imBild.delete(e.target);
+      });
+    },{threshold:0.35});
+    regler.forEach(function(x){ beob.observe(x.feld); });
+  } else {
+    regler.forEach(function(x){ imBild.add(x.feld); });
+  }
+  regler.forEach(function(x){
+    x.feld.addEventListener('pointerenter',function(){ x.feld.dataset.pause='1'; });
+    x.feld.addEventListener('pointerleave',function(){ delete x.feld.dataset.pause; });
+    x.feld.addEventListener('focusin',function(){ x.feld.dataset.pause='1'; });
+    x.feld.addEventListener('focusout',function(){ delete x.feld.dataset.pause; });
+  });
+  var t0=null;
+  function lauf(t){
+    if(t0===null) t0=t;
+    var s=(t-t0)/1000;
+    for(var i=0;i<regler.length;i++){
+      var x=regler[i];
+      if(x.feld.dataset.hand==='1' || x.feld.dataset.pause==='1' || !imBild.has(x.feld)) continue;
+      var v=50 + 25*Math.sin(2*Math.PI*(s/7.5 + x.phase));
+      v=Math.round(v*10)/10;
+      x.eingabe.value=v;
+      x.setze(v);
+    }
+    requestAnimationFrame(lauf);
+  }
+  requestAnimationFrame(lauf);
+})();
+
+/* Hero: Knickpunkt der schwarzen Flaeche auf das Textende setzen,
+   Diagonale parallel zur Schraege im Kopfband */
+(function(){
+  var panel=document.querySelector('.hero-panel'),
+      kopf=document.querySelector('.hero-kopf'),
+      text=panel&&panel.querySelector('.txt');
+  if(!panel||!kopf||!text) return;
+  function rechne(){
+    if(window.innerWidth<=900){ panel.style.removeProperty('--knick-y');
+      panel.style.removeProperty('--knick-dx'); return; }
+    var ph=panel.getBoundingClientRect().height,
+        pw=panel.getBoundingClientRect().width,
+        y=text.getBoundingClientRect().bottom-panel.getBoundingClientRect().top,
+        kdx=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--kopf-dx'))||215,
+        kh=kopf.getBoundingClientRect().height,
+        steigung=kdx/kh;                       // gleiche Neigung wie oben
+    var dx=Math.max(0,(ph-y))*steigung;
+    dx=Math.min(dx, pw*0.34);                  // Kante nicht zu weit nach links
+    panel.style.setProperty('--knick-y', Math.round(y)+'px');
+    panel.style.setProperty('--knick-dx', Math.round(dx)+'px');
+  }
+  rechne();
+  window.addEventListener('resize',rechne);
+  if(window.ResizeObserver){ new ResizeObserver(rechne).observe(panel) }
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(rechne) }
+})();
+
+/* Kerben im Kennzahlen-Band auf die Spaltenlinien der Leistungen setzen:
+   unten auf die erste Linie, oben auf die zweite */
+(function(){
+  var svc=document.querySelector('.svc');
+  if(!svc) return;
+  function setze(){
+    var a=svc.children[0], b=svc.children[1], c=svc.children[2];
+    if(!a||!b||!c) return;
+    var ar=a.getBoundingClientRect(), br=b.getBoundingClientRect(), cr=c.getBoundingClientRect();
+    if(br.left<=ar.right) return;              // gestapelt, keine Spaltenlinien
+    document.documentElement.style.setProperty('--d1', Math.round((ar.right+br.left)/2)+'px');
+    document.documentElement.style.setProperty('--d2', Math.round((br.right+cr.left)/2)+'px');
+  }
+  setze();
+  window.addEventListener('resize',setze);
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(setze) }
+})();
+
+/* Projekt-Karussell */
+(function(){
+  var spur=document.getElementById('vnliste');
+  var vor=document.getElementById('karzurueck'), wei=document.getElementById('karweiter'),
+      zaehler=document.getElementById('karzaehler'), fenster=document.querySelector('.kar-fenster');
+  if(!spur||!vor||!wei) return;
+  var idx=0, timer=null;
+  var ruhig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function sichtbar(){ return window.innerWidth<=900 ? 1 : 2 }
+  function maxIdx(){ return Math.max(0, spur.children.length - sichtbar()) }
+  function setze(){
+    var erste=spur.children[0]; if(!erste) return;
+    if(idx>maxIdx()) idx=maxIdx();
+    var breite=erste.getBoundingClientRect().width+12;
+    spur.style.transform='translateX(-'+(idx*breite)+'px)';
+    zaehler.textContent=('0'+(idx+1)).slice(-2)+' / '+('0'+(maxIdx()+1)).slice(-2);
+  }
+  function weiter(){ idx = idx>=maxIdx() ? 0 : idx+1; setze() }
+  function zurueck(){ idx = idx<=0 ? maxIdx() : idx-1; setze() }
+  function starte(){ if(ruhig) return; clearInterval(timer); timer=setInterval(weiter,5000) }
+  function stoppe(){ clearInterval(timer) }
+  wei.addEventListener('click',function(){ weiter(); starte() });
+  vor.addEventListener('click',function(){ zurueck(); starte() });
+  fenster.addEventListener('mouseenter',stoppe);
+  fenster.addEventListener('mouseleave',starte);
+  fenster.addEventListener('focusin',stoppe);
+  fenster.addEventListener('pointerdown',stoppe);
+  window.addEventListener('resize',setze);
+  setze(); starte();
+})();
+
+/* Linie im Kopfband genau in die Luecke zwischen die beiden Kleintexte */
+(function(){
+  var kopf=document.querySelector('.hero-kopf'),
+      zellen=document.querySelectorAll('.hero-kopf .zelle');
+  if(!kopf||zellen.length<2) return;
+  function setze(){
+    if(window.innerWidth<=900){ kopf.style.removeProperty('--kopf-linie'); return; }
+    var a=zellen[0].getBoundingClientRect(), b=zellen[1].getBoundingClientRect();
+    kopf.style.setProperty('--kopf-linie', Math.round((a.right + b.left)/2)+'px');
+  }
+  window.addEventListener('resize',setze);
+  window.addEventListener('load',setze);
+  setze();
+})();
+
+/* Duoton auf Beruehrgeraeten: loest sich auf, waehrend die Sektion ins Bild kommt.
+   Auf Zeigergeraeten uebernimmt das die Hover-Regel im Stylesheet. */
+(function(){
+  if(!window.matchMedia('(hover: none)').matches) return;
+  var bilder=Array.prototype.slice.call(document.querySelectorAll('.duo'));
+  if(!bilder.length) return;
+  bilder.forEach(function(b){ b.style.setProperty('--duo','1'); });
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    bilder.forEach(function(b){ b.style.setProperty('--duo','0'); }); return;
+  }
+  var geplant=false;
+  function rechne(){
+    geplant=false;
+    var h=window.innerHeight||1;
+    for(var i=0;i<bilder.length;i++){
+      var el=bilder[i], r=el.getBoundingClientRect();
+      if(r.bottom<-40 || r.top>h*1.15) continue;
+      var p=(h - r.top)/(h*0.62);
+      p=p<0?0:(p>1?1:p);
+      el.style.setProperty('--duo',(1-p).toFixed(3));
+    }
+  }
+  function planen(){ if(!geplant){ geplant=true; requestAnimationFrame(rechne); } }
+  window.addEventListener('scroll',planen,{passive:true});
+  window.addEventListener('resize',planen);
+  window.addEventListener('load',planen);
+  planen();
+})();
+
+/* Burger-Menue */
+(function(){
+  var b=document.getElementById('burger'), n=document.getElementById('hauptnav');
+  if(!b||!n) return;
+  function zu(){ n.removeAttribute('data-offen'); b.setAttribute('aria-expanded','false'); }
+  b.addEventListener('click',function(){
+    var offen=n.hasAttribute('data-offen');
+    if(offen) zu(); else { n.setAttribute('data-offen',''); b.setAttribute('aria-expanded','true'); }
+  });
+  n.addEventListener('click',function(e){ if(e.target.tagName==='A') zu(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') zu(); });
+  window.addEventListener('resize',function(){ if(window.innerWidth>1120) zu(); });
+})();
+
+/* Kerbe der Fusszeile genau dort, wo die Senkrechte auf sie trifft */
+(function(){
+  var f=document.querySelector('.seitenfuss'), l=document.querySelector('.f-links');
+  if(!f||!l) return;
+  function setze(){
+    if(window.innerWidth<=880){ f.style.removeProperty('--fx'); return; }
+    f.style.setProperty('--fx', Math.round(l.getBoundingClientRect().left)+'px');
+  }
+  window.addEventListener('resize',setze);
+  window.addEventListener('load',setze);
+  setze();
+})();
+
+/* Akkordeon: immer nur eines offen, Rueckfall fuer Browser ohne name-Attribut */
+(function(){
+  document.querySelectorAll('.akk[data-solo]').forEach(function(gruppe){
+    var alle=gruppe.querySelectorAll('details');
+    alle.forEach(function(d){
+      d.addEventListener('toggle',function(){
+        if(!d.open) return;
+        alle.forEach(function(x){ if(x!==d && x.open) x.open=false; });
+      });
+    });
+  });
+})();
+
+/* Funnel */
+(function(){
+  var s=1,max=4,boxen=document.querySelectorAll('.sbox'),balken=document.getElementById('balken'),
+      label=document.getElementById('schrittlabel'),weiter=document.getElementById('weiter'),
+      wtext=document.getElementById('weitertext'),zurueck=document.getElementById('zurueck'),danke=document.getElementById('danke');
+  document.querySelectorAll('.wahl').forEach(function(g){
+    g.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      if(s<max) setTimeout(function(){zeige(s+1)},160);
+    });
+  });
+  function zeige(n){
+    s=n; boxen.forEach(function(b){b.hidden=(b.dataset.s!=String(n))});
+    balken.style.width=(n/max*100)+'%';
+    label.textContent='Schritt '+n+' von '+max+(n===max?' · Kontakt':'');
+    zurueck.hidden=(n===1); weiter.disabled=false; danke.hidden=true;
+    wtext.textContent=(n===max)?'Besichtigung anfragen':'Weiter';
+  }
+  weiter.addEventListener('click',function(){ if(s<max) zeige(s+1); else {danke.hidden=false; weiter.disabled=true;} });
+  zurueck.addEventListener('click',function(){ if(s>1) zeige(s-1) });
+  zeige(1);
+})();
+</script>
+</body>
+</html>
