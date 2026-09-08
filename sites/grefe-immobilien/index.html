@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grefe Immobilien | Immobilien kaufen in Hannover</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="bilder/grefe-immobilien-favicon.png" type="image/png">
+<meta name="description" content="Wohn- und Anlageimmobilien in Hannover und der Region. Persönlich begleitet von Iris Grefe, von der Objektsuche bis zum Notartermin. Auch Sanierungs-, Insolvenz- und Zwangsversteigerungsobjekte.">
+<meta property="og:title" content="Grefe Immobilien | Immobilien kaufen in Hannover">
+<meta property="og:description" content="Wenige Objekte, eine Ansprechpartnerin. Wohn- und Anlageimmobilien in Hannover und Region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121210; --bg-2:#191916; --card:#1E1E1A; --card-2:#232320;
+  --cream:#F4F1EC; --cream-2:#EAE5DE;
+  --gold:#AF8346; --gold-2:#C9A76B; --gold-deep:#8A6634;
+  --on-dark:#F1EEE8; --on-dark-mute:#9E9A93;
+  --text:#15140F; --text-mute:#5C574F;
+  --bd:rgba(241,238,232,.14); --bd-2:rgba(241,238,232,.08); --bd-light:rgba(21,20,15,.14);
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+  --soft:0 2px 10px rgba(0,0,0,.28), 0 26px 70px rgba(0,0,0,.34);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--on-dark);
+  font-family:'Poppins',-apple-system,'Segoe UI',sans-serif;font-size:16px;font-weight:300;line-height:1.8;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.035em;line-height:1.04}
+/* Die Klassen tragen den engen Satz auch auf p- und span-Elementen */
+.h1,.h2,.h3,.h4{font-weight:600;letter-spacing:-.035em;line-height:1.06}
+.h1{line-height:1.02}
+.h3{line-height:1.1}
+.h4{line-height:1.26}
+p,ul,ol,dl{margin:0}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:#12120F}
+
+/* Typo */
+.h1{font-size:clamp(38px,5.2vw,80px)}
+.h2{font-size:clamp(29px,3.6vw,54px)}
+.h3{font-size:clamp(22px,2vw,30px)}
+.h4{font-size:19px;letter-spacing:-.02em;line-height:1.26}
+.mute{color:var(--on-dark-mute)}
+.light .mute, .light-2 .mute{color:var(--text-mute)}
+.gold .mute{color:rgba(18,18,15,.78)}
+.body{font-size:16px;line-height:1.8;color:var(--on-dark-mute)}
+.small{font-size:14px;line-height:1.7;color:var(--on-dark-mute)}
+.micro{font-size:12px;line-height:1.65;color:var(--on-dark-mute)}
+.light .body, .light .small, .light .micro, .light-2 .body, .light-2 .small, .light-2 .micro{color:var(--text-mute)}
+.gold .body,.gold .small{color:#1A1912}
+.gold .micro{color:rgba(18,18,15,.82)}
+.num{font-weight:600;letter-spacing:-.045em;line-height:.94;font-size:clamp(40px,5vw,78px)}
+.num-s{font-weight:600;letter-spacing:-.04em;line-height:1;font-size:clamp(30px,3vw,46px)}
+
+/* Chip-Label */
+.chip-l{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:400;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--on-dark-mute);border:1px solid var(--bd);padding:7px 14px}
+.chip-l::before{content:"";width:5px;height:5px;background:var(--gold);flex:0 0 5px}
+.light .chip-l, .light-2 .chip-l{color:var(--text-mute);border-color:var(--bd-light)}
+.gold .chip-l{color:#12120F;border-color:rgba(18,18,15,.46)}
+
+/* Marke */
+.mark{display:inline-flex;align-items:center;gap:11px}
+.mark img{width:34px;height:34px;object-fit:contain}
+.mark-t{display:flex;flex-direction:column;line-height:1}
+.mark-t b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:21px;letter-spacing:.3em}
+.mark-t span{font-size:8px;letter-spacing:.42em;margin-top:5px;color:var(--gold-2)}
+.light .mark-t span, .light-2 .mark-t span{color:var(--gold-deep)}
+
+/* Buttons */
+.pill{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:400;letter-spacing:.12em;
+  text-transform:uppercase;padding:10px 10px 10px 22px;border-radius:40px;border:1px solid var(--on-dark);
+  background:var(--on-dark);color:#12120F;cursor:pointer;
+  transition:transform .26s var(--ease),box-shadow .26s var(--ease),background-color .26s var(--ease),color .26s var(--ease),border-color .26s var(--ease)}
+.pill .arw{width:30px;height:30px;border-radius:50%;background:#12120F;color:var(--on-dark);display:grid;place-items:center;flex:0 0 30px;
+  transition:transform .26s var(--ease)}
+.pill:hover{transform:translateY(-2px);box-shadow:var(--soft)}
+.pill:hover .arw{transform:translateX(3px)}
+.pill-gold{background:var(--gold);border-color:var(--gold);color:#12120F}
+.pill-gold .arw{background:#12120F;color:var(--gold)}
+.pill-ghost{background:transparent;color:var(--on-dark);border-color:var(--bd)}
+.pill-ghost .arw{background:var(--on-dark);color:#12120F}
+.pill-ghost:hover{border-color:var(--on-dark)}
+.light .pill, .light-2 .pill{background:#15140F;border-color:#15140F;color:var(--cream)}
+.light .pill .arw, .light-2 .pill .arw{background:var(--cream);color:#15140F}
+.light .pill-ghost, .light-2 .pill-ghost{background:transparent;color:var(--text);border-color:var(--bd-light)}
+.light .pill-ghost .arw, .light-2 .pill-ghost .arw{background:#15140F;color:var(--cream)}
+.gold .pill{background:#12120F;border-color:#12120F;color:var(--gold)}
+.gold .pill .arw{background:var(--gold);color:#12120F}
+.ulink{display:inline-flex;align-items:center;gap:9px;font-size:14px;padding-bottom:3px;border-bottom:1px solid currentColor}
+.ulink:hover{color:var(--gold-2)}
+.light .ulink:hover, .gold .ulink:hover, .light-2 .ulink:hover{color:var(--gold-deep)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* Flächen, alles scharfkantig */
+.sec{padding:var(--s10) 0;position:relative}
+.sec.tight{padding:var(--s9) 0}
+.alt{background:var(--bg-2)}
+.light{background:var(--cream);color:var(--text)}
+.light-2{background:var(--cream-2);color:var(--text)}
+.gold{background:var(--gold);color:#12120F}
+.grain::after{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.7;pointer-events:none}
+.wrap{max-width:1340px;margin:0 auto;padding:0 var(--s7)}
+.narrow{max-width:1000px;margin:0 auto;padding:0 var(--s7)}
+.grid{display:grid;gap:var(--s5)}
+.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--s8);align-items:center}
+.split>*,.split-72>*{min-width:0}
+.split-72{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:start}
+.stack{display:flex;flex-direction:column;gap:var(--s4)}
+.row{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:center}
+
+/* Karten, 0 Radius */
+.card{background:var(--card);border:1px solid var(--bd-2);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s4);
+  transition:transform .28s var(--ease),border-color .28s var(--ease),background-color .28s var(--ease)}
+.card:hover{transform:translateY(-3px);border-color:var(--bd);background:var(--card-2)}
+.light .card, .light-2 .card{background:var(--cream-2);border-color:var(--bd-light);color:var(--text)}
+.gold .card{background:rgba(18,18,15,.13);border-color:rgba(18,18,15,.34);color:#12120F}
+.card-flat{background:transparent;border:0;padding:0}
+
+/* Fotos, schwarzweiss */
+.media{display:block;position:relative;overflow:hidden;background:#0D0D0B}
+.media img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08);
+  transition:transform .8s var(--ease),filter .6s var(--ease)}
+.media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(8,8,7,.34),rgba(8,8,7,.02) 55%)}
+.media.deep::after{background:linear-gradient(105deg,rgba(8,8,7,.9) 0%,rgba(8,8,7,.72) 42%,rgba(8,8,7,.5) 100%)}
+.media.plain::after{background:none}
+.tile:hover .media img,a.media:hover img{transform:scale(1.03);filter:grayscale(0) contrast(1.02)}
+
+/* Formular */
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-mute)}
+.light .field label, .light-2 .field label{color:var(--text-mute)}
+.field input,.field select,.field textarea{width:100%;min-width:0;font-family:inherit;font-size:16px;font-weight:300;
+  color:var(--on-dark);background:transparent;border:0;border-bottom:1px solid var(--bd);padding:11px 0;
+  transition:border-color .25s var(--ease)}
+.light .field input, .light .field select, .light .field textarea, .light-2 .field input, .light-2 .field select, .light-2 .field textarea{color:var(--text);border-color:var(--bd-light)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--on-dark)}
+.light .field input:focus, .light .field select:focus, .light .field textarea:focus, .light-2 .field input:focus, .light-2 .field select:focus, .light-2 .field textarea:focus{border-color:var(--text)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--on-dark-mute)}
+.light .check, .light-2 .check{color:var(--text-mute)}
+.check input{margin-top:4px;accent-color:var(--gold)}
+.inline-form{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;border:1px solid var(--bd);padding:var(--s2) var(--s2) var(--s2) var(--s5);width:100%;max-width:520px}
+.inline-form input{flex:1 1 160px;min-width:0;background:transparent;border:0;color:var(--on-dark);font-family:inherit;font-size:15px;font-weight:300;padding:12px 0}
+.inline-form input:focus{outline:0}
+
+.todo{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;
+  border:1px dashed var(--gold-2);color:var(--gold-2);white-space:nowrap}
+.light .todo, .light-2 .todo{border-color:var(--gold-deep);color:var(--gold-deep)}
+.gold .todo{border-color:rgba(18,18,15,.62);color:#12120F;background:rgba(18,18,15,.09)}
+
+/* Wort-Highlight beim Scrollen */
+.words .w{color:rgba(241,238,232,.24);transition:color .45s var(--ease)}
+.words .w.on{color:var(--on-dark)}
+.light .words .w,.light-2 .words .w{color:rgba(21,20,15,.22)}
+.light .words .w.on,.light-2 .words .w.on{color:var(--text)}
+.hl{color:var(--gold-2)}
+.light .hl,.light-2 .hl{color:var(--gold-deep)}
+
+/* Karten-Reihe mit Bleed und Pfeilen */
+.railwrap{position:relative;margin-right:calc(var(--s7) * -1)}
+.rail{display:flex;gap:var(--s5);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:var(--s2)}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{flex:0 0 380px;scroll-snap-align:start}
+.arrows{display:flex;gap:var(--s3)}
+.arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--bd-light);background:transparent;display:grid;place-items:center;cursor:pointer;color:inherit;
+  transition:transform .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
+.arrow:hover{background:#15140F;color:var(--cream);border-color:#15140F;transform:translateY(-2px)}
+.obj{position:relative;display:flex;flex-direction:column;border:1px solid var(--bd-light);background:var(--cream-2)}
+.obj-photo{position:relative;overflow:hidden}
+.obj-top{position:absolute;top:0;left:0;right:0;padding:var(--s5);z-index:2}
+.obj-bot{position:absolute;bottom:0;left:0;right:0;padding:var(--s5);z-index:2}
+.obj-foot{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between;padding:var(--s4) var(--s5)}
+
+/* Overlay-Boxen auf Fotos */
+.ovwrap{position:relative;display:flex;align-items:center;padding:var(--s6);min-height:520px}
+.ovwrap>.media{position:absolute;inset:0;z-index:0;aspect-ratio:auto !important;height:100%}
+.ovwrap>.panel{position:relative;left:auto;right:auto;top:auto;transform:none;z-index:2;width:100%}
+.ov{position:absolute;background:rgba(12,12,10,.84);border:1px solid var(--bd);padding:var(--s4) var(--s5);backdrop-filter:blur(8px);max-width:300px}
+@supports not (backdrop-filter: blur(8px)){ .ov{background:rgba(12,12,10,.93)} }
+
+/* Objekt-Karte: Farbe beim Hover, Scrims fuer die Overlay-Texte, Icon-Button mittig */
+.obj:hover .media img{transform:scale(1.03);filter:grayscale(0) contrast(1.02)}
+.obj-photo::before{content:"";position:absolute;top:0;left:0;right:0;height:42%;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(8,8,7,.88) 0%,rgba(8,8,7,.55) 55%,rgba(8,8,7,0) 100%)}
+.obj-photo::after{content:"";position:absolute;bottom:0;left:0;right:0;height:38%;z-index:1;pointer-events:none;
+  background:linear-gradient(to top,rgba(8,8,7,.9) 0%,rgba(8,8,7,.5) 55%,rgba(8,8,7,0) 100%)}
+.objbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;display:inline-flex;align-items:center;
+  padding:13px;border-radius:40px;border:1px solid var(--on-dark);background:var(--on-dark);color:#12120F;cursor:pointer;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background-color .3s var(--ease)}
+.objbtn svg{width:18px;height:18px;flex:0 0 18px}
+.objbtn .lbl{max-width:0;opacity:0;overflow:hidden;white-space:nowrap;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  transition:max-width .38s var(--ease),opacity .28s var(--ease),margin .38s var(--ease)}
+.obj:hover .objbtn,.objbtn:focus-visible{background:var(--gold);border-color:var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.obj:hover .objbtn .lbl,.objbtn:focus-visible .lbl{max-width:170px;opacity:1;margin-left:12px;margin-right:6px}
+.obj:hover .objbtn{transform:translate(-50%,-50%) scale(1.02)}
+
+/* Fuß: Spalten mit Abstand verteilt */
+.footcols{display:flex;flex-wrap:wrap;gap:var(--s7) var(--s6);justify-content:space-between}
+.footcols>*{flex:0 1 auto;min-width:180px;max-width:340px}
+
+/* Foto als Sektionshintergrund */
+.bgsec{position:relative;isolation:isolate}
+.bgsec>.bgmedia{position:absolute;inset:0;z-index:-1;overflow:hidden;background:#0D0D0B}
+.bgsec>.bgmedia img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
+.bgsec>.bgmedia::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(8,8,7,.96) 0%,rgba(8,8,7,.9) 45%,rgba(8,8,7,.94) 100%)}
+.bgsec>.bgmedia img{opacity:.5}
+.bgsec .field input,.bgsec .field select,.bgsec .field textarea{border-bottom-color:rgba(241,238,232,.34)}
+.bgsec .field label{color:var(--on-dark)}
+
+/* Merkmal-Leiste im Foto */
+.featbar{display:flex;gap:var(--s6);background:rgba(12,12,10,.74);border:1px solid var(--bd);
+  backdrop-filter:blur(10px);padding:var(--s5)}
+@supports not (backdrop-filter: blur(10px)){ .featbar{background:rgba(12,12,10,.9)} }
+.feat{display:flex;gap:var(--s3);align-items:flex-start;flex:1;min-width:0}
+.feat .picon{width:32px;height:32px;flex:0 0 32px}
+.feat .picon svg{width:15px;height:15px}
+
+/* Bilder-Karussell mit versetzten Hoehen */
+#anlagerail>figure{margin:0}
+#anlagerail>figure:nth-child(even){margin-top:var(--s8)}
+#anlagerail>figure{flex:0 0 300px}
+@media(max-width:640px){ #anlagerail>figure{flex:0 0 78vw} #anlagerail>figure:nth-child(even){margin-top:0} .featbar{flex-direction:column;gap:var(--s4)} }
+
+/* Kennzahlen-Reihe mit Trennlinien */
+.zvstats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s7);border-top:1px solid var(--bd);padding-top:var(--s7)}
+.zvcol{position:relative;padding-left:var(--s6)}
+.zvcol::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--bd)}
+.zvcol::after{content:"";position:absolute;left:-3px;top:-3px;width:7px;height:7px;background:var(--gold)}
+@media(max-width:760px){
+  .zvstats{grid-template-columns:1fr;gap:var(--s6)}
+  .zvcol{padding-left:0;padding-top:var(--s5)}
+  .zvcol::before{left:0;right:0;top:0;bottom:auto;width:auto;height:1px}
+  .zvcol::after{left:-3px;top:-3px}
+}
+
+/* Panel im Foto, scharfkantig */
+.panel{position:absolute;left:var(--s6);right:var(--s6);top:50%;transform:translateY(-50%);z-index:2;
+  background:rgba(12,12,10,.87);border:1px solid var(--bd);backdrop-filter:blur(12px);padding:var(--s6)}
+@supports not (backdrop-filter: blur(12px)){ .panel{background:rgba(12,12,10,.95)} }
+.prow{display:flex;gap:var(--s4);align-items:flex-start;padding:var(--s4) 0;border-top:1px solid var(--bd-2)}
+.picon{width:38px;height:38px;flex:0 0 38px;border:1px solid var(--bd);display:grid;place-items:center;color:var(--gold-2)}
+.picon svg{width:17px;height:17px}
+.bars{display:flex;gap:3px;align-items:stretch;height:56px}
+.bars i{flex:1;background:rgba(241,238,232,.13)}
+.bars i.on{background:var(--gold-2)}
+.ptable{border-top:1px solid var(--bd-2)}
+.ptrow{display:grid;grid-template-columns:1.5fr .9fr .8fr;gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--bd-2);align-items:center}
+.ptrow:last-child{border-bottom:0}
+
+/* Liste mit Trennlinien, erste Zeile hell */
+.dlist{display:flex;flex-direction:column}
+.dlist>div{border-top:1px solid var(--bd);padding:var(--s4) 0}
+.dlist>div:last-child{border-bottom:1px solid var(--bd)}
+.dlist h3{color:var(--on-dark-mute)}
+.dlist>div:first-child h3{color:var(--on-dark)}
+.dlist>div:first-child p{color:var(--on-dark-mute)}
+
+.scrim{background:rgba(12,12,10,.74);border:1px solid var(--bd);padding:var(--s6);backdrop-filter:blur(8px)}
+@supports not (backdrop-filter: blur(8px)){ .scrim{background:rgba(12,12,10,.86)} }
+
+/* Foto-Baender: Text liegt am Desktop im Bild, mobil darunter */
+.band{position:relative}
+.band>.media{min-height:520px}
+.band-inner{position:absolute;inset:0}
+.band-inner>.wrap{width:100%}
+@media(max-width:1100px){ .band>.media{min-height:0} }
+@media(max-width:960px){
+  .band>.media{aspect-ratio:auto !important;min-height:780px !important;height:780px}
+  .band-inner{padding:var(--s7) 0 !important}
+  .band-inner .card{max-width:none !important}
+  .band-inner .pill{width:100%;justify-content:space-between}
+  .band-inner .stack{align-items:stretch !important}
+  .band-inner .inline-form{max-width:none}
+}
+@media(max-width:640px){
+  .band>.media{aspect-ratio:auto !important;min-height:800px !important;height:800px}
+  .band-inner{padding:var(--s6) 0 !important}
+  .bandstats{display:grid !important;grid-template-columns:1fr 1fr;gap:var(--s5) !important}
+  .bandstats .num{font-size:clamp(30px,10vw,44px)}
+}
+
+/* Kopf */
+.head{position:sticky;top:0;z-index:80;background:rgba(18,18,16,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd-2)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);padding:var(--s4) var(--s7)}
+.nav{display:flex;gap:var(--s6);flex-wrap:wrap;justify-content:center;flex:1 1 auto}
+.nav a{font-size:13px;letter-spacing:.03em;color:var(--on-dark-mute)}
+.nav a:hover{color:var(--on-dark)}
+.menubtn{display:none}
+.menu{position:fixed;inset:0;z-index:130;background:var(--bg-2);display:none;padding:var(--s9) var(--s7)}
+.menu[data-open="true"]{display:block}
+.menu nav{display:flex;flex-direction:column;gap:var(--s5);margin-top:var(--s8)}
+.menu nav a{font-size:clamp(26px,4vw,46px);font-weight:600;letter-spacing:-.035em}
+.menu nav a:hover{color:var(--gold-2)}
+.menu-x{position:absolute;top:var(--s5);right:var(--s7);background:transparent;border:0;color:inherit;font-size:30px;line-height:1;cursor:pointer}
+
+/* FAQ mit Plus */
+details.q{border-top:1px solid var(--bd);padding:var(--s5) 0}
+.light details.q,.light-2 details.q{border-top-color:var(--bd-light)}
+details.q summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s5)}
+details.q summary::-webkit-details-marker{display:none}
+details.q .plus{flex:0 0 22px;width:22px;height:22px;position:relative;margin-top:5px}
+details.q .plus::before,details.q .plus::after{content:"";position:absolute;background:currentColor;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+details.q .plus::before{left:0;top:10px;width:22px;height:1px}
+details.q .plus::after{left:10px;top:0;width:1px;height:22px}
+details.q[open] .plus::after{transform:scaleY(0);opacity:0}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1100px){
+  .wrap,.narrow{padding-left:var(--s6);padding-right:var(--s6)}
+  /* In den Fotobändern und in der Inhaberin-Sektion keine Breitenbegrenzung,
+     sonst bleibt rechts Platz liegen, sobald die Spalten schmaler werden */
+  .band-inner .h1,.band-inner .h2,.band-inner .stack:not(.card),.band-inner .featbar{max-width:none !important}
+  .band-inner>.wrap>div:last-child{width:100%}
+  .bandstats{width:100%;justify-content:space-between}
+  .sec.light .split-72 dl,.sec.light .split-72 p{max-width:none !important}
+}
+@media(max-width:960px){
+  .split,.split-72{gap:var(--s6)}
+  .railwrap{margin-right:0}
+  .nav{display:none}
+  .headcta{display:none}
+  .menubtn{display:inline-flex}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)}
+  .sec{padding:var(--s9) 0}
+  .nav{display:none}
+  .burger{display:grid}
+  .head-in{padding:var(--s4) var(--s6)}
+}
+/* Zwischenbreiten: Spalten bleiben nebeneinander, damit rechts kein Loch entsteht */
+@media(max-width:760px){
+  .split,.split-72{grid-template-columns:1fr;gap:var(--s7);text-align:center;justify-items:center}
+  .split>*,.split-72>*{width:100%}
+  .split h2,.split-72 h2,.split p,.split-72 p,.split .h2,.split-72 .h2{margin-left:auto;margin-right:auto}
+  .split .row,.split-72 .row,.split .stack,.split-72 .stack{justify-content:center;align-items:center}
+  .split .ulink,.split-72 .ulink,.split .pill,.split-72 .pill{align-self:center}
+  /* volle Breite und echte Mitte, schlaegt die Inline-Styles */
+  .split>*,.split-72>*{max-width:none !important}
+  .split h1,.split h2,.split p,.split .h1,.split .h2,.split .h3,
+  .split-72 h1,.split-72 h2,.split-72 p,.split-72 .h1,.split-72 .h2,.split-72 .h3{
+    max-width:none !important;margin-left:auto !important;margin-right:auto !important}
+  .split .stack,.split-72 .stack{width:100%;align-items:center !important}
+  .split .ulink,.split-72 .ulink,.split .pill,.split-72 .pill{align-self:center !important}
+  .row{justify-content:center !important}
+  .panel .row,form .row,.obj .row,.featbar .row,.ptrow,.prow{justify-content:flex-start !important}
+  .arrows{justify-content:center !important;width:100%}
+  /* Bleed-Sektionen: asymmetrische Innenabstände raus */
+  .railsec>.wrap{padding-left:var(--s5) !important;padding-right:var(--s5) !important}
+  .railsec>.wrap>*{padding-right:0 !important}
+
+  /* Kennzahlen-Reihe zentriert, Marker mittig */
+  .zvstats,.zvcol{text-align:center}
+  .zvcol{padding-left:0;padding-top:var(--s5)}
+  .zvcol::before{left:0;right:0;top:0;bottom:auto;width:auto;height:1px}
+  .zvcol::after{left:50%;transform:translateX(-50%);top:-3px}
+
+  /* FAQ: linker Block über die volle Breite, zentriert */
+  #faq .split-72>div>div{max-width:none !important;text-align:center}
+  #faq .row{justify-content:center !important}
+
+  /* strukturierte Blöcke bleiben linksbündig */
+  .panel,.ptable,.dlist,.featbar,#faqliste,#objektliste,.rail,dl,.obj,details.q,.prow{text-align:left}
+  .panel .row,.panel .stack{justify-content:flex-start !important;align-items:flex-start !important;text-align:left}
+  .panel .pill{align-self:stretch !important}
+
+  /* Formulare: volle Breite, Felder untereinander, Labels links */
+  form,form.stack{width:100% !important;text-align:left}
+  .split form.stack,.split-72 form.stack,.split form .stack,.split-72 form .stack{align-items:stretch !important}
+  form .grid{grid-template-columns:1fr !important}
+  form .pill{align-self:stretch !important;width:100%;justify-content:space-between}
+  form .check,form .field label,form .micro{text-align:left}
+
+  /* Kontaktdaten zentriert */
+  #kontakt .stack>a,#kontakt .stack>p,#kontakt .stack>span{align-self:center !important;text-align:center}
+
+  .flip>.ovwrap{order:2}
+}
+@media(max-width:640px){
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .ovwrap{padding:var(--s4);min-height:0}
+  .panel{padding:var(--s5)}
+  .rail>*{flex:0 0 82vw}
+  .railwrap{margin-right:0}
+  .ov{position:static;max-width:none;margin-top:var(--s3)}
+  .ptrow{grid-template-columns:1fr}
+  .inline-form{padding:var(--s4);gap:var(--s4)}
+  .inline-form .pill{width:100%;justify-content:space-between}
+  .sec{padding:var(--s8) 0}
+  .wrap,.narrow{padding-left:var(--s5);padding-right:var(--s5)}
+  .head-in{padding:var(--s3) var(--s5)}
+}
+
+/* ---------- Maus-Interaktionen, nur bei echtem Zeigergerät ---------- */
+@media (hover:hover) and (pointer:fine){
+  .nav a{transition:transform .3s var(--ease),color .3s var(--ease)}
+  .nav a:hover{transform:translateY(-2px)}
+  .ulink{transition:color .25s var(--ease),letter-spacing .25s var(--ease)}
+  .ulink:hover{letter-spacing:.02em}
+  /* Bilder im Kapitalanlage-Karussell reagieren wie die Objektkacheln */
+  #anlagerail figure .media img{transition:transform .8s var(--ease),filter .6s var(--ease)}
+  #anlagerail figure:hover .media img{transform:scale(1.04);filter:grayscale(0) contrast(1.02)}
+  #anlagerail figure figcaption{transition:opacity .3s var(--ease)}
+  #anlagerail:hover figure:not(:hover) figcaption{opacity:.45}
+  /* Zeigerlicht auf Karten und Panels */
+  .card,.panel{position:relative;--mx:50%;--my:50%}
+  .card::after,.panel::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;z-index:1;
+    transition:opacity .35s var(--ease);
+    background:radial-gradient(340px circle at var(--mx) var(--my),rgba(201,167,107,.16),transparent 66%)}
+  .card:hover::after,.panel:hover::after{opacity:1}
+  .light .card::after{background:radial-gradient(340px circle at var(--mx) var(--my),rgba(175,131,70,.13),transparent 66%)}
+  .panel>*,.card>*{position:relative;z-index:2}
+  /* Karten-Reihen lassen sich mit der Maus ziehen */
+  .rail{cursor:grab}
+  .rail.is-dragging{cursor:grabbing}
+  .band>.media img{will-change:transform}
+}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.card::after,.panel::after{display:none}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a href="#inhalt" style="position:absolute;left:-9999px" onfocus="this.style.cssText='position:fixed;left:16px;top:16px;background:#F1EEE8;color:#12120F;padding:12px 18px;z-index:200'">Zum Inhalt springen</a>
+
+<header class="head">
+  <div class="head-in">
+    <a class="mark" href="#" aria-label="Grefe Immobilien, zur Startseite">
+      <img src="bilder/grefe-immobilien-logo-wappen.webp" alt="" aria-hidden="true">
+      <span class="mark-t"><b>GREFE</b><span>IMMOBILIEN</span></span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#objekte">Objekte</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#verfahren">Zwangsversteigerung</a>
+      <a href="#eigentuemer">Verkaufen</a>
+      <a href="#faq">Fragen</a>
+    </nav>
+    <a class="pill pill-gold headcta" href="#kontakt">Anfragen
+      <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+    <button class="pill pill-ghost menubtn" type="button" aria-label="Menü öffnen" aria-expanded="false" data-menu-open>Menü
+      <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" data-open="false" role="dialog" aria-modal="true" aria-label="Menü">
+  <button class="menu-x" type="button" aria-label="Menü schließen" data-menu-close>&times;</button>
+  <div class="wrap">
+    <span class="chip-l">Grefe Immobilien · Hannover</span>
+    <nav>
+      <a href="#objekte" data-menu-close>Objekte</a>
+      <a href="#leistungen" data-menu-close>Leistungen</a>
+      <a href="#verfahren" data-menu-close>Zwangsversteigerung</a>
+      <a href="#eigentuemer" data-menu-close>Verkaufen</a>
+      <a href="#faq" data-menu-close>Fragen</a>
+      <a href="#kontakt" data-menu-close>Kontakt</a>
+    </nav>
+    <a class="pill pill-gold" href="#kontakt" data-menu-close style="margin-top:var(--s8)">Besichtigung anfragen
+      <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+    <p class="micro" style="margin-top:var(--s6)">Lüerstr. 16, 30175 Hannover · <a href="tel:+4917063576760">0170 63 57 676</a> · <a href="mailto:info@grefe-immobilien.net">info@grefe-immobilien.net</a></p>
+  </div>
+</div>
+
+<main id="inhalt">
+
+<!-- ===== HERO: Bild mit Overlay, Headline darauf, schwebende Objektkarte ===== -->
+<section class="sec" style="padding:0">
+  <div class="band">
+    <div class="media deep" style="aspect-ratio:16/8">
+      <img src="bilder/stock-architektur-hero.webp" alt="Modernes Wohnhaus mit Holzfassade und Gartenweg, Symbolbild" width="1920" height="1281" fetchpriority="high">
+    </div>
+    <div class="band-inner" style="display:flex;flex-direction:column;justify-content:space-between;padding:var(--s9) 0">
+      <div class="wrap">
+        <span class="chip-l">Hannover · Bothfeld · Langenhagen · Burgdorf</span>
+        <h1 class="h1" style="margin-top:var(--s5);max-width:20ch">Immobilien kaufen <span class="hl">in Hannover</span></h1>
+      </div>
+      <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s6);justify-content:space-between;align-items:flex-end">
+        <div class="card" style="max-width:420px;background:rgba(18,18,16,.78);backdrop-filter:blur(10px);border-color:var(--bd);gap:var(--s3)">
+          <div class="row" style="gap:var(--s4);flex-wrap:nowrap">
+            <div class="media" style="width:74px;height:74px;flex:0 0 74px">
+              <img src="bilder/immobilien-hannover-sanierungsobjekt-fassade.webp" alt="Fachwerkhaus von 1924 in Burgdorf" loading="lazy" width="800" height="800">
+            </div>
+            <div>
+              <span class="micro" style="letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)">Neu im Bestand</span>
+              <h2 class="h4" style="margin-top:2px">Fachwerkhaus, Burgdorf</h2>
+              <p class="micro" style="color:var(--on-dark)">ca. 170 m² · 6 Zimmer · Denkmal</p>
+            </div>
+          </div>
+          <div class="row" style="justify-content:space-between;border-top:1px solid var(--bd-2);padding-top:var(--s3)">
+            <span class="num-s">149.000 €</span>
+            <a class="pill pill-gold" href="#kontakt" data-objekt="Fachwerkhaus Burgdorf">Anfragen
+              <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+          </div>
+        </div>
+        <div class="stack" style="max-width:360px;gap:var(--s5);align-items:flex-start">
+          <p class="body" style="color:var(--on-dark)">Wohn- und Anlageimmobilien, persönlich begleitet von der ersten Besichtigung bis zum Notartermin.</p>
+          <a class="pill" href="#objekte">Objekte ansehen
+            <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATEMENT, Wort-Highlight beim Scrollen ===== -->
+<section class="sec grain">
+  <div class="wrap">
+    <span class="chip-l">Über Grefe Immobilien</span>
+    <p class="h2 words" data-words style="margin-top:var(--s6);max-width:42ch">Wenige Objekte, eine Ansprechpartnerin und Zeit für die Fragen, die vor dem Kauf wichtig sind.</p>
+    <div class="row" style="margin-top:var(--s7);gap:var(--s6)">
+      <a class="pill pill-ghost" href="#leistungen">Was ich mache
+        <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+      <a class="ulink" href="tel:+4917063576760">0170 63 57 676</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN: drei Karten ===== -->
+<section class="sec alt grain" id="leistungen">
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s6)">
+      <div>
+        <span class="chip-l">Leistungen</span>
+        <h2 class="h2" style="margin-top:var(--s5);max-width:26ch">Drei Wege, <span class="hl">ein Ansprechpartner</span></h2>
+      </div>
+      <a class="ulink" href="#kontakt">Unverbindlich anfragen</a>
+    </div>
+    <div class="grid g3" style="margin-top:var(--s8)">
+      <article class="card reveal">
+        <div class="media" style="aspect-ratio:16/10"><img src="bilder/immobilien-hannover-luxus-wohnung-wohnzimmer.webp" alt="Wohnzimmer einer Wohnung in Hannover Bothfeld" loading="lazy" width="800" height="800"></div>
+        <h3 class="h3">Kaufen</h3>
+        <p class="small">Objektsuche, Besichtigung, Prüfung von Preis und Zustand, Begleitung bis zum Notartermin. Unterlagen bekommen Sie vor dem Termin, nicht auf Nachfrage.</p>
+        <a class="ulink" href="#objekte" style="align-self:flex-start;margin-top:auto">Objekte ansehen</a>
+      </article>
+      <article class="card reveal">
+        <div class="media" style="aspect-ratio:16/10"><img src="bilder/immobilien-hannover-wohnhaus-modern-treppenhaus.webp" alt="Natursteintreppe mit Kaminofen in einem Wohnhaus bei Hannover" loading="lazy" width="800" height="800"></div>
+        <h3 class="h3">Verkaufen und vermieten</h3>
+        <p class="small">Marktbasierte Wertermittlung statt Wunschpreis, öffentliche oder diskrete Vermarktung, vorqualifizierte Interessenten, Vermietung inklusive Mieterprüfung.</p>
+        <a class="ulink" href="#eigentuemer" style="align-self:flex-start;margin-top:auto">Wert ermitteln lassen</a>
+      </article>
+      <article class="card reveal">
+        <div class="media" style="aspect-ratio:16/10"><img src="bilder/immobilien-hannover-sanierungsobjekt-speicher.webp" alt="Offener Dachstuhl eines Sanierungsobjekts" loading="lazy" width="800" height="800"></div>
+        <h3 class="h3">Zwangsversteigerung</h3>
+        <p class="small">Objekte aus Insolvenzen und Zwangsversteigerungen, Prüfung des Gutachtens, Einschätzung der Sanierungskosten, Begleitung bis zum Zuschlag.</p>
+        <a class="ulink" href="#verfahren" style="align-self:flex-start;margin-top:auto">Verfahren verstehen</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VERLÄSSLICHKEIT: Headline oben, Text und Kennzahlen unten ===== -->
+<section class="sec" style="padding:0">
+  <div class="band">
+    <div class="media deep" style="aspect-ratio:16/9">
+      <img src="bilder/stock-architektur-verlaesslichkeit.webp" alt="Ruhige Gebäudekante gegen den Himmel, Symbolbild" loading="lazy" width="1920" height="1280">
+    </div>
+    <div class="band-inner" style="display:flex;flex-direction:column;justify-content:space-between;padding:var(--s9) 0">
+      <div class="wrap">
+        <span class="chip-l">Verlässlichkeit</span>
+        <h2 class="h1" style="margin-top:var(--s5);max-width:16ch">Erreichbar,<br>verbindlich,<br><span class="hl">mit Erlaubnis</span></h2>
+      </div>
+      <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s7);justify-content:space-between;align-items:flex-end">
+        <div class="stack" style="max-width:330px;gap:var(--s5);align-items:flex-start">
+          <p class="small" style="color:var(--on-dark)">Am Markt in Hannover seit 2012, eine Ansprechpartnerin für Kauf und Verkauf, Erlaubnis der Landeshauptstadt. <span class="todo" style="margin-top:var(--s2)">Jahr bestätigen</span></p>
+          <a class="pill" href="#kontakt">Besichtigung anfragen
+            <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+        </div>
+        <div class="row bandstats" style="gap:var(--s9);align-items:flex-start">
+          <div class="stack" style="gap:var(--s2)">
+            <div class="num">24 h</div>
+            <p class="micro" style="color:var(--on-dark)">Antwort auf Ihre Anfrage</p>
+            <span class="todo" style="align-self:flex-start">Zeitzusage bestätigen</span>
+          </div>
+          <div class="stack" style="gap:var(--s2)">
+            <div class="num">§ 34c</div>
+            <p class="micro" style="color:var(--on-dark)">Erlaubnis nach GewO,<br>Landeshauptstadt Hannover</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OBJEKTE: Karten-Reihe mit Bleed, Overlay-Text, Pfeilen ===== -->
+<section class="sec light railsec" id="objekte">
+  <div class="wrap" style="padding-right:0">
+    <div style="display:flex;flex-wrap:wrap;gap:var(--s6);justify-content:space-between;align-items:flex-start;padding-right:var(--s7)">
+      <div>
+        <span class="chip-l">Objekte</span>
+        <h2 class="h2" style="margin-top:var(--s5);max-width:22ch">Aktuelle Angebote <span class="hl">in Hannover und Umgebung</span></h2>
+      </div>
+      <div class="arrows">
+        <button class="arrow" type="button" data-rail="prev" aria-label="Vorheriges Objekt">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H6M12 19l-7-7 7-7"/></svg></button>
+        <button class="arrow" type="button" data-rail="next" aria-label="Nächstes Objekt">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <div role="group" aria-label="Nach Ort filtern" class="row" style="gap:var(--s3);margin:var(--s7) 0">
+      <button class="chip-l" type="button" data-ort="alle" aria-pressed="true" style="cursor:pointer;background:#15140F;color:var(--cream);border-color:#15140F">Alle Orte</button>
+      <button class="chip-l" type="button" data-ort="burgdorf" aria-pressed="false" style="cursor:pointer;background:transparent">Burgdorf</button>
+      <button class="chip-l" type="button" data-ort="langenhagen" aria-pressed="false" style="cursor:pointer;background:transparent">Langenhagen</button>
+      <button class="chip-l" type="button" data-ort="bothfeld" aria-pressed="false" style="cursor:pointer;background:transparent">Hannover Bothfeld</button>
+    </div>
+
+    <div class="railwrap">
+      <div class="rail" id="objektliste">
+        <article class="obj reveal" data-ort="burgdorf">
+          <div class="obj-photo">
+            <div class="media" style="aspect-ratio:3/4">
+              <img src="bilder/immobilien-hannover-sanierungsobjekt-fassade.webp" alt="Denkmalgeschütztes Fachwerkhaus von 1924 in Burgdorf" loading="lazy" width="800" height="800">
+            </div>
+            <div class="obj-top">
+              <span class="chip-l" style="color:var(--on-dark);border-color:var(--bd)">Burgdorf · Sanierungsobjekt</span>
+            </div>
+            <button class="objbtn" type="button" data-objekt="Fachwerkhaus Burgdorf" aria-label="Besichtigung anfragen für Fachwerkhaus von 1924">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+              <span class="lbl">Anfragen</span>
+            </button>
+            <div class="obj-bot">
+              <div class="num-s" style="color:var(--on-dark)">149.000 €</div>
+              <p class="micro" style="color:var(--on-dark-mute)">Kaufpreis</p>
+            </div>
+          </div>
+          <div class="stack" style="padding:var(--s5);gap:var(--s3)">
+            <h3 class="h4">Fachwerkhaus von 1924</h3>
+            <p class="small">ca. 170 m² Wohnfläche · 6 Zimmer · ca. 182 m² Grundstück · Denkmalschutz, mit sichtbarem Sanierungsbedarf</p>
+            <p class="micro" style="border-top:1px solid var(--bd-light);padding-top:var(--s3)">Energieausweis: <span class="todo">Angaben folgen</span></p>
+          </div>
+        </article>
+        <article class="obj reveal" data-ort="langenhagen">
+          <div class="obj-photo">
+            <div class="media" style="aspect-ratio:3/4">
+              <img src="bilder/immobilien-hannover-wohnhaus-modern-wohnzimmer.webp" alt="Wohnzimmer des Wohnhauses in Langenhagen" loading="lazy" width="800" height="800">
+            </div>
+            <div class="obj-top">
+              <span class="chip-l" style="color:var(--on-dark);border-color:var(--bd)">Langenhagen · Bezugsfertig</span>
+            </div>
+            <button class="objbtn" type="button" data-objekt="Wohnhaus Langenhagen" aria-label="Besichtigung anfragen für Wohnhaus mit Gästehaus">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+              <span class="lbl">Anfragen</span>
+            </button>
+            <div class="obj-bot">
+              <div class="num-s" style="color:var(--on-dark)">749.000 €</div>
+              <p class="micro" style="color:var(--on-dark-mute)">Kaufpreis</p>
+            </div>
+          </div>
+          <div class="stack" style="padding:var(--s5);gap:var(--s3)">
+            <h3 class="h4">Wohnhaus mit Gästehaus</h3>
+            <p class="small">ca. 210 m² Wohnfläche · 6 Zimmer · ca. 1.001 m² Grundstück · separates Gästehaus und Whirlpool</p>
+            <p class="micro" style="border-top:1px solid var(--bd-light);padding-top:var(--s3)">Energieausweis: <span class="todo">Angaben folgen</span></p>
+          </div>
+        </article>
+        <article class="obj reveal" data-ort="bothfeld">
+          <div class="obj-photo">
+            <div class="media" style="aspect-ratio:3/4">
+              <img src="bilder/immobilien-hannover-luxus-wohnung-fassade.webp" alt="Wohnhaus in Hannover Bothfeld, in dem die Wohnung am Park liegt" loading="lazy" width="800" height="800">
+            </div>
+            <div class="obj-top">
+              <span class="chip-l" style="color:var(--on-dark);border-color:var(--bd)">Bothfeld · Kapitalanlage</span>
+            </div>
+            <button class="objbtn" type="button" data-objekt="Wohnung Bothfeld" aria-label="Besichtigung anfragen für Wohnung am Park">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+              <span class="lbl">Anfragen</span>
+            </button>
+            <div class="obj-bot">
+              <div class="num-s" style="color:var(--on-dark)">Auf Anfrage</div>
+              <p class="micro" style="color:var(--on-dark-mute)">Kaufpreis</p>
+              <span class="todo" style="border-color:var(--gold-2);color:var(--gold-2);margin-top:var(--s2)">Preis bestätigen</span>
+            </div>
+          </div>
+          <div class="stack" style="padding:var(--s5);gap:var(--s3)">
+            <h3 class="h4">Wohnung am Park</h3>
+            <p class="small">Hochwertig ausgebaut, bezugsfertig übernehmbar. Fläche und Zimmerzahl folgen.</p>
+            <p class="micro" style="border-top:1px solid var(--bd-light);padding-top:var(--s3)">Energieausweis: <span class="todo">Angaben folgen</span></p>
+          </div>
+        </article>
+        <article class="obj reveal" data-ort="alle" style="background:var(--bg);border-color:var(--bd)">
+          <div class="stack" style="padding:var(--s6);gap:var(--s4);height:100%;justify-content:space-between">
+            <div>
+              <span class="chip-l" style="color:var(--on-dark);border-color:var(--bd)">Suchprofil</span>
+              <h3 class="h3" style="margin:var(--s5) 0 var(--s4);color:var(--on-dark)">Kein passendes Objekt dabei?</h3>
+              <p class="small">Sagen Sie mir, was Sie suchen. Sie erfahren von neuen Objekten, bevor sie in den Portalen erscheinen.</p>
+            </div>
+            <a class="pill pill-gold" href="#kontakt" style="align-self:flex-start">Suche hinterlegen
+              <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+    <p class="micro" style="margin-top:var(--s6);padding-right:var(--s7)">Nicht jedes Objekt steht online. Provision: <span class="todo">Höhe und Zahlungspflicht je Objekt bestätigen</span></p>
+  </div>
+</section>
+
+<!-- ===== ABLAUF UND DISKRETION, je ein Panel im Foto ===== -->
+<section class="sec grain" id="ablauf">
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between;align-items:center;gap:var(--s5);border-bottom:1px solid var(--bd);padding-bottom:var(--s5)">
+      <span class="chip-l">So arbeite ich</span>
+      <a class="ulink" href="#kontakt">Termin abstimmen</a>
+    </div>
+
+    <!-- Reihe 1: Text links, Foto mit Ablauf-Panel rechts -->
+    <div class="split-72" style="margin-top:var(--s8);align-items:center">
+      <div>
+        <h2 class="h2" style="max-width:20ch">So kaufen Sie <span class="hl">über mich</span></h2>
+        <p class="body" style="margin-top:var(--s6);max-width:46ch">Sie fragen ein Objekt an und bekommen eine Auskunft, keine Vertröstung. Vor der Besichtigung liegen die Unterlagen vor, danach prüfen wir Preis, Zustand und Kosten gemeinsam. Bis zur Übergabe bleibt es dieselbe Ansprechpartnerin.</p>
+        <p class="small" style="margin-top:var(--s5);max-width:46ch">Bei Sanierungs- und Zwangsversteigerungsobjekten kommt die Kostenschätzung dazu, bevor Sie sich binden.</p>
+        <div class="row" style="margin-top:var(--s7)">
+          <a class="pill pill-ghost" href="#objekte">Objekte ansehen <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+      <div class="ovwrap">
+        <div class="media deep" style="aspect-ratio:4/5">
+          <img src="bilder/stock-treppenhaus-ablauf.webp" alt="Treppenhaus im Abendlicht, Symbolbild" loading="lazy" width="1280" height="1920">
+        </div>
+        <div class="panel">
+          <h3 class="h3" style="color:var(--on-dark)">Ihr Weg zum Objekt</h3>
+          <p class="micro" style="margin-top:var(--s2)">Vier Schritte, jeder endet mit einer klaren Auskunft.</p>
+          <div style="margin-top:var(--s5)">
+            <div class="prow">
+              <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19 19 0 0 1-8.3-3 18.6 18.6 0 0 1-5.7-5.7A19 19 0 0 1 2.8 5 2 2 0 0 1 4.8 2.8h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L9 10.5a15 15 0 0 0 5.7 5.7l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <div><p class="small" style="color:var(--on-dark)">Anfrage</p><p class="micro">Antwort innerhalb von 24 Stunden, unverbindlich</p></div>
+            </div>
+            <div class="prow">
+              <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M8 3v4M16 3v4M3 11h18"/></svg></span>
+              <div><p class="small" style="color:var(--on-dark)">Besichtigung</p><p class="micro">Exposé, Grundriss und Energieausweis liegen vorher vor</p></div>
+            </div>
+            <div class="prow">
+              <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.6 8-8 9-4.4-1-8-4-8-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
+              <div><p class="small" style="color:var(--on-dark)">Prüfung</p><p class="micro">Preis, Zustand, Kosten, bei Anlageobjekten die Rendite</p></div>
+            </div>
+            <div class="prow" style="border-bottom:1px solid var(--bd-2)">
+              <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 4h9a5 5 0 0 1 0 10H6"/><path d="M6 9h9M4 20l6-6"/></svg></span>
+              <div><p class="small" style="color:var(--on-dark)">Notartermin</p><p class="micro">Begleitung bis zur Unterschrift und zur Übergabe</p></div>
+            </div>
+          </div>
+          <a class="pill" href="#kontakt" style="margin-top:var(--s5);width:100%;justify-content:space-between">Termin abstimmen <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reihe 2: Foto mit Bestands-Panel links, Text rechts. Beim Umbruch rutscht das Foto unter den Text -->
+    <div class="split-72 flip" style="margin-top:var(--s10);align-items:center">
+      <div class="ovwrap">
+        <div class="media deep" style="aspect-ratio:4/5">
+          <img src="bilder/stock-fenster-diskretion.webp" alt="Blick aus einem Fenster hinter einer Pflanze, Symbolbild" loading="lazy" width="1280" height="1920">
+        </div>
+        <div class="panel">
+          <h3 class="h3" style="color:var(--on-dark)">Bestand und Off-Market</h3>
+          <p class="micro" style="margin-top:var(--s2)">Was aktuell vermittelt wird, öffentlich und vertraulich.</p>
+          <div class="row" style="gap:var(--s3);align-items:flex-end;margin-top:var(--s5)">
+            <span class="num" style="font-size:clamp(38px,4vw,62px);color:var(--gold-2)">3</span>
+            <span class="h4" style="color:var(--on-dark);padding-bottom:6px">Objekte</span>
+          </div>
+          <div class="row" style="justify-content:space-between;align-items:center;margin-top:var(--s5)">
+            <p class="small" style="color:var(--on-dark)">Preisspanne im Bestand</p>
+            <span class="chip-l" style="color:var(--on-dark);border-color:var(--bd)">149.000 bis 749.000 €</span>
+          </div>
+          <div class="bars" style="margin-top:var(--s3)"><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+          <div class="row" style="justify-content:space-between;margin-top:var(--s2)">
+            <span class="micro">100.000</span><span class="micro">450.000</span><span class="micro">800.000 €</span>
+          </div>
+          <div class="ptable" style="margin-top:var(--s5)">
+            <div class="ptrow">
+              <div><p class="small" style="color:var(--on-dark)">Fachwerkhaus 1924</p><p class="micro">Burgdorf</p></div>
+              <p class="micro">Sanierung, Denkmal</p>
+              <p class="small" style="color:var(--on-dark)">149.000 €</p>
+            </div>
+            <div class="ptrow">
+              <div><p class="small" style="color:var(--on-dark)">Wohnhaus mit Gästehaus</p><p class="micro">Langenhagen</p></div>
+              <p class="micro">Bezugsfertig</p>
+              <p class="small" style="color:var(--on-dark)">749.000 €</p>
+            </div>
+            <div class="ptrow">
+              <div><p class="small" style="color:var(--on-dark)">Wohnung am Park</p><p class="micro">Hannover Bothfeld</p></div>
+              <p class="micro">Kapitalanlage</p>
+              <p class="small" style="color:var(--on-dark)">Auf Anfrage</p>
+            </div>
+          </div>
+          <p class="micro" style="margin-top:var(--s4)">Nicht jedes Objekt erscheint in dieser Liste. <span class="todo">Preis Bothfeld bestätigen</span></p>
+        </div>
+      </div>
+      <div>
+        <h2 class="h2" style="max-width:22ch">Manche Immobilien wechseln den Besitzer, <span class="hl">ohne Inserat</span></h2>
+        <p class="body" style="margin-top:var(--s6);max-width:46ch">Manche Eigentümer wollen nicht, dass Nachbarn, Mieter oder Geschäftspartner vom Verkauf erfahren. Diese Objekte laufen über einen kleinen Kreis vorgemerkter Käufer und Anleger, und zwar bevor sie irgendwo öffentlich stehen.</p>
+        <p class="small" style="margin-top:var(--s5);max-width:46ch">Wer ein Suchprofil hinterlegt hat, erfährt zuerst davon. Auf Wunsch bleibt der Verkauf vollständig diskret, ohne Schild und ohne Portal.</p>
+        <div class="row" style="margin-top:var(--s7)">
+          <a class="pill pill-gold" href="#kontakt">Vertraulich anfragen <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+          <a class="ulink" href="#kontakt">Suchprofil hinterlegen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FÜR EIGENTÜMER als Fotoband mit Merkmal-Leiste ===== -->
+<section class="sec" style="padding:0" id="eigentuemer">
+  <div class="band">
+    <div class="media deep" style="aspect-ratio:16/8;min-height:660px">
+      <img src="bilder/stock-wohnhaus-eigentuemer.webp" alt="Freistehendes Wohnhaus mit Terrasse und Grundstück, Symbolbild" loading="lazy" width="1920" height="1281">
+    </div>
+    <div class="band-inner" style="display:flex;flex-direction:column;justify-content:space-between;padding:var(--s9) 0">
+      <div class="wrap">
+        <span class="chip-l">Für Eigentümer</span>
+        <h2 class="h1" style="margin-top:var(--s5);max-width:18ch">Was ist Ihre Immobilie <span class="hl">wirklich wert?</span></h2>
+      </div>
+      <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s6);justify-content:space-between;align-items:flex-end">
+        <div class="stack" style="max-width:340px;gap:var(--s5);align-items:flex-start">
+          <p class="small" style="color:var(--on-dark)">Eine zu hohe Preisempfehlung gewinnt Aufträge und kostet Eigentümer Monate. Ich rechne Ihnen den Wert vor, statt einen Wunschpreis zu versprechen. Vermietung inklusive Mieterprüfung gehört dazu.</p>
+          <a class="pill" href="#kontakt">Immobilie bewerten lassen <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+          <span class="todo">Kostenlos und unverbindlich, bitte bestätigen</span>
+        </div>
+        <div class="featbar" style="max-width:660px">
+          <div class="feat">
+            <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M16 20v-2a4 4 0 0 0-8 0v2"/><circle cx="12" cy="8" r="3.4"/></svg></span>
+            <p class="micro" style="color:var(--on-dark)">Vorgemerkte Käufer und Anleger, direkt angesprochen</p>
+          </div>
+          <div class="feat">
+            <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.6 8-8 9-4.4-1-8-4-8-9V6z"/></svg></span>
+            <p class="micro" style="color:var(--on-dark)">Diskrete Vermarktung auf Wunsch, ohne Schild und Portal</p>
+          </div>
+          <div class="feat">
+            <span class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
+            <p class="micro" style="color:var(--on-dark)">Vollständige Unterlagen und ein gepflegtes Exposé</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPEZIALGEBIET: Kennzahlen-Reihe mit Trennern ===== -->
+<section class="sec grain" id="verfahren">
+  <div class="wrap">
+    <div class="split-72" style="align-items:center">
+      <div>
+        <span class="chip-l">Spezialgebiet</span>
+        <h2 class="h2" style="margin-top:var(--s5);max-width:20ch">Zwangsversteigerung <span class="hl">und Insolvenzobjekte</span></h2>
+        <div class="row" style="margin-top:var(--s7)">
+          <a class="pill pill-ghost" href="#kontakt">Beratungsgespräch anfragen <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+      <p class="small" style="max-width:38ch;justify-self:end;align-self:center">Objekte aus Verfahren vermittle ich seit Jahren. Das ist der Teil meiner Arbeit, den die meisten Maklerbüros nicht anbieten, weil er Verfahrenskenntnis verlangt und Zeit kostet.</p>
+    </div>
+
+    <div class="zvstats" style="margin-top:var(--s10)">
+      <div class="zvcol">
+        <span class="chip-l" style="border:0;padding:0">Vor dem Gebot</span>
+        <div class="num" style="margin-top:var(--s5)">10 %</div>
+        <p class="small" style="margin-top:var(--s3)">Sicherheitsleistung des Verkehrswerts, zu hinterlegen bevor Sie bieten</p>
+      </div>
+      <div class="zvcol">
+        <span class="chip-l" style="border:0;padding:0">Am Verkehrswert</span>
+        <div class="num" style="margin-top:var(--s5)">50 %</div>
+        <p class="small" style="margin-top:var(--s3)">Mindestgebot in der Praxis, darunter kommt es meist nicht zum Zuschlag</p>
+      </div>
+      <div class="zvcol">
+        <span class="chip-l" style="border:0;padding:0">Besichtigung</span>
+        <div class="num" style="margin-top:var(--s5)">selten</div>
+        <p class="small" style="margin-top:var(--s3)">Eine Innenbesichtigung ist meist nicht möglich, Sie bieten auf Basis des Gutachtens</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== KAPITALANLAGE: Headline links, Text rechts, Bilder-Karussell ===== -->
+<section class="sec alt grain railsec">
+  <div class="wrap" style="padding-right:0">
+    <div class="split-72" style="align-items:start;padding-right:var(--s7)">
+      <div>
+        <span class="chip-l">Kapitalanlage</span>
+        <h2 class="h2" style="margin-top:var(--s5);max-width:18ch">Rendite, <span class="hl">konservativ gerechnet</span></h2>
+      </div>
+      <div class="stack" style="gap:var(--s5)">
+        <p class="body" style="max-width:46ch">Die Bruttomietrendite berechnet sich aus der Jahreskaltmiete mal 100 geteilt durch den Kaufpreis. Was danach übrig bleibt, entscheiden Bewirtschaftungskosten, Instandhaltungsrücklage, Finanzierungszins und Steuer. Ich rechne mit der konservativen Variante, nicht mit der freundlichsten.</p>
+        <p class="small" style="max-width:46ch">Bei denkmalgeschützten Sanierungsobjekten sind für vermietende Eigentümer 8 Jahre lang 9 Prozent und weitere 4 Jahre 7 Prozent der Sanierungskosten abschreibbar.</p>
+        <a class="ulink" href="#kontakt" style="align-self:flex-start">Rendite-Einschätzung anfragen</a>
+      </div>
+    </div>
+
+    <div class="row" style="justify-content:flex-end;margin:var(--s7) 0 var(--s5);padding-right:var(--s7)">
+      <div class="arrows">
+        <button class="arrow" type="button" data-rail="prev" data-rail-target="anlagerail" aria-label="Vorheriges Bild" style="border-color:var(--bd);color:var(--on-dark)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H6M12 19l-7-7 7-7"/></svg></button>
+        <button class="arrow" type="button" data-rail="next" data-rail-target="anlagerail" aria-label="Nächstes Bild" style="border-color:var(--bd);color:var(--on-dark)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+
+    <div class="railwrap">
+      <div class="rail" id="anlagerail">
+          <figure>
+            <div class="media" style="aspect-ratio:3/4"><img src="bilder/immobilien-hannover-sanierungsobjekt-fassade.webp" alt="Fachwerkhaus von 1924 in Burgdorf" loading="lazy" width="800" height="800"></div>
+            <figcaption class="stack" style="gap:2px;margin-top:var(--s4)">
+              <span class="chip-l" style="border:0;padding:0">Burgdorf</span>
+              <span class="small" style="color:var(--on-dark)">Fachwerkhaus, Sanierungsobjekt</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="media" style="aspect-ratio:3/4"><img src="bilder/immobilien-hannover-wohnhaus-modern-wohnzimmer.webp" alt="Wohnzimmer des Wohnhauses in Langenhagen" loading="lazy" width="800" height="800"></div>
+            <figcaption class="stack" style="gap:2px;margin-top:var(--s4)">
+              <span class="chip-l" style="border:0;padding:0">Langenhagen</span>
+              <span class="small" style="color:var(--on-dark)">Wohnbereich, bezugsfertig</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="media" style="aspect-ratio:3/4"><img src="bilder/immobilien-hannover-luxus-wohnung-kueche.webp" alt="Küche der Wohnung in Hannover Bothfeld" loading="lazy" width="800" height="800"></div>
+            <figcaption class="stack" style="gap:2px;margin-top:var(--s4)">
+              <span class="chip-l" style="border:0;padding:0">Bothfeld</span>
+              <span class="small" style="color:var(--on-dark)">Küche, hochwertig ausgebaut</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="media" style="aspect-ratio:3/4"><img src="bilder/immobilien-hannover-wohnhaus-modern-bad.webp" alt="Badezimmer des Wohnhauses in Langenhagen" loading="lazy" width="800" height="800"></div>
+            <figcaption class="stack" style="gap:2px;margin-top:var(--s4)">
+              <span class="chip-l" style="border:0;padding:0">Langenhagen</span>
+              <span class="small" style="color:var(--on-dark)">Bad, bezugsfertig</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="media" style="aspect-ratio:3/4"><img src="bilder/immobilien-hannover-sanierungsobjekt-speicher.webp" alt="Offener Dachstuhl des Sanierungsobjekts in Burgdorf" loading="lazy" width="800" height="800"></div>
+            <figcaption class="stack" style="gap:2px;margin-top:var(--s4)">
+              <span class="chip-l" style="border:0;padding:0">Burgdorf</span>
+              <span class="small" style="color:var(--on-dark)">Dachstuhl, Ausbaupotenzial</span>
+            </figcaption>
+          </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INHABERIN ===== -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="split-72">
+      <div>
+        <span class="chip-l">Inhaberin</span>
+        <h2 class="h2" style="margin:var(--s5) 0 var(--s6);max-width:24ch">Iris Grefe, <span class="hl">vom ersten Anruf bis zum Notar</span></h2>
+        <p class="body" style="max-width:48ch">Ich führe Grefe Immobilien als Inhaberin, mit Sitz in Hannover. Meine Arbeit sind Wohn- und Anlageimmobilien in Hannover und der Region, dazu Objekte aus Insolvenzen und Zwangsversteigerungen. Was ich anbiete, ist keine Filialkette mit wechselnden Zuständigkeiten. Sie sprechen mit mir, vor der Besichtigung, während der Verhandlung und beim Notar.</p>
+        <dl class="grid g2" style="margin-top:var(--s7);gap:var(--s5)">
+          <div style="border-top:1px solid var(--bd-light);padding-top:var(--s3)"><dt class="chip-l" style="border:0;padding:0">Erlaubnis</dt><dd class="small" style="margin:var(--s2) 0 0">§ 34c Gewerbeordnung, Landeshauptstadt Hannover</dd></div>
+          <div style="border-top:1px solid var(--bd-light);padding-top:var(--s3)"><dt class="chip-l" style="border:0;padding:0">Sitz</dt><dd class="small" style="margin:var(--s2) 0 0">Lüerstr. 16, 30175 Hannover</dd></div>
+          <div style="border-top:1px solid var(--bd-light);padding-top:var(--s3)"><dt class="chip-l" style="border:0;padding:0">Schwerpunkte</dt><dd class="small" style="margin:var(--s2) 0 0">Wohnimmobilien, Kapitalanlagen, Sanierung, Zwangsversteigerung, Off-Market</dd></div>
+          <div style="border-top:1px solid var(--bd-light);padding-top:var(--s3)"><dt class="chip-l" style="border:0;padding:0">Kundenstimmen</dt><dd class="small" style="margin:var(--s2) 0 0">Bisher keine öffentlichen Bewertungen. <span class="todo">Google-Profil anlegen</span></dd></div>
+        </dl>
+        <div class="row" style="margin-top:var(--s7)">
+          <a class="pill" href="tel:+4917063576760">0170 63 57 676
+            <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+      <div style="aspect-ratio:4/5;border:1px dashed var(--gold-deep);display:grid;place-items:center;padding:var(--s6);background:var(--cream-2);text-align:center">
+        <div>
+          <span class="chip-l" style="border:0;padding:0">Platzhalter Porträt</span>
+          <p class="small" style="margin-top:var(--s3)">Foto von Iris Grefe fehlt. In dieser Nische zahlt ein echtes Gesicht am stärksten in Vertrauen ein.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </section>
+
+<!-- ===== FAQ: dunkel, Chips oben rechts ===== -->
+<section class="sec grain" id="faq">
+  <div class="wrap">
+    <span class="chip-l">Häufige Fragen</span>
+    <div class="split-72" style="margin-top:var(--s7);align-items:start">
+      <div>
+        <h2 class="h2" style="max-width:18ch">Antworten auf die Fragen, <span class="hl">die immer kommen</span></h2>
+        <div style="margin-top:var(--s9);border-top:1px solid var(--bd);padding-top:var(--s6);max-width:34ch">
+          <h3 class="h4">Ihre Frage ist nicht dabei?</h3>
+          <p class="small" style="margin-top:var(--s3)">Rufen Sie an, das geht schneller als jedes Formular. Sie sprechen direkt mit Iris Grefe.</p>
+          <div class="row" style="margin-top:var(--s5)">
+            <a class="pill pill-gold" href="tel:+4917063576760">Anrufen <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row" role="group" aria-label="Fragen filtern" style="gap:var(--s3);justify-content:flex-end;margin-bottom:var(--s6)">
+          <button class="chip-l" type="button" data-faq="alle" aria-pressed="true" style="cursor:pointer;background:var(--cream);color:#12120F;border-color:var(--cream)">Alle</button>
+          <button class="chip-l" type="button" data-faq="kaufen" aria-pressed="false" style="cursor:pointer;background:transparent">Kaufen</button>
+          <button class="chip-l" type="button" data-faq="verkaufen" aria-pressed="false" style="cursor:pointer;background:transparent">Verkaufen</button>
+          <button class="chip-l" type="button" data-faq="zwang" aria-pressed="false" style="cursor:pointer;background:transparent">Zwangsversteigerung</button>
+        </div>
+        <div id="faqliste">
+        <details class="q" data-faq="kaufen" open>
+          <summary><span class="h4">Wer zahlt die Maklerprovision beim Kauf?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Bei Wohnungen und Einfamilienhäusern teilen sich Käufer und Verkäufer die Provision seit Dezember 2020 hälftig, wenn der Verkäufer den Makler beauftragt hat. Die konkrete Höhe steht bei jedem Objekt und im Exposé.</p>
+        </details>
+        <details class="q" data-faq="zwang">
+          <summary><span class="h4">Kann ich eine Zwangsversteigerungsimmobilie vorher besichtigen?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">In den meisten Fällen nicht. Deshalb prüfen wir vorher gemeinsam das Verkehrswertgutachten, den Außeneindruck und die zu erwartenden Sanierungskosten, damit Ihr Gebot auf Zahlen steht.</p>
+        </details>
+        <details class="q" data-faq="verkaufen">
+          <summary><span class="h4">Was kostet eine Immobilienbewertung?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Sie erhalten eine marktbasierte Einschätzung für Ihre Immobilie in Hannover, auch wenn Sie danach nicht verkaufen. <span class="todo">Kostenlos und unverbindlich, bitte bestätigen</span></p>
+        </details>
+        <details class="q" data-faq="kaufen">
+          <summary><span class="h4">Wie schnell bekomme ich eine Antwort?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Innerhalb von 24 Stunden, in der Regel telefonisch, wenn Sie eine Nummer angeben. Wenn Ihnen ein Rückruf zu einer bestimmten Zeit lieber ist, schreiben Sie es in die Anfrage.</p>
+        </details>
+        <details class="q" data-faq="kaufen">
+          <summary><span class="h4">Vermitteln Sie Objekte, die nicht öffentlich inseriert sind?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Ja, ein Teil der Objekte wird aus Diskretionsgründen nicht online veröffentlicht und geht an vorgemerkte Käufer und Anleger. Ein Suchprofil ist die einzige Möglichkeit, davon zu erfahren.</p>
+        </details>
+        <details class="q" data-faq="zwang">
+          <summary><span class="h4">Lohnt sich ein Sanierungsobjekt gegenüber einem bezugsfertigen Haus?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Das hängt an drei Zahlen: Kaufpreis, realistische Sanierungskosten und der Wert nach der Sanierung. Bei denkmalgeschützten Objekten kommt für vermietende Eigentümer die Denkmal-AfA hinzu.</p>
+        </details>
+        <details class="q" data-faq="verkaufen">
+          <summary><span class="h4">Welche Orte deckt Grefe Immobilien ab?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Hannover und die Region, belegt sind Hannover, Hannover Bothfeld, Langenhagen und Burgdorf. <span class="todo">Ortsliste bestätigen</span></p>
+        </details>
+        <details class="q" data-faq="kaufen">
+          <summary><span class="h4">Was passiert mit meinen Daten, wenn ich anfrage?</span><span class="plus" aria-hidden="true"></span></summary>
+          <p class="body" style="margin-top:var(--s4)">Ihre Angaben nutze ich ausschließlich für Ihre Anfrage, sie gehen nicht an Dritte und nicht in einen Newsletter. Zu Anfragen, aus denen ein Maklervertrag entstehen kann, gehört ein 14-tägiges Widerrufsrecht, die Widerrufsbelehrung ist verlinkt.</p>
+        </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="sec bgsec" id="kontakt">
+  <div class="bgmedia"><img src="bilder/stock-hannover-stadt.webp" alt="" aria-hidden="true" loading="lazy" width="1920" height="1280"></div>
+  <div class="wrap">
+    <div class="split-72">
+      <div>
+        <span class="chip-l">Kontakt</span>
+        <h2 class="h2" style="margin:var(--s5) 0 var(--s6);max-width:22ch">Sprechen Sie direkt <span class="hl">mit Iris Grefe</span></h2>
+        <p class="body" style="max-width:42ch">Sagen Sie mir, ob es um ein Objekt geht oder um Ihre eigene Immobilie. Den Rest klären wir am Telefon.</p>
+        <div class="stack" style="gap:var(--s3);margin-top:var(--s7)">
+          <a class="ulink" href="tel:+4917063576760" style="align-self:flex-start">0170 63 57 676</a>
+          <a class="ulink" href="mailto:info@grefe-immobilien.net" style="align-self:flex-start">info@grefe-immobilien.net</a>
+          <p class="micro" style="margin-top:var(--s3)">Lüerstr. 16, 30175 Hannover</p>
+          <a class="micro" href="https://www.facebook.com/grefeimmobilien/" target="_blank" rel="noopener" style="align-self:flex-start">Facebook</a>
+        </div>
+      </div>
+      <form class="stack" style="gap:var(--s6)" data-demo="true" novalidate>
+        <div class="field"><label for="k-anliegen">Ihr Anliegen</label>
+          <select id="k-anliegen" name="anliegen">
+            <option value="besichtigung">Besichtigung oder Objekt anfragen</option>
+            <option value="bewertung">Immobilie bewerten lassen</option>
+            <option value="offmarket">Off-Market oder vertraulich anfragen</option>
+            <option value="zwangsversteigerung">Beratung zu Zwangsversteigerung</option>
+          </select>
+        </div>
+        <div class="grid g2" style="gap:var(--s5)">
+          <div class="field"><label for="k-name">Name</label><input id="k-name" name="name" placeholder="Vor- und Nachname"></div>
+          <div class="field"><label for="k-tel">Telefon</label><input id="k-tel" name="telefon" type="tel" placeholder="Für den Rückruf"></div>
+        </div>
+        <div class="field"><label for="k-mail">E-Mail</label><input id="k-mail" name="email" type="email" placeholder="ihre@adresse.de"></div>
+        <div class="field"><label for="k-text">Objekt oder Wunschtermin</label><textarea id="k-text" name="nachricht" rows="3" placeholder="Welches Objekt, und wann passt Ihnen eine Besichtigung?"></textarea></div>
+        <label class="check"><input type="checkbox" name="datenschutz"><span>Ich habe die Datenschutzhinweise gelesen. Meine Angaben werden ausschließlich für diese Anfrage genutzt und nicht an Dritte weitergegeben.</span></label>
+        <button class="pill pill-gold" type="submit" style="align-self:flex-start">Anfrage senden
+          <span class="arw"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></span></button>
+        <p class="micro">Antwort innerhalb von 24 Stunden. Zu Anfragen, aus denen ein Maklervertrag entstehen kann, gehört ein 14-tägiges Widerrufsrecht, siehe Widerrufsbelehrung.</p>
+        <p class="micro" data-demo-note hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABSCHLUSS-STATEMENT ===== -->
+<section class="sec alt tight">
+  <div class="wrap">
+    <p class="h2 words" data-words style="max-width:32ch">Kaufen mit Klartext. Verkaufen mit Diskretion.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="alt" style="padding:var(--s9) 0 0;overflow:hidden;border-top:1px solid var(--bd-2)">
+  <div class="wrap">
+    <div class="footcols">
+      <div>
+        <span class="mark">
+          <img src="bilder/grefe-immobilien-logo-wappen.webp" alt="" aria-hidden="true">
+          <span class="mark-t"><b>GREFE</b><span>IMMOBILIEN</span></span>
+        </span>
+        <p class="micro" style="margin-top:var(--s4)">Grefe Immobilien, Inhaberin Iris Grefe</p>
+      </div>
+      <div class="stack" style="gap:var(--s1)">
+        <p class="micro">Lüerstr. 16, 30175 Hannover</p>
+        <a class="micro" href="tel:+4917063576760">0170 63 57 676</a>
+        <a class="micro" href="mailto:info@grefe-immobilien.net">info@grefe-immobilien.net</a>
+        <a class="micro" href="https://www.facebook.com/grefeimmobilien/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="stack" style="gap:var(--s1)">
+        <p class="micro">Erlaubnis nach § 34c GewO, erteilt durch die Landeshauptstadt Hannover, Fachbereich Recht und Ordnung</p>
+        <p class="micro">Aufsichtsbehörde: Landeshauptstadt Hannover, Fachbereich Recht und Ordnung, Leinstraße 14, 30159 Hannover</p>
+        <p class="micro" style="color:var(--gold-2)">Handelsregister und Rechtsform bestätigen</p>
+      </div>
+      <div class="stack" style="gap:var(--s1)">
+        <a class="micro" href="#">Impressum</a>
+        <a class="micro" href="#">Datenschutz</a>
+        <a class="micro" href="#">Widerrufsbelehrung</a>
+      </div>
+    </div>
+    <p class="micro" style="margin-top:var(--s7);border-top:1px solid var(--bd-2);padding-top:var(--s5)">Entwurf, erstellt von LIKOVO. Gestrichelt markierte Angaben sind Platzhalter und werden vor dem Livegang durch bestätigte Daten ersetzt.</p>
+  </div>
+</footer>
+
+<script>
+var menu=document.getElementById('menu');
+document.querySelectorAll('[data-menu-open]').forEach(function(b){b.addEventListener('click',function(){menu.setAttribute('data-open','true');b.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});});
+document.querySelectorAll('[data-menu-close]').forEach(function(b){b.addEventListener('click',function(){menu.setAttribute('data-open','false');document.querySelectorAll('[data-menu-open]').forEach(function(o){o.setAttribute('aria-expanded','false');});document.body.style.overflow='';});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.getAttribute('data-open')==='true'){menu.setAttribute('data-open','false');document.body.style.overflow='';}});
+
+function setChips(sel, activeBtn){
+  document.querySelectorAll(sel).forEach(function(b){
+    var on=(b===activeBtn); b.setAttribute('aria-pressed',String(on));
+    var onDark = !b.closest('.light, .light-2, .gold');
+    b.style.background = on ? (onDark ? 'var(--cream)' : '#15140F') : 'transparent';
+    b.style.color = on ? (onDark ? '#12120F' : 'var(--cream)') : '';
+    b.style.borderColor = on ? (onDark ? 'var(--cream)' : '#15140F') : '';
+  });
+}
+document.querySelectorAll('button[data-ort]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    setChips('button[data-ort]', btn);
+    var o=btn.getAttribute('data-ort');
+    document.querySelectorAll('#objektliste > article').forEach(function(a){
+      a.hidden = !(o==='alle' || a.getAttribute('data-ort')===o || a.getAttribute('data-ort')==='alle');
+    });
+  });
+});
+document.querySelectorAll('button[data-faq]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    setChips('button[data-faq]', btn);
+    var f=btn.getAttribute('data-faq');
+    document.querySelectorAll('#faqliste > details').forEach(function(d){
+      d.hidden = !(f==='alle' || d.getAttribute('data-faq')===f);
+    });
+  });
+});
+
+document.querySelectorAll('[data-objekt]').forEach(function(l){
+  l.addEventListener('click',function(){
+    var sel=document.getElementById('k-anliegen'), txt=document.getElementById('k-text');
+    if(sel) sel.value='besichtigung';
+    if(txt && !txt.value) txt.value='Ich interessiere mich für: '+l.getAttribute('data-objekt');
+    if(l.tagName==='BUTTON'){
+      var k=document.getElementById('kontakt');
+      if(k) k.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
+document.querySelectorAll('form[data-demo]').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=f.querySelector('[data-demo-note]');
+    if(n){ n.textContent='Dies ist ein Entwurf, es wird noch nichts gesendet. Auf der fertigen Seite geht die Anfrage direkt an info@grefe-immobilien.net.'; n.hidden=false; }
+  });
+});
+
+// Wort-Highlight, an den Scrollfortschritt gekoppelt
+(function(){
+  var blocks=[].slice.call(document.querySelectorAll('[data-words]'));
+  if(!blocks.length) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  blocks.forEach(function(el){
+    var words=el.textContent.trim().split(/\s+/);
+    el.textContent='';
+    words.forEach(function(w,i){
+      var sp=document.createElement('span');
+      sp.className='w'; sp.textContent=w;
+      if(reduce) sp.classList.add('on');
+      el.appendChild(sp);
+      if(i<words.length-1) el.appendChild(document.createTextNode(' '));
+    });
+  });
+  if(reduce) return;
+  var raf=null;
+  function paint(){
+    raf=null;
+    var vh=window.innerHeight;
+    blocks.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      var start=vh*0.92, end=vh*0.32;
+      var prog=(start-r.top)/(start-end);
+      prog=Math.max(0,Math.min(1,prog));
+      var ws=el.querySelectorAll('.w');
+      var upto=Math.round(prog*ws.length);
+      for(var i=0;i<ws.length;i++){ ws[i].classList.toggle('on', i<upto); }
+    });
+  }
+  function onScroll(){ if(!raf) raf=requestAnimationFrame(paint); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  paint();
+})();
+
+// Objekt-Reihe: Pfeile scrollen um eine Karte
+(function(){
+  document.querySelectorAll('[data-rail]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var rail=document.getElementById(b.getAttribute('data-rail-target') || 'objektliste');
+      if(!rail) return;
+      var first=rail.querySelector(':scope > *:not([hidden])');
+      var step=first ? first.getBoundingClientRect().width + 24 : 360;
+      rail.scrollBy({left: (b.getAttribute('data-rail')==='next'? 1 : -1)*step, behavior:'smooth'});
+    });
+  });
+})();
+
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+}else{ document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');}); }
+</script>
+
+<script>
+// ---------- Maus-Interaktionen ----------
+(function(){
+  var fein = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!fein || ruhig) return;
+
+  // Fotobänder folgen dem Zeiger, leichter Parallaxe-Effekt
+  document.querySelectorAll('.band').forEach(function(band){
+    var bild = band.querySelector(':scope > .media img');
+    if(!bild) return;
+    var raf=null, tx=0, ty=0;
+    band.addEventListener('mousemove', function(e){
+      var r=band.getBoundingClientRect();
+      tx = ((e.clientX-r.left)/r.width - .5) * -16;
+      ty = ((e.clientY-r.top)/r.height - .5) * -16;
+      if(!raf) raf = requestAnimationFrame(function(){
+        raf=null;
+        bild.style.transform='scale(1.06) translate('+tx.toFixed(1)+'px,'+ty.toFixed(1)+'px)';
+      });
+    });
+    band.addEventListener('mouseleave', function(){ bild.style.transform=''; });
+  });
+
+  // Schwebende Hero-Karte verschiebt sich minimal mit
+  var heroKarte = document.querySelector('.band .card');
+  if(heroKarte){
+    var host = heroKarte.closest('.band');
+    host.addEventListener('mousemove', function(e){
+      var r=host.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+      heroKarte.style.transform='translate('+(px*9).toFixed(1)+'px,'+(py*7).toFixed(1)+'px)';
+    });
+    host.addEventListener('mouseleave', function(){ heroKarte.style.transform=''; });
+  }
+
+  // Zeigerlicht auf Karten und Panels
+  document.querySelectorAll('.card,.panel').forEach(function(el){
+    el.addEventListener('mousemove', function(e){
+      var r=el.getBoundingClientRect();
+      el.style.setProperty('--mx', Math.round(e.clientX-r.left)+'px');
+      el.style.setProperty('--my', Math.round(e.clientY-r.top)+'px');
+    });
+  });
+
+  // Karten-Reihen mit der Maus ziehen, Klicks nach echtem Ziehen unterdrücken
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var unten=false, startX=0, startLinks=0, weg=0;
+    rail.addEventListener('mousedown', function(e){
+      unten=true; weg=0; startX=e.pageX; startLinks=rail.scrollLeft;
+      rail.classList.add('is-dragging'); e.preventDefault();
+    });
+    window.addEventListener('mousemove', function(e){
+      if(!unten) return;
+      var d=e.pageX-startX; weg=Math.abs(d);
+      rail.scrollLeft = startLinks - d;
+    });
+    window.addEventListener('mouseup', function(){
+      if(!unten) return; unten=false; rail.classList.remove('is-dragging');
+    });
+    rail.addEventListener('click', function(e){
+      if(weg>6){ e.preventDefault(); e.stopPropagation(); }
+    }, true);
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Grefe Immobilien","founder":"Iris Grefe","telephone":"+49 170 63 57 676","email":"info@grefe-immobilien.net","address":{"@type":"PostalAddress","streetAddress":"Lüerstr. 16","postalCode":"30175","addressLocality":"Hannover","addressCountry":"DE"},"areaServed":["Hannover","Hannover Bothfeld","Langenhagen","Burgdorf"],"knowsAbout":["Immobilienverkauf","Kapitalanlage","Sanierungsobjekte","Zwangsversteigerung","Insolvenzimmobilien","Off-Market-Vermarktung"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wer zahlt die Maklerprovision beim Kauf?","acceptedAnswer":{"@type":"Answer","text":"Bei Wohnungen und Einfamilienhäusern teilen sich Käufer und Verkäufer die Provision seit Dezember 2020 hälftig, wenn der Verkäufer den Makler beauftragt hat."}},
+{"@type":"Question","name":"Kann ich eine Zwangsversteigerungsimmobilie vorher besichtigen?","acceptedAnswer":{"@type":"Answer","text":"In den meisten Fällen nicht. Vorher werden Verkehrswertgutachten, Außeneindruck und die zu erwartenden Sanierungskosten geprüft."}},
+{"@type":"Question","name":"Wie schnell bekomme ich eine Antwort?","acceptedAnswer":{"@type":"Answer","text":"Innerhalb von 24 Stunden, in der Regel telefonisch, wenn eine Nummer angegeben wird."}},
+{"@type":"Question","name":"Vermitteln Sie Objekte, die nicht öffentlich inseriert sind?","acceptedAnswer":{"@type":"Answer","text":"Ja, ein Teil der Objekte wird aus Diskretionsgründen nicht online veröffentlicht und geht an vorgemerkte Käufer und Anleger."}}
+]}
+</script>
+</body>
+</html>
