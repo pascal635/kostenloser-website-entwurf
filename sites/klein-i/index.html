@@ -11,7 +11,7 @@
 <meta property="og:title" content="Wohnungen in {Stadt}, die zu Ihnen passen">
 <meta property="og:description" content="Suchprofil, Vorauswahl, Besichtigung, Abwicklung. Und Bewertung vom Sachverständigen, wenn Sie verkaufen wollen.">
 <meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#1D2A4D">
+<meta name="theme-color" content="#3A1BF1">
 <link rel="icon" href="bilder/favicon-32.png" sizes="32x32">
 <link rel="icon" href="bilder/favicon-16.png" sizes="16x16">
 <link rel="apple-touch-icon" href="bilder/apple-touch-icon.png">
@@ -26,27 +26,27 @@
 
 :root{
   /* Marke */
-  --blau:#1D2A4D;          /* Markenblau, große Flächen */
-  --blau-800:#16203B;      /* dunkler, Footer und Abschluss */
-  --blau-600:#2A3C6B;      /* Blockwechsel innerhalb Blau */
-  --blau-400:#4C63A6;      /* Linien und Balken auf Blau */
-  --blau-200:#A8B4D2;      /* Sekundärtext auf Blau */
-  --rot:#8E2437;           /* Akzent */
-  --rot-700:#7A1E2F;
-  --rot-200:#E7BFC6;
+  --blau:#3A1BF1;          /* Markenblau, große Flächen. Ton aus dem Moodboard gemessen */
+  --blau-800:#2600AF;      /* dunkler, Footer und Abschluss */
+  --blau-600:#3100D7;      /* Blockwechsel innerhalb Blau */
+  --blau-400:#6479FF;      /* Linien und Balken auf Blau */
+  --blau-200:#B9C8FF;      /* Sekundärtext auf Blau, 4,9 zu 1 */
+  --rot:#C6001F;           /* Akzent, auf die Chroma des Blaus hochgezogen */
+  --rot-700:#A50018;
+  --rot-200:#FFDBD7;      /* Sekundärtext auf Rot, 4,8 zu 1 */
   /* Flächen */
-  --papier:#F6F3EE;
+  --papier:#F4F4F8;
   --weiss:#FFFFFF;
-  --grau:#EFEEEC;
-  --stein:#D9D3C8;         /* Haarlinien auf hell */
-  --tinte:#14161C;
-  --text:#1A1C22;
-  --text-mut:#5A5D66;
-  --gruen:#2F6B4F;
+  --grau:#ECEDF2;
+  --stein:#D4D6E0;         /* Haarlinien auf hell */
+  --tinte:#131419;
+  --text:#191A21;
+  --text-mut:#585A66;
+  --gruen:#00764A;       /* nur noch Reserve, im Entwurf nicht mehr gesetzt */
 
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
   --line:1px solid var(--stein);
-  --line-d:1px solid rgba(255,255,255,.22);
+  --line-d:1px solid rgba(255,255,255,.28);
   --sans:'Inter Tight',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   --display:'Familjen Grotesk','Inter Tight',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -116,7 +116,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
 .brackets{font-size:11.5px;font-weight:500;letter-spacing:.14em;line-height:1.45;text-transform:uppercase;color:var(--text-mut)}
 .brackets::before{content:"[ "}
 .brackets::after{content:" ]"}
-.blk.dark .brackets,.blk.rot .brackets,.blk.dark-800 .brackets{color:rgba(255,255,255,.72)}
+.blk.dark .brackets,.blk.dark-800 .brackets{color:rgba(255,255,255,.72)}
+.blk.rot .brackets{color:rgba(255,255,255,.85)}
 .lead{font-size:clamp(17.5px,1.25vw,20px);line-height:1.55;color:var(--text-mut)}
 .blk.dark .lead{color:var(--blau-200)}
 .blk.rot .lead{color:var(--rot-200)}
@@ -128,7 +129,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
 .rot-txt{color:var(--rot)}
 
 /* Zahlen, hohl wie in der Referenz */
-.hollow{font-family:var(--display);font-size:clamp(62px,9vw,132px);font-weight:600;letter-spacing:-.035em;line-height:.82;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.62);display:block}
+.hollow{font-family:var(--display);font-size:clamp(62px,9vw,132px);font-weight:600;letter-spacing:-.035em;line-height:.82;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.78);display:block}
 .hollow.on-light{-webkit-text-stroke:2px var(--blau-400)}
 .solid-num{font-family:var(--display);font-size:clamp(44px,5.4vw,76px);font-weight:600;letter-spacing:-.032em;line-height:.9;display:block}
 
@@ -190,8 +191,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
 
 /* ---------- Bild mit Blau-Duplex und Rasterpunkten ---------- */
 .duo{position:relative;overflow:hidden;background:var(--blau)}
-.duo > img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.14) brightness(.6);mix-blend-mode:luminosity}
-.duo::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px, transparent 1.2px);background-size:5px 5px;pointer-events:none}
+.duo > img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.22) brightness(.42);mix-blend-mode:luminosity}
+.duo::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 1px, transparent 1.2px);background-size:5px 5px;pointer-events:none}
 .duo.rot{background:var(--rot)}
 .duo .tag{position:absolute;z-index:2;left:0;bottom:0;background:#fff;color:var(--blau);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:9px 14px}
 .duo.plain::after{display:none}
@@ -243,6 +244,11 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
 .tab thead th{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
 .tab td:first-child{font-weight:600}
 .tab .best{font-weight:600}
+/* einzelne Zelle in Markenblau innerhalb eines hellen Blocks */
+.cell-blau{background:var(--blau);color:#fff}
+.cell-blau .small,.cell-blau .lead{color:var(--blau-200)}
+.cell-blau .brackets{color:rgba(255,255,255,.72)}
+.cell-blau .rot-txt{color:#fff}
 .tab tbody tr:last-child td{border-bottom:none}
 .tabwrap{overflow-x:auto}
 .tab{min-width:620px}
@@ -418,7 +424,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
       <div><span class="solid-num" style="color:var(--blau)">{18}</span><span class="brackets" style="display:block;margin-top:var(--s3)">Jahre im Markt</span></div>
       <div><span class="solid-num" style="color:var(--blau)">{240}</span><span class="brackets" style="display:block;margin-top:var(--s3)">Vermittlungen und Gutachten</span></div>
       <div><span class="solid-num" style="color:var(--blau)">{4,9}</span><span class="brackets" style="display:block;margin-top:var(--s3)">von 5 bei Google</span></div>
-      <div style="background:var(--blau);color:#fff"><span class="t-s" style="display:block">{Qualifikation und Bestellung}</span><span class="brackets" style="display:block;margin-top:var(--s3);color:rgba(255,255,255,.72)">Sachverständiger</span></div>
+      <div class="cell-blau"><span class="t-s" style="display:block">{Qualifikation und Bestellung}</span><span class="brackets" style="display:block;margin-top:var(--s3)">Sachverständiger</span></div>
       <div><span class="t-s">Bewertung nach ImmoWertV</span><p class="small" style="margin:var(--s3) 0 0">Vergleichswert, Sachwert oder Ertragswert, je nach Objekt.</p></div>
       <div><span class="t-s">Unterlagen geprüft</span><p class="small" style="margin:var(--s3) 0 0">Grundbuch, Teilungserklärung, Protokolle, Rücklage.</p></div>
       <div><span class="t-s">Mitglied {Verband}</span><p class="small" style="margin:var(--s3) 0 0">Haftpflicht {Deckungssumme}.</p></div>
@@ -655,8 +661,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
         <span class="solid-num rot-txt" style="margin-top:var(--s5);font-size:clamp(30px,3vw,44px)">ab {Betrag}</span>
         <p class="small" style="margin-top:var(--s3)">{Y} Werktage. Für die eigene Entscheidung, für die Familie, vor dem Verkauf.</p>
       </div>
-      <div style="background:var(--blau);color:#fff">
-        <span class="brackets" style="color:rgba(255,255,255,.72)">002</span>
+      <div class="cell-blau">
+        <span class="brackets">002</span>
         <h3 class="t-m" style="margin-top:var(--s3)">Verkehrswertgutachten</h3>
         <span class="solid-num" style="margin-top:var(--s5);font-size:clamp(30px,3vw,44px)">ab {Betrag}</span>
         <p class="small" style="margin-top:var(--s3)">{Y} Werktage. Für Finanzamt, Gericht, Erbengemeinschaft und Bank.</p>
@@ -664,7 +670,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-
       <div>
         <span class="brackets">003</span>
         <h3 class="t-m" style="margin-top:var(--s3)">Verkauf mit Gutachten</h3>
-        <span class="solid-num" style="margin-top:var(--s5);font-size:clamp(30px,3vw,44px);color:var(--gruen)">Provision {Angabe}</span>
+        <span class="solid-num" style="margin-top:var(--s5);font-size:clamp(30px,3vw,44px);color:var(--blau)">Provision {Angabe}</span>
         <p class="small" style="margin-top:var(--s3)">Die Bewertung wird angerechnet: {Regelung}.</p>
       </div>
     </div>
