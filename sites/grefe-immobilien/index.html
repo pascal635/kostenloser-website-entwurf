@@ -167,14 +167,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .light .hl,.light-2 .hl{color:var(--gold-deep)}
 
 /* Karten-Reihe mit Bleed und Pfeilen */
+.railsec{--rail-inset:calc(max(0px, (100% - 1340px) / 2) + var(--s7))}
 .railwrap{position:relative;margin-right:calc(var(--s7) * -1)}
+.railwrap.railfull{width:100%;margin-right:0}
 .rail{display:flex;gap:var(--s5);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:var(--s2)}
 .rail::-webkit-scrollbar{display:none}
 .rail>*{flex:0 0 380px;scroll-snap-align:start}
+/* volle Viewport-Breite, erste Karte bleibt auf der Textkante */
+.railfull>.rail{padding-left:var(--rail-inset);padding-right:var(--rail-inset);
+  scroll-padding-left:var(--rail-inset);scroll-padding-right:var(--rail-inset)}
+/* Filterreihe und Pfeile auf einer Linie */
+.railbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s5);margin:var(--s7) 0}
+.railbar.end{justify-content:flex-end}
+.railbar>.row{margin:0}
 .arrows{display:flex;gap:var(--s3)}
-.arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--bd-light);background:transparent;display:grid;place-items:center;cursor:pointer;color:inherit;
+.arrow{width:46px;height:46px;border-radius:50%;border:1px solid transparent;background:var(--on-dark);color:#15140F;
+  display:grid;place-items:center;cursor:pointer;
   transition:transform .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
-.arrow:hover{background:#15140F;color:var(--cream);border-color:#15140F;transform:translateY(-2px)}
+.arrow:hover{background:var(--gold-2);color:#12120F;border-color:var(--gold-2);transform:translateY(-2px)}
+.arrow:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+.light .arrow,.light-2 .arrow{background:#15140F;color:var(--cream)}
+.light .arrow:hover,.light-2 .arrow:hover{background:var(--gold);color:#F4F1EC}
 .obj{position:relative;display:flex;flex-direction:column;border:1px solid var(--bd-light);background:var(--cream-2)}
 .obj-photo{position:relative;overflow:hidden}
 .obj-top{position:absolute;top:0;left:0;right:0;padding:var(--s5);z-index:2}
@@ -320,6 +333,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 @media(max-width:1100px){
   .wrap,.narrow{padding-left:var(--s6);padding-right:var(--s6)}
+  .railsec{--rail-inset:calc(max(0px, (100% - 1340px) / 2) + var(--s6))}
   /* In den Fotobändern und in der Inhaberin-Sektion keine Breitenbegrenzung,
      sonst bleibt rechts Platz liegen, sobald die Spalten schmaler werden */
   .band-inner .h1,.band-inner .h2,.band-inner .stack:not(.card),.band-inner .featbar{max-width:none !important}
@@ -359,6 +373,8 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
   /* Bleed-Sektionen: asymmetrische Innenabstände raus */
   .railsec>.wrap{padding-left:var(--s5) !important;padding-right:var(--s5) !important}
   .railsec>.wrap>*{padding-right:0 !important}
+  .railsec{--rail-inset:calc(max(0px, (100% - 1340px) / 2) + var(--s5))}
+  .railbar,.railbar.end{justify-content:center}
 
   /* Kennzahlen-Reihe zentriert, Marker mittig */
   .zvstats,.zvcol{text-align:center}
@@ -593,11 +609,18 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== OBJEKTE: Karten-Reihe mit Bleed, Overlay-Text, Pfeilen ===== -->
 <section class="sec light railsec" id="objekte">
-  <div class="wrap" style="padding-right:0">
-    <div style="display:flex;flex-wrap:wrap;gap:var(--s6);justify-content:space-between;align-items:flex-start;padding-right:var(--s7)">
-      <div>
-        <span class="chip-l">Objekte</span>
-        <h2 class="h2" style="margin-top:var(--s5);max-width:22ch">Aktuelle Angebote <span class="hl">in Hannover und Umgebung</span></h2>
+  <div class="wrap">
+    <div>
+      <span class="chip-l">Objekte</span>
+      <h2 class="h2" style="margin-top:var(--s5);max-width:22ch">Aktuelle Angebote <span class="hl">in Hannover und Umgebung</span></h2>
+    </div>
+
+    <div class="railbar">
+      <div role="group" aria-label="Nach Ort filtern" class="row" style="gap:var(--s3)">
+        <button class="chip-l" type="button" data-ort="alle" aria-pressed="true" style="cursor:pointer;background:#15140F;color:var(--cream);border-color:#15140F">Alle Orte</button>
+        <button class="chip-l" type="button" data-ort="burgdorf" aria-pressed="false" style="cursor:pointer;background:transparent">Burgdorf</button>
+        <button class="chip-l" type="button" data-ort="langenhagen" aria-pressed="false" style="cursor:pointer;background:transparent">Langenhagen</button>
+        <button class="chip-l" type="button" data-ort="bothfeld" aria-pressed="false" style="cursor:pointer;background:transparent">Hannover Bothfeld</button>
       </div>
       <div class="arrows">
         <button class="arrow" type="button" data-rail="prev" aria-label="Vorheriges Objekt">
@@ -606,15 +629,9 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button>
       </div>
     </div>
+  </div>
 
-    <div role="group" aria-label="Nach Ort filtern" class="row" style="gap:var(--s3);margin:var(--s7) 0">
-      <button class="chip-l" type="button" data-ort="alle" aria-pressed="true" style="cursor:pointer;background:#15140F;color:var(--cream);border-color:#15140F">Alle Orte</button>
-      <button class="chip-l" type="button" data-ort="burgdorf" aria-pressed="false" style="cursor:pointer;background:transparent">Burgdorf</button>
-      <button class="chip-l" type="button" data-ort="langenhagen" aria-pressed="false" style="cursor:pointer;background:transparent">Langenhagen</button>
-      <button class="chip-l" type="button" data-ort="bothfeld" aria-pressed="false" style="cursor:pointer;background:transparent">Hannover Bothfeld</button>
-    </div>
-
-    <div class="railwrap">
+  <div class="railwrap railfull">
       <div class="rail" id="objektliste">
         <article class="obj reveal" data-ort="burgdorf">
           <div class="obj-photo">
@@ -698,8 +715,10 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
           </div>
         </article>
       </div>
-    </div>
-    <p class="micro" style="margin-top:var(--s6);padding-right:var(--s7)">Nicht jedes Objekt steht online. Provision: <span class="todo">Höhe und Zahlungspflicht je Objekt bestätigen</span></p>
+  </div>
+
+  <div class="wrap">
+    <p class="micro" style="margin-top:var(--s6)">Nicht jedes Objekt steht online. Provision: <span class="todo">Höhe und Zahlungspflicht je Objekt bestätigen</span></p>
   </div>
 </section>
 
@@ -878,8 +897,8 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== KAPITALANLAGE: Headline links, Text rechts, Bilder-Karussell ===== -->
 <section class="sec alt grain railsec">
-  <div class="wrap" style="padding-right:0">
-    <div class="split-72" style="align-items:start;padding-right:var(--s7)">
+  <div class="wrap">
+    <div class="split-72" style="align-items:start">
       <div>
         <span class="chip-l">Kapitalanlage</span>
         <h2 class="h2" style="margin-top:var(--s5);max-width:18ch">Rendite, <span class="hl">konservativ gerechnet</span></h2>
@@ -891,16 +910,17 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
       </div>
     </div>
 
-    <div class="row" style="justify-content:flex-end;margin:var(--s7) 0 var(--s5);padding-right:var(--s7)">
+    <div class="railbar end">
       <div class="arrows">
-        <button class="arrow" type="button" data-rail="prev" data-rail-target="anlagerail" aria-label="Vorheriges Bild" style="border-color:var(--bd);color:var(--on-dark)">
+        <button class="arrow" type="button" data-rail="prev" data-rail-target="anlagerail" aria-label="Vorheriges Bild">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H6M12 19l-7-7 7-7"/></svg></button>
-        <button class="arrow" type="button" data-rail="next" data-rail-target="anlagerail" aria-label="Nächstes Bild" style="border-color:var(--bd);color:var(--on-dark)">
+        <button class="arrow" type="button" data-rail="next" data-rail-target="anlagerail" aria-label="Nächstes Bild">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></button>
       </div>
     </div>
+  </div>
 
-    <div class="railwrap">
+  <div class="railwrap railfull">
       <div class="rail" id="anlagerail">
           <figure>
             <div class="media" style="aspect-ratio:3/4"><img src="bilder/immobilien-hannover-sanierungsobjekt-fassade.webp" alt="Fachwerkhaus von 1924 in Burgdorf" loading="lazy" width="800" height="800"></div>
@@ -939,7 +959,6 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
           </figure>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- ===== INHABERIN ===== -->
