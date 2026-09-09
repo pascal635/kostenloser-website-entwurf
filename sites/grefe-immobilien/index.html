@@ -9,21 +9,15 @@
 <meta name="description" content="Wohn- und Anlageimmobilien in Hannover und der Region. Persönlich begleitet von Iris Grefe, von der Objektsuche bis zum Notartermin. Auch Sanierungs-, Insolvenz- und Zwangsversteigerungsobjekte.">
 <meta property="og:title" content="Grefe Immobilien | Immobilien kaufen in Hannover">
 <meta property="og:description" content="Wenige Objekte, eine Ansprechpartnerin. Wohn- und Anlageimmobilien in Hannover und Region.">
-<link rel="preload" href="schriften/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="schriften/instrument-sans-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="schriften/proyale.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="schriften/Chillax-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="schriften/stylish-delight.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* Grotesk Instrument Sans, selbst gehostet (keine Google-Fonts-Verbindung) */
-@font-face{font-family:'Instrument Sans';src:url('schriften/instrument-sans-400.woff2') format('woff2');
-  font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Instrument Sans';src:url('schriften/instrument-sans-500.woff2') format('woff2');
-  font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Instrument Sans';src:url('schriften/instrument-sans-600.woff2') format('woff2');
-  font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:'Instrument Sans';src:url('schriften/instrument-sans-700.woff2') format('woff2');
-  font-weight:700;font-style:normal;font-display:swap}
-/* Akzentschrift Proyale, Versalien-Serif mit Alternativglyphen (ss01 bis ss07) */
-@font-face{font-family:Proyale;src:url('schriften/proyale.woff2') format('woff2');
+/* Grotesk Chillax, Variable Font von Fontshare, unveraendert selbst gehostet.
+   ITF Free Font License: Selbsthosting ausdruecklich erlaubt, Subsetting nicht. */
+@font-face{font-family:Chillax;src:url('schriften/Chillax-Variable.woff2') format('woff2');
+  font-weight:200 700;font-style:normal;font-display:swap}
+/* Ueberschriftenschrift Stylish Delight, moderne Serif mit Alternativen (salt) */
+@font-face{font-family:'Stylish Delight';src:url('schriften/stylish-delight.woff2') format('woff2');
   font-weight:400;font-style:normal;font-display:swap}
 :root{
   --bg:#121210; --bg-2:#191916; --card:#1E1E1A; --card-2:#232320;
@@ -31,11 +25,11 @@
   --gold:#AF8346; --gold-2:#C9A76B; --gold-deep:#8A6634;
   --on-dark:#F1EEE8; --on-dark-mute:#9E9A93;
   --text:#15140F; --text-mute:#5C574F;
-  --bd:rgba(241,238,232,.14); --bd-2:rgba(241,238,232,.08); --bd-light:rgba(21,20,15,.14);
+  --bd:rgba(201,167,107,.26); --bd-2:rgba(201,167,107,.14); --bd-light:rgba(138,102,52,.26);
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;
-  --sans:'Instrument Sans',-apple-system,'Segoe UI',Helvetica,sans-serif;
+  --sans:'Chillax',-apple-system,'Segoe UI',Helvetica,sans-serif;
+  --display:'Stylish Delight',Georgia,'Times New Roman',serif;
   --orn:url('bilder/maske-muster-5.webp');
-  --akzent:'Proyale',Georgia,'Times New Roman',serif;
   --ease:cubic-bezier(.2,.7,.2,1);
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
   --soft:0 2px 10px rgba(0,0,0,.28), 0 26px 70px rgba(0,0,0,.34);
@@ -45,10 +39,12 @@ html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--on-dark);
   font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.75;
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.035em;line-height:1.04}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:400;letter-spacing:-.012em;line-height:1.06}
 /* Die Klassen tragen den engen Satz auch auf p- und span-Elementen */
-.h1,.h2,.h3,.h4{font-weight:600;letter-spacing:-.035em;line-height:1.06}
-.h1{line-height:1.02}
+.h1,.h2,.h3{font-family:var(--display);font-weight:400;letter-spacing:-.012em;line-height:1.08}
+/* h4 bleibt Grotesk: kleine Groessen brauchen kraeftige Striche */
+.h4{font-family:var(--sans);font-weight:600;letter-spacing:-.02em;line-height:1.26}
+.h1{line-height:1.04}
 .h3{line-height:1.1}
 .h4{line-height:1.26}
 p,ul,ol,dl{margin:0}
@@ -57,9 +53,9 @@ a{color:inherit;text-decoration:none}
 ::selection{background:var(--gold);color:#12120F}
 
 /* Typo */
-.h1{font-size:clamp(38px,5.2vw,80px)}
-.h2{font-size:clamp(29px,3.6vw,54px)}
-.h3{font-size:clamp(22px,2vw,30px)}
+.h1{font-size:clamp(40px,5.4vw,84px)}
+.h2{font-size:clamp(31px,3.8vw,58px)}
+.h3{font-size:clamp(23px,2.1vw,32px)}
 .h4{font-size:19px;letter-spacing:-.02em;line-height:1.26}
 .mute{color:var(--on-dark-mute)}
 .light .mute, .light-2 .mute{color:var(--text-mute)}
@@ -70,23 +66,25 @@ a{color:inherit;text-decoration:none}
 .light .body, .light .small, .light .micro, .light-2 .body, .light-2 .small, .light-2 .micro{color:var(--text-mute)}
 .gold .body,.gold .small{color:#1A1912}
 .gold .micro{color:rgba(18,18,15,.82)}
-.num{font-family:var(--akzent);font-weight:400;letter-spacing:-.005em;line-height:.98;font-size:clamp(40px,5vw,78px)}
-.num-s{font-family:var(--akzent);font-weight:400;letter-spacing:-.005em;line-height:1.04;font-size:clamp(30px,3vw,46px)}
+.num{font-family:var(--display);font-weight:400;letter-spacing:-.005em;line-height:.98;font-size:clamp(40px,5vw,78px)}
+.num-s{font-family:var(--display);font-weight:400;letter-spacing:-.005em;line-height:1.04;font-size:clamp(30px,3vw,46px)}
 /* Kennzahlen, die Kleinbuchstaben brauchen (Einheit h, Paragraf 34c), bleiben in der Grotesk */
 .num.num-sans,.num-s.num-sans{font-family:var(--sans);font-weight:600;letter-spacing:-.035em;line-height:.94}
 
 /* Chip-Label */
-.chip-l{display:inline-flex;align-items:center;gap:9px;font-family:var(--akzent);font-size:12.5px;font-weight:400;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--on-dark-mute);border:1px solid var(--bd);padding:7px 14px}
+.chip-l{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--gold-2);border:1px solid var(--bd);padding:7px 14px}
 .chip-l::before{content:"";width:5px;height:5px;background:var(--gold);flex:0 0 5px}
-.light .chip-l, .light-2 .chip-l{color:var(--text-mute);border-color:var(--bd-light)}
+.light .chip-l, .light-2 .chip-l{color:var(--gold-deep);border-color:var(--bd-light)}
 .gold .chip-l{color:#12120F;border-color:rgba(18,18,15,.46)}
 
 /* Marke */
 .mark{display:inline-flex;align-items:center;gap:11px}
 .mark img{width:34px;height:34px;object-fit:contain}
 .mark-t{display:flex;flex-direction:column;line-height:1}
-.mark-t b{font-family:var(--akzent);font-weight:400;font-size:22px;letter-spacing:.28em}
+/* Wortmarke in der Grotesk: das G der Displayschrift liest sich bei dieser Groesse
+   und Laufweite nicht eindeutig, der Markenname muss unmissverstaendlich sein */
+.mark-t b{font-family:var(--sans);font-weight:500;font-size:21px;letter-spacing:.3em}
 .mark-t span{font-size:8px;letter-spacing:.42em;margin-top:5px;color:var(--gold-2)}
 .light .mark-t span, .light-2 .mark-t span{color:var(--gold-deep)}
 
@@ -110,8 +108,9 @@ a{color:inherit;text-decoration:none}
 .light .pill-ghost .arw, .light-2 .pill-ghost .arw{background:#15140F;color:var(--cream)}
 .gold .pill{background:#12120F;border-color:#12120F;color:var(--gold)}
 .gold .pill .arw{background:var(--gold);color:#12120F}
-.ulink{display:inline-flex;align-items:center;gap:9px;font-size:14px;padding-bottom:3px;border-bottom:1px solid currentColor}
-.ulink:hover{color:var(--gold-2)}
+.ulink{display:inline-flex;align-items:center;gap:9px;font-size:14px;padding-bottom:3px;
+  border-bottom:1px solid var(--gold);transition:border-color .25s var(--ease),color .25s var(--ease)}
+.ulink:hover{color:var(--gold-2);border-bottom-color:var(--gold-2)}
 .light .ulink:hover, .gold .ulink:hover, .light-2 .ulink:hover{color:var(--gold-deep)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
@@ -131,6 +130,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .orn-5{--orn:url('bilder/maske-muster-5.webp')}
 .orn-6{--orn:url('bilder/maske-muster-6.webp')}
 .orn-8{--orn:url('bilder/maske-muster-8.webp')}
+/* Ranken aus dem Wappen, fuer die hellen Flaechen */
+.orn-logo{--orn:url('bilder/maske-logo-floral.webp')}
 
 /* Abstrakte Hintergruende: Textur mal Gold, additiv ueber den dunklen Grund */
 .hg{isolation:isolate}
@@ -138,8 +139,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   background-image:linear-gradient(var(--gold),var(--gold)),var(--hg);
   background-blend-mode:multiply;background-repeat:no-repeat;background-size:cover;
   background-position:var(--hg-pos,center);
-  filter:contrast(1.5) brightness(.78);
-  mix-blend-mode:screen;opacity:var(--hg-deckung,.22);
+  filter:contrast(1.42) brightness(.92) saturate(1.15);
+  mix-blend-mode:screen;opacity:var(--hg-deckung,.5);
   -webkit-mask-image:var(--hg-maske,radial-gradient(85% 75% at 100% 50%,#000 8%,transparent 72%));
           mask-image:var(--hg-maske,radial-gradient(85% 75% at 100% 50%,#000 8%,transparent 72%))}
 
@@ -155,6 +156,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   -webkit-mask:var(--orn) repeat center/190px,radial-gradient(120% 90% at 80% 15%,#000 12%,transparent 78%);
           mask:var(--orn) repeat center/190px,radial-gradient(120% 90% at 80% 15%,#000 12%,transparent 78%);
   -webkit-mask-composite:source-in;mask-composite:intersect}
+/* Ornamentschicht als eigenes Element, damit sie neben Textur und Grain bestehen kann */
+.orn-schicht{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:var(--orn-farbe,var(--gold-2));opacity:var(--orn-staerke,.09);
+  -webkit-mask:var(--orn) repeat center/var(--orn-kachel,240px);
+          mask:var(--orn) repeat center/var(--orn-kachel,240px)}
+.orn-schicht+*{position:relative;z-index:1}
 /* Zierband am Uebergang hell zu dunkel */
 .zierband{height:46px;background:var(--bg-2);position:relative;overflow:hidden}
 .zierband::before{content:"";position:absolute;inset:0;background:var(--gold);opacity:.5;
@@ -181,11 +188,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       rgba(138,102,52,0) 72%),
     linear-gradient(rgba(138,102,52,var(--orn-grund)),rgba(138,102,52,var(--orn-grund)))}
 /* Schmuck-Initial im Fuss, Alternativglyphe ss05 */
-.initial{position:absolute;right:1%;bottom:-8%;font-family:var(--akzent);font-feature-settings:"ss05";
+.initial{position:absolute;right:1%;bottom:-8%;font-family:var(--display);font-feature-settings:"salt";
   font-size:clamp(240px,26vw,420px);line-height:.8;color:var(--on-dark);opacity:.05;
   pointer-events:none;user-select:none}
 /* Abschluss-Statement in der Akzentschrift, mit Alternativglyphen */
-.stmt{font-family:var(--akzent);font-weight:400;font-feature-settings:"ss06";
+.stmt{font-family:var(--display);font-weight:400;font-feature-settings:"salt";
   letter-spacing:.01em;line-height:1.34;font-size:clamp(28px,4.2vw,56px);
   text-align:center;margin-inline:auto;padding-inline:clamp(0px,4vw,64px)}
 .wrap{max-width:1340px;margin:0 auto;padding:0 var(--s7)}
@@ -216,6 +223,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(8,8,7,.34),rgba(8,8,7,.02) 55%)}
 .media.deep::after{background:linear-gradient(105deg,rgba(8,8,7,.9) 0%,rgba(8,8,7,.72) 42%,rgba(8,8,7,.5) 100%)}
 .media.plain::after{background:none}
+/* Bildband mit abstraktem Hintergrund statt Foto. Der Goldton ist in die Datei gerechnet (Duoton). */
+.hgmedia{background-image:var(--hg);background-size:cover;background-position:center}
+.media.deep.hgmedia::after{background:linear-gradient(105deg,rgba(8,8,7,.88) 0%,rgba(8,8,7,.62) 42%,rgba(8,8,7,.22) 100%)}
 .tile:hover .media img,a.media:hover img{transform:scale(1.03);filter:grayscale(0) contrast(1.02)}
 
 /* Formular */
@@ -245,10 +255,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .words .w.on{color:var(--on-dark)}
 .light .words .w,.light-2 .words .w{color:rgba(21,20,15,.22)}
 .light .words .w.on,.light-2 .words .w.on{color:var(--text)}
-.hl{color:var(--gold-2);font-family:var(--akzent);font-weight:400;font-size:.96em;letter-spacing:.008em}
+.hl{color:var(--gold-2)}
+.light .hl,.light-2 .hl{color:var(--gold-deep)}
 /* Akzent in der Hauptzeile nicht am Zeilenende zerreissen */
 .h1 .hl{display:inline-block}
-.light .hl,.light-2 .hl{color:var(--gold-deep)}
 
 /* Karten-Reihe mit Bleed und Pfeilen */
 .railsec{--rail-inset:calc(max(0px, (100% - 1340px) / 2) + var(--s7))}
@@ -272,6 +282,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .arrow:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
 .light .arrow,.light-2 .arrow{background:#15140F;color:var(--cream)}
 .light .arrow:hover,.light-2 .arrow:hover{background:var(--gold);color:#F4F1EC}
+.obj .chip-l{font-size:11px;letter-spacing:.1em;padding:6px 11px}
 .obj{position:relative;display:flex;flex-direction:column;border:1px solid var(--bd-light);background:var(--cream-2)}
 .obj-photo{position:relative;overflow:hidden}
 .obj-top{position:absolute;top:0;left:0;right:0;padding:var(--s5);z-index:2}
@@ -359,7 +370,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .dlist{display:flex;flex-direction:column}
 .dlist>div{border-top:1px solid var(--bd);padding:var(--s4) 0}
 .dlist>div:last-child{border-bottom:1px solid var(--bd)}
-.dlist h3{color:var(--on-dark-mute)}
+.dlist h3{color:var(--gold-2)}
 .dlist>div:first-child h3{color:var(--on-dark)}
 .dlist>div:first-child p{color:var(--on-dark-mute)}
 
@@ -407,6 +418,8 @@ details.q{border-top:1px solid var(--bd);padding:var(--s5) 0}
 details.q summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s5)}
 details.q summary::-webkit-details-marker{display:none}
 details.q .plus{flex:0 0 22px;width:22px;height:22px;position:relative;margin-top:5px}
+details.q .plus{color:var(--gold-2)}
+.light details.q .plus,.light-2 details.q .plus{color:var(--gold-deep)}
 details.q .plus::before,details.q .plus::after{content:"";position:absolute;background:currentColor;transition:transform .3s var(--ease),opacity .3s var(--ease)}
 details.q .plus::before{left:0;top:10px;width:22px;height:1px}
 details.q .plus::after{left:10px;top:0;width:1px;height:22px}
@@ -618,7 +631,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 </section>
 
 <!-- ===== STATEMENT, Wort-Highlight beim Scrollen ===== -->
-<section class="sec grain hg" style="--hg:url('bilder/textur-statement.webp');--hg-maske:radial-gradient(85% 80% at 100% 45%,#000 6%,transparent 72%);--hg-deckung:.38">
+<section class="sec grain hg" style="--hg:url('bilder/textur-statement.webp');--hg-maske:radial-gradient(85% 80% at 100% 45%,#000 14%,transparent 88%);--hg-deckung:.6">
   <div class="wrap">
     <span class="chip-l">Über Grefe Immobilien</span>
     <p class="h2 words" data-words style="margin-top:var(--s6);max-width:42ch">Wenige Objekte, eine Ansprechpartnerin und Zeit für die Fragen, die vor dem Kauf wichtig sind.</p>
@@ -632,7 +645,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== LEISTUNGEN: drei Karten ===== -->
 <section class="sec alt grain hg" id="leistungen"
-  style="--hg:url('bilder/textur-leistungen.webp');--hg-maske:radial-gradient(80% 75% at 100% 0%,#000 4%,transparent 70%);--hg-deckung:.28">
+  style="--hg:url('bilder/textur-leistungen.webp');--hg-maske:radial-gradient(80% 75% at 100% 0%,#000 12%,transparent 86%);--hg-deckung:.5">
   <div class="wrap">
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s6)">
       <div>
@@ -667,9 +680,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 <!-- ===== VERLÄSSLICHKEIT: Headline oben, Text und Kennzahlen unten ===== -->
 <section class="sec" style="padding:0">
   <div class="band">
-    <div class="media deep" style="aspect-ratio:16/9">
-      <img src="bilder/stock-architektur-verlaesslichkeit.webp" alt="Ruhige Gebäudekante gegen den Himmel, Symbolbild" loading="lazy" width="1920" height="1280">
-    </div>
+    <div class="media deep hgmedia" style="aspect-ratio:16/9;--hg:url('bilder/textur-verlaesslichkeit.webp')" role="presentation"></div>
     <div class="band-inner" style="display:flex;flex-direction:column;justify-content:space-between;padding:var(--s9) 0">
       <div class="wrap">
         <span class="chip-l">Verlässlichkeit</span>
@@ -699,6 +710,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== OBJEKTE: Karten-Reihe mit Bleed, Overlay-Text, Pfeilen ===== -->
 <section class="sec light railsec" id="objekte">
+  <div class="orn-schicht orn-logo" aria-hidden="true" style="--orn-farbe:var(--gold-deep);--orn-staerke:.05;--orn-kachel:185px"></div>
   <div class="wrap">
     <div>
       <span class="chip-l">Objekte</span>
@@ -814,7 +826,8 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== ABLAUF UND DISKRETION, je ein Panel im Foto ===== -->
 <section class="sec grain hg" id="ablauf"
-  style="--hg:url('bilder/textur-ablauf.webp');--hg-maske:radial-gradient(85% 80% at 0% 100%,#000 6%,transparent 70%);--hg-deckung:.18">
+  style="--hg:url('bilder/textur-ablauf.webp');--hg-maske:radial-gradient(85% 80% at 0% 100%,#000 14%,transparent 86%);--hg-deckung:.42">
+  <div class="orn-schicht orn-4" aria-hidden="true" style="--orn-staerke:.07;--orn-kachel:260px"></div>
   <div class="wrap">
     <div class="row" style="justify-content:space-between;align-items:center;gap:var(--s5);border-bottom:1px solid var(--bd);padding-bottom:var(--s5)">
       <span class="chip-l">So arbeite ich</span>
@@ -953,7 +966,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== SPEZIALGEBIET: Kennzahlen-Reihe mit Trennern ===== -->
 <section class="sec grain hg" id="verfahren"
-  style="--hg:url('bilder/textur-spezialgebiet.webp');--hg-maske:radial-gradient(85% 80% at 100% 100%,#000 6%,transparent 72%);--hg-deckung:.24">
+  style="--hg:url('bilder/textur-spezialgebiet.webp');--hg-maske:radial-gradient(85% 80% at 100% 100%,#000 14%,transparent 88%);--hg-deckung:.55">
   <div class="wrap">
     <div class="split-72" style="align-items:center">
       <div>
@@ -989,7 +1002,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== KAPITALANLAGE: Headline links, Text rechts, Bilder-Karussell ===== -->
 <section class="sec alt grain railsec hg"
-  style="--hg:url('bilder/textur-anlage.webp');--hg-maske:radial-gradient(90% 85% at 0% 0%,#000 6%,transparent 74%);--hg-deckung:.34">
+  style="--hg:url('bilder/textur-anlage.webp');--hg-maske:radial-gradient(90% 85% at 0% 0%,#000 14%,transparent 90%);--hg-deckung:.7">
   <div class="wrap">
     <div class="split-72" style="align-items:start">
       <div>
@@ -1056,6 +1069,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== INHABERIN ===== -->
 <section class="sec light">
+  <div class="orn-schicht orn-logo" aria-hidden="true" style="--orn-farbe:var(--gold-deep);--orn-staerke:.045;--orn-kachel:175px"></div>
   <div class="wrap">
     <div class="split-72">
       <div>
@@ -1089,7 +1103,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== FAQ: dunkel, Chips oben rechts ===== -->
 <section class="sec grain hg" id="faq"
-  style="--hg:url('bilder/textur-faq.webp');--hg-maske:radial-gradient(80% 80% at 0% 35%,#000 4%,transparent 68%);--hg-deckung:.2">
+  style="--hg:url('bilder/textur-faq.webp');--hg-maske:radial-gradient(80% 80% at 0% 35%,#000 12%,transparent 84%);--hg-deckung:.46">
   <div class="wrap">
     <span class="chip-l">Häufige Fragen</span>
     <div class="split-72" style="margin-top:var(--s7);align-items:start">
