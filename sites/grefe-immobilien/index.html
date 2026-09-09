@@ -139,14 +139,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .orn-helm{--orn:url('bilder/maske-logo-helm.webp')}
 .orn-wulst{--orn:url('bilder/maske-logo-wulst.webp')}
 .orn-blatt{--orn:url('bilder/maske-logo-blatt.webp')}
+/* Das komplette Wappen als Muster, gerade und im Halbversatz */
+.orn-wappen{--orn:url('bilder/maske-logo-wappen.webp')}
+.orn-wappen-versatz{--orn:url('bilder/maske-logo-wappen-versatz.webp')}
 
-/* Abstrakte Hintergruende: Textur mal Gold, additiv ueber den dunklen Grund */
+/* Hintergruende: echte Goldfolien, additiv ueber den dunklen Grund */
 .hg{isolation:isolate}
 .hg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:linear-gradient(rgba(201,167,107,var(--hg-schleier,.13)),rgba(201,167,107,var(--hg-schleier,.13))),var(--hg);
-  background-repeat:no-repeat;background-size:cover,cover;
-  background-position:center,var(--hg-pos,center);
-  mix-blend-mode:screen;opacity:var(--hg-deckung,.6);
+  background-image:var(--hg);
+  background-repeat:no-repeat;background-size:cover;
+  background-position:var(--hg-pos,center);
+  mix-blend-mode:screen;opacity:var(--hg-deckung,.5);
   -webkit-mask-image:var(--hg-maske,radial-gradient(85% 75% at 100% 50%,#000 8%,transparent 72%));
           mask-image:var(--hg-maske,radial-gradient(85% 75% at 100% 50%,#000 8%,transparent 72%))}
 
@@ -170,7 +173,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .orn-schicht+*{position:relative;z-index:1}
 /* Zierband am Uebergang hell zu dunkel */
 .zierband{height:46px;background:var(--bg-2);position:relative;overflow:hidden}
-.zierband::before{content:"";position:absolute;inset:0;background:var(--gold);opacity:.5;
+.zierband::before{content:"";position:absolute;inset:0;opacity:.62;
+  background:var(--gold) url('bilder/textur-zierband.webp') center/cover;
   -webkit-mask:var(--orn) repeat-x center/auto 210%;mask:var(--orn) repeat-x center/auto 210%}
 .zierband::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--bd-2)}
 
@@ -657,7 +661,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 </section>
 
 <!-- ===== STATEMENT, Wort-Highlight beim Scrollen ===== -->
-<section class="sec grain hg" style="--hg:url('bilder/textur-statement.webp');--hg-maske:radial-gradient(85% 80% at 100% 45%,#000 20%,transparent 94%);--hg-deckung:.62">
+<section class="sec grain hg" style="--hg:url('bilder/textur-statement.webp');--hg-maske:radial-gradient(85% 80% at 100% 45%,#000 20%,transparent 94%);--hg-deckung:.52">
   <div class="wrap">
     <span class="chip-l">Über Grefe Immobilien</span>
     <p class="h2 words" data-words style="margin-top:var(--s6);max-width:42ch">Wenige Objekte, eine Ansprechpartnerin und Zeit für die Fragen, die vor dem Kauf wichtig sind.</p>
@@ -671,7 +675,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== LEISTUNGEN: drei Karten ===== -->
 <section class="sec alt grain" id="leistungen">
-  <div class="orn-schicht orn-wulst" aria-hidden="true" style="--orn-staerke:.08;--orn-kachel:260px;--orn-pos:right 12% top -30px"></div>
+  <div class="orn-schicht orn-wappen" aria-hidden="true" style="--orn-staerke:.07;--orn-kachel:300px;--orn-pos:center top -40px"></div>
   <div class="wrap">
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s6)">
       <div>
@@ -854,7 +858,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== ABLAUF UND DISKRETION, je ein Panel im Foto ===== -->
 <section class="sec grain" id="ablauf">
-  <div class="orn-schicht orn-blatt" aria-hidden="true" style="--orn-staerke:.09;--orn-kachel:300px;--orn-pos:left -60px center"></div>
+  <div class="orn-schicht orn-wappen-versatz" aria-hidden="true" style="--orn-staerke:.075;--orn-kachel:390px;--orn-pos:left -70px top -50px"></div>
   <div class="wrap">
     <div class="row" style="justify-content:space-between;align-items:center;gap:var(--s5);border-bottom:1px solid var(--bd);padding-bottom:var(--s5)">
       <span class="chip-l">So arbeite ich</span>
@@ -1029,7 +1033,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== KAPITALANLAGE: Headline links, Text rechts, Bilder-Karussell ===== -->
 <section class="sec alt grain railsec hg"
-  style="--hg:url('bilder/textur-anlage.webp');--hg-maske:radial-gradient(90% 85% at 0% 0%,#000 20%,transparent 96%);--hg-deckung:.7">
+  style="--hg:url('bilder/textur-anlage.webp');--hg-maske:radial-gradient(56% 54% at 0% 33%,#000 10%,transparent 90%);--hg-deckung:.44">
   <div class="wrap">
     <div class="split-72" style="align-items:start">
       <div>
@@ -1130,7 +1134,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== FAQ: dunkel, Chips oben rechts ===== -->
 <section class="sec grain hg" id="faq"
-  style="--hg:url('bilder/textur-faq.webp');--hg-maske:radial-gradient(70% 70% at 0% 8%,#000 10%,transparent 84%);--hg-deckung:.48">
+  style="--hg:url('bilder/textur-faq.webp');--hg-maske:radial-gradient(48% 64% at 0% 14%,#000 10%,transparent 86%);--hg-deckung:.4">
   <div class="wrap">
     <span class="chip-l">Häufige Fragen</span>
     <div class="split-72" style="margin-top:var(--s7);align-items:start">
