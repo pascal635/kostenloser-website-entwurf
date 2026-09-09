@@ -36,7 +36,7 @@
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;
   --sans:'Karla',-apple-system,'Segoe UI',Helvetica,sans-serif;
   --display:'Gambetta',Georgia,'Times New Roman',serif;
-  --orn:url('bilder/maske-muster-5.webp');
+  --orn:url('bilder/maske-logo-ranke.webp');
   --ease:cubic-bezier(.2,.7,.2,1);
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
   --soft:0 2px 10px rgba(0,0,0,.28), 0 26px 70px rgba(0,0,0,.34);
@@ -45,7 +45,7 @@
 html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--on-dark);
   font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.75;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  -webkit-font-smoothing:antialiased;overflow-x:clip}
 h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-.006em;line-height:1.08}
 /* Die Klassen tragen den engen Satz auch auf p- und span-Elementen */
 .h1,.h2,.h3{font-family:var(--display);font-weight:500;letter-spacing:-.006em;line-height:1.1}
@@ -132,19 +132,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* Ornamente liegen als Alphamasken vor, die Farbe kommt aus dem Marken-Gold */
 @property --lit{syntax:"<number>";inherits:false;initial-value:0}
-.orn-2{--orn:url('bilder/maske-muster-2.webp')}
-.orn-4{--orn:url('bilder/maske-muster-4.webp')}
-.orn-5{--orn:url('bilder/maske-muster-5.webp')}
-.orn-6{--orn:url('bilder/maske-muster-6.webp')}
-.orn-8{--orn:url('bilder/maske-muster-8.webp')}
-/* Ranken aus dem Wappen, fuer die hellen Flaechen */
-.orn-logo{--orn:url('bilder/maske-logo-floral.webp')}
+/* Alle Muster stammen aus den Elementen des Wappens */
+.orn-ranke{--orn:url('bilder/maske-logo-ranke.webp')}
+.orn-garbe{--orn:url('bilder/maske-logo-garbe.webp')}
+.orn-mond{--orn:url('bilder/maske-logo-mond.webp')}
+.orn-helm{--orn:url('bilder/maske-logo-helm.webp')}
+.orn-wulst{--orn:url('bilder/maske-logo-wulst.webp')}
+.orn-blatt{--orn:url('bilder/maske-logo-blatt.webp')}
 
 /* Abstrakte Hintergruende: Textur mal Gold, additiv ueber den dunklen Grund */
 .hg{isolation:isolate}
 .hg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:var(--hg);background-repeat:no-repeat;background-size:cover;
-  background-position:var(--hg-pos,center);
+  background-image:linear-gradient(rgba(201,167,107,var(--hg-schleier,.13)),rgba(201,167,107,var(--hg-schleier,.13))),var(--hg);
+  background-repeat:no-repeat;background-size:cover,cover;
+  background-position:center,var(--hg-pos,center);
   mix-blend-mode:screen;opacity:var(--hg-deckung,.6);
   -webkit-mask-image:var(--hg-maske,radial-gradient(85% 75% at 100% 50%,#000 8%,transparent 72%));
           mask-image:var(--hg-maske,radial-gradient(85% 75% at 100% 50%,#000 8%,transparent 72%))}
@@ -153,7 +154,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .ornament{isolation:isolate}
 .ornament::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:var(--gold-2);opacity:.075;
-  -webkit-mask:var(--orn) repeat center/240px;mask:var(--orn) repeat center/240px}
+  -webkit-mask:var(--orn) repeat center/260px;mask:var(--orn) repeat center/260px}
 /* Ornament in der Suchprofil-Kachel, aus der Ecke eingeblendet */
 .ornament-kachel{position:relative;isolation:isolate}
 .ornament-kachel::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -164,8 +165,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* Ornamentschicht als eigenes Element, damit sie neben Textur und Grain bestehen kann */
 .orn-schicht{position:absolute;inset:0;z-index:0;pointer-events:none;
   background:var(--orn-farbe,var(--gold-2));opacity:var(--orn-staerke,.09);
-  -webkit-mask:var(--orn) repeat center/var(--orn-kachel,240px);
-          mask:var(--orn) repeat center/var(--orn-kachel,240px)}
+  -webkit-mask:var(--orn) repeat var(--orn-pos,center)/var(--orn-kachel,240px);
+          mask:var(--orn) repeat var(--orn-pos,center)/var(--orn-kachel,240px)}
 .orn-schicht+*{position:relative;z-index:1}
 /* Zierband am Uebergang hell zu dunkel */
 .zierband{height:46px;background:var(--bg-2);position:relative;overflow:hidden}
@@ -174,7 +175,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .zierband::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--bd-2)}
 
 /* Karten und Panels: Grundmuster schwach, unter dem Zeiger leuchtet es auf */
-.card,.panel,.obj{--orn-kachel:240px;--orn-grund:.035}
+.card,.panel,.obj{--orn-kachel:200px;--orn-grund:.04}
 .card::before,.panel::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background:
     radial-gradient(300px circle at var(--mx,50%) var(--my,50%),
@@ -408,11 +409,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 
 /* Kopf */
-.head{position:sticky;top:0;z-index:80;background:rgba(18,18,16,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd-2)}
+/* Glasleiste: durchscheinend und unscharf, mit so viel Tönung wie der Textkontrast braucht.
+   Ueber hellen Sektionen kippt die Toenung ins Creme und das Gold wird dunkler. */
+.head{position:sticky;top:0;z-index:80;background:rgba(14,14,12,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);
+  border-bottom:1px solid var(--bd-2);transition:background-color .3s var(--ease),border-color .3s var(--ease)}
+.head.auf-hell{background:rgba(244,241,236,.82);border-bottom-color:var(--bd-light)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .head{background:rgba(18,18,16,.94)}
+  .head.auf-hell{background:rgba(244,241,236,.96)}
+}
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:var(--s5);padding:var(--s4) var(--s7)}
 .nav{display:flex;gap:var(--s6);flex-wrap:wrap;justify-content:center;flex:1 1 auto}
-.nav a{font-size:13px;letter-spacing:.03em;color:var(--on-dark-mute)}
-.nav a:hover{color:var(--on-dark)}
+.nav a{font-size:13px;letter-spacing:.03em;color:var(--gold-2);transition:color .25s var(--ease)}
+.nav a:hover{color:var(--cream)}
+/* Glas-Leiste ueber hellen Sektionen: dunkles Gold, sonst faellt der Kontrast unter 4,5 zu 1 */
+.head.auf-hell .nav a{color:#7A5A2E}
+.head.auf-hell .nav a:hover{color:#15140F}
+.head.auf-hell .mark-t b{color:#15140F}
+.head.auf-hell .mark-t span{color:#7A5A2E}
+.head.auf-hell .menubtn{color:#15140F;border-color:var(--bd-light)}
+.head.auf-hell{border-bottom-color:var(--bd-light)}
 .menubtn{display:none}
 .menu{position:fixed;inset:0;z-index:130;background:var(--bg-2);display:none;padding:var(--s9) var(--s7)}
 .menu[data-open="true"]{display:block}
@@ -612,7 +629,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
         <h1 class="h1" style="margin-top:var(--s5);max-width:20ch">Immobilien kaufen <span class="hl">in Hannover</span></h1>
       </div>
       <div class="wrap" style="display:flex;flex-wrap:wrap;gap:var(--s6);justify-content:space-between;align-items:flex-end">
-        <div class="card orn-8" style="max-width:420px;gap:var(--s3)">
+        <div class="card orn-helm" style="max-width:420px;gap:var(--s3)">
           <div class="row" style="gap:var(--s4);flex-wrap:nowrap">
             <div class="media" style="width:74px;height:74px;flex:0 0 74px">
               <img src="bilder/immobilien-hannover-sanierungsobjekt-fassade.webp" alt="Fachwerkhaus von 1924 in Burgdorf" loading="lazy" width="800" height="800">
@@ -640,7 +657,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 </section>
 
 <!-- ===== STATEMENT, Wort-Highlight beim Scrollen ===== -->
-<section class="sec grain hg" style="--hg:url('bilder/textur-statement.webp');--hg-maske:radial-gradient(85% 80% at 100% 45%,#000 20%,transparent 94%);--hg-deckung:.88">
+<section class="sec grain hg" style="--hg:url('bilder/textur-statement.webp');--hg-maske:radial-gradient(85% 80% at 100% 45%,#000 20%,transparent 94%);--hg-deckung:.62">
   <div class="wrap">
     <span class="chip-l">Über Grefe Immobilien</span>
     <p class="h2 words" data-words style="margin-top:var(--s6);max-width:42ch">Wenige Objekte, eine Ansprechpartnerin und Zeit für die Fragen, die vor dem Kauf wichtig sind.</p>
@@ -654,7 +671,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== LEISTUNGEN: drei Karten ===== -->
 <section class="sec alt grain" id="leistungen">
-  <div class="orn-schicht orn-2" aria-hidden="true" style="--orn-staerke:.1;--orn-kachel:380px"></div>
+  <div class="orn-schicht orn-wulst" aria-hidden="true" style="--orn-staerke:.08;--orn-kachel:260px;--orn-pos:right 12% top -30px"></div>
   <div class="wrap">
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s6)">
       <div>
@@ -664,19 +681,19 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
       <a class="ulink" href="#kontakt">Unverbindlich anfragen</a>
     </div>
     <div class="grid g3" style="margin-top:var(--s8)">
-      <article class="card reveal orn-2">
+      <article class="card reveal orn-garbe">
         <div class="media" style="aspect-ratio:16/10"><img src="bilder/immobilien-hannover-luxus-wohnung-wohnzimmer.webp" alt="Wohnzimmer einer Wohnung in Hannover Bothfeld" loading="lazy" width="800" height="800"></div>
         <h3 class="h3">Kaufen</h3>
         <p class="small">Objektsuche, Besichtigung, Prüfung von Preis und Zustand, Begleitung bis zum Notartermin. Unterlagen bekommen Sie vor dem Termin, nicht auf Nachfrage.</p>
         <a class="ulink" href="#objekte" style="align-self:flex-start;margin-top:auto">Objekte ansehen</a>
       </article>
-      <article class="card reveal orn-4">
+      <article class="card reveal orn-mond">
         <div class="media" style="aspect-ratio:16/10"><img src="bilder/immobilien-hannover-wohnhaus-modern-treppenhaus.webp" alt="Natursteintreppe mit Kaminofen in einem Wohnhaus bei Hannover" loading="lazy" width="800" height="800"></div>
         <h3 class="h3">Verkaufen und vermieten</h3>
         <p class="small">Marktbasierte Wertermittlung statt Wunschpreis, öffentliche oder diskrete Vermarktung, vorqualifizierte Interessenten, Vermietung inklusive Mieterprüfung.</p>
         <a class="ulink" href="#eigentuemer" style="align-self:flex-start;margin-top:auto">Wert ermitteln lassen</a>
       </article>
-      <article class="card reveal orn-6">
+      <article class="card reveal orn-blatt">
         <div class="media" style="aspect-ratio:16/10"><img src="bilder/immobilien-hannover-sanierungsobjekt-speicher.webp" alt="Offener Dachstuhl eines Sanierungsobjekts" loading="lazy" width="800" height="800"></div>
         <h3 class="h3">Zwangsversteigerung</h3>
         <p class="small">Objekte aus Insolvenzen und Zwangsversteigerungen, Prüfung des Gutachtens, Einschätzung der Sanierungskosten, Begleitung bis zum Zuschlag.</p>
@@ -721,7 +738,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== OBJEKTE: Karten-Reihe mit Bleed, Overlay-Text, Pfeilen ===== -->
 <section class="sec light railsec" id="objekte">
-  <div class="orn-schicht orn-logo" aria-hidden="true" style="--orn-farbe:var(--gold-deep);--orn-staerke:.05;--orn-kachel:185px"></div>
+  <div class="orn-schicht orn-mond" aria-hidden="true" style="--orn-farbe:var(--gold-deep);--orn-staerke:.07;--orn-kachel:230px;--orn-pos:left 30px top 40px"></div>
   <div class="wrap">
     <div>
       <span class="chip-l">Objekte</span>
@@ -816,7 +833,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
             <p class="micro" style="border-top:1px solid var(--bd-light);padding-top:var(--s3)">Energieausweis: <span class="todo">Angaben folgen</span></p>
           </div>
         </article>
-        <article class="obj reveal ornament-kachel orn-5" data-ort="alle" style="background:var(--bg);border-color:var(--bd)">
+        <article class="obj reveal ornament-kachel orn-helm" data-ort="alle" style="background:var(--bg);border-color:var(--bd)">
           <div class="stack" style="padding:var(--s6);gap:var(--s4);height:100%;justify-content:space-between">
             <div>
               <span class="chip-l" style="color:var(--on-dark);border-color:var(--bd)">Suchprofil</span>
@@ -837,7 +854,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== ABLAUF UND DISKRETION, je ein Panel im Foto ===== -->
 <section class="sec grain" id="ablauf">
-  <div class="orn-schicht orn-4" aria-hidden="true" style="--orn-staerke:.1;--orn-kachel:400px"></div>
+  <div class="orn-schicht orn-blatt" aria-hidden="true" style="--orn-staerke:.09;--orn-kachel:300px;--orn-pos:left -60px center"></div>
   <div class="wrap">
     <div class="row" style="justify-content:space-between;align-items:center;gap:var(--s5);border-bottom:1px solid var(--bd);padding-bottom:var(--s5)">
       <span class="chip-l">So arbeite ich</span>
@@ -858,7 +875,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
         <div class="media deep" style="aspect-ratio:4/5">
           <img src="bilder/stock-treppenhaus-ablauf.webp" alt="Treppenhaus im Abendlicht, Symbolbild" loading="lazy" width="1280" height="1920">
         </div>
-        <div class="panel orn-6">
+        <div class="panel orn-wulst">
           <h3 class="h3" style="color:var(--on-dark)">Ihr Weg zum Objekt</h3>
           <p class="micro" style="margin-top:var(--s2)">Vier Schritte, jeder endet mit einer klaren Auskunft.</p>
           <div style="margin-top:var(--s5)">
@@ -890,7 +907,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
         <div class="media deep" style="aspect-ratio:4/5">
           <img src="bilder/stock-fenster-diskretion.webp" alt="Blick aus einem Fenster hinter einer Pflanze, Symbolbild" loading="lazy" width="1280" height="1920">
         </div>
-        <div class="panel orn-2">
+        <div class="panel orn-ranke">
           <h3 class="h3" style="color:var(--on-dark)">Bestand und Off-Market</h3>
           <p class="micro" style="margin-top:var(--s2)">Was aktuell vermittelt wird, öffentlich und vertraulich.</p>
           <div class="row" style="gap:var(--s3);align-items:flex-end;margin-top:var(--s5)">
@@ -976,7 +993,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== SPEZIALGEBIET: Kennzahlen-Reihe mit Trennern ===== -->
 <section class="sec grain" id="verfahren">
-  <div class="orn-schicht orn-6" aria-hidden="true" style="--orn-staerke:.1;--orn-kachel:360px"></div>
+  <div class="orn-schicht orn-garbe" aria-hidden="true" style="--orn-staerke:.09;--orn-kachel:320px;--orn-pos:center top 20px"></div>
   <div class="wrap">
     <div class="split-72" style="align-items:center">
       <div>
@@ -1012,7 +1029,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== KAPITALANLAGE: Headline links, Text rechts, Bilder-Karussell ===== -->
 <section class="sec alt grain railsec hg"
-  style="--hg:url('bilder/textur-anlage.webp');--hg-maske:radial-gradient(90% 85% at 0% 0%,#000 20%,transparent 96%);--hg-deckung:.95">
+  style="--hg:url('bilder/textur-anlage.webp');--hg-maske:radial-gradient(90% 85% at 0% 0%,#000 20%,transparent 96%);--hg-deckung:.7">
   <div class="wrap">
     <div class="split-72" style="align-items:start">
       <div>
@@ -1079,7 +1096,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
 <!-- ===== INHABERIN ===== -->
 <section class="sec light">
-  <div class="orn-schicht orn-logo" aria-hidden="true" style="--orn-farbe:var(--gold-deep);--orn-staerke:.045;--orn-kachel:175px"></div>
+  <div class="orn-schicht orn-ranke" aria-hidden="true" style="--orn-farbe:var(--gold-deep);--orn-staerke:.06;--orn-kachel:200px;--orn-pos:right -40px center"></div>
   <div class="wrap">
     <div class="split-72">
       <div>
@@ -1109,11 +1126,11 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 
   </section>
 
-<div class="zierband orn-5" aria-hidden="true"></div>
+<div class="zierband orn-mond" aria-hidden="true"></div>
 
 <!-- ===== FAQ: dunkel, Chips oben rechts ===== -->
 <section class="sec grain hg" id="faq"
-  style="--hg:url('bilder/textur-faq.webp');--hg-maske:radial-gradient(80% 80% at 0% 35%,#000 18%,transparent 90%);--hg-deckung:.82">
+  style="--hg:url('bilder/textur-faq.webp');--hg-maske:radial-gradient(70% 70% at 0% 8%,#000 10%,transparent 84%);--hg-deckung:.48">
   <div class="wrap">
     <span class="chip-l">Häufige Fragen</span>
     <div class="split-72" style="margin-top:var(--s7);align-items:start">
@@ -1215,7 +1232,7 @@ details.q[open] .plus::after{transform:scaleY(0);opacity:0}
 </section>
 
 <!-- ===== ABSCHLUSS-STATEMENT ===== -->
-<section class="sec alt tight ornament orn-5">
+<section class="sec alt tight ornament orn-helm">
   <div class="wrap">
     <p class="stmt words" data-words style="max-width:34ch">Kaufen mit Klartext. Verkaufen mit Diskretion.</p>
   </div>
@@ -1344,6 +1361,27 @@ document.querySelectorAll('form[data-demo]').forEach(function(f){
   window.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onScroll);
   paint();
+})();
+
+// Glas-Kopfleiste: ueber hellen Sektionen auf dunkles Gold umschalten
+(function(){
+  var kopf = document.querySelector('.head');
+  var helle = [].slice.call(document.querySelectorAll('.sec.light, .sec.light-2'));
+  if(!kopf || !helle.length) return;
+  var laeuft = false;
+  function pruefen(){
+    laeuft = false;
+    var kante = kopf.getBoundingClientRect().bottom - 8;
+    var treffer = helle.some(function(s){
+      var r = s.getBoundingClientRect();
+      return r.top <= kante && r.bottom >= kante;
+    });
+    kopf.classList.toggle('auf-hell', treffer);
+  }
+  function anstossen(){ if(!laeuft){ laeuft = true; requestAnimationFrame(pruefen); } }
+  pruefen();
+  window.addEventListener('scroll', anstossen, {passive:true});
+  window.addEventListener('resize', anstossen);
 })();
 
 // Objekt-Reihe: Pfeile scrollen um eine Karte
