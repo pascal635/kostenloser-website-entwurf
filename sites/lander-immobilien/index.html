@@ -1,0 +1,1857 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hausverwaltung Mainz: WEG-, Miet- und Sondereigentumsverwaltung | Lander Immobilienservice</title>
+<meta name="description" content="Hausverwaltung in Mainz, Wiesbaden, Darmstadt, Mannheim, Ludwigshafen und Heidelberg. WEG-Verwaltung, Mietverwaltung, Gewerbemietverwaltung und Sondereigentumsverwaltung aus einer Hand. 301+ Einheiten, 23+ Jahre Erfahrung im Team, Rückmeldung unter 24 Stunden, Verwalterwechsel in 30 Tagen.">
+<!-- Vorschau: nicht indexieren. Vor dem echten Livegang entfernen. -->
+<meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://lander.immobilien/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.position" content="50.0010; 8.2099">
+<meta name="geo.placename" content="Mainz">
+<meta name="geo.region" content="DE-RP">
+<meta name="author" content="Lander Immobilienservice · Philipp Lander">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://lander.immobilien/">
+<meta property="og:title" content="Hausverwaltung Mainz · Lander Immobilienservice">
+<meta property="og:description" content="WEG-, Miet-, Gewerbe- und Sondereigentumsverwaltung in Mainz, Rhein-Main und Rhein-Neckar. Verlässlich, transparent, persönlich.">
+<meta property="og:image" content="https://lander.immobilien/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!--FONTS-->
+<!-- Schrift liegt lokal. Kein Aufruf zu Google, damit von der Seite aus keine
+     IP-Adressen der Besucher an Dritte gehen. Plus Jakarta Sans steht unter der
+     SIL Open Font License, Lizenztext in schriften/. -->
+<link rel="preload" href="schriften/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Plus Jakarta Sans"; font-style:normal; font-weight:200 800; font-display:swap;
+  src:url("schriften/plus-jakarta-sans-latin.woff2") format("woff2-variations");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Plus Jakarta Sans"; font-style:normal; font-weight:200 800; font-display:swap;
+  src:url("schriften/plus-jakarta-sans-latin-ext.woff2") format("woff2-variations");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+</style>
+<!--/FONTS-->
+<style>
+/* =========================================================================
+   Entwurf B · Layout und Anmutung nach moodboard/82a01d6d…webp
+   Sektionsfolge wie auf der bestehenden Live-Seite von lander.immobilien
+   ========================================================================= */
+:root{
+  --bg:#000000;
+  --s1:#0B0B09; --s2:#121311; --s3:#191A16;
+  --fg:#F7F1E3;
+  --fg-2:rgba(247,241,227,.68);
+  --fg-3:rgba(247,241,227,.50);
+  --line:rgba(247,241,227,.12);
+  --line-2:rgba(247,241,227,.07);
+  --lime:#F9FC85; --lime-2:#EFF370; --lime-hi:#FFFEC9; --lime-ink:#0A0A08;
+  --olive:#3A3E22;
+  --acc:#F9FC85;            /* Akzent fuer Text, im Hellmodus ein dunkles Oliv */
+  --fade:#000000;           /* Farbe, in die die Foto-Baender unten auslaufen */
+  --card-a:#0E0F0C; --card-b:#060604;
+  --line-hi:rgba(247,241,227,.20);
+  --hd-bg:rgba(0,0,0,.74);
+  --wordmark:#F9FC85;
+  --seg-on:#141510; --seg-on-fg:#F7F1E3;
+  --e1:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -8px rgba(0,0,0,.55);
+  --e2:0 2px 6px rgba(0,0,0,.45), 0 26px 56px -16px rgba(0,0,0,.65);
+  --e3:0 6px 16px rgba(0,0,0,.5), 0 48px 110px -30px rgba(0,0,0,.8);
+  --r-s:10px; --r-m:16px; --r-l:24px; --r-xl:34px; --r-2xl:44px; --r-pill:999px;
+  --ease:cubic-bezier(.2,.9,.3,1); --t1:170ms; --t2:280ms;
+  --sec:clamp(72px,9vw,150px);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+/* ---------------- Hellmodus ---------------- */
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#F4F2EA;
+    --fg:#15160E; --fg-2:rgba(21,22,14,.72); --fg-3:rgba(21,22,14,.55);
+    --line:rgba(21,22,14,.14); --line-2:rgba(21,22,14,.08); --line-hi:rgba(21,22,14,.26);
+    --acc:#59680F; --fade:#F4F2EA;
+    --card-a:#FFFFFF; --card-b:#FAF8F1;
+    --hd-bg:rgba(244,242,234,.82);
+    --wordmark:#93A02C;
+    --e1:0 1px 2px rgba(21,22,14,.05), 0 8px 22px -10px rgba(21,22,14,.12);
+    --e2:0 2px 5px rgba(21,22,14,.06), 0 24px 50px -18px rgba(21,22,14,.18);
+    --e3:0 6px 14px rgba(21,22,14,.08), 0 44px 100px -34px rgba(21,22,14,.24);
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F4F2EA;
+  --fg:#15160E; --fg-2:rgba(21,22,14,.72); --fg-3:rgba(21,22,14,.55);
+  --line:rgba(21,22,14,.14); --line-2:rgba(21,22,14,.08); --line-hi:rgba(21,22,14,.26);
+  --acc:#59680F; --fade:#F4F2EA;
+  --card-a:#FFFFFF; --card-b:#FAF8F1;
+  --hd-bg:rgba(244,242,234,.82);
+  --wordmark:#93A02C;
+  --e1:0 1px 2px rgba(21,22,14,.05), 0 8px 22px -10px rgba(21,22,14,.12);
+  --e2:0 2px 5px rgba(21,22,14,.06), 0 24px 50px -18px rgba(21,22,14,.18);
+  --e3:0 6px 14px rgba(21,22,14,.08), 0 44px 100px -34px rgba(21,22,14,.24);
+}
+/* Flaechen, die in BEIDEN Themes dunkel bleiben, weil sie auf Foto oder Akzent liegen:
+   sie setzen die Tokens lokal zurueck, damit jeder Nachfahre stimmt. */
+/* Liegt auf Foto oder Akzent, bleibt deshalb in BEIDEN Themes dunkel. */
+.glass,.bleed>.inner{
+  --bg:#0A0A08;
+  --fg:#F7F1E3; --fg-2:rgba(247,241,227,.70); --fg-3:rgba(247,241,227,.52);
+  --line:rgba(247,241,227,.12); --line-2:rgba(247,241,227,.07); --line-hi:rgba(247,241,227,.22);
+  --acc:#F9FC85; --card-a:#0E0F0C; --card-b:#060604;
+  color:#F7F1E3;
+}
+/* Mock-Oberflaechen und Bewertungskarten folgen dem Theme.
+   Grundfall ist dunkel wie :root, die Hell-Fassung steht direkt darunter. */
+.panel,.tcard{
+  --bg:#0A0A08;
+  --fg:#F7F1E3; --fg-2:rgba(247,241,227,.70); --fg-3:rgba(247,241,227,.52);
+  --line:rgba(247,241,227,.12); --line-2:rgba(247,241,227,.07); --line-hi:rgba(247,241,227,.22);
+  --acc:#F9FC85; --card-a:#0E0F0C; --card-b:#060604;
+  color:#F7F1E3;
+  --pan-a:#17180F; --pan-b:#0D0E0B; --pan-c:#090A07;
+  --tc-a:#111209; --tc-b:#050503; --tc-line:rgba(247,241,227,.10);
+  --bar:var(--lime); --bar-glow:0 0 18px -4px rgba(249,252,133,.45);
+  --avat:linear-gradient(140deg,#5C5A3A,#2A2A1C);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]) .panel, :root:not([data-theme="dark"]) .tcard{
+    --bg:#FFFFFF;
+    --fg:#15160E; --fg-2:rgba(21,22,14,.72); --fg-3:rgba(21,22,14,.54);
+    --line:rgba(21,22,14,.13); --line-2:rgba(21,22,14,.07); --line-hi:rgba(21,22,14,.26);
+    --acc:#59680F; --card-a:#FFFFFF; --card-b:#FAF8F1;
+    --pan-a:#FBFAF2; --pan-b:#F5F3E8; --pan-c:#F1EFE2;
+    --tc-a:#FFFFFF; --tc-b:#FBF9F0; --tc-line:rgba(21,22,14,.10);
+    --bar:#7E8C22; --bar-glow:none;
+    --avat:linear-gradient(140deg,#C9CEA4,#8E946A);
+    color:#15160E;
+  }
+}
+:root[data-theme="light"] .panel, :root[data-theme="light"] .tcard{
+  --bg:#FFFFFF;
+  --fg:#15160E; --fg-2:rgba(21,22,14,.72); --fg-3:rgba(21,22,14,.54);
+  --line:rgba(21,22,14,.13); --line-2:rgba(21,22,14,.07); --line-hi:rgba(21,22,14,.26);
+  --acc:#59680F; --card-a:#FFFFFF; --card-b:#FAF8F1;
+  --pan-a:#FBFAF2; --pan-b:#F5F3E8; --pan-c:#F1EFE2;
+  --tc-a:#FFFFFF; --tc-b:#FBF9F0; --tc-line:rgba(21,22,14,.10);
+  --bar:#7E8C22; --bar-glow:none;
+  --avat:linear-gradient(140deg,#C9CEA4,#8E946A);
+  color:#15160E;
+}
+.limeblock{
+  --bg:#FFFFFF;
+  --fg:#0A0A08; --fg-2:rgba(10,10,8,.74); --fg-3:rgba(10,10,8,.56);
+  --line:rgba(10,10,8,.18); --line-2:rgba(10,10,8,.10); --line-hi:rgba(10,10,8,.34);
+  --acc:#3B4406;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:96px; overflow-x:clip}
+body{margin:0; background:var(--bg); color:var(--fg);
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16.5px; line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden}
+img{max-width:100%; display:block}
+a{color:inherit}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+body::after{content:""; position:fixed; inset:0; pointer-events:none; z-index:99;
+  background-image:var(--grain); background-size:200px 200px; opacity:.03}
+
+/* ---------- Typografie ---------- */
+.dsp,.h2,.h3,.h4{margin:0; font-weight:300; letter-spacing:-.03em;
+  overflow-wrap:break-word; hyphens:manual}
+.dsp{font-size:clamp(42px,6.9vw,92px); line-height:1.03}
+.h2{font-size:clamp(32px,4.7vw,62px); line-height:1.06}
+.h3{font-size:clamp(21px,2.1vw,27px); line-height:1.18; letter-spacing:-.022em; font-weight:400}
+.h4{font-size:18px; line-height:1.3; letter-spacing:-.015em; font-weight:600}
+.acc{color:var(--acc)}
+.lead{font-size:15.5px; line-height:1.62; color:var(--fg-2); margin:0; max-width:52ch}
+.body{font-size:16px; line-height:1.68; color:var(--fg-2); margin:0; max-width:68ch}
+.body b,.body strong{color:var(--fg); font-weight:600}
+.sm{font-size:14px; line-height:1.6; color:var(--fg-2); margin:0}
+.xs{font-size:12.5px; line-height:1.5; color:var(--fg-3); margin:0}
+.num{font-variant-numeric:tabular-nums lining-nums}
+
+/* ---------- Layout ---------- */
+.wrap{width:min(1220px,100% - 48px); margin-inline:auto}
+.sec{padding-block:var(--sec)}
+.sec--t{padding-block:clamp(52px,6vw,96px)}
+.grid{display:grid; gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.gside{display:grid; grid-template-columns:minmax(0,300px) 1fr}
+.gside--wide{grid-template-columns:minmax(0,320px) 1fr}
+.grid>*,.row>*{min-width:0}
+.row{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+
+/* Sektions-Label mit Haarlinie nach rechts */
+.slab{display:flex; align-items:center; gap:16px; margin:0 0 clamp(40px,5vw,74px)}
+.slab span{display:inline-flex; align-items:center; gap:9px; flex:0 0 auto;
+  font-size:12.5px; font-weight:500; color:var(--fg-2)}
+.slab span::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--acc)}
+.slab i{flex:1; height:1px; background:var(--line)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex; align-items:center; justify-content:space-between; gap:14px;
+  font:inherit; font-size:14.5px; font-weight:600; padding:11px 13px 11px 22px;
+  border-radius:var(--r-pill); background:var(--lime); color:var(--lime-ink);
+  border:1px solid transparent; text-decoration:none; cursor:pointer;
+  transition:transform var(--t1) var(--ease), background-color var(--t1) var(--ease), box-shadow var(--t2) var(--ease)}
+.btn>.ar{display:grid; place-items:center; width:28px; height:28px; border-radius:50%;
+  background:rgba(10,10,8,.13); flex:0 0 auto; transition:transform var(--t1) var(--ease)}
+.btn>.ar svg{width:14px; height:14px; fill:currentColor;
+  stroke-linecap:round; stroke-linejoin:round}
+.btn:hover{transform:translateY(-2px); background:var(--lime-2); box-shadow:var(--e2)}
+.btn:hover>.ar{transform:translateX(2px)}
+.btn:active{transform:translateY(0) scale(.986)}
+.btn:focus-visible{outline:2px solid var(--lime); outline-offset:3px}
+.btn--glass{background:rgba(127,127,120,.18);
+  background:color-mix(in srgb, var(--bg) 66%, transparent);
+  color:var(--fg); border-color:var(--line);
+  backdrop-filter:blur(26px) saturate(135%); -webkit-backdrop-filter:blur(26px) saturate(135%)}
+.btn--glass:hover{background:color-mix(in srgb, var(--bg) 84%, transparent); border-color:var(--line-hi)}
+.btn--glass>.ar{background:color-mix(in srgb, var(--fg) 11%, transparent)}
+.btn--dark{background:#0A0A08; color:#F7F1E3; border-color:transparent}
+.btn--dark:hover{background:#1B1B12; color:#F7F1E3}
+.btn--dark>.ar{background:rgba(247,241,227,.14)}
+.btn--wide{width:100%}
+.btn--plain{justify-content:center; gap:0; padding:13px 28px}
+
+.iconbtn{display:grid; place-items:center; width:44px; height:44px; border-radius:50%;
+  border:1px solid var(--line); background:transparent; color:inherit; cursor:pointer;
+  transition:background-color var(--t1) var(--ease), transform var(--t1) var(--ease)}
+.iconbtn svg{width:16px; height:16px; fill:currentColor;
+  stroke-linecap:round; stroke-linejoin:round}
+.iconbtn:hover{background:rgba(127,127,120,.10); background:color-mix(in srgb, var(--fg) 8%, transparent); transform:translateY(-1px)}
+.iconbtn:focus-visible{outline:2px solid var(--lime); outline-offset:3px}
+
+/* ---------- Chips ---------- */
+.chip{display:inline-flex; align-items:center; gap:9px; padding:6px 15px 6px 7px;
+  border-radius:var(--r-pill); border:1px solid var(--line);
+  background:rgba(127,127,120,.16);
+  background:color-mix(in srgb, var(--fg) 7%, transparent);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  font-size:12px; font-weight:500; color:var(--fg-2)}
+.chip .b{display:grid; place-items:center; width:24px; height:24px; border-radius:50%;
+  background:rgba(127,127,120,.16);
+  background:rgba(127,127,120,.2); background:color-mix(in srgb, var(--fg) 10%, transparent); flex:0 0 auto}
+.chip .b svg{width:12px; height:12px; fill:var(--acc);}
+.badge{display:inline-flex; align-items:center; gap:12px; font-size:14.5px; color:var(--fg)}
+.badge .b{display:grid; place-items:center; width:34px; height:34px; border-radius:50%;
+  background:var(--olive); border:1px solid rgba(249,252,133,.22); flex:0 0 auto}
+.badge .b svg{width:16px; height:16px; fill:var(--acc);}
+.badges{display:flex; align-items:center; gap:26px; flex-wrap:wrap}
+.badges .sep{width:1px; height:34px; background:var(--line)}
+
+/* ---------- Randlose Foto-Bühne ---------- */
+.bleed{position:relative; overflow:hidden; background:#0A0A08}
+.bleed>.bg{position:absolute; inset:0; z-index:0}
+.bleed>.bg img{width:100%; height:100%; object-fit:cover}
+picture{display:contents}
+.bleed>.bg::after{content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(to top, var(--fade) 0%, rgba(0,0,0,.74) 20%, rgba(0,0,0,.16) 58%, rgba(0,0,0,.34) 100%),
+    linear-gradient(100deg, rgba(0,0,0,.66) 0%, rgba(0,0,0,.20) 42%, transparent 70%)}
+.bleed>.inner{position:relative; z-index:1}
+/* Zahlen-Band: volle Fotoflaeche, keine Ausblendung in die Seitenfarbe.
+   Nur so viel Abdunklung links, dass Ueberschrift und Zahlen tragen. */
+#fakten>.bg::after{background:
+  linear-gradient(100deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.30) 44%, rgba(0,0,0,.12) 78%),
+  linear-gradient(to bottom, rgba(0,0,0,.20) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.28) 100%)}
+
+/* ---------- Glas-Karte ---------- */
+.glass{border-radius:var(--r-l); padding:18px 20px; color:var(--fg); max-width:100%;
+  background:linear-gradient(150deg, rgba(247,241,227,.13), rgba(247,241,227,.03) 55%, rgba(0,0,0,.14)),
+             linear-gradient(0deg, rgba(6,6,4,.70), rgba(6,6,4,.70));
+  border:1px solid rgba(247,241,227,.15);
+  box-shadow:inset 0 1px 0 rgba(247,241,227,.16), var(--e3);
+  backdrop-filter:blur(18px) saturate(120%); -webkit-backdrop-filter:blur(18px) saturate(120%)}
+.gk{font-size:12px; font-weight:500; color:var(--fg-3)}
+.gv{font-size:38px; line-height:1.05; font-weight:300; letter-spacing:-.035em; margin-top:14px;
+  font-variant-numeric:tabular-nums}
+.gv .faint{color:color-mix(in srgb, var(--fg) 24%, transparent)}
+.gs{font-size:12.5px; color:var(--fg-3); margin-top:6px}
+
+/* ---------- Karte mit Mock-Panel ---------- */
+.mcard{border-radius:var(--r-xl); border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--card-a) 0%, var(--card-b) 100%);
+  padding:22px 22px 30px; display:flex; flex-direction:column;
+  transition:transform var(--t2) var(--ease), border-color var(--t2) var(--ease)}
+.mcard:hover{transform:translateY(-3px); border-color:var(--line-hi)}
+.mcard .h3{margin-top:26px}
+.lrow .panel{min-height:412px}
+.lrow .mcard>.btn{margin-top:auto}
+.mcard .mdesc{margin-top:12px}
+.panel{border-radius:var(--r-l); border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--pan-a) 0%, var(--pan-b) 62%, var(--pan-c) 100%);
+  padding:16px; overflow:hidden; flex:0 0 auto}
+.ptitle{font-size:13.5px; font-weight:600; letter-spacing:-.01em; line-height:1.3}
+.pmeta{display:flex; gap:14px; margin-top:7px; font-size:11px; color:var(--fg-3)}
+.pmeta span{display:inline-flex; align-items:center; gap:5px}
+.pmeta svg{width:11px; height:11px; fill:currentColor;}
+.tile{display:grid; place-items:center; width:34px; height:34px; border-radius:9px;
+  background:linear-gradient(150deg,var(--lime),#A9AE4C); flex:0 0 auto}
+.tile svg{width:17px; height:17px; fill:var(--lime-ink);}
+.tile--q{background:rgba(127,127,120,.10); background:color-mix(in srgb, var(--fg) 9%, transparent); border:1px solid var(--line); width:28px; height:28px; border-radius:8px}
+.tile--q svg{fill:var(--fg-2); width:15px; height:15px}
+.seg{display:flex; gap:3px; padding:3px; border-radius:var(--r-pill);
+  border:1px solid var(--line); background:rgba(127,127,120,.06);
+  background:color-mix(in srgb, var(--fg) 4%, transparent); margin-top:14px}
+.seg b{flex:1; text-align:center; padding:7px 0; border-radius:var(--r-pill);
+  font-size:11.5px; font-weight:500; color:var(--fg-3)}
+.seg b.on{background:rgba(127,127,120,.12); background:color-mix(in srgb, var(--fg) 10%, transparent); color:var(--fg)}
+.trio{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:16px; text-align:center}
+.trio b{display:block; font-size:20px; font-weight:400; letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+.trio span{display:block; font-size:10px; color:var(--fg-3); margin-top:3px}
+.hlt{background:var(--lime); color:var(--lime-ink); padding:0 3px; border-radius:2px;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone}
+.prow{display:flex; align-items:center; gap:11px; padding:9px 0; border-bottom:1px solid var(--line-2);
+  font-size:12px; color:var(--fg-2)}
+.prow:last-child{border-bottom:none}
+.prow .ck{width:18px; height:18px; border-radius:50%; border:1px solid var(--line); flex:0 0 auto;
+  display:grid; place-items:center; margin-left:auto}
+.prow.done .ck{background:var(--lime); border-color:var(--acc)}
+.prow.done .ck::after{content:""; width:7px; height:4px; border-left:1.7px solid var(--lime-ink);
+  border-bottom:1.7px solid var(--lime-ink); transform:rotate(-45deg) translateY(-1px)}
+.prow .t{display:flex; flex-direction:column; gap:2px; min-width:0}
+.prow .t b{font-size:12.5px; font-weight:600; color:var(--fg)}
+.prow .t span{font-size:11px; color:var(--fg-3)}
+.prow .amt{margin-left:auto; font-size:11px; color:var(--fg-3); font-variant-numeric:tabular-nums}
+.srch{display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:var(--r-s);
+  border:1px solid var(--line); background:rgba(127,127,120,.06);
+  background:color-mix(in srgb, var(--fg) 4%, transparent); font-size:11.5px; color:var(--fg-3)}
+.srch svg{width:13px; height:13px; fill:currentColor; flex:0 0 auto}
+.srch .kbd{margin-left:auto; font-size:10px; padding:2px 6px; border-radius:5px;
+  border:1px solid var(--line); color:var(--fg-3); white-space:nowrap}
+.fchips{display:flex; gap:5px; margin-top:10px; flex-wrap:wrap}
+.fchips b{font-size:10.5px; font-weight:500; padding:5px 10px; border-radius:var(--r-pill);
+  border:1px solid var(--line); color:var(--fg-3)}
+.fchips b.on{background:var(--lime); border-color:var(--acc); color:var(--lime-ink)}
+.ghead{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg-3); margin:15px 0 2px}
+.avat{width:20px; height:20px; border-radius:50%; flex:0 0 auto;
+  background:var(--avat,linear-gradient(140deg,#5C5A3A,#2A2A1C))}
+
+/* Lime-Balkendiagramm */
+.bars{display:flex; align-items:flex-end; gap:4px; height:74px; margin-top:14px}
+.bars i{flex:1; border-radius:3px; background:rgba(127,127,120,.15); background:color-mix(in srgb, var(--fg) 13%, transparent)}
+.bars i.on{background:var(--bar,var(--lime)); box-shadow:var(--bar-glow,none)}
+.axis{display:flex; justify-content:space-between; margin-top:7px; font-size:10px; color:var(--fg-3)}
+.pillw{display:inline-block; padding:4px 11px; border-radius:var(--r-pill); background:var(--fg);
+  color:var(--bg); font-size:10.5px; font-weight:600; white-space:nowrap}
+
+/* Mini-Tabelle */
+.mt{width:100%; table-layout:fixed; border-collapse:collapse; margin-top:16px; font-size:11px}
+.mt td,.mt th{overflow-wrap:break-word}
+.mt th{text-align:left; padding:8px; color:var(--fg-3); font-weight:500;
+  background:rgba(127,127,120,.07);
+  background:color-mix(in srgb, var(--fg) 5%, transparent); font-size:10px; white-space:nowrap}
+.mt td{padding:10px 8px; border-top:1px solid var(--line-2); color:var(--fg-2); vertical-align:top; hyphens:none}
+.mt td b{display:block; color:var(--fg); font-weight:600; font-size:11.5px}
+.mt td span{font-size:10px; color:var(--fg-3)}
+
+/* Foto-Karte mit Glas-Panel */
+.pcard{position:relative; border-radius:var(--r-xl); overflow:hidden; background:#0A0A08;
+  min-height:540px; display:grid; place-items:center; padding:34px}
+.pcard img.pbg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0}
+.pcard::after{content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(0,0,0,.56), rgba(0,0,0,.16) 46%, rgba(0,0,0,.58))}
+.pcard>.glass{position:relative; z-index:2; width:min(440px,100%)}
+
+/* Haarlinien-Liste */
+.hlist{border-top:1px solid var(--line)}
+.hlist>div{padding:20px 0; border-bottom:1px solid var(--line)}
+.hlist h4{margin:0}
+.hlist .q{font-size:clamp(18px,1.8vw,23px); font-weight:300; letter-spacing:-.02em; color:var(--fg-3)}
+.hlist p{margin-top:8px}
+
+/* Riesen-Statistik */
+.bigstats{display:flex; align-items:stretch; gap:clamp(24px,4vw,58px)}
+.bigstats>div{flex:1}
+.bigstats .sep{flex:0 0 1px; background:var(--line)}
+.stat-v{font-size:clamp(46px,6.4vw,86px); line-height:1; font-weight:300; letter-spacing:-.05em;
+  font-variant-numeric:tabular-nums}
+.stat-l{font-size:14.5px; color:var(--fg-2); margin-top:14px}
+
+/* Lime-Block */
+.limeblock{--inr:min(1130px,100% - 56px); --gut:calc((100% - var(--inr)) / 2);
+  border-radius:var(--r-2xl); color:var(--lime-ink); position:relative; overflow:hidden;
+  background:radial-gradient(120% 130% at 6% -10%, var(--lime-hi), var(--lime) 46%, #F3F771 100%);
+  padding:clamp(38px,4.6vw,64px) 0 clamp(34px,4vw,54px)}
+.limeblock .inr{width:var(--inr); margin-inline:auto}
+.limeblock .chip{border-color:rgba(10,10,8,.16); background:rgba(255,255,255,.45); color:rgba(10,10,8,.74)}
+.limeblock .chip .b{background:var(--lime-ink)}
+.limeblock .chip .b svg{fill:var(--lime)}
+.limeblock .iconbtn{border-color:rgba(10,10,8,.28)}
+.limeblock .iconbtn:hover{background:rgba(10,10,8,.08)}
+.limeblock .h2{color:var(--lime-ink)}
+.limeblock .lead{color:rgba(10,10,8,.72)}
+.tstrip{display:flex; gap:16px; margin-top:clamp(30px,3.6vw,52px);
+  overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:4px; scrollbar-width:none}
+/* Das Karussell haengt direkt im Lime-Block und laeuft bis an dessen Kanten.
+   Die erste Karte bleibt trotzdem auf der Textkante, dafuer sorgt das Innenpolster. */
+.limeblock>.tstrip{padding-inline:var(--gut); scroll-padding-inline-start:var(--gut)}
+.limeblock>.tstrip::after{content:""; flex:0 0 max(8px, calc(var(--gut) - 16px))}
+.tstrip::-webkit-scrollbar{display:none}
+.tcard{flex:0 0 min(330px,76vw); scroll-snap-align:start; border-radius:var(--r-l);
+  background:linear-gradient(180deg,var(--tc-a),var(--tc-b)); border:1px solid var(--tc-line);
+  color:var(--fg); padding:22px 22px 24px; display:flex; flex-direction:column;
+  box-shadow:var(--e2); min-height:300px}
+.tcard .nm{font-size:16.5px; font-weight:600}
+.tcard .qt{font-size:13.5px; line-height:1.6; color:var(--fg-2); margin-top:12px}
+.tcard .st{margin-top:auto; padding-top:26px}
+.tcard .st b{display:block; font-size:34px; font-weight:300; letter-spacing:-.04em; line-height:1;
+  font-variant-numeric:tabular-nums}
+.tcard .st span{display:block; font-size:12px; color:var(--fg-3); margin-top:7px}
+
+/* Segmentierte Tabs */
+.segtabs{display:flex; gap:4px; padding:5px; border-radius:var(--r-pill);
+  border:1px solid var(--line); background:rgba(127,127,120,.12); background:color-mix(in srgb, var(--fg) 5%, transparent); flex-wrap:wrap}
+.segtabs button{font:inherit; font-size:13px; font-weight:500; padding:9px 18px;
+  border-radius:var(--r-pill); border:none; background:transparent; color:var(--fg-3); cursor:pointer;
+  transition:background-color var(--t1) var(--ease), color var(--t1) var(--ease); white-space:nowrap}
+.segtabs button:hover{color:var(--fg)}
+.segtabs button[aria-selected="true"]{background:var(--seg-on); color:var(--seg-on-fg); box-shadow:var(--e1)}
+.segtabs button:focus-visible{outline:2px solid var(--lime); outline-offset:2px}
+
+/* FAQ */
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer; list-style:none; position:relative; padding:22px 52px 22px 0;
+  font-size:17px; font-weight:400; letter-spacing:-.015em; line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:""; position:absolute; right:8px; top:28px; width:14px; height:14px;
+  background:
+    linear-gradient(var(--fg-2),var(--fg-2)) center/14px 1.4px no-repeat,
+    linear-gradient(var(--fg-2),var(--fg-2)) center/1.4px 14px no-repeat;
+  transition:transform var(--t2) var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:2px solid var(--lime); outline-offset:2px}
+.faq .ans{padding:0 6ch 26px 0; color:var(--fg-2); font-size:15px; line-height:1.68}
+.faq .ans p{margin:0}
+.faq .ans p+p{margin-top:10px}
+
+/* Inline-Formular */
+.iform{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.iform .fld{flex:1 1 260px; min-width:0; display:flex; align-items:center;
+  border-radius:var(--r-pill); border:1px solid var(--line); background:rgba(10,10,8,.5);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px)}
+.iform input{flex:1; min-width:0; font:inherit; font-size:15px; color:var(--fg);
+  background:transparent; border:none; padding:14px 20px}
+.iform input::placeholder{color:var(--fg-3)}
+.iform input:focus{outline:none}
+.iform .fld:focus-within{border-color:var(--acc)}
+
+/* Standort-Karte */
+.city{display:block; text-decoration:none; padding:24px; border-radius:var(--r-l);
+  border:1px solid var(--line); background:linear-gradient(180deg,var(--card-a),var(--card-b));
+  transition:transform var(--t2) var(--ease), border-color var(--t2) var(--ease)}
+.city:hover{transform:translateY(-3px); border-color:var(--line-hi)}
+.city .lnk{display:inline-flex; align-items:center; gap:7px; margin-top:16px; font-size:13.5px;
+  font-weight:600; color:var(--acc)}
+
+/* Footer */
+.ftlinks a{display:block; padding:5px 0; text-decoration:none; color:var(--fg-2); font-size:14px; hyphens:auto;
+  transition:color var(--t1) var(--ease)}
+.ftlinks a:hover{color:var(--fg)}
+.ftlab{font-size:14px; color:var(--fg); margin:0 0 10px; font-weight:600}
+footer{overflow:hidden}
+.wordmark{margin:0; text-align:center; line-height:.76; font-weight:600; letter-spacing:-.05em;
+  color:var(--acc); font-size:clamp(118px,33vw,470px); white-space:nowrap; user-select:none}
+
+/* ---------------- Header, Leiste nach der Moodboard-Vorlage ---------------- */
+.hd{position:absolute; top:0; left:0; right:0; z-index:80; background:transparent;
+  /* liegt ueber dem Hero, deshalb gilt hier dauerhaft die dunkle Tinte */
+  --bg:#0A0A08; --fg:#F7F1E3; --fg-2:rgba(247,241,227,.72); --fg-3:rgba(247,241,227,.54);
+  --line:rgba(247,241,227,.16); --line-2:rgba(247,241,227,.09); --line-hi:rgba(247,241,227,.30);
+  --acc:#F9FC85; color:var(--fg)}
+.hd-in{display:flex; align-items:center; justify-content:space-between;
+  min-height:96px; gap:clamp(10px,1.6vw,22px)}
+.hgrp{display:flex; align-items:center; gap:8px}
+.hgrp--l{padding-right:0}
+.hgrp--c{flex:0 1 auto; justify-content:center; padding-inline:0}
+.hgrp--r{padding-left:0; gap:10px}
+/* Die Trennstriche stammen aus der frueheren, blockweise gesetzten Leiste.
+   Mit Zwischenraum zwischen den Gruppen braucht es sie nicht mehr. */
+.hdiv{display:none}
+
+.brand{display:inline-flex; align-items:center; gap:12px; text-decoration:none; margin-right:6px}
+.brand svg{width:46px; height:46px; color:var(--fg); flex:0 0 auto}
+.brand b{font-size:27px; font-weight:600; letter-spacing:-.02em; color:var(--fg)}
+
+.npill{display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:var(--r-pill);
+  border:1px solid var(--line); background:rgba(127,127,120,.14); background:color-mix(in srgb, var(--fg) 6%, transparent);
+  font-size:13.5px; font-weight:500; color:var(--fg-2); text-decoration:none; white-space:nowrap;
+  backdrop-filter:blur(22px) saturate(130%); -webkit-backdrop-filter:blur(22px) saturate(130%);
+  transition:color var(--t1) var(--ease), border-color var(--t1) var(--ease), background-color var(--t1) var(--ease)}
+.npill:hover{color:var(--fg); border-color:var(--line-hi)}
+.npill:focus-visible{outline:2px solid var(--acc); outline-offset:2px}
+.npill--seek{padding:6px 6px 6px 18px; gap:14px}
+.npill--seek .dot{display:grid; place-items:center; width:30px; height:30px; border-radius:50%;
+  background:var(--fg); color:var(--bg); flex:0 0 auto}
+.npill--seek .dot svg{width:15px; height:15px; fill:currentColor}
+
+.hicons{display:flex; gap:3px}
+.hicons a{display:grid; place-items:center; width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--line); background:rgba(127,127,120,.18); background:color-mix(in srgb, var(--fg) 8%, transparent);
+  color:var(--fg-2); text-decoration:none;
+  transition:color var(--t1) var(--ease), background-color var(--t1) var(--ease)}
+.hicons a:hover{color:var(--fg); background:rgba(127,127,120,.3); background:color-mix(in srgb, var(--fg) 15%, transparent)}
+.hicons a:focus-visible{outline:2px solid var(--acc); outline-offset:2px}
+.hicons a svg{width:16px; height:16px; fill:currentColor}
+
+.tgl{display:grid; place-items:center; width:38px; height:38px; border-radius:50%; cursor:pointer;
+  border:1px solid var(--line); background:transparent; color:var(--fg-2); padding:0;
+  transition:color var(--t1) var(--ease), background-color var(--t1) var(--ease), transform var(--t1) var(--ease)}
+.tgl:hover{color:var(--acc); background:rgba(127,127,120,.18); background:color-mix(in srgb, var(--fg) 8%, transparent); transform:rotate(-14deg)}
+.tgl:focus-visible{outline:2px solid var(--acc); outline-offset:2px}
+.tgl svg{width:17px; height:17px; fill:currentColor}
+.tgl [data-ic="moon"]{display:none}
+:root[data-theme="light"] .tgl [data-ic="sun"]{display:none}
+:root[data-theme="light"] .tgl [data-ic="moon"]{display:block}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]) .tgl [data-ic="sun"]{display:none}
+  :root:not([data-theme="dark"]) .tgl [data-ic="moon"]{display:block}
+}
+
+.btn--solid{background:var(--fg); color:var(--bg); border-color:transparent}
+.btn--solid:hover{background:var(--fg); opacity:.88}
+.btn--solid>.ar{background:color-mix(in srgb, var(--bg) 18%, transparent)}
+
+.burger{display:none; width:42px; height:38px; border-radius:var(--r-pill); border:1px solid var(--line);
+  background:rgba(127,127,120,.18); background:color-mix(in srgb, var(--fg) 8%, transparent); color:var(--fg); cursor:pointer;
+  place-items:center; padding:0}
+.burger svg{width:19px; height:19px; fill:currentColor}
+.mnav{display:none; margin-top:0; margin-bottom:14px; padding:10px 0 14px; border:1px solid var(--line);
+  background:rgba(8,8,6,.94); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  box-shadow:var(--e3); border-radius:var(--r-m)}
+.mnav[data-open="1"]{display:block}
+.mnav a{display:block; padding:11px 18px; text-decoration:none; font-size:16px; color:var(--fg-2)}
+.mnav a:hover{color:var(--fg)}
+
+@media (max-width:1180px){
+  .hgrp--c{display:none}
+  .hgrp--l .npill{display:none}
+  .hdiv{display:none}
+}
+@media (max-width:1080px){
+  .hicons{display:none} .burger{display:grid}
+  .pcard{min-height:460px}
+  .hgrp--r{padding-left:0}
+  .hd-in{justify-content:space-between}
+  .hgrp--l{flex:1}
+}
+@media (max-width:900px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  /* Bis hierher standen die Spalten ab 900 px sofort untereinander, was auf
+     mittleren Breiten eine schmale Textspalte mit leerer rechter Haelfte ergab.
+     auto-fit haelt sie nebeneinander, solange die Mindestbreite passt, und
+     bricht erst dann um. */
+  .g2{grid-template-columns:1fr}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
+  .g2--txt{grid-template-columns:repeat(auto-fit,minmax(276px,1fr))}
+  .gside,.gside--wide{grid-template-columns:repeat(auto-fit,minmax(318px,1fr))}
+  .panel .g2,.panel .g3,.panel .g2--txt{grid-template-columns:1fr}
+  .flip{display:flex; flex-direction:column-reverse}
+  .bigstats{flex-wrap:wrap} .bigstats .sep{display:none} .bigstats>div{flex:1 1 44%}
+}
+@media (max-width:700px){
+  body{font-size:16px}
+  .wrap{width:min(1220px,100% - 30px)}
+  .limeblock{--inr:min(1130px,100% - 32px)}
+  .faq .ans{padding-right:0}
+  .badges{gap:16px} .badges .sep{display:none}
+  .pcard{padding:18px; min-height:400px}
+  .wordmark{font-size:38vw}
+  .hd .btn{display:none}
+  .hd-in{min-height:74px}
+  .brand svg{width:36px; height:36px}
+  .brand b{font-size:22px}
+}
+@media (max-width:560px){
+  .g4{grid-template-columns:1fr}
+}
+
+
+/* ---------------- Ueber uns, Aufbau nach der Nutria-Vorlage ---------------- */
+.gabout{display:grid; grid-template-columns:minmax(230px,.72fr) 1.28fr;
+  gap:clamp(30px,4.6vw,84px); align-items:start;
+  margin-top:clamp(44px,5vw,84px)}
+.capwrap{position:relative; padding-inline:14px}
+.capsule{position:relative; border-radius:999px; overflow:hidden; aspect-ratio:5/8.6;
+  border:1px solid var(--line); background:linear-gradient(180deg,var(--card-a),var(--card-b));
+  box-shadow:var(--e3)}
+.capsule img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.cap-tag{position:absolute; z-index:2; display:inline-flex; align-items:center; gap:9px;
+  padding:8px 15px 8px 9px; border-radius:var(--r-pill); font-size:12.5px; font-weight:600;
+  letter-spacing:-.005em; white-space:nowrap;
+  --bg:#0A0A08; --fg:#F7F1E3; color:#F7F1E3;
+  background:rgba(10,10,8,.62); background:color-mix(in srgb, #0A0A08 66%, transparent);
+  border:1px solid rgba(247,241,227,.18);
+  backdrop-filter:blur(20px) saturate(130%); -webkit-backdrop-filter:blur(20px) saturate(130%);
+  box-shadow:var(--e2)}
+.cap-tag .b{display:grid; place-items:center; width:26px; height:26px; border-radius:50%;
+  background:var(--lime); flex:0 0 auto}
+.cap-tag .b svg{width:13px; height:13px; fill:var(--lime-ink)}
+.cap-tag--a{top:12%; right:-12px}
+.cap-tag--b{top:46%; left:-12px}
+.cap-tag--c{top:73%; right:-6px}
+
+.frow{display:grid; grid-template-columns:auto 1fr; gap:clamp(16px,2vw,30px);
+  padding:clamp(20px,2.2vw,28px) 0; border-top:1px solid var(--line)}
+.frow:first-of-type{border-top:none; padding-top:0}
+.fnum{font-size:11.5px; letter-spacing:.16em; font-weight:600; color:var(--acc);
+  padding-top:6px; font-variant-numeric:tabular-nums}
+.frow h3{margin:0; font-size:clamp(19px,1.7vw,23px); font-weight:500; letter-spacing:-.02em}
+.frow p{margin-top:9px}
+
+.minicard{display:flex; gap:16px; align-items:center; margin-top:clamp(24px,2.6vw,34px);
+  padding:14px; border-radius:var(--r-l); border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--card-a),var(--card-b))}
+.minicard .thumb{width:92px; height:92px; border-radius:var(--r-m); overflow:hidden; flex:0 0 auto;
+  background:#0A0A08}
+.minicard .thumb img{width:100%; height:100%; object-fit:cover}
+.minicard .mt2{min-width:0}
+.minicard .mt2 b{display:block; font-size:14.5px; font-weight:600}
+.minicard .mt2 span{display:block; font-size:12.5px; color:var(--fg-3); margin-top:5px}
+
+.factrow{margin-top:clamp(40px,4.6vw,76px)}
+.fcard{padding:clamp(20px,2.2vw,26px)}
+.fcard .tile{margin-bottom:clamp(24px,3vw,44px)}
+.fcard .fv{font-size:clamp(30px,3.2vw,42px); font-weight:300; letter-spacing:-.045em; line-height:1;
+  font-variant-numeric:tabular-nums; margin-top:0}
+.fcard .fk{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3)}
+.fcard .fn{font-size:13px; color:var(--fg-2); margin-top:12px}
+
+@media (max-width:1024px){
+  .gabout{grid-template-columns:minmax(200px,.9fr) 1.1fr; gap:clamp(24px,3vw,40px)}
+  .capsule{aspect-ratio:5/9}
+}
+@media (max-width:820px){
+  .gabout{grid-template-columns:1fr}
+  .capwrap{width:100%; max-width:430px; justify-self:center; margin-inline:0}
+  .capsule{aspect-ratio:5/7.4}
+  .cap-tag--a{top:8%} .cap-tag--b{top:44%} .cap-tag--c{top:71%}
+}
+@media (max-width:560px){
+  .cap-tag{font-size:11.5px; padding:7px 12px 7px 7px}
+  .cap-tag .b{width:22px; height:22px}
+  .minicard{flex-direction:column; align-items:flex-start}
+  .minicard .thumb{width:100%; height:120px}
+}
+
+
+/* ---------------- Umschalter, in der Ueberschrift mitlaufend ---------------- */
+.swseg{display:inline-flex; vertical-align:.06em; gap:4px; padding:4px; margin-inline:.12em;
+  border-radius:var(--r-pill); border:1px solid var(--line);
+  background:rgba(127,127,120,.08); background:color-mix(in srgb, var(--fg) 5%, transparent);
+  backdrop-filter:blur(22px) saturate(130%); -webkit-backdrop-filter:blur(22px) saturate(130%);
+  letter-spacing:normal; white-space:nowrap}
+.swbtn{display:grid; place-items:center; width:clamp(38px,3.4vw,46px); height:clamp(38px,3.4vw,46px);
+  border-radius:50%; border:1px solid transparent; background:transparent; color:var(--fg-3);
+  cursor:pointer; padding:0; font:inherit;
+  transition:background-color var(--t1) var(--ease), color var(--t1) var(--ease),
+             box-shadow var(--t2) var(--ease)}
+.swbtn svg{width:clamp(17px,1.5vw,21px); height:clamp(17px,1.5vw,21px); fill:currentColor}
+.swbtn:hover{color:var(--fg); background:color-mix(in srgb, var(--fg) 8%, transparent)}
+.swbtn.is-on{background:var(--lime); color:var(--lime-ink); box-shadow:var(--e1)}
+.swbtn.is-on:hover{background:var(--lime-2); color:var(--lime-ink)}
+.swbtn:focus-visible{outline:2px solid var(--acc); outline-offset:3px}
+
+/* ---------------- Faktenband: freigestellte Haeuserzeile, Glaspanels darueber ---------------- */
+.fband{position:relative; overflow:hidden; background:transparent;
+  min-height:max(600px, calc(100vw / 2.02));
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding-block:clamp(46px,5vw,92px)}
+.fb-city{position:absolute; left:0; right:0; bottom:0; z-index:0; line-height:0}
+.fb-city img{width:100%; height:auto; display:block}
+.fb-haze{position:absolute; inset:0; z-index:0;
+  background:radial-gradient(132% 82% at 50% 104%, color-mix(in srgb, var(--acc) 9%, transparent), transparent 66%)}
+/* Der Verlauf liegt ueber dem Foto und traegt Panels und Bildzeile. */
+.fband::after{content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(to top, rgba(0,0,0,.66) 0%, rgba(0,0,0,.42) 22%, rgba(0,0,0,.12) 46%, transparent 66%)}
+.fband>.inner{position:relative; z-index:2; display:flex; flex-direction:column;
+  justify-content:flex-end; gap:clamp(44px,5vw,86px); flex:1}
+/* Feine Hilfslinien wie in der Vorlage */
+.fb-rule{position:absolute; inset:0; pointer-events:none; z-index:-1}
+.fb-rule::before,.fb-rule::after{content:""; position:absolute; top:0; bottom:0; width:1px;
+  background:color-mix(in srgb, var(--fg) 12%, transparent)}
+.fb-rule::before{left:16.6%} .fb-rule::after{right:16.6%}
+.fb-grid{--fbgap:clamp(14px,1.6vw,24px); display:flex; gap:var(--fbgap);
+  overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none;
+  align-items:flex-start; padding-bottom:4px; scroll-behavior:smooth}
+.fb-grid::-webkit-scrollbar{display:none}
+.fb-p{flex:0 0 calc((100% - 2 * var(--fbgap)) / 3); scroll-snap-align:start;
+  padding:20px 20px 24px; display:flex; flex-direction:column;
+  background:linear-gradient(150deg, rgba(247,241,227,.13), rgba(247,241,227,.03) 55%, rgba(0,0,0,.10)),
+             linear-gradient(0deg, rgba(6,6,4,.58), rgba(6,6,4,.58));
+  border:1px solid rgba(247,241,227,.19)}
+.fb-p:nth-child(1){margin-top:52px}
+.fb-p:nth-child(2){margin-top:0}
+.fb-p:nth-child(3){margin-top:64px}
+.fb-p:nth-child(4){margin-top:18px}
+.fb-p .tile{margin-bottom:clamp(26px,3.2vw,48px)}
+.fb-p .fv{font-size:clamp(27px,2.9vw,40px); font-weight:300; letter-spacing:-.045em; line-height:1;
+  font-variant-numeric:tabular-nums; margin:0}
+.fb-p .fk{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-3); margin-top:11px}
+.fb-p .fn{font-size:12.5px; line-height:1.6; color:var(--fg-2); margin-top:12px}
+.fb-foot{display:flex; align-items:center; gap:clamp(14px,2vw,30px);
+  padding-top:clamp(22px,2.4vw,34px); border-top:1px solid color-mix(in srgb, var(--fg) 12%, transparent)}
+.fb-ix{font-size:11.5px; letter-spacing:.14em; color:var(--fg-3); white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.fb-cap{flex:0 1 auto; font-size:13px; line-height:1.7; color:var(--fg-2); max-width:52ch;
+  margin:0 auto 0 0}
+.fb-nav{flex:0 0 auto}
+.iconbtn:disabled{opacity:.32; cursor:default; transform:none}
+.iconbtn:disabled:hover{background:transparent}
+
+/* ---------------- Standorte als Buttons ---------------- */
+.citybtns{display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(34px,4vw,58px)}
+.citybtns .btn{font-size:16px; padding:13px 14px 13px 24px; gap:16px}
+.citybtns .btn>.ar{width:30px; height:30px}
+.citykw{margin-top:clamp(26px,3vw,44px); font-size:11px; line-height:1.95;
+  color:var(--fg-3); max-width:112ch}
+.citykw b{color:var(--fg-2); font-weight:600}
+
+@media (max-width:1024px){
+  .fband{min-height:max(560px, calc(100vw / 1.35))}
+  .fb-p{flex:0 0 calc((100% - var(--fbgap)) / 2)}
+  .fb-p:nth-child(1),.fb-p:nth-child(2),.fb-p:nth-child(3),.fb-p:nth-child(4){margin-top:0}
+  .fb-rule{display:none}
+}
+@media (max-width:700px){
+  .fband{min-height:max(600px, calc(100vw / 0.86)); padding-block:clamp(40px,6vw,64px)}
+  .fb-p{flex:0 0 min(272px,80vw)}
+  /* Auf dem Handy liegt die Bildzeile direkt auf der Fassade, deshalb bekommt
+     sie hier eine eigene Glasflaeche statt nur einer Haarlinie. */
+  .fb-foot{flex-wrap:wrap; gap:12px; padding:15px 16px 17px; border-top:0;
+    border-radius:var(--r-l); border:1px solid rgba(247,241,227,.15);
+    background:rgba(10,10,8,.46); background:color-mix(in srgb, #0A0A08 48%, transparent);
+    backdrop-filter:blur(18px) saturate(125%); -webkit-backdrop-filter:blur(18px) saturate(125%)}
+  .fb-ix{order:1; margin-right:auto}
+  .fb-nav{order:2}
+  .fb-cap{order:4; flex:1 1 100%; font-size:12.5px}
+  .citybtns .btn{font-size:15px; padding:12px 12px 12px 20px}
+}
+
+
+
+
+/* ---------------- Handy: umgebrochen und mittig ---------------- */
+@media (max-width:620px){
+  .sec>.wrap,.sec--t>.wrap,.bleed>.inner,footer>.wrap{text-align:center}
+  .slab{justify-content:center} .slab i{display:none}
+  h1,h2,h3,h4,p,.lead,.body,.sm,.xs,.q,.stat-l,.stat-v,.dsp,.h1,.h2,.h3,.h4,
+  .citykw,.fb-cap,.gv,.gk,.fv,.fk,.fn{margin-inline:auto}
+  .row,.badges,.citybtns,.bigstats,.swseg,.fb-foot,.hgroup{justify-content:center}
+  .grid{justify-items:center}
+  .hlist>div,.mcard,.fcard,.tcard,.fb-p,.minicard,.faq .q,.faq .ans,
+  .quote,.city,.ftcol{text-align:center}
+  .mcard>.btn,.mcard .btn,.minicard,.fb-p{align-items:center}
+  .btn{align-self:center}
+  .mcard .panel,.mcard>.panel{width:100%}
+  .frow{grid-template-columns:1fr; justify-items:center; text-align:center}
+  .frow .fnum{padding-top:0}
+  .fb-ix{margin-inline:auto}
+  .gside,.gside--wide,.g2,.g2--txt,.g3{grid-template-columns:1fr}
+  /* Die Mock-Oberflaechen behalten ihre eigene Ordnung, mittig waere dort falsch */
+  .panel,.panel *{text-align:left}
+  .panel .grid{justify-items:stretch}
+  .panel .row{justify-content:space-between}
+  .panel .trio,.panel .axis,.panel .btn,.panel .seg{text-align:center}
+  input,textarea,select,.srch{text-align:left}
+  .capwrap{margin-inline:auto}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important} html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="vh" href="#kontakt">Direkt zur Anfrage</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" data-icons="untitled-ui">
+<symbol id="logo" viewBox="726 126 2520 2626"><path fill="currentColor" d="M3101.24,2621.24h-285.18v-480c0-124.24-127.06-214.59-214.59-211.77s-217.41,76.24-220.23,234.35c-2.83,158.12,0,457.42,0,457.42h-276.71v-717.18l496.94-482.82,499.77,496.94v703.06ZM2629.71,1291.35v-528L2026.88,166.18l-619.76,619.76v516.71h-640.94v1397.64h112.94v-1270.58l530.82-5.65v655.06h112.94V833.94l502.59-496.94,491.29,482.82v511.06l-516.76,530.83v852.7h1208.53v-852.7l-578.82-570.36Z"/><rect fill="currentColor" x="1912.53" y="828.29" width="192" height="454.59"/><rect fill="currentColor" x="1062.65" y="1635.82" width="160.94" height="385.41"/><path fill="currentColor" d="M1905.45,2210.18c1.17-4.09-1.85-8.16-6.11-8.21-41.04-.51-81.52-5.36-90.71-20.19-9.75-15.75-49.48-65.24-116.97-47.24-67.48,17.99-81.73,72.73-93.73,131.21-12,58.49-36.74,110.98-178.46,100.48-141.72-10.49-206.95-38.24-296.18,17.99-89.23,56.24-105.72,64.48-179.2,62.99,27.74,25.49,71.98,24.74,131.97,5.25,59.98-19.49,62.99-20.24,46.49,19.5-16.5,39.74-29.99,50.99-46.49,68.23-16.5,17.25-7.5,46.49,0,89.98,7.5,43.49,16.5,65.99,53.99,68.23,37.49,2.25,13.75-23.24,8.5-28.24-5.25-5-17.49-6.75-17.25-32.24.25-25.49-2.25-39.24,8.25-48.24,10.49-9,20.74-14.5,28.24,23.49,7.5,37.99,17.99,79.48,42.49,82.48,24.5,3,37.99-.25,44.24-2.5,6.25-2.25,8.5-11.75-11.75-18.99-20.25-7.25-35.99-23.25-35.24-57.24.75-33.99-2.81-54.8,8.43-59.3,14.06-4.5,33.74-8.43,50.61-35.43,16.87-27,29.81-11.81,50.62,2.25,20.8,14.06,83.04,44.99,223.26,50.99,1.5-35.24-1.5-60.73,24.74-69.73,4.5,0,9.75,24.74-.75,32.99-10.5,8.25-12,76.48,13.5,121.47,25.49,44.99,53.98,35.24,67.48,33.74,13.5-1.5,21.74-12.75.75-23.99-21-11.25-42.74-36.74-23.25-97.48,10.5-29.24,27-32.24,25.49-6-1.5,26.24,11.25,116.22,67.48,125.22,55.8,8.53,57.74-9,31.5-27-12.75-8.25-52.49-17.99-47.99-65.23,4.5-47.24,10.5-68.23,38.24-96.73,27.75-28.49,33.74-47.24,29.24-92.98-4.5-45.73-10.49-125.22,25.49-120.72,35.99,4.5,79.48,3.75,102.72-35.99,12.92-22.09,18.2-35.38,20.34-42.82ZM1733.65,2321.04c-.1,3.69-1,16.61-8.26,28-7.33,11.49-18.6,17.57-32.6,17.57-23.59,0-53.07-1.95-71.87-17.17-2.74-2.21-3.15-6.23-.94-8.97,2.21-2.74,6.22-3.16,8.96-.95,12.24,9.91,31.93,14.33,63.85,14.33,26.43,0,28.02-29.77,28.12-33.17.37-13.33,1.86-75.46,1.87-76.08.09-3.52,3.02-6.31,6.52-6.22,3.52.08,6.3,3.01,6.22,6.52-.01.63-1.5,62.78-1.87,76.13Z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M21 17a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h18Zm-6-6a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h12Zm6-6a1 1 0 1 1 0 2H3a1 1 0 0 1 0-2h18Z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><path d="M11 22v-2a1 1 0 1 1 2 0v2a1 1 0 1 1-2 0Zm-5.393-5.018a1 1 0 0 1 1.414 1.416L5.607 19.81a1.001 1.001 0 0 1-1.415-1.413l1.415-1.416Zm11.371 0a1 1 0 0 1 1.415 0l1.415 1.416a1 1 0 0 1-1.415 1.413l-1.415-1.413a1.001 1.001 0 0 1 0-1.416ZM16 12a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 11a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2h2Zm18 0a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2ZM4.192 4.192c.39-.39 1.025-.39 1.415 0l1.414 1.415a1 1 0 0 1-1.414 1.414L4.192 5.607a1.001 1.001 0 0 1 0-1.415Zm14.2 0a1.001 1.001 0 0 1 1.416 1.415l-1.415 1.414a1 1 0 0 1-1.415-1.414l1.415-1.415ZM11 4V2a1 1 0 1 1 2 0v2a1 1 0 1 1-2 0Zm7 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M6.231 6.307c0-.698.062-1.382.182-2.045a9.462 9.462 0 1 0 13.324 13.324c-.663.12-1.346.182-2.044.182-6.33 0-11.462-5.131-11.462-11.461Zm1.513-5.218a1 1 0 0 1 1.323 1.323L8.157 2l-.413-.911Zm.487 5.218a9.462 9.462 0 0 0 9.462 9.461c1.39 0 2.708-.299 3.895-.836a1 1 0 0 1 1.323 1.324A11.466 11.466 0 0 1 12.461 23C6.132 23 1.002 17.868 1 11.538c0-4.65 2.77-8.652 6.744-10.45L8.155 2l.912.412a9.425 9.425 0 0 0-.836 3.895Z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10a7 7 0 1 0-14 0c0 1.892.853 3.678 2.292 5.547 1.28 1.662 2.937 3.285 4.708 5.043 1.77-1.758 3.428-3.381 4.708-5.043C18.148 13.678 19 11.892 19 10Zm-5 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm5 0c0 2.526-1.147 4.74-2.708 6.767-1.551 2.014-3.618 3.973-5.585 5.94a1 1 0 0 1-1.414 0c-1.967-1.967-4.034-3.926-5.585-5.94C4.148 14.74 3 12.527 3 10a9 9 0 0 1 18 0Z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.1 1.878a3 3 0 0 1 2.708 0c.464.235.863.65 1.338 1.126l.195.195c.313.314.585.577.77.862a3 3 0 0 1 0 3.271c-.185.286-.457.549-.77.862l-.108.109-.002.011.014.03.037.077a13.602 13.602 0 0 0 2.652 3.735 13.602 13.602 0 0 0 3.735 2.652l.076.037c.013.005.022.01.03.012h.006l.005-.002a4.45 4.45 0 0 0 .11-.106c.313-.314.576-.585.862-.77a3 3 0 0 1 3.27 0c.286.185.55.457.863.77l.539.539c.329.335.606.646.782.994a3 3 0 0 1 0 2.708c-.235.464-.651.862-1.127 1.338l-.157.158c-.5.5-.867.878-1.372 1.161a4.35 4.35 0 0 1-1.971.513c-.572-.002-.983-.124-1.53-.28a20.04 20.04 0 0 1-8.717-5.128 20.04 20.04 0 0 1-5.129-8.718c-.155-.546-.278-.958-.28-1.53-.001-.63.205-1.42.513-1.97.284-.505.663-.873 1.162-1.372l.501-.502c.335-.329.647-.606.995-.782Zm1.805 1.784a1.001 1.001 0 0 0-.903 0c-.107.054-.24.17-.826.757l-.158.157c-.56.56-.712.723-.832.938a2.4 2.4 0 0 0-.256.985c0 .254.038.407.203.99a18.04 18.04 0 0 0 4.619 7.849 18.039 18.039 0 0 0 7.85 4.619c.581.165.735.202.989.203a2.4 2.4 0 0 0 .985-.256c.215-.12.378-.272.938-.832l.157-.158c.587-.587.703-.72.757-.826a1 1 0 0 0 0-.904c-.054-.106-.17-.239-.757-.826l-.194-.195c-.386-.386-.473-.465-.538-.508a1.001 1.001 0 0 0-1.091 0c-.066.043-.153.122-.538.508-.093.093-.215.219-.364.325a2.044 2.044 0 0 1-1.723.294c-.173-.05-.314-.12-.42-.17a15.607 15.607 0 0 1-4.284-3.042 15.605 15.605 0 0 1-3.04-4.284c-.051-.106-.12-.246-.171-.419a2.044 2.044 0 0 1 .294-1.723c.106-.149.232-.27.325-.364.385-.385.465-.472.508-.538.215-.331.215-.76 0-1.09-.043-.066-.123-.153-.508-.539L7.73 4.42c-.586-.587-.719-.703-.826-.757Z"/></symbol>
+<symbol id="i-login" viewBox="0 0 24 24"><path d="M11.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 1 1-1.414-1.414L13.586 13H3a1 1 0 1 1 0-2h10.586l-2.293-2.293a1 1 0 0 1 0-1.414ZM5 7c0-.866-.008-1.494.137-2.035a4 4 0 0 1 2.828-2.828C8.505 1.992 9.135 2 10 2h6.2c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v8.4c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H10c-.866 0-1.494.008-2.035-.137a4 4 0 0 1-2.828-2.828C4.992 18.495 5 17.865 5 17a1 1 0 1 1 2 0c0 .994.009 1.295.068 1.518a2 2 0 0 0 1.414 1.414c.223.06.524.068 1.518.068h6.2c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V7.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C17.639 4 17.058 4 16.2 4H10c-.994 0-1.295.009-1.518.068a2 2 0 0 0-1.414 1.414C7.008 5.705 7 6.006 7 7a1 1 0 0 1-2 0Z"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0Zm-8.99 4a1 1 0 1 1 0 2H12a1 1 0 1 1 0-2h.01ZM9.894 6.547A4.001 4.001 0 0 1 15.92 10c0 1.53-1.135 2.542-1.945 3.082a8.05 8.05 0 0 1-1.686.849l-.035.011-.01.004-.005.001-.002.001L11.92 13l.316.948a1 1 0 1 1-.633-1.896l.016-.006.074-.027a6.05 6.05 0 0 0 1.172-.6c.69-.46 1.055-.95 1.055-1.419v-.002a2 2 0 0 0-3.887-.666 1 1 0 0 1-1.887-.664 4.001 4.001 0 0 1 1.748-2.121ZM23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol>
+<symbol id="i-arr-r" viewBox="0 0 24 24"><path d="M11.293 4.293a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 1 1-1.414-1.414L16.586 13H5a1 1 0 1 1 0-2h11.586l-5.293-5.293a1 1 0 0 1 0-1.414Z"/></symbol>
+<symbol id="i-arr-l" viewBox="0 0 24 24"><path d="M11.293 4.293a1 1 0 1 1 1.414 1.414L7.414 11H19a1 1 0 1 1 0 2H7.414l5.293 5.293a1 1 0 1 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7Z"/></symbol>
+<symbol id="i-arr-nr" viewBox="0 0 24 24"><path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L17.586 13H4a1 1 0 1 1 0-2h13.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M2 16.2V9.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C6.298 3.999 6.976 4 7.8 4H10a1 1 0 1 1 0 2H7.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 8.361 4 8.942 4 9.8v6.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C6.361 20 6.942 20 7.8 20h6.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V14a1 1 0 1 1 2 0v2.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H7.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 17.702 2 17.024 2 16.2ZM22 9a1 1 0 1 1-2 0V5.414l-6.293 6.293a1 1 0 1 1-1.414-1.414L18.586 4H15a1 1 0 1 1 0-2h6a1 1 0 0 1 1 1v6Z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M11 19v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 1 1 2 0v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0Z"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path d="M19 11a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2h14Z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M19.293 5.293a1 1 0 1 1 1.414 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L9 15.586 19.293 5.293Z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M18 11a7 7 0 1 0-2.137 5.032.995.995 0 0 1 .17-.169A6.975 6.975 0 0 0 18 11Zm2 0a8.96 8.96 0 0 1-1.97 5.616l3.677 3.677a1 1 0 1 1-1.414 1.414l-3.677-3.677A9 9 0 1 1 20 11Z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="m21 8.92-6.592 4.615c-.593.415-1.1.79-1.682.935a3 3 0 0 1-1.452 0c-.582-.146-1.089-.52-1.682-.935L3 8.92v6.28c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C5.361 19 5.942 19 6.8 19h10.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8.92ZM6.8 5c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875 1.536 1.536 0 0 0-.134.446l7.654 5.358c.729.51.883.6 1.02.633.159.04.325.04.484 0 .136-.034.291-.123 1.02-.633l7.653-5.358a1.54 1.54 0 0 0-.133-.446 2 2 0 0 0-.874-.874c-.156-.08-.38-.145-.82-.18C18.639 5 18.058 5 17.2 5H6.8ZM23 15.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H6.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C.999 16.702 1 16.024 1 15.2V8.8c0-.618 0-1.153.019-1.614a.997.997 0 0 1 .033-.5c.048-.538.145-1.035.384-1.502a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C5.298 2.999 5.976 3 6.8 3h10.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.238.467.336.964.384 1.502a.996.996 0 0 1 .033.5c.02.46.019.996.019 1.614v6.4Z"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21c0-1.468-.01-1.981-.129-2.371a3 3 0 0 0-2-2c-.39-.118-.903-.129-2.371-.129h-5c-1.468 0-1.981.01-2.371.129a3 3 0 0 0-2 2C5.01 19.019 5 19.532 5 21a1 1 0 1 1-2 0c0-1.323-.011-2.206.215-2.951a5.002 5.002 0 0 1 3.334-3.334c.745-.226 1.628-.215 2.951-.215h5c1.323 0 2.206-.011 2.951.215a5.002 5.002 0 0 1 3.334 3.334c.226.745.215 1.628.215 2.951a1 1 0 1 1-2 0ZM15.5 7.5a3.5 3.5 0 1 0-7 0 3.5 3.5 0 0 0 7 0Zm2 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M14 15.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 13.4 15h-2.8c-.297 0-.459.001-.576.01l-.012.002-.001.012c-.01.117-.011.28-.011.576V20h4v-4.4ZM6.2 4c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C4.001 5.25 4 5.624 4 6.2V7a2 2 0 1 0 4 0 1 1 0 0 1 2 0 2 2 0 1 0 4 0 1 1 0 1 1 2 0 2 2 0 1 0 4 0v-.8c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 17.8 4H6.2ZM22 17.8c0 .543.001 1.012-.03 1.395-.033.396-.104.789-.297 1.167a3 3 0 0 1-1.31 1.31c-.379.194-.772.265-1.168.298-.383.031-.852.03-1.395.03H6.2c-.543 0-1.012.001-1.395-.03-.396-.033-.789-.104-1.167-.297a3 3 0 0 1-1.31-1.31c-.194-.379-.265-.772-.298-1.168C2 18.812 2 18.343 2 17.8V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C5.188 2 5.657 2 6.2 2h11.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395v11.6ZM16 20h1.8c.576 0 .949-.001 1.232-.024.272-.023.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.656.024-1.232v-7.337a3.989 3.989 0 0 1-5-.82A3.989 3.989 0 0 1 12 11a3.989 3.989 0 0 1-3-1.356 3.989 3.989 0 0 1-5 .819V17.8c0 .576.001.949.024 1.232.023.272.06.373.085.422.096.188.249.34.437.437.05.025.15.062.422.085.283.023.656.024 1.232.024H8v-4.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20Z"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M14 13.6c0-.297-.001-.459-.01-.575l-.003-.014-.011-.001A8.303 8.303 0 0 0 13.4 13h-2.8c-.297 0-.459 0-.576.01l-.012.001-.001.014c-.01.116-.011.278-.011.575V20h4v-6.4Zm2 6.4h1.8c.576 0 .949-.001 1.232-.024.272-.022.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.655.024-1.232v-7.235c0-.631-.009-.756-.037-.857a1.002 1.002 0 0 0-.16-.325c-.062-.084-.155-.168-.653-.555l-6.782-5.275a7.107 7.107 0 0 0-.361-.272L12 3.277l-.007.004c-.075.05-.174.127-.361.272L4.85 8.828c-.498.387-.591.47-.654.555a1.003 1.003 0 0 0-.159.325C4.01 9.81 4 9.934 4 10.565V17.8c0 .577.001.95.024 1.232.023.272.06.373.085.422a1 1 0 0 0 .437.437c.05.025.15.063.422.085.283.023.656.024 1.232.024H8v-6.4c0-.264-.001-.521.017-.738.018-.229.063-.499.2-.77.192-.376.499-.682.875-.874.271-.138.54-.182.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522 0 .739.017.228.019.498.063.77.201a2 2 0 0 1 .796.736l.077.138.087.202c.072.201.1.396.114.568.018.216.017.474.017.738V20Zm6-2.2c0 .543.001 1.011-.03 1.395-.033.395-.104.788-.297 1.167a3 3 0 0 1-1.31 1.311c-.379.193-.772.264-1.168.296-.383.031-.852.031-1.395.031H6.2c-.543 0-1.012 0-1.395-.031-.396-.032-.789-.103-1.167-.296a3 3 0 0 1-1.31-1.311c-.194-.379-.265-.772-.298-1.167C2 18.81 2 18.343 2 17.8v-7.235c0-.518-.008-.968.111-1.396a3 3 0 0 1 .477-.974c.264-.357.625-.627 1.033-.945l6.782-5.275c.279-.217.64-.521 1.074-.639a2 2 0 0 1 .917-.03l.129.03.16.053c.364.14.67.396.914.586l6.782 5.275c.408.318.77.588 1.033.945.217.293.378.623.477.974.12.428.111.878.111 1.396V17.8Z"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><path d="M20 9a5 5 0 1 0-9.955.674c.028.209.053.394.067.543.014.139.027.327 0 .52-.039.265-.104.46-.234.693-.153.273-.403.51-.592.698l-5.11 5.11c-.093.093-.139.14-.171.175l-.003.003v.003C4 17.466 4 17.532 4 17.663V19.4c0 .297.001.46.01.576l.002.011.012.002c.117.01.28.011.576.011H6v-1a1 1 0 0 1 1-1h1v-1a1 1 0 0 1 1-1h1.586l1.286-1.286c.189-.189.425-.44.698-.592l.17-.086c.165-.075.324-.119.523-.147l.143-.014c.141-.007.273.003.377.013.149.014.334.039.543.067A5 5 0 0 0 20 9Zm-4 0a.994.994 0 0 0-.293-.707A.994.994 0 0 0 15 8a1 1 0 0 1 0-2c.766 0 1.535.293 2.121.879C17.707 7.464 18 8.234 18 9a1 1 0 0 1-2 0Zm6 0a7 7 0 0 1-7.94 6.938c-.225-.03-.367-.05-.47-.06a2.49 2.49 0 0 0-.044-.004l-.01.01a8.294 8.294 0 0 0-.25.244l-1.579 1.579A1 1 0 0 1 11 18h-1v1a1 1 0 0 1-1 1H8v1a1 1 0 0 1-1 1H4.6c-.264 0-.522.001-.739-.017a2.023 2.023 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77C1.999 19.923 2 19.665 2 19.4v-1.737c0-.197-.006-.459.056-.716a2 2 0 0 1 .239-.578c.138-.225.327-.405.467-.545l5.11-5.11a8.45 8.45 0 0 0 .244-.25l.009-.01-.003-.045c-.01-.102-.03-.244-.06-.469A7 7 0 1 1 22 9Z"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M20.293 15.793a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414l1.293 1.293 3.793-3.793ZM10 14a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h2Zm9-1.5V6.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C16.639 3 16.058 3 15.2 3H8.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C5 5.361 5 5.942 5 6.8v10.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C7.361 21 7.942 21 8.8 21H12a1 1 0 1 1 0 2H8.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C2.999 18.702 3 18.024 3 17.2V6.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C7.298.999 7.976 1 8.8 1h6.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v5.7a1 1 0 1 1-2 0ZM14 10a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h6Zm2-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h8Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0ZM11 6a1 1 0 1 1 2 0v5.382l3.447 1.723a1 1 0 0 1-.894 1.79l-4-2A1 1 0 0 1 11 12V6Zm12 6c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M19 7.218c0-.882-.016-1.058-.065-1.188a1.001 1.001 0 0 0-.274-.395c-.105-.092-.264-.168-1.089-.477l-5.361-2.01a3.997 3.997 0 0 0-.208-.077L12 3.07l-.003.001c-.04.013-.097.034-.208.076l-5.361 2.01c-.825.31-.984.386-1.09.478a1.002 1.002 0 0 0-.273.395C5.015 6.16 5 6.336 5 7.218V12c0 2.082 1.14 3.965 2.642 5.53 1.49 1.553 3.228 2.676 4.164 3.222l.134.077.06.032.06-.032a8.97 8.97 0 0 0 .134-.077c.936-.546 2.673-1.669 4.164-3.222C17.861 15.965 19 14.081 19 12V7.218Zm-4.207 1.075a1 1 0 0 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L11 12.086l3.793-3.793ZM21 12c0 2.826-1.537 5.184-3.2 6.915-1.672 1.742-3.586 2.973-4.598 3.563-.19.111-.442.269-.783.342-.26.056-.579.056-.838 0-.341-.073-.593-.231-.783-.342-1.012-.59-2.926-1.82-4.599-3.563C4.537 17.184 3 14.826 3 12V7.218c0-.718-.016-1.342.196-1.899a3 3 0 0 1 .82-1.184c.448-.393 1.038-.598 1.71-.85l5.36-2.01c.169-.064.39-.152.628-.186a2 2 0 0 1 .43-.016l.142.016.175.035c.17.042.326.103.452.15l5.361 2.01c.672.253 1.262.458 1.71.851a3 3 0 0 1 .82 1.184c.212.557.196 1.18.196 1.899V12Z"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="m20.997 7.417-1.158 1.16c-.186.185-.368.368-.534.509a2.023 2.023 0 0 1-.687.402c-.401.13-.834.13-1.236 0a2.023 2.023 0 0 1-.687-.402c-.166-.14-.348-.324-.534-.51l-.237-.237c-.186-.186-.37-.368-.51-.534a2.022 2.022 0 0 1-.402-.687 2.001 2.001 0 0 1 0-1.236c.094-.29.254-.512.402-.687.14-.166.324-.348.51-.534l1.553-1.554a4.5 4.5 0 0 0-5.392 5.27c.046.235.087.44.113.602a1.97 1.97 0 0 1-.043.951 1.97 1.97 0 0 1-.153.361c-.158.295-.431.552-.638.759l-7.157 7.157a1.122 1.122 0 0 0 1.586 1.586l7.44-7.44a2.02 2.02 0 0 1 .476-.355l.162-.08a1.777 1.777 0 0 1 .583-.146l.036-.002c.28-.027.559 0 .816.07.14.038.282.069.427.094.044.007.087.015.131.021l.073.009A4.5 4.5 0 0 0 21 7.5c0-.028-.002-.055-.003-.083ZM14.64 13.78a9.21 9.21 0 0 0-.276.27l-.95.95 4.793 4.793a1.122 1.122 0 0 0 1.586-1.586l-4.283-4.283-.06-.01a6.719 6.719 0 0 1-.192-.034c-.007-.002-.015-.002-.022-.003a16.25 16.25 0 0 0-.528-.1l-.058-.007-.01.01ZM3.144 3.27 3.72 5H5V3.72l-1.73-.576-.126.126ZM23 7.5a6.5 6.5 0 0 1-4.81 6.275l3.017 3.018a3.121 3.121 0 1 1-4.414 4.414L12 16.414l-4.793 4.793a3.121 3.121 0 1 1-4.414-4.414L9.086 10.5 5.586 7H3a1 1 0 0 1-.948-.684l-1-3a1 1 0 0 1 .241-1.023l1-1 .106-.092a1 1 0 0 1 .917-.15l3 1A1 1 0 0 1 7 3v2.586l3.111 3.111a6.5 6.5 0 0 1 9.65-6.821 1.002 1.002 0 0 1 .205 1.572l-2.627 2.628c-.21.21-.325.325-.4.414l-.008.01.008.01c.075.089.19.204.4.414l.237.237c.21.21.325.325.414.4l.01.007.01-.006c.089-.076.204-.191.414-.4l2.458-2.459a1.001 1.001 0 0 1 1.578.216l.055.111.11.29A6.49 6.49 0 0 1 23 7.5Z"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21c0-.945-.001-1.604-.036-2.12-.035-.507-.1-.803-.193-1.028a3 3 0 0 0-1.623-1.623c-.225-.094-.521-.158-1.028-.193C12.604 16.001 11.945 16 11 16H8c-.945 0-1.604.001-2.12.036-.507.035-.803.1-1.028.192a3 3 0 0 0-1.623 1.624c-.094.225-.158.521-.193 1.028C3.001 19.396 3 20.055 3 21a1 1 0 1 1-2 0c0-.918 0-1.657.04-2.257.042-.608.13-1.146.34-1.656a5 5 0 0 1 2.707-2.706c.51-.211 1.048-.3 1.656-.341C6.343 14 7.082 14 8 14h3c.918 0 1.657 0 2.257.04.609.042 1.146.13 1.656.34a5 5 0 0 1 2.706 2.707c.211.51.3 1.047.341 1.656.04.6.04 1.339.04 2.257a1 1 0 1 1-2 0Zm5 0v-2a3.002 3.002 0 0 0-2.249-2.905 1 1 0 0 1 .498-1.938A5.002 5.002 0 0 1 23 19v2a1 1 0 1 1-2 0ZM12.5 7a3 3 0 1 0-6 0 3 3 0 0 0 6 0ZM17 7a3.001 3.001 0 0 0-1.875-2.782 1 1 0 0 1 .75-1.854 5 5 0 0 1 0 9.272 1 1 0 1 1-.75-1.854A3.001 3.001 0 0 0 17 7Zm-2.5 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/></symbol>
+<symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M3.47 5.052c3.244-3.992 8.916-5.24 13.582-2.823l.448.245.436.266c4.426 2.832 6.181 8.368 4.346 13.173-.137.36-.305.874-.758 1.245a2.092 2.092 0 0 1-1.277.454 1.982 1.982 0 0 1-.817-.193c-.208-.093-.435-.226-.656-.353l-3.801-2.196-.01-.003-.01-.007-2.587-1.494L7.96 21H22a1 1 0 1 1 0 2H2a1 1 0 0 1 0-2h3.648l4.986-8.634-6.408-3.7c-.22-.127-.45-.258-.634-.39a1.973 1.973 0 0 1-.575-.612A2.093 2.093 0 0 1 2.77 6.33c.095-.578.456-.979.699-1.278Zm15.601 1.38c-.015.326-.047.66-.096 1-.265 1.84-1.01 4.008-2.163 6.192l2.962 1.71c.252.146.381.218.477.262.014-.028.034-.067.058-.126.03-.073.061-.158.104-.27a9.01 9.01 0 0 0-1.342-8.768ZM16.5 4.205c-.163-.094-.453-.154-.956-.005-.506.151-1.133.492-1.84 1.048-1.23.968-2.575 2.489-3.784 4.396l5.16 2.98c1.047-2.002 1.692-3.927 1.915-5.476.128-.89.11-1.604-.013-2.117-.121-.511-.319-.731-.482-.826Zm-3.214-1.113a9.01 9.01 0 0 0-8.527 3.56c.086.061.213.136.467.282l2.96 1.709c1.316-2.09 2.822-3.819 4.282-4.967.27-.213.544-.407.818-.584Z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M11.51 1.712a1.5 1.5 0 0 1 1.136.064c.352.168.547.46.645.62.107.174.217.399.323.615l2.14 4.335 4.788.7c.238.035.485.07.684.118.182.044.52.14.789.423.31.328.457.78.398 1.228-.051.388-.27.663-.392.806-.132.155-.312.328-.484.496l-3.463 3.372.818 4.764c.04.237.083.484.1.687.014.188.028.539-.158.882a1.5 1.5 0 0 1-1.045.759c-.385.071-.714-.051-.888-.123-.188-.078-.409-.196-.622-.308L12 18.9l-4.28 2.25c-.212.112-.433.23-.621.308-.174.072-.504.194-.888.123a1.5 1.5 0 0 1-1.045-.759c-.187-.343-.172-.694-.157-.882.016-.203.059-.45.1-.687l.816-4.764-3.462-3.372c-.172-.168-.352-.341-.485-.496-.122-.143-.34-.418-.391-.806-.06-.448.087-.9.398-1.228.269-.284.607-.38.79-.423.198-.048.445-.083.683-.117l4.787-.701 2.14-4.335c.107-.216.217-.44.324-.615.098-.16.293-.452.646-.62l.156-.064ZM9.994 8.326c-.04.083-.144.312-.316.498a1.509 1.509 0 0 1-.467.34c-.23.107-.48.133-.571.146l-4.492.657 3.25 3.163c.05.048.167.155.275.3l.101.155.065.13c.039.09.069.181.09.276l.024.144.009.185c-.003.18-.035.335-.047.403l-.766 4.468 4.014-2.11c.082-.043.3-.169.549-.218l.144-.021c.096-.01.193-.01.29 0l.144.021.179.049c.17.058.308.137.37.169l4.013 2.11-.765-4.467c-.016-.092-.069-.338-.038-.59l.024-.143c.032-.142.084-.279.155-.406.123-.222.31-.39.377-.455l3.248-3.163-4.49-.657c-.092-.013-.342-.04-.572-.146a1.505 1.505 0 0 1-.467-.34c-.172-.186-.274-.415-.315-.498L12 4.26 9.993 8.326Z"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><path d="M20 11H4v6.2c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C6.361 21 6.942 21 7.8 21h8.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V11Zm-5-5V5H9v1a1 1 0 1 1-2 0v-.997c-.445.003-.795.01-1.089.034-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 7.361 4 7.942 4 8.8V9h16v-.2c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18A15.288 15.288 0 0 0 17 5.002V6a1 1 0 1 1-2 0Zm7 11.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H7.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 18.702 2 18.024 2 17.2V8.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392.36-.03.777-.038 1.252-.041V2a1 1 0 0 1 2 0v1h6V2a1 1 0 1 1 2 0v1.003c.476.003.891.011 1.252.041.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v8.4Z"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24"><path d="M15 15a6 6 0 1 0-12 0 6 6 0 0 0 12 0Zm6-6a6 6 0 0 0-10.2-4.286 1 1 0 1 1-1.399-1.428 8 8 0 0 1 11.313 11.312 1 1 0 1 1-1.428-1.399A5.978 5.978 0 0 0 21 9Zm-4 6a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M12.232 1.36a1 1 0 0 1 1.76.764L13.132 9h6.16c.252 0 .51-.001.72.018.188.017.55.062.863.315.359.29.565.729.558 1.19-.006.402-.203.709-.31.865-.12.172-.287.37-.448.564l-8.906 10.689a1 1 0 0 1-1.761-.765l.86-6.876h-6.16c-.252 0-.511.001-.72-.018-.19-.017-.55-.062-.863-.315a1.501 1.501 0 0 1-.557-1.19l.01-.146c.043-.33.206-.582.3-.719.12-.172.286-.37.447-.564l8.907-10.689ZM5.135 13H12a1 1 0 0 1 .992 1.124l-.577 4.614L18.865 11H12a1 1 0 0 1-.992-1.124l.576-4.615L5.134 13Z"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M2 16.2V15a1 1 0 1 1 2 0v1.2c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C6.361 20 6.942 20 7.8 20h8.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V15a1 1 0 1 1 2 0v1.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H7.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 17.702 2 17.024 2 16.2Zm9-1.2V5.414L7.707 8.707a1 1 0 1 1-1.414-1.414l5-5 .076-.068a1 1 0 0 1 1.338.068l5 5a1 1 0 1 1-1.414 1.414L13 5.414V15a1 1 0 1 1-2 0Z"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><path d="m18.997 4.63-5.174 6.653a6 6 0 0 1 1.091.473l3.604-4.504c.285-.356.337-.43.373-.5.04-.08.07-.165.089-.253.015-.076.02-.166.02-.621V5.2c0-.216-.002-.404-.003-.57Zm-4.169 9.542a4 4 0 1 0-5.656 5.655 4 4 0 0 0 5.656-5.655ZM7.2 3c-.39 0-.688 0-.926.008L12 10.37l5.726-7.363A32.389 32.389 0 0 0 16.8 3H7.2ZM5 5.878c0 .455.005.545.02.621.019.088.049.174.09.254.035.07.088.143.372.499l3.603 4.504a6.02 6.02 0 0 1 1.09-.473L5.003 4.631 5 5.2v.677Zm16 0c0 .376.005.702-.061 1.023a3 3 0 0 1-.267.762c-.15.292-.357.545-.592.838l-3.604 4.504a5.999 5.999 0 0 1-8.718 8.237 6 6 0 0 1-.234-8.237L3.92 8.5c-.235-.293-.443-.546-.592-.838a3 3 0 0 1-.266-.762C2.996 6.581 3 6.254 3 5.878V5.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.38-.194.772-.265 1.168-.298C6.188 1 6.657 1 7.2 1h9.6c.543 0 1.012-.001 1.395.03.396.033.79.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395v.678Z"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M23 14a1 1 0 1 1-2 0V9.414l-6.161 6.162c-.187.186-.369.37-.534.51a2.022 2.022 0 0 1-.687.402c-.402.13-.835.13-1.236 0a2.022 2.022 0 0 1-.687-.402c-.166-.14-.348-.323-.534-.51L8.424 12.84a8.319 8.319 0 0 0-.414-.4L8 12.43l-.01.008c-.089.075-.204.19-.414.4l-4.869 4.868a1 1 0 1 1-1.414-1.414l4.868-4.87c.186-.185.368-.368.534-.509.175-.148.397-.308.687-.402a2 2 0 0 1 1.084-.042l.152.042.205.082c.193.091.35.209.482.32.166.14.347.324.534.51l2.737 2.737c.21.21.325.325.414.4l.01.007.01-.006c.089-.076.204-.191.414-.4L19.586 8H15a1 1 0 1 1 0-2h7a1 1 0 0 1 1 1v7Z"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M20 7.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C17.639 4 17.058 4 16.2 4H7.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 6.361 4 6.942 4 7.8v8.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C6.361 20 6.942 20 7.8 20h8.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V7.8ZM7 17v-2a1 1 0 1 1 2 0v2a1 1 0 1 1-2 0Zm4 0v-6a1 1 0 1 1 2 0v6a1 1 0 1 1-2 0Zm4 0V7a1 1 0 1 1 2 0v10a1 1 0 1 1-2 0Zm7-.8c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H7.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 17.702 2 17.024 2 16.2V7.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C6.298 1.999 6.976 2 7.8 2h8.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v8.4Z"/></symbol>
+</svg>
+
+<!-- ================= HEADER ================= -->
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+
+    <div class="hgrp hgrp--l">
+      <a class="brand" href="#start" aria-label="Lander Immobilienservice, zur Startseite">
+        <svg aria-hidden="true"><use href="#logo"></use></svg><b>Lander</b>
+      </a>
+      <a class="npill" href="#leistungen">Leistungen</a>
+      <a class="npill" href="#wechsel">Verwalterwechsel</a>
+    </div>
+
+    <span class="hdiv" aria-hidden="true"></span>
+
+    <div class="hgrp hgrp--c">
+      <a class="npill npill--seek" href="#standorte">
+        Standort finden
+        <span class="dot" aria-hidden="true"><svg><use href="#i-pin"></use></svg></span>
+      </a>
+    </div>
+
+    <span class="hdiv" aria-hidden="true"></span>
+
+    <div class="hgrp hgrp--r">
+      <button class="tgl" id="tgl" type="button" aria-label="Zwischen hellem und dunklem Modus wechseln" aria-pressed="false">
+        <svg data-ic="sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <svg data-ic="moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+      </button>
+      <nav class="hicons" aria-label="Schnellzugriff">
+        <a href="tel:+4961313046803" aria-label="Anrufen: 06131 30 46 803" title="06131 · 30 46 803"><svg aria-hidden="true"><use href="#i-phone"></use></svg></a>
+        <a href="https://meineverwaltung24.de/login" target="_blank" rel="noopener" aria-label="Eigentümer-Portal öffnen" title="Eigentümer-Portal"><svg aria-hidden="true"><use href="#i-login"></use></svg></a>
+        <a href="#faq" aria-label="Häufige Fragen" title="Häufige Fragen"><svg aria-hidden="true"><use href="#i-help"></use></svg></a>
+      </nav>
+      <a class="btn btn--solid" href="#kontakt">Erstgespräch<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mnav"><svg aria-hidden="true"><use href="#i-menu"></use></svg></button>
+    </div>
+
+  </div>
+  <div class="wrap"><nav class="mnav" id="mnav" aria-label="Navigation mobil">
+    <a href="#leistungen">Leistungen</a>
+    <a href="verwalter-check.html">Verwalter-Check</a>
+    <a href="#wechsel">Verwalterwechsel</a>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#netzwerk">Netzwerk</a>
+    <a href="#standorte">Standorte</a>
+    <a href="wissen.html">Wissen</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt und Anfrage</a>
+    <a href="tel:+4961313046803">06131 · 30 46 803</a>
+    <a href="https://meineverwaltung24.de/login" rel="noopener">Eigentümer-Portal</a>
+  </nav></div>
+</header>
+
+<!-- ================= 1 · HERO ================= -->
+<section class="bleed" id="start" style="min-height:min(88svh,860px); display:grid">
+  <div class="bg"><picture><source type="image/webp" sizes="100vw" srcset="bilder/hausverwaltung-mainz-wohnbestand-abendlicht-1200.webp 1200w, bilder/hausverwaltung-mainz-wohnbestand-abendlicht.webp 2000w, bilder/hausverwaltung-mainz-wohnbestand-abendlicht-2560.webp 2560w"><img src="bilder/hausverwaltung-mainz-wohnbestand-abendlicht.jpg" sizes="100vw" srcset="bilder/hausverwaltung-mainz-wohnbestand-abendlicht-1200.jpg 1200w, bilder/hausverwaltung-mainz-wohnbestand-abendlicht.jpg 2000w, bilder/hausverwaltung-mainz-wohnbestand-abendlicht-2560.jpg 2560w" width="2000" height="1167" alt="Mehrfamilienhaus mit Balkonen im Abendlicht, Symbolbild für den von Lander Immobilienservice verwalteten Wohnbestand in Mainz und Rhein-Main" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='https://lander.immobilien/lander-tag.webp'"></picture></div>
+  <div class="inner wrap" style="display:flex; flex-direction:column; padding-top:clamp(130px,13vw,192px); padding-bottom:clamp(34px,4vw,60px)">
+    <span class="chip" style="align-self:flex-start"><span class="b"><svg aria-hidden="true"><use href="#i-key"></use></svg></span>Hausverwaltung Mainz</span>
+    <h1 class="dsp" style="margin-top:26px; max-width:14ch">Ihr Eigentum. In <span class="acc">besten</span> Händen.</h1>
+    <div class="gside" style="margin-top:auto; padding-top:64px; gap:clamp(24px,5vw,80px); align-items:end">
+      <div>
+        <div class="glass">
+          <div class="row" style="justify-content:space-between; gap:10px">
+            <span class="gk">Verwaltete Einheiten</span>
+            <svg style="width:15px;height:15px;fill:var(--fg-3);" aria-hidden="true"><use href="#i-clock"></use></svg>
+          </div>
+          <div class="gv num acc">301<span class="faint">+</span></div>
+          <div class="gs">in Mainz, Rhein-Main und Rhein-Neckar</div>
+        </div>
+        <a class="btn btn--wide" style="margin-top:12px" href="https://meineverwaltung24.de/login" target="_blank" rel="noopener">Eigentümer-Portal<span class="ar"><svg aria-hidden="true"><use href="#i-ext"></use></svg></span></a>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:22px; max-width:44ch; justify-self:end">
+        <p class="lead">Von der Eigentümerversammlung bis zur Jahresabrechnung: wir übernehmen die WEG-, Miet-, Gewerbemiet- und Sondereigentumsverwaltung vollständig, mit einem festen Ansprechpartner und Rückmeldung unter 24 Stunden.</p>
+        <a class="btn btn--glass" href="#kontakt">Erstgespräch vereinbaren<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 · 24/7-PRÄSENZ ================= -->
+<section class="sec" id="praesenz">
+  <div class="wrap">
+    <p class="slab"><span>Rund um die Uhr</span><i></i></p>
+    <div class="grid g2" style="gap:clamp(30px,4vw,64px)">
+      <div style="display:flex; flex-direction:column">
+        <h2 class="h2" style="max-width:21ch">Tag und Nacht <span class="swseg" role="group" aria-label="Ansicht wählen"><button type="button" class="swbtn" data-theme-set="light" aria-pressed="false" title="Helle Ansicht" aria-label="Helle Ansicht"><svg aria-hidden="true"><use href="#i-sun"></use></svg></button><button type="button" class="swbtn" data-theme-set="dark" aria-pressed="false" title="Dunkle Ansicht" aria-label="Dunkle Ansicht"><svg aria-hidden="true"><use href="#i-moon"></use></svg></button></span>, <span class="acc">wir sind da</span></h2>
+        <div class="hlist" style="margin-top:auto; padding-top:clamp(48px,7vw,120px)">
+          <div>
+            <h4 class="h4">Schadensmeldung ohne Umweg</h4>
+            <p class="sm">Ein Anruf genügt. Wir beauftragen den passenden Fachbetrieb aus unserem Netzwerk und informieren Sie über jeden Schritt, mit Zeitstempel.</p>
+          </div>
+          <div><p class="q">Dokumentation für die Versicherung</p></div>
+          <div><p class="q">Keine Warteschleife am Wochenende</p></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <picture><source type="image/webp" srcset="bilder/notfall-erreichbarkeit-wohnanlage-nacht.webp"><img class="pbg" src="bilder/notfall-erreichbarkeit-wohnanlage-nacht.jpg" width="1200" height="900" alt="Wohnanlage bei Nacht mit erleuchteten Fenstern, Symbolbild für die Erreichbarkeit rund um die Uhr" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://lander.immobilien/lander-tag.webp'"></picture>
+        <div class="glass">
+          <div class="ptitle" style="font-size:15px">Notfall-Übersicht</div>
+          <p class="xs" style="margin-top:5px">Reaktionszeiten der letzten zwölf Meldungen aus dem Bestand.</p>
+          <div class="row" style="gap:10px; margin-top:20px; align-items:baseline">
+            <span class="acc num" style="font-size:44px; line-height:1; font-weight:300; letter-spacing:-.04em">14</span>
+            <span class="sm">Stunden bis behoben</span>
+          </div>
+          <div class="row" style="justify-content:space-between; margin-top:20px; gap:10px">
+            <span class="gk">Meldung bis Fachbetrieb vor Ort</span>
+            <span class="pillw">11 von 12 unter 24 h</span>
+          </div>
+          <div class="bars" aria-hidden="true">
+            <i class="on" style="height:38%"></i><i class="on" style="height:52%"></i><i class="on" style="height:44%"></i>
+            <i class="on" style="height:66%"></i><i class="on" style="height:58%"></i><i class="on" style="height:78%"></i>
+            <i class="on" style="height:48%"></i><i class="on" style="height:70%"></i><i class="on" style="height:62%"></i>
+            <i class="on" style="height:84%"></i><i class="on" style="height:54%"></i><i style="height:100%"></i>
+          </div>
+          <div class="axis"><span>0 h</span><span>12 h</span><span>24 h</span></div>
+          <table class="mt">
+            <colgroup><col style="width:42%"><col style="width:24%"><col style="width:20%"><col style="width:14%"></colgroup>
+            <thead><tr><th>Objekt</th><th>Meldung</th><th>Status</th><th>Dauer</th></tr></thead>
+            <tbody>
+              <tr><td><b>Mainz-Lerchenberg</b><span>Großwohnanlage</span></td><td>Heizung</td><td>behoben</td><td>14 h</td></tr>
+              <tr><td><b>Ludwigshafen</b><span>Mietobjekt</span></td><td>Wasser</td><td>behoben</td><td>6 h</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="sm" style="margin-top:34px; padding:16px 20px; border:1px solid var(--line); border-radius:var(--r-m); max-width:86ch">
+      <b style="color:var(--acc)">Wichtig:</b> Bei akuter Gefahr für Leben oder Sachwerte, also bei Brand, Gasaustritt, Einbruch oder schweren Unfällen, bitte <b style="color:var(--fg)">zuerst die Einsatzkräfte alarmieren</b>. Feuerwehr und Rettungsdienst über <b style="color:var(--fg)">112</b>, Polizei über <b style="color:var(--fg)">110</b>. Danach melden Sie sich gern bei uns.
+    </p>
+  </div>
+</section>
+
+<!-- ================= 8 · NOTFALL ================= -->
+<section class="sec" id="notfall" style="padding-top:0">
+  <div class="wrap">
+    <p class="slab"><span>Notfall</span><i></i></p>
+    <div class="grid g2 g2--txt" style="gap:clamp(28px,4vw,64px); align-items:end">
+      <div>
+        <h2 class="h2" style="max-width:18ch">Im Notfall sind wir <span class="acc">für Sie erreichbar</span></h2>
+        <p class="lead" style="margin-top:22px">Wasserschaden mitten in der Nacht, ausgefallene Heizung am Wochenende, akuter Sicherheitsmangel: solche Lagen warten nicht bis Montag früh. Unsere Bestandskunden erreichen uns rund um die Uhr unter der gewohnten Nummer.</p>
+      </div>
+      <div>
+        <a href="tel:+4961313046803" style="text-decoration:none; display:block">
+          <div class="acc num" style="font-size:clamp(38px,5.6vw,76px); line-height:1; font-weight:300; letter-spacing:-.045em">06131 · 30 46 803</div>
+          <div class="sm" style="margin-top:16px">24 Stunden · 7 Tage · Notfall-Hotline für Bestandskunden</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 · LEISTUNGEN ================= -->
+<section class="sec" id="leistungen" style="padding-top:0">
+  <div class="wrap">
+    <p class="slab"><span>Leistungen</span><i></i></p>
+    <h2 class="h2" style="max-width:22ch">Verwaltung, <span class="acc">vollständig</span> aus einer Hand</h2>
+    <p class="body" style="margin-top:22px">Von der WEG-Verwaltung über die Miet- und Gewerbemietverwaltung bis zur Sondereigentumsverwaltung: als Hausverwaltung in Mainz nehmen wir Eigentümern den gesamten operativen Aufwand ab, kaufmännisch, technisch und rechtssicher.</p>
+
+    <div class="grid g3 lrow" style="margin-top:clamp(38px,4.4vw,64px)">
+
+      <article class="mcard">
+        <div class="panel">
+          <div class="row" style="gap:12px; align-items:flex-start">
+            <span class="tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span>
+            <div style="flex:1">
+              <div class="ptitle">Jahresabrechnung 2025 · WEG Lerchenberg</div>
+              <div class="pmeta">
+                <span><svg aria-hidden="true"><use href="#i-file"></use></svg>34 Einheiten</span>
+                <span><svg aria-hidden="true"><use href="#i-clock"></use></svg>vorgelegt 31.03.</span>
+              </div>
+            </div>
+          </div>
+          <div class="seg"><b class="on">Abrechnung</b><b>Beschlüsse</b></div>
+          <div class="trio">
+            <div><b>34</b><span>Einheiten</span></div>
+            <div><b>1</b><span>Ansprechpartner</span></div>
+            <div><b>31.03.</b><span>Vorgelegt</span></div>
+          </div>
+          <p class="xs" style="margin-top:16px; color:var(--fg-3)">Auszug Beschlussumsetzung</p>
+          <p class="xs" style="margin-top:6px; line-height:1.75; color:var(--fg-2)">Die Gemeinschaft beschließt die <span class="hlt">Erneuerung der Aufzugssteuerung</span> mit einfacher Mehrheit. Der Verwalter holt <span class="hlt">drei Vergleichsangebote</span> ein und legt sie dem Beirat vor. Die Entnahme erfolgt aus der Erhaltungsrücklage, die Restdeckung wird im <span class="hlt">Wirtschaftsplan 2026</span> fortgeschrieben.</p>
+        </div>
+        <h3 class="h3">WEG-Verwaltung in Mainz</h3>
+        <p class="sm mdesc">Eigentümerversammlung, Wirtschaftsplan, Hausgeldabrechnung, Beschlusssammlung nach § 24 Abs. 7 WEG und Vermögensbericht nach § 28 Abs. 4 WEG. Beschlüsse werden umgesetzt, nicht verwaltet.</p>
+        <a class="btn btn--glass" style="align-self:flex-start; margin-top:26px" href="weg-verwaltung">Im Detail<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </article>
+
+      <article class="mcard">
+        <div class="panel">
+          <p class="xs">Vorschau</p>
+          <div style="margin-top:10px; border-radius:12px; overflow:hidden; background:#F7F5EE; color:#14150E; padding:14px 16px">
+            <div style="font-size:12.5px; font-weight:700">Nebenkostenabrechnung</div>
+            <div style="font-size:9.5px; color:#6B6A5A; margin-top:3px">Abrechnungszeitraum 01.01. bis 31.12.2025</div>
+            <div style="margin-top:11px; display:flex; justify-content:space-between; font-size:9.5px; color:#6B6A5A; border-top:1px solid rgba(20,21,14,.12); padding-top:7px">
+              <span>Heizung und Warmwasser</span><span>1.284,50 €</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:9.5px; color:#6B6A5A; padding-top:5px">
+              <span>Grundsteuer und Versicherung</span><span>612,00 €</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:10.5px; font-weight:700; padding-top:8px; border-top:1px solid rgba(20,21,14,.12); margin-top:7px">
+              <span>Guthaben Mieter</span><span>148,20 €</span>
+            </div>
+          </div>
+          <div style="margin-top:12px; border-radius:12px; border:1px solid var(--line); padding:13px">
+            <p class="xs">Abrechnungsdaten</p>
+            <div class="prow" style="padding-top:11px"><div class="t"><span>Objekt</span><b>Ludwigshafen, Mitte</b></div></div>
+            <div class="prow"><div class="t"><span>Einheiten vermietet</span><b>12 von 12</b></div></div>
+            <div class="grid g2" style="gap:10px; margin-top:11px">
+              <div><p class="xs">Versand</p><p class="xs" style="color:var(--fg-2); display:flex; align-items:center; gap:5px; margin-top:3px"><svg style="width:11px;height:11px;fill:currentColor;" aria-hidden="true"><use href="#i-cal"></use></svg>28.02.2026</p></div>
+              <div><p class="xs">Widerspruchsfrist</p><p class="xs" style="color:var(--fg-2); display:flex; align-items:center; gap:5px; margin-top:3px"><svg style="width:11px;height:11px;fill:currentColor;" aria-hidden="true"><use href="#i-cal"></use></svg>28.02.2027</p></div>
+            </div>
+          </div>
+          <span class="btn btn--wide btn--plain" style="margin-top:12px; font-size:12px; padding:10px 18px">Abrechnung freigeben</span>
+        </div>
+        <h3 class="h3">Mietverwaltung für Vermieter</h3>
+        <p class="sm mdesc">Mietenbuchhaltung, Betriebskostenabrechnung, Mieterbetreuung und Forderungsmanagement. Sie erhalten nachvollziehbare Zahlen und müssen niemandem nachtelefonieren.</p>
+        <a class="btn btn--glass" style="align-self:flex-start; margin-top:26px" href="mietverwaltung">Im Detail<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </article>
+
+      <article class="mcard">
+        <div class="panel">
+          <div class="srch"><svg aria-hidden="true"><use href="#i-search"></use></svg>Objekt, Beschluss, Vertrag suchen<span class="kbd">⌘ K</span></div>
+          <div class="fchips"><b class="on">Alle</b><b>Objekte</b><b>Verträge</b><b>Fristen</b></div>
+          <p class="ghead">Fristen · 3</p>
+          <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-cal"></use></svg></span><div class="t"><b>Indexanpassung Gewerbe</b><span>Verbraucherpreisindex, Prüfung fällig</span></div><span class="amt">01.04.</span></div>
+          <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-cal"></use></svg></span><div class="t"><b>Optionsrecht Mieter B</b><span>Verlängerung um 5 Jahre</span></div><span class="amt">30.06.</span></div>
+          <p class="ghead">Dokumente · 3</p>
+          <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>Gewerbemietvertrag.pdf</b></div><span class="amt">1,8 MB</span></div>
+          <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>Flaechenaufmass_MFG.pdf</b></div><span class="amt">640 KB</span></div>
+          <p class="ghead">Beteiligte · 3</p>
+          <div class="prow"><span class="avat" aria-hidden="true"></span><div class="t"><b>Verwaltungsbeirat</b><span>3 Personen</span></div></div>
+          <div class="prow"><span class="avat" aria-hidden="true"></span><div class="t"><b>Fachbetrieb Elektro</b><span>Region Mainz</span></div></div>
+        </div>
+        <h3 class="h3">Gewerbemietverwaltung</h3>
+        <p class="sm mdesc">Gewerbemietverträge kennen Indexklauseln, Umsatzmieten, Optionsrechte und abweichende Umlageschlüssel. Wir behalten Fristen und Flächen im Blick und stimmen sie mit Eigentümern und Mietern ab.</p>
+        <a class="btn btn--glass" style="align-self:flex-start; margin-top:26px" href="gewerbemietverwaltung">Im Detail<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </article>
+    </div>
+
+    <div class="grid g2 g2--txt" style="margin-top:20px">
+      <article class="mcard" style="padding-bottom:26px">
+        <h3 class="h3" style="margin-top:0">Sondereigentumsverwaltung (SEV)</h3>
+        <p class="body" style="margin-top:14px; font-size:15.5px">Sondereigentumsverwaltung ist die Verwaltung einer einzelnen Eigentumswohnung innerhalb einer Wohnungseigentümergemeinschaft. Sie brauchen sie, wenn Ihre Wohnung vermietet ist, denn die WEG-Verwaltung betreut ausschließlich das Gemeinschaftseigentum und nicht Ihr Mietverhältnis. Wir übernehmen das Mietverhältnis der Einheit, die eigene Abrechnung, das Reporting und die Abstimmung mit der WEG-Verwaltung.</p>
+        <a class="btn btn--glass" style="margin-top:22px; align-self:flex-start" href="sondereigentumsverwaltung">Sondereigentumsverwaltung im Detail<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </article>
+      <article class="mcard" style="padding-bottom:26px">
+        <h3 class="h3" style="margin-top:0"><span class="acc">Immobilienmakler</span>, bald auch bei uns</h3>
+        <p class="body" style="margin-top:14px; font-size:15.5px">Perspektivisch begleiten wir Sie auch beim Verkauf und der Vermietung Ihrer Immobilie, mit derselben Verlässlichkeit, die Sie aus unserer Verwaltung kennen. Wenn Sie schon jetzt einen Verkauf oder eine Neuvermietung planen, merken wir Sie vor und melden uns, sobald wir starten.</p>
+        <a class="btn" style="margin-top:22px; align-self:flex-start" href="#kontakt">Vormerken<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 · ÜBER UNS ================= -->
+<section class="sec" id="ueber-uns">
+  <div class="wrap">
+    <p class="slab"><span>Über uns</span><i></i></p>
+    <p class="h2" style="max-width:30ch">Lander Immobilienservice verwaltet Wohnungseigentum und Mietobjekte mit <span class="acc">verbindlicher Erreichbarkeit</span>, nachvollziehbaren Abrechnungen und einem festen Ansprechpartner.</p>
+    <div style="margin-top:clamp(56px,7vw,116px); display:flex; flex-wrap:wrap; gap:34px; align-items:flex-start; justify-content:space-between">
+      <p class="lead" style="max-width:46ch">Gegründet 2025 in Mainz, inhabergeführt, zwei Generationen im Team. Wir arbeiten für Eigentümergemeinschaften, private Vermieter und Kapitalanleger in Rhein-Main, Rhein-Neckar, Rhein-Pfalz und an der Bergstraße.</p>
+      <div class="badges">
+        <span class="badge"><span class="b"><svg aria-hidden="true"><use href="#i-shield"></use></svg></span>Erlaubnis nach § 34c GewO</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span class="badge"><span class="b"><svg aria-hidden="true"><use href="#i-clock"></use></svg></span>Rückmeldung unter 24 Stunden</span>
+      </div>
+    </div>
+    <div class="gabout">
+
+      <div class="capwrap">
+        <div class="capsule">
+          <picture>
+            <source type="image/webp" srcset="bilder/team-lander-immobilienservice-portrait.webp">
+            <img src="bilder/team-lander-immobilienservice-portrait.jpg" width="900" height="1548"
+              alt="Platz für das Porträt von Philipp Lander, Inhaber von Lander Immobilienservice in Mainz"
+              loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <span class="cap-tag cap-tag--a"><span class="b"><svg aria-hidden="true"><use href="#i-key"></use></svg></span>Inhabergeführt</span>
+        <span class="cap-tag cap-tag--b"><span class="b"><svg aria-hidden="true"><use href="#i-clock"></use></svg></span>Antwort unter 24 h</span>
+        <span class="cap-tag cap-tag--c"><span class="b"><svg aria-hidden="true"><use href="#i-users"></use></svg></span>Vier Personen</span>
+      </div>
+
+      <div>
+        <div class="frow">
+          <p class="fnum">01</p>
+          <div>
+            <h3>Philipp Lander, Inhaber</h3>
+            <p class="body">Er baut das Unternehmen mit modernem Anspruch an Service, Transparenz und Reaktionsschnelligkeit auf. Parallel studiert er berufsbegleitend Wirtschaftsrecht (LL.B.) mit den Schwerpunkten Immobilien- und Vertragsrecht, Wissen, das direkt in die tägliche Praxis einfließt.</p>
+          </div>
+        </div>
+        <div class="frow">
+          <p class="fnum">02</p>
+          <div>
+            <h3>H. Lander, 23 Jahre Erfahrung</h3>
+            <p class="body">Mehr als 23 Jahre aus verschiedenen Hausverwaltungen der Rhein-Neckar-Region, mit Objekten in Mannheim, Ludwigshafen, Darmstadt, Heidelberg, Worms, Lampertheim und an der Bergstraße. Gewachsenes Wissen über WEG-Verwaltung, Mietrecht und Eigentümerkommunikation.</p>
+          </div>
+        </div>
+        <div class="frow">
+          <p class="fnum">03</p>
+          <div>
+            <h3>Buchhaltung und Sachbearbeitung</h3>
+            <p class="body">Zwei Mitarbeiterinnen halten Abrechnung und Vorgänge in der Spur. So bleiben wir auch im Wachstum schnell erreichbar und jede Gemeinschaft behält ihren festen Ansprechpartner.</p>
+          </div>
+        </div>
+
+        <div class="minicard">
+          <div class="thumb">
+            <picture>
+              <source type="image/webp" srcset="bilder/netzwerk-handwerk-instandhaltung-fassade.webp">
+              <img src="bilder/netzwerk-handwerk-instandhaltung-fassade.jpg" width="1200" height="900" alt="" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="mt2">
+            <b>Objekte in Rhein-Main, Rhein-Neckar und an der Bergstraße</b>
+            <span>Von der Großwohnanlage bis zum einzelnen Mietobjekt, betreut aus Mainz.</span>
+          </div>
+        </div>
+
+        <a class="btn btn--glass" style="margin-top:clamp(22px,2.4vw,30px)" href="#kontakt">Erstgespräch vereinbaren<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 5b · DER BETRIEB IN ZAHLEN, FREIGESTELLTES FOTOBAND ================= -->
+<section class="bleed fband" id="betrieb">
+  <div class="fb-haze" aria-hidden="true"></div>
+  <div class="fb-city">
+    <picture>
+      <source type="image/webp" sizes="100vw" srcset="bilder/betrieb-frankfurt-altstadt-nebel-freigestellt-1400.webp 1400w, bilder/betrieb-frankfurt-altstadt-nebel-freigestellt.webp 2200w, bilder/betrieb-frankfurt-altstadt-nebel-freigestellt-2800.webp 2800w">
+      <img src="bilder/betrieb-frankfurt-altstadt-nebel-freigestellt-1400.png" width="3878" height="2308" alt="Freigestellte Häuserzeile mit Kirchtürmen im Nebel, Symbolbild für den verwalteten Bestand in Rhein-Main" loading="lazy" decoding="async">
+    </picture>
+  </div>
+  <div class="inner wrap">
+    <div class="fb-rule" aria-hidden="true"></div>
+    <div class="fb-grid" id="fbgrid">
+      <div class="glass fb-p">
+        <span class="tile"><svg aria-hidden="true"><use href="#i-cal"></use></svg></span>
+        <p class="fv">2025</p>
+        <p class="fk">Gegründet</p>
+        <p class="fn">In Mainz gegründet, inhabergeführt von Beginn an.</p>
+      </div>
+      <div class="glass fb-p">
+        <span class="tile"><svg aria-hidden="true"><use href="#i-pin"></use></svg></span>
+        <p class="fv">Mainz</p>
+        <p class="fk">Sitz</p>
+        <p class="fn">Waldstraße 24, 55124 Mainz. Mo bis Fr, 9 bis 17 Uhr.</p>
+      </div>
+      <div class="glass fb-p">
+        <span class="tile"><svg aria-hidden="true"><use href="#i-users"></use></svg></span>
+        <p class="fv">4</p>
+        <p class="fk">Personen im Team</p>
+        <p class="fn">Inhaber, Fachkraft, Buchhaltung und Sachbearbeitung.</p>
+      </div>
+      <div class="glass fb-p">
+        <span class="tile"><svg aria-hidden="true"><use href="#i-trend"></use></svg></span>
+        <p class="fv">23+</p>
+        <p class="fk">Jahre Erfahrung</p>
+        <p class="fn">Gewachsenes Wissen aus der Rhein-Neckar-Region.</p>
+      </div>
+    </div>
+    <div class="fb-foot">
+      <button class="iconbtn fb-nav" id="fbprev" type="button" aria-label="Vorherige Karte"><svg aria-hidden="true"><use href="#i-arr-l"></use></svg></button>
+      <span class="fb-ix" id="fbix" aria-live="polite">[ 01 / 04 ]</span>
+      <p class="fb-cap">Zwei Generationen, ein Sitz, feste Ansprechpartner. Klein genug, um schnell zu antworten, erfahren genug, um komplizierte Gemeinschaften zu führen.</p>
+      <button class="iconbtn fb-nav" id="fbnext" type="button" aria-label="Nächste Karte"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6 · WERTE ================= -->
+<section class="sec" id="werte">
+  <div class="wrap">
+    <p class="slab"><span>Werte</span><i></i></p>
+    <h2 class="h2" style="max-width:22ch">Drei Prinzipien. <span class="acc">Kompromisslos</span> gelebt.</h2>
+    <p class="lead" style="margin-top:22px; font-size:20px; color:var(--fg)">„Eigentum braucht keine Versprechen, sondern Verlässlichkeit."</p>
+    <div class="grid g3 hlist" style="margin-top:clamp(38px,4.4vw,64px); gap:0 clamp(24px,3vw,44px)">
+      <div>
+        <p class="xs acc" style="letter-spacing:.14em">I</p>
+        <h4 class="h4" style="margin-top:10px">Verlässlich</h4>
+        <p class="sm" style="margin-top:8px">Zugesagte Termine werden gehalten, Rückmeldungen kommen in unter 24 Stunden. Eigentümer wissen jederzeit, woran sie sind.</p>
+      </div>
+      <div>
+        <p class="xs acc" style="letter-spacing:.14em">II</p>
+        <h4 class="h4" style="margin-top:10px">Transparent</h4>
+        <p class="sm" style="margin-top:8px">Klare Abrechnungen, nachvollziehbare Entscheidungen, offene Kommunikation. Keine versteckten Posten, keine Blackbox.</p>
+      </div>
+      <div>
+        <p class="xs acc" style="letter-spacing:.14em">III</p>
+        <h4 class="h4" style="margin-top:10px">Persönlich</h4>
+        <p class="sm" style="margin-top:8px">Ein fester Ansprechpartner, der Ihre Objekte kennt. Keine wechselnden Sachbearbeiter, keine anonyme Hotline.</p>
+      </div>
+    </div>
+    <div class="row" style="margin-top:44px; justify-content:space-between; gap:20px">
+      <div>
+        <h4 class="h4">Karriere</h4>
+        <p class="sm" style="margin-top:6px">Sie möchten Teil unseres Teams werden? Wir freuen uns über Initiativbewerbungen.</p>
+      </div>
+      <a class="btn btn--glass" href="mailto:info@lander-immobilien.de">info@lander-immobilien.de<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 · FAKTEN ================= -->
+<section class="bleed sec" id="fakten" style="padding:0">
+  <div class="bg"><picture><source type="image/webp" sizes="100vw" srcset="bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten-1200.webp 1200w, bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten.webp 2000w, bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten-2560.webp 2560w"><img src="bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten.jpg" sizes="100vw" srcset="bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten-1200.jpg 1200w, bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten.jpg 2000w, bilder/hausverwaltung-mainz-mehrfamilienhaus-fakten-2560.jpg 2560w" width="2000" height="1000" alt="Fassade eines Mehrfamilienhauses mit Sprossenfenstern, Symbolbild für die verwalteten Objekte im Bestand" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://lander.immobilien/lander-tag.webp'"></picture></div>
+  <div class="inner wrap" style="padding-top:clamp(104px,12.5vw,196px); padding-bottom:clamp(86px,9.5vw,148px)">
+    <span class="chip"><span class="b"><svg aria-hidden="true"><use href="#i-award"></use></svg></span>Zahlen</span>
+    <h2 class="dsp" style="margin-top:34px; max-width:16ch">Verlässlichkeit, die sich in <span class="acc">Zahlen</span> zeigt</h2>
+    <div class="gside" style="margin-top:clamp(90px,11vw,184px); gap:clamp(28px,5vw,72px); align-items:end">
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:22px">
+        <p class="lead" style="max-width:34ch">Hausverwaltung ist ein Vertrauensgeschäft. Deshalb legen wir offen, was wir leisten und in welcher Zeit wir antworten.</p>
+        <a class="btn btn--glass" href="#kontakt">Erstgespräch vereinbaren<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </div>
+      <div class="bigstats">
+        <div>
+          <div class="stat-v">301+</div>
+          <div class="stat-l">Verwaltete Einheiten</div>
+        </div>
+        <div class="sep" aria-hidden="true"></div>
+        <div>
+          <div class="stat-v">23+</div>
+          <div class="stat-l">Jahre Erfahrung im Team</div>
+        </div>
+        <div class="sep" aria-hidden="true"></div>
+        <div>
+          <div class="stat-v">24 h</div>
+          <div class="stat-l">Maximale Rückmeldezeit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7 · NETZWERK ================= -->
+<section class="sec" id="netzwerk">
+  <div class="wrap">
+    <p class="slab"><span>Netzwerk</span><i></i></p>
+    <div class="grid g2 flip" style="gap:clamp(30px,4vw,64px)">
+      <div class="pcard">
+        <picture><source type="image/webp" srcset="bilder/netzwerk-handwerk-instandhaltung-fassade.webp"><img class="pbg" src="bilder/netzwerk-handwerk-instandhaltung-fassade.jpg" width="1200" height="900" alt="Gerüst an einer sanierten Fassade, Symbolbild für Instandhaltung über das Handwerker- und Dienstleisternetzwerk" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://lander.immobilien/lander-tag.webp'"></picture>
+        <div class="glass">
+          <div class="ptitle" style="font-size:15px">Netzwerk, ausgelöst in Minuten</div>
+          <p class="xs" style="margin-top:5px">Feste Fachbetriebe aus Mainz und der Region, nach Gewerk sortiert.</p>
+          <div style="margin-top:16px">
+            <div class="prow done"><span class="tile"><svg aria-hidden="true"><use href="#i-tool"></use></svg></span><div class="t"><b>Sanitär, Heizung, Klempner</b><span>4 Betriebe · Reaktion unter 24 h</span></div><span class="ck"></span></div>
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-tool"></use></svg></span><div class="t"><b>Elektro, Aufzug, Dach</b><span>3 Betriebe · Wartungsverträge</span></div><span class="ck"></span></div>
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-users"></use></svg></span><div class="t"><b>Hausmeister und Reinigung</b><span>regional, mit Winterdienst</span></div><span class="ck"></span></div>
+            <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-umbrella"></use></svg></span><div class="t"><b>Versicherungsmakler</b><span>Gebäude, Haftpflicht, Schadensfall</span></div><span class="ck"></span></div>
+            <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-award"></use></svg></span><div class="t"><b>Energieberatung und GEG</b><span>Nachweise und Sanierungsfahrplan</span></div><span class="ck"></span></div>
+          </div>
+          <div class="row" style="justify-content:space-between; margin-top:18px; gap:10px">
+            <span class="gk">Anteil Stammbetriebe</span><span class="pillw">82 Prozent</span>
+          </div>
+          <div class="bars" style="height:22px; margin-top:10px" aria-hidden="true">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i>
+          </div>
+          <a class="btn btn--wide btn--plain" style="margin-top:16px" href="#kontakt">Vergleichsangebote anfordern</a>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column">
+        <h2 class="h2" style="max-width:18ch">Verlässliche Partner, <span class="acc">schneller Zugriff</span></h2>
+        <div class="hlist" style="margin-top:auto; padding-top:clamp(48px,7vw,120px)">
+          <div>
+            <h4 class="h4">01 · Handwerker und Dienstleister</h4>
+            <p class="sm">Klempner, Elektriker, Heizungsbauer, Dachdecker, Maler, Schlüsseldienste, Hausmeister, Reinigung, Gartenpflege, Schornsteinfeger und Winterdienst. Fachbetriebe, die wir kennen und denen wir vertrauen. Kurze Wege, faire Preise, dokumentierte Qualität.</p>
+          </div>
+          <div><p class="q">02 · Versicherungen und Schadensfall</p></div>
+          <div><p class="q">03 · Keine eigene Handwerksfirma, kein Interessenkonflikt</p></div>
+        </div>
+        <p class="body" style="margin-top:26px">Bei Aufträgen ab einer mit der Gemeinschaft festgelegten Summe holen wir Vergleichsangebote ein und legen sie dem Verwaltungsbeirat vor. Wir betreiben keine eigene Handwerksfirma, damit besteht bei der Auftragsvergabe kein Interessenkonflikt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 · VERWALTERWECHSEL ================= -->
+<section class="sec" id="wechsel">
+  <div class="wrap">
+    <p class="slab"><span>Verwalterwechsel</span><i></i></p>
+    <div class="grid g2" style="gap:clamp(30px,4vw,64px)">
+      <div style="display:flex; flex-direction:column">
+        <h2 class="h2" style="max-width:17ch">Verwalterwechsel <span class="acc">in 30 Tagen</span></h2>
+        <p class="body" style="margin-top:24px">Seit der WEG-Reform 2020 kann die Eigentümerversammlung den Verwalter nach § 26 Absatz 3 WEG jederzeit und ohne Angabe eines Grundes abberufen. Es genügt die einfache Mehrheit der abgegebenen Stimmen, der Verwaltervertrag endet spätestens sechs Monate nach der Abberufung. Ein Wechsel ist damit kein Rechtsstreit, sondern ein Beschluss.</p>
+        <div class="hlist" style="margin-top:auto; padding-top:clamp(40px,5vw,84px)">
+          <div>
+            <h4 class="h4">Phase 3 und 4 übernehmen wir vollständig</h4>
+            <p class="sm">Aktenübergabe, Konto-Umstellungen und die gesamte Kommunikation laufen über uns. Der Bestand der Erhaltungsrücklage wird im Übergabeprotokoll dokumentiert.</p>
+          </div>
+          <div><p class="q">Ihr Aufwand: Vertrag prüfen und Beschluss fassen</p></div>
+          <div><p class="q">Anonymer Selbsttest nach VDIV-Standard und § 26a WEG</p></div>
+        </div>
+        <div class="row" style="margin-top:30px">
+          <a class="btn" href="#kontakt">Erstgespräch vereinbaren<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+          <a class="btn btn--glass" href="verwalter-check.html">3-Minuten-Selbsttest<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+        </div>
+      </div>
+      <div class="pcard">
+        <picture><source type="image/webp" srcset="bilder/verwalterwechsel-uebergabe-unterlagen.webp"><img class="pbg" src="bilder/verwalterwechsel-uebergabe-unterlagen.jpg" width="1200" height="900" alt="Unterlagen auf einem Tisch, Symbolbild für die Aktenübergabe beim Verwalterwechsel" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://lander.immobilien/lander-tag.webp'"></picture>
+        <div class="glass">
+          <div class="row" style="justify-content:space-between; gap:10px">
+            <span class="ptitle" style="font-size:15px">Aufgabenverteilung</span>
+            <span class="pillw">2 von 4 bei uns</span>
+          </div>
+          <div style="margin-top:18px">
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>01 · Vorbereitung</b><span>Vertrag prüfen, Anbieter vergleichen · Ihr Part</span></div><span class="ck"></span></div>
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-users"></use></svg></span><div class="t"><b>02 · Beschluss</b><span>Abberufung und Neubestellung · Ihr Part</span></div><span class="ck"></span></div>
+            <div class="prow"><span class="tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>03 · Übergabe</b><span>Akten, Konten, Verträge, Dienstleister · wir</span></div><span class="ck"></span></div>
+            <div class="prow"><span class="tile"><svg aria-hidden="true"><use href="#i-key"></use></svg></span><div class="t"><b>04 · Übernahme</b><span>Mieter und Dienstleister informieren · wir</span></div><span class="ck"></span></div>
+          </div>
+          <div class="row" style="justify-content:space-between; margin-top:18px; gap:10px">
+            <span class="gk">Dauer bis zum sauberen Start</span><span class="sm">rund 30 Tage</span>
+          </div>
+          <div class="bars" style="height:20px; margin-top:10px" aria-hidden="true">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i>
+          </div>
+          <a class="btn btn--wide btn--plain" style="margin-top:16px" href="#kontakt">Checkliste anfordern</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 · STANDORTE ================= -->
+<section class="sec" id="standorte" style="padding-top:0">
+  <div class="wrap">
+    <p class="slab"><span>Standorte</span><i></i></p>
+    <h2 class="h2" style="max-width:20ch">Hausverwaltung in <span class="acc">Ihrer Stadt</span></h2>
+    <p class="body" style="margin-top:22px">Von unserem Sitz in der Waldstraße 24 in Mainz betreuen wir Eigentümer in sechs Schwerpunktstädten. Wählen Sie Ihre Stadt für die Details vor Ort.</p>
+    <div class="citybtns">
+      <a class="btn btn--glass" href="hausverwaltung-mainz.html">Mainz<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      <a class="btn btn--glass" href="hausverwaltung-wiesbaden.html">Wiesbaden<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      <a class="btn btn--glass" href="hausverwaltung-darmstadt.html">Darmstadt<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      <a class="btn btn--glass" href="hausverwaltung-mannheim.html">Mannheim<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      <a class="btn btn--glass" href="hausverwaltung-ludwigshafen.html">Ludwigshafen<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      <a class="btn btn--glass" href="hausverwaltung-heidelberg.html">Heidelberg<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+    </div>
+    <p class="citykw">
+      <b>Mainz</b> Altstadt, Neustadt, Gonsenheim, Bretzenheim, Finthen, Hechtsheim, Lerchenberg ·
+      <b>Wiesbaden</b> Westend, Biebrich, Sonnenberg ·
+      <b>Darmstadt</b> Martinsviertel, Eberstadt ·
+      <b>Mannheim</b> Quadratestadt, Innenstadt, Neckarstadt, Lindenhof ·
+      <b>Ludwigshafen</b> Mitte, Friesenheim, Oggersheim ·
+      <b>Heidelberg</b> Altstadt, Weststadt, Neuenheim, Handschuhsheim
+    </p>
+    <div class="grid g2 g2--txt" style="margin-top:clamp(40px,5vw,72px); gap:clamp(28px,4vw,58px)">
+      <div>
+        <h3 class="h3">Ein Bestand, <span class="acc">vier Epochen</span></h3>
+        <p class="body" style="margin-top:16px">In Altstadt und Neustadt prägen Gründerzeit- und Nachkriegsbauten das Bild, teils mit Denkmalschutzauflagen, die jede Fassaden- oder Fenstermaßnahme beschlussfest vorbereitet sehen wollen. Auf dem Lerchenberg stehen Großwohnanlagen der 1960er- und 1970er-Jahre mit Aufzügen, Tiefgaragen und Gemeinschaftsheizungen, technisch anspruchsvolle Gemeinschaften mit hohem Abstimmungsbedarf. Jede dieser Bestandsgruppen braucht eine andere Rücklagenstrategie, pauschale Werte je Quadratmeter führen in Mainz regelmäßig in die Unterdeckung.</p>
+      </div>
+      <div>
+        <h3 class="h3">Und auch in <span class="acc">Ihrer Region</span></h3>
+        <p class="body" style="margin-top:16px">Diese Städte sind unsere Schwerpunkte. Wir betreuen Objekte im gesamten Rhein-Main-, Rhein-Neckar- und Rhein-Pfalz-Gebiet sowie an der Bergstraße, unter anderem in Bingen am Rhein, Rüsselsheim, Groß-Gerau, Worms und Lampertheim. Fragen Sie uns einfach, ob Ihr Objekt in unserem Einzugsgebiet liegt.</p>
+        <a class="btn btn--glass" style="margin-top:24px" href="#kontakt">Objekt anfragen<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 · EIGENTÜMER-PORTAL ================= -->
+<section class="sec--t" id="portal">
+  <div class="wrap">
+    <p class="slab"><span>Für Bestandskunden</span><i></i></p>
+    <div class="grid g2" style="gap:clamp(30px,4vw,64px); align-items:center">
+      <div>
+        <h2 class="h2" style="max-width:18ch">Ihr Eigentum. <span class="acc">Digital im Blick</span></h2>
+        <p class="body" style="margin-top:22px">Bestandskunden erreichen über unser Eigentümer-Portal alle wichtigen Unterlagen rund um ihre Immobilie: Abrechnungen, Beschlüsse, Protokolle und Nachrichten, jederzeit und von überall. Zugangsdaten erhalten Sie nach Beauftragung per E-Mail-Einladung.</p>
+        <div class="row" style="margin-top:26px">
+          <a class="btn" href="https://meineverwaltung24.de/login" target="_blank" rel="noopener">Eigentümer-Login<span class="ar"><svg aria-hidden="true"><use href="#i-ext"></use></svg></span></a>
+          <span class="sm">meineverwaltung24.de · DSGVO-konform, Hosting in Deutschland</span>
+        </div>
+      </div>
+      <div class="mcard">
+        <div class="panel">
+          <div class="row" style="justify-content:space-between; gap:10px">
+            <span class="ptitle">Ihre Unterlagen</span><span class="pillw">3 neu</span>
+          </div>
+          <div style="margin-top:14px">
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>Jahresabrechnung 2025.pdf</b><span>hochgeladen 31.03.2026</span></div><span class="amt">2,4 MB</span></div>
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>Protokoll Versammlung 04/2026</b><span>inklusive Beschlüsse</span></div><span class="amt">840 KB</span></div>
+            <div class="prow done"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-file"></use></svg></span><div class="t"><b>Beschlusssammlung, Stand 2026</b><span>§ 24 Abs. 7 WEG</span></div><span class="amt">1,1 MB</span></div>
+            <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-upload"></use></svg></span><div class="t"><b>Schadensmeldung einreichen</b><span>mit Foto-Upload</span></div><span class="ck"></span></div>
+            <div class="prow"><span class="tile--q tile"><svg aria-hidden="true"><use href="#i-users"></use></svg></span><div class="t"><b>Stammdaten aktualisieren</b><span>Bankverbindung, Anschrift</span></div><span class="ck"></span></div>
+          </div>
+        </div>
+        <p class="sm" style="margin-top:18px">Noch keine Einladung erhalten? Schreiben Sie uns, wir richten Ihren Zugang ein.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 12 · FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <p class="slab"><span>Häufige Fragen</span><i></i></p>
+    <div class="row" style="justify-content:space-between; align-items:flex-end; gap:26px">
+      <h2 class="h2" style="max-width:600px; flex:1 1 420px">Antworten auf die Fragen, die am häufigsten kommen.</h2>
+      <div class="segtabs" role="tablist" aria-label="FAQ-Themen">
+        <button role="tab" aria-selected="true" data-f="alle">Allgemein</button>
+        <button role="tab" aria-selected="false" data-f="kosten">Kosten</button>
+        <button role="tab" aria-selected="false" data-f="wechsel">Verwalterwechsel</button>
+        <button role="tab" aria-selected="false" data-f="recht">Recht und Fristen</button>
+      </div>
+    </div>
+
+    <div class="grid gside--wide" style="margin-top:clamp(44px,5vw,86px); gap:clamp(30px,5vw,80px)">
+      <div>
+        <h3 class="h3">Noch Fragen offen?</h3>
+        <p class="sm" style="margin-top:14px">Wir sind da. Schreiben Sie uns oder rufen Sie an, dann klären wir in wenigen Minuten, ob wir zu Ihrem Objekt passen.</p>
+        <a class="btn" style="margin-top:24px" href="#kontakt">Kontakt aufnehmen<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></a>
+        <p class="sm" style="margin-top:20px"><a class="acc" style="text-decoration:none; font-weight:600" href="tel:+4961313046803">06131 · 30 46 803</a></p>
+      </div>
+      <div class="faq">
+        <details open data-t="kosten">
+          <summary>Was kostet eine Hausverwaltung in Mainz bei Lander Immobilienservice?</summary>
+          <div class="ans"><p>Die Kosten richten sich nach Objektgröße, Einheitenzahl und Leistungsumfang. Nach einem kostenlosen Erstgespräch erstellen wir ein individuelles Angebot mit transparenter Honorarstruktur, wahlweise als monatliche Pauschale oder als Einheitspreis je Wohneinheit und Monat.</p><p>Sonderleistungen wie außerordentliche Eigentümerversammlungen, Bauprojektbetreuung oder die Begleitung von Rechtsstreitigkeiten weisen wir im Angebot getrennt aus, damit später keine Überraschung entsteht.</p></div>
+        </details>
+        <details data-t="wechsel recht">
+          <summary>Reicht für die Abberufung unserer Verwaltung eine einfache Mehrheit?</summary>
+          <div class="ans"><p>Ja. Nach § 26 Absatz 3 des Wohnungseigentumsgesetzes kann die Eigentümerversammlung den Verwalter jederzeit abberufen, es genügt die einfache Mehrheit der abgegebenen Stimmen. Ein wichtiger Grund ist seit der WEG-Reform 2020 nicht mehr erforderlich, der Verwaltervertrag endet spätestens sechs Monate nach der Abberufung.</p></div>
+        </details>
+        <details data-t="wechsel">
+          <summary>Wie funktioniert ein Verwalterwechsel?</summary>
+          <div class="ans"><p>Ein Verwalterwechsel dauert in der Regel rund 30 Tage und läuft in vier Phasen ab: Vorbereitung, Beschluss in der Eigentümerversammlung, Übergabe von Akten und Konten sowie Übernahme und Start.</p><p>Wir übernehmen die Phasen 3 und 4 vollständig. Ihr Aufwand bleibt darauf beschränkt, den bestehenden Vertrag zu prüfen und den Beschluss in der Versammlung zu fassen.</p></div>
+        </details>
+        <details data-t="wechsel">
+          <summary>Was passiert beim Wechsel mit Unterlagen, Konten und der Erhaltungsrücklage?</summary>
+          <div class="ans"><p>Die Übergabe von Akten, Konten, Verträgen und Dienstleistern ist Phase 3 des Wechsels und liegt vollständig bei uns. Wir stimmen die Kontenübergabe mit der bisherigen Verwaltung ab und dokumentieren den Bestand der Erhaltungsrücklage im Übergabeprotokoll. Die Gemeinschaft erhält damit einen prüfbaren Stand zum Tag der Übernahme.</p></div>
+        </details>
+        <details data-t="alle">
+          <summary>Welche Leistungen bietet Lander Immobilienservice an?</summary>
+          <div class="ans"><p>Das Leistungsspektrum umfasst WEG-Verwaltung, Mietverwaltung, Gewerbemietverwaltung und Sondereigentumsverwaltung. Eine Maklertätigkeit für Verkauf und Vermietung ist perspektivisch in Vorbereitung.</p></div>
+        </details>
+        <details data-t="alle">
+          <summary>Was ist Sondereigentumsverwaltung, und wann brauche ich sie?</summary>
+          <div class="ans"><p>Sondereigentumsverwaltung ist die Verwaltung einer einzelnen Eigentumswohnung innerhalb einer Wohnungseigentümergemeinschaft. Sie ist sinnvoll, wenn Ihre Wohnung vermietet ist, denn die WEG-Verwaltung betreut ausschließlich das Gemeinschaftseigentum und nicht Ihr Mietverhältnis.</p></div>
+        </details>
+        <details data-t="alle">
+          <summary>In welchen Regionen ist Lander Immobilienservice tätig?</summary>
+          <div class="ans"><p>Mit Sitz in Mainz verwalten wir Immobilien in den Regionen Rhein-Main, Rhein-Neckar, Rhein-Pfalz und an der Bergstraße, unter anderem in Mainz, Bingen am Rhein, Wiesbaden, Rüsselsheim, Groß-Gerau, Darmstadt, Worms, Mannheim, Ludwigshafen und Heidelberg.</p></div>
+        </details>
+        <details data-t="alle">
+          <summary>Wie schnell antworten Sie auf Anfragen?</summary>
+          <div class="ans"><p>In der Regel innerhalb von 24 Stunden, mit einem festen Ansprechpartner statt anonymer Warteschleife. Bei Notfällen erreichen Bestandskunden uns rund um die Uhr unter 06131 30 46 803.</p></div>
+        </details>
+        <details data-t="recht">
+          <summary>Bis wann muss die Jahresabrechnung einer WEG vorliegen?</summary>
+          <div class="ans"><p>Nach § 28 des Wohnungseigentumsgesetzes stellt der Verwalter nach Ablauf des Kalenderjahres eine Abrechnung über den Wirtschaftsplan auf und erstellt zusätzlich einen Vermögensbericht nach § 28 Absatz 4 WEG. Über die Anpassung der Vorschüsse beschließt die Eigentümerversammlung.</p></div>
+        </details>
+        <details data-t="recht">
+          <summary>Holen Sie Vergleichsangebote von Handwerkern ein?</summary>
+          <div class="ans"><p>Ja. Ab einer mit der Gemeinschaft festgelegten Auftragssumme holen wir Vergleichsangebote ein und legen sie dem Verwaltungsbeirat vor. Wir betreiben keine eigene Handwerksfirma, damit besteht bei der Auftragsvergabe kein Interessenkonflikt.</p></div>
+        </details>
+        <details data-t="kosten">
+          <summary>Was kostet ein Verwalterwechsel die Gemeinschaft?</summary>
+          <div class="ans"><p>Für die Übernahme durch uns entstehen der Gemeinschaft keine gesonderten Wechselkosten. Kosten können auf Seiten der bisherigen Verwaltung anfallen, etwa für die Erstellung der Schlussabrechnung. Wir prüfen den bestehenden Vertrag im Erstgespräch und sagen Ihnen, womit Sie rechnen müssen.</p></div>
+        </details>
+      </div>
+    </div>
+    <p class="sm" style="margin-top:30px">Mehr aus der Praxis der Verwaltung lesen Sie im <a class="acc" style="text-decoration:none; font-weight:600" href="wissen.html">Wissensbereich</a>, unter anderem zur Abberufung des WEG-Verwalters, zur Prüfung der Jahresabrechnung und zur Bemessung der Erhaltungsrücklage.</p>
+  </div>
+</section>
+
+<!-- ================= 13 · BEWERTUNGEN (Lime-Block) ================= -->
+<section class="sec" id="bewertungen" style="padding-top:0">
+  <div class="wrap">
+    <div class="limeblock">
+      <div class="inr">
+        <div class="row" style="justify-content:space-between; align-items:flex-start; gap:22px">
+          <span class="chip"><span class="b"><svg aria-hidden="true"><use href="#i-star"></use></svg></span>Bewertungen</span>
+          <div class="row" style="gap:10px">
+            <button class="iconbtn" id="tprev" aria-label="Vorherige Bewertung"><svg aria-hidden="true"><use href="#i-arr-l"></use></svg></button>
+            <button class="iconbtn" id="tnext" aria-label="Nächste Bewertung"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></button>
+          </div>
+        </div>
+        <h2 class="h2" style="margin-top:22px; max-width:20ch">Eigentümer, die sich für uns entschieden haben.</h2>
+        <p class="lead" style="margin-top:20px">4,99 von 5 bei 44 Bewertungen, 100 Prozent Empfehlungsquote, ausgezeichnet mit dem Siegel „Von Kunden empfohlen 2026". Stand September 2026, nachlesbar bei ProvenExpert und Google.</p>
+
+      </div>
+
+      <div class="tstrip" id="tstrip">
+          <article class="tcard">
+            <p class="nm">Lisa</p>
+            <p class="qt">„Heizung im Haus ausgefallen, Freitagnachmittag. Handwerker war Samstagvormittag da. Mehr muss ich nicht sagen."</p>
+            <div class="st"><b>14 h</b><span>Von der Meldung bis behoben</span></div>
+          </article>
+          <article class="tcard">
+            <p class="nm">Ella G.</p>
+            <p class="qt">„Wir haben diese per Beschluss gewählt. Beide arbeiten pragmatisch und haben eine Hands On Mentalität, was uns in der WEG freut. Ob juristische Fragen oder Baumängel, absolut einwandfrei!"</p>
+            <div class="st"><b>1</b><span>Beschluss in der Eigentümerversammlung</span></div>
+          </article>
+          <article class="tcard">
+            <p class="nm">Jennifer Silvestre Pinheiro</p>
+            <p class="qt">„Besonders schätze ich die strukturierte Arbeitsweise und dass alles schriftlich beantwortet wird, sodass man immer etwas in der Hand hat. Gerade für mich als Kapitalanleger, der nicht vor Ort wohnt, ist das sehr wichtig."</p>
+            <div class="st"><b>100 %</b><span>Schriftlich beantwortet</span></div>
+          </article>
+          <article class="tcard">
+            <p class="nm">Eigentümer nach Verwalterwechsel</p>
+            <p class="qt">„Bei Verwaltungswechsel wurden Ungereimtheiten schnell beseitigt und geklärt. Kurzum: das Chaos der Vor-Verwaltung wurde beseitigt und Ordnung geschaffen."</p>
+            <div class="st"><b>30 Tage</b><span>Bis zum sauberen Start</span></div>
+          </article>
+          <article class="tcard">
+            <p class="nm">Petra Breitkreuz</p>
+            <p class="qt">„Abrechnungen kamen nachvollziehbar und termingerecht, und auch die Kommunikation war stets freundlich und klar. Genau so wünscht man sich eine Hausverwaltung im Alltag."</p>
+            <div class="st"><b>4,99</b><span>Gesamtnote aus 44 Bewertungen</span></div>
+          </article>
+          <article class="tcard">
+            <p class="nm">Kai Damm</p>
+            <p class="qt">„Besonders angenehm ist, dass viele Themen proaktiv gelöst werden und nicht erst nach mehrfacher Nachfrage."</p>
+            <div class="st"><b>&lt; 24 h</b><span>Verbindliche Rückmeldung</span></div>
+          </article>
+      </div>
+
+      <div class="inr">
+        <div class="row" style="justify-content:center; margin-top:clamp(30px,3.4vw,48px)">
+          <a class="btn btn--dark btn--plain" href="https://www.provenexpert.com/de-de/lander-immobilienservice-mainz/" rel="noopener">Alle 44 Bewertungen ansehen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 14 · KONTAKT UND ANFRAGE ================= -->
+<section class="bleed" id="kontakt">
+  <div class="bg"><picture><source type="image/webp" sizes="100vw" srcset="bilder/kontakt-hausverwaltung-mainz-abendlicht-1200.webp 1200w, bilder/kontakt-hausverwaltung-mainz-abendlicht.webp 2000w, bilder/kontakt-hausverwaltung-mainz-abendlicht-2560.webp 2560w"><img src="bilder/kontakt-hausverwaltung-mainz-abendlicht.jpg" sizes="100vw" srcset="bilder/kontakt-hausverwaltung-mainz-abendlicht-1200.jpg 1200w, bilder/kontakt-hausverwaltung-mainz-abendlicht.jpg 2000w, bilder/kontakt-hausverwaltung-mainz-abendlicht-2560.jpg 2560w" width="2000" height="1000" alt="Stadtansicht mit Wohnhochhäusern bei Nacht, Symbolbild für den Kontaktbereich von Lander Immobilienservice in Mainz" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://lander.immobilien/lander-tag.webp'"></picture></div>
+  <div class="inner wrap" style="padding-top:clamp(84px,10vw,150px); padding-bottom:clamp(52px,6vw,96px)">
+    <span class="chip"><span class="b"><svg aria-hidden="true"><use href="#i-phone"></use></svg></span>Kontakt und Anfrage</span>
+    <h2 class="dsp" style="margin-top:24px; max-width:16ch">Sprechen wir über <span class="acc">Ihr Objekt</span></h2>
+    <div style="margin-top:clamp(56px,7vw,120px); max-width:640px">
+      <p class="h4" style="font-weight:400">Unverbindliche Anfrage</p>
+      <form class="iform" style="margin-top:14px" novalidate>
+        <label class="vh" for="mail">E-Mail-Adresse</label>
+        <span class="fld"><input id="mail" name="mail" type="email" inputmode="email" autocomplete="email" placeholder="Ihre E-Mail-Adresse"></span>
+        <button class="btn" type="submit">Anfrage senden<span class="ar"><svg aria-hidden="true"><use href="#i-arr-nr"></use></svg></span></button>
+      </form>
+      <p class="sm" style="margin-top:16px">Wir melden uns innerhalb von 24 Stunden. Unverbindlich, kostenlos, mit einem festen Ansprechpartner. <a class="acc" style="text-decoration:none" href="datenschutz.html">Datenschutzhinweise</a></p>
+    </div>
+    <div class="grid g4" style="margin-top:clamp(44px,5vw,72px)">
+      <div class="glass">
+        <p class="gk">Anfrage WEG-Verwaltung</p>
+        <p class="sm" style="margin-top:10px; hyphens:auto">Für Eigentümergemeinschaften: Gemeinschaftseigentum, Versammlung, Hausgeld&shy;abrechnung.</p>
+        <a class="btn btn--glass btn--wide" style="margin-top:16px" href="https://lander.immobilien/Lander_Anfrage_WEG.pdf">Formular als PDF<span class="ar"><svg aria-hidden="true"><use href="#i-ext"></use></svg></span></a>
+      </div>
+      <div class="glass">
+        <p class="gk">Anfrage Miete und Gewerbe</p>
+        <p class="sm" style="margin-top:10px; hyphens:auto">Für Eigentümer von Wohn- oder Gewerbe&shy;objekten: Mietenbuchhaltung, Nebenkosten, Mieter&shy;betreuung.</p>
+        <a class="btn btn--glass btn--wide" style="margin-top:16px" href="https://lander.immobilien/Lander_Anfrage_Mietverwaltung.pdf">Formular als PDF<span class="ar"><svg aria-hidden="true"><use href="#i-ext"></use></svg></span></a>
+      </div>
+      <div class="glass">
+        <p class="gk">Direkter Kontakt</p>
+        <p class="sm" style="margin-top:10px"><a class="acc" style="text-decoration:none; font-weight:600; font-size:17px" href="tel:+4961313046803">06131 · 30 46 803</a><br><a style="text-decoration:none" href="mailto:info@lander-immobilien.de">info@lander-immobilien.de</a></p>
+        <p class="xs" style="margin-top:10px">Waldstraße 24, 55124 Mainz<br>Mo bis Fr, 9 bis 17 Uhr</p>
+      </div>
+      <div class="glass">
+        <p class="gk">Bewertungen</p>
+        <p class="sm" style="margin-top:10px"><b style="color:var(--fg)">4,99 von 5</b> bei 44 Bewertungen, 100 Prozent Empfehlungsquote.</p>
+        <p class="sm" style="margin-top:12px; display:flex; flex-direction:column; gap:7px">
+          <a class="acc" style="text-decoration:none; font-weight:600" href="https://www.provenexpert.com/de-de/lander-immobilienservice-mainz/" rel="noopener">ProvenExpert</a>
+          <a class="acc" style="text-decoration:none; font-weight:600" href="https://share.google/TWUnYjCFIIbrpsDVg" rel="noopener">Google</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 15 · FOOTER ================= -->
+<footer>
+  <div class="wrap" style="padding-top:clamp(64px,7vw,116px)">
+    <span class="chip"><span class="b"><svg aria-hidden="true"><use href="#i-award"></use></svg></span>Jetzt anfangen</span>
+    <div class="row" style="margin-top:26px; justify-content:space-between; align-items:flex-start; gap:34px">
+      <h2 class="h2" style="max-width:22ch">Ihr Eigentum in besten Händen.<br>Erreichbar, wenn es zählt.<br>Abrechnungen, die stimmen.</h2>
+      <div>
+        <p class="ftlab">Folgen</p>
+        <div class="row" style="gap:10px">
+          <a class="iconbtn" href="https://www.instagram.com/lander.immobilien/" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-award"></use></svg></a>
+          <a class="iconbtn" href="https://de.linkedin.com/company/lander-immobilienservice" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-users"></use></svg></a>
+          <a class="iconbtn" href="https://www.provenexpert.com/de-de/lander-immobilienservice-mainz/" rel="noopener" aria-label="Bewertungen bei ProvenExpert"><svg aria-hidden="true"><use href="#i-star"></use></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g4 ftlinks" style="margin-top:clamp(44px,5vw,80px); padding-top:34px; border-top:1px solid var(--line); gap:26px">
+      <nav aria-label="Leistungen">
+        <p class="ftlab">Leistungen</p>
+        <a href="weg-verwaltung">WEG-Verwaltung</a>
+        <a href="mietverwaltung">Mietverwaltung</a>
+        <a href="gewerbemietverwaltung">Gewerbemietverwaltung</a>
+        <a href="sondereigentumsverwaltung">Sondereigentumsverwaltung</a>
+        <a href="#wechsel">Verwalterwechsel</a>
+        <a href="verwalter-check.html">Verwalter-Check</a>
+      </nav>
+      <nav aria-label="Standorte">
+        <p class="ftlab">Standorte</p>
+        <a href="hausverwaltung-mainz.html">Hausverwaltung Mainz</a>
+        <a href="hausverwaltung-wiesbaden.html">Hausverwaltung Wiesbaden</a>
+        <a href="hausverwaltung-darmstadt.html">Hausverwaltung Darmstadt</a>
+        <a href="hausverwaltung-mannheim.html">Hausverwaltung Mannheim</a>
+        <a href="hausverwaltung-ludwigshafen.html">Hausverwaltung Ludwigshafen</a>
+        <a href="hausverwaltung-heidelberg.html">Hausverwaltung Heidelberg</a>
+      </nav>
+      <nav aria-label="Unternehmen">
+        <p class="ftlab">Unternehmen</p>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#netzwerk">Netzwerk</a>
+        <a href="wissen.html">Wissen</a>
+        <a href="mailto:info@lander-immobilien.de">Karriere</a>
+        <a href="https://meineverwaltung24.de/login" rel="noopener">Eigentümer-Portal</a>
+      </nav>
+      <div>
+        <p class="ftlab">Kontakt</p>
+        <p class="sm">Lander Immobilienservice<br>Inh. Philipp Lander<br>Waldstraße 24<br>55124 Mainz</p>
+        <p class="sm" style="margin-top:10px"><a class="acc" style="text-decoration:none; font-weight:600" href="tel:+4961313046803">06131 · 30 46 803</a><br><a style="text-decoration:none" href="mailto:info@lander-immobilien.de">info@lander-immobilien.de</a></p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:34px; padding-top:22px; border-top:1px solid var(--line); justify-content:space-between; gap:18px">
+      <p class="xs" style="max-width:78ch">© 2026 Lander Immobilienservice · Inh. Philipp Lander · Tätigkeit als Wohnimmobilienverwalter gemäß § 34c Abs. 1 Satz 1 Nr. 4 GewO, Aufsichtsbehörde: Landeshauptstadt Mainz, Standes-, Rechts- und Ordnungsamt.</p>
+      <span class="row" style="gap:20px">
+        <a class="xs" style="text-decoration:none" href="impressum.html">Impressum</a>
+        <a class="xs" style="text-decoration:none" href="datenschutz.html">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+  <p class="wordmark" style="margin-top:clamp(28px,3vw,52px); margin-bottom:-.145em" aria-hidden="true">Lander</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"RealEstateAgent",
+      "@id":"https://lander.immobilien/#org",
+      "name":"Lander Immobilienservice",
+      "alternateName":"Hausverwaltung Lander Mainz",
+      "description":"Inhabergeführte Hausverwaltung in Mainz. WEG-Verwaltung, Mietverwaltung, Gewerbemietverwaltung und Sondereigentumsverwaltung in Rhein-Main, Rhein-Neckar, Rhein-Pfalz und an der Bergstraße.",
+      "url":"https://lander.immobilien/",
+      "telephone":"+4961313046803",
+      "email":"info@lander-immobilien.de",
+      "founder":{"@type":"Person","name":"Philipp Lander"},
+      "foundingDate":"2025",
+      "numberOfEmployees":{"@type":"QuantitativeValue","value":4},
+      "address":{"@type":"PostalAddress","streetAddress":"Waldstraße 24","postalCode":"55124","addressLocality":"Mainz","addressRegion":"RP","addressCountry":"DE"},
+      "geo":{"@type":"GeoCoordinates","latitude":50.0010,"longitude":8.2099},
+      "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],
+      "areaServed":[
+        {"@type":"City","name":"Mainz"},{"@type":"City","name":"Wiesbaden"},{"@type":"City","name":"Darmstadt"},
+        {"@type":"City","name":"Mannheim"},{"@type":"City","name":"Ludwigshafen am Rhein"},{"@type":"City","name":"Heidelberg"},
+        {"@type":"City","name":"Worms"},{"@type":"City","name":"Bingen am Rhein"},{"@type":"City","name":"Groß-Gerau"},
+        {"@type":"City","name":"Rüsselsheim am Main"},{"@type":"City","name":"Lampertheim"}
+      ],
+      "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.99","bestRating":"5","ratingCount":"44"},
+      "sameAs":[
+        "https://www.provenexpert.com/de-de/lander-immobilienservice-mainz/",
+        "https://www.instagram.com/lander.immobilien/",
+        "https://de.linkedin.com/company/lander-immobilienservice"
+      ],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog","name":"Verwaltungsleistungen",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"WEG-Verwaltung","serviceType":"Verwaltung von Wohnungseigentümergemeinschaften","provider":{"@id":"https://lander.immobilien/#org"},"areaServed":"Rhein-Main, Rhein-Neckar, Rhein-Pfalz, Bergstraße","url":"https://lander.immobilien/weg-verwaltung"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mietverwaltung","serviceType":"Verwaltung von Wohn-Mietobjekten","provider":{"@id":"https://lander.immobilien/#org"},"url":"https://lander.immobilien/mietverwaltung"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gewerbemietverwaltung","serviceType":"Verwaltung von Gewerbeobjekten","provider":{"@id":"https://lander.immobilien/#org"},"url":"https://lander.immobilien/gewerbemietverwaltung"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sondereigentumsverwaltung","serviceType":"Verwaltung einzelner Eigentumseinheiten","provider":{"@id":"https://lander.immobilien/#org"},"url":"https://lander.immobilien/sondereigentumsverwaltung"}}
+        ]
+      }
+    },
+    {
+      "@type":"WebSite","@id":"https://lander.immobilien/#site","url":"https://lander.immobilien/",
+      "name":"Lander Immobilienservice","inLanguage":"de-DE","publisher":{"@id":"https://lander.immobilien/#org"}
+    },
+    {
+      "@type":"HowTo",
+      "name":"Verwalterwechsel in 30 Tagen",
+      "description":"Ablauf eines Verwalterwechsels in einer Wohnungseigentümergemeinschaft in vier Phasen.",
+      "totalTime":"P30D",
+      "step":[
+        {"@type":"HowToStep","position":1,"name":"Vorbereitung","text":"Bestehenden Verwaltervertrag prüfen, Anbieter vergleichen, Erstgespräch mit der neuen Verwaltung führen."},
+        {"@type":"HowToStep","position":2,"name":"Beschluss","text":"Abberufung und Neubestellung in der Eigentümerversammlung beschließen. Nach § 26 Absatz 3 WEG genügt die einfache Mehrheit der abgegebenen Stimmen."},
+        {"@type":"HowToStep","position":3,"name":"Übergabe","text":"Übernahme der Akten, Konten, Verträge und Dienstleister durch die neue Verwaltung, inklusive Dokumentation der Erhaltungsrücklage im Übergabeprotokoll."},
+        {"@type":"HowToStep","position":4,"name":"Übernahme","text":"Mieter und Dienstleister informieren, Start der laufenden Verwaltung."}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Was kostet eine Hausverwaltung in Mainz bei Lander Immobilienservice?","acceptedAnswer":{"@type":"Answer","text":"Die Kosten richten sich nach Objektgröße, Einheitenzahl und Leistungsumfang. Nach einem kostenlosen Erstgespräch erstellen wir ein individuelles Angebot mit transparenter Honorarstruktur, wahlweise als monatliche Pauschale oder als Einheitspreis je Wohneinheit und Monat. Sonderleistungen wie außerordentliche Eigentümerversammlungen oder Bauprojektbetreuung werden im Angebot getrennt ausgewiesen."}},
+        {"@type":"Question","name":"Reicht für die Abberufung unserer Verwaltung eine einfache Mehrheit?","acceptedAnswer":{"@type":"Answer","text":"Ja. Nach § 26 Absatz 3 des Wohnungseigentumsgesetzes kann die Eigentümerversammlung den Verwalter jederzeit abberufen, es genügt die einfache Mehrheit der abgegebenen Stimmen. Ein wichtiger Grund ist seit der WEG-Reform 2020 nicht mehr erforderlich, der Verwaltervertrag endet spätestens sechs Monate nach der Abberufung."}},
+        {"@type":"Question","name":"Wie funktioniert ein Verwalterwechsel?","acceptedAnswer":{"@type":"Answer","text":"Ein Verwalterwechsel dauert in der Regel rund 30 Tage und läuft in vier Phasen ab: Vorbereitung, Beschluss in der Eigentümerversammlung, Übergabe von Akten und Konten sowie Übernahme und Start. Lander Immobilienservice übernimmt die Phasen 3 und 4 vollständig."}},
+        {"@type":"Question","name":"Was passiert beim Wechsel mit Unterlagen, Konten und der Erhaltungsrücklage?","acceptedAnswer":{"@type":"Answer","text":"Die Übergabe von Akten, Konten, Verträgen und Dienstleistern ist Phase 3 des Wechsels und liegt vollständig bei der neuen Verwaltung. Die Kontenübergabe wird mit der bisherigen Verwaltung abgestimmt, der Bestand der Erhaltungsrücklage im Übergabeprotokoll dokumentiert."}},
+        {"@type":"Question","name":"Welche Leistungen bietet Lander Immobilienservice an?","acceptedAnswer":{"@type":"Answer","text":"WEG-Verwaltung, Mietverwaltung, Gewerbemietverwaltung und Sondereigentumsverwaltung. Eine Maklertätigkeit für Verkauf und Vermietung ist perspektivisch in Vorbereitung."}},
+        {"@type":"Question","name":"Was ist Sondereigentumsverwaltung, und wann brauche ich sie?","acceptedAnswer":{"@type":"Answer","text":"Sondereigentumsverwaltung ist die Verwaltung einer einzelnen Eigentumswohnung innerhalb einer Wohnungseigentümergemeinschaft. Sie ist sinnvoll, wenn die Wohnung vermietet ist, denn die WEG-Verwaltung betreut ausschließlich das Gemeinschaftseigentum und nicht das Mietverhältnis."}},
+        {"@type":"Question","name":"In welchen Regionen ist Lander Immobilienservice tätig?","acceptedAnswer":{"@type":"Answer","text":"Mit Sitz in Mainz verwaltet Lander Immobilienservice Immobilien in den Regionen Rhein-Main, Rhein-Neckar, Rhein-Pfalz und an der Bergstraße, unter anderem in Mainz, Bingen am Rhein, Wiesbaden, Rüsselsheim, Groß-Gerau, Darmstadt, Worms, Mannheim, Ludwigshafen und Heidelberg."}},
+        {"@type":"Question","name":"Wie schnell antwortet Lander Immobilienservice auf Anfragen?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 24 Stunden, mit einem festen Ansprechpartner statt anonymer Warteschleife. Bei Notfällen erreichen Bestandskunden Lander Immobilienservice rund um die Uhr unter 06131 30 46 803."}},
+        {"@type":"Question","name":"Bis wann muss die Jahresabrechnung einer WEG vorliegen?","acceptedAnswer":{"@type":"Answer","text":"Nach § 28 des Wohnungseigentumsgesetzes stellt der Verwalter nach Ablauf des Kalenderjahres eine Abrechnung über den Wirtschaftsplan auf und erstellt zusätzlich einen Vermögensbericht nach § 28 Absatz 4 WEG. Über die Anpassung der Vorschüsse beschließt die Eigentümerversammlung."}},
+        {"@type":"Question","name":"Holt die Hausverwaltung Vergleichsangebote von Handwerkern ein?","acceptedAnswer":{"@type":"Answer","text":"Ja. Ab einer mit der Gemeinschaft festgelegten Auftragssumme werden Vergleichsangebote eingeholt und dem Verwaltungsbeirat vorgelegt. Lander Immobilienservice betreibt keine eigene Handwerksfirma, damit besteht bei der Auftragsvergabe kein Interessenkonflikt."}},
+        {"@type":"Question","name":"Was kostet ein Verwalterwechsel die Gemeinschaft?","acceptedAnswer":{"@type":"Answer","text":"Für die Übernahme durch Lander Immobilienservice entstehen der Gemeinschaft keine gesonderten Wechselkosten. Kosten können auf Seiten der bisherigen Verwaltung anfallen, etwa für die Erstellung der Schlussabrechnung."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+/* Hell- und Dunkelmodus. Ohne gespeicherte Wahl folgt die Seite dem Systemwunsch. */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('tgl');
+  var opts=[].slice.call(document.querySelectorAll('[data-theme-set]'));
+  var mq=window.matchMedia('(prefers-color-scheme: light)');
+  var KEY='lander-theme';
+  var read=function(){ try{ var v=localStorage.getItem(KEY); return (v==='light'||v==='dark') ? v : null; }catch(e){ return null; } };
+  var save=function(v){ try{ if(v){ localStorage.setItem(KEY, v); } else { localStorage.removeItem(KEY); } }catch(e){} };
+  /* Der tatsaechlich sichtbare Modus, egal ob gewaehlt oder vom Geraet vorgegeben. */
+  var current=function(){
+    var a=root.getAttribute('data-theme');
+    if(a) return a;
+    return mq.matches ? 'light' : 'dark';
+  };
+  var sync=function(choice){
+    var light = current()==='light';
+    if(btn){
+      btn.setAttribute('aria-pressed', String(light));
+      btn.setAttribute('title', light ? 'Auf dunklen Modus umschalten' : 'Auf hellen Modus umschalten');
+    }
+    /* aria-pressed spiegelt die getroffene Wahl, is-on den tatsaechlich
+       sichtbaren Modus. Bei "System" ist keine Wahl gedrueckt, das Wort in der
+       Ueberschrift soll trotzdem den echten Zustand zeigen. */
+    var eff = current();
+    opts.forEach(function(b){
+      var want=b.getAttribute('data-theme-set');
+      b.setAttribute('aria-pressed', String(choice ? (want===choice) : (want==='system')));
+      b.classList.toggle('is-on', want===eff);
+    });
+  };
+  var apply=function(v){
+    if(v) root.setAttribute('data-theme', v); else root.removeAttribute('data-theme');
+    sync(v);
+  };
+  apply(read());
+  if(btn) btn.addEventListener('click', function(){
+    var next = current()==='light' ? 'dark' : 'light';
+    apply(next); save(next);
+  });
+  opts.forEach(function(b){
+    b.addEventListener('click', function(){
+      var want=b.getAttribute('data-theme-set');
+      var v = (want==='system') ? null : want;
+      apply(v); save(v);
+    });
+  });
+  if(mq.addEventListener) mq.addEventListener('change', function(){ if(!read()) apply(null); });
+})();
+
+/* Faktenband: die Pfeile erscheinen nur, wenn die Panels wirklich scrollen. */
+(function(){
+  var g=document.getElementById('fbgrid');
+  if(!g) return;
+  var prev=document.getElementById('fbprev'), next=document.getElementById('fbnext');
+  var ix=document.getElementById('fbix');
+  var cards=g.querySelectorAll('.fb-p');
+  var step=function(){
+    if(cards.length<2) return g.clientWidth;
+    return cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+  };
+  var pad=function(n){ return (n<10?'0':'')+n; };
+  var mark=function(){
+    var st=step();
+    var first=st>0 ? Math.round(g.scrollLeft/st) : 0;
+    first=Math.max(0, Math.min(cards.length-1, first));
+    var vis=st>0 ? Math.max(1, Math.round(g.clientWidth/st)) : 1;
+    var last=Math.min(cards.length, first+vis);
+    if(ix) ix.textContent = vis>1
+      ? '[ '+pad(first+1)+'\u2013'+pad(last)+' / '+pad(cards.length)+' ]'
+      : '[ '+pad(first+1)+' / '+pad(cards.length)+' ]';
+    var atEnd = g.scrollLeft + g.clientWidth >= g.scrollWidth - 4;
+    if(prev) prev.disabled = g.scrollLeft <= 4;
+    if(next) next.disabled = atEnd;
+  };
+  if(prev) prev.addEventListener('click', function(){ g.scrollBy({left:-step(), behavior:'smooth'}); });
+  if(next) next.addEventListener('click', function(){ g.scrollBy({left: step(), behavior:'smooth'}); });
+  g.addEventListener('scroll', mark, {passive:true});
+  mark();
+  if(window.ResizeObserver) new ResizeObserver(mark).observe(g); else window.addEventListener('resize', mark);
+})();
+
+/* Mobile Navigation */
+(function(){
+  var b=document.getElementById('burger'), n=document.getElementById('mnav');
+  if(!b||!n) return;
+  b.addEventListener('click',function(){
+    var open = n.getAttribute('data-open')==='1';
+    n.setAttribute('data-open', open?'0':'1');
+    b.setAttribute('aria-expanded', String(!open));
+    b.setAttribute('aria-label', open?'Menü öffnen':'Menü schließen');
+  });
+  n.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ n.setAttribute('data-open','0'); b.setAttribute('aria-expanded','false'); }
+  });
+})();
+
+/* FAQ-Filter über die segmentierten Tabs */
+(function(){
+  var tabs=document.querySelectorAll('.segtabs button');
+  var items=document.querySelectorAll('#faq details');
+  if(!tabs.length) return;
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){ x.setAttribute('aria-selected', String(x===t)); });
+      var f=t.getAttribute('data-f');
+      items.forEach(function(d){
+        var show = f==='alle' || (d.getAttribute('data-t')||'').split(' ').indexOf(f)>-1;
+        d.hidden=!show; d.open=false;
+      });
+      var first=[].slice.call(items).filter(function(d){return !d.hidden;})[0];
+      if(first) first.open=true;
+    });
+  });
+})();
+
+/* Bewertungs-Karussell */
+(function(){
+  var s=document.getElementById('tstrip'); if(!s) return;
+  var step=function(){ var c=s.querySelector('.tcard'); return c ? c.getBoundingClientRect().width+16 : 320; };
+  var p=document.getElementById('tprev'), n=document.getElementById('tnext');
+  if(p) p.addEventListener('click',function(){ s.scrollBy({left:-step(), behavior:'smooth'}); });
+  if(n) n.addEventListener('click',function(){ s.scrollBy({left: step(), behavior:'smooth'}); });
+})();
+
+/* Anfrageformular ist im Entwurf nicht angebunden */
+(function(){
+  var f=document.querySelector('#kontakt form'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var m=f.parentNode.querySelector('.form-note');
+    if(!m){
+      m=document.createElement('p');
+      m.className='sm form-note'; m.setAttribute('role','status');
+      m.style.cssText='margin-top:14px;padding:12px 16px;border-radius:16px;border:1px solid var(--line);color:var(--acc);max-width:640px';
+      f.parentNode.insertBefore(m, f.nextSibling);
+    }
+    m.textContent='Entwurf: das Formular ist noch nicht angebunden. Im fertigen Stand geht die Anfrage an info@lander-immobilien.de.';
+  });
+})();
+</script>
+</body>
+</html>
