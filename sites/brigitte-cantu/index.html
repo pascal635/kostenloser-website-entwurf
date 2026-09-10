@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haushaltshilfe und Alltagshilfe in [ORT] | Cantu Alltagshilfe</title>
+<meta name="description" content="Haushaltshilfe, Alltagshilfe und Seniorenhilfe in [ORT]. Immer dieselbe Person, kein Vertrag, Kennenlernen kostenlos. Brigitte Cantu, [TELEFON].">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://dev.likovo.de/brigitte-cantu/">
+<meta property="og:url" content="https://dev.likovo.de/brigitte-cantu/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Haushaltshilfe und Alltagshilfe in [ORT] | Cantu Alltagshilfe">
+<meta property="og:description" content="Immer dieselbe Person, kein Vertrag, Kennenlernen kostenlos.">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS · Farbe aus Claré, Oberflaeche aus Vitax, Layout aus Vestora
+   Radien bewusst klein: 8 bis 16 Pixel. Pillen bleiben nur bei
+   Buttons und Chips, das ist die Signatur aller drei Vorlagen.
+   ============================================================ */
+:root{
+  /* Aus d86bd… (Clare) gemessen. Weiss traegt die Flaeche, Blau die Struktur,
+     Petrol alles Klickbare. Orange kommt in der Vorlage nur in den Bewertungs-
+     sternchen vor, also nirgends in der UI. */
+  --white:#FFFFFF; --mist:#F2F6FC; --sky:#E3EDF7;
+  --line:#DCE6F1; --line-soft:#EBF1F8;
+  --teal-800:#114A62; --teal-700:#175C79; --teal-500:#276782; --teal-300:#7FADC0; --teal-100:#DCEAF1;
+  --ink:#0B2430; --ink-muted:#55707E; --ink-soft:#8AA3AF;
+  /* Nur fuer Platzhalter, gehoert bewusst NICHT zur Palette und verschwindet mit den echten Daten */
+  --flag:#E8892B; --flag-soft:#F6B24A; --flag-bg:#FCEBD6;
+  --deep:#0D2D46;            /* bläulichere Tiefe für Fotoschleier und dunkle Karten */
+  --grad-sky:linear-gradient(180deg,#FFFFFF 0%,#EEF4FB 42%,#DCE9F6 100%);
+  --grad-band:linear-gradient(155deg,#5C87A8 0%,#3D6C90 38%,#1D4E6E 100%);
+  --grad-soft:linear-gradient(180deg,#F7FAFD 0%,#E9F1F9 100%);
+  --night:#0A2029;
+
+  --fd:"Manrope","Segoe UI",system-ui,-apple-system,sans-serif;
+  --ft:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+
+  --fs-hero:clamp(2.25rem,1.15rem + 3.3vw,3.9rem);
+  --fs-state:clamp(1.8rem,1.05rem + 3vw,3.5rem);
+  --fs-h2:clamp(1.75rem,1.2rem + 2.2vw,3rem);
+  --fs-h3:clamp(1.1rem,1.03rem + 0.4vw,1.32rem);
+  --fs-lead:clamp(1.08rem,1.02rem + 0.28vw,1.22rem);
+  --fs-body:1.125rem; --fs-small:1rem; --fs-micro:.875rem;
+
+  --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+
+  /* Radien 8 bis 16 */
+  --r-xs:8px; --r-sm:10px; --r-md:12px; --r-lg:16px; --r-pill:999px;
+
+  --e-1:0 0 0 1px var(--line-soft);
+  --e-2:0 1px 2px rgba(11,36,48,.04), 0 8px 20px -10px rgba(11,36,48,.14);
+  --e-3:0 2px 6px rgba(11,36,48,.06), 0 16px 36px -14px rgba(11,36,48,.2);
+  --ease:cubic-bezier(.22,.9,.28,1); --dur:.26s;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+/* overflow-x nur auf html: auf body macht es den Body zum Scroll-Container
+   und position:sticky funktioniert nicht mehr */
+html{overflow-x:clip}
+body{max-width:100%}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--ft);font-size:var(--fs-body);line-height:1.6}
+img{display:block;max-width:100%}
+p{margin:0 0 var(--s4)}
+a{color:var(--teal-700)}
+h1,h2,h3{font-family:var(--fd);font-weight:500;letter-spacing:-.03em;line-height:1.14;margin:0}
+h3{font-size:var(--fs-h3);font-weight:600;letter-spacing:-.02em;line-height:1.3}
+:focus-visible{outline:3px solid var(--teal-500);outline-offset:3px;border-radius:var(--r-xs)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+.skip{position:absolute;left:-9999px;top:0;background:var(--teal-800);color:#fff;padding:14px 22px;z-index:300}
+.skip:focus{left:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{max-width:1440px;margin:0 auto;padding-inline:clamp(18px,3.2vw,48px)}
+.sec{padding-block:clamp(64px,8vw,132px)}
+.sec--tight{padding-block:clamp(44px,5vw,80px)}
+.sec--sky{background:var(--sky)}
+.sec--mist{background:var(--mist)}
+/* Sektionskopf mittig, wie in der Vorlage */
+.head{text-align:center;max-width:56ch;margin:0 auto clamp(40px,5vw,72px)}
+.head .eyebrow{margin-bottom:var(--s4)}
+.head h2{font-size:var(--fs-h2)}
+.head p{margin:var(--s5) auto 0;color:var(--ink-muted);font-size:var(--fs-lead);max-width:52ch}
+.head p.statement{font-size:var(--fs-state);color:var(--ink);max-width:none;margin-top:var(--s4)}
+/* wie beim Statement: .head p wuerde sonst die Groesse ueberschreiben */
+.head p.bigstate{font-size:clamp(1.75rem,1.05rem + 2.9vw,3.3rem);color:var(--ink);max-width:23ch;margin:var(--s5) auto clamp(64px,7vw,120px)}
+.head--wide{max-width:64ch}
+.dim{color:var(--ink-soft)} .hl{color:var(--teal-700)}
+
+/* Icons aus dem Untitled-Set, als Sprite eingebunden */
+.ic{width:1em;height:1em;fill:currentColor;flex:none}
+.ic-20{width:20px;height:20px} .ic-22{width:22px;height:22px} .ic-24{width:24px;height:24px}
+.ic-14{width:14px;height:14px} .ic-16{width:16px;height:16px} .ic-18{width:18px;height:18px}
+
+/* Platzhalter */
+.ph-i{background:var(--flag-bg);box-shadow:0 0 0 1px var(--flag-soft) inset;border-radius:var(--r-xs);padding:1px 5px;color:#8A4A08;font-weight:600}
+.on-dark .ph-i,.ph-i.on-dark{background:rgba(246,178,74,.2);box-shadow:0 0 0 1px rgba(246,178,74,.55) inset;color:#FBDCAF}
+.hero h1 .ph-i,.stat .n .ph-i,.footstate .ph-i,.tagwrap h2 .ph-i,.statement .ph-i{background:none;box-shadow:none;border-radius:0;padding:0;color:inherit;border-bottom:.08em dotted var(--flag-soft)}
+.tagwrap h2 .ph-i,.statement .ph-i{border-bottom-color:var(--flag)}
+
+/* Eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:var(--fs-micro);font-weight:600;color:var(--ink-muted);margin-bottom:var(--s5)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal-700);flex:none}
+.rule-row{display:flex;align-items:center;gap:var(--s5);margin-bottom:var(--s7)}
+.rule-row .eyebrow{margin-bottom:0;flex:none}
+.rule-row::after{content:"";flex:1;height:1px;background:var(--line)}
+.chip-lab{display:inline-flex;align-items:center;gap:9px;padding:8px 16px 8px 9px;border-radius:var(--r-pill);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);color:#fff;font-size:.84rem;font-weight:600;margin-bottom:var(--s5)}
+.chip-lab i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.22);flex:none}
+
+/* Buttons, Pille bleibt */
+.btn{display:inline-flex;align-items:center;gap:14px;min-height:54px;padding:7px 7px 7px 26px;border-radius:var(--r-pill);border:1px solid transparent;font-family:var(--ft);font-size:1.03rem;font-weight:600;text-decoration:none;cursor:pointer;transition:transform var(--dur) var(--ease),background-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.btn .arw{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;flex:none;transition:transform var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)} .btn:hover .arw{transform:translate(2px,-2px)} .btn:active{transform:translateY(0)}
+.btn--primary{background:var(--teal-700);color:#fff;box-shadow:var(--e-2)}
+.btn--primary .arw{background:#fff;color:var(--teal-700)}
+.btn--primary:hover{background:var(--teal-800);box-shadow:var(--e-3)}
+.btn--light{background:#fff;color:var(--ink);box-shadow:var(--e-2)}
+.btn--light .arw{background:var(--teal-700);color:#fff}
+/* Auf dunklem Grund ist der CTA weiss, auf hellem petrol. Genau die Logik der Vorlage. */
+.btn--ghost{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.34);color:#fff;backdrop-filter:blur(10px)}
+.btn--ghost .arw{background:#fff;color:var(--teal-800)}
+.btn--sm{min-height:46px;font-size:.95rem;padding:5px 5px 5px 20px}
+.btn--sm .arw{width:36px;height:36px}
+.iconbtn{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background-color var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.iconbtn:hover{background:var(--teal-100);transform:translateY(-2px)}
+.iconbtn.on-dark{border-color:rgba(255,255,255,.34);background:rgba(255,255,255,.1);color:#fff}
+.iconbtn.on-dark:hover{background:rgba(255,255,255,.2)}
+
+.tel{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:8px 24px;border-radius:var(--r-pill);border:1.5px solid var(--line);background:#fff;text-decoration:none;color:var(--ink);font-weight:700;font-size:1.1rem;transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease)}
+.tel:hover{transform:translateY(-2px);border-color:var(--teal-500)}
+.tel small{display:block;font-size:.71rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-muted)}
+.tel--ghost{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.36);color:#fff;backdrop-filter:blur(10px)}
+.tel--ghost small{color:rgba(255,255,255,.72)}
+.tel--ghost:hover{border-color:#fff}
+
+/* ============================================================
+   VOLLBILD-FOTOSEKTIONEN  ·  Hero und die zwei Baender
+   ============================================================ */
+.shot{position:relative;isolation:isolate;overflow:hidden;color:#fff;
+  min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+.shot-bg{position:absolute;inset:0;z-index:-2;background:var(--teal-800)}
+.shot-bg img{width:100%;height:100%;object-fit:cover}
+.shot::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(98deg,rgba(13,45,70,.93) 0%,rgba(13,45,70,.76) 32%,rgba(13,45,70,.32) 60%,rgba(13,45,70,.15) 80%,rgba(13,45,70,.44) 100%),
+             linear-gradient(to top,rgba(13,45,70,.8) 0%,rgba(13,45,70,.06) 46%,rgba(13,45,70,.36) 100%)}
+/* Helles Foto braucht mehr Schleier, sonst kippt der Text unten rechts */
+.shot--bright::after{background:
+  linear-gradient(98deg,rgba(10,32,41,.9) 0%,rgba(10,32,41,.66) 32%,rgba(10,32,41,.36) 58%,rgba(10,32,41,.34) 100%),
+  linear-gradient(to top,rgba(10,32,41,.9) 0%,rgba(10,32,41,.32) 42%,rgba(10,32,41,.12) 62%,rgba(10,32,41,.46) 100%),
+  linear-gradient(rgba(10,32,41,.24),rgba(10,32,41,.24))}
+.shot.shot--light .shot-bg{background:var(--grad-sky)}
+.shot.shot--light .shot-bg img{
+  -webkit-mask-image:linear-gradient(97deg,transparent 0%,transparent 40%,rgba(0,0,0,.55) 52%,#000 62%);
+          mask-image:linear-gradient(97deg,transparent 0%,transparent 40%,rgba(0,0,0,.55) 52%,#000 62%)}
+.shot.shot--light::after{background:
+  linear-gradient(100deg,rgba(244,249,253,.96) 0%,rgba(244,249,253,.9) 34%,rgba(244,249,253,.4) 48%,transparent 62%),
+  linear-gradient(to bottom,rgba(255,255,255,.7) 0%,rgba(255,255,255,0) 18%,rgba(255,255,255,0) 74%,rgba(214,230,244,.55) 100%)}
+@media(max-width:1000px){
+  .shot.shot--light .shot-bg img{-webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 22%,rgba(0,0,0,.55) 42%,rgba(0,0,0,.85) 58%,#000 70%);mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 22%,rgba(0,0,0,.55) 42%,rgba(0,0,0,.85) 58%,#000 70%)}
+  .shot.shot--light::after{background:linear-gradient(to bottom,rgba(246,250,253,.9) 0%,rgba(246,250,253,.74) 34%,rgba(246,250,253,.46) 54%,rgba(246,250,253,.12) 72%,transparent 86%)}
+  /* Text bekommt eine eigene, weiche Aufhellung, damit der Rest des Bildes sichtbar bleibt */
+  .hero-copy{position:relative}
+  .hero-copy::before{content:"";position:absolute;inset:-20px -18px -22px;z-index:-1;border-radius:24px;background:radial-gradient(135% 108% at 26% 42%,rgba(248,251,254,.95) 0%,rgba(248,251,254,.84) 50%,rgba(248,251,254,.42) 76%,transparent 100%)}
+  .hero-micro{color:var(--ink)}
+  .hero-copy{max-width:none}
+}
+.shot.shot--light,.shot.shot--light h1,.shot.shot--light h2,.shot.shot--light .hero-lead{color:var(--ink)}
+.shot.shot--light p,.shot.shot--light .sub,.shot.shot--light .k{color:var(--ink-muted)}
+.shot h1,.shot h2{color:#fff}
+.shot p{color:rgba(255,255,255,.86)}
+/* .wrap ist Flex-Kind von .shot: margin:0 auto wuerde es schrumpfen lassen */
+.shot > .wrap{width:100%;align-self:stretch}
+.shot-inner{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding-block:clamp(28px,5vw,72px)}
+@media(max-width:760px){.shot{min-height:auto}.shot-inner{gap:var(--s7);padding-block:var(--s7)}
+  /* Hochkant-Beschnitt: Bildausschnitt auf die Personen setzen */
+  .hero .shot-bg img{object-position:57% center}
+  #kosten .shot-bg img{object-position:64% center}
+  #kontakt .shot-bg img{object-position:52% center}
+}
+
+/* Navigation auf dem Hero */
+.topnav{display:flex;align-items:center;gap:var(--s6);padding-block:20px}
+/* Glas-Pille statt offener Leiste, wie in der Vorlage */
+.shot.shot--light .topnav{position:relative;z-index:70;margin-top:16px;padding:9px 9px 9px 20px;background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.9);border-radius:var(--r-pill);backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 10px 30px -18px rgba(13,45,70,.35)}
+.shot.shot--light .brand{color:var(--ink)}
+.shot.shot--light .brand-mark{background:var(--teal-700);border-color:transparent;color:#fff}
+.shot.shot--light .brand-sub{color:var(--ink-muted)}
+.shot.shot--light .navlinks{margin-inline:auto}
+.shot.shot--light .navlinks a{color:var(--ink-muted)}
+.shot.shot--light .navlinks a:hover{color:var(--ink)}
+.shot.shot--light .topnav .btn--ghost{background:var(--teal-700);border-color:transparent;color:#fff}
+.shot.shot--light .topnav .btn--ghost .arw{background:#fff;color:var(--teal-700)}
+/* Hero-Bausteine auf hellem Grund */
+.shot.shot--light .chip-lab{background:rgba(255,255,255,.9);border-color:var(--line);color:var(--ink);box-shadow:0 6px 18px -12px rgba(13,45,70,.4)}
+.shot.shot--light .chip-lab i{background:var(--teal-100);color:var(--teal-700)}
+.shot.shot--light .glasscard{background:rgba(255,255,255,.88);border-color:rgba(255,255,255,.95);box-shadow:0 20px 50px -28px rgba(13,45,70,.5)}
+.shot.shot--light .glasscard .k{color:var(--ink-muted)}
+.shot.shot--light .glasscard .big{color:var(--ink)}
+.shot.shot--light .glasscard .sub{color:var(--ink-muted)}
+.shot.shot--light .btn--light{background:var(--teal-700);color:#fff}
+.shot.shot--light .btn--light .arw{background:#fff;color:var(--teal-700)}
+.shot.shot--light .tel--ghost{background:rgba(255,255,255,.86);border-color:var(--line);color:var(--ink)}
+.shot.shot--light .tel--ghost small{color:var(--ink-muted)}
+.shot.shot--light .ph-i{background:var(--flag-bg);box-shadow:0 0 0 1px var(--flag-soft) inset;color:#8A4A08}
+.shot.shot--light .hero h1 .ph-i,.hero h1 .ph-i{background:none!important;box-shadow:none!important;padding:0;border-radius:0;color:inherit;border-bottom:.07em dotted var(--flag)}
+.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:#fff;margin-right:auto}
+.brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:var(--r-md);background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);color:#fff}
+.brand-name{font-family:var(--fd);font-size:1.3rem;font-weight:700;letter-spacing:-.03em;line-height:1;display:block}
+.brand-sub{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600;margin-top:4px}
+.navlinks{display:flex;gap:30px}
+.navlinks a{display:inline-flex;align-items:center;min-height:44px;color:rgba(255,255,255,.86);text-decoration:none;font-size:.97rem;font-weight:500}
+.navlinks a:hover{color:#fff}
+
+/* ---------- Burger und Klappmenue ---------- */
+.burger{display:none;appearance:none;border:1px solid var(--line);background:var(--white);border-radius:var(--r-md);width:48px;height:48px;padding:0;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;flex:none;transition:background-color var(--dur) var(--ease)}
+.burger span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.burger:hover{background:var(--mist)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobilenav{position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:60;display:grid;gap:2px;padding:10px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--white);box-shadow:0 24px 54px -22px rgba(13,45,70,.5)}
+.mobilenav[hidden]{display:none}
+.mobilenav > a{display:flex;align-items:center;min-height:52px;padding:0 14px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none;font-size:1.02rem;font-weight:600}
+.mobilenav > a:hover{background:var(--mist)}
+.mobilenav-cta{display:grid;gap:10px;margin-top:8px;padding-top:12px;border-top:1px solid var(--line)}
+.mobilenav-cta .btn,.mobilenav-cta .tel{justify-content:center}
+@media(max-width:1080px){
+  .navlinks{display:none}
+  .burger{display:flex}
+  .topnav{position:relative}
+}
+@media(max-width:560px){.topnav .btn--ghost{display:none}}
+
+.hero-grid{flex:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--s7);align-items:center}
+.hero-copy{max-width:36rem}
+.hero h1{font-size:var(--fs-hero);max-width:13ch;font-weight:500}
+.hero-lead{font-size:var(--fs-lead);margin:var(--s5) 0 var(--s6);max-width:46ch}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-micro{font-size:var(--fs-micro);color:var(--ink-muted);margin:var(--s4) 0 0}
+.hero-cards{display:flex;flex-direction:column;gap:16px;align-items:flex-end;justify-content:center}
+.hero-cards .glasscard{width:min(340px,100%)}
+.glasscard--slim .big{font-size:1.28rem;letter-spacing:-.02em}
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--s6);align-items:start}
+  .hero-cards{align-items:stretch}
+  .hero-cards .glasscard{width:100%}
+  .glasscard--slim{display:none}
+}
+.glasscard{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(14px);border-radius:var(--r-lg);padding:20px 22px}
+.glasscard .k{display:flex;align-items:center;justify-content:space-between;font-size:.82rem;color:rgba(255,255,255,.8);font-weight:500;margin-bottom:10px}
+.glasscard .big{font-family:var(--fd);font-size:clamp(2rem,1.4rem + 1.8vw,2.7rem);font-weight:700;letter-spacing:-.04em;line-height:1;margin-bottom:6px;color:#fff}
+.glasscard .sub{font-size:.85rem;color:rgba(255,255,255,.74);margin-bottom:16px}
+.hero-note p{font-size:1rem;line-height:1.62;margin-bottom:var(--s4)}
+
+/* Band-Innenaufbau */
+.band-head{max-width:60ch}
+.band h2{font-size:var(--fs-h2);max-width:15ch}
+.band-foot{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:var(--s7);align-items:end}
+@media(max-width:900px){.band-foot{grid-template-columns:1fr;gap:var(--s6)}}
+.stats{display:flex;gap:clamp(24px,4vw,64px);justify-content:flex-end;flex-wrap:wrap}
+@media(max-width:900px){.stats{justify-content:flex-start}}
+.stat{position:relative;padding-left:clamp(24px,4vw,64px)}
+.stat:first-child{padding-left:0}
+.stat:first-child::before{display:none}
+.stat::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:rgba(255,255,255,.26)}
+.stat .n{display:block;font-family:var(--fd);font-size:clamp(2.4rem,1.4rem + 3.6vw,4.4rem);font-weight:600;letter-spacing:-.05em;line-height:1;margin-bottom:8px;overflow-wrap:anywhere;color:#fff}
+.stat .l{display:block;font-size:.95rem;color:rgba(255,255,255,.8);max-width:19ch}
+</style>
+</head>
+<body>
+<a class="skip" href="#hauptinhalt">Zum Inhalt springen</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="ic-home" viewBox="0 0 24 24"><path d="M14 13.6c0-.297-.001-.459-.01-.575l-.003-.014-.011-.001A8.303 8.303 0 0 0 13.4 13h-2.8c-.297 0-.459 0-.576.01l-.012.001-.001.014c-.01.116-.011.278-.011.575V20h4v-6.4Zm2 6.4h1.8c.576 0 .949-.001 1.232-.024.272-.022.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.655.024-1.232v-7.235c0-.631-.009-.756-.037-.857a1.002 1.002 0 0 0-.16-.325c-.062-.084-.155-.168-.653-.555l-6.782-5.275a7.107 7.107 0 0 0-.361-.272L12 3.277l-.007.004c-.075.05-.174.127-.361.272L4.85 8.828c-.498.387-.591.47-.654.555a1.003 1.003 0 0 0-.159.325C4.01 9.81 4 9.934 4 10.565V17.8c0 .577.001.95.024 1.232.023.272.06.373.085.422a1 1 0 0 0 .437.437c.05.025.15.063.422.085.283.023.656.024 1.232.024H8v-6.4c0-.264-.001-.521.017-.738.018-.229.063-.499.2-.77.192-.376.499-.682.875-.874.271-.138.54-.182.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522 0 .739.017.228.019.498.063.77.201a2 2 0 0 1 .796.736l.077.138.087.202c.072.201.1.396.114.568.018.216.017.474.017.738V20Zm6-2.2c0 .543.001 1.011-.03 1.395-.033.395-.104.788-.297 1.167a3 3 0 0 1-1.31 1.311c-.379.193-.772.264-1.168.296-.383.031-.852.031-1.395.031H6.2c-.543 0-1.012 0-1.395-.031-.396-.032-.789-.103-1.167-.296a3 3 0 0 1-1.31-1.311c-.194-.379-.265-.772-.298-1.167C2 18.81 2 18.343 2 17.8v-7.235c0-.518-.008-.968.111-1.396a3 3 0 0 1 .477-.974c.264-.357.625-.627 1.033-.945l6.782-5.275c.279-.217.64-.521 1.074-.639a2 2 0 0 1 .917-.03l.129.03.16.053c.364.14.67.396.914.586l6.782 5.275c.408.318.77.588 1.033.945.217.293.378.623.477.974.12.428.111.878.111 1.396V17.8Z"/></symbol><symbol id="ic-bag" viewBox="0 0 24 24"><path d="M15.583 2c.763 0 1.394 0 1.908.04.527.042 1.012.13 1.475.352a4 4 0 0 1 1.725 1.587c.26.443.389.92.474 1.44.083.51.135 1.139.198 1.9l.7 8.4c.073.885.135 1.61.134 2.2 0 .602-.063 1.158-.295 1.686a4 4 0 0 1-1.758 1.913c-.508.274-1.058.383-1.657.433-.588.05-1.316.049-2.204.049H7.716c-.888 0-1.616 0-2.204-.049-.599-.05-1.15-.159-1.657-.433a4 4 0 0 1-1.758-1.913c-.232-.528-.295-1.084-.295-1.685 0-.59.06-1.316.135-2.201l.7-8.4c.063-.761.114-1.39.197-1.9.085-.52.215-.997.474-1.44a4 4 0 0 1 1.725-1.587c.463-.222.948-.31 1.475-.352C7.022 2 7.653 2 8.416 2h7.167ZM8.416 4c-.795 0-1.333 0-1.751.033-.406.032-.617.09-.769.163a2 2 0 0 0-.862.794c-.085.145-.16.35-.225.752-.068.414-.114.95-.18 1.742l-.7 8.4c-.076.92-.128 1.547-.127 2.033 0 .475.052.718.126.886a2 2 0 0 0 .88.956c.16.087.398.16.872.199.484.04 1.114.042 2.036.042h8.567c.922 0 1.552-.001 2.036-.042.474-.04.712-.112.872-.2a2 2 0 0 0 .88-.955c.074-.168.126-.41.126-.886 0-.486-.05-1.113-.127-2.032l-.7-8.4c-.066-.793-.112-1.33-.18-1.743-.065-.4-.14-.607-.224-.752a2.001 2.001 0 0 0-.864-.794c-.15-.072-.362-.13-.768-.163C16.916 4 16.378 4 15.583 4H8.416ZM7 8a1 1 0 0 1 2 0 3 3 0 1 0 6 0 1 1 0 1 1 2 0A5 5 0 0 1 7 8Z"/></symbol><symbol id="ic-hearts" viewBox="0 0 24 24"><path d="M8.298 3.179C9.68 1.273 12.136.36 14.596 1.493c2.759 1.271 3.887 4.4 2.749 7.1-.16.38-.386.83-.647 1.311.11.207.208.421.293.642 2.325-.37 4.706.72 5.645 3.26 1.052 2.85-.363 5.86-3.076 6.966-.976.397-2.65.84-4.237 1.22a136.13 136.13 0 0 1-4.092.903c-.103.022-.238.05-.359.065a1.498 1.498 0 0 1-.537-.024 1.505 1.505 0 0 1-.744-.43 1.499 1.499 0 0 1-.29-.452c-.047-.113-.09-.244-.123-.344-.283-.85-.792-2.407-1.264-3.995-.3-1.01-.594-2.064-.805-2.965-1.493-.805-3.071-1.703-3.936-2.358C.826 10.614.298 7.35 1.996 4.878c1.536-2.236 4.15-2.657 6.302-1.7Zm6.395 7.27c-.668-.928-1.757-1.42-2.995-1.191-1.91.354-3.119 2.057-2.864 3.904.12.87.527 2.401.997 3.983.431 1.452.897 2.883 1.185 3.752.896-.186 2.368-.498 3.841-.85 1.606-.384 3.135-.796 3.949-1.127 1.74-.708 2.623-2.609 1.954-4.421-.645-1.744-2.393-2.42-4.13-1.807a1 1 0 0 1-1.29-.653l-.026-.106-.077-.334a3.599 3.599 0 0 0-.527-1.125l-.017-.026Zm-.934-7.14c-1.689-.777-3.404-.02-4.198 1.643l-.052.096a1 1 0 0 1-1.416.298c-1.53-1.05-3.415-.84-4.448.665-1.1 1.601-.751 3.66.735 4.786.523.397 1.418.934 2.432 1.506.164-2.452 1.96-4.537 4.521-5.012 1.554-.288 2.931.118 3.977.942.075-.152.14-.292.192-.417.73-1.73.011-3.698-1.743-4.506Z"/></symbol><symbol id="ic-hearthand" viewBox="0 0 24 24"><path d="M4.4 12c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.03.086.051.17.069.253l1.608-.672.06-.027.228-.097c.19-.08.455-.187.754-.294.553-.198 1.38-.458 2.056-.458.479 0 .955.057 1.42.17l2.386.58-.472 1.944-2.385-.58a4.03 4.03 0 0 0-.95-.114c-.289 0-.819.14-1.38.341a13.606 13.606 0 0 0-.852.339l-.05.022-.011.005-.002.001-.03.014L7 15.69v3.396h1.61c.42 0 .838.05 1.246.15l2.757.67.173.038c.405.075.82.073 1.227-.005l3.048-.593a3.205 3.205 0 0 0 1.622-.843l2.158-2.099a.505.505 0 0 0 0-.735.611.611 0 0 0-.682-.107l-.093.055-2.514 1.833a3.116 3.116 0 0 1-1.838.599h-2.429a1 1 0 0 1-.101-1.995l.101-.005h1.546c.345 0 .577-.265.577-.534v-.307a.543.543 0 0 0-.43-.515l.472-1.944a2.542 2.542 0 0 1 1.952 2.335l1.486-1.083a2.61 2.61 0 0 1 3.347.234 2.502 2.502 0 0 1 0 3.602l-2.158 2.1a5.196 5.196 0 0 1-2.264 1.286l-.369.086-3.05.594a5.282 5.282 0 0 1-1.975.006l-.278-.06-2.758-.67H9.38a3.232 3.232 0 0 0-.77-.093H6.984c0 .017 0 .034-.002.05-.018.23-.062.5-.2.771a2 2 0 0 1-.875.874 2.023 2.023 0 0 1-.77.201c-.216.018-.474.017-.738.017h-.8c-.264 0-.522.001-.739-.017a2.023 2.023 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.025 2.025 0 0 1-.201-.77C.999 20.92 1 20.663 1 20.399v-5.8c0-.263-.001-.52.017-.738.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h.8Zm9.05-10.582c1.561-.745 3.128-.223 4.085.888 1.383-.484 2.982-.142 3.976 1.262 1.18 1.67.783 3.876-.786 5.065-.795.602-2.54 1.53-3.676 2.114-.2.103-.404.209-.586.284a1.99 1.99 0 0 1-.707.165 2.027 2.027 0 0 1-1.123-.3 1.99 1.99 0 0 1-.53-.497c-.12-.156-.244-.35-.366-.539-.69-1.073-1.738-2.75-2.126-3.668-.77-1.828.024-3.908 1.84-4.774Zm2.759 2.454c-.424-.726-1.19-.987-1.897-.65-.862.412-1.208 1.36-.858 2.192.305.724 1.241 2.24 1.965 3.363.14.217.212.33.27.406l.003.003.005-.001c.089-.037.208-.098.437-.216 1.189-.612 2.756-1.455 3.383-1.93a1.66 1.66 0 0 0 .36-2.315c-.499-.707-1.362-.827-2.12-.307l-.093.057a1 1 0 0 1-1.322-.355l-.053-.095-.08-.152ZM3 20.4c0 .297.001.46.01.577l.002.011.012.002c.117.01.28.011.576.011h.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C5 20.859 5 20.696 5 20.4v-5.8c0-.297-.001-.459-.01-.575l-.003-.014-.011-.001A8.304 8.304 0 0 0 4.4 14h-.8c-.297 0-.459 0-.576.01h-.012l-.001.014C3 14.142 3 14.304 3 14.6v5.8Z"/></symbol><symbol id="ic-pin" viewBox="0 0 24 24"><path d="M19 10a7 7 0 1 0-14 0c0 1.892.853 3.678 2.292 5.547 1.28 1.662 2.937 3.285 4.708 5.043 1.77-1.758 3.428-3.381 4.708-5.043C18.148 13.678 19 11.892 19 10Zm-5 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm5 0c0 2.526-1.147 4.74-2.708 6.767-1.551 2.014-3.618 3.973-5.585 5.94a1 1 0 0 1-1.414 0c-1.967-1.967-4.034-3.926-5.585-5.94C4.148 14.74 3 12.527 3 10a9 9 0 0 1 18 0Z"/></symbol><symbol id="ic-phone" viewBox="0 0 24 24"><path d="M4.1 2.878a3 3 0 0 1 2.708 0c.464.235.863.65 1.338 1.126l.195.195c.313.314.585.577.77.862a3 3 0 0 1 0 3.271c-.185.286-.457.549-.77.862l-.108.109-.002.011.014.03.037.076a13.603 13.603 0 0 0 2.652 3.736 13.602 13.602 0 0 0 3.735 2.652l.076.037c.013.005.022.01.03.012h.006l.005-.002.11-.106c.313-.314.576-.585.862-.77a3 3 0 0 1 3.27 0c.286.185.55.457.863.77l.539.54c.329.334.606.645.782.993a3 3 0 0 1 0 2.708c-.235.464-.651.862-1.127 1.338l-.157.158c-.5.5-.867.878-1.372 1.161a4.35 4.35 0 0 1-1.971.513c-.572-.002-.983-.124-1.53-.28a20.04 20.04 0 0 1-8.717-5.128 20.04 20.04 0 0 1-5.129-8.718c-.155-.546-.278-.958-.28-1.53-.001-.63.205-1.42.513-1.97.284-.505.663-.873 1.162-1.372l.501-.502c.335-.329.647-.606.995-.782Zm1.805 1.784a1.001 1.001 0 0 0-.903 0c-.107.054-.24.17-.826.757l-.158.157c-.56.56-.712.723-.832.938a2.4 2.4 0 0 0-.256.985c0 .254.038.407.203.99a18.04 18.04 0 0 0 4.619 7.849 18.037 18.037 0 0 0 7.85 4.618c.582.165.735.203.989.204.285.001.736-.117.985-.257.215-.12.378-.27.938-.83l.157-.159c.587-.587.703-.72.757-.827a1 1 0 0 0 0-.902c-.054-.107-.17-.24-.757-.828l-.194-.194c-.386-.386-.473-.465-.538-.508a1.001 1.001 0 0 0-1.091 0c-.066.043-.153.122-.538.508-.093.093-.215.219-.364.325a2.045 2.045 0 0 1-1.723.294c-.173-.05-.314-.12-.42-.17A15.606 15.606 0 0 1 9.52 14.57a15.603 15.603 0 0 1-3.041-4.284c-.051-.106-.12-.246-.171-.419a2.044 2.044 0 0 1 .294-1.723c.106-.149.232-.27.325-.364.385-.385.465-.472.508-.538.215-.331.215-.76 0-1.09-.043-.066-.123-.153-.508-.539L6.73 5.42c-.586-.587-.719-.703-.826-.757Zm7.163 1.147a1 1 0 0 1 1.173-.79 6 6 0 0 1 4.74 4.74 1 1 0 0 1-1.962.383 4.001 4.001 0 0 0-3.16-3.16 1 1 0 0 1-.79-1.173Zm1.092-4.803a10.001 10.001 0 0 1 8.833 8.822 1 1 0 0 1-1.987.224 8.002 8.002 0 0 0-7.066-7.058 1 1 0 0 1 .22-1.988Z"/></symbol><symbol id="ic-clock" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0ZM11 6a1 1 0 1 1 2 0v5.382l3.447 1.723a1 1 0 0 1-.894 1.79l-4-2A1 1 0 0 1 11 12V6Zm12 6c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol><symbol id="ic-users" viewBox="0 0 24 24"><path d="M16 21c0-.945-.001-1.604-.036-2.12-.035-.507-.1-.803-.193-1.028a3 3 0 0 0-1.623-1.623c-.225-.094-.521-.158-1.028-.193C12.604 16.001 11.945 16 11 16H8c-.945 0-1.604.001-2.12.036-.507.035-.803.1-1.028.192a3 3 0 0 0-1.623 1.624c-.094.225-.158.521-.193 1.028C3.001 19.396 3 20.055 3 21a1 1 0 1 1-2 0c0-.918 0-1.657.04-2.257.042-.608.13-1.146.34-1.656a5 5 0 0 1 2.707-2.706c.51-.211 1.048-.3 1.656-.341C6.343 14 7.082 14 8 14h3c.918 0 1.657 0 2.257.04.609.042 1.146.13 1.656.34a5 5 0 0 1 2.706 2.707c.211.51.3 1.047.341 1.656.04.6.04 1.339.04 2.257a1 1 0 1 1-2 0Zm5 0v-2a3.002 3.002 0 0 0-2.249-2.905 1 1 0 0 1 .498-1.938A5.002 5.002 0 0 1 23 19v2a1 1 0 1 1-2 0ZM12.5 7a3 3 0 1 0-6 0 3 3 0 0 0 6 0ZM17 7a3.001 3.001 0 0 0-1.875-2.782 1 1 0 0 1 .75-1.854 5 5 0 0 1 0 9.272 1 1 0 1 1-.75-1.854A3.001 3.001 0 0 0 17 7Zm-2.5 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/></symbol><symbol id="ic-user" viewBox="0 0 24 24"><path d="M19 21c0-1.468-.01-1.981-.129-2.371a3 3 0 0 0-2-2c-.39-.118-.903-.129-2.371-.129h-5c-1.468 0-1.981.01-2.371.129a3 3 0 0 0-2 2C5.01 19.019 5 19.532 5 21a1 1 0 1 1-2 0c0-1.323-.011-2.206.215-2.951a5.002 5.002 0 0 1 3.334-3.334c.745-.226 1.628-.215 2.951-.215h5c1.323 0 2.206-.011 2.951.215a5.002 5.002 0 0 1 3.334 3.334c.226.745.215 1.628.215 2.951a1 1 0 1 1-2 0ZM15.5 7.5a3.5 3.5 0 1 0-7 0 3.5 3.5 0 0 0 7 0Zm2 0a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z"/></symbol><symbol id="ic-shield" viewBox="0 0 24 24"><path d="M19 7.218c0-.882-.016-1.058-.065-1.188a1.001 1.001 0 0 0-.274-.395c-.105-.092-.264-.168-1.089-.477l-5.361-2.01a3.997 3.997 0 0 0-.208-.077L12 3.07l-.003.001c-.04.013-.097.034-.208.076l-5.361 2.01c-.825.31-.984.386-1.09.478a1.002 1.002 0 0 0-.273.395C5.015 6.16 5 6.336 5 7.218V12c0 2.082 1.14 3.965 2.642 5.53 1.49 1.553 3.228 2.676 4.164 3.222l.134.077.06.032.06-.032a8.97 8.97 0 0 0 .134-.077c.936-.546 2.673-1.669 4.164-3.222C17.861 15.965 19 14.081 19 12V7.218Zm-4.207 1.075a1 1 0 0 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L11 12.086l3.793-3.793ZM21 12c0 2.826-1.537 5.184-3.2 6.915-1.672 1.742-3.586 2.973-4.598 3.563-.19.111-.442.269-.783.342-.26.056-.579.056-.838 0-.341-.073-.593-.231-.783-.342-1.012-.59-2.926-1.82-4.599-3.563C4.537 17.184 3 14.826 3 12V7.218c0-.718-.016-1.342.196-1.899a3 3 0 0 1 .82-1.184c.448-.393 1.038-.598 1.71-.85l5.36-2.01c.169-.064.39-.152.628-.186a2 2 0 0 1 .43-.016l.142.016.175.035c.17.042.326.103.452.15l5.361 2.01c.672.253 1.262.458 1.71.851a3 3 0 0 1 .82 1.184c.212.557.196 1.18.196 1.899V12Z"/></symbol><symbol id="ic-lock" viewBox="0 0 24 24"><path d="M19 14.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C16.639 11 16.058 11 15.2 11H8.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C5 13.361 5 13.942 5 14.8v1.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C7.361 20 7.942 20 8.8 20h6.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888v-1.4Zm-8 1.7v-2a1 1 0 1 1 2 0v2a1 1 0 1 1-2 0ZM16 8a4 4 0 0 0-8 0v1.003C8.25 9 8.516 9 8.8 9h6.4c.284 0 .55.001.8.003V8Zm2 1.151c.282.062.554.151.816.285a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v1.4c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H8.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C2.999 17.702 3 17.024 3 16.2v-1.4c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.262-.134.533-.223.816-.285V8a6 6 0 1 1 12 0v1.151Z"/></symbol><symbol id="ic-chat" viewBox="0 0 24 24"><path d="M12 16.5c0-2.508-1.978-4.5-4.368-4.5-2.39 0-4.37 1.992-4.37 4.5 0 .504.081.987.228 1.436.06.184.135.402.163.583.024.153.03.27.022.425-.01.18-.055.366-.087.51l-.302 1.36 1.573-.213c.13-.018.299-.044.46-.043l.189.01c.06.005.12.015.187.029.16.031.355.104.52.162.443.156.92.241 1.417.241C10.022 21 12 19.008 12 16.5Zm2 0c0 .168-.008.334-.02.498l.073.002a7.1 7.1 0 0 0 2.49-.448c.149-.056.335-.129.503-.164.139-.03.258-.043.4-.043.17-.001.343.027.476.047l2.925.428-.37-3.01c-.016-.128-.04-.296-.035-.46a1.89 1.89 0 0 1 .046-.386c.036-.162.107-.341.163-.486A6.945 6.945 0 0 0 21.106 10c0-3.86-3.152-7-7.053-7S7 6.14 7 10v.032A6.34 6.34 0 0 1 7.632 10C11.172 10 14 12.933 14 16.5Zm9.106-6.5a8.938 8.938 0 0 1-.586 3.191l-.073.193-.005.01v.008l.02.164.402 3.27c.02.159.044.344.05.503.005.166-.003.424-.127.695a1.5 1.5 0 0 1-.77.754 1.523 1.523 0 0 1-.698.11c-.16-.01-.344-.038-.502-.061l-3.185-.467a6.13 6.13 0 0 0-.17-.023l-.006-.001c-.003 0-.008.003-.012.005-.043.014-.1.037-.2.074a9.082 9.082 0 0 1-3.727.557C12.564 21.332 10.3 23 7.632 23a6.246 6.246 0 0 1-2.082-.355 14.379 14.379 0 0 0-.225-.079l-.018-.007h-.01l-.167.023-2.994.41a1.001 1.001 0 0 1-1.112-1.208l.61-2.761c.022-.096.034-.149.04-.187l.002-.007-.007-.022a7.241 7.241 0 0 0-.08-.25 6.62 6.62 0 0 1-.326-2.057c0-2.626 1.534-4.908 3.756-5.93A9.065 9.065 0 0 1 5 10c0-4.977 4.06-9 9.053-9 4.993 0 9.053 4.023 9.053 9Z"/></symbol><symbol id="ic-euro" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0ZM6 12c0-.168.009-.335.022-.5H6a1 1 0 1 1 0-2h.546A6 6 0 0 1 16 7.528a1 1 0 0 1-1.334 1.49A3.98 3.98 0 0 0 12 8a3.991 3.991 0 0 0-3.121 1.5H11a1 1 0 1 1 0 2H8.032a4.035 4.035 0 0 0 0 1H11a1 1 0 1 1 0 2H8.879A3.991 3.991 0 0 0 12 16a3.98 3.98 0 0 0 2.666-1.019A1 1 0 0 1 16 16.471 6 6 0 0 1 6.546 14.5H6a1 1 0 1 1 0-1.999h.022A6.074 6.074 0 0 1 6 12Zm17 0c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol><symbol id="ic-coins" viewBox="0 0 24 24"><path d="M4.4 12c.264 0 .522-.001.739.017.228.018.498.063.77.2a2 2 0 0 1 .796.737l.077.138.087.203c.03.086.051.17.069.253l1.608-.672.06-.026.228-.098c.19-.08.455-.187.754-.294.553-.198 1.38-.458 2.056-.458.479 0 .955.057 1.42.17l2.386.58-.472 1.943-2.385-.58a4.026 4.026 0 0 0-.95-.113c-.289 0-.819.14-1.38.34a13.598 13.598 0 0 0-.852.34l-.05.022-.011.005-.002.001-.03.014L7 15.69v3.397h1.61c.42 0 .838.05 1.246.15l2.757.67.173.037c.405.076.82.074 1.227-.005l3.048-.592a3.205 3.205 0 0 0 1.622-.843l2.158-2.099a.505.505 0 0 0 0-.735.61.61 0 0 0-.775-.052l-1.178-1.616a2.61 2.61 0 0 1 3.347.234 2.502 2.502 0 0 1 0 3.602l-2.158 2.1a5.205 5.205 0 0 1-2.633 1.372l-3.05.593a5.28 5.28 0 0 1-1.975.007l-.278-.06-2.758-.67H9.38a3.232 3.232 0 0 0-.77-.093H6.984c0 .017 0 .035-.002.052a2.023 2.023 0 0 1-.2.77 2 2 0 0 1-.875.873 2.023 2.023 0 0 1-.77.201c-.216.018-.474.017-.738.017h-.8c-.264 0-.522.001-.739-.017a2.023 2.023 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.022 2.022 0 0 1-.201-.77C.999 20.923 1 20.665 1 20.4v-5.8c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h.8Zm11.05.75a2.542 2.542 0 0 1 1.952 2.336l1.486-1.084 1.178 1.616-2.514 1.835a3.116 3.116 0 0 1-1.838.597h-2.429a1 1 0 0 1 0-2h1.546c.345 0 .577-.265.577-.534v-.307a.543.543 0 0 0-.43-.516l.472-1.943ZM19 6.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0ZM3 20.4c0 .297.001.46.01.576l.002.011.012.002c.117.01.28.011.576.011h.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C5 20.859 5 20.696 5 20.4v-5.8c0-.297-.001-.46-.01-.576l-.003-.012-.011-.001A8.123 8.123 0 0 0 4.4 14h-.8c-.297 0-.459.001-.576.01l-.012.002-.001.012A8.1 8.1 0 0 0 3 14.6v5.8ZM21 6.5a4.5 4.5 0 0 1-7.727 3.134 4.5 4.5 0 1 1 1.451-7.27A4.5 4.5 0 0 1 21 6.5Zm-12-1a2.5 2.5 0 0 0 3.22 2.393 4.496 4.496 0 0 1 .867-4.325A2.5 2.5 0 0 0 9 5.5Z"/></symbol><symbol id="ic-check" viewBox="0 0 24 24"><path d="M19.293 5.293a1 1 0 1 1 1.414 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L9 15.586 19.293 5.293Z"/></symbol><symbol id="ic-plus" viewBox="0 0 24 24"><path d="M11 19v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 1 1 2 0v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0Z"/></symbol><symbol id="ic-arrow-ur" viewBox="0 0 24 24"><path d="M18 17a1 1 0 1 1-2 0V9.414l-8.293 8.293a1 1 0 1 1-1.414-1.414L14.586 8H7a1 1 0 0 1 0-2h10a1 1 0 0 1 1 1v10Z"/></symbol><symbol id="ic-arrow-l" viewBox="0 0 24 24"><path d="M9.293 5.293a1 1 0 1 1 1.414 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l4.293 4.293a1 1 0 1 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6Z"/></symbol><symbol id="ic-arrow-r" viewBox="0 0 24 24"><path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L17.586 13H4a1 1 0 1 1 0-2h13.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="ic-calendar" viewBox="0 0 24 24"><path d="M20 11H4v6.2c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C6.361 21 6.942 21 7.8 21h8.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V11Zm-5.207 1.793a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 16.586l3.793-3.793ZM15 6V5H9v1a1 1 0 1 1-2 0v-.997c-.445.003-.795.01-1.089.034-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 7.361 4 7.942 4 8.8V9h16v-.2c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18A15.288 15.288 0 0 0 17 5.002V6a1 1 0 1 1-2 0Zm7 11.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H7.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 18.702 2 18.024 2 17.2V8.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392.36-.03.777-.038 1.252-.041V2a1 1 0 0 1 2 0v1h6V2a1 1 0 1 1 2 0v1.003c.476.003.891.011 1.252.041.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v8.4Z"/></symbol><symbol id="ic-verified" viewBox="0 0 24 24"><path d="M8.866 2.154a4.832 4.832 0 0 1 6.268 0c.453.387 1.018.62 1.612.668a4.831 4.831 0 0 1 4.432 4.432c.047.594.281 1.159.668 1.612a4.832 4.832 0 0 1 0 6.268 2.835 2.835 0 0 0-.668 1.612 4.831 4.831 0 0 1-4.432 4.432 2.835 2.835 0 0 0-1.612.668 4.832 4.832 0 0 1-6.268 0 2.835 2.835 0 0 0-1.612-.668 4.831 4.831 0 0 1-4.432-4.432 2.835 2.835 0 0 0-.668-1.612 4.832 4.832 0 0 1 0-6.268c.387-.453.62-1.018.668-1.612a4.831 4.831 0 0 1 4.432-4.432 2.835 2.835 0 0 0 1.612-.668Zm4.97 1.523a2.832 2.832 0 0 0-3.673 0 4.833 4.833 0 0 1-2.75 1.138 2.832 2.832 0 0 0-2.598 2.598 4.833 4.833 0 0 1-1.138 2.75 2.832 2.832 0 0 0 0 3.674l.234.299c.52.716.834 1.564.904 2.45a2.832 2.832 0 0 0 2.598 2.599 4.828 4.828 0 0 1 2.75 1.138 2.832 2.832 0 0 0 3.674 0l.299-.234a4.832 4.832 0 0 1 2.45-.904 2.832 2.832 0 0 0 2.599-2.598 4.833 4.833 0 0 1 1.138-2.75l.16-.204a2.833 2.833 0 0 0-.16-3.47 4.833 4.833 0 0 1-1.138-2.75 2.832 2.832 0 0 0-2.598-2.598 4.832 4.832 0 0 1-2.451-.904l-.3-.234Zm.957 5.116a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 12.586l3.793-3.793Z"/></symbol><symbol id="ic-help" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0Zm-8.99 4a1 1 0 1 1 0 2H12a1 1 0 1 1 0-2h.01ZM9.894 6.547A4.001 4.001 0 0 1 15.92 10c0 1.53-1.135 2.542-1.945 3.082a8.05 8.05 0 0 1-1.686.849l-.035.011-.01.004-.005.001-.002.001L11.92 13l.316.948a1 1 0 1 1-.633-1.896l.016-.006.074-.027a6.05 6.05 0 0 0 1.172-.6c.69-.46 1.055-.95 1.055-1.419v-.002a2 2 0 0 0-3.887-.666 1 1 0 0 1-1.887-.664 4.001 4.001 0 0 1 1.748-2.121ZM23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol><symbol id="ic-homesmile" viewBox="0 0 24 24"><path d="M20 10.565c0-.63-.009-.755-.037-.857a1.002 1.002 0 0 0-.16-.325c-.062-.084-.155-.168-.653-.555l-6.782-5.275a7.113 7.113 0 0 0-.361-.271L12 3.277l-.007.005c-.075.05-.174.126-.361.271L4.85 8.828c-.498.387-.591.47-.654.555a1.003 1.003 0 0 0-.159.325C4.01 9.81 4 9.934 4 10.565V17.8c0 .577.001.95.024 1.232.023.272.06.373.085.422a1 1 0 0 0 .437.437c.05.025.15.063.422.085.283.023.656.024 1.232.024h11.6c.576 0 .949-.001 1.232-.024.272-.022.373-.06.422-.085a1 1 0 0 0 .437-.437c.025-.049.062-.15.085-.422.023-.283.024-.655.024-1.232v-7.235ZM7.877 13.032a1 1 0 0 1 1.218.718 3.002 3.002 0 0 0 5.81 0 1 1 0 0 1 1.938.5 5.002 5.002 0 0 1-9.686 0 1 1 0 0 1 .72-1.218ZM22 17.8c0 .543.001 1.011-.03 1.395-.033.395-.104.788-.297 1.167a3.001 3.001 0 0 1-1.31 1.311c-.379.193-.772.264-1.168.296-.383.031-.852.031-1.395.031H6.2c-.543 0-1.012 0-1.395-.03-.396-.033-.789-.104-1.167-.297a3.001 3.001 0 0 1-1.31-1.311c-.194-.379-.265-.772-.298-1.167C2 18.81 2 18.343 2 17.8v-7.235c0-.518-.008-.968.111-1.396a3 3 0 0 1 .477-.974c.264-.357.625-.627 1.033-.945l6.782-5.275c.279-.217.64-.52 1.074-.639a2 2 0 0 1 .917-.03l.129.03.16.053c.364.14.67.397.914.586l6.782 5.275c.408.318.77.588 1.033.945.217.293.378.623.477.974.12.428.111.878.111 1.396V17.8Z"/></symbol><symbol id="ic-package" viewBox="0 0 24 24"><path d="M21.293 15.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L18 18.586l3.293-3.293ZM20 12.5V8.7l-7 3.89v7.71l.515-.285a1 1 0 1 1 .97 1.748l-1.222.68c-.227.126-.524.303-.86.372-.266.054-.54.054-.806 0-.336-.07-.633-.246-.86-.372l-7.4-4.112c-.24-.133-.564-.3-.808-.564a2 2 0 0 1-.428-.728A2.49 2.49 0 0 1 2 16.28V7.72c.002-.234.016-.503.1-.76.09-.27.236-.519.43-.728.243-.265.568-.432.807-.565l7.4-4.111c.227-.126.524-.303.86-.372.199-.041.404-.052.605-.031l.201.03.124.031c.285.082.537.232.736.342l7.4 4.111c.24.133.564.3.808.565a2 2 0 0 1 .35.53l.078.198.037.13c.052.215.062.435.064.63v4.78a1 1 0 0 1-2 0ZM5.059 7 12 10.854l2.44-1.356L7.5 5.644 5.059 6.999Zm6.936-3.85c-.058.029-.135.072-.286.156l-2.15 1.193L16.5 8.356l2.44-1.357-6.649-3.693c-.151-.084-.228-.127-.286-.155L12 3.148c-.002 0-.003.002-.005.003Zm-7.99 13.253v.005c.002 0 .003.002.005.003.057.037.139.083.299.172L11 20.3v-7.71L4 8.7v7.36c0 .182 0 .276.005.344Z"/></symbol></svg>
+<style>
+/* ============================================================
+   HELLE SEKTIONEN
+   ============================================================ */
+.statement{font-family:var(--fd);font-size:var(--fs-state);font-weight:400;letter-spacing:-.03em;line-height:1.26;margin:0 0 var(--s5)}
+/* Chip mitten im Fließtext, das markanteste Detail der Vorlage */
+/* display:inline statt inline-flex, sonst zentriert die Flexbox den Inhalt
+   und die Grundlinie des Chips laeuft gegen die des Fliesstexts */
+.inchip{display:inline;padding:.1em .46em .16em;margin:0 .04em;border-radius:var(--r-pill);background:var(--teal-100);color:var(--teal-800);font-size:1em;font-weight:500;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.inchip .ic{width:.52em;height:.52em;color:var(--teal-700);vertical-align:baseline;margin-right:.22em}
+.metas{display:flex;gap:clamp(20px,3vw,56px);flex-wrap:wrap;justify-content:center;padding-top:var(--s6);border-top:1px solid var(--line)}
+.meta{display:flex;align-items:center;gap:11px;font-size:.99rem;font-weight:600}
+.meta i{display:grid;place-items:center;width:38px;height:38px;border-radius:var(--r-sm);background:var(--mist);color:var(--teal-700);flex:none}
+
+/* ---------- Leistungen als Umschalter, Aufbau aus der Referenz ---------- */
+.tools{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#EDF3F9 0%,#DCE7F2 52%,#CBDAEA 100%)}
+.tools-bg{position:absolute;inset:0;z-index:-1}
+.tools-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:blur(34px) saturate(.75);transform:scale(1.12);transition:opacity .5s var(--ease)}
+.tools-img.is-on{opacity:.5}
+.tools::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(237,243,249,.72) 0%,rgba(219,231,243,.5) 45%,rgba(203,218,234,.78) 100%)}
+.tools-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr) minmax(0,.85fr);gap:clamp(24px,3vw,48px);align-items:center}
+.tools-copy h2{font-size:clamp(1.9rem,1.2rem + 2.4vw,3.1rem);max-width:11ch}
+.tools-side p{color:var(--ink-muted);font-size:.97rem;max-width:32ch}
+.tools-stage{display:flex;flex-direction:column;align-items:center;gap:var(--s6);min-width:0}
+.tools-copy,.tools-side{min-width:0}
+
+@media(max-width:1000px){
+  .tools-grid{grid-template-columns:1fr;text-align:center;gap:var(--s7)}
+  .tools-copy h2{max-width:none;margin-inline:auto}
+  .tools-copy .eyebrow{justify-content:center}
+  .tools-side p{margin-inline:auto}
+  .tools-stage{order:2}
+}
+
+/* gestapelte Glaskarte */
+.stack{position:relative;width:min(430px,100%);padding-bottom:42px}
+.stack-l{position:absolute;left:50%;translate:-50% 0;border-radius:var(--r-lg);background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(10px)}
+.stack-l2{width:90%;height:100%;top:20px;opacity:.85}
+.stack-l3{width:78%;height:100%;top:38px;opacity:.6}
+/* Alle Panels liegen in derselben Rasterzelle. Damit ist die Karte immer so hoch
+   wie das laengste Panel, egal welcher Bereich gerade aktiv ist, und beim Umschalten
+   springt nichts. */
+.glass-card{text-align:left;position:relative;z-index:2;display:grid;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(22px) saturate(1.4);border-radius:var(--r-lg);padding:clamp(22px,2.6vw,30px);box-shadow:0 26px 60px -34px rgba(13,45,70,.6)}
+.gc-panel{grid-area:1/1;visibility:hidden;opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s}
+.gc-panel.is-on{visibility:visible;opacity:1;transform:none;pointer-events:auto}
+.gc-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:var(--r-md);background:var(--teal-700);color:#fff;margin-bottom:var(--s5)}
+.gc-t{font-family:var(--fd);font-size:1.35rem;font-weight:600;letter-spacing:-.02em;margin:0 0 var(--s4)}
+.gc-list{list-style:none;margin:0 0 var(--s5);padding:0}
+.gc-list li{display:flex;align-items:flex-start;gap:9px;font-size:.86rem;line-height:1.45;color:var(--ink);padding:9px 0;border-top:1px solid rgba(13,45,70,.1)}
+.gc-list li .ic{color:var(--teal-700);margin-top:.28em;flex:none}
+.gc-d{font-size:.9rem;color:var(--ink-muted);margin:0}
+
+/* Umschalter unter der Karte */
+.switch{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:5px;width:max-content;max-width:100%;border-radius:var(--r-pill);background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(14px)}
+.sw{appearance:none;border:none;cursor:pointer;font-family:var(--ft);font-size:.88rem;font-weight:600;color:var(--ink-muted);background:transparent;border-radius:var(--r-pill);padding:10px 15px;min-height:44px;white-space:nowrap;transition:background-color var(--dur) var(--ease),color var(--dur) var(--ease)}
+.sw:hover{color:var(--ink)}
+.sw.is-on{background:var(--teal-700);color:#fff}
+.sw:focus-visible{outline:3px solid var(--teal-500);outline-offset:2px}
+
+.disclaimer{font-size:.88rem;color:var(--ink-muted);max-width:88ch;margin:clamp(40px,5vw,72px) auto 0;padding-top:var(--s5);border-top:1px solid rgba(13,45,70,.14)}
+.disclaimer b{color:var(--ink)}
+
+.alt{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start;margin-bottom:clamp(48px,6vw,104px)}
+.alt:last-child{margin-bottom:0}
+.alt .txt{display:flex;flex-direction:column;justify-content:space-between;padding-block:clamp(4px,2vw,28px)}
+.alt h2{font-size:var(--fs-h2);max-width:16ch;margin-bottom:var(--s8)}
+@media(max-width:920px){.alt{grid-template-columns:1fr;gap:var(--s6)}.alt h2{margin-bottom:var(--s6)}.alt .vis,.alt--rev .vis{order:-1}}
+.alt--rev .vis{order:-1}
+.rows{border-top:1px solid var(--line)}
+.rowitem{padding:18px 0;border-bottom:1px solid var(--line)}
+.rowitem h3{margin-bottom:6px;font-weight:600}
+.rowitem p{font-size:.95rem;color:var(--ink-muted);margin:0;max-width:66ch}
+.rowitem.is-muted h3{color:var(--ink-soft);font-weight:500}
+
+/* ---------- Ablauf: ein Schritt nach dem anderen im Blick, Bild bleibt stehen ---------- */
+.steps .step h3{color:var(--ink-soft);font-weight:500;transition:color .3s var(--ease)}
+.steps .step.is-open h3{color:var(--ink);font-weight:600}
+.step-body{display:grid;grid-template-rows:1fr;opacity:1}
+.step-body > div{overflow:hidden;min-height:0}
+.step-body p{margin:10px 0 0;font-size:.95rem;color:var(--ink-muted);max-width:54ch}
+/* Erst wenn das Skript uebernommen hat, wird eingeklappt. Ohne JS bleibt alles lesbar. */
+.steps[data-ready] .step-body{grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .3s var(--ease)}
+.steps[data-ready] .step.is-open .step-body{grid-template-rows:1fr;opacity:1}
+.steps[data-ready] .step h3{cursor:pointer}
+@media(min-width:921px){
+  .alt--steps{align-items:start}
+  .alt--steps .txt{min-height:118vh}
+  .alt--steps .steps{display:flex;flex-direction:column;justify-content:space-between;flex:1}
+  .vis.vis--sticky{position:sticky;top:max(96px,calc(50vh - 220px))}
+}
+@media(max-width:920px){
+  /* Auf Mobil kein Scroll-Fokus, alle Schritte offen */
+  .steps[data-ready] .step-body{grid-template-rows:1fr;opacity:1}
+  .steps[data-ready] .step h3{color:var(--ink);font-weight:600;cursor:auto}
+}
+.vis{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--teal-100);display:grid;place-items:center;padding:clamp(18px,2.6vw,34px)}
+.vis--photo{aspect-ratio:4/3;padding:0}
+.vis--ph{padding:clamp(24px,3vw,44px)}
+.vis > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vis--mock::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(17,74,98,.78),rgba(10,32,41,.62))}
+.vis .tag{position:absolute;left:14px;bottom:14px;z-index:3;background:rgba(255,255,255,.94);border-radius:var(--r-xs);padding:7px 13px;font-size:.76rem;font-weight:700;color:var(--teal-800)}
+.ph-portrait{position:relative;z-index:2;width:min(400px,100%);aspect-ratio:3/4;border:2px dashed var(--flag);background:repeating-linear-gradient(45deg,#FDF2E3,#FDF2E3 12px,#FAE7D0 12px,#FAE7D0 24px);border-radius:var(--r-lg);display:grid;place-content:center;text-align:center;gap:10px;padding:26px;color:#8A4A08}
+.ph-portrait b{font-size:.84rem;letter-spacing:.08em;text-transform:uppercase}
+.ph-portrait span{font-size:.9rem;line-height:1.55}
+
+/* ---------- Versprechen im Aufbau der Preis-Referenz ---------- */
+.plans{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr) minmax(0,1fr);gap:clamp(18px,2vw,28px);background:var(--white);border-radius:var(--r-lg);padding:clamp(18px,2vw,26px);box-shadow:var(--e-1)}
+@media(max-width:1050px){.plans{grid-template-columns:1fr 1fr}.plan-list{grid-column:span 2}}
+@media(max-width:720px){.plans{grid-template-columns:1fr}.plan-list{grid-column:span 1}}
+.plan{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(40px,5vw,80px);background:var(--mist);border-radius:var(--r-md);padding:clamp(22px,2.4vw,32px);min-height:340px}
+.plan h3{font-size:1.22rem;margin-bottom:12px}
+.plan p{font-size:.94rem;color:var(--ink-muted);margin:0}
+.plan-figs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.plan-figs .n{display:block;font-family:var(--fd);font-size:clamp(1.9rem,1.3rem + 1.5vw,2.5rem);font-weight:400;letter-spacing:-.04em;line-height:1;margin-bottom:8px}
+.plan-figs small{display:block;font-size:.8rem;color:var(--ink-muted);line-height:1.45}
+.plan--hero{position:relative;isolation:isolate;overflow:hidden;background:var(--grad-band);color:#fff;padding:0}
+.plan-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.5}
+.plan--hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(31,86,122,.9),rgba(13,45,70,.92))}
+.plan-in{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(40px,5vw,80px);height:100%;padding:clamp(22px,2.4vw,32px)}
+.plan--hero h3{color:#fff}
+.plan--hero p{color:rgba(255,255,255,.8)}
+.plan--hero .plan-figs .n{color:#fff}
+.plan--hero .plan-figs small{color:rgba(255,255,255,.75)}
+.plan-list{padding:clamp(18px,2vw,26px) clamp(6px,1vw,14px);display:flex;flex-direction:column;gap:var(--s5)}
+.pl-lab{font-size:.8rem;color:var(--ink-soft);margin:0 0 var(--s2)}
+.pl-item{display:flex;gap:12px;align-items:flex-start}
+.pl-item > .ic{color:var(--teal-700);flex:none;margin-top:.15em}
+.pl-item b{display:block;font-size:.98rem;margin-bottom:5px}
+.pl-item p{font-size:.87rem;color:var(--ink-muted);margin:0;line-height:1.55}
+.plans-note{font-size:.88rem;color:var(--ink-muted);max-width:88ch;margin:var(--s6) auto 0;text-align:center}
+
+/* ---------- Kosten: zweifarbige Aussage mit Bildpillen, dann Kennzahlen ---------- */
+.sec--soft{background:var(--grad-soft)}
+.bigstate{font-family:var(--fd);font-size:clamp(1.75rem,1.05rem + 2.9vw,3.3rem);font-weight:500;letter-spacing:-.032em;line-height:1.32;color:var(--ink);max-width:23ch;margin:var(--s5) auto clamp(64px,7vw,120px)}
+.bigstate .dim{color:var(--ink-soft)}
+.inpic{display:inline-block;width:1.7em;height:1em;border-radius:var(--r-pill);overflow:hidden;margin:0 .1em -.04em;vertical-align:baseline;background:var(--teal-100)}
+.inpic img{width:100%;height:100%;object-fit:cover;display:block}
+.figrow{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.4vw,56px)}
+@media(max-width:900px){.figrow{grid-template-columns:1fr;gap:var(--s6)}}
+.fig{border-top:1px solid var(--line);padding-top:var(--s5)}
+.fig .n{display:block;font-family:var(--fd);font-size:clamp(2.3rem,1.5rem + 2.6vw,3.6rem);font-weight:400;letter-spacing:-.045em;line-height:1;color:var(--ink);margin-bottom:var(--s4)}
+.fig b{display:block;font-size:1.06rem;margin-bottom:10px}
+.fig p{font-size:.95rem;color:var(--ink-muted);margin:0}
+.figfoot{text-align:center;color:var(--ink-muted);margin:clamp(32px,4vw,56px) auto 0;max-width:52ch}
+.tagwrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+@media(max-width:860px){.tagwrap{grid-template-columns:1fr;gap:var(--s6)}}
+.tagwrap h2{font-size:var(--fs-h2);max-width:15ch}
+.tags{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0}
+.tags li{list-style:none;background:var(--white);border:1px solid var(--line);border-radius:var(--r-pill);padding:11px 20px;font-size:.98rem;font-weight:500}
+
+.faqwrap{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+@media(max-width:900px){.faqwrap{grid-template-columns:1fr}}
+.helpcard{background:var(--mist);border-radius:var(--r-lg);box-shadow:var(--e-1);padding:var(--s6)}
+.helpcard h3{margin-bottom:10px}
+.helpcard p{font-size:.96rem;color:var(--ink-muted)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 56px 22px 0;position:relative;font-family:var(--fd);font-size:1.16rem;font-weight:600;letter-spacing:-.02em;min-height:48px}
+.faq summary::-webkit-details-marker{display:none}
+.faq .toggle{position:absolute;right:2px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:36px;height:36px;border-radius:var(--r-sm);border:1px solid var(--line);background:#fff;color:var(--teal-700);transition:transform var(--dur) var(--ease)}
+.faq details[open] .toggle{transform:translateY(-50%) rotate(135deg)}
+.faq .a{padding:0 var(--s7) 22px 0;color:var(--ink-muted);max-width:76ch}
+.faq .a p:last-child{margin-bottom:0}
+
+.quick{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(14px);border-radius:var(--r-lg);padding:22px;max-width:680px}
+.quick .lab{display:block;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.88);margin-bottom:12px}
+.quickrow{display:flex;gap:10px;flex-wrap:wrap}
+.quickrow .inp{flex:1 1 190px}
+.inp,.ta{width:100%;font-family:inherit;font-size:var(--fs-body);color:var(--ink);background:#fff;border:1.5px solid transparent;border-radius:var(--r-sm);padding:14px 18px;min-height:54px;transition:box-shadow var(--dur) var(--ease)}
+.inp:focus,.ta:focus{outline:none;box-shadow:0 0 0 4px rgba(39,103,130,.35)}
+.ta{min-height:104px;resize:vertical}
+.quick .more{margin-top:16px}
+.quick summary{list-style:none;cursor:pointer;font-size:.93rem;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:10px;min-height:44px}
+.quick summary::-webkit-details-marker{display:none}
+.quick summary .toggle{display:grid;place-items:center;width:28px;height:28px;border-radius:var(--r-xs);border:1px solid rgba(255,255,255,.4);transition:transform var(--dur) var(--ease)}
+.quick details[open] summary .toggle{transform:rotate(135deg)}
+.morefields{margin-top:16px;display:grid;gap:14px}
+.morefields .fl{display:block}
+.morefields .fl > span{display:block;font-size:.88rem;font-weight:600;color:rgba(255,255,255,.88);margin-bottom:7px}
+.radio-row{display:flex;flex-wrap:wrap;gap:9px}
+.radio-pill{position:relative}
+.radio-pill input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.radio-pill span{display:inline-block;padding:11px 18px;min-height:48px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.08);color:#fff;font-size:.93rem;font-weight:500}
+.radio-pill input:checked + span{background:#fff;color:var(--ink);font-weight:700;border-color:#fff}
+.radio-pill input:focus-visible + span{outline:3px solid #fff;outline-offset:3px}
+.check{display:flex;gap:12px;align-items:center;min-height:48px;font-size:.92rem;color:rgba(255,255,255,.86)}
+.check input{width:26px;height:26px;flex:none;accent-color:var(--teal-700)}
+.qnote{font-size:.88rem;color:rgba(255,255,255,.76);margin:14px 0 0}
+
+.foot{background:var(--teal-800);color:#fff;overflow:hidden;padding-top:clamp(48px,6vw,90px)}
+.foot a{color:#fff}
+.footstate{font-family:var(--fd);font-size:clamp(1.7rem,1.1rem + 2.3vw,3rem);font-weight:500;letter-spacing:-.035em;line-height:1.12;max-width:19ch;margin:0}
+.foot-top{display:grid;grid-template-columns:1fr auto;gap:var(--s7);align-items:end;padding-bottom:var(--s8)}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr;align-items:start}}
+.foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--s6);border-top:1px solid rgba(255,255,255,.16);padding-block:var(--s7)}
+.foot-cols b{display:block;margin-bottom:12px;font-size:.95rem}
+.foot-cols p{color:rgba(255,255,255,.72);font-size:.96rem;margin:0;line-height:1.9}
+.foot-cols a{display:inline-block;min-height:32px;padding:3px 0;text-decoration:none;border-bottom:1px solid transparent}
+.foot-cols a:hover{border-color:rgba(255,255,255,.5)}
+.foot-note{font-size:.85rem;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.16);padding-block:var(--s5) var(--s6);max-width:80ch}
+.foot-note{padding-bottom:clamp(36px,4vw,56px)}
+
+@media(max-width:400px){.pcard{flex:0 0 268px}}
+
+
+/* ---------- Mobil: die Panels werden zu Wischkarten, die Tabs zu Punkten ---------- */
+@media(max-width:760px){
+  .stack{width:100%;padding-bottom:0}
+  .stack-l{display:none}
+  .glass-card{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    background:none;border:none;backdrop-filter:none;box-shadow:none;border-radius:0;padding:0 0 4px;
+    margin-inline:calc(clamp(18px,3.2vw,48px) * -1);padding-inline:clamp(18px,3.2vw,48px)}
+  .glass-card::-webkit-scrollbar{display:none}
+  .gc-panel{grid-area:auto;position:static;flex:0 0 82%;scroll-snap-align:center;
+    visibility:visible;opacity:1;transform:none;pointer-events:auto;transition:none;
+    background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(18px) saturate(1.3);
+    border-radius:var(--r-lg);padding:22px;box-shadow:0 18px 40px -28px rgba(13,45,70,.55)}
+  .gc-panel:last-child{margin-right:clamp(18px,3.2vw,48px)}
+  /* Tabs werden Punkte */
+  .switch{width:auto;background:none;border:none;backdrop-filter:none;padding:0;gap:2px}
+  .sw{width:44px;height:44px;min-height:44px;padding:0;font-size:0;background:transparent;position:relative;flex:none}
+  .sw::before{content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;width:9px;height:9px;border-radius:99px;background:var(--teal-300);transition:width var(--dur) var(--ease),background-color var(--dur) var(--ease)}
+  .sw.is-on::before{width:26px;background:var(--teal-700)}
+  .sw.is-on{background:transparent;color:transparent}
+}
+</style>
+
+<!-- ================= 1 HERO, vollflaechig ================= -->
+<header class="shot shot--light hero" id="top">
+  <div class="shot-bg">
+    <img src="bilder/alltagshilfe-hero-einkauf-uebergabe.webp" alt="Eine Helferin bringt einer älteren Frau Einkäufe in ihre Wohnung" width="2400" height="1600" fetchpriority="high">
+  </div>
+
+  <div class="wrap topnav">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><svg class="ic ic-22"><use href="#ic-homesmile"></use></svg></span>
+      <span><span class="brand-name">Cantu</span><span class="brand-sub">Alltagshilfe</span></span>
+    </a>
+    <nav class="navlinks" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#kosten">Kosten</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#fragen">Fragen</a>
+    </nav>
+    <a class="btn btn--ghost btn--sm" href="#kontakt">Kennenlernen<span class="arw" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-arrow-ur"></use></svg></span></a>
+    <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mobilenav" aria-label="Menü öffnen">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="mobilenav" id="mobilenav" aria-label="Menü" hidden>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#kosten">Kosten</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#fragen">Fragen</a>
+      <div class="mobilenav-cta">
+        <a class="btn btn--primary btn--sm" href="#kontakt">Kennenlernen<span class="arw" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-arrow-ur"></use></svg></span></a>
+        <a class="tel" href="tel:+49000000000"><svg class="ic ic-20" aria-hidden="true"><use href="#ic-phone"></use></svg><span><small>Lieber anrufen</small><span class="ph-i">[TELEFON]</span></span></a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrap shot-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="chip-lab"><i aria-hidden="true"><svg class="ic ic-14"><use href="#ic-pin"></use></svg></i>Haushalt, Alltag und Gesellschaft in <span class="ph-i">[ORT]</span></span>
+        <h1>Haushaltshilfe und Alltagshilfe in <span class="ph-i">[Ort]</span></h1>
+        <p class="hero-lead">Ich unterstütze Sie oder Ihre Eltern zu Hause. Im Haushalt, beim Einkauf, bei den Wegen und bei den kleinen Dingen, die im Alltag schwer geworden sind. Es kommt immer dieselbe Person, und Sie sind an nichts gebunden.</p>
+        <div class="hero-actions">
+          <a class="btn btn--light" href="#kontakt">Kostenloses Kennenlernen<span class="arw" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-arrow-ur"></use></svg></span></a>
+          <a class="tel tel--ghost" href="tel:+49000000000"><svg class="ic ic-20" aria-hidden="true"><use href="#ic-phone"></use></svg><span><small>Lieber anrufen</small><span class="ph-i">[TELEFON]</span></span></a>
+        </div>
+        <p class="hero-micro">Rückruf am selben Tag. Kein Verkaufsgespräch.</p>
+      </div>
+
+      <div class="hero-cards">
+        <div class="glasscard">
+          <p class="k"><span>Erstes Treffen</span><svg class="ic ic-16" aria-hidden="true"><use href="#ic-calendar"></use></svg></p>
+          <p class="big">0 €</p>
+          <p class="sub">Kennenlernen bei Ihnen zu Hause, etwa 45 Minuten, unverbindlich</p>
+          <a class="btn btn--light btn--sm" href="#kontakt">Termin anfragen<span class="arw" aria-hidden="true"><svg class="ic ic-14"><use href="#ic-arrow-ur"></use></svg></span></a>
+        </div>
+        <div class="glasscard glasscard--slim">
+          <p class="k"><span>Verlässlichkeit</span><svg class="ic ic-16" aria-hidden="true"><use href="#ic-user"></use></svg></p>
+          <p class="big big--sm">Immer dieselbe Person</p>
+          <p class="sub" style="margin:0">Fester Tag, feste Uhrzeit, kein wechselndes Team</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="hauptinhalt">
+
+<!-- ================= 2 STATEMENT ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head head--wide">
+      <span class="eyebrow">Über mich</span>
+      <p class="statement">Ich bin Brigitte Cantu und unterstütze Menschen zu Hause
+        <span class="inchip"><svg class="ic ic-14"><use href="#ic-home"></use></svg>im Haushalt</span>, <span class="inchip"><svg class="ic ic-14"><use href="#ic-bag"></use></svg>im Alltag</span>
+        und mit Gesellschaft, <span class="hl">damit zu Hause zu Hause bleibt</span>.</p>
+      <p>Keine Agentur, kein wechselndes Team, keine Warteschleife. Sie rufen an, wir lernen uns bei Ihnen zu Hause kennen, und danach komme immer ich.</p>
+    </div>
+    <div class="metas">
+      <span class="meta"><i aria-hidden="true"><svg class="ic ic-18"><use href="#ic-user"></use></svg></i>Immer dieselbe Person</span>
+      <span class="meta"><i aria-hidden="true"><svg class="ic ic-18"><use href="#ic-verified"></use></svg></i>Kein Vertrag, keine Kündigungsfrist</span>
+      <span class="meta"><i aria-hidden="true"><svg class="ic ic-18"><use href="#ic-pin"></use></svg></i><span class="ph-i">[ORT]</span> und Umgebung</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 LEISTUNGEN, Umschalter ================= -->
+<section class="sec tools" id="leistungen">
+  <div class="tools-bg" aria-hidden="true">
+    <img class="tools-img is-on" data-bg="haushalt" src="bilder/haushaltshilfe-waesche-falten.webp" alt="" width="1200" height="800" loading="lazy">
+    <img class="tools-img" data-bg="alltag" src="bilder/alltagshilfe-einkauf-gemuese.webp" alt="" width="1200" height="800" loading="lazy">
+    <img class="tools-img" data-bg="gesellschaft" src="bilder/seniorenhilfe-tee-im-freien.webp" alt="" width="1200" height="800" loading="lazy">
+    <img class="tools-img" data-bg="hauswirtschaft" src="bilder/alltagshilfe-gespraech-kaffee.webp" alt="" width="1200" height="800" loading="lazy">
+  </div>
+  <div class="wrap tools-grid">
+    <div class="tools-copy">
+      <span class="eyebrow">Was ich für Sie tue</span>
+      <h2>Alles, was zu Hause schwer geworden ist</h2>
+    </div>
+
+    <div class="tools-stage">
+      <div class="stack">
+        <span class="stack-l stack-l3" aria-hidden="true"></span>
+        <span class="stack-l stack-l2" aria-hidden="true"></span>
+        <div class="glass-card">
+          <div class="gc-panel is-on" data-panel="haushalt">
+            <span class="gc-ic"><svg class="ic ic-22"><use href="#ic-home"></use></svg></span>
+            <p class="gc-t">Haushalt</p>
+            <ul class="gc-list"><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Küche, Bad und Wohnräume reinigen</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Wäsche waschen, aufhängen, bügeln</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Betten beziehen, Ordnung halten</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Fenster und Gardinen nach Absprache</li></ul>
+            <p class="gc-d">Alles, was liegen bleibt, wenn die Kraft für die großen Sachen nicht mehr reicht.</p>
+          </div>
+          <div class="gc-panel" data-panel="alltag">
+            <span class="gc-ic"><svg class="ic ic-22"><use href="#ic-bag"></use></svg></span>
+            <p class="gc-t">Alltag und Wege</p>
+            <ul class="gc-list"><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Einkaufen, allein oder gemeinsam</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Wege zu Post, Bank und Apotheke</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Begleitung zu Arztterminen</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Hilfe beim Papierkram</li></ul>
+            <p class="gc-d">Die Besorgungen und Termine, die alleine mühsam werden und zu zweit leicht sind.</p>
+          </div>
+          <div class="gc-panel" data-panel="gesellschaft">
+            <span class="gc-ic"><svg class="ic ic-22"><use href="#ic-hearthand"></use></svg></span>
+            <p class="gc-t">Gesellschaft</p>
+            <ul class="gc-list"><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Zeit zum Reden, bei Kaffee oder beim Kochen</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Spaziergänge und kleine Ausflüge</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Vorlesen, Spiele, gemeinsame Beschäftigung</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Begleitung zu Friseur und Fußpflege</li></ul>
+            <p class="gc-d">Oft der eigentliche Grund, warum jemand anruft, auch wenn zuerst vom Putzen die Rede ist.</p>
+          </div>
+          <div class="gc-panel" data-panel="hauswirtschaft">
+            <span class="gc-ic"><svg class="ic ic-22"><use href="#ic-package"></use></svg></span>
+            <p class="gc-t">Hauswirtschaft</p>
+            <ul class="gc-list"><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Frisch kochen, allein oder zusammen</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Vorräte und Kühlschrank im Blick</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Mahlzeiten für die Tage dazwischen</li><li><svg class="ic ic-14"><use href="#ic-check"></use></svg>Auf Trinken und Ernährung achten</li></ul>
+            <p class="gc-d">Damit auch an den Tagen, an denen ich nicht da bin, etwas Gutes im Haus ist.</p>
+          </div>
+        </div>
+      </div>
+      <div class="switch" role="tablist" aria-label="Leistungsbereich wählen">
+          <button class="sw is-on" type="button" role="tab" aria-selected="true" data-cat="haushalt">Haushalt</button>
+          <button class="sw" type="button" role="tab" aria-selected="false" data-cat="alltag">Alltag</button>
+          <button class="sw" type="button" role="tab" aria-selected="false" data-cat="gesellschaft">Gesellschaft</button>
+          <button class="sw" type="button" role="tab" aria-selected="false" data-cat="hauswirtschaft">Hauswirtschaft</button>
+      </div>
+    </div>
+
+    <div class="tools-side">
+      <p>Sie entscheiden, was Sie davon brauchen, und Sie können es jederzeit ändern. Wir legen es beim Kennenlernen gemeinsam fest.</p>
+      <a class="btn btn--light btn--sm" href="#kontakt">Kennenlernen<span class="arw" aria-hidden="true"><svg class="ic ic-14"><use href="#ic-arrow-ur"></use></svg></span></a>
+    </div>
+  </div>
+
+  <p class="wrap disclaimer"><b>Was ich nicht mache:</b> Ich bin keine Pflegekraft. Grundpflege wie Waschen und Anziehen, medizinische Leistungen, Wundversorgung und das Stellen oder Geben von Medikamenten gehören zu einem Pflegedienst. Wenn Sie so etwas brauchen, sage ich Ihnen das offen und nenne Ihnen jemanden.</p>
+</section>
+
+<!-- ================= 4 FOTOBAND KOSTEN, vollflaechig ================= -->
+<section class="shot band on-dark" id="kosten">
+  <div class="shot-bg">
+    <img src="bilder/alltagshilfe-kosten-kuechenfenster.webp" alt="Ältere Frau schaut aus dem Fenster ihrer warm beleuchteten Küche" width="2400" height="1600" loading="lazy">
+  </div>
+  <div class="wrap shot-inner">
+    <div class="band-head">
+      <span class="chip-lab"><i aria-hidden="true"><svg class="ic ic-14"><use href="#ic-euro"></use></svg></i>Klartext</span>
+      <h2>Was es kostet, und was Sie davon wirklich selbst zahlen</h2>
+    </div>
+    <div class="band-foot">
+      <div>
+        <p>Die meisten fragen das als Letztes, dabei ist es die Frage, die am meisten bremst. Abgerechnet wird die Zeit, die ich da bin, auf die Viertelstunde genau. Sie bekommen eine ordentliche Rechnung.</p>
+        <a class="btn btn--light" href="#kontakt">Kennenlernen vereinbaren<span class="arw" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-arrow-ur"></use></svg></span></a>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="n"><span class="ph-i on-dark">[SATZ]</span> €</span><span class="l">pro Stunde, ohne Anfahrt in <span class="ph-i on-dark">[ORT]</span></span></div>
+        <div class="stat"><span class="n">0 €</span><span class="l">für das Kennenlernen bei Ihnen zu Hause</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 WECHSELNDE SPLITS ================= -->
+<section class="sec" id="ablauf">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">So läuft es</span>
+      <h2>Vom ersten Anruf bis zum <span class="hl">festen Termin</span></h2>
+    </div>
+
+    <div class="alt alt--steps">
+      <div class="txt">
+        <h2>So lernen wir uns <span class="hl">kennen</span></h2>
+        <div class="rows steps" data-steps>
+          <div class="rowitem step is-open" data-step>
+            <h3>1 · Wir treffen uns bei Ihnen zu Hause</h3>
+            <div class="step-body"><div><p>Sie rufen an oder schreiben, ich melde mich am selben Tag. Beim Termin setzen wir uns hin und reden, etwa 45 Minuten. Sie müssen vorher nicht aufräumen. Genau dafür komme ich ja.</p></div></div>
+          </div>
+          <div class="rowitem step" data-step>
+            <h3>2 · Wir legen fest, was gebraucht wird</h3>
+            <div class="step-body"><div><p>Was ist wichtig, was kann warten, wie viele Stunden ergeben Sinn. Ich sage Ihnen ehrlich, was ich übernehme und was nicht, und was es kostet. Sie entscheiden danach in Ruhe.</p></div></div>
+          </div>
+          <div class="rowitem step" data-step>
+            <h3>3 · Fester Tag, feste Uhrzeit, dieselbe Person</h3>
+            <div class="step-body"><div><p>Wir verabreden einen festen Termin in der Woche. Ab dann komme immer ich, zur selben Zeit, und Sie müssen nichts mehr organisieren oder erklären.</p></div></div>
+          </div>
+          <div class="rowitem step" data-step>
+            <h3>4 · Ändert sich etwas, ändern wir es</h3>
+            <div class="step-body"><div><p>Mehr Stunden, weniger Stunden, ein anderer Tag: sagen Sie einfach Bescheid. Es gibt keinen Vertrag mit Laufzeit und keine Kündigungsfrist.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="vis vis--photo vis--sticky">
+        <img src="bilder/alltagshilfe-kennenlernen-am-tisch.webp" alt="Zwei Frauen sitzen an einem Tisch und sprechen miteinander" width="1500" height="1000" loading="lazy" style="object-position:60% center">
+        <span class="tag">Stockfoto, austauschbar</span>
+      </div>
+    </div>
+
+    <div class="alt" id="ueber-mich">
+      <div class="txt">
+        <h2>Wer zu Ihnen <span class="hl">kommt</span></h2>
+        <div class="rows">
+          <div class="rowitem">
+            <h3>Brigitte Cantu</h3>
+            <p>Seit <span class="ph-i">[JAHRE]</span> Jahren unterstütze ich Menschen in <span class="ph-i">[ORT]</span> zu Hause. Angefangen habe ich damit, weil <span class="ph-i">[PLATZHALTER: der echte Grund, ein Satz von Brigitte]</span>. Geblieben bin ich, weil ich sehe, wie viel Unterschied ein verlässlicher Termin in der Woche macht.</p>
+          </div>
+          <div class="rowitem is-muted"><h3><span class="ph-i">[PLATZHALTER Qualifikation: Ausbildung, Kurse, Führungszeugnis, Haftpflicht, § 45a. Nur was belegt ist.]</span></h3></div>
+          <div class="rowitem is-muted"><h3>Sie erreichen mich direkt, kein Callcenter, keine Warteschleife</h3></div>
+        </div>
+        <div style="margin-top:var(--s6)">
+          <a class="tel" href="tel:+49000000000"><svg class="ic ic-20" aria-hidden="true"><use href="#ic-phone"></use></svg><span><small>Rufen Sie mich einfach an</small><span class="ph-i">[TELEFON]</span></span></a>
+        </div>
+      </div>
+      <div class="vis vis--ph">
+        <div class="ph-portrait">
+          <b>Porträt Brigitte Cantu</b>
+          <span>Pflicht für die finale Seite. Bewusst kein Stockfoto einer fremden Frau, das wäre eine Täuschung und würde genau das Vertrauen beschädigen, das diese Sektion aufbauen soll.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 5b KENNZAHLEN, Layout aus der Vorlage ================= -->
+<section class="sec sec--soft" id="finanzierung">
+  <div class="wrap">
+    <div class="head head--wide">
+      <span class="eyebrow">Kosten und Zuschüsse</span>
+      <p class="bigstate">Ich sage Ihnen vorher, was eine Stunde kostet<span class="inpic"><img src="bilder/alltagshilfe-einkauf-gemuese.webp" alt="" width="1200" height="800" loading="lazy"></span>,
+        <span class="dim">welcher Zuschuss bei Ihnen greift<span class="inpic"><img src="bilder/seniorenhilfe-spaziergang.webp" alt="" width="1200" height="800" loading="lazy"></span> und was am Ende wirklich bei Ihnen hängen bleibt.</span></p>
+    </div>
+    <div class="figrow">
+      <div class="fig">
+        <span class="n">20 %</span>
+        <b>zurück über die Steuer</b>
+        <p>Haushaltsnahe Dienstleistungen sind nach § 35a Einkommensteuergesetz mit 20 Prozent der Arbeitskosten absetzbar, bis zu 4.000 Euro im Jahr. Voraussetzung sind eine Rechnung und eine Überweisung. Beides bekommen Sie von mir. Einen Pflegegrad brauchen Sie dafür nicht.</p>
+      </div>
+      <div class="fig">
+        <span class="n">131 €</span>
+        <b>im Monat von der Pflegekasse</b>
+        <p>Ab Pflegegrad 1 steht Ihnen monatlich ein Entlastungsbetrag zu. Nicht genutzte Beträge verfallen erst am 30. Juni des Folgejahres. <span class="ph-i">[PLATZHALTER: Anerkennung nach § 45a SGB XI klären, erst dann darf hier eine Zusage zur Abrechnung stehen.]</span></p>
+      </div>
+      <div class="fig">
+        <span class="n">3.539 €</span>
+        <b>im Jahr aus der Verhinderungspflege</b>
+        <p>Ab Pflegegrad 2 steht ein gemeinsamer Jahresbetrag für Verhinderungs- und Kurzzeitpflege zur Verfügung. Er lässt sich auch stundenweise nutzen. Viele wissen das nicht.</p>
+      </div>
+    </div>
+    <p class="figfoot">Welcher Weg bei Ihnen greift, sage ich Ihnen beim Kennenlernen ehrlich.</p>
+  </div>
+</section>
+
+<!-- ================= 6 MEIN VERSPRECHEN ================= -->
+<section class="sec sec--mist" id="versprechen">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Mein Versprechen</span>
+      <h2>Worauf Sie sich bei mir <span class="hl">verlassen</span> können</h2>
+    </div>
+
+    <div class="plans">
+      <article class="plan">
+        <div>
+          <h3>Selbstverständlich</h3>
+          <p>Kein wechselndes Team, kein Callcenter, keine Warteschleife. Sie wissen immer, wer klingelt, und Sie erreichen mich direkt.</p>
+        </div>
+        <div class="plan-figs">
+          <div><span class="n">1</span><small>feste Person, immer dieselbe</small></div>
+          <div><span class="n">0 €</span><small>für das Kennenlernen zu Hause</small></div>
+        </div>
+      </article>
+
+      <article class="plan plan--hero">
+        <img class="plan-bg" src="bilder/seniorenhilfe-tee-im-freien.webp" alt="" width="2400" height="1602" loading="lazy">
+        <div class="plan-in">
+          <div>
+            <h3>Was das im Alltag heißt</h3>
+            <p>Fester Tag, feste Uhrzeit. Abgerechnet wird die Zeit, die ich wirklich da bin, und Sie bekommen eine ordentliche Rechnung.</p>
+          </div>
+          <div class="plan-figs">
+            <div><span class="n">¼ Std</span><small>genau abgerechnet, ohne Aufrundung</small></div>
+            <div><span class="n">24 h</span><small>Rückruf, meist am selben Tag</small></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="plan-list">
+        <p class="pl-lab">Was Sie davon haben</p>
+        <div class="pl-item"><svg class="ic ic-18"><use href="#ic-verified"></use></svg><div><b>Ehrlich, auch wenn es gegen mich spricht</b><p>Wenn Sie einen Pflegedienst brauchen und nicht mich, sage ich Ihnen das und nenne Ihnen jemanden.</p></div></div>
+        <div class="pl-item"><svg class="ic ic-18"><use href="#ic-verified"></use></svg><div><b>Was ich sehe, bleibt bei mir</b><p>Ihre Wohnung, Ihre Post, Ihre Situation. Nichts davon geht nach draußen, und niemand wird beurteilt.</p></div></div>
+        <div class="pl-item"><svg class="ic ic-18"><use href="#ic-verified"></use></svg><div><b>Kein Vertrag, keine Kündigungsfrist</b><p>Wenn es nicht passt oder sich Ihre Situation ändert, sagen Sie es einfach.</p></div></div>
+      </div>
+    </div>
+
+    <p class="plans-note"><span class="ph-i">[PLATZHALTER: Kundenstimmen.]</span> Hier stehen später zwei bis drei echte Stimmen mit Vorname, Ort und Einverständnis. Bis dahin bleibt die Stelle leer. Erfundene Bewertungen sind in dieser Nische der schnellste Weg, Vertrauen zu verlieren.</p>
+  </div>
+</section>
+
+<!-- ================= 7 EINZUGSGEBIET ================= -->
+<section class="sec--tight sec--mist">
+  <div class="wrap tagwrap">
+    <div>
+      <span class="eyebrow">Einzugsgebiet</span>
+      <h2 style="font-weight:400">Ich bin in <span class="ph-i">[ORT]</span> und <span class="dim">im näheren Umkreis</span> unterwegs</h2>
+      <p style="margin-top:var(--s5);color:var(--ink-muted);font-size:var(--fs-lead);max-width:52ch">Sie sind sich nicht sicher, ob Ihre Adresse dazugehört? Rufen Sie kurz an, dann klären wir das in einer Minute.</p>
+    </div>
+    <ul class="tags">
+      <li class="ph-i">[STADTTEIL A]</li>
+      <li class="ph-i">[STADTTEIL B]</li>
+      <li class="ph-i">[STADTTEIL C]</li>
+      <li class="ph-i">[STADTTEIL D]</li>
+      <li class="ph-i">[NACHBARORT 1]</li>
+      <li class="ph-i">[NACHBARORT 2]</li>
+      <li>und weitere Orte im Umkreis von <span class="ph-i">[X]</span> km</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 8 FAQ ================= -->
+<section class="sec" id="fragen">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Antworten auf das, was <span class="dim">am häufigsten</span> gefragt wird</h2>
+    </div>
+    <div class="faqwrap">
+      <div class="helpcard">
+        <div class="badge" style="display:grid;place-items:center;width:44px;height:44px;border-radius:var(--r-md);background:var(--teal-100);color:var(--teal-700);margin-bottom:16px"><svg class="ic ic-22"><use href="#ic-help"></use></svg></div>
+        <h3>Noch eine Frage offen?</h3>
+        <p>Rufen Sie einfach an. Sie müssen nichts vorbereiten, ich bringe die richtigen Fragen mit.</p>
+        <a class="btn btn--primary" href="tel:+49000000000">Jetzt anrufen<span class="arw" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-arrow-ur"></use></svg></span></a>
+        <p style="margin:16px 0 0;font-size:.9rem"><span class="ph-i">[TELEFON]</span>, erreichbar <span class="ph-i">[ZEITEN]</span></p>
+      </div>
+      <div class="faq">
+        <details open><summary>Muss ich vorher aufräumen, bevor Sie kommen?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Nein. Sie müssen vorher nichts vorbereiten und nichts wegräumen. Ich komme, um genau das zu übernehmen. Niemand wird beurteilt, und es geht nichts nach draußen.</p></div></details>
+        <details><summary>Kommt immer dieselbe Person?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Ja. Ich arbeite allein, deshalb komme immer ich. Wenn ich einmal krank bin oder Urlaub habe, sage ich rechtzeitig Bescheid und wir finden gemeinsam eine Lösung.</p></div></details>
+        <details><summary>Was kostet eine Stunde?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Eine Stunde kostet <span class="ph-i">[SATZ]</span> Euro. Innerhalb von <span class="ph-i">[ORT]</span> kommen keine Anfahrtskosten dazu. Abgerechnet wird die tatsächlich geleistete Zeit auf die Viertelstunde genau, und Sie bekommen eine ordentliche Rechnung.</p></div></details>
+        <details><summary>Kann ich die Kosten von der Steuer absetzen?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Ja. Haushaltsnahe Dienstleistungen sind nach § 35a Einkommensteuergesetz mit 20 Prozent der Arbeitskosten absetzbar, höchstens 4.000 Euro im Jahr. Voraussetzung sind eine Rechnung und eine Überweisung, Barzahlung zählt nicht. Einen Pflegegrad brauchen Sie dafür nicht.</p></div></details>
+        <details><summary>Wofür ist der Entlastungsbetrag von 131 Euro?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Der Entlastungsbetrag nach § 45b SGB XI beträgt 131 Euro im Monat und steht Pflegebedürftigen ab Pflegegrad 1 zu, die zu Hause versorgt werden. Er ist für Angebote zur Unterstützung im Alltag gedacht, zum Beispiel Haushaltshilfe und Alltagsbegleitung. Nicht genutzte Beträge verfallen erst am 30. Juni des Folgejahres.</p><p><span class="ph-i">[PLATZHALTER: Satz zur Abrechnung bei Brigitte erst ergänzen, wenn die Anerkennung nach § 45a SGB XI belegt ist.]</span></p></div></details>
+        <details><summary>Was ist der Unterschied zwischen Ihnen und einem Pflegedienst?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Ein Pflegedienst übernimmt Grundpflege und medizinische Leistungen, zum Beispiel Waschen, Anziehen, Verbände und Medikamente. Ich übernehme den Haushalt, den Alltag und die Begleitung. Beides ergänzt sich gut, und oft ist beides zusammen die beste Lösung.</p></div></details>
+        <details><summary>Brauche ich einen Pflegegrad?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Nein. Sie können mich ganz normal privat beauftragen, ohne Pflegegrad und ohne Antrag. Ein Pflegegrad eröffnet zusätzliche Möglichkeiten der Finanzierung, ist aber keine Voraussetzung.</p></div></details>
+        <details><summary>Wie lange bin ich gebunden?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Gar nicht. Es gibt keinen Vertrag mit Laufzeit und keine Kündigungsfrist. Wenn es nicht passt oder sich Ihre Situation ändert, sagen Sie es einfach.</p></div></details>
+        <details><summary>Meine Mutter will niemanden in die Wohnung lassen. Was jetzt?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Das höre ich oft, und es ist völlig verständlich. Deshalb ist das erste Treffen ein Kennenlernen und kein Arbeitseinsatz. Wir setzen uns hin und reden, und Ihre Mutter entscheidet danach selbst, ob und was sie möchte.</p></div></details>
+        <details><summary>Wie schnell können Sie anfangen?<span class="toggle" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-plus"></use></svg></span></summary><div class="a"><p>Das Kennenlernen bekommen wir meist innerhalb weniger Tage hin. Wann der erste feste Termin möglich ist, sage ich Ihnen ehrlich, sobald wir gesprochen haben. <span class="ph-i">[PLATZHALTER: reale Kapazität von Brigitte erfragen.]</span></p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 ABSCHLUSSBAND, vollflaechig ================= -->
+<section class="shot band on-dark" id="kontakt">
+  <div class="shot-bg">
+    <img src="bilder/alltagshilfe-abschluss-haende.webp" alt="Eine jüngere Hand hält behutsam die Hand einer älteren Frau" width="2400" height="1600" loading="lazy">
+  </div>
+  <div class="wrap shot-inner">
+    <div class="band-head">
+      <span class="chip-lab"><i aria-hidden="true"><svg class="ic ic-14"><use href="#ic-calendar"></use></svg></i>Der nächste Schritt</span>
+      <h2>Lernen wir uns kennen, kostenlos und unverbindlich</h2>
+    </div>
+    <form class="quick" novalidate>
+      <span class="lab">Name und Telefonnummer genügen, ich melde mich am selben Tag zurück.</span>
+      <div class="quickrow">
+        <label class="sr" for="qname">Ihr Name</label>
+        <input class="inp" id="qname" name="name" type="text" autocomplete="name" placeholder="Ihr Name" required>
+        <label class="sr" for="qtel">Ihre Telefonnummer</label>
+        <input class="inp" id="qtel" name="telefon" type="tel" autocomplete="tel" placeholder="Ihre Telefonnummer" required>
+        <button class="btn btn--light" type="submit">Rückruf anfragen<span class="arw" aria-hidden="true"><svg class="ic ic-16"><use href="#ic-arrow-ur"></use></svg></span></button>
+      </div>
+
+      <details class="more">
+        <summary><span class="toggle" aria-hidden="true"><svg class="ic ic-14"><use href="#ic-plus"></use></svg></span>Mehr angeben, wenn Sie möchten</summary>
+        <div class="morefields">
+          <label class="fl"><span>Wann erreiche ich Sie am besten?</span>
+            <div class="radio-row">
+              <label class="radio-pill"><input type="radio" name="zeit" value="vormittags" checked><span>Vormittags</span></label>
+              <label class="radio-pill"><input type="radio" name="zeit" value="nachmittags"><span>Nachmittags</span></label>
+              <label class="radio-pill"><input type="radio" name="zeit" value="abends"><span>Abends</span></label>
+            </div>
+          </label>
+          <label class="fl"><span>Für wen suchen Sie Unterstützung?</span>
+            <div class="radio-row">
+              <label class="radio-pill"><input type="radio" name="fuerwen" value="angehoeriger" checked><span>Für einen Angehörigen</span></label>
+              <label class="radio-pill"><input type="radio" name="fuerwen" value="selbst"><span>Für mich selbst</span></label>
+            </div>
+          </label>
+          <label class="fl"><span>Worum geht es?</span>
+            <div class="radio-row">
+              <label class="radio-pill"><input type="radio" name="thema" value="haushalt"><span>Haushalt</span></label>
+              <label class="radio-pill"><input type="radio" name="thema" value="alltag"><span>Alltag und Wege</span></label>
+              <label class="radio-pill"><input type="radio" name="thema" value="gesellschaft"><span>Gesellschaft</span></label>
+              <label class="radio-pill"><input type="radio" name="thema" value="unklar" checked><span>Weiß ich noch nicht</span></label>
+            </div>
+          </label>
+          <label class="fl"><span>E-Mail, optional</span><input class="inp" type="email" name="email" autocomplete="email" placeholder="Optional"></label>
+          <label class="fl"><span>Ihre Nachricht, optional</span><textarea class="ta" name="nachricht" placeholder="Was brauchen Sie? Ein paar Stichworte reichen."></textarea></label>
+        </div>
+      </details>
+
+      <label class="check" style="margin-top:14px"><input type="checkbox" name="datenschutz" required><span>Ich habe den Datenschutzhinweis gelesen.</span></label>
+      <p class="qnote">Kein Verkaufsgespräch. Oder rufen Sie direkt an: <a href="tel:+49000000000" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:4px;display:inline-block;min-height:44px;padding:10px 0"><span class="ph-i on-dark">[TELEFON]</span></a></p>
+      <p class="qnote" style="margin-top:0"><span class="ph-i on-dark">[PLATZHALTER: Formularversand technisch anbinden, der Entwurf sendet nichts.]</span></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= 10 FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <span class="chip-lab"><i aria-hidden="true"><svg class="ic ic-14"><use href="#ic-hearthand"></use></svg></i>Cantu Alltagshilfe</span>
+        <p class="footstate">Damit zu Hause zu Hause bleibt. Eine feste Person. Kein Vertrag.</p>
+      </div>
+      <a class="tel tel--ghost" href="tel:+49000000000"><svg class="ic ic-20" aria-hidden="true"><use href="#ic-phone"></use></svg><span><small>Direkt anrufen</small><span class="ph-i on-dark">[TELEFON]</span></span></a>
+    </div>
+    <div class="foot-cols">
+      <div><b>Cantu Alltagshilfe</b><p>Brigitte Cantu<br><span class="ph-i on-dark">[ANSCHRIFT]</span></p></div>
+      <div><b>Kontakt</b><p><a href="tel:+49000000000"><span class="ph-i on-dark">[TELEFON]</span></a><br><span class="ph-i on-dark">[E-MAIL]</span><br>Erreichbar <span class="ph-i on-dark">[ZEITEN]</span></p></div>
+      <div><b>Seite</b><p><a href="#leistungen">Leistungen</a><br><a href="#kosten">Kosten</a><br><a href="#ablauf">Ablauf</a><br><a href="#fragen">Fragen</a></p></div>
+      <div><b>Rechtliches</b><p><a href="#">Impressum</a><br><a href="#">Datenschutz</a></p></div>
+    </div>
+    <p class="foot-note">Angaben zu Leistungen und Beträgen der Pflegeversicherung ohne Gewähr, Stand September 2026. Was in Ihrem Fall gilt, erfahren Sie bei Ihrer Pflegekasse oder beim Pflegestützpunkt. Fotos: Pexels, Nachweise in bilder/CREDITS.md. Icons: Untitled UI.</p>
+  </div>
+</footer>
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"LocalBusiness",
+      "@id":"https://dev.likovo.de/brigitte-cantu/#betrieb",
+      "name":"Cantu Alltagshilfe",
+      "alternateName":"Brigitte Cantu Alltagshilfe",
+      "description":"Haushaltshilfe, Alltagshilfe und Seniorenhilfe in [ORT]. Hauswirtschaftliche Dienstleistungen, Besorgungen, Begleitung und Gesellschaft im eigenen Zuhause.",
+      "telephone":"[TELEFON]",
+      "email":"[E-MAIL]",
+      "priceRange":"[SATZ] EUR pro Stunde",
+      "address":{"@type":"PostalAddress","streetAddress":"[STRASSE]","postalCode":"[PLZ]","addressLocality":"[ORT]","addressCountry":"DE"},
+      "geo":{"@type":"GeoCoordinates","latitude":"[LAT]","longitude":"[LON]"},
+      "areaServed":["[ORT]","[STADTTEIL A]","[STADTTEIL B]","[STADTTEIL C]","[NACHBARORT 1]","[NACHBARORT 2]"],
+      "openingHours":"[ZEITEN]"
+    },
+    {"@type":"Person","@id":"https://dev.likovo.de/brigitte-cantu/#brigitte","name":"Brigitte Cantu","jobTitle":"Haushalts- und Alltagshilfe","worksFor":{"@id":"https://dev.likovo.de/brigitte-cantu/#betrieb"}},
+    {"@type":"Service","name":"Haushaltshilfe","serviceType":"Haushaltshilfe","provider":{"@id":"https://dev.likovo.de/brigitte-cantu/#betrieb"},"areaServed":"[ORT]","description":"K\u00fcche, Bad und Wohnr\u00e4ume reinigen, W\u00e4sche waschen und b\u00fcgeln, Betten beziehen, Ordnung halten."},
+    {"@type":"Service","name":"Alltagshilfe","serviceType":"Alltagsbegleitung","provider":{"@id":"https://dev.likovo.de/brigitte-cantu/#betrieb"},"areaServed":"[ORT]","description":"Einkaufen, Wege zu Post, Bank und Apotheke, Begleitung zu Arztterminen, Hilfe beim Papierkram."},
+    {"@type":"Service","name":"Seniorenhilfe","serviceType":"Seniorenbetreuung","provider":{"@id":"https://dev.likovo.de/brigitte-cantu/#betrieb"},"areaServed":"[ORT]","description":"Gesellschaft, Spazierg\u00e4nge, Vorlesen, Begleitung zu Friseur und Fu\u00dfpflege."},
+    {"@type":"Service","name":"Hauswirtschaftliche Dienstleistungen","serviceType":"Hauswirtschaft","provider":{"@id":"https://dev.likovo.de/brigitte-cantu/#betrieb"},"areaServed":"[ORT]","description":"Frisch kochen, Vorr\u00e4te im Blick behalten, Mahlzeiten vorbereiten, auf Ern\u00e4hrung und Trinken achten."},
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Muss ich vorher aufr\u00e4umen, bevor die Haushaltshilfe kommt?","acceptedAnswer":{"@type":"Answer","text":"Nein. Sie m\u00fcssen vorher nichts vorbereiten und nichts wegr\u00e4umen. Die Haushaltshilfe kommt, um genau das zu \u00fcbernehmen."}},
+        {"@type":"Question","name":"Kommt immer dieselbe Person?","acceptedAnswer":{"@type":"Answer","text":"Ja. Brigitte Cantu arbeitet allein, deshalb kommt immer dieselbe Person. Bei Krankheit oder Urlaub wird rechtzeitig Bescheid gegeben."}},
+        {"@type":"Question","name":"Kann ich eine Haushaltshilfe von der Steuer absetzen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Haushaltsnahe Dienstleistungen sind nach \u00a7 35a Einkommensteuergesetz mit 20 Prozent der Arbeitskosten absetzbar, h\u00f6chstens 4.000 Euro im Jahr. Voraussetzung sind eine Rechnung und eine \u00dcberweisung, Barzahlung z\u00e4hlt nicht. Ein Pflegegrad ist nicht n\u00f6tig."}},
+        {"@type":"Question","name":"Wof\u00fcr ist der Entlastungsbetrag von 131 Euro?","acceptedAnswer":{"@type":"Answer","text":"Der Entlastungsbetrag nach \u00a7 45b SGB XI betr\u00e4gt 131 Euro im Monat und steht Pflegebed\u00fcrftigen ab Pflegegrad 1 zu, die zu Hause versorgt werden. Er ist f\u00fcr nach Landesrecht anerkannte Angebote zur Unterst\u00fctzung im Alltag gedacht. Nicht genutzte Betr\u00e4ge verfallen erst am 30. Juni des Folgejahres."}},
+        {"@type":"Question","name":"Was ist der Unterschied zwischen einer Haushaltshilfe und einem Pflegedienst?","acceptedAnswer":{"@type":"Answer","text":"Ein Pflegedienst \u00fcbernimmt Grundpflege und medizinische Leistungen wie Waschen, Anziehen, Verb\u00e4nde und Medikamente. Eine Haushaltshilfe \u00fcbernimmt Haushalt, Alltag und Begleitung. Beides erg\u00e4nzt sich."}},
+        {"@type":"Question","name":"Brauche ich einen Pflegegrad f\u00fcr eine Haushaltshilfe?","acceptedAnswer":{"@type":"Answer","text":"Nein. Eine Haushaltshilfe kann privat beauftragt werden, ohne Pflegegrad und ohne Antrag. Ein Pflegegrad er\u00f6ffnet zus\u00e4tzliche Finanzierungsm\u00f6glichkeiten, ist aber keine Voraussetzung."}},
+        {"@type":"Question","name":"Wie lange bin ich an eine Haushaltshilfe gebunden?","acceptedAnswer":{"@type":"Answer","text":"Bei Cantu Alltagshilfe gibt es keinen Vertrag mit Laufzeit und keine K\u00fcndigungsfrist."}}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  var wrap=document.querySelector('[data-steps]');
+  if(!wrap)return;
+  var steps=[].slice.call(wrap.querySelectorAll('[data-step]'));
+  if(steps.length<2)return;
+  wrap.setAttribute('data-ready','');
+  var raf=null;
+  function update(){
+    raf=null;
+    if(window.matchMedia('(max-width:920px)').matches)return;
+    var line=window.innerHeight*0.45,best=0,bestD=Infinity;
+    steps.forEach(function(el,i){
+      var r=el.getBoundingClientRect();
+      var d=Math.abs(r.top+r.height/2-line);
+      if(d<bestD){bestD=d;best=i;}
+    });
+    steps.forEach(function(el,i){el.classList.toggle('is-open',i===best);});
+  }
+  function onScroll(){if(!raf)raf=requestAnimationFrame(update);}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  steps.forEach(function(el){
+    el.querySelector('h3').addEventListener('click',function(){
+      steps.forEach(function(x){x.classList.toggle('is-open',x===el);});
+    });
+  });
+  update();
+})();
+(function(){
+  var burger=document.getElementById('burger'), menu=document.getElementById('mobilenav');
+  if(!burger||!menu)return;
+  function set(open){
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+    menu.hidden=!open;
+  }
+  burger.addEventListener('click',function(){set(menu.hidden);});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  document.addEventListener('click',function(e){
+    if(!menu.hidden && !menu.contains(e.target) && !burger.contains(e.target))set(false);
+  });
+  window.addEventListener('resize',function(){if(window.innerWidth>1080)set(false);});
+})();
+(function(){
+  var sws=[].slice.call(document.querySelectorAll('.sw[data-cat]'));
+  if(!sws.length)return;
+  var panels=[].slice.call(document.querySelectorAll('[data-panel]'));
+  var bgs=[].slice.call(document.querySelectorAll('[data-bg]'));
+  var card=document.querySelector('.glass-card');
+  var swipe=function(){return window.matchMedia('(max-width:760px)').matches;};
+  function setActive(i){
+    sws.forEach(function(x,n){var on=n===i;x.classList.toggle('is-on',on);x.setAttribute('aria-selected',on?'true':'false');});
+    var c=sws[i]?sws[i].dataset.cat:null;
+    if(!swipe())panels.forEach(function(p){p.classList.toggle('is-on',p.dataset.panel===c);});
+    bgs.forEach(function(b){b.classList.toggle('is-on',b.dataset.bg===c);});
+  }
+  sws.forEach(function(b,i){
+    b.addEventListener('click',function(){
+      if(swipe()&&panels[i])panels[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+      setActive(i);
+    });
+  });
+  if(card){
+    var raf=null;
+    card.addEventListener('scroll',function(){
+      if(!swipe()||raf)return;
+      raf=requestAnimationFrame(function(){
+        raf=null;
+        var mid=card.scrollLeft+card.clientWidth/2,best=0,bd=Infinity;
+        panels.forEach(function(p,i){
+          var c=p.offsetLeft+p.offsetWidth/2, d=Math.abs(c-mid);
+          if(d<bd){bd=d;best=i;}
+        });
+        setActive(best);
+      });
+    },{passive:true});
+  }
+  window.addEventListener('resize',function(){
+    var i=Math.max(0,sws.findIndex(function(x){return x.classList.contains('is-on');}));
+    setActive(i);
+  });
+})();
+
+(function(){
+  var f=document.querySelector('#kontakt form');
+  if(f)f.addEventListener('submit',function(e){e.preventDefault();alert('Entwurf: Der Formularversand ist noch nicht angebunden.');});
+})();
+</script>
+</body>
+</html>
