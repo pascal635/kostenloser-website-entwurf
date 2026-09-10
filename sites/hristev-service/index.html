@@ -322,7 +322,8 @@ p{margin:0 0 var(--s4);max-width:64ch}
 .al-head{text-align:center;max-width:42ch;margin:0 auto}
 .al-head .eyebrow{justify-content:center}
 .al-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s8);margin-top:var(--s8);align-items:stretch}
-.al-list{display:flex;flex-direction:column;justify-content:space-between;min-height:min(920px,96vh)}
+.al-list{display:flex;flex-direction:column;justify-content:space-between;min-height:1040px}
+.al-tail{flex:0 0 150px;display:block}
 .al-sub{font-size:1.75rem;margin:0 0 var(--s6);max-width:22ch}
 .al-step{border-top:1px solid var(--line)}
 .al-step:last-child{border-bottom:1px solid var(--line)}
@@ -350,6 +351,7 @@ p{margin:0 0 var(--s4);max-width:64ch}
 @media (max-width:900px){
   .al-grid{grid-template-columns:1fr;gap:var(--s6)}
   .al-list{min-height:0;display:block}
+  .al-tail{display:none}
   .al-btn{padding:var(--s5) 0}
   .al-pic{order:-1}
   .al-sticky{position:relative;top:0;aspect-ratio:16/10;max-height:none}
@@ -838,6 +840,7 @@ h1,h2,h3,h4,summary{overflow-wrap:break-word}
           <span class="al-time">Termin nach Absprache</span>
         </div></div>
       </div>
+      <span class="al-tail" aria-hidden="true"></span>
     </div>
     <div class="al-pic">
       <figure class="al-sticky">
@@ -1138,12 +1141,14 @@ h1,h2,h3,h4,summary{overflow-wrap:break-word}
   function pruefe(){
     if(vonHand) return;
     var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
-    /* Der Weg ist absichtlich laenger als der Block selbst, sonst wechselt der
-       Fokus zu schnell. Jeder Schritt bekommt so grob eine halbe Fensterhoehe. */
-    var weg = Math.max(r.height + vh*0.55, 1);
-    var p   = (vh*0.45 - r.top)/weg;
-    p = Math.min(0.9999, Math.max(0, p));
-    var beste = Math.floor(p*schritte.length);
+    /* Fester Scrollweg je Schritt. Ueber Anteile am Block gerechnet haengt der
+       Umschaltpunkt an der Blockhoehe, und die aendert sich beim Aufklappen.
+       Der letzte Schritt sass dadurch beim Aufklappen schon oberhalb des
+       Fensters. Mit festem Weg steht er sicher im Bild. */
+    var BAND  = 320;   /* Scrollweg je Schritt */
+    var MARKE = 0.70;  /* wo der Block stehen muss, damit Schritt 1 greift */
+    var beste = Math.floor((vh*MARKE - r.top)/BAND);
+    beste = Math.min(schritte.length-1, Math.max(0, beste));
     if(beste !== aktiv) setze(beste);
   }
   function anstossen(){
