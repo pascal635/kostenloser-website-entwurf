@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gebäudereinigung, Trockenbau &amp; Abbruch Eichstätt | Hristev-Service</title>
+<meta name="description" content="Reinigungsfirma und Trockenbau aus Eichstätt: Büro, Treppenhaus, Praxis, dazu Rückbau, Trockenbau und Bauendreinigung. Festpreis nach kostenloser Besichtigung.">
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://dev.likovo.de/hristev-service/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gebäudereinigung, Trockenbau und Abbruch in Eichstätt">
+<meta property="og:description" content="Büros, Treppenhäuser, Arztpraxen. Dazu Rückbau, Trockenbau und die Endreinigung danach. Ein Betrieb für Gewerbe und Privat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --white:#FFFFFF; --bg:#FFFFFF; --field-bg:#FFFFFF;
+  --btn-bg:#22391C; --btn-fg:#FFFFFF; --footer-bg:#22391C;
+  --mint:#EFF3EA; --mint-2:#E5EBDC; --mint-3:#F7F9F4;
+  --green:#2E4A2B;          /* Headlines, Marke */
+  --green-deep:#22391C;     /* Buttons, Badges */
+  --green-panel:#3C5533;    /* massive Flaechen */
+  --green-soft:#7C8F74;
+  --cream:#F0F5E9;          /* Pill-Buttons auf dunklem Grund */
+  --ink:#1A1D19; --muted:#5F6660; --line:#E2E6DC; --line-2:#CFD6C6;
+  --r-xl:16px; --r-lg:12px; --r-md:8px; --r-pill:10px; --r-ico:10px;
+  --e1:0 1px 2px rgba(26,29,25,.04), 0 6px 18px rgba(26,29,25,.05);
+  --e2:0 2px 6px rgba(26,29,25,.06), 0 16px 38px rgba(26,29,25,.09);
+  --e3:0 8px 18px rgba(26,29,25,.10), 0 30px 70px rgba(26,29,25,.16);
+  --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --display:'Sen','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:20px;top:20px;z-index:99;background:#fff;padding:12px 18px;border-radius:var(--r-pill)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--s7)}
+section{padding:var(--s9) 0}
+@media (max-width:860px){section{padding:var(--s8) 0}}
+section.tight{padding:var(--s8) 0}
+
+/* Typo: Headlines in Dunkelgruen, das ist die auffaelligste Signatur der Vorlagen */
+h1,h2,h3,h4{font-family:var(--display);margin:0;letter-spacing:-.015em;color:var(--green)}
+h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;font-weight:500;letter-spacing:-.025em;color:#fff}
+h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;font-weight:600;letter-spacing:-.025em}
+h3{font-size:1.375rem;font-weight:600}
+h4{font-size:1.125rem;font-weight:600}
+p{margin:0 0 var(--s4);max-width:64ch}
+.lead{font-size:1.0625rem;color:var(--muted);max-width:56ch}
+.two-tone{color:var(--green-soft)}.two-tone b{color:var(--green);font-weight:inherit}
+
+/* Eyebrow mit Icon-Cluster, direkt aus den Vorlagen */
+.eyebrow{display:flex;align-items:center;gap:11px;font-size:.75rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--green);margin:0 0 var(--s4);font-family:var(--sans)}
+.cluster{display:inline-flex;align-items:center;gap:5px;flex:none}
+.cluster i{display:block;width:11px;height:11px;background:var(--green)}
+.cluster i:nth-child(1){clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.cluster i:nth-child(2){border-radius:50% 50% 50% 0}
+.cluster i:nth-child(3){clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%)}
+.cluster i:nth-child(4){border-radius:50%}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-size:.9375rem;font-weight:600;padding:17px 32px;border-radius:var(--r-pill);border:1px solid transparent;text-decoration:none;cursor:pointer;transition:transform .16s,box-shadow .2s,background-color .2s}
+.btn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.btn-cream{background:var(--cream);color:var(--green-deep);box-shadow:var(--e2)}
+.btn-cream:hover{background:#fff;transform:translateY(-2px);box-shadow:var(--e3)}
+.btn-green{background:var(--btn-bg);color:var(--btn-fg)}
+.btn-green:hover{filter:brightness(.92);transform:translateY(-2px);box-shadow:var(--e2)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.38);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+.btn-block{width:100%}
+.btn-row{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center}
+.micro{font-size:.8125rem;color:var(--muted);margin-top:var(--s3)}
+.arrow{width:44px;height:44px;border-radius:var(--r-ico);display:inline-grid;place-items:center;background:var(--btn-bg);color:var(--btn-fg);flex:none;text-decoration:none;transition:transform .16s}
+.arrow:hover{transform:translateX(3px);filter:brightness(.92)}
+.arrow .i{font-size:17px}
+.tlink{display:inline-flex;align-items:center;gap:12px;color:var(--green);font-weight:600;text-decoration:none;font-size:.9375rem}
+.tlink u{text-underline-offset:6px}
+
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.i{width:1em;height:1em;fill:currentColor;display:block;flex:none}
+
+/* ---------------- HERO ---------------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;isolation:isolate;overflow:hidden;color:#fff;padding:0 0 var(--s10)}
+.hero .ph{position:absolute;inset:0;z-index:-3;background:linear-gradient(180deg,#48584c 0%,#8d9c8e 46%,#dfe8db 100%)}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+/* obere Haelfte abdunkeln, damit weisse Schrift ueberall traegt */
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(180deg,rgba(20,30,18,.46) 0%,rgba(20,30,18,.28) 34%,rgba(20,30,18,.06) 58%,rgba(20,30,18,0) 72%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(95deg,rgba(18,28,16,.62) 0%,rgba(18,28,16,.46) 24%,rgba(18,28,16,.24) 42%,rgba(18,28,16,.06) 58%,rgba(18,28,16,0) 70%)}
+
+/* Kopfleiste als breite Glasschiene */
+.htop{position:absolute;top:22px;left:0;right:0;z-index:6;padding:0 var(--s7)}
+.navbar{position:relative;max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:var(--s4);
+  background:rgba(240,245,233,.17);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.26);border-radius:16px;padding:10px 10px 10px 18px;box-shadow:0 8px 30px rgba(16,24,14,.12)}
+.brand{display:flex;flex-direction:row;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand .mk{width:32px;height:32px;border-radius:9px;background:var(--cream);display:grid;place-items:center}
+.brand .mk .i{font-size:16px;color:var(--green-deep)}
+.brand .txt{display:flex;flex-direction:column;align-items:flex-start;line-height:1.1}
+.brand b{font-family:var(--display);font-weight:700;font-size:1.1875rem;letter-spacing:-.02em;line-height:1.1;color:#fff}
+.navlinks{display:flex;align-items:center;gap:2px;min-width:0;flex:0 1 auto}
+.navlinks a{padding:10px 16px;border-radius:10px;font-size:.9375rem;white-space:nowrap;color:rgba(255,255,255,.92);text-decoration:none;transition:background .16s}
+.navlinks a:hover{background:rgba(255,255,255,.17)}
+.navright{display:flex;align-items:center;gap:9px;flex:none}
+.iconbtn{width:42px;height:42px;border-radius:11px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);
+  display:grid;place-items:center;cursor:pointer;padding:0;color:#fff;text-decoration:none;transition:background .16s}
+.iconbtn:hover{background:rgba(255,255,255,.26)}
+.iconbtn .i{font-size:18px;color:#fff}
+.iconbtn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.navcta-kurz{display:none}
+.navcta{padding:12px 24px;border-radius:11px;background:var(--btn-bg);color:var(--btn-fg);font-family:var(--sans);
+  font-size:.9375rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:transform .16s}
+.navcta:hover{transform:translateY(-1px)}
+
+/* Burger und Klappmenue fuer schmale Fenster */
+.burger{display:none}
+.burger .bl{display:block;width:18px;height:2px;border-radius:2px;background:#fff;transition:transform .2s,opacity .2s}
+.burger .bl+.bl{margin-top:4px}
+.burger[aria-expanded="true"] .bl:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] .bl:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] .bl:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.navmenu{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:8;
+  background:rgba(22,33,18,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.24);border-radius:16px;padding:var(--s4);box-shadow:0 18px 46px rgba(12,18,10,.34)}
+.navmenu.is-on{display:block}
+.navmenu a.ml{display:block;padding:14px 16px;border-radius:11px;color:#fff;text-decoration:none;font-size:1rem}
+.navmenu a.ml:hover{background:rgba(255,255,255,.12)}
+.navmenu hr{border:0;border-top:1px solid rgba(255,255,255,.18);margin:var(--s3) 0}
+.navmenu .mrow{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);padding:6px 16px 10px}
+.navmenu .mrow span{font-size:.9375rem;color:rgba(255,255,255,.86)}
+.navmenu .navcta{display:block;text-align:center;margin-top:var(--s3)}
+
+/* Zweispaltiger Inhalt: Headline links, Glas-Panel rechts */
+.hbody{position:relative;z-index:4;width:100%;max-width:1440px;margin:0 auto;padding:186px var(--s7) 0;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:var(--s7);align-items:start}
+.hero h1{max-width:none;margin:0 0 var(--s6)}
+.h1line{display:block;max-width:13ch}
+.h1kick{display:block;font-family:var(--sans);font-size:.8125rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:var(--s5)}
+.hero .micro{color:rgba(255,255,255,.9);max-width:42ch}
+.hpanel{background:rgba(26,38,22,.38);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.26);border-radius:14px;padding:var(--s5);display:grid;gap:var(--s5);box-shadow:0 12px 34px rgba(14,20,12,.16)}
+.prow{display:grid;gap:9px}
+.ptop{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3)}
+.plabel{font-size:.8125rem;color:rgba(255,255,255,.9)}
+.pval{font-size:.8125rem;font-weight:600;color:#fff}
+.pbar{display:flex;gap:4px}
+.pbar i{flex:1;height:11px;border-radius:2px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.22)}
+.pbar i.on{background:rgba(255,255,255,.92);border-color:rgba(255,255,255,.92)}
+.hnote{font-size:.8125rem;line-height:1.6;color:rgba(255,255,255,.88);margin:0;padding-top:var(--s5);border-top:1px solid rgba(255,255,255,.2)}
+
+/* Freigestelltes Motiv in der Mitte */
+.hsubject{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:2;margin:0;pointer-events:none;
+  height:min(58vh,540px);width:min(46vw,600px);display:flex;align-items:flex-end;justify-content:center}
+.hsubject img{height:100%;width:100%;object-fit:contain;object-position:bottom center;display:block;
+  filter:drop-shadow(0 26px 54px rgba(18,26,16,.32))}
+.hframe{position:absolute;left:50%;top:26%;transform:translateX(-50%);width:min(31vw,420px);height:112px;z-index:-1;
+  border-top:1px solid rgba(255,255,255,.5);background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.04));
+  backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+
+/* Wolkenschleier ueber dem Fuss der Hand, damit der Schnitt nicht auffaellt */
+.hmist{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:3;pointer-events:none;
+  width:min(62vw,780px);height:340px;display:block}
+.hmist img{width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
+
+/* Uebergang in den naechsten Abschnitt */
+.hfade{position:absolute;left:0;right:0;bottom:0;height:260px;z-index:3;pointer-events:none;
+  background:linear-gradient(to bottom,
+    color-mix(in srgb, var(--mint) 0%, transparent) 0%,
+    color-mix(in srgb, var(--mint) 26%, transparent) 38%,
+    color-mix(in srgb, var(--mint) 72%, transparent) 70%,
+    var(--mint) 100%)}
+
+/* Statuspille unten mittig */
+.hchip{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);z-index:5;display:inline-flex;align-items:center;gap:12px;
+  padding:9px 22px 9px 9px;border-radius:var(--r-pill);background:rgba(20,30,16,.76);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.24);color:#fff;font-size:.875rem;font-weight:600;box-shadow:0 10px 30px rgba(14,20,12,.24)}
+.hchip .ring{position:relative;width:30px;height:30px;flex:none;display:block}
+.hchip .rprog{position:absolute;inset:0;width:30px;height:30px;transform:rotate(-90deg);
+  animation:ringweg .3s linear 2.3s forwards}
+.hchip .rtrack{fill:none;stroke:rgba(255,255,255,.32);stroke-width:3}
+.hchip .rbar{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;
+  stroke-dasharray:94.25;stroke-dashoffset:94.25;
+  animation:ringvoll 1.9s cubic-bezier(.4,0,.2,1) .4s forwards}
+.hchip .rcheck{position:absolute;left:2px;top:2px;width:26px;height:26px;color:#fff;opacity:0;
+  transform:scale(.5);animation:hakenrein .38s cubic-bezier(.2,.9,.3,1.5) 2.3s forwards}
+@keyframes ringvoll{to{stroke-dashoffset:0}}
+@keyframes ringweg{to{opacity:0}}
+@keyframes hakenrein{to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  .hchip .rprog{animation:none;opacity:0}
+  .hchip .rbar{animation:none;stroke-dashoffset:0}
+  .hchip .rcheck{animation:none;opacity:1;transform:none}
+}
+
+/* Hero, schmalere Fenster */
+@media (max-width:1150px){
+  /* Menue in den Burger, Leiste bleibt luftig verteilt. Der Hell-Dunkel-Schalter
+     steht im Klappmenue, in der Leiste steht dafuer der Anfragen-Knopf. */
+  .navlinks,.navcta{display:none}
+  .navright .tgl{display:none}
+  .navcta-kurz{display:inline-block;padding:11px 18px}
+  .burger{display:grid}
+  .navmenu .navcta{display:block}
+  .navmenu .tgl{display:grid}
+}
+@media (max-width:1099px){
+  /* Text wandert in eine Spalte, das Motiv haelt die rechte Seite besetzt,
+     sonst bliebe dort eine leere Flaeche stehen. */
+  .hbody{grid-template-columns:1fr;gap:var(--s6);
+    padding-right:calc(var(--s7) + min(30vw,300px))}
+  .hleft,.hright{max-width:none}
+  .hpanel{grid-template-columns:1fr 1fr}
+  .hnote{grid-column:1/-1}
+  .hero h1{max-width:none}
+  .h1line{max-width:16ch}
+  .hsubject{left:auto;right:var(--s7);transform:none;bottom:var(--s8);
+    width:min(28vw,290px);height:min(56vh,520px)}
+  .hframe{left:auto;right:calc(var(--s7) - 24px);transform:none;width:min(26vw,260px);height:96px;top:32%}
+}
+@media (max-width:1099px){
+  .hchip{position:static;transform:none;display:flex;width:max-content;max-width:100%;margin:var(--s7) auto 0}
+}
+@media (max-width:860px){
+  .navbar{padding:9px 9px 9px 14px}
+  .brand b{white-space:nowrap;font-size:1.0625rem}
+  .hero{min-height:auto;padding-bottom:var(--s8)}
+  .hbody{padding-top:132px;padding-right:calc(var(--s5) + min(34vw,230px))}
+  .hpanel{grid-template-columns:1fr}
+  .hsubject{right:var(--s5);width:min(32vw,220px);height:min(46vh,400px);bottom:var(--s7)}
+  .hfade{height:150px}
+  .hframe{display:none}
+}
+@media (max-width:640px){
+  /* jetzt ist zu wenig Breite fuer zwei Spalten, das Motiv kommt in den Fluss */
+  .hbody{padding-top:120px;padding-right:var(--s5)}
+  .hsubject{position:relative;right:auto;bottom:auto;margin:var(--s6) auto 0;
+    width:min(58vw,240px);height:min(38vh,320px)}
+  .h1line{max-width:none}
+}
+@media (max-width:560px){
+  /* Telefon steckt schon in der festen Leiste unten, in der Kopfzeile waere es zu eng */
+  .navtel{display:none}
+  .navcta-kurz{padding:10px 15px;font-size:.875rem}
+}
+@media (max-width:430px){
+  .brand b{font-size:1rem}
+  .brand .mk{width:28px;height:28px}
+  .brand .mk .i{font-size:15px}
+  .hbody{padding-top:108px}
+  .hsubject{width:min(64vw,220px);height:min(34vh,280px)}
+  .hchip{font-size:.8125rem;padding:8px 16px 8px 8px}
+  .navbar{padding:8px 8px 8px 12px}
+  .iconbtn{width:38px;height:38px;border-radius:10px}
+}
+
+/* ---------------- Foto-Karten ---------------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.cards.two{grid-template-columns:repeat(2,1fr)}
+.cards.two .pcard{min-height:520px}
+.pcard{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:560px;height:auto;display:flex;flex-direction:column;justify-content:flex-start;padding:var(--s6);color:#fff;isolation:isolate;text-decoration:none;box-shadow:var(--e1)}
+.pcard .ph{position:absolute;inset:0;z-index:-2;background:linear-gradient(155deg,#8e8a80,#4d5046 52%,#262a21)}
+.pcard .ph img{width:100%;height:100%;object-fit:cover}
+.pcard::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top,rgba(14,18,12,.94) 0%,rgba(14,18,12,.7) 34%,rgba(14,18,12,.18) 66%,rgba(14,18,12,.05) 100%)}
+.pcard.deep::after{background:linear-gradient(to top,rgba(11,17,9,.94) 0%,rgba(15,24,12,.66) 36%,rgba(19,30,15,.16) 72%,rgba(19,30,15,.02) 100%)}
+.pcard h3{color:#fff;font-size:1.5rem;margin:var(--s6) 0 10px;overflow-wrap:break-word}
+.pcard p{font-size:.9375rem;color:rgba(255,255,255,.82);margin:0 0 var(--s5);max-width:34ch}
+.pcard .tag .i{font-size:13px}
+.pcard .tag{align-self:flex-start;margin-bottom:auto;max-width:100%;display:inline-flex;align-items:center;gap:7px;font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(240,245,233,.17);backdrop-filter:blur(8px);border:1px solid rgba(240,245,233,.3);padding:7px 15px;border-radius:var(--r-pill)}
+.pcard .btn{width:100%}
+
+/* ---------------- Mint-Karten mit Sparkle ---------------- */
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.mgrid.two{grid-template-columns:repeat(2,1fr)}
+.mcard{background:var(--mint);border-radius:var(--r-lg);padding:var(--s6);display:flex;flex-direction:column;justify-content:space-between;min-height:250px}
+.spark{width:24px;height:24px;fill:var(--green);display:block}
+.mcard h4{margin:var(--s4) 0 0}
+.mcard p{font-size:.9375rem;color:var(--muted);margin:var(--s7) 0 0}
+.mcard .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s4);margin-top:var(--s7)}
+.mcard .foot p{margin:0}
+
+/* Versetztes Raster, exakt wie in der Vorlage "Why choose us" */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);margin-top:var(--s6)}
+.why-side{grid-column:3;grid-row:1;display:flex;flex-direction:column;justify-content:space-between;padding:var(--s5) var(--s5) var(--s5) var(--s3)}
+.why-hole{grid-column:1;grid-row:2}
+
+/* ---------------- Nummerierte Zeilen ---------------- */
+.rows{border-top:1px solid var(--line);margin-top:var(--s6)}
+.row{display:grid;grid-template-columns:88px 1.1fr 1.5fr auto;gap:var(--s5);align-items:center;padding:var(--s6) 0;border-bottom:1px solid var(--line)}
+.row .ix{font-family:var(--display);font-size:.8125rem;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.row h3{font-size:1.25rem}
+.row .sm{font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--green);font-weight:700;margin-top:6px}
+.row p{font-size:.9375rem;color:var(--muted);margin:0}
+
+/* ---------------- Massive gruene Flaeche ---------------- */
+.gpanel{background:var(--green-panel);color:#fff;border-radius:var(--r-xl);padding:var(--s9) var(--s8)}
+.gpanel h2{color:#fff}
+.gpanel .lead{color:rgba(255,255,255,.8)}
+.chain{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);margin-top:var(--s8)}
+.chain .st{border-top:1px solid rgba(255,255,255,.28);padding-top:var(--s5)}
+.chain .st .n{width:52px;height:52px;border-radius:var(--r-ico);background:rgba(240,245,233,.16);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:.9375rem;margin-bottom:var(--s4)}
+.chain .st h3{color:#fff;margin-bottom:8px}
+.chain .st p{font-size:.9375rem;color:rgba(255,255,255,.8);margin:0}
+
+/* ---------------- Zahlen ---------------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s6);margin-top:var(--s8)}
+.stats.stats-solo{margin-top:0;padding-bottom:var(--s8)}
+.stats .s{border-top:1px solid var(--line-2);padding-top:var(--s4)}
+.stats .n{font-family:var(--display);font-size:clamp(2.6rem,4.8vw,3.8rem);font-weight:500;line-height:1;letter-spacing:-.04em;color:var(--green);font-variant-numeric:tabular-nums}
+.stats .t{font-weight:600;font-size:.9375rem;margin-top:var(--s3)}
+.stats .d{font-size:.8125rem;color:var(--muted);margin-top:3px}
+
+/* ---------------- Ablauf ---------------- */
+.al-head{text-align:center;max-width:42ch;margin:0 auto}
+.al-head .eyebrow{justify-content:center}
+.al-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s8);margin-top:var(--s8);align-items:stretch}
+.al-list{display:flex;flex-direction:column;justify-content:space-between;min-height:min(920px,96vh)}
+.al-sub{font-size:1.75rem;margin:0 0 var(--s6);max-width:22ch}
+.al-step{border-top:1px solid var(--line)}
+.al-step:last-child{border-bottom:1px solid var(--line)}
+.al-btn{display:flex;align-items:baseline;gap:var(--s4);width:100%;text-align:left;cursor:pointer;
+  background:none;border:0;padding:var(--s6) 0;font-family:var(--display);font-weight:600;font-size:1.125rem;
+  color:var(--muted);transition:color .22s}
+.al-step.is-on .al-btn{color:var(--green)}
+.al-btn:hover{color:var(--green)}
+.al-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:6px}
+.al-num{flex:none;font-variant-numeric:tabular-nums}
+.al-num::after{content:" ·"}
+.al-title{min-width:0}
+.al-body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .42s cubic-bezier(.22,.61,.36,1),opacity .3s}
+.al-body>div{overflow:hidden}
+.al-step.is-on .al-body{grid-template-rows:1fr;opacity:1}
+.al-body p{margin:0 0 var(--s4);color:var(--muted);font-size:.9375rem;max-width:52ch}
+.al-time{display:inline-block;margin-bottom:var(--s5);font-size:.75rem;font-weight:700;color:var(--green);
+  background:var(--mint);padding:6px 14px;border-radius:var(--r-pill)}
+.al-pic{position:relative;height:100%}
+.al-sticky{position:sticky;top:110px;margin:0;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:3/2;max-height:calc(100svh - 160px);
+  background:linear-gradient(155deg,var(--mint-2),var(--green-soft));box-shadow:var(--e2)}
+.al-sticky img{width:100%;height:100%;object-fit:cover;display:block}
+.al-sticky figcaption{position:absolute;left:var(--s5);bottom:var(--s5);background:var(--bg);color:var(--ink);
+  font-size:.8125rem;font-weight:700;padding:9px 18px;border-radius:var(--r-pill);box-shadow:var(--e1)}
+@media (max-width:900px){
+  .al-grid{grid-template-columns:1fr;gap:var(--s6)}
+  .al-list{min-height:0;display:block}
+  .al-btn{padding:var(--s5) 0}
+  .al-pic{order:-1}
+  .al-sticky{position:relative;top:0;aspect-ratio:16/10;max-height:none}
+  .al-sub{font-size:1.5rem;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.al-body{transition:none}}
+
+/* ---------------- Preise ---------------- */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s5);margin-top:var(--s6)}
+.pbox{background:var(--mint);border-radius:var(--r-lg);padding:var(--s7)}
+.pbox p{font-size:.9375rem;color:var(--muted);margin:var(--s4) 0 0}
+.claim{margin-top:var(--s5);background:var(--green-panel);color:#fff;border-radius:var(--r-lg);padding:var(--s8)}
+.claim p{margin:0;font-size:1.1875rem;color:#fff;max-width:64ch;font-family:var(--display);font-weight:400;line-height:1.45}
+
+/* ---------------- Referenzen ---------------- */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);margin-top:var(--s6)}
+.slot{border:1.5px dashed var(--line-2);border-radius:var(--r-lg);min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:var(--s6);background:var(--mint-3)}
+.slot b{font-family:var(--display);font-weight:600;color:var(--green)}
+.slot span{font-size:.8125rem;color:var(--muted)}
+
+/* ---------------- Person ---------------- */
+.person{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s8);align-items:center;margin-top:var(--s7)}
+.portrait{aspect-ratio:4/3;border-radius:var(--r-lg);border:1.5px dashed var(--line-2);background:var(--mint);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.875rem;padding:var(--s5)}
+.person .q{font-family:var(--display);font-size:clamp(1.25rem,2.2vw,1.75rem);font-weight:400;line-height:1.35;color:var(--green);letter-spacing:-.015em;margin-bottom:var(--s5)}
+.person .who{display:flex;align-items:center;gap:var(--s4);padding-top:var(--s5);border-top:1px solid var(--line)}
+.person .who .av{width:52px;height:52px;border-radius:var(--r-md);background:var(--mint-2);display:grid;place-items:center;font-size:.625rem;color:var(--muted);text-align:center;flex:none}
+.person .who b{font-family:var(--display);color:var(--green);display:block}
+.person .who span{font-size:.8125rem;color:var(--muted)}
+
+/* ---------------- FAQ ---------------- */
+.faq-legacy{}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:var(--s6) 74px var(--s6) 0;position:relative;font-family:var(--display);font-size:1.1875rem;font-weight:600;color:var(--green)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:10px;top:50%;width:44px;height:44px;margin-top:-22px;border-radius:var(--r-ico);background:var(--mint);
+  background-image:linear-gradient(var(--green),var(--green)),linear-gradient(var(--green),var(--green));
+  background-size:15px 1.8px,1.8px 15px;background-position:center,center;background-repeat:no-repeat;transition:transform .22s}
+.faq details[open] summary::after{transform:rotate(135deg)}
+.faq .a{padding:0 74px var(--s6) 0;color:var(--muted);font-size:.9375rem}
+.faq .a p{margin:0;max-width:74ch}
+
+/* ---------------- Anfrage: Mint-Flaeche plus gruene Flaeche ---------------- */
+.formgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--s5);margin-top:var(--s6)}
+.fpanel{background:var(--mint);border-radius:var(--r-xl);padding:var(--s8)}
+.fstep{display:flex;align-items:center;gap:var(--s4);margin-bottom:var(--s3)}
+.fstep .n{width:48px;height:48px;border-radius:var(--r-ico);background:var(--btn-bg);color:var(--btn-fg);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:.875rem;flex:none}
+.fstep label{font-family:var(--display);font-size:1.0625rem;font-weight:600;color:var(--green)}
+.fbody{padding:0 0 var(--s6) 64px}
+.fbody:last-of-type{padding-bottom:0}
+input,select,textarea{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--field-bg);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px}
+input::placeholder,textarea::placeholder{color:#9AA096}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(46,74,43,.14)}
+.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.spanel{background:var(--green-panel);color:#fff;border-radius:var(--r-xl);padding:var(--s8);display:flex;flex-direction:column}
+.spanel h3{color:#fff;font-size:1.375rem;margin-bottom:var(--s5)}
+.spanel ol{list-style:none;margin:0 0 var(--s6);padding:0;counter-reset:sp}
+.spanel ol li{counter-increment:sp;position:relative;padding-left:46px;margin-bottom:var(--s5);font-size:.9375rem;color:rgba(255,255,255,.88)}
+.spanel ol li::before{content:"0" counter(sp);position:absolute;left:0;top:-3px;width:32px;height:32px;border-radius:var(--r-ico);background:rgba(240,245,233,.18);display:grid;place-items:center;font-family:var(--display);font-size:.75rem;font-weight:700}
+.spanel .big{font-family:var(--display);font-size:1.375rem;font-weight:400;line-height:1.4;color:#fff;margin:auto 0 var(--s6)}
+.spanel .tel{font-size:.9375rem;color:rgba(255,255,255,.8);margin-bottom:var(--s5)}
+.spanel .tel b{display:block;font-family:var(--display);font-size:1.625rem;font-weight:500;color:#fff;letter-spacing:-.02em;margin:4px 0}
+
+/* ---------------- Kontaktzeile ---------------- */
+.contactrow{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s7);margin-top:var(--s9);padding-top:var(--s7);border-top:1px solid var(--line)}
+.contactrow .c{display:grid;grid-template-columns:auto 1fr;gap:var(--s5)}
+.contactrow .ix{font-family:var(--display);font-size:.8125rem;font-weight:600;letter-spacing:.1em;color:var(--muted)}
+.contactrow .lb{display:flex;align-items:center;gap:7px;font-size:.8125rem;color:var(--muted);margin-bottom:6px}
+.contactrow .lb .i{font-size:14px;color:var(--green)}
+.contactrow .v{font-family:var(--display);font-size:1.25rem;font-weight:500;color:var(--green);line-height:1.4}
+.contactrow .v a{text-decoration:none}
+
+/* ---------------- Footer ---------------- */
+.foot-claim{padding:var(--s10) 0}
+.foot-claim h2{max-width:20ch}
+.foot-links{display:flex;gap:var(--s7);flex-wrap:wrap;margin-top:var(--s6)}
+footer{background:var(--footer-bg);color:rgba(240,245,233,.74);padding:var(--s9) 0 0;overflow:hidden}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--s7)}
+footer h4{color:var(--cream);font-family:var(--sans);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:var(--s4);font-weight:700}
+footer a{color:rgba(240,245,233,.74);text-decoration:none;display:block;margin-bottom:8px}
+footer a:hover{color:var(--cream)}
+footer .base .legal{white-space:nowrap}
+footer .base .legal a{display:inline-block;margin:0}
+footer .base{margin-top:var(--s8);padding-top:var(--s5);border-top:1px solid rgba(240,245,233,.16);font-size:.75rem;color:rgba(240,245,233,.5);display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap}
+
+/* Mobile Leiste */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:color-mix(in srgb, var(--bg) 94%, transparent);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:var(--r-pill);padding:8px;gap:8px;box-shadow:var(--e3)}
+.mbar .btn{flex:1;padding:14px 8px}
+
+
+/* ---------------- Dunkler Modus ---------------- */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F130E; --field-bg:#151B14;
+  --mint:#1A211A; --mint-2:#232C22; --mint-3:#141A13;
+  --green:#BFD4B4; --green-soft:#7A8974; --green-panel:#1D2A1A;
+  --btn-bg:#CFE0C4; --btn-fg:#0F130E; --footer-bg:#0A0D09;
+  --ink:#E7EDE3; --muted:#A3ADA0; --line:#283027; --line-2:#3B453A;
+}
+/* Umschalter */
+.tgl .ic-sun{display:none}
+:root[data-theme="dark"] .tgl .ic-sun{display:block}
+:root[data-theme="dark"] .tgl .ic-moon{display:none}
+.htop-right{display:flex;align-items:center;gap:var(--s4)}
+.tgl-foot{width:auto;height:auto;border-radius:var(--r-pill);background:transparent;border:1px solid rgba(240,245,233,.28);color:rgba(240,245,233,.8);display:inline-flex;align-items:center;gap:9px;padding:9px 18px;font-family:var(--sans);font-size:.8125rem;font-weight:600;box-shadow:none}
+.tgl-foot:hover{background:rgba(240,245,233,.08);color:var(--cream)}
+.tgl-foot .i{font-size:15px;color:currentColor}
+.tgl-foot .lbl-dark{display:none}
+:root[data-theme="dark"] .tgl-foot .lbl-dark{display:inline}
+:root[data-theme="dark"] .tgl-foot .lbl-light{display:none}
+
+
+/* ---------------- Vollbild-Buehnen fuer die Foto-Abschnitte ---------------- */
+
+.stage{display:flex;flex-direction:column;padding:0}
+.stage>.cards{flex:0 0 auto;margin-top:var(--s6)}
+.stage .pcard{height:auto}
+
+
+/* ---------------- Volle Breite, Baender, Karten-Abschnitte ---------------- */
+.wrap.wide{max-width:none;padding:0 var(--s7)}
+.band-mint{background:var(--mint)}
+.band-soft{background:var(--mint-3)}
+.cardsec{border-radius:var(--r-xl);padding:var(--s8) var(--s7)}
+.proof + .cardsec{margin-top:var(--s8)}
+.cardsec.mint{background:var(--mint)}
+.band-mint .mcard{background:var(--bg)}
+.band-mint .slot{background:var(--bg)}
+.cardsec.green{background:var(--green-panel)}
+.cardsec.green h2,.cardsec.green h3,.cardsec.green h4,.cardsec.green .q{color:#fff}
+.cardsec.green p{color:rgba(255,255,255,.85)}
+.cardsec.green .eyebrow{color:var(--mint)}
+.cardsec.green .cluster i{background:var(--mint)}
+.cardsec.green .portrait{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.72)}
+.cardsec.green .who{border-top-color:rgba(255,255,255,.24)}
+.cardsec.green .who b{color:#fff}
+.cardsec.green .who span{color:rgba(255,255,255,.72)}
+.cardsec.green .who .av{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+.cardsec.mint .step .time{background:var(--bg)}
+@media (max-width:680px){.cardsec{padding:var(--s7) var(--s5)}}
+
+/* ---------------- Referenzen als Karussell ---------------- */
+.refnach{margin-top:var(--s10)}
+@media (max-width:900px){.refnach{margin-top:var(--s8)}}
+.carousel{position:relative;margin-top:var(--s6)}
+.cviewport{overflow:hidden;padding:0 var(--s7)}
+.ctrack{display:flex;gap:var(--s5);transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.cslide{position:relative;flex:0 0 min(1400px,88vw);aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;
+  background:var(--green-panel);color:#fff;isolation:isolate;opacity:.5;transform:scale(.965);
+  transition:opacity .45s ease,transform .45s ease}
+.cslide.is-on{opacity:1;transform:none;box-shadow:var(--e2)}
+.cslide .ph{position:absolute;inset:0;z-index:-2;background:var(--green-panel)}
+.cslide .ph img{width:100%;height:100%;object-fit:cover}
+.cslide::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(105deg,rgba(12,20,10,.7) 0%,rgba(12,20,10,.4) 46%,rgba(12,20,10,.22) 100%)}
+.cba{position:absolute;inset:0;z-index:-1;display:grid;grid-template-columns:1fr 1fr}
+.cba span{position:relative;display:flex;align-items:flex-end;justify-content:flex-start;padding:var(--s6);
+  font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.cba span::before{content:"";position:absolute;inset:var(--s5);border:1.5px dashed rgba(255,255,255,.2);border-radius:10px}
+.cba i{font-style:normal;position:relative}
+.cba span+span{border-left:1px dashed rgba(255,255,255,.26)}
+.cover{position:absolute;top:var(--s6);left:var(--s6);right:var(--s6);max-width:38ch;z-index:2}
+.cover h3{color:#fff;font-size:1.375rem;margin:0 0 10px}
+.cover p{font-size:.875rem;line-height:1.55;color:rgba(255,255,255,.82);margin:0;max-width:34ch}
+.cinfo{position:absolute;right:var(--s6);bottom:var(--s6);z-index:2;width:min(280px,52%);
+  background:rgba(20,30,17,.52);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.24);border-radius:12px;padding:var(--s4)}
+.cinfo-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s3)}
+.cinfo-l{font-size:.75rem;line-height:1.3;color:rgba(255,255,255,.86)}
+.cinfo-v{font-family:var(--display);font-size:1.625rem;font-weight:700;line-height:1;color:#fff}
+.cinfo p{font-size:.75rem;line-height:1.45;color:rgba(255,255,255,.8);margin:var(--s3) 0 0}
+.cctl{display:flex;align-items:center;justify-content:center;gap:var(--s5);margin-top:var(--s6)}
+.cbtn{width:48px;height:48px;border-radius:var(--r-ico);border:1px solid var(--line-2);background:var(--bg);
+  color:var(--green-deep);display:grid;place-items:center;cursor:pointer;padding:0;transition:background .16s,transform .16s}
+.cbtn:hover:not(:disabled){background:var(--mint);transform:translateY(-1px)}
+.cbtn:disabled{opacity:.38;cursor:default}
+.cbtn .i{font-size:19px}
+.cbtn.prev .i{transform:rotate(180deg)}
+.cbtn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.cdots{display:flex;align-items:center;gap:10px}
+.cdot{width:11px;height:11px;padding:0;border-radius:50%;border:1px solid var(--line-2);background:transparent;cursor:pointer;
+  transition:background .16s,width .16s,border-radius .16s}
+.cdot.is-on{width:30px;border-radius:6px;background:var(--green);border-color:var(--green)}
+.cdot:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media (max-width:860px){
+  .cviewport{padding:0 var(--s5)}
+  .cslide{flex:0 0 90vw;aspect-ratio:5/6}
+  .cover{top:var(--s5);left:var(--s5);right:var(--s5)}
+  .cover h3{font-size:1.125rem}
+  .cba span{padding:var(--s5)}
+  .cba span::before{inset:var(--s4)}
+  .cba i{display:none}
+  .cinfo{left:var(--s5);right:var(--s5);bottom:var(--s5);width:auto}
+  .cctl{gap:var(--s4)}
+}
+@media (prefers-reduced-motion:reduce){.ctrack,.cslide{transition:none}}
+
+/* ---------------- FAQ in zwei Spalten ---------------- */
+.faq{max-width:none;border-top:0;display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s8);margin-top:var(--s6)}
+.faqcol{border-top:1px solid var(--line)}
+.faq summary{padding-right:66px}
+.faq .a{padding-right:66px}
+@media (max-width:860px){.faq{grid-template-columns:1fr;gap:0}.faqcol+.faqcol{border-top:0}}
+
+
+/* ---------------- Foto-Band fuer den Abschluss ---------------- */
+.photoband{position:relative;isolation:isolate;overflow:hidden;color:#fff;padding:var(--s10) 0}
+.photoband .ph{position:absolute;inset:0;z-index:-2;background:linear-gradient(150deg,#8b877e,#4a4c43 48%,#20231c)}
+.photoband .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.photoband::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(100deg,rgba(12,16,10,.93) 0%,rgba(12,16,10,.74) 52%,rgba(28,40,24,.6) 100%)}
+.photoband h2{color:#fff}
+.photoband .two-tone{color:rgba(255,255,255,.56)}
+.photoband .two-tone b{color:#fff}
+.photoband .tlink{color:#fff}
+.photoband .arrow{background:var(--cream);color:var(--green-deep)}
+@media (max-width:860px){.photoband{padding:var(--s9) 0}}
+
+/* ---------------- Responsive ---------------- */
+/* Grundsatz: erst enger setzen, dann erst umbrechen. Jeder Abschnitt soll die
+   volle Breite nutzen, statt rechts eine leere Flaeche stehen zu lassen. */
+@media (max-width:1240px){
+  .wrap{padding:0 var(--s6)}
+  .cviewport{padding:0 var(--s6)}
+  .cards{gap:var(--s4)}
+  .pcard{min-height:520px;padding:var(--s5)}
+  .cards.two .pcard{min-height:480px}
+}
+@media (max-width:1100px){
+  .cards,.mgrid,.why,.pgrid,.proof,.contactrow,footer .cols{grid-template-columns:1fr 1fr}
+  .cards.two,.mgrid.two{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .chain{grid-template-columns:1fr}
+  .formgrid{grid-template-columns:1fr}
+  .why-side,.why-hole{grid-column:auto;grid-row:auto}.why-hole{display:none}
+  .person{grid-template-columns:1fr}
+  /* Zitatzeilen: Nummer links, Titel und Text rechts, nicht in die 64px-Spalte */
+  .row{grid-template-columns:64px minmax(0,1fr);gap:6px var(--s4);align-items:start}
+  .row .ix{grid-column:1;grid-row:1}
+  .row h3{grid-column:2;grid-row:1}
+  .row p{grid-column:2;grid-row:2}
+  .row>span:last-child{display:none}
+}
+@media (max-width:900px){
+  .wrap{padding:0 var(--s5)}
+  .cviewport{padding:0 var(--s5)}
+  .htop{padding:0 var(--s5)}
+  .gpanel,.fpanel,.spanel{padding:var(--s7) var(--s5)}
+  .two-fields{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr;gap:0}
+  .faqcol+.faqcol{border-top:0}
+  .pcard{min-height:460px}
+  .cards.two .pcard{min-height:440px}
+}
+@media (max-width:680px){
+  body{padding-bottom:86px}
+  section{padding:var(--s8) 0}
+  .cards,.cards.two,.mgrid,.mgrid.two,.why,.chain,.pgrid,.proof,.formgrid,.contactrow,footer .cols{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .pcard{min-height:420px;padding:var(--s5)}
+  .cards.two .pcard{min-height:420px}
+  .mbar{display:flex}
+  .gpanel,.fpanel,.spanel{padding:var(--s6) var(--s5)}
+  .row{grid-template-columns:52px minmax(0,1fr)}
+}
+@media (max-width:480px){
+  .wrap{padding:0 var(--s4)}
+  .cviewport{padding:0 var(--s4)}
+  .htop{padding:0 var(--s4)}
+  section{padding:var(--s7) 0}
+  .gpanel,.fpanel,.spanel{padding:var(--s5) var(--s4)}
+  .stats{grid-template-columns:1fr}
+  input,select,textarea{padding:14px 14px;font-size:.9375rem}
+  .pcard{min-height:390px}
+  .row{grid-template-columns:1fr;gap:4px}
+  .row .ix,.row h3,.row p{grid-column:1}
+  .row .ix{grid-row:auto}.row h3{grid-row:auto}.row p{grid-row:auto}
+}
+h1,h2,h3,h4,summary{overflow-wrap:break-word}
+
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('hs-theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false"><defs><symbol id="ic-star4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a1 1 0 0 1 .934.64l2.011 5.232c.3.78.395 1.006.524 1.188.13.182.29.342.471.471.182.13.407.223 1.188.524l5.231 2.011a1 1 0 0 1 0 1.868l-5.231 2.011c-.78.3-1.006.395-1.188.524-.182.13-.342.29-.471.471-.13.182-.223.407-.524 1.188l-2.011 5.231a1 1 0 0 1-1.868 0l-2.011-5.231c-.3-.78-.395-1.006-.524-1.188a2.005 2.005 0 0 0-.471-.471c-.182-.13-.407-.223-1.188-.524l-5.231-2.011a1 1 0 0 1 0-1.868l5.231-2.011c.78-.3 1.006-.395 1.188-.524.182-.13.342-.29.471-.471.13-.182.223-.407.524-1.188l2.011-5.231.067-.138A1 1 0 0 1 12 1Zm-1.078 6.59c-.264.685-.452 1.194-.76 1.629-.26.364-.579.683-.943.942-.435.31-.944.497-1.63.76L4.787 12l2.804 1.078c.685.264 1.194.452 1.629.76.364.26.683.579.942.943.31.435.497.944.76 1.63L12 19.212l1.078-2.803c.264-.685.452-1.194.76-1.629.26-.364.579-.683.943-.942.435-.31.944-.497 1.63-.76L19.212 12l-2.803-1.078c-.685-.264-1.194-.452-1.629-.76a4.003 4.003 0 0 1-.942-.943c-.31-.435-.497-.944-.76-1.63L12 4.787 10.922 7.59Z"/></symbol><symbol id="ic-sun" viewBox="0 0 24 24" fill="currentColor"><path d="M11 22v-2a1 1 0 1 1 2 0v2a1 1 0 1 1-2 0Zm-5.393-5.018a1 1 0 0 1 1.414 1.416L5.607 19.81a1.001 1.001 0 0 1-1.415-1.413l1.415-1.416Zm11.371 0a1 1 0 0 1 1.415 0l1.415 1.416a1 1 0 0 1-1.415 1.413l-1.415-1.413a1.001 1.001 0 0 1 0-1.416ZM16 12a4 4 0 1 0-8 0 4 4 0 0 0 8 0ZM4 11a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2h2Zm18 0a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2ZM4.192 4.192c.39-.39 1.025-.39 1.415 0l1.414 1.415a1 1 0 0 1-1.414 1.414L4.192 5.607a1.001 1.001 0 0 1 0-1.415Zm14.2 0a1.001 1.001 0 0 1 1.416 1.415l-1.415 1.414a1 1 0 0 1-1.415-1.414l1.415-1.415ZM11 4V2a1 1 0 1 1 2 0v2a1 1 0 1 1-2 0Zm7 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"/></symbol><symbol id="ic-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.231 6.307c0-.698.062-1.382.182-2.045a9.462 9.462 0 1 0 13.324 13.324c-.663.12-1.346.182-2.044.182-6.33 0-11.462-5.131-11.462-11.461Zm1.513-5.218a1 1 0 0 1 1.323 1.323L8.157 2l-.413-.911Zm.487 5.218a9.462 9.462 0 0 0 9.462 9.461c1.39 0 2.708-.299 3.895-.836a1 1 0 0 1 1.323 1.324A11.466 11.466 0 0 1 12.461 23C6.132 23 1.002 17.868 1 11.538c0-4.65 2.77-8.652 6.744-10.45L8.155 2l.912.412a9.425 9.425 0 0 0-.836 3.895Z"/></symbol><symbol id="ic-phone" viewBox="0 0 24 24" fill="currentColor"><path d="M4.1 2.878a3 3 0 0 1 2.708 0c.464.235.863.65 1.338 1.126l.195.195c.313.314.585.577.77.862a3 3 0 0 1 0 3.271c-.185.286-.457.549-.77.862l-.108.109-.002.011.014.03.037.076a13.603 13.603 0 0 0 2.652 3.736 13.602 13.602 0 0 0 3.735 2.652l.076.037c.013.005.022.01.03.012h.006l.005-.002.11-.106c.313-.314.576-.585.862-.77a3 3 0 0 1 3.27 0c.286.185.55.457.863.77l.539.54c.329.334.606.645.782.993a3 3 0 0 1 0 2.708c-.235.464-.651.862-1.127 1.338l-.157.158c-.5.5-.867.878-1.372 1.161a4.35 4.35 0 0 1-1.971.513c-.572-.002-.983-.124-1.53-.28a20.04 20.04 0 0 1-8.717-5.128 20.04 20.04 0 0 1-5.129-8.718c-.155-.546-.278-.958-.28-1.53-.001-.63.205-1.42.513-1.97.284-.505.663-.873 1.162-1.372l.501-.502c.335-.329.647-.606.995-.782Zm1.805 1.784a1.001 1.001 0 0 0-.903 0c-.107.054-.24.17-.826.757l-.158.157c-.56.56-.712.723-.832.938a2.4 2.4 0 0 0-.256.985c0 .254.038.407.203.99a18.04 18.04 0 0 0 4.619 7.849 18.037 18.037 0 0 0 7.85 4.618c.582.165.735.203.989.204.285.001.736-.117.985-.257.215-.12.378-.27.938-.83l.157-.159c.587-.587.703-.72.757-.827a1 1 0 0 0 0-.902c-.054-.107-.17-.24-.757-.828l-.194-.194c-.386-.386-.473-.465-.538-.508a1.001 1.001 0 0 0-1.091 0c-.066.043-.153.122-.538.508-.093.093-.215.219-.364.325a2.045 2.045 0 0 1-1.723.294c-.173-.05-.314-.12-.42-.17A15.606 15.606 0 0 1 9.52 14.57a15.603 15.603 0 0 1-3.041-4.284c-.051-.106-.12-.246-.171-.419a2.044 2.044 0 0 1 .294-1.723c.106-.149.232-.27.325-.364.385-.385.465-.472.508-.538.215-.331.215-.76 0-1.09-.043-.066-.123-.153-.508-.539L6.73 5.42c-.586-.587-.719-.703-.826-.757Zm7.163 1.147a1 1 0 0 1 1.173-.79 6 6 0 0 1 4.74 4.74 1 1 0 0 1-1.962.383 4.001 4.001 0 0 0-3.16-3.16 1 1 0 0 1-.79-1.173Zm1.092-4.803a10.001 10.001 0 0 1 8.833 8.822 1 1 0 0 1-1.987.224 8.002 8.002 0 0 0-7.066-7.058 1 1 0 0 1 .22-1.988Z"/></symbol><symbol id="ic-mail" viewBox="0 0 24 24" fill="currentColor"><path d="m21 8.92-6.592 4.615c-.593.415-1.1.79-1.682.935a3 3 0 0 1-1.452 0c-.582-.146-1.089-.52-1.682-.935L3 8.92v6.28c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C5.361 19 5.942 19 6.8 19h10.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8.92ZM6.8 5c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875 1.536 1.536 0 0 0-.134.446l7.654 5.358c.729.51.883.6 1.02.633.159.04.325.04.484 0 .136-.034.291-.123 1.02-.633l7.653-5.358a1.54 1.54 0 0 0-.133-.446 2 2 0 0 0-.874-.874c-.156-.08-.38-.145-.82-.18C18.639 5 18.058 5 17.2 5H6.8ZM23 15.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H6.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C.999 16.702 1 16.024 1 15.2V8.8c0-.618 0-1.153.019-1.614a.997.997 0 0 1 .033-.5c.048-.538.145-1.035.384-1.502a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C5.298 2.999 5.976 3 6.8 3h10.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.238.467.336.964.384 1.502a.996.996 0 0 1 .033.5c.02.46.019.996.019 1.614v6.4Z"/></symbol><symbol id="ic-clipboard" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8c0-.994-.009-1.295-.068-1.518a2 2 0 0 0-1.414-1.414 2.338 2.338 0 0 0-.53-.058c-.002.044-.001.087-.005.129a2.023 2.023 0 0 1-.2.77 2 2 0 0 1-.875.873 2.023 2.023 0 0 1-.77.201c-.216.018-.474.017-.738.017H9.6c-.264 0-.522.001-.739-.017a2.022 2.022 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77c-.004-.04-.004-.084-.006-.128a2.36 2.36 0 0 0-.529.058 2 2 0 0 0-1.414 1.414C5.008 6.705 5 7.006 5 8v9.2c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C7.361 21 7.942 21 8.8 21h6.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8Zm-4.207 3.793a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 15.586l3.793-3.793ZM9.6 3a8.1 8.1 0 0 0-.576.01l-.012.002-.001.012C9 3.141 9 3.304 9 3.6v.8c0 .297.001.46.01.576l.002.011.012.002C9.141 5 9.304 5 9.6 5h4.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C15 4.859 15 4.696 15 4.4v-.8c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.1 8.1 0 0 0 14.4 3H9.6ZM21 17.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H8.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C2.999 18.702 3 18.024 3 17.2V8c0-.866-.008-1.494.137-2.035a4 4 0 0 1 2.828-2.828c.31-.083.649-.115 1.045-.127.002-.051.003-.101.007-.149.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201C9.077.999 9.335 1 9.6 1h4.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.004.048.004.098.006.149.397.012.736.044 1.046.127a4 4 0 0 1 2.828 2.828c.145.54.137 1.17.137 2.035v9.2Z"/></symbol><symbol id="ic-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M11.293 4.293a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 1 1-1.414-1.414L16.586 13H5a1 1 0 1 1 0-2h11.586l-5.293-5.293a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="ic-office" viewBox="0 0 24 24" fill="currentColor"><path d="M20 12.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 19.4 12h-1.9v8H20v-7.4ZM13 14a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm0-4a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm0-4a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2ZM4 20h2.5v-8H4.6c-.297 0-.459.001-.576.01l-.012.002-.001.012C4 12.141 4 12.304 4 12.6V20ZM15.5 6.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 13.3 4h-2.6c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422-.023.283-.024.656-.024 1.232V20h7V6.2Zm2 3.8h1.9c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2v-7.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h1.9V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C9.688 2 10.157 2 10.7 2h2.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395V10Z"/></symbol><symbol id="ic-apartment" viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.974 16.974 0 0 0 17.8 12H14v8h6v-5.8ZM9.5 14a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2h3Zm0-4a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2h3Zm0-4a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2h3Zm2.5.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 9.8 4H6.2c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C4.001 5.25 4 5.624 4 6.2V20h8V6.2Zm2 3.8h3.8c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395V20a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C5.188 2 5.657 2 6.2 2h3.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395V10Z"/></symbol><symbol id="ic-medical" viewBox="0 0 24 24" fill="currentColor"><path d="M14 4.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.1 8.1 0 0 0 13.4 4h-2.8c-.297 0-.459.001-.576.01l-.012.002-.001.012A8.04 8.04 0 0 0 10 4.6v2.8c0 .264.001.522-.017.739a2.023 2.023 0 0 1-.2.77 2 2 0 0 1-.875.873 2.022 2.022 0 0 1-.77.201c-.216.018-.474.017-.738.017H4.6a8.04 8.04 0 0 0-.588.012l-.001.012C4 10.141 4 10.304 4 10.6v2.8c0 .297.001.46.01.576l.002.011.012.002c.117.01.28.011.576.011h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v2.8a8.04 8.04 0 0 0 .012.587l.012.002c.117.01.28.011.576.011h2.8c.297 0 .46-.001.576-.01l.011-.003.002-.011c.01-.117.011-.28.011-.576v-2.8c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h2.8c.297 0 .46-.001.576-.01l.011-.003.002-.011c.01-.117.011-.28.011-.576v-2.8c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.04 8.04 0 0 0 19.4 10h-2.8c-.264 0-.522.001-.739-.017a2.022 2.022 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77C13.999 7.923 14 7.665 14 7.4V4.6Zm2 2.8a8.041 8.041 0 0 0 .012.587l.012.002c.117.01.28.011.576.011h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2a2 2 0 0 1 .796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v2.8c0 .264.001.522-.017.739a2.02 2.02 0 0 1-.2.77 2 2 0 0 1-.875.873 2.02 2.02 0 0 1-.77.201c-.216.018-.474.017-.738.017h-2.8a8.042 8.042 0 0 0-.588.012l-.001.012c-.01.117-.011.28-.011.576v2.8c0 .264.001.522-.017.739a2.02 2.02 0 0 1-.2.77 2 2 0 0 1-.875.873 2.02 2.02 0 0 1-.77.201c-.216.018-.474.017-.738.017h-2.8c-.264 0-.522.001-.739-.017a2.021 2.021 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.022 2.022 0 0 1-.201-.77C7.999 19.923 8 19.665 8 19.4v-2.8c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.041 8.041 0 0 0 7.4 16H4.6c-.264 0-.522.001-.739-.017a2.021 2.021 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.022 2.022 0 0 1-.201-.77C1.999 13.923 2 13.665 2 13.4v-2.8c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201C4.077 7.999 4.335 8 4.6 8h2.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C8 7.859 8 7.696 8 7.4V4.6c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2a2 2 0 0 1 .796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v2.8Z"/></symbol><symbol id="ic-tool2" viewBox="0 0 24 24" fill="currentColor"><path d="m20.997 7.417-1.158 1.16c-.186.185-.368.368-.534.509a2.023 2.023 0 0 1-.687.402c-.401.13-.834.13-1.236 0a2.023 2.023 0 0 1-.687-.402c-.166-.14-.348-.324-.534-.51l-.237-.237c-.186-.186-.37-.368-.51-.534a2.022 2.022 0 0 1-.402-.687 2.001 2.001 0 0 1 0-1.236c.094-.29.254-.512.402-.687.14-.166.324-.348.51-.534l1.553-1.554a4.5 4.5 0 0 0-5.392 5.27c.046.235.087.44.113.602a1.97 1.97 0 0 1-.043.951 1.97 1.97 0 0 1-.153.361c-.158.295-.431.552-.638.759l-7.157 7.157a1.122 1.122 0 0 0 1.586 1.586l7.44-7.44a2.02 2.02 0 0 1 .476-.355l.162-.08a1.777 1.777 0 0 1 .583-.146l.036-.002c.28-.027.559 0 .816.07.14.038.282.069.427.094.044.007.087.015.131.021l.073.009A4.5 4.5 0 0 0 21 7.5c0-.028-.002-.055-.003-.083ZM14.64 13.78a9.21 9.21 0 0 0-.276.27l-.95.95 4.793 4.793a1.122 1.122 0 0 0 1.586-1.586l-4.283-4.283-.06-.01a6.719 6.719 0 0 1-.192-.034c-.007-.002-.015-.002-.022-.003a16.25 16.25 0 0 0-.528-.1l-.058-.007-.01.01ZM3.144 3.27 3.72 5H5V3.72l-1.73-.576-.126.126ZM23 7.5a6.5 6.5 0 0 1-4.81 6.275l3.017 3.018a3.121 3.121 0 1 1-4.414 4.414L12 16.414l-4.793 4.793a3.121 3.121 0 1 1-4.414-4.414L9.086 10.5 5.586 7H3a1 1 0 0 1-.948-.684l-1-3a1 1 0 0 1 .241-1.023l1-1 .106-.092a1 1 0 0 1 .917-.15l3 1A1 1 0 0 1 7 3v2.586l3.111 3.111a6.5 6.5 0 0 1 9.65-6.821 1.002 1.002 0 0 1 .205 1.572l-2.627 2.628c-.21.21-.325.325-.4.414l-.008.01.008.01c.075.089.19.204.4.414l.237.237c.21.21.325.325.414.4l.01.007.01-.006c.089-.076.204-.191.414-.4l2.458-2.459a1.001 1.001 0 0 1 1.578.216l.055.111.11.29A6.49 6.49 0 0 1 23 7.5Z"/></symbol><symbol id="ic-tool1" viewBox="0 0 24 24" fill="currentColor"><path d="M21 8c0-.188-.011-.373-.032-.556l-1.63 1.632c-.186.186-.368.37-.534.51a2.023 2.023 0 0 1-.686.402c-.402.13-.835.13-1.236 0a2.024 2.024 0 0 1-.687-.402c-.166-.14-.347-.324-.533-.51l-.737-.737c-.187-.186-.37-.368-.511-.534a2.024 2.024 0 0 1-.402-.687 2.001 2.001 0 0 1 0-1.236c.095-.29.253-.512.402-.687.14-.166.324-.348.51-.534l1.63-1.63a5 5 0 0 0-5.413 6.158c.058.236.108.443.142.609.03.153.068.365.053.584-.02.298-.082.518-.219.783-.161.31-.447.579-.662.794l-6.248 6.248a1.122 1.122 0 0 0 1.586 1.586l6.248-6.248c.215-.215.483-.5.794-.661l.192-.09c.188-.076.367-.115.59-.13l.164-.003c.159.006.306.033.42.056.167.033.374.084.61.141A5 5 0 0 0 21 8Zm2 0a7 7 0 0 1-8.661 6.802 15.34 15.34 0 0 0-.53-.124l-.055-.01-.012.01a8.886 8.886 0 0 0-.287.281l-6.248 6.248a3.121 3.121 0 0 1-4.414-4.414l6.248-6.248c.144-.144.225-.225.281-.287l.01-.013-.009-.054a14.112 14.112 0 0 0-.124-.529 7 7 0 0 1 9.683-8.043 1 1 0 0 1 .295 1.618l-2.838 2.84c-.21.209-.324.324-.4.413l-.008.01.008.01c.076.089.19.204.4.414l.737.737c.21.21.325.325.414.4l.01.008.01-.007c.09-.076.205-.191.415-.4l2.837-2.839.092-.08a1 1 0 0 1 1.527.375A6.98 6.98 0 0 1 23 8Z"/></symbol><symbol id="ic-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M9 15.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.041 8.041 0 0 0 8.4 15H4.6a8.04 8.04 0 0 0-.588.012l-.001.012C4 15.141 4 15.304 4 15.6v3.8c0 .297.001.46.01.576l.002.011.012.002c.117.01.28.011.576.011h3.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C9 19.859 9 19.696 9 19.4v-3.8Zm11 0c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.04 8.04 0 0 0 19.4 15h-3.8a8.042 8.042 0 0 0-.588.012l-.001.012c-.01.117-.011.28-.011.576v3.8a8.04 8.04 0 0 0 .012.587l.012.002c.117.01.28.011.576.011h3.8c.297 0 .46-.001.576-.01l.011-.003.002-.011c.01-.117.011-.28.011-.576v-3.8ZM9 4.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.1 8.1 0 0 0 8.4 4H4.6a8.1 8.1 0 0 0-.576.01l-.012.002-.001.012A8.1 8.1 0 0 0 4 4.6v3.8c0 .297.001.46.01.576l.002.011.012.002C4.141 9 4.304 9 4.6 9h3.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C9 8.859 9 8.696 9 8.4V4.6Zm11 0c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.1 8.1 0 0 0 19.4 4h-3.8c-.297 0-.459.001-.576.01l-.012.002-.001.012A8.04 8.04 0 0 0 15 4.6v3.8a8.041 8.041 0 0 0 .012.587l.012.002c.117.01.28.011.576.011h3.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C20 8.859 20 8.696 20 8.4V4.6Zm-9 14.8c0 .264.001.522-.017.739a2.02 2.02 0 0 1-.2.77 2 2 0 0 1-.875.873 2.021 2.021 0 0 1-.77.201c-.216.018-.474.017-.738.017H4.6c-.264 0-.522.001-.739-.017a2.021 2.021 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.022 2.022 0 0 1-.201-.77C1.999 19.923 2 19.665 2 19.4v-3.8c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h3.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.329.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v3.8Zm11 0c0 .264.001.522-.017.739a2.02 2.02 0 0 1-.2.77 2 2 0 0 1-.875.873 2.02 2.02 0 0 1-.77.201c-.216.018-.474.017-.738.017h-3.8c-.264 0-.522.001-.739-.017a2.021 2.021 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77c-.018-.216-.017-.474-.017-.738v-3.8c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h3.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.329.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v3.8Zm-11-11c0 .264.001.522-.017.739a2.021 2.021 0 0 1-.2.77 2 2 0 0 1-.875.873 2.021 2.021 0 0 1-.77.201c-.216.018-.474.017-.738.017H4.6c-.264 0-.522.001-.739-.017a2.021 2.021 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.022 2.022 0 0 1-.201-.77C1.999 8.923 2 8.665 2 8.4V4.6c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201C4.077 1.999 4.335 2 4.6 2h3.8c.264 0 .522-.001.739.017.228.018.498.063.77.2a2 2 0 0 1 .796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v3.8Zm11 0c0 .264.001.522-.017.739a2.021 2.021 0 0 1-.2.77 2 2 0 0 1-.875.873 2.02 2.02 0 0 1-.77.201c-.216.018-.474.017-.738.017h-3.8c-.264 0-.522.001-.739-.017a2.021 2.021 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77C12.999 8.923 13 8.665 13 8.4V4.6c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h3.8c.264 0 .522-.001.739.017.228.018.498.063.77.2a2 2 0 0 1 .796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739v3.8Z"/></symbol><symbol id="ic-brush" viewBox="0 0 24 24" fill="currentColor"><path d="M17.264 2.208a3.205 3.205 0 0 1 4.528 4.528l-9.137 9.868c-.422.457-.776.853-1.185 1.095-.459.27-.972.41-1.488.416a4.49 4.49 0 0 1-1.3 3.568c-.94.94-2.233 1.223-3.377 1.314C4.185 23.086 2.889 23 2 23a1 1 0 0 1-.89-1.456c.368-.717.321-1.566.275-2.729-.04-.99-.107-2.457.933-3.497a4.49 4.49 0 0 1 3.567-1.302A2.997 2.997 0 0 1 6.3 12.53c.242-.41.638-.763 1.095-1.185l9.868-9.137ZM7.268 16.732a2.5 2.5 0 0 0-3.536 0c-.326.327-.394.847-.348 2.003.025.627.083 1.445-.047 2.29.613.015 1.207.026 1.809-.022 1-.08 1.695-.309 2.122-.736a2.5 2.5 0 0 0 0-3.535Zm1.487-3.92c-.563.522-.677.64-.733.735a1 1 0 0 0-.018.983c.052.096.16.22.703.763.543.543.667.651.763.703a1 1 0 0 0 .983-.019c.094-.055.213-.169.735-.732l.202-.219-2.417-2.417-.218.203Zm11.538-9.105a1.205 1.205 0 0 0-1.67-.032l-8.182 7.575 2.308 2.307 7.576-8.18a1.205 1.205 0 0 0-.032-1.67Z"/></symbol><symbol id="ic-layers" viewBox="0 0 24 24" fill="currentColor"><path d="M21.553 13.606a1 1 0 0 1 .894 1.788l-9.642 4.821c-.08.04-.29.156-.529.2-.182.035-.37.035-.552 0-.239-.044-.45-.16-.529-.2l-9.642-4.821a1 1 0 1 1 .894-1.788L12 18.38l9.553-4.775Zm-9.414-10.04.137.018.172.045c.164.053.297.126.357.155l9.642 4.822a1 1 0 0 1 0 1.788l-9.642 4.821c-.08.04-.29.156-.529.2-.182.035-.37.035-.552 0-.239-.044-.45-.16-.529-.2l-9.642-4.821-.121-.071a1 1 0 0 1 .12-1.717l9.643-4.822c.08-.04.29-.155.529-.2l.137-.018a1.5 1.5 0 0 1 .278 0ZM4.235 9.499 12 13.381 19.764 9.5 12 5.618 4.235 9.499Z"/></symbol><symbol id="ic-truck" viewBox="0 0 24 24" fill="currentColor"><path d="M20.998 12.419v-.003c-.002 0-.002-.002-.003-.003a5.807 5.807 0 0 0-.17-.175l-4.063-4.062a5.94 5.94 0 0 0-.175-.171l-.004-.003h-.002C16.534 8 16.468 8 16.337 8H15v7.697a3.498 3.498 0 0 1 5.997-.005c0-.055.003-.119.003-.192v-2.837c0-.13 0-.197-.002-.244ZM7 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm11 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm5-.5c0 .22 0 .434-.012.615-.013.19-.043.417-.14.65a2 2 0 0 1-1.082 1.083c-.1.041-.2.069-.295.09a3.499 3.499 0 0 1-6.935.062h-3.662a4.002 4.002 0 0 1-7.781-.14A3 3 0 0 1 1 15V7.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C4.188 3 4.657 3 5.2 3h5.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.005.062.008.128.011.195h1.356c.197 0 .459-.006.716.056.153.036.301.09.441.162l.137.077.16.111c.152.118.28.251.385.356l4.062 4.062c.14.14.329.32.467.545.11.179.19.374.24.578.061.257.055.52.055.716V15.5ZM3 15c0 .246.09.47.236.645a4.001 4.001 0 0 1 7.638.355H13V7.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 10.8 5H5.2c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C3.001 6.25 3 6.624 3 7.2V15Z"/></symbol><symbol id="ic-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M8.866 2.154a4.832 4.832 0 0 1 6.268 0c.453.387 1.018.62 1.612.668a4.831 4.831 0 0 1 4.432 4.432c.047.594.281 1.159.668 1.612a4.832 4.832 0 0 1 0 6.268 2.835 2.835 0 0 0-.668 1.612 4.831 4.831 0 0 1-4.432 4.432 2.835 2.835 0 0 0-1.612.668 4.832 4.832 0 0 1-6.268 0 2.835 2.835 0 0 0-1.612-.668 4.831 4.831 0 0 1-4.432-4.432 2.835 2.835 0 0 0-.668-1.612 4.832 4.832 0 0 1 0-6.268c.387-.453.62-1.018.668-1.612a4.831 4.831 0 0 1 4.432-4.432 2.835 2.835 0 0 0 1.612-.668Zm4.97 1.523a2.832 2.832 0 0 0-3.673 0 4.833 4.833 0 0 1-2.75 1.138 2.832 2.832 0 0 0-2.598 2.598 4.833 4.833 0 0 1-1.138 2.75 2.832 2.832 0 0 0 0 3.674l.234.299c.52.716.834 1.564.904 2.45a2.832 2.832 0 0 0 2.598 2.599 4.828 4.828 0 0 1 2.75 1.138 2.832 2.832 0 0 0 3.674 0l.299-.234a4.832 4.832 0 0 1 2.45-.904 2.832 2.832 0 0 0 2.599-2.598 4.833 4.833 0 0 1 1.138-2.75l.16-.204a2.833 2.833 0 0 0-.16-3.47 4.833 4.833 0 0 1-1.138-2.75 2.832 2.832 0 0 0-2.598-2.598 4.832 4.832 0 0 1-2.451-.904l-.3-.234Zm.957 5.116a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 12.586l3.793-3.793Z"/></symbol><symbol id="ic-check-circle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm0 2a9 9 0 1 1 0 18 9 9 0 0 1 0-18Zm4.5 5.793a1 1 0 0 1 .707 1.707l-5.5 5.5a1 1 0 0 1-1.414 0l-2.5-2.5a1 1 0 0 1 1.414-1.414L11 13.879l4.793-4.793A.997.997 0 0 1 16.5 8.793Z"/></symbol><symbol id="ic-pin" viewBox="0 0 24 24" fill="currentColor"><path d="M19 10a7 7 0 1 0-14 0c0 1.892.853 3.678 2.292 5.547 1.28 1.662 2.937 3.285 4.708 5.043 1.77-1.758 3.428-3.381 4.708-5.043C18.148 13.678 19 11.892 19 10Zm-5 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm5 0c0 2.526-1.147 4.74-2.708 6.767-1.551 2.014-3.618 3.973-5.585 5.94a1 1 0 0 1-1.414 0c-1.967-1.967-4.034-3.926-5.585-5.94C4.148 14.74 3 12.527 3 10a9 9 0 0 1 18 0Z"/></symbol></defs></svg>
+<a class="skip" href="#anfrage">Direkt zur Anfrage</a>
+
+<header class="hero">
+  <div class="ph"><img src="bilder/hero-himmel-eichstaett.webp" alt="" aria-hidden="true" onerror="this.remove()"></div>
+
+  <div class="htop">
+    <div class="navbar">
+      <a class="brand" href="#"><span class="mk"><svg class="i"><use href="#ic-star4"/></svg></span><span class="txt"><b>Hristev-Service</b></span></a>
+      <nav class="navlinks" aria-label="Hauptnavigation">
+        <a href="#bereiche">Bereiche</a><a href="#reinigung">Reinigung</a><a href="#bau">Bau</a><a href="#ablauf">Ablauf</a><a href="#fragen">Fragen</a>
+      </nav>
+      <div class="navright">
+        <a class="iconbtn navtel" href="tel:[TELEFON]" aria-label="Anrufen: [TELEFON]"><svg class="i"><use href="#ic-phone"/></svg></a>
+        <button class="iconbtn tgl" type="button" aria-label="Zwischen hellem und dunklem Modus wechseln" aria-pressed="false"><svg class="i ic-moon"><use href="#ic-moon"/></svg><svg class="i ic-sun"><use href="#ic-sun"/></svg></button>
+        <a class="navcta" href="#anfrage">Kostenlose Besichtigung</a>
+        <a class="navcta navcta-kurz" href="#anfrage">Anfragen</a>
+        <button class="iconbtn burger" type="button" data-burger aria-expanded="false" aria-controls="hauptmenue" aria-label="Menü öffnen"><span class="bl"></span><span class="bl"></span><span class="bl"></span></button>
+      </div>
+      <div class="navmenu" id="hauptmenue" hidden>
+        <a class="ml" href="#bereiche">Bereiche</a>
+        <a class="ml" href="#reinigung">Reinigung</a>
+        <a class="ml" href="#bau">Bau</a>
+        <a class="ml" href="#ablauf">Ablauf</a>
+        <a class="ml" href="#fragen">Fragen</a>
+        <hr>
+        <div class="mrow"><span>Dunkler Modus</span>
+          <button class="iconbtn tgl" type="button" aria-label="Zwischen hellem und dunklem Modus wechseln" aria-pressed="false"><svg class="i ic-moon"><use href="#ic-moon"/></svg><svg class="i ic-sun"><use href="#ic-sun"/></svg></button>
+        </div>
+        <a class="navcta" href="#anfrage">Kostenlose Besichtigung</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hbody">
+    <div class="hleft">
+      <h1><span class="h1kick">Eichstätt</span><span class="h1line">Sauber übergeben. Und vorher aufgebaut.</span></h1>
+      <div class="btn-row">
+        <a class="btn btn-cream" href="#anfrage">Jetzt anfragen</a>
+      </div>
+      <p class="micro">Unverbindlich und kostenlos. Antwort [REAKTIONSZEIT]. Kein Vertreterbesuch, kein Abo.</p>
+    </div>
+    <div class="hright">
+      <div class="hpanel">
+        <div class="prow"><span class="ptop"><span class="plabel">Anruf oder Formular</span><span class="pval">Schritt 1</span></span><span class="pbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="prow"><span class="ptop"><span class="plabel">Besichtigung vor Ort</span><span class="pval">Schritt 2</span></span><span class="pbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="prow"><span class="ptop"><span class="plabel">Festpreis schriftlich</span><span class="pval">Schritt 3</span></span><span class="pbar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        <p class="hnote">Büros, Treppenhäuser und Arztpraxen, dazu Rückbau, Trockenbau und die Endreinigung danach. Ein Betrieb für Gewerbe und Privat, mit zehn Jahren Erfahrung auf dem Bau.</p>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hsubject">
+    <span class="hframe" aria-hidden="true"></span>
+    <img src="bilder/hero-motiv-freigestellt.webp" alt="Hand mit Schwamm und Schaum, freigestellt" onerror="this.remove()">
+  </figure>
+
+  <span class="hmist" aria-hidden="true"><img src="bilder/hero-nebel.webp" alt="" onerror="this.remove()"></span>
+  <span class="hfade" aria-hidden="true"></span>
+  <p class="hchip"><span class="ring" aria-hidden="true"><svg class="rprog" viewBox="0 0 36 36"><circle class="rtrack" cx="18" cy="18" r="15"/><circle class="rbar" cx="18" cy="18" r="15"/></svg><svg class="rcheck"><use href="#ic-check-circle"/></svg></span><span class="chiptxt">Kostenlose Besichtigung vor Ort</span></p>
+</header>
+
+<main>
+
+<section id="bereiche" class="band-mint"><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Zwei Bereiche</p>
+  <h2>Was wir machen</h2>
+  <p class="lead" style="margin-top:var(--s5)">Ein Betrieb, zwei Standbeine. Zehn Jahre Erfahrung im Baugeschäft stecken in beiden.</p>
+</div><div class="wrap wide">
+  <div class="cards two" style="margin-top:var(--s6)">
+    <a class="pcard" href="#reinigung">
+      <span class="ph"><img src="bilder/gebaeudereinigung-eichstaett-bereich.webp" alt="Gebäudereinigung in Eichstätt, Reinigungskraft bei der Arbeit" loading="lazy" onerror="this.remove()"></span>
+      <span class="tag"><svg class="i"><use href="#ic-brush"/></svg>Gewerbe und Privat</span>
+      <h3>Gebäudereinigung</h3>
+      <p>Büro, Treppenhaus, Arztpraxis, Bauendreinigung, Glas und Grundreinigung. Wiederkehrend nach festem Plan oder einmalig zum Termin.</p>
+      <span class="btn btn-cream btn-block">Reinigung ansehen</span>
+    </a>
+    <a class="pcard deep" href="#bau">
+      <span class="ph"><img src="bilder/trockenbau-abbruch-eichstaett-bereich.webp" alt="Baustelle mit Trockenbau und Rückbau in Eichstätt" loading="lazy" onerror="this.remove()"></span>
+      <span class="tag"><svg class="i"><use href="#ic-tool1"/></svg>Zehn Jahre Baustelle</span>
+      <h3>Trockenbau und Abbruch</h3>
+      <p>Wände und Decken, Entkernung, Rückbau, Durchbrüche. Festpreis nach der Besichtigung und ein Termin, der steht.</p>
+      <span class="btn btn-cream btn-block">Bauarbeiten ansehen</span>
+    </a>
+  </div>
+</div><div class="wrap">
+  <div class="stats stats-solo">
+    <div class="s"><div class="n">10</div><div class="t">Jahre Erfahrung</div><div class="d">im Baugeschäft, nicht angelesen</div></div>
+    <div class="s"><div class="n">2</div><div class="t">Bereiche</div><div class="d">Reinigung und Bau aus einem Haus</div></div>
+    <div class="s"><div class="n">[XX]</div><div class="t">km Einsatzradius</div><div class="d">um Eichstätt</div></div>
+    <div class="s"><div class="n">[XX]</div><div class="t">Stunden</div><div class="d">bis zur Antwort auf Ihre Anfrage</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Warum uns das wichtig ist</p>
+  <h2 class="two-tone"><b>Das Problem ist selten die Arbeit.</b> Das Problem ist, dass sich keiner meldet.</h2>
+  <div class="rows">
+    <div class="row"><span class="ix">[01]</span><h3>„Es kommt einfach keiner mehr."</h3><p>Der Reinigungsdienst war die ersten Monate gut. Dann kam er unregelmäßig. Jetzt rufen die Mieter bei Ihnen an, nicht bei ihm.</p><span></span></div>
+    <div class="row"><span class="ix">[02]</span><h3>„Ich telefoniere ständig hinterher."</h3><p>Anrufen, nachfassen, erinnern. Sie zahlen für eine Leistung und übernehmen die Kontrolle gleich mit.</p><span></span></div>
+    <div class="row"><span class="ix">[03]</span><h3>„Am Ende kamen Nachträge."</h3><p>Das Angebot war günstig. Die Rechnung war es nicht. Und erklärt hat es Ihnen vorher niemand.</p><span></span></div>
+    <div class="row"><span class="ix">[04]</span><h3>„Die Baustelle steht, keiner informiert uns."</h3><p>Drei Gewerke, drei Termine, und wenn etwas schiefgeht, war es immer der andere.</p><span></span></div>
+  </div>
+  <p style="margin-top:var(--s6);font-size:1.0625rem;max-width:72ch">Wir kennen das aus zehn Jahren auf Baustellen und in Objekten, und zwar von beiden Seiten. Deshalb läuft es hier anders: eine Nummer, ein Ansprechpartner, ein schriftlicher Preis.</p>
+</div></section>
+
+<section id="reinigung" class="band-soft"><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Leistungen Reinigung</p>
+  <h2>Gebäudereinigung in Eichstätt</h2>
+  <p class="lead" style="margin-top:var(--s5)">Sie bekommen ein schriftliches Leistungsverzeichnis mit Fläche und Intervall, damit klar ist, was gemacht wird. Nicht „übliche Reinigungsarbeiten".</p>
+</div><div class="wrap wide">
+  <div class="cards" style="margin-top:var(--s6)">
+    <a class="pcard" href="#anfrage"><span class="ph"><img src="bilder/bueroreinigung-eichstaett-buero.webp" alt="Büroreinigung in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-office"/></svg>täglich bis wöchentlich</span><h3>Büroreinigung</h3><p>Böden, Sanitär, Küche, Papierkörbe, Glasflächen im Innenbereich. Nach Feierabend oder vor Arbeitsbeginn.</p><span class="btn btn-cream btn-block">Angebot anfragen</span></a>
+    <a class="pcard" href="#anfrage"><span class="ph"><img src="bilder/treppenhausreinigung-eichstaett-wohnanlage.webp" alt="Treppenhausreinigung in einer Wohnanlage in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-apartment"/></svg>wöchentlich bis 14-tägig</span><h3>Treppenhausreinigung</h3><p>Aufgangsreinigung, also Treppenhaus, Hof, Keller und Waschküche. Für Hausverwaltungen, WEG und Eigentümer.</p><span class="btn btn-cream btn-block">Angebot anfragen</span></a>
+    <a class="pcard" href="#anfrage"><span class="ph"><img src="bilder/praxisreinigung-eichstaett-arztpraxis.webp" alt="Praxisreinigung in einer Arztpraxis in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-medical"/></svg>täglich</span><h3>Praxisreinigung</h3><p>Nach Hygieneplan, mit dokumentierten Einwirkzeiten und gelisteten Mitteln. Damit die Begehung kein Thema ist.</p><span class="btn btn-cream btn-block">Angebot anfragen</span></a>
+    <a class="pcard" href="#anfrage"><span class="ph"><img src="bilder/bauendreinigung-eichstaett-uebergabe.webp" alt="Fertiger Raum vor der Übergabe nach der Bauendreinigung in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-tool2"/></svg>einmalig zum Termin</span><h3>Bauendreinigung</h3><p>Nach dem Handwerker, vor der Übergabe. Bauschleier, Kleberreste, Fenster, Böden.</p><span class="btn btn-cream btn-block">Angebot anfragen</span></a>
+    <a class="pcard" href="#anfrage"><span class="ph"><img src="bilder/glasreinigung-eichstaett-fensterflaeche.webp" alt="Fenster- und Glasflächen an einer Fassade in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-grid"/></svg>innen und außen</span><h3>Glas- und Fensterreinigung</h3><p>Fenster, Rahmen, Glastüren, Schaufenster. Innen und außen, in der Höhe nach Absprache.</p><span class="btn btn-cream btn-block">Angebot anfragen</span></a>
+    <a class="pcard" href="#anfrage"><span class="ph"><img src="bilder/grundreinigung-eichstaett-flaeche.webp" alt="Grundreinigung einer Fläche in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-brush"/></svg>einmalig oder als Start</span><h3>Grundreinigung</h3><p>Beschichtungen ab, Fugen, Sanitär, hartnäckige Flächen. Auch als Start vor dem festen Turnus.</p><span class="btn btn-cream btn-block">Angebot anfragen</span></a>
+  </div>
+</div></section>
+
+<section id="bau" class="band-mint"><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Leistungen Bau</p>
+  <h2>Trockenbau und Abbrucharbeiten</h2>
+  <p class="lead" style="margin-top:var(--s5)">Zehn Jahre Baustelle, vom Rückbau bis zur fertigen Wand. Festpreis nach der Besichtigung, Termin steht.</p>
+</div><div class="wrap wide">
+  <div class="cards two" style="margin-top:var(--s6)">
+    <a class="pcard deep" href="#anfrage"><span class="ph"><img src="bilder/trockenbau-abbruch-eichstaett-rohbau.webp" alt="Raum im Innenausbau nach dem Trockenbau in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-layers"/></svg>Preis nach Aufmaß</span><h3>Trockenbauwände und Decken</h3><p>Ständerwerk, Beplankung, Dämmung, abgehängte Decken, Vorsatzschalen. Gespachtelt bis zur Qualitätsstufe, die Sie brauchen.</p><span class="btn btn-cream btn-block">Bauarbeiten anfragen</span></a>
+    <a class="pcard deep" href="#anfrage"><span class="ph"><img src="bilder/abbruch-eichstaett-entkernung.webp" alt="Entkernung und Rückbau in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-truck"/></svg>inkl. Container und Entsorgung</span><h3>Entkernung und Rückbau</h3><p>Alles raus bis auf den Rohbau: Böden, Estrich, Trennwände, Sanitär, alte Installationen.</p><span class="btn btn-cream btn-block">Bauarbeiten anfragen</span></a>
+    <a class="pcard deep" href="#anfrage"><span class="ph"><img src="bilder/durchbruch-eichstaett-wandoeffnung.webp" alt="Wandöffnung für einen Durchbruch in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-tool1"/></svg>Statiker zuerst</span><h3>Durchbrüche und Grundriss</h3><p>Türöffnung versetzen, Wand raus, Raum öffnen. Bei tragenden Wänden erst der Statiker, dann wir. Ohne Nachweis fangen wir nicht an.</p><span class="btn btn-cream btn-block">Bauarbeiten anfragen</span></a>
+    <a class="pcard deep" href="#anfrage"><span class="ph"><img src="bilder/sonderfaelle-eichstaett-bewohnte-sanierung.webp" alt="Bewohnte Sanierung in Etappen in Eichstätt" loading="lazy" onerror="this.remove()"></span><span class="tag"><svg class="i"><use href="#ic-verified"/></svg>Altbau und bewohnt</span><h3>Sonderfälle, die wir kennen</h3><p>Bewohnte Sanierung in Etappen, WEG-Beschluss und geregelte Arbeitszeiten, Altbau mit Überraschungen hinter dem Putz. Bei Asbest holen wir einen Fachbetrieb dazu.</p><span class="btn btn-cream btn-block">Bauarbeiten anfragen</span></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="gpanel">
+    <p class="eyebrow" style="color:var(--cream)"><span class="cluster"><i style="background:var(--cream)"></i><i style="background:var(--cream)"></i><i style="background:var(--cream)"></i><i style="background:var(--cream)"></i></span> Aus einem Haus</p>
+    <h2>Rausreißen, neu aufbauen, sauber übergeben.</h2>
+    <p class="lead" style="margin-top:var(--s5)">Bei einem Umbau brauchen Sie normalerweise drei Firmen: eine, die abbricht, eine, die aufbaut, und eine, die den Dreck wegmacht. Drei Termine, drei Rechnungen, und wenn etwas nicht passt, war es immer der andere.</p>
+    <div class="chain">
+      <div class="st"><div class="n">01</div><h3>Raus damit</h3><p>Entkernung, Rückbau, Durchbrüche. Bauschutt und Container inklusive.</p></div>
+      <div class="st"><div class="n">02</div><h3>Neu aufbauen</h3><p>Trockenbauwände, Decken, Vorsatzschalen. Gespachtelt und bereit für Maler oder Fliesenleger.</p></div>
+      <div class="st"><div class="n">03</div><h3>Sauber übergeben</h3><p>Bauendreinigung, Fenster, Böden. Besenrein oder bezugsfertig.</p></div>
+    </div>
+    <p style="margin:var(--s8) 0 var(--s6);color:rgba(255,255,255,.86);max-width:72ch">Ein Ansprechpartner über alle drei Schritte. Ein Termin, den wir untereinander abstimmen und nicht Sie. Und am Ende steht kein Berg Bauschutt im Treppenhaus, weil derselbe Betrieb ihn auch wieder wegräumt.</p>
+    <a class="btn btn-cream" href="#anfrage">Kostenlose Besichtigung</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Warum wir</p>
+  <h2>Warum Kunden bleiben</h2>
+  <div class="why">
+    <div class="mcard"><svg class="spark"><use href="#ic-star4"/></svg><h4>Sie sprechen mit dem, der die Arbeit macht</h4><p>Kein Callcenter, kein Vertrieb, keine wechselnden Ansprechpartner. Yordan Hristev nimmt ab und ist auch auf der Baustelle.</p></div>
+    <div class="mcard"><svg class="spark"><use href="#ic-star4"/></svg><h4>Festpreis nach der Besichtigung</h4><p>Schriftlich, mit Leistungsverzeichnis. Taucht hinter dem Putz etwas auf, bekommen Sie den Nachtrag schriftlich, bevor wir weiterarbeiten.</p></div>
+    <div class="why-side">
+      <p style="font-size:1rem;color:var(--muted);margin:0">Zwei Bereiche, ein Ansprechpartner. Das ist der Unterschied zwischen drei Firmen, die sich abstimmen müssen, und einem Betrieb, der es einfach macht.</p>
+      <a class="btn btn-green" href="#anfrage" style="align-self:flex-start;margin-top:var(--s6)">Besichtigung anfragen</a>
+    </div>
+    <div class="why-hole"></div>
+    <div class="mcard"><svg class="spark"><use href="#ic-star4"/></svg><h4>Wir hinterlassen keine Baustelle</h4><p>Der Vorteil, wenn Reinigung und Bau derselbe Betrieb sind. Staubschutz, Treppenhaus, Nachbarn, und am Ende ist es sauber.</p></div>
+    <div class="mcard"><svg class="spark"><use href="#ic-star4"/></svg><h4>Sie bekommen eine Antwort</h4><p>Anfragen beantworten wir [REAKTIONSZEIT]. Auch dann, wenn die Antwort lautet, dass wir gerade keine Kapazität haben.</p></div>
+  </div>
+</div></section>
+
+<section id="ablauf"><div class="wrap">
+  <div class="al-head">
+    <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> So läuft es</p>
+    <h2 class="two-tone"><b>Vom ersten Anruf</b> bis zum festen Termin</h2>
+  </div>
+  <div class="al-grid" data-flow>
+    <div class="al-list">
+      <h3 class="al-sub">Gleich, ob Reinigung oder Bau</h3>
+      <div class="al-step is-on">
+        <button class="al-btn" type="button" aria-expanded="true"><span class="al-num">1</span><span class="al-title">Sie melden sich, wir antworten</span></button>
+        <div class="al-body"><div>
+          <p>Formular oder Anruf. Objekt, ungefähre Größe, was Sie brauchen, mehr nicht. Wir melden uns [REAKTIONSZEIT] und stimmen einen Termin ab. Auch dann, wenn wir gerade keine Kapazität haben.</p>
+          <span class="al-time">2 Minuten für Sie</span>
+        </div></div>
+      </div>
+      <div class="al-step">
+        <button class="al-btn" type="button" aria-expanded="false"><span class="al-num">2</span><span class="al-title">Wir sehen uns das Objekt an</span></button>
+        <div class="al-body"><div>
+          <p>Yordan Hristev kommt selbst vorbei, schaut sich die Flächen an und misst auf. Ohne Besichtigung gibt es keinen seriösen Preis, und wir nennen Ihnen auch keinen. Aufräumen müssen Sie vorher nicht.</p>
+          <span class="al-time">rund 20 Minuten vor Ort</span>
+        </div></div>
+      </div>
+      <div class="al-step">
+        <button class="al-btn" type="button" aria-expanded="false"><span class="al-num">3</span><span class="al-title">Sie bekommen einen Festpreis, schriftlich</span></button>
+        <div class="al-body"><div>
+          <p>Mit Leistungsverzeichnis. Bei der Reinigung mit Fläche und Intervall, beim Bau mit Leistungen, Entsorgung und Termin. Was drin steht, wird abgerechnet. Kein Vertreterbesuch, kein Abo.</p>
+          <span class="al-time">[X] Werktage bis zum Angebot</span>
+        </div></div>
+      </div>
+      <div class="al-step">
+        <button class="al-btn" type="button" aria-expanded="false"><span class="al-num">4</span><span class="al-title">Wir fangen an, zum vereinbarten Termin</span></button>
+        <div class="al-body"><div>
+          <p>Bei der Reinigung mit fester Kraft, die Sie kennen. Beim Bau mit festem Starttermin, Staubschutz und täglicher Baustellenreinigung. Taucht etwas hinter dem Putz auf, bekommen Sie den Nachtrag schriftlich, bevor wir weiterarbeiten.</p>
+          <span class="al-time">Termin nach Absprache</span>
+        </div></div>
+      </div>
+    </div>
+    <div class="al-pic">
+      <figure class="al-sticky">
+        <img src="bilder/trockenbau-abbruch-eichstaett-rohbau.webp" alt="Objekt in Eichstätt vor der Besichtigung" loading="lazy" onerror="this.remove()">
+        <figcaption>Stockfoto, austauschbar</figcaption>
+      </figure>
+    </div>
+  </div>
+</div></section>
+
+<section id="preise" class="band-soft"><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Preise</p>
+  <h2>Was es kostet, und wovon es abhängt</h2>
+  <p class="lead" style="margin-top:var(--s5)">Einen Preis ohne Besichtigung zu nennen, wäre geraten. Woraus er sich zusammensetzt, können wir Ihnen sagen. Dann können Sie unser Angebot mit anderen vergleichen.</p>
+  <div class="pgrid">
+    <div class="pbox"><h3>Reinigung</h3><p>Fläche in Quadratmetern, Intervall, Ausstattung (Sanitär, Küche, Bodenbelag) und Verschmutzungsgrad. Abgerechnet als monatlicher Pauschalpreis bei wiederkehrender Reinigung oder als Festpreis bei einmaligen Aufträgen.</p></div>
+    <div class="pbox"><h3>Trockenbau und Abbruch</h3><p>Fläche, Wandaufbau, Spachtelgüte, Entsorgungsmenge, Zugang zum Objekt und ob bewohnt wird. Container und Entsorgung stehen als eigene Position im Angebot, nicht versteckt im Quadratmeterpreis.</p></div>
+  </div>
+  <div class="claim"><p>Was im Angebot steht, wird abgerechnet. Wenn während der Arbeiten etwas auftaucht, das vorher niemand sehen konnte, bekommen Sie den Nachtrag schriftlich, bevor wir weiterarbeiten. Nicht danach.</p></div>
+</div></section>
+
+<!-- REFERENZEN: Platzhalter, bis echte Vorher/Nachher-Fotos vorliegen -->
+<section><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Referenzen</p>
+  <h2 class="two-tone"><b>Vorher und nachher.</b> Hier kommen echte Objekte hin.</h2>
+  <p class="lead" style="margin-top:var(--s5)">Bildpaare abgeschlossener Arbeiten, je mit Objekttyp, Ort, Fläche und Dauer. Das ist erfahrungsgemäß das stärkste Element einer solchen Seite, deshalb bleibt der Platz reserviert statt mit Symbolbildern gefüllt.</p>
+</div>
+  <div class="carousel" data-carousel aria-roledescription="Karussell" aria-label="Referenzen">
+    <div class="cviewport">
+      <div class="ctrack">
+        <article class="cslide is-on" aria-roledescription="Folie" aria-label="Referenz 1 von 3">
+          <span class="cba" aria-hidden="true"><span><i>Vorher</i></span><span><i>Nachher</i></span></span>
+          <div class="cover"><h3>Treppenhaus, Wohnanlage</h3><p>Aufgangsreinigung im festen Turnus. Hier steht das Bildpaar, sobald das erste Objekt abgeschlossen und vom Kunden freigegeben ist.</p></div>
+          <div class="cinfo">
+            <div class="cinfo-top"><span class="cinfo-l">Einheiten und Intervall</span><span class="cinfo-v">[XX]</span></div>
+            <p>Objekttyp, Ort, Fläche und Dauer tragen wir nach der Freigabe ein.</p>
+          </div>
+        </article>
+        <article class="cslide" aria-roledescription="Folie" aria-label="Referenz 2 von 3">
+          <span class="cba" aria-hidden="true"><span><i>Vorher</i></span><span><i>Nachher</i></span></span>
+          <div class="cover"><h3>Trockenbauwand</h3><p>Ständerwerk, Beplankung, Spachtelgüte. Das Bildpaar zeigt den Rohzustand und die fertige Fläche.</p></div>
+          <div class="cinfo">
+            <div class="cinfo-top"><span class="cinfo-l">Fläche in Quadratmetern</span><span class="cinfo-v">[XX]</span></div>
+            <p>Wandaufbau, Spachtelgüte und Bauzeit tragen wir nach der Freigabe ein.</p>
+          </div>
+        </article>
+        <article class="cslide" aria-roledescription="Folie" aria-label="Referenz 3 von 3">
+          <span class="cba" aria-hidden="true"><span><i>Vorher</i></span><span><i>Nachher</i></span></span>
+          <div class="cover"><h3>Rückbau und Endreinigung</h3><p>Entkernung, Container, Endreinigung. Das Bildpaar zeigt den Zustand vor dem Rückbau und die besenreine Übergabe.</p></div>
+          <div class="cinfo">
+            <div class="cinfo-top"><span class="cinfo-l">Dauer in Werktagen</span><span class="cinfo-v">[XX]</span></div>
+            <p>Objekttyp, Ort und Entsorgungsmenge tragen wir nach der Freigabe ein.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cctl">
+      <button class="cbtn prev" type="button" data-prev aria-label="Vorherige Referenz"><svg class="i"><use href="#ic-arrow"/></svg></button>
+      <div class="cdots" role="group" aria-label="Referenz auswählen">
+        <button class="cdot is-on" type="button" data-go="0" aria-label="Referenz 1" aria-current="true"></button>
+        <button class="cdot" type="button" data-go="1" aria-label="Referenz 2"></button>
+        <button class="cdot" type="button" data-go="2" aria-label="Referenz 3"></button>
+      </div>
+      <button class="cbtn next" type="button" data-next aria-label="Nächste Referenz"><svg class="i"><use href="#ic-arrow"/></svg></button>
+    </div>
+  </div>
+<div class="wrap wide refnach">
+  <div class="cardsec green">
+  <div class="person">
+    <div class="portrait">Foto Yordan Hristev<br>in Arbeitskleidung, vor einem Objekt</div>
+    <div>
+      <p class="q">„Wenn ich für einen Auftrag der Falsche bin, sage ich Ihnen das. Das ist kürzer für uns beide."</p>
+      <p>Ich bin Yordan Hristev. Seit zehn Jahren arbeite ich im Baugeschäft, heute mit meinem eigenen Betrieb in Eichstätt. Ich schaue mir Ihr Objekt selbst an, ich schreibe das Angebot selbst, und Sie erreichen mich auch dann noch, wenn der Auftrag läuft.</p>
+      <div class="who"><span class="av">Foto</span><span><b>Yordan Hristev</b><span>Inhaber, Hristev-Service Eichstätt</span></span></div>
+    </div>
+  </div>
+  </div>
+</div></section>
+
+<section id="fragen"><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Häufige Fragen</p>
+  <h2>Was Kunden vorher wissen wollen</h2>
+  <div class="faq">
+  <div class="faqcol">
+    <details name="hs-faq" open><summary>Was kostet eine Treppenhausreinigung?</summary><div class="a"><p>Der Preis einer Treppenhausreinigung richtet sich nach der Anzahl der Einheiten, den Stockwerken, dem Bodenbelag und dem Intervall. Wir sehen uns das Objekt an und nennen Ihnen danach einen festen Monatspreis. Die Besichtigung ist kostenlos und dauert rund 20 Minuten.</p></div></details>
+    <details name="hs-faq"><summary>Was kostet eine Trockenbauwand pro Quadratmeter?</summary><div class="a"><p>Der Quadratmeterpreis einer Trockenbauwand hängt vom Aufbau ab: einfach oder doppelt beplankt, mit oder ohne Dämmung, und von der Spachtelgüte. Nach dem Aufmaß bekommen Sie einen Festpreis für die konkrete Fläche.</p></div></details>
+    <details name="hs-faq"><summary>Wie schnell bekomme ich eine Antwort?</summary><div class="a"><p>Anfragen beantworten wir [REAKTIONSZEIT]. Sie bekommen auch dann eine Rückmeldung, wenn wir für Ihren Termin keine Kapazität haben.</p></div></details>
+    <details name="hs-faq"><summary>Übernehmen Sie auch kleine Aufträge?</summary><div class="a"><p>Ja, wir arbeiten für Gewerbe und Privat, vom einzelnen Treppenhaus bis zur kompletten Entkernung. Bei sehr kleinen Aufträgen sagen wir Ihnen offen, wenn ein anderer Betrieb günstiger für Sie wäre.</p></div></details>
+    <details name="hs-faq"><summary>Was ist Bauendreinigung genau?</summary><div class="a"><p>Bauendreinigung bezeichnet die letzte Reinigung nach Abschluss der Bauarbeiten, vor der Übergabe an den Nutzer. Dazu gehören das Entfernen von Bauschleier, Kleber- und Farbresten, die Reinigung von Fenstern, Rahmen, Böden und Sanitär. Sie ist etwas anderes als besenrein.</p></div></details>
+    <details name="hs-faq"><summary>Was bedeutet Aufgangsreinigung?</summary><div class="a"><p>Aufgangsreinigung bezeichnet die regelmäßige Reinigung der Gemeinschaftsflächen in einem Wohnhaus, also Treppenhaus, Eingang, Hof, Keller und Waschküche. Der Umfang steht im Leistungsverzeichnis, damit für Mieter und Eigentümer nachvollziehbar ist, was geleistet wird.</p></div></details>
+  </div>
+  <div class="faqcol">
+    <details name="hs-faq"><summary>Können Sie eine tragende Wand entfernen?</summary><div class="a"><p>Eine tragende Wand entfernen wir nur mit statischem Nachweis. Sie beauftragen einen Statiker, oder wir nennen Ihnen einen. Ohne Nachweis fangen wir nicht an, auch nicht auf Wunsch.</p></div></details>
+    <details name="hs-faq"><summary>Wer entsorgt den Bauschutt?</summary><div class="a"><p>Container und Entsorgung übernehmen wir und weisen sie als eigene Position im Angebot aus. So sehen Sie, was die Arbeit kostet und was die Entsorgung.</p></div></details>
+    <details name="hs-faq"><summary>Können Sie arbeiten, während wir in der Wohnung wohnen?</summary><div class="a"><p>Ja, bewohnte Umbauten sind möglich und wir machen sie regelmäßig. Wir arbeiten dann in Etappen, mit Staubschutzwänden, abgestimmten Arbeitszeiten und täglicher Reinigung des Treppenhauses.</p></div></details>
+    <details name="hs-faq"><summary>Reinigen Sie auch Arztpraxen?</summary><div class="a"><p>Ja, Praxisreinigung gehört zu unserem Angebot. Wir arbeiten nach Hygieneplan mit dokumentierten Einwirkzeiten und gelisteten Flächendesinfektionsmitteln, damit Ihre Praxis bei einer Begehung nachweisen kann, wie und womit gereinigt wurde.</p></div></details>
+    <details name="hs-faq"><summary>Sind Sie versichert?</summary><div class="a"><p>Hristev-Service ist über eine Betriebshaftpflicht mit [DECKUNGSSUMME] versichert. Auf Bauleistungen gilt die gesetzliche Gewährleistung von fünf Jahren nach § 634a Abs. 1 Nr. 2 BGB.</p></div></details>
+    <details name="hs-faq"><summary>Bin ich an einen langen Vertrag gebunden?</summary><div class="a"><p>Bei wiederkehrender Reinigung vereinbaren wir eine Laufzeit von [LAUFZEIT] mit einer Kündigungsfrist von [FRIST]. Einmalige Aufträge wie Grund- oder Bauendreinigung laufen ohne Vertragsbindung.</p></div></details>
+  </div>
+  </div>
+</div></section>
+
+<section id="anfrage"><div class="wrap">
+  <p class="eyebrow"><span class="cluster"><i></i><i></i><i></i><i></i></span> Anfrage</p>
+  <h2>Kostenlose Besichtigung anfragen</h2>
+  <p class="lead" style="margin-top:var(--s5)">Sagen Sie uns kurz, um welches Objekt es geht. Der Termin dauert rund 20 Minuten und kostet nichts.</p>
+  <div class="formgrid">
+    <form class="fpanel" onsubmit="return false">
+      <div class="fstep"><span class="n">01</span><label for="l">Worum geht es?</label></div>
+      <div class="fbody">
+        <select id="l" name="leistung">
+          <option value="">Bitte wählen</option>
+          <optgroup label="Reinigung"><option>Büroreinigung</option><option>Treppenhaus und Wohnanlage</option><option>Arztpraxis</option><option>Bauendreinigung</option><option>Glas und Fenster</option><option>Grundreinigung</option></optgroup>
+          <optgroup label="Bau"><option>Trockenbau</option><option>Abbruch und Entkernung</option><option>Durchbruch und Grundriss</option></optgroup>
+          <option>etwas anderes</option>
+        </select>
+      </div>
+      <div class="fstep"><span class="n">02</span><label for="o">Objekt</label></div>
+      <div class="fbody"><div class="two-fields"><input id="o" name="ort" placeholder="Ort, z. B. Eichstätt"><input id="g" name="groesse" placeholder="Größe, z. B. 120 qm"></div></div>
+      <div class="fstep"><span class="n">03</span><label for="n2">Ihr Name</label></div>
+      <div class="fbody"><input id="n2" name="name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+      <div class="fstep"><span class="n">04</span><label for="k">Telefon oder E-Mail</label></div>
+      <div class="fbody">
+        <input id="k" name="kontakt" autocomplete="tel" placeholder="So erreichen wir Sie" required>
+        <button class="btn btn-green btn-block" type="submit" style="margin-top:var(--s5)">Besichtigung anfragen</button>
+        <p class="micro">Unverbindlich und kostenlos. Antwort [REAKTIONSZEIT]. Kein Vertreterbesuch, kein Abo. Ihre Daten gehen nur an uns.</p>
+      </div>
+    </form>
+    <aside class="spanel">
+      <h3>Was danach passiert</h3>
+      <ol>
+        <li>Wir melden uns und stimmen einen Termin ab.</li>
+        <li>Wir sehen uns das Objekt an, rund 20 Minuten.</li>
+        <li>Sie bekommen ein schriftliches Festpreis-Angebot.</li>
+      </ol>
+      <p class="big">Kein Vertreterbesuch, kein Abo. Wenn wir keine Kapazität haben, sagen wir das direkt, statt Sie hinzuhalten.</p>
+      <div class="tel">Lieber telefonieren?<b><a href="tel:[TELEFON]" style="color:#fff;text-decoration:none">[TELEFON]</a></b>Mo bis Fr [ZEITEN]. Sie sprechen direkt mit Yordan Hristev.</div>
+      <a class="btn btn-cream btn-block" href="tel:[TELEFON]">Jetzt anrufen</a>
+    </aside>
+  </div>
+  <div class="contactrow">
+    <div class="c"><span class="ix">[01]</span><div><div class="lb"><svg class="i"><use href="#ic-phone"/></svg> Kontakt</div><div class="v"><a href="tel:[TELEFON]">[TELEFON]</a><br><a href="mailto:[E-MAIL DOMAIN]">[E-MAIL DOMAIN]</a></div></div></div>
+    <div class="c"><span class="ix">[02]</span><div><div class="lb"><svg class="i"><use href="#ic-pin"/></svg> Einsatzgebiet</div><div class="v" style="font-size:1rem;line-height:1.6;font-weight:400">Eichstätt und [RADIUS] km Umkreis: Kipfenberg, Dollnstein, Nassenfels, Adelschlag, Titting, Walting, Schernfeld, Pollenfeld, Böhmfeld, Buxheim, Hitzhofen, Eitensheim, Gaimersheim, Lenting, Wettstetten, Denkendorf, Beilngries, Wellheim und Mörnsheim. Auf Anfrage Ingolstadt und Neuburg an der Donau.</div></div></div>
+  </div>
+</div></section>
+
+<section class="foot-claim photoband">
+  <div class="ph"><img src="bilder/gebaeudereinigung-eichstaett-hero.webp" alt="Hand wischt eine Fläche sauber" loading="lazy" onerror="this.remove()"></div>
+  <div class="wrap">
+  <h2 class="two-tone"><b>Ein Anruf, ein Termin, ein Preis.</b> Und danach ist es sauber.</h2>
+  <div class="foot-links">
+    <a class="tlink" href="#anfrage"><u>Besichtigung anfragen</u><span class="arrow"><svg class="i"><use href="#ic-arrow"/></svg></span></a>
+    <a class="tlink" href="tel:[TELEFON]"><u>[TELEFON] anrufen</u><span class="arrow"><svg class="i"><use href="#ic-arrow"/></svg></span></a>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div>
+      Hristev-Service [RECHTSFORM]<br>[ANSCHRIFT]<br>[PLZ] Eichstätt<br>
+      <a href="tel:[TELEFON]" style="margin-top:10px">[TELEFON]</a><a href="mailto:[E-MAIL DOMAIN]">[E-MAIL DOMAIN]</a>
+    </div>
+    <div><h4>Reinigung</h4><a href="#reinigung">Büroreinigung Eichstätt</a><a href="#reinigung">Treppenhausreinigung Eichstätt</a><a href="#reinigung">Praxisreinigung Eichstätt</a><a href="#reinigung">Bauendreinigung Eichstätt</a><a href="#reinigung">Glasreinigung Eichstätt</a></div>
+    <div><h4>Bau</h4><a href="#bau">Trockenbau Eichstätt</a><a href="#bau">Abbrucharbeiten Eichstätt</a><a href="#bau">Entkernung Eichstätt</a><a href="#bau">Durchbrüche Eichstätt</a></div>
+    <div><h4>Betrieb</h4><a href="#ablauf">Ablauf</a><a href="#preise">Preise</a><a href="#fragen">Häufige Fragen</a><a href="#anfrage">Kontakt</a></div>
+  </div>
+  <div class="base"><span>Hristev-Service, Eichstätt. Stand: September 2026</span><span style="display:inline-flex;align-items:center;gap:var(--s5);flex-wrap:wrap"><button class="tgl tgl-foot" type="button" aria-pressed="false"><svg class="i ic-moon"><use href="#ic-moon"/></svg><svg class="i ic-sun"><use href="#ic-sun"/></svg><span class="lbl-light">Dunkler Modus</span><span class="lbl-dark">Heller Modus</span></button><span class="legal"><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span></span></div>
+</div></footer>
+
+<div class="mbar">
+  <a class="btn btn-cream" href="tel:[TELEFON]" style="box-shadow:none;border:1px solid var(--line)">Anrufen</a>
+  <a class="btn btn-green" href="#anfrage">Besichtigung</a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["LocalBusiness","HomeAndConstructionBusiness"],
+"name":"Hristev-Service","description":"Gebäudereinigung, Trockenbau und Abbrucharbeiten in Eichstätt für Gewerbe und Privat.",
+"url":"https://dev.likovo.de/hristev-service/","telephone":"[TELEFON]","email":"[E-MAIL DOMAIN]",
+"address":{"@type":"PostalAddress","streetAddress":"[ANSCHRIFT]","postalCode":"[PLZ]","addressLocality":"Eichstätt","addressRegion":"Bayern","addressCountry":"DE"},
+"areaServed":[{"@type":"City","name":"Eichstätt"},{"@type":"City","name":"Kipfenberg"},{"@type":"City","name":"Dollnstein"},{"@type":"City","name":"Nassenfels"},{"@type":"City","name":"Gaimersheim"},{"@type":"City","name":"Beilngries"},{"@type":"City","name":"Denkendorf"}],
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"[VON]","closes":"[BIS]"}],
+"priceRange":"$$","founder":{"@type":"Person","name":"Yordan Hristev"},
+"hasOfferCatalog":{"@type":"OfferCatalog","name":"Leistungen","itemListElement":[
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Büroreinigung","serviceType":"Unterhaltsreinigung","areaServed":"Eichstätt"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Treppenhausreinigung","serviceType":"Aufgangsreinigung","areaServed":"Eichstätt"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Praxisreinigung","serviceType":"Hygienereinigung","areaServed":"Eichstätt"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bauendreinigung","serviceType":"Bauendreinigung","areaServed":"Eichstätt"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Trockenbau","serviceType":"Trockenbauarbeiten","areaServed":"Eichstätt"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","name":"Abbrucharbeiten","serviceType":"Rückbau und Entkernung","areaServed":"Eichstätt"}}]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet eine Treppenhausreinigung?","acceptedAnswer":{"@type":"Answer","text":"Der Preis einer Treppenhausreinigung richtet sich nach der Anzahl der Einheiten, den Stockwerken, dem Bodenbelag und dem Intervall. Wir sehen uns das Objekt an und nennen Ihnen danach einen festen Monatspreis. Die Besichtigung ist kostenlos und dauert rund 20 Minuten."}},
+{"@type":"Question","name":"Was kostet eine Trockenbauwand pro Quadratmeter?","acceptedAnswer":{"@type":"Answer","text":"Der Quadratmeterpreis einer Trockenbauwand hängt vom Aufbau ab: einfach oder doppelt beplankt, mit oder ohne Dämmung, und von der Spachtelgüte. Nach dem Aufmaß bekommen Sie einen Festpreis für die konkrete Fläche."}},
+{"@type":"Question","name":"Was ist Bauendreinigung genau?","acceptedAnswer":{"@type":"Answer","text":"Bauendreinigung bezeichnet die letzte Reinigung nach Abschluss der Bauarbeiten, vor der Übergabe an den Nutzer. Dazu gehören das Entfernen von Bauschleier, Kleber- und Farbresten, die Reinigung von Fenstern, Rahmen, Böden und Sanitär. Sie ist etwas anderes als besenrein."}},
+{"@type":"Question","name":"Was bedeutet Aufgangsreinigung?","acceptedAnswer":{"@type":"Answer","text":"Aufgangsreinigung bezeichnet die regelmäßige Reinigung der Gemeinschaftsflächen in einem Wohnhaus, also Treppenhaus, Eingang, Hof, Keller und Waschküche. Der Umfang steht im Leistungsverzeichnis, damit für Mieter und Eigentümer nachvollziehbar ist, was geleistet wird."}},
+{"@type":"Question","name":"Können Sie eine tragende Wand entfernen?","acceptedAnswer":{"@type":"Answer","text":"Eine tragende Wand entfernen wir nur mit statischem Nachweis. Sie beauftragen einen Statiker, oder wir nennen Ihnen einen. Ohne Nachweis fangen wir nicht an, auch nicht auf Wunsch."}},
+{"@type":"Question","name":"Wer entsorgt den Bauschutt?","acceptedAnswer":{"@type":"Answer","text":"Container und Entsorgung übernehmen wir und weisen sie als eigene Position im Angebot aus. So sehen Sie, was die Arbeit kostet und was die Entsorgung."}},
+{"@type":"Question","name":"Können Sie arbeiten, während wir in der Wohnung wohnen?","acceptedAnswer":{"@type":"Answer","text":"Ja, bewohnte Umbauten sind möglich und wir machen sie regelmäßig. Wir arbeiten dann in Etappen, mit Staubschutzwänden, abgestimmten Arbeitszeiten und täglicher Reinigung des Treppenhauses."}},
+{"@type":"Question","name":"Reinigen Sie auch Arztpraxen?","acceptedAnswer":{"@type":"Answer","text":"Ja, Praxisreinigung gehört zu unserem Angebot. Wir arbeiten nach Hygieneplan mit dokumentierten Einwirkzeiten und gelisteten Flächendesinfektionsmitteln, damit Ihre Praxis bei einer Begehung nachweisen kann, wie und womit gereinigt wurde."}}]}
+</script>
+<script>
+(function(){
+  var root=document.documentElement, KEY='hs-theme';
+  function stored(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function store(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function current(){return root.getAttribute('data-theme')==='dark' ? 'dark' : 'light';}
+  function sync(){var d=current()==='dark';
+    Array.prototype.forEach.call(document.querySelectorAll('.tgl'),function(b){b.setAttribute('aria-pressed',String(d));});}
+  sync();
+  document.addEventListener('toggle',function(e){
+    var d=e.target;
+    if(!d || !d.matches || !d.matches('.faq details') || !d.open) return;
+    document.querySelectorAll('.faq details[open]').forEach(function(o){ if(o!==d) o.open=false; });
+  }, true);
+  document.addEventListener('click',function(e){
+    var b=e.target.closest && e.target.closest('.tgl'); if(!b) return;
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next); store(next); sync();
+  });
+})();
+</script>
+<script>
+/* Burger-Menue fuer schmale Fenster */
+(function(){
+  var knopf = document.querySelector('[data-burger]'),
+      menue = document.getElementById('hauptmenue');
+  if(!knopf || !menue) return;
+  function zu(){
+    knopf.setAttribute('aria-expanded','false');
+    knopf.setAttribute('aria-label','Menü öffnen');
+    menue.classList.remove('is-on');
+    menue.hidden = true;
+  }
+  function auf(){
+    knopf.setAttribute('aria-expanded','true');
+    knopf.setAttribute('aria-label','Menü schließen');
+    menue.hidden = false;
+    menue.classList.add('is-on');
+  }
+  knopf.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(knopf.getAttribute('aria-expanded') === 'true'){ zu(); } else { auf(); }
+  });
+  menue.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(a) zu();
+  });
+  document.addEventListener('click', function(e){
+    if(menue.hidden) return;
+    if(!menue.contains(e.target) && !knopf.contains(e.target)) zu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !menue.hidden){ zu(); knopf.focus(); }
+  });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 1150) zu(); });
+})();
+
+/* Ablauf: immer genau ein Schritt offen, der Fokus wandert beim Scrollen mit */
+(function(){
+  var wrap = document.querySelector('[data-flow]');
+  if(!wrap) return;
+  var schritte = Array.prototype.slice.call(wrap.querySelectorAll('.al-step'));
+  if(!schritte.length) return;
+  var aktiv = 0, vonHand = false, timer;
+
+  function setze(n){
+    aktiv = Math.max(0, Math.min(schritte.length-1, n));
+    schritte.forEach(function(el, k){
+      var an = (k === aktiv);
+      el.classList.toggle('is-on', an);
+      var kopf = el.querySelector('.al-btn');
+      if(kopf) kopf.setAttribute('aria-expanded', an ? 'true' : 'false');
+    });
+  }
+
+  schritte.forEach(function(el, k){
+    var kopf = el.querySelector('.al-btn');
+    if(!kopf) return;
+    kopf.addEventListener('click', function(){
+      vonHand = true;                       // nach einem Klick kurz nicht mitscrollen
+      clearTimeout(timer);
+      timer = setTimeout(function(){ vonHand = false; }, 1400);
+      setze(k);
+    });
+  });
+
+  /* Offen ist der letzte Schritt, dessen Oberkante die Lesemarke passiert hat.
+     Die Marke liegt bei 42 Prozent Fensterhoehe. Ueber die Mitte zu messen waere
+     wackelig: der offene Schritt waechst und schiebt die anderen weg, dann
+     springt der Fokus hin und her. */
+  /* Der Weg durch den Block wird in gleich grosse Baender geteilt, eines je
+     Schritt. Ueber die Oberkanten zu messen waere ungenau: zugeklappt sind die
+     Zeilen kurz, bei schnellem Scrollen faellt dann einer aus. */
+  var laeuft = false;
+  function pruefe(){
+    if(vonHand) return;
+    var r = wrap.getBoundingClientRect(), vh = window.innerHeight;
+    var weg = Math.max(r.height - vh*0.30, 1);
+    var p   = (vh*0.45 - r.top)/weg;
+    p = Math.min(0.9999, Math.max(0, p));
+    var beste = Math.floor(p*schritte.length);
+    if(beste !== aktiv) setze(beste);
+  }
+  function anstossen(){
+    if(laeuft) return;
+    laeuft = true;
+    requestAnimationFrame(function(){ laeuft = false; pruefe(); });
+  }
+  window.addEventListener('scroll', anstossen, {passive:true});
+  window.addEventListener('resize', anstossen);
+  setze(0);
+})();
+
+/* Referenz-Karussell: mittige Folie, Nachbarn schauen heraus, Pfeile und Punkte */
+(function(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-carousel]'), function(c){
+    var vp    = c.querySelector('.cviewport'),
+        track = c.querySelector('.ctrack'),
+        folien= Array.prototype.slice.call(c.querySelectorAll('.cslide')),
+        punkte= Array.prototype.slice.call(c.querySelectorAll('.cdot')),
+        zur   = c.querySelector('[data-prev]'),
+        vor   = c.querySelector('[data-next]'),
+        i = 0;
+    if(!folien.length) return;
+
+    /* Abstand vom Karussell aus messen. will-change macht die Spur zum
+       offsetParent, deshalb die Kette hochlaufen statt offsetLeft zu glauben. */
+    function linksIm(el, ziel){
+      var x = 0;
+      while(el && el !== ziel){ x += el.offsetLeft; el = el.offsetParent; }
+      return x;
+    }
+    function zeichne(){
+      var f = folien[i];
+      var x = linksIm(vp, c) + vp.clientWidth/2 - (linksIm(f, c) + f.offsetWidth/2);
+      track.style.transform = 'translateX(' + Math.round(x) + 'px)';
+      folien.forEach(function(el,k){ el.classList.toggle('is-on', k===i); });
+      punkte.forEach(function(d,k){
+        d.classList.toggle('is-on', k===i);
+        if(k===i){ d.setAttribute('aria-current','true'); } else { d.removeAttribute('aria-current'); }
+      });
+      if(zur) zur.disabled = (i===0);
+      if(vor) vor.disabled = (i===folien.length-1);
+    }
+    function geheZu(n){ i = Math.max(0, Math.min(folien.length-1, n)); zeichne(); }
+
+    if(zur) zur.addEventListener('click', function(){ geheZu(i-1); });
+    if(vor) vor.addEventListener('click', function(){ geheZu(i+1); });
+    punkte.forEach(function(d,k){ d.addEventListener('click', function(){ geheZu(k); }); });
+
+    c.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); geheZu(i-1); }
+      if(e.key === 'ArrowRight'){ e.preventDefault(); geheZu(i+1); }
+    });
+
+    /* Wischen auf dem Handy */
+    var x0 = null;
+    vp.addEventListener('pointerdown', function(e){ x0 = e.clientX; });
+    vp.addEventListener('pointerup', function(e){
+      if(x0 === null) return;
+      var d = e.clientX - x0; x0 = null;
+      if(Math.abs(d) > 45) geheZu(i + (d < 0 ? 1 : -1));
+    });
+    vp.addEventListener('pointercancel', function(){ x0 = null; });
+
+    var t;
+    window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(zeichne, 120); });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(zeichne);
+    window.addEventListener('load', zeichne);
+    zeichne();
+  });
+})();
+</script>
+</body>
+</html>
