@@ -42,6 +42,11 @@
   --r-circle:100px;
 
   --gap:96px;        /* Sektionsabstand, Desktop 200 */
+  /* Flaechen, die auf einer anderen Flaeche liegen, sind Glas statt Weiss */
+  --glass-card:rgba(255,255,255,.56);
+  --glass-card-brd:rgba(255,255,255,.80);
+  --glass-card-sh:0 10px 30px rgba(20,26,34,.07);
+  --blur-card:saturate(1.5) blur(20px);
   --glass:rgba(251,251,251,.72);
   --glass-strong:rgba(251,251,251,.86);
   --glass-brd:rgba(255,255,255,.58);
@@ -338,9 +343,11 @@ a{color:var(--blue)}
 .band-dark .tag{border-color:rgba(251,251,251,.3);color:#FBFBFB}
 .band-dark .tag i{background:var(--blue-light)}
 /* Karten-Rahmen fuer Sektionen, die als Block stehen sollen */
-.panel{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
+.panel{background:var(--glass-card);-webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);border:1px solid var(--glass-card-brd);box-shadow:var(--glass-card-sh);border-radius:var(--r-card);
   padding:28px 22px}
 @media(min-width:768px){.panel{padding:44px 48px}}
+/* Abstand zwischen Ueberschrift und Karte, wie bei den anderen Sektionen */
+.sec-head + .panel{margin-top:52px}
 .sec-head{display:grid;gap:20px}
 @media(min-width:900px){.sec-head{grid-template-columns:1.35fr .65fr;align-items:end;gap:40px}}
 .sec-head h2{font-size:clamp(30px,5vw,64px);max-width:18ch}
@@ -373,12 +380,12 @@ a{color:var(--blue)}
 
 /* Leistungskarten */
 .cards3{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:52px}
-.svc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:20px;
+.svc{background:var(--glass-card);-webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);border:1px solid var(--glass-card-brd);box-shadow:var(--glass-card-sh);border-radius:var(--r-card);padding:20px;
   display:flex;flex-direction:column;
   transition:background .22s var(--ease),border-color .22s var(--ease),
              color .22s var(--ease),transform .22s var(--ease),box-shadow .22s var(--ease)}
 .svc:hover,.svc:focus-within{background:var(--blue);border-color:var(--blue);color:#FBFBFB;
-  transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,106,215,.22)}
+  transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,106,215,.24)}
 .svc .ph{height:190px;border-radius:var(--r-img);margin-bottom:20px}
 .svc .num{font-family:var(--fd);font-weight:600;font-size:14px;color:var(--blue);letter-spacing:.06em;display:inline-flex;align-items:center;gap:8px}
 .svc .num .sn{width:19px;height:19px}
@@ -443,7 +450,7 @@ a{color:var(--blue)}
 /* Zielgruppen */
 .fork{display:grid;gap:24px;margin-top:52px}
 @media(min-width:900px){.fork{grid-template-columns:1fr 1fr}}
-.fork .f{border:1px solid var(--line);background:var(--white);border-radius:var(--r-card);padding:34px}
+.fork .f{background:var(--glass-card);-webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);border:1px solid var(--glass-card-brd);box-shadow:var(--glass-card-sh);border-radius:var(--r-card);padding:34px}
 .fork .f.accent{background:var(--blue);border-color:var(--blue);color:#FBFBFB}
 .fork h3{font-size:clamp(24px,3vw,32px);margin-bottom:14px;display:flex;gap:13px;align-items:flex-start}
 .fork h3 .fh{width:28px;height:28px;margin-top:3px;color:var(--blue)}
@@ -477,7 +484,7 @@ a{color:var(--blue)}
 
 /* Stimmen */
 .voices{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:52px}
-.voice{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:30px}
+.voice{background:var(--glass-card);-webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);border:1px solid var(--glass-card-brd);box-shadow:var(--glass-card-sh);border-radius:var(--r-card);padding:30px}
 .voice p{font-size:17.5px}
 .voice .who{display:flex;gap:12px;align-items:center;margin-top:22px}
 .voice .av{width:48px;height:48px;border-radius:50%;background:var(--line);
@@ -532,14 +539,16 @@ a{color:var(--blue)}
 @media(max-width:759px){
   /* Unter 760px stehen die beiden Haelften uebereinander. Die Textkarte darf
      dann nicht mehr auf dem Bild liegen, sie wuerde die Nachher-Haelfte verdecken. */
-  .bw-slide{background:var(--white);border:1px solid var(--line)}
+  .bw-slide{background:var(--glass-card);
+    -webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);
+    border:1px solid var(--glass-card-brd)}
   .bw-slide::after{display:none}
   .bw-half{min-height:230px}
   .bw-half .ph{padding:56px 20px 20px}
   .bw-half:first-child .ph{padding-top:82px}
   .bw-overlay{position:static;padding:0}
-  .bw-card{max-width:none;border:0;border-top:1px solid var(--line);border-radius:0;
-    box-shadow:none;background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none;
+  .bw-card{max-width:none;border:0;border-top:1px solid rgba(255,255,255,.8);border-radius:0;
+    box-shadow:none;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;
     padding:22px 20px 24px}
   .bw-card .tag{background:var(--surface);border-color:var(--line2)}
   .bw-meta span{background:var(--surface);border-color:var(--line2)}
@@ -564,7 +573,7 @@ a{color:var(--blue)}
 /* Umschalter unter dem Karussell */
 .bw-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
 .bw-tab{cursor:pointer;font-family:var(--fd);font-weight:600;font-size:15px;color:var(--ink);
-  background:var(--white);border:1px solid var(--line2);border-radius:var(--r-tag);padding:10px 19px;
+  background:var(--glass-card);-webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);border:1px solid var(--glass-card-brd);box-shadow:var(--glass-card-sh);border-radius:var(--r-tag);padding:10px 19px;
   display:inline-flex;align-items:center;gap:9px;
   transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
 .bw-tab i{width:8px;height:8px;border-radius:50%;background:var(--line2);display:block;
@@ -634,9 +643,9 @@ a{color:var(--blue)}
 @media(min-width:560px){.calc-fields{grid-template-columns:1fr 1fr}}
 .calc-fields .field{margin-bottom:0}
 .calc-fields .field.wide{grid-column:1 / -1}
-.calc-fields .field input,.calc-fields .field select{background:rgba(255,255,255,.72);
-  border-color:rgba(255,255,255,.9)}
-.calc-fields .field input:focus,.calc-fields .field select:focus{background:var(--white)}
+.calc-fields .field input,.calc-fields .field select{background:rgba(255,255,255,.62);
+  border-color:rgba(45,45,45,.10)}
+.calc-fields .field input:focus,.calc-fields .field select:focus{background:rgba(255,255,255,.92)}
 
 /* Ergebniszeile: der Betrag ist bewusst ein Platzhalter */
 .calc-out{margin-top:24px;padding:20px 22px;border-radius:var(--r-card);
@@ -684,8 +693,8 @@ a{color:var(--blue)}
 
 /* Einsatzgebiet */
 .area{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
-.area span{border:1px solid var(--line2);border-radius:var(--r-tag);padding:10px 19px;font-size:16px;
-  font-family:var(--fd);font-weight:500;background:var(--white)}
+.area span{background:var(--glass-card);-webkit-backdrop-filter:var(--blur-card);backdrop-filter:var(--blur-card);border:1px solid var(--glass-card-brd);box-shadow:var(--glass-card-sh);border-radius:var(--r-tag);padding:10px 19px;font-size:16px;
+  font-family:var(--fd);font-weight:500}
 .area span.open{border-style:dashed;color:var(--muted);background:transparent}
 
 /* FAQ */
@@ -726,12 +735,19 @@ a{color:var(--blue)}
 .field{display:block;margin-bottom:16px}
 .field span{display:block;font-family:var(--fd);font-weight:600;font-size:15px;margin-bottom:8px}
 .field input,.field select,.field textarea{width:100%;font-family:var(--fb);font-size:17px;color:var(--ink);
-  background:var(--line);border:1px solid transparent;border-radius:var(--r-field);padding:15px 18px;
+  background:rgba(255,255,255,.44);
+  -webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
+  /* Kante mit etwas Tinte, sonst verschwindet das Feld im hellen Grund */
+  border:1px solid rgba(45,45,45,.12);border-radius:var(--r-field);padding:15px 18px;
+  box-shadow:inset 0 1px 2px rgba(20,26,34,.05);
   min-height:56px;transition:border-color .18s var(--ease),background .18s var(--ease)}
 .field textarea{min-height:116px;resize:vertical}
-.field input::placeholder,.field textarea::placeholder{color:var(--grey)}
-.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--line2)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;background:var(--white);border-color:var(--blue)}
+/* Platzhalter tragen hier echte Hinweise, deshalb dunkel genug fuer 4,5:1 */
+.field input::placeholder,.field textarea::placeholder{color:#6B7280;opacity:1}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:rgba(45,45,45,.24)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;
+  background:rgba(255,255,255,.76);border-color:var(--blue);
+  box-shadow:inset 0 1px 2px rgba(20,26,34,.04),0 0 0 3px rgba(0,106,215,.14)}
 .two{display:grid;gap:16px}
 @media(min-width:600px){.two{grid-template-columns:1fr 1fr}}
 
@@ -789,14 +805,14 @@ img.ph.round-md{border-radius:var(--r-md,20px)}
 .stats .video.has-photo .play{z-index:2;box-shadow:0 8px 24px rgba(20,26,34,.3)}
 
 /* Karten auf grauem Band bleiben weiss, damit die Kante sichtbar ist */
-.band-grey .svc,.band-grey .price,.band-grey .fork .f,.band-grey .voice{background:var(--white)}
+.band-grey .svc,.band-grey .price,.band-grey .fork .f,.band-grey .voice{background:var(--glass-card)}
 .band-grey .fork .f.accent{background:var(--blue)}
 .band-grey .svc:hover,.band-grey .svc:focus-within{background:var(--blue);border-color:var(--blue)}
 .band-grey .price.accent{background:var(--blue);border-color:var(--blue);color:#FBFBFB}
 .band-grey .price.accent h3{color:#FBFBFB}
 .band-grey .price.accent p{color:rgba(251,251,251,.88)}
 .band-grey .price.open{background:transparent}
-.band-grey .area span{background:var(--white)}
+.band-grey .area span{background:var(--glass-card)}
 
 /* Bei der breiteren Seite drei Karten pro Reihe statt vier, sonst steht die
    fuenfte Karte allein und wirkt wie ein Fehler. */
