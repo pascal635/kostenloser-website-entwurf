@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gebäudereinigung und Hausservice Regensburg | RUND UMS HAUS</title>
+<meta name="description" content="RUND UMS HAUS erledigt Gebäudereinigung, Entrümpelung, Umzug, Gartenarbeit und Kleinarbeiten in Regensburg und Umgebung. Ein Ansprechpartner für Gewerbe und Privat. Kostenlose Besichtigung, danach Festpreis.">
+<meta name="robots" content="noindex,nofollow"><!-- ENTWURF. Vor dem Livegang entfernen. -->
+<link rel="canonical" href="https://dev.likovo.de/safe-reinigung/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   VARIANTE C
+   Bildsprache nach moodboard/Unest - Cleaning Service Company.fig
+   Tokens 1:1 aus der Datei: #FBFBFB, #2D2D2D, #696969, #006AD7,
+   #58A1EB, #EFEFEF, #F5F5F5. Figtree plus DM Sans.
+   Radien 30 / 32 / 24 / 20 / 18 / 16 / 40 / 80 / 100.
+   Flach: keine Gradienten, keine Schatten. Sektionsabstand 200.
+   ========================================================== */
+:root{
+  --bg:#FBFBFB;
+  --ink:#2D2D2D;
+  --muted:#696969;
+  --blue:#006AD7;
+  --blue-light:#58A1EB;
+  --surface:#F5F5F5;
+  --line:#EFEFEF;
+  --line2:#E3E3E3;
+  --grey:#AEAEAE;
+  --white:#FFFFFF;
+
+  --r-tag:30px;      /* Tags und Buttons */
+  --r-card:32px;     /* Karten und grosse Bilder */
+  --r-img:24px;      /* Bilder in Karten */
+  --r-badge:20px;    /* Schritt-Marken */
+  --r-field:18px;    /* Formularfelder */
+  --r-inner:16px;    /* innere Bilder */
+  --r-block:40px;    /* Header und Footer-Block */
+  --r-loz:80px;      /* Inline-Lozenges in der grossen Aussage */
+  --r-circle:100px;
+
+  --gap:96px;        /* Sektionsabstand, Desktop 200 */
+  --glass:rgba(251,251,251,.72);
+  --glass-strong:rgba(251,251,251,.86);
+  --glass-brd:rgba(255,255,255,.58);
+  --glass-sh:0 8px 32px rgba(20,26,34,.16);
+  --blur:saturate(1.6) blur(20px);
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --fd:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fb:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media(min-width:1100px){:root{--gap:200px}}
+@media(min-width:768px) and (max-width:1099px){:root{--gap:140px}}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{margin:0;font-family:var(--fd);font-weight:600;letter-spacing:-.03em;line-height:1.08}
+p,ul{margin:0}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 20px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+@media(min-width:1200px){.wrap{padding:0 48px}}
+.skip{position:absolute;left:-9999px;background:#fff;padding:12px 18px;border-radius:var(--r-field);z-index:99}
+.skip:focus{left:12px;top:12px}
+
+/* ---------- Atome ---------- */
+.tag{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line2);
+  border-radius:var(--r-tag);padding:9px 18px;font-family:var(--fd);font-weight:600;
+  font-size:15px;color:var(--ink);background:transparent}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--blue);display:block}
+.tag.on-dark{border-color:rgba(251,251,251,.3);color:#FBFBFB}
+.tag.on-dark i{background:var(--blue-light)}
+.tag.solid{background:var(--blue-light);border-color:transparent;color:#fff;border-radius:var(--r-badge)}
+
+/* Button: Pille mit Kreis-Icon, wie in der Vorlage */
+.btn{display:inline-flex;align-items:center;gap:12px;border-radius:var(--r-tag);
+  padding:5px 22px 5px 5px;min-height:52px;background:var(--blue);color:#FBFBFB;
+  font-family:var(--fd);font-weight:600;font-size:18px;text-decoration:none;border:1px solid var(--blue);
+  transition:background .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
+.btn .ic{width:44px;height:44px;border-radius:var(--r-circle);background:#FBFBFB;color:var(--blue);
+  display:grid;place-items:center;flex:0 0 44px;transition:transform .25s var(--ease)}
+.btn .ic svg{width:19px;height:19px}
+.btn:hover{background:#0056AF;border-color:#0056AF;transform:translateY(-2px)}
+.btn:hover .ic{transform:rotate(45deg)}
+.btn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(0,106,215,.3)}
+.btn.light{background:var(--glass-strong);color:var(--ink);border-color:var(--glass-brd);
+  -webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);box-shadow:var(--glass-sh)}
+.btn.light .ic{background:var(--blue);color:#FBFBFB}
+.btn.light:hover{background:rgba(255,255,255,.95);border-color:#fff}
+.btn.ghost{background:rgba(251,251,251,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  color:var(--ink);border-color:var(--line2)}
+.btn.ghost .ic{background:var(--surface);color:var(--ink)}
+.btn.ghost:hover{background:var(--surface);border-color:var(--line2)}
+.btn.plain{padding:14px 26px;min-height:52px}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{max-width:100%}
+@media(max-width:600px){.btn-row .btn{width:100%;justify-content:center}}
+
+/* Platzhalter */
+.ph{position:relative;background:var(--line);border:1px dashed var(--grey);
+  display:grid;place-items:center;text-align:center;padding:22px;border-radius:var(--r-card);overflow:hidden}
+.ph-t{font-family:var(--fd);font-weight:600;font-size:15px;color:var(--muted)}
+.ph-s{font-size:13px;color:var(--grey);margin-top:3px}
+.ph.on-dark{background:rgba(251,251,251,.10);border-color:rgba(251,251,251,.4)}
+.ph.on-dark .ph-t{color:#FBFBFB}.ph.on-dark .ph-s{color:rgba(251,251,251,.7)}
+.todo{display:inline-flex;align-items:center;background:#FFF6E0;border:1px dashed #DCA22C;
+  color:#7A5100;border-radius:var(--r-tag);padding:4px 13px;font-size:12.5px;font-weight:700;
+  font-family:var(--fd);line-height:1.35}
+.todo.on-dark{background:rgba(251,251,251,.14);border-color:rgba(251,251,251,.45);color:#FBFBFB}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){.bw-track{scroll-behavior:auto}}
+
+/* ---------- Header, schwebende Leiste r40 ---------- */
+.site-header{position:absolute;top:20px;left:0;right:0;z-index:40}
+.site-header .bar{position:relative;background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid var(--glass-brd);box-shadow:var(--glass-sh);border-radius:var(--r-block);min-height:68px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 22px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);
+  min-width:0;overflow:hidden}
+.brand .mk{width:44px;height:44px;border-radius:var(--r-circle);background:var(--blue);display:grid;place-items:center;flex:0 0 44px}
+.brand .mk svg{width:27px;height:27px}
+.brand .wm{display:block;font-family:var(--fd);font-weight:700;font-size:19px;letter-spacing:-.01em;line-height:1.15;
+  white-space:nowrap}
+.brand .ds{display:block;font-size:11.5px;color:var(--muted);line-height:1.3}
+.site-nav{display:none;gap:34px;font-family:var(--fd);font-weight:500;font-size:16px}
+.site-nav a{color:var(--ink);text-decoration:none}
+.site-nav a:hover{color:var(--blue)}
+.site-nav a:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(0,106,215,.3);border-radius:8px}
+
+/* Rechte Gruppe: Anfrage-Knopf, dann das Burger-Feld. Reihenfolge bleibt
+   auch auf dem Handy so, der Knopf steht vor dem Menue. */
+.bar-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.header-btn{display:inline-flex}
+.header-btn .lbl-s{display:none}
+
+/* Burger */
+.burger{width:44px;height:44px;flex:0 0 44px;border-radius:var(--r-circle);cursor:pointer;
+  display:grid;place-items:center;color:var(--ink);
+  background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(1.4) blur(14px);
+  backdrop-filter:saturate(1.4) blur(14px);border:1px solid var(--glass-brd);
+  transition:background .2s var(--ease),color .2s var(--ease)}
+.burger:hover{background:var(--blue);color:#FBFBFB;border-color:var(--blue)}
+.burger:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(0,106,215,.3)}
+.burger .lines{position:relative;width:19px;height:13px;display:block}
+.burger .lines i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;
+  transition:transform .24s var(--ease),opacity .18s var(--ease),top .24s var(--ease)}
+.burger .lines i:nth-child(1){top:0}
+.burger .lines i:nth-child(2){top:5.5px}
+.burger .lines i:nth-child(3){top:11px}
+.burger[aria-expanded="true"] .lines i:nth-child(1){top:5.5px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] .lines i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] .lines i:nth-child(3){top:5.5px;transform:rotate(-45deg)}
+
+/* Ausklappmenue unter der Leiste */
+.site-menu{position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:39;
+  background:rgba(252,252,253,.95);
+  -webkit-backdrop-filter:saturate(1.6) blur(24px);backdrop-filter:saturate(1.6) blur(24px);
+  border:1px solid var(--glass-brd);box-shadow:0 24px 60px rgba(20,26,34,.22);
+  border-radius:var(--r-card);padding:8px;max-height:calc(100vh - 130px);overflow-y:auto;
+  transform-origin:top center}
+.site-menu[hidden]{display:none!important}
+.site-menu a{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);
+  font-family:var(--fd);font-weight:600;font-size:17px;padding:14px 14px;border-radius:var(--r-inner);
+  min-width:0}
+.site-menu a+a{border-top:1px solid var(--line)}
+.site-menu a:hover,.site-menu a:focus-visible{background:var(--surface);outline:none}
+.site-menu a>svg{width:19px;height:19px;color:var(--blue);flex:0 0 19px}
+.site-menu a>span{min-width:0}
+.site-menu a b{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em;overflow-wrap:anywhere}
+.site-menu a small{display:block;font-family:var(--fb);font-weight:400;font-size:13px;
+  line-height:1.45;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}
+.site-menu .mi-kontakt{margin-top:4px}
+@media(prefers-reduced-motion:no-preference){
+  .site-menu{animation:menu-auf .18s var(--ease)}
+  @keyframes menu-auf{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+}
+
+/* Ab 1000px die Links direkt in der Leiste, kein Burger mehr */
+@media(min-width:1000px){
+  .site-nav{display:flex}
+  .burger{display:none}
+  .site-menu{display:none!important}
+}
+/* Enge Leiste: Kurzform des Knopfes, kleinere Elemente */
+@media(max-width:560px){
+  .site-header .bar{padding:8px 8px 8px 12px;gap:10px;min-height:60px}
+  .brand .mk{width:38px;height:38px;flex:0 0 38px}
+  .brand .mk svg{width:23px;height:23px}
+  .brand .wm{font-size:16px}
+  .header-btn .lbl-l{display:none}
+  .header-btn .lbl-s{display:inline}
+  .header-btn{padding:10px 18px;font-size:15px}
+  .header-btn .ic{display:none}
+  .burger{width:40px;height:40px;flex:0 0 40px}
+}
+/* Ganz schmal: nur noch die Bildmarke, der Name bleibt fuer Screenreader da */
+@media(max-width:479px){
+  .brand .wm{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .header-btn{padding:10px 15px}
+}
+
+/* ---------- Hero, nach der Aiheal-Referenz ----------
+   Heller, diesiger Vollbild-Hintergrund statt abgedunkeltem Foto.
+   Dunkle Headline links, Glas-Datenpanel rechts, Status-Pille unten mittig. */
+.hero{position:relative;padding:0}
+.hero .stage{position:relative;min-height:620px;display:flex;align-items:stretch;
+  overflow:hidden;overflow:clip}
+@media(min-width:900px){.hero .stage{min-height:780px}}
+@media(min-width:1300px){.hero .stage{min-height:840px}}
+
+/* Himmel: reine CSS-Ebenen, kein Foto. Tiefes Blau oben links, damit die
+   weisse Headline traegt, darunter Wolkenballen und warmes Weiss am Boden. */
+.hero .sky{position:absolute;inset:0;
+  background:
+    radial-gradient(88% 52% at 16% 80%, rgba(255,255,255,.94) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(66% 42% at 74% 90%, rgba(255,255,255,.88) 0%, rgba(255,255,255,0) 58%),
+    radial-gradient(58% 40% at 50% 104%, rgba(255,252,248,.96) 0%, rgba(255,252,248,0) 62%),
+    radial-gradient(52% 36% at 90% 30%, rgba(222,230,244,.62) 0%, rgba(222,230,244,0) 64%),
+    radial-gradient(46% 32% at 6% 22%, rgba(190,204,226,.50) 0%, rgba(190,204,226,0) 66%),
+    linear-gradient(178deg,#5B739B 0%,#6E86AB 14%,#93A7C4 32%,#BAC6D9 52%,#DCE2EA 70%,#EFEEEE 86%,#F8F6F3 100%)}
+
+/* Scrim nach rechts auslaufend, damit die Textspalte genug Kontrast hat */
+.hero .scrim{position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(100deg,rgba(24,38,62,.72) 0%,rgba(24,38,62,.60) 22%,rgba(24,38,62,.34) 44%,rgba(24,38,62,.08) 66%,rgba(24,38,62,0) 82%),
+    radial-gradient(64% 78% at 6% 52%, rgba(18,30,52,.42) 0%, rgba(18,30,52,0) 70%),
+    radial-gradient(56% 62% at 6% 72%, rgba(18,30,52,.52) 0%, rgba(18,30,52,0) 76%),
+    linear-gradient(180deg,rgba(24,38,62,.28) 0%,rgba(24,38,62,0) 30%)}
+
+/* Motiv taucht weich aus dem Himmel auf, weiche Kanten statt harter Freistellung */
+.hero .subject{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(820px,64vw);height:82%;pointer-events:none;
+  background:url("bilder/hausservice-regensburg-fahrzeug.webp") center 52%/cover no-repeat;
+  filter:saturate(.30) brightness(1.20) contrast(.84);opacity:.62;
+  -webkit-mask-image:radial-gradient(48% 54% at 52% 52%,#000 0%,rgba(0,0,0,.86) 26%,rgba(0,0,0,.46) 52%,rgba(0,0,0,.14) 74%,rgba(0,0,0,0) 92%);
+          mask-image:radial-gradient(48% 54% at 52% 52%,#000 0%,rgba(0,0,0,.86) 26%,rgba(0,0,0,.46) 52%,rgba(0,0,0,.14) 74%,rgba(0,0,0,0) 92%)}
+
+/* feines Korn, damit die Flaechen nicht digital-glatt wirken */
+.hero .grain{position:absolute;inset:0;pointer-events:none;opacity:.30;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+
+@media(max-width:899px){
+  .hero .subject{width:118%;height:64%;opacity:.7}
+  .hero .scrim{background:
+    linear-gradient(180deg,rgba(20,32,54,.62) 0%,rgba(20,32,54,.60) 34%,rgba(20,32,54,.52) 56%,rgba(20,32,54,.20) 80%,rgba(20,32,54,0) 100%),
+    radial-gradient(90% 60% at 30% 46%, rgba(16,26,46,.40) 0%, rgba(16,26,46,0) 78%)}
+}
+
+.hero .inner{position:relative;z-index:2;width:100%;min-width:0;display:flex;align-items:center;
+  padding-block:120px 96px}
+.hero .inner>.wrap{min-width:0;width:100%}
+@media(min-width:900px){.hero .inner{padding-block:150px 130px}}
+
+.hero-grid{display:grid;gap:44px;align-items:center;width:100%}
+@media(min-width:1150px){.hero-grid{grid-template-columns:minmax(0,1fr) 352px;gap:80px}}
+
+/* Headline: dunkel auf hellem Grund, wie in der Referenz */
+.hero h1{font-size:clamp(38px,6.2vw,74px);color:#FDFEFF;letter-spacing:-.042em;
+  line-height:1.06;max-width:11ch;font-weight:600;
+  text-shadow:0 2px 30px rgba(30,46,72,.34)}
+.hero .sub{color:rgba(253,254,255,.94);font-size:18px;font-weight:500;max-width:44ch;margin-top:26px;
+  text-shadow:0 1px 18px rgba(30,46,72,.30)}
+.hero .btn-row{margin-top:34px}
+
+/* Glas-Panel rechts */
+.hero-panel{background:rgba(255,255,255,.42);
+  -webkit-backdrop-filter:saturate(1.5) blur(22px);backdrop-filter:saturate(1.5) blur(22px);
+  border:1px solid rgba(255,255,255,.7);border-radius:var(--r-img);
+  box-shadow:0 20px 60px rgba(20,26,34,.14);padding:22px 22px 20px}
+.hero-panel .prow{display:flex;align-items:center;gap:12px;padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.55)}
+.hero-panel .prow:first-child{padding-top:2px}
+.hero-panel .prow:last-of-type{border-bottom:0}
+.hero-panel .prow .pi{width:19px;height:19px;color:var(--blue);flex:0 0 19px}
+.hero-panel .prow .pl{font-family:var(--fd);font-weight:600;font-size:15px;color:#16222E;margin-right:auto}
+.hero-panel .prow .pv{font-size:13.5px;color:#4A5867;white-space:nowrap;text-align:right}
+@media(max-width:600px){
+  .hero-panel .prow{flex-wrap:wrap;row-gap:2px}
+  .hero-panel .prow .pv{white-space:normal;flex-basis:100%;padding-left:31px;text-align:left}
+}
+.hero-panel .pnote{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.55);
+  font-size:13.5px;line-height:1.55;color:#3E4C5A}
+@media(max-width:1149px){.hero-panel{max-width:460px}}
+@media(max-width:899px){
+  /* Auf Mobil liegt das Panel auf dem dunklen Scrim. Das Glas wird dichter,
+     damit die dunklen Panel-Texte ihre 4,5:1 behalten. */
+  .hero-panel{background:rgba(252,253,255,.90);border-color:rgba(255,255,255,.8)}
+}
+
+/* Status-Pille unten mittig, dunkles Glas. Kein Link, reine Aussage. */
+.hero-status{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:4;
+  display:inline-flex;align-items:center;gap:12px;
+  background:rgba(22,34,46,.62);-webkit-backdrop-filter:saturate(1.4) blur(18px);
+  backdrop-filter:saturate(1.4) blur(18px);border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--r-circle);padding:9px 24px 9px 10px;color:#FBFBFB;
+  box-shadow:0 14px 40px rgba(20,26,34,.28)}
+.hero-status b{font-family:var(--fd);font-weight:600;font-size:15px;letter-spacing:-.01em;
+  white-space:nowrap}
+
+/* Fahrender Transporter: Strasse als Maske, Wagen faehrt durch und kommt wieder */
+.hero-status .road{position:relative;width:34px;height:34px;flex:0 0 34px;border-radius:50%;
+  overflow:hidden;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}
+.hero-status .road .van{position:absolute;left:50%;top:50%;width:19px;height:19px;
+  margin:-12px 0 0 -10px;color:#FBFBFB;
+  animation:van-bob .6s steps(2,jump-none) infinite alternate}
+.hero-status .road::after{content:'';position:absolute;left:4px;right:4px;bottom:9px;height:1.5px;
+  border-radius:2px;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.85) 0 4px,transparent 4px 9px);
+  background-size:13px 100%;
+  animation:road-run .5s linear infinite}
+@keyframes van-bob{from{transform:translateY(0)}to{transform:translateY(-1.5px)}}
+@keyframes road-run{to{background-position:-13px 0}}
+@media(prefers-reduced-motion:reduce){
+  .hero-status .road .van{animation:none}
+  .hero-status .road::after{animation:none}
+}
+
+/* ---------- Sektionen ---------- */
+.sec{padding-block:calc(var(--gap) * .5)}
+.sec:first-of-type{padding-top:calc(var(--gap) * .62)}
+/* Hintergrund-Rhythmus, damit die Seite nicht durchgehend weiss ist */
+.band-grey{background:var(--surface)}
+.band-tint{background:linear-gradient(180deg,#EAF2FB 0%,var(--bg) 78%)}
+.band-dark{background:var(--ink);color:#FBFBFB}
+/* Hellblaues Band fuer die grosse Aussage */
+.band-blue{background:linear-gradient(180deg,#E4EFFC 0%,#D6E7F9 62%,#CFE2F7 100%);color:var(--ink)}
+.band-blue h2{color:var(--ink)}
+.band-blue .hint{color:#4C5B6B}
+.band-dark h1,.band-dark h2,.band-dark h3,.band-dark h4{color:#FBFBFB}
+.band-dark .lead,.band-dark .side,.band-dark p{color:rgba(251,251,251,.74)}
+.band-dark .tag{border-color:rgba(251,251,251,.3);color:#FBFBFB}
+.band-dark .tag i{background:var(--blue-light)}
+/* Karten-Rahmen fuer Sektionen, die als Block stehen sollen */
+.panel{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);
+  padding:28px 22px}
+@media(min-width:768px){.panel{padding:44px 48px}}
+.sec-head{display:grid;gap:20px}
+@media(min-width:900px){.sec-head{grid-template-columns:1.35fr .65fr;align-items:end;gap:40px}}
+.sec-head h2{font-size:clamp(30px,5vw,64px);max-width:18ch}
+.sec-head .side{color:var(--muted);font-size:16.5px}
+.h-tag{margin-bottom:20px}
+
+/* Statistik mit Linienraster, wie in der Vorlage */
+.stats{position:relative;padding:56px 0}
+.stats::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),
+                   linear-gradient(to bottom,var(--line) 1px,transparent 1px);
+  background-size:100px 100px}
+.stats .grid{position:relative;display:grid;gap:40px}
+@media(min-width:900px){.stats .grid{grid-template-columns:306px 1fr;gap:56px;align-items:center}}
+.stats .video{border-radius:var(--r-card);height:303px;position:relative;background:var(--line);
+  border:1px dashed var(--grey);display:grid;place-items:center;text-align:center;padding:20px}
+.stats .video{align-content:start;padding-top:26px}
+.stats .video .play{position:absolute;bottom:20px;right:20px;width:64px;height:64px;border-radius:var(--r-circle);
+  background:var(--blue);color:#FBFBFB;display:grid;place-items:center}
+.stats .video .play svg{width:26px;height:26px}
+.counters{display:grid;gap:34px;align-items:start}
+@media(min-width:700px){.counters{grid-template-columns:repeat(3,1fr)}}
+.counter-i .n{font-family:var(--fd);font-weight:700;font-size:clamp(52px,8vw,128px);
+  letter-spacing:-.05em;line-height:.94}
+.counter-i .l{color:var(--muted);font-size:16px;margin-top:10px;max-width:22ch}
+.counter-i.open .n{color:var(--grey)}
+.counter-i .slot{display:inline-block;width:clamp(64px,9vw,132px);height:clamp(46px,6.6vw,104px);
+  border:2px dashed var(--grey);border-radius:var(--r-badge)}
+.stats .foot{position:relative;margin-top:40px;color:var(--muted);font-size:16px;max-width:60ch}
+
+/* Leistungskarten */
+.cards3{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:52px}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:20px;
+  display:flex;flex-direction:column;
+  transition:background .22s var(--ease),border-color .22s var(--ease),
+             color .22s var(--ease),transform .22s var(--ease),box-shadow .22s var(--ease)}
+.svc:hover,.svc:focus-within{background:var(--blue);border-color:var(--blue);color:#FBFBFB;
+  transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,106,215,.22)}
+.svc .ph{height:190px;border-radius:var(--r-img);margin-bottom:20px}
+.svc .num{font-family:var(--fd);font-weight:600;font-size:14px;color:var(--blue);letter-spacing:.06em;display:inline-flex;align-items:center;gap:8px}
+.svc .num .sn{width:19px;height:19px}
+.svc h3{font-size:26px;margin:8px 0 10px;letter-spacing:-.028em}
+.svc p{color:var(--muted);font-size:16px}
+.svc .more{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--fd);font-weight:600;font-size:16px;color:var(--ink);text-decoration:none}
+.svc .more .ic{width:36px;height:36px;border-radius:var(--r-circle);background:var(--surface);
+  display:grid;place-items:center;transition:background .2s var(--ease),color .2s var(--ease)}
+.svc .more .ic svg{width:15px;height:15px}
+/* Hover-Zustand: die ganze Karte wird blau. Statisch bleibt jede Karte weiss. */
+.svc:hover h3,.svc:focus-within h3{color:#FBFBFB}
+.svc:hover p,.svc:focus-within p{color:rgba(251,251,251,.90)}
+.svc:hover .num,.svc:focus-within .num{color:rgba(251,251,251,.92)}
+.svc:hover .more,.svc:focus-within .more{color:#FBFBFB}
+.svc:hover .more .ic,.svc:focus-within .more .ic{background:rgba(251,251,251,.22);color:#FBFBFB}
+.svc:hover .todo,.svc:focus-within .todo{background:rgba(255,255,255,.94);
+  border-color:rgba(255,255,255,.9);color:#7A4E00}
+.svc:hover .ph,.svc:focus-within .ph{background:rgba(251,251,251,.14);border-color:rgba(251,251,251,.5)}
+.svc:hover .ph .ph-t,.svc:focus-within .ph .ph-t{color:#FBFBFB}
+.svc:hover .ph .ph-s,.svc:focus-within .ph .ph-s{color:rgba(251,251,251,.72)}
+@media(prefers-reduced-motion:reduce){.svc:hover,.svc:focus-within{transform:none}}
+
+/* Warum wir: Bilder plus Liste mit Trennlinien */
+.why{display:grid;gap:40px;margin-top:8px}
+@media(min-width:1000px){.why{grid-template-columns:384px 1fr;gap:56px;align-items:start}}
+.why .imgs{display:grid;gap:16px}
+.why .imgs .a{height:474px;border-radius:var(--r-card)}
+.why .imgs .b{height:178px;border-radius:var(--r-card)}
+.why-list{border-top:1px solid var(--line2)}
+.why-row{display:grid;gap:8px;padding:26px 0;border-bottom:1px solid var(--line2)}
+@media(min-width:700px){.why-row{grid-template-columns:auto 1fr;gap:26px;align-items:start}}
+.why-row .k{font-family:var(--fd);font-weight:600;font-size:20px;letter-spacing:-.02em;min-width:0;display:flex;gap:11px;align-items:center}
+.why-row .k .wk{width:22px;height:22px;color:var(--blue)}
+.why-row.open .k .wk{color:var(--grey)}
+.why-row .v{color:var(--muted);font-size:16.5px}
+.why-row.open .k{color:var(--muted)}
+
+/* Grosse Aussage mit Inline-Lozenges und kleinem Bild */
+.statement{padding-block:var(--gap)}
+.statement h2{font-size:clamp(30px,6.6vw,96px);letter-spacing:-.042em;line-height:1.22;font-weight:600}
+.loz{display:inline-block;vertical-align:middle;height:clamp(30px,5.2vw,76px);
+  width:clamp(96px,17vw,250px);border-radius:var(--r-loz);margin:0 .12em}
+.loz.blue{background:var(--blue-light)}
+.loz.grey{background:var(--line)}
+.statement .inline-img{display:inline-grid;vertical-align:middle;margin:0 .12em;
+  width:clamp(78px,9vw,125px);height:clamp(44px,5vw,71px);border-radius:var(--r-card);padding:4px}
+.statement .inline-img .ph-t{font-size:10.5px;line-height:1.2}
+.statement .btn{margin-top:34px}
+.statement .hint{margin-top:16px;font-size:14.5px;color:var(--muted)}
+
+/* Ablauf mit Schritt-Marken und Verbindungslinie */
+.steps{position:relative;display:grid;gap:34px;margin-top:52px}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:26px}
+  .steps::before{content:'';position:absolute;top:20px;left:8%;right:8%;height:1px;background:var(--line2)}}
+.step{position:relative}
+.step .tag{margin-bottom:20px}
+.step .ph{height:210px;border-radius:var(--r-img);margin-bottom:18px}
+.step h3{font-size:21px;margin-bottom:8px;letter-spacing:-.025em}
+.step p{color:var(--muted);font-size:16px}
+
+/* Zielgruppen */
+.fork{display:grid;gap:24px;margin-top:52px}
+@media(min-width:900px){.fork{grid-template-columns:1fr 1fr}}
+.fork .f{border:1px solid var(--line);background:var(--white);border-radius:var(--r-card);padding:34px}
+.fork .f.accent{background:var(--blue);border-color:var(--blue);color:#FBFBFB}
+.fork h3{font-size:clamp(24px,3vw,32px);margin-bottom:14px;display:flex;gap:13px;align-items:flex-start}
+.fork h3 .fh{width:28px;height:28px;margin-top:3px;color:var(--blue)}
+.fork .f.accent h3 .fh{color:#FBFBFB}
+.fork p{color:var(--muted);font-size:16.5px}
+.fork .f.accent p{color:rgba(251,251,251,.88)}
+.fork ul{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:12px;font-size:16.5px}
+.fork li{display:flex;gap:12px;align-items:flex-start}
+.fork li svg{flex:0 0 19px;width:19px;height:19px;margin-top:3px;color:var(--blue)}
+.fork .f.accent li svg{color:#FBFBFB}
+
+/* CTA-Block mit Kreis-Badge und Text auf Pfad */
+.cta{background:var(--blue);border-radius:var(--r-card);color:#FBFBFB;
+  position:relative;overflow:hidden;padding:44px 28px}
+@media(min-width:900px){.cta{padding:64px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}}
+.cta h2{font-size:clamp(29px,4.4vw,56px);color:#FBFBFB;max-width:15ch}
+.cta p{color:rgba(251,251,251,.9);font-size:18px;margin-top:20px;max-width:46ch}
+.cta .btn-row{margin-top:30px}
+.cta .art{position:relative;margin-top:34px}
+@media(min-width:900px){.cta .art{margin-top:0}}
+.cta .art .ph{height:300px;border-radius:var(--r-img)}
+.spinner{position:absolute;left:-46px;bottom:-24px;width:159px;height:159px;border-radius:var(--r-circle);
+  background:#FBFBFB;display:grid;place-items:center}
+@media(max-width:899px){.spinner{position:static;margin:24px auto 0}}
+.spinner svg.ring{position:absolute;inset:0;width:159px;height:159px;animation:spin 18s linear infinite}
+.spinner .core{width:57px;height:57px;border-radius:50%;background:var(--blue-light);display:grid;
+  place-items:center;color:#fff}
+.spinner .core svg{width:22px;height:22px}
+.spinner text{font-family:var(--fd);font-size:15.5px;font-weight:600;fill:var(--ink);letter-spacing:.06em}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Stimmen */
+.voices{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:52px}
+.voice{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:30px}
+.voice p{font-size:17.5px}
+.voice .who{display:flex;gap:12px;align-items:center;margin-top:22px}
+.voice .av{width:48px;height:48px;border-radius:50%;background:var(--line);
+  border:1px dashed var(--grey);flex:0 0 48px}
+.voice b{display:block;font-family:var(--fd);font-size:16px}
+.voice small{display:block;font-size:14px;color:var(--muted)}
+
+/* ---------- Vorher und nachher: Karussell ---------- */
+.bw{position:relative;margin-top:52px}
+.bw-viewport{overflow:hidden;border-radius:var(--r-block)}
+.bw-track{display:flex;scroll-snap-type:x mandatory;overflow-x:auto;scroll-behavior:smooth;
+  scrollbar-width:none;-ms-overflow-style:none}
+.bw-track::-webkit-scrollbar{display:none}
+.bw-slide{position:relative;flex:0 0 100%;scroll-snap-align:center;min-width:0;
+  border-radius:var(--r-block);overflow:hidden;background:var(--surface)}
+
+/* Bildpaar: links vorher, rechts nachher, gleicher Ausschnitt */
+.bw-pair{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line2)}
+@media(min-width:760px){.bw-pair{grid-template-columns:1fr 1fr}}
+.bw-half{position:relative;margin:0;min-height:300px;display:grid}
+@media(min-width:760px){.bw-half{min-height:440px}}
+@media(min-width:1200px){.bw-half{min-height:520px}}
+.bw-half .ph{border:0;border-radius:0;height:100%;background:var(--line);
+  align-content:start;padding:clamp(64px,16%,110px) 22px 22px}
+.bw-half img{display:block;width:100%;height:100%;object-fit:cover}
+.bw-badge{position:absolute;top:16px;left:16px;z-index:2;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--fd);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(22,34,46,.66);-webkit-backdrop-filter:saturate(1.4) blur(14px);
+  backdrop-filter:saturate(1.4) blur(14px);border:1px solid rgba(255,255,255,.24);
+  color:#FBFBFB;border-radius:var(--r-tag);padding:7px 15px}
+.bw-badge.is-after{background:var(--blue);border-color:rgba(255,255,255,.42)}
+
+/* Textkarte liegt auf dem Bild, wie in der Vorlage */
+.bw-slide::after{content:'';position:absolute;inset:auto 0 0 0;height:54%;pointer-events:none;
+  background:linear-gradient(180deg,rgba(16,26,44,0) 0%,rgba(16,26,44,.22) 46%,rgba(16,26,44,.62) 100%)}
+.bw-overlay{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:24px}
+@media(min-width:760px){.bw-overlay{padding:34px}}
+.bw-card{max-width:560px;background:var(--glass-strong);
+  -webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid var(--glass-brd);border-radius:var(--r-card);
+  box-shadow:var(--glass-sh);padding:22px 24px}
+.bw-card .tag{background:rgba(255,255,255,.5);border-color:rgba(255,255,255,.7);font-size:13.5px;
+  padding:7px 15px}
+.bw-card h3{font-size:clamp(22px,3.2vw,30px);letter-spacing:-.03em;margin:14px 0 8px}
+.bw-card p{color:#3E4C5A;font-size:16px}
+.bw-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.bw-meta span{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:600;
+  font-size:13.5px;color:#25333F;background:rgba(255,255,255,.62);
+  border:1px solid rgba(255,255,255,.8);border-radius:var(--r-tag);padding:6px 14px}
+.bw-meta svg{width:15px;height:15px;color:var(--blue)}
+@media(max-width:759px){
+  /* Unter 760px stehen die beiden Haelften uebereinander. Die Textkarte darf
+     dann nicht mehr auf dem Bild liegen, sie wuerde die Nachher-Haelfte verdecken. */
+  .bw-slide{background:var(--white);border:1px solid var(--line)}
+  .bw-slide::after{display:none}
+  .bw-half{min-height:230px}
+  .bw-half .ph{padding:56px 20px 20px}
+  .bw-half:first-child .ph{padding-top:82px}
+  .bw-overlay{position:static;padding:0}
+  .bw-card{max-width:none;border:0;border-top:1px solid var(--line);border-radius:0;
+    box-shadow:none;background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none;
+    padding:22px 20px 24px}
+  .bw-card .tag{background:var(--surface);border-color:var(--line2)}
+  .bw-meta span{background:var(--surface);border-color:var(--line2)}
+  .bw-ctrl{top:14px;right:14px}
+  .bw-btn{width:44px;height:44px;flex:0 0 44px}
+}
+
+/* Steuerung: zwei Kreise oben rechts */
+.bw-ctrl{position:absolute;top:20px;right:20px;z-index:4;display:flex;gap:10px}
+@media(min-width:760px){.bw-ctrl{top:28px;right:28px}}
+.bw-btn{width:48px;height:48px;border-radius:var(--r-circle);flex:0 0 48px;cursor:pointer;
+  display:grid;place-items:center;color:#16222E;
+  background:var(--glass-strong);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid var(--glass-brd);box-shadow:var(--glass-sh);
+  transition:background .2s var(--ease),transform .2s var(--ease),color .2s var(--ease)}
+.bw-btn svg{width:19px;height:19px}
+.bw-btn .prev-i{transform:rotate(180deg)}
+.bw-btn:hover{background:var(--blue);color:#FBFBFB;transform:translateY(-2px)}
+.bw-btn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(0,106,215,.34)}
+.bw-btn[disabled]{opacity:.42;cursor:default;transform:none;background:var(--glass-strong);color:#16222E}
+
+/* Umschalter unter dem Karussell */
+.bw-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.bw-tab{cursor:pointer;font-family:var(--fd);font-weight:600;font-size:15px;color:var(--ink);
+  background:var(--white);border:1px solid var(--line2);border-radius:var(--r-tag);padding:10px 19px;
+  display:inline-flex;align-items:center;gap:9px;
+  transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.bw-tab i{width:8px;height:8px;border-radius:50%;background:var(--line2);display:block;
+  transition:background .2s var(--ease)}
+.bw-tab:hover{border-color:var(--blue-light)}
+.bw-tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#FBFBFB}
+.bw-tab[aria-selected="true"] i{background:#FBFBFB}
+.bw-tab:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(0,106,215,.3)}
+.bw-count{margin-left:auto;font-family:var(--fd);font-weight:600;font-size:15px;color:var(--muted)}
+@media(max-width:640px){.bw-count{margin-left:0;width:100%}}
+.bw-note{margin-top:16px;font-size:14.5px;color:var(--muted)}
+
+/* ---------- Preise: Foto im Grund, schwere Glasscheibe darueber ---------- */
+/* Das Foto wechselt mit der gewaehlten Leistung. Es ist Stimmung, keine
+   Information, deshalb liegt es hinter einer dichten Scheibe: der Rechner
+   bleibt lesbar, das Band bekommt trotzdem Farbe. */
+#preise{position:relative;overflow:hidden;overflow:clip;isolation:isolate}
+#preise>.wrap{position:relative;z-index:2}
+/* Der Nebentext oben rechts liegt am duennsten Teil der Scheibe.
+   Dunkler gesetzt, damit er auch ueber dem dunkelsten der fuenf Fotos
+   ueber 4,5:1 bleibt. */
+#preise .sec-head .side{color:#454E58}
+.pr-bg{position:absolute;inset:0;z-index:0;pointer-events:none;background:var(--surface)}
+.pr-img{position:absolute;inset:0;opacity:0;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  /* Der Zuschnitt ist groesser als die Sektion, damit die Unschaerfe
+     an den Kanten nicht ausfranst. */
+  transform:scale(1.14);
+  filter:blur(15px) saturate(1.22) brightness(1.02);
+  transition:opacity .55s var(--ease)}
+.pr-img.is-on{opacity:1}
+.pr-glass{position:absolute;inset:0;z-index:1;pointer-events:none;
+  -webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);
+  /* Oben dichter, weil dort die Ueberschrift steht. In der Mitte duenner,
+     damit das Foto hinter der Rechnerkarte sichtbar bleibt. */
+  background:linear-gradient(180deg,
+    rgba(251,251,251,.92) 0%,
+    rgba(251,251,251,.84) 18%,
+    rgba(251,251,251,.46) 34%,
+    rgba(251,251,251,.40) 68%,
+    rgba(251,251,251,.62) 88%,
+    rgba(251,251,251,.80) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(255,255,255,.7)}
+@media(prefers-reduced-motion:reduce){.pr-img{transition:none}}
+/* Ohne backdrop-filter traegt allein der Weissschleier, dann etwas dichter. */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .pr-glass{background:linear-gradient(180deg,
+    rgba(251,251,251,.92) 0%,rgba(251,251,251,.82) 14%,rgba(251,251,251,.58) 32%,
+    rgba(251,251,251,.55) 68%,rgba(251,251,251,.74) 88%,rgba(251,251,251,.86) 100%)}
+}
+
+/* ---------- Preisrechner ---------- */
+.calc-wrap{margin-top:52px;display:flex;flex-direction:column;align-items:center}
+.calc{width:100%;max-width:620px;position:relative;
+  background:rgba(252,252,253,.90);
+  -webkit-backdrop-filter:saturate(1.6) blur(26px);backdrop-filter:saturate(1.6) blur(26px);
+  border:1px solid rgba(255,255,255,.78);border-radius:var(--r-block);
+  box-shadow:0 24px 70px rgba(20,26,34,.16),inset 0 1px 0 rgba(255,255,255,.8);
+  padding:28px 24px 26px}
+@media(min-width:760px){.calc{padding:36px 40px 34px}}
+.calc-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.calc-top .tag{background:rgba(255,255,255,.5);border-color:rgba(255,255,255,.75)}
+.calc-title{font-family:var(--fd);font-weight:600;font-size:clamp(24px,3.4vw,32px);
+  letter-spacing:-.03em;margin:18px 0 6px}
+.calc-lead{color:var(--muted);font-size:16px}
+.calc-fields{display:grid;gap:14px;margin-top:24px}
+@media(min-width:560px){.calc-fields{grid-template-columns:1fr 1fr}}
+.calc-fields .field{margin-bottom:0}
+.calc-fields .field.wide{grid-column:1 / -1}
+.calc-fields .field input,.calc-fields .field select{background:rgba(255,255,255,.72);
+  border-color:rgba(255,255,255,.9)}
+.calc-fields .field input:focus,.calc-fields .field select:focus{background:var(--white)}
+
+/* Ergebniszeile: der Betrag ist bewusst ein Platzhalter */
+.calc-out{margin-top:24px;padding:20px 22px;border-radius:var(--r-card);
+  background:var(--blue);color:#FBFBFB;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.calc-out .k{font-family:var(--fd);font-weight:600;font-size:15px;color:rgba(251,251,251,.86)}
+.calc-out .k small{display:block;font-weight:500;font-size:13px;color:rgba(251,251,251,.72);margin-top:2px}
+.calc-out .v{margin-left:auto;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-family:var(--fd);font-weight:600;font-size:clamp(22px,3.6vw,30px);letter-spacing:-.03em}
+@media(max-width:520px){.calc-out .v{margin-left:0;width:100%}}
+.calc-out .v .pre{font-size:16px;font-weight:500;color:rgba(251,251,251,.86)}
+.calc-out .v .slot{display:inline-block;width:92px;height:.92em;border-radius:8px;
+  border:2px dashed rgba(255,255,255,.62)}
+.calc-out .v .star{font-size:15px;color:rgba(251,251,251,.86)}
+.calc-out .v.has-value .slot{display:none}
+.calc-cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.calc-note{margin-top:16px;font-size:14px;line-height:1.6;color:var(--muted)}
+.calc-factors{margin-top:14px;font-size:14.5px;color:var(--muted)}
+.calc-factors b{font-family:var(--fd);color:var(--ink)}
+
+/* Umschalter unter der Karte */
+.calc-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;max-width:100%}
+.ctab{cursor:pointer;font-family:var(--fd);font-weight:600;font-size:15px;color:var(--ink);
+  background:rgba(255,255,255,.88);
+  -webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
+  border:1px solid rgba(255,255,255,.8);border-radius:var(--r-tag);
+  box-shadow:0 6px 18px rgba(20,26,34,.10);
+  padding:11px 20px;display:inline-flex;align-items:center;gap:9px;
+  transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),
+             transform .2s var(--ease)}
+.ctab svg{width:17px;height:17px;color:var(--blue)}
+.ctab:hover{border-color:var(--blue-light);transform:translateY(-2px)}
+.ctab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#FBFBFB}
+.ctab[aria-selected="true"] svg{color:#FBFBFB}
+.ctab:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(0,106,215,.3)}
+@media(prefers-reduced-motion:reduce){.ctab:hover,.bw-btn:hover{transform:none}}
+
+/* Preise (Faktorenkarten, weiterhin als Fussnote unter dem Rechner) */
+.prices{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:52px}
+.price{border:1px solid var(--line);background:var(--white);border-radius:var(--r-card);padding:28px}
+.price h3{font-size:20px;margin-bottom:9px}
+.price p{color:var(--muted);font-size:16px}
+.price.accent{background:var(--surface);border-color:var(--line2)}
+.price.open{border-style:dashed;border-color:var(--grey);background:transparent}
+.price.open h3{color:var(--muted)}
+
+/* Einsatzgebiet */
+.area{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.area span{border:1px solid var(--line2);border-radius:var(--r-tag);padding:10px 19px;font-size:16px;
+  font-family:var(--fd);font-weight:500;background:var(--white)}
+.area span.open{border-style:dashed;color:var(--muted);background:transparent}
+
+/* FAQ */
+.faq{margin-top:52px;border-top:1px solid var(--line2)}
+.faq details{border-bottom:1px solid var(--line2)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 60px 26px 0;position:relative;
+  font-family:var(--fd);font-weight:600;font-size:clamp(19px,2.4vw,24px);letter-spacing:-.025em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,106,215,.3);border-radius:var(--r-field)}
+.faq summary::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border-radius:var(--r-circle);background:var(--surface);
+  transition:background .22s var(--ease)}
+.faq summary::before{content:'';position:absolute;right:14px;top:50%;z-index:1;width:16px;height:16px;
+  transform:translateY(-50%);
+  background:linear-gradient(var(--ink),var(--ink)) center/16px 2px no-repeat,
+             linear-gradient(var(--ink),var(--ink)) center/2px 16px no-repeat;
+  transition:background-size .22s var(--ease)}
+.faq details[open] summary::after{background:var(--blue)}
+.faq details[open] summary::before{
+  background:linear-gradient(#FBFBFB,#FBFBFB) center/16px 2px no-repeat,
+             linear-gradient(#FBFBFB,#FBFBFB) center/2px 0 no-repeat}
+.faq .a{color:var(--muted);font-size:16.5px;padding:0 60px 28px 0;max-width:76ch}
+
+/* Anfrage */
+.book{display:grid;gap:40px;margin-top:52px}
+@media(min-width:1000px){.book{grid-template-columns:486px 1fr;gap:56px;align-items:start}}
+.book .visual{position:relative}
+.book .visual .ph{height:420px;border-radius:var(--r-card)}
+.book .callbox{position:absolute;left:16px;right:16px;bottom:16px;
+  background:var(--glass-strong);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid var(--glass-brd);box-shadow:var(--glass-sh);
+  border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.book .callbox .ic{width:44px;height:44px;border-radius:var(--r-circle);background:var(--blue);
+  color:#FBFBFB;display:grid;place-items:center;flex:0 0 44px}
+.book .callbox .ic svg{width:19px;height:19px}
+.book .callbox b{display:block;font-family:var(--fd);font-size:18px;line-height:1.2}
+.book .callbox small{display:block;font-size:13.5px;color:var(--muted)}
+.field{display:block;margin-bottom:16px}
+.field span{display:block;font-family:var(--fd);font-weight:600;font-size:15px;margin-bottom:8px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--fb);font-size:17px;color:var(--ink);
+  background:var(--line);border:1px solid transparent;border-radius:var(--r-field);padding:15px 18px;
+  min-height:56px;transition:border-color .18s var(--ease),background .18s var(--ease)}
+.field textarea{min-height:116px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--grey)}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--line2)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;background:var(--white);border-color:var(--blue)}
+.two{display:grid;gap:16px}
+@media(min-width:600px){.two{grid-template-columns:1fr 1fr}}
+
+/* Footer als dunkler Block r40, darin ein blauer Block */
+.footer{padding:calc(var(--gap) * .5) 0 20px}
+.footer .block{background:var(--ink);border-radius:var(--r-block);color:#FBFBFB;padding:34px 22px 28px}
+@media(min-width:768px){.footer .block{padding:48px 44px 34px}}
+.newsletter{background:var(--blue);border-radius:var(--r-inner);padding:28px;display:grid;gap:20px;
+  align-items:center;margin-bottom:44px}
+@media(min-width:860px){.newsletter{grid-template-columns:1fr auto;gap:32px;padding:34px 40px}}
+.newsletter h3{font-size:clamp(23px,3vw,32px);color:#FBFBFB;max-width:20ch}
+.newsletter p{color:rgba(251,251,251,.86);font-size:16.5px;margin-top:8px;max-width:46ch}
+.f-grid{display:grid;gap:34px}
+@media(min-width:900px){.f-grid{grid-template-columns:1.15fr 1fr 1fr;gap:44px}}
+.f-brand .wm{font-family:var(--fd);font-weight:700;font-size:26px;letter-spacing:-.02em}
+.f-brand p{color:#F5F5F5;font-size:16px;margin-top:14px;max-width:38ch}
+.f-col h4{font-family:var(--fd);font-size:15px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(251,251,251,.66);margin-bottom:16px;font-weight:600}
+.f-col a,.f-col p{display:block;color:#FBFBFB;text-decoration:none;font-size:16.5px;padding:5px 0}
+.f-col .fo{width:17px;height:17px;margin-right:9px;color:var(--blue-light)}
+.f-col a:hover{color:var(--blue-light)}
+.f-bot{border-top:1px solid rgba(251,251,251,.16);margin-top:40px;padding-top:20px;display:flex;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:14.5px;color:rgba(251,251,251,.7)}
+
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Icons: Untitled UI Set aus likovo-nischen-wissen/icons-svg, als Sprite eingebunden */
+.i{width:1em;height:1em;fill:currentColor;flex:0 0 auto;display:inline-block;vertical-align:middle}
+
+.fork .f{min-width:0}
+.fork h3{overflow-wrap:anywhere}
+
+/* Echte Fotos ersetzen die Platzhalter. Sizing kommt weiter aus dem .ph-Kontext. */
+img.ph{display:block;object-fit:cover;width:100%;background:none;border:0;padding:0}
+img.ph.round-md{border-radius:var(--r-md,20px)}
+
+.hero .bgimg{background:url("bilder/hausservice-regensburg-fahrzeug.webp") center 62%/cover no-repeat,var(--line);border-bottom:0}
+.hero .bgimg .lab{display:none}
+
+/* --- Ergaenzungen: Baender, Glas, Hero-Raster --- */
+.statement{padding-block:calc(var(--gap) * .62)}
+.band-dark .statement .hint,.statement.band-dark .hint{color:rgba(251,251,251,.6)}
+.statement.band-blue .hint{color:#4F5A65}
+.statement.band-blue .loz.blue{background:var(--blue)}
+.statement.band-blue .loz.grey{background:rgba(255,255,255,.86)}
+.statement.band-blue .inline-img{background:rgba(255,255,255,.6);border-color:rgba(255,255,255,.9)}
+.band-dark .loz.grey{background:rgba(251,251,251,.16)}
+.band-dark .btn.ghost{background:rgba(251,251,251,.12);color:#FBFBFB;border-color:rgba(251,251,251,.3)}
+.band-dark .inline-img{background:rgba(251,251,251,.14);border-color:rgba(251,251,251,.4)}
+
+/* Statistik-Block mit echtem Foto statt Platzhalter */
+.stats .video.has-photo{border:0;background:none;padding:0;position:relative;overflow:hidden}
+.stats .video.has-photo img{object-fit:cover}
+.stats .video.has-photo .play{z-index:2;box-shadow:0 8px 24px rgba(20,26,34,.3)}
+
+/* Karten auf grauem Band bleiben weiss, damit die Kante sichtbar ist */
+.band-grey .svc,.band-grey .price,.band-grey .fork .f,.band-grey .voice{background:var(--white)}
+.band-grey .fork .f.accent{background:var(--blue)}
+.band-grey .svc:hover,.band-grey .svc:focus-within{background:var(--blue);border-color:var(--blue)}
+.band-grey .price.accent{background:var(--blue);border-color:var(--blue);color:#FBFBFB}
+.band-grey .price.accent h3{color:#FBFBFB}
+.band-grey .price.accent p{color:rgba(251,251,251,.88)}
+.band-grey .price.open{background:transparent}
+.band-grey .area span{background:var(--white)}
+
+/* Bei der breiteren Seite drei Karten pro Reihe statt vier, sonst steht die
+   fuenfte Karte allein und wirkt wie ein Fehler. */
+@media(min-width:1000px){.cards3{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1200px){
+  .why{grid-template-columns:minmax(340px,.44fr) 1fr;gap:64px}
+  .book{grid-template-columns:minmax(400px,.46fr) 1fr;gap:64px}
+  .form-wrap{gap:56px}
+}
+
+/* FAQ in der Karte */
+.faq-in-panel{margin-top:0;border-top:0}
+.faq-in-panel details:last-of-type{border-bottom:0}
+
+/* Telefon-Button im Hero als Glas. Deckkraft hoch genug, damit der dunkle
+   Text auf dem dunklen Himmel die 4,5:1 erreicht. Design bleibt gleich. */
+.hero .btn-row .btn.plain{background:rgba(252,253,255,.90)!important;color:var(--ink)!important;
+  -webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);
+  border-color:rgba(255,255,255,.78)!important}
+.hero .btn-row .btn.plain:hover{background:rgba(255,255,255,.98)!important;border-color:#fff!important}
+
+/* Hero-Karten als Glas */
+.hero .card-a{background:var(--glass)!important;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid var(--glass-brd);box-shadow:var(--glass-sh)}
+.hero .card-b{background:rgba(88,161,235,.58)!important;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid rgba(255,255,255,.34);box-shadow:var(--glass-sh)}
+.hero .card-b .ic{background:rgba(251,251,251,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+
+/* Sektionsraster nutzt die volle Breite */
+@media(min-width:1200px){
+  .sec-head.split,.sec-head{gap:56px}
+  .svc-grid{gap:24px}
+}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs><symbol id="ic-brush" viewBox="0 0 24 24"><path fill="currentColor" d="M17.264 2.208a3.205 3.205 0 0 1 4.528 4.528l-9.137 9.868c-.422.457-.776.853-1.185 1.095-.459.27-.972.41-1.488.416a4.49 4.49 0 0 1-1.3 3.568c-.94.94-2.233 1.223-3.377 1.314C4.185 23.086 2.889 23 2 23a1 1 0 0 1-.89-1.456c.368-.717.321-1.566.275-2.729-.04-.99-.107-2.457.933-3.497a4.49 4.49 0 0 1 3.567-1.302A2.997 2.997 0 0 1 6.3 12.53c.242-.41.638-.763 1.095-1.185l9.868-9.137ZM7.268 16.732a2.5 2.5 0 0 0-3.536 0c-.326.327-.394.847-.348 2.003.025.627.083 1.445-.047 2.29.613.015 1.207.026 1.809-.022 1-.08 1.695-.309 2.122-.736a2.5 2.5 0 0 0 0-3.535Zm1.487-3.92c-.563.522-.677.64-.733.735a1 1 0 0 0-.018.983c.052.096.16.22.703.763.543.543.667.651.763.703a1 1 0 0 0 .983-.019c.094-.055.213-.169.735-.732l.202-.219-2.417-2.417-.218.203Zm11.538-9.105a1.205 1.205 0 0 0-1.67-.032l-8.182 7.575 2.308 2.307 7.576-8.18a1.205 1.205 0 0 0-.032-1.67Z"/></symbol><symbol id="ic-trash" viewBox="0 0 24 24"><path fill="currentColor" d="M18 7H6v10.2c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C8.361 21 8.942 21 9.8 21h4.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V7Zm-9 9.5v-5a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0Zm4 0v-5a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0ZM11.2 3c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422-.02.249-.023.567-.023 1.032h5.998c0-.465-.003-.783-.023-1.032-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 12.8 3h-1.6ZM20 17.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H9.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C3.999 18.702 4 18.024 4 17.2V7H3a1 1 0 1 1 0-2h4.001c0-.459.002-.86.03-1.195.032-.396.103-.789.296-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C10.188 1 10.657 1 11.2 1h1.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.027.335.029.736.029 1.195H21a1 1 0 1 1 0 2h-1v10.2Z"/></symbol><symbol id="ic-truck" viewBox="0 0 24 24"><path fill="currentColor" d="M20.998 12.419v-.003c-.002 0-.002-.002-.003-.003a5.807 5.807 0 0 0-.17-.175l-4.063-4.062a5.94 5.94 0 0 0-.175-.171l-.004-.003h-.002C16.534 8 16.468 8 16.337 8H15v7.697a3.498 3.498 0 0 1 5.997-.005c0-.055.003-.119.003-.192v-2.837c0-.13 0-.197-.002-.244ZM7 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm11 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm5-.5c0 .22 0 .434-.012.615-.013.19-.043.417-.14.65a2 2 0 0 1-1.082 1.083c-.1.041-.2.069-.295.09a3.499 3.499 0 0 1-6.935.062h-3.662a4.002 4.002 0 0 1-7.781-.14A3 3 0 0 1 1 15V7.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C4.188 3 4.657 3 5.2 3h5.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.005.062.008.128.011.195h1.356c.197 0 .459-.006.716.056.153.036.301.09.441.162l.137.077.16.111c.152.118.28.251.385.356l4.062 4.062c.14.14.329.32.467.545.11.179.19.374.24.578.061.257.055.52.055.716V15.5ZM3 15c0 .246.09.47.236.645a4.001 4.001 0 0 1 7.638.355H13V7.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 10.8 5H5.2c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C3.001 6.25 3 6.624 3 7.2V15Z"/></symbol><symbol id="ic-scissors" viewBox="0 0 24 24"><path fill="currentColor" d="M8 18a2 2 0 1 0-4 0 2 2 0 0 0 4 0ZM8 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a3.98 3.98 0 0 1-.555 2.031L12 10.586l7.293-7.293a1 1 0 1 1 1.414 1.414L13.414 12l7.293 7.293a1 1 0 1 1-1.414 1.414L12 13.414l-2.555 2.554a4 4 0 1 1-1.414-1.414L10.586 12 8.03 9.445A4 4 0 1 1 10 6Z"/></symbol><symbol id="ic-tool" viewBox="0 0 24 24"><path fill="currentColor" d="m20.997 7.417-1.158 1.16c-.186.185-.368.368-.534.509a2.023 2.023 0 0 1-.687.402c-.401.13-.834.13-1.236 0a2.023 2.023 0 0 1-.687-.402c-.166-.14-.348-.324-.534-.51l-.237-.237c-.186-.186-.37-.368-.51-.534a2.022 2.022 0 0 1-.402-.687 2.001 2.001 0 0 1 0-1.236c.094-.29.254-.512.402-.687.14-.166.324-.348.51-.534l1.553-1.554a4.5 4.5 0 0 0-5.392 5.27c.046.235.087.44.113.602a1.97 1.97 0 0 1-.043.951 1.97 1.97 0 0 1-.153.361c-.158.295-.431.552-.638.759l-7.157 7.157a1.122 1.122 0 0 0 1.586 1.586l7.44-7.44a2.02 2.02 0 0 1 .476-.355l.162-.08a1.777 1.777 0 0 1 .583-.146l.036-.002c.28-.027.559 0 .816.07.14.038.282.069.427.094.044.007.087.015.131.021l.073.009A4.5 4.5 0 0 0 21 7.5c0-.028-.002-.055-.003-.083ZM14.64 13.78a9.21 9.21 0 0 0-.276.27l-.95.95 4.793 4.793a1.122 1.122 0 0 0 1.586-1.586l-4.283-4.283-.06-.01a6.719 6.719 0 0 1-.192-.034c-.007-.002-.015-.002-.022-.003a16.25 16.25 0 0 0-.528-.1l-.058-.007-.01.01ZM3.144 3.27 3.72 5H5V3.72l-1.73-.576-.126.126ZM23 7.5a6.5 6.5 0 0 1-4.81 6.275l3.017 3.018a3.121 3.121 0 1 1-4.414 4.414L12 16.414l-4.793 4.793a3.121 3.121 0 1 1-4.414-4.414L9.086 10.5 5.586 7H3a1 1 0 0 1-.948-.684l-1-3a1 1 0 0 1 .241-1.023l1-1 .106-.092a1 1 0 0 1 .917-.15l3 1A1 1 0 0 1 7 3v2.586l3.111 3.111a6.5 6.5 0 0 1 9.65-6.821 1.002 1.002 0 0 1 .205 1.572l-2.627 2.628c-.21.21-.325.325-.4.414l-.008.01.008.01c.075.089.19.204.4.414l.237.237c.21.21.325.325.414.4l.01.007.01-.006c.089-.076.204-.191.414-.4l2.458-2.459a1.001 1.001 0 0 1 1.578.216l.055.111.11.29A6.49 6.49 0 0 1 23 7.5Z"/></symbol><symbol id="ic-check" viewBox="0 0 24 24"><path fill="currentColor" d="M21 12a9 9 0 1 0-18 0 9 9 0 0 0 18 0Zm-5.207-3.707a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 5.293-5.293ZM23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11Z"/></symbol><symbol id="ic-shield" viewBox="0 0 24 24"><path fill="currentColor" d="M19 7.218c0-.882-.016-1.058-.065-1.188a1.001 1.001 0 0 0-.274-.395c-.105-.092-.264-.168-1.089-.477l-5.361-2.01a3.997 3.997 0 0 0-.208-.077L12 3.07l-.003.001c-.04.013-.097.034-.208.076l-5.361 2.01c-.825.31-.984.386-1.09.478a1.002 1.002 0 0 0-.273.395C5.015 6.16 5 6.336 5 7.218V12c0 2.082 1.14 3.965 2.642 5.53 1.49 1.553 3.228 2.676 4.164 3.222l.134.077.06.032.06-.032a8.97 8.97 0 0 0 .134-.077c.936-.546 2.673-1.669 4.164-3.222C17.861 15.965 19 14.081 19 12V7.218Zm-4.207 1.075a1 1 0 0 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L11 12.086l3.793-3.793ZM21 12c0 2.826-1.537 5.184-3.2 6.915-1.672 1.742-3.586 2.973-4.598 3.563-.19.111-.442.269-.783.342-.26.056-.579.056-.838 0-.341-.073-.593-.231-.783-.342-1.012-.59-2.926-1.82-4.599-3.563C4.537 17.184 3 14.826 3 12V7.218c0-.718-.016-1.342.196-1.899a3 3 0 0 1 .82-1.184c.448-.393 1.038-.598 1.71-.85l5.36-2.01c.169-.064.39-.152.628-.186a2 2 0 0 1 .43-.016l.142.016.175.035c.17.042.326.103.452.15l5.361 2.01c.672.253 1.262.458 1.71.851a3 3 0 0 1 .82 1.184c.212.557.196 1.18.196 1.899V12Z"/></symbol><symbol id="ic-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12C2 6.477 6.477 2 12 2c5.135 0 9.363 3.87 9.932 8.854l.061-.061a1 1 0 0 1 1.414 1.414l-1.999 2a1.001 1.001 0 0 1-1.415 0l-2-2a1 1 0 1 1 1.414-1.414l.565.564A7.998 7.998 0 0 0 4 12a8 8 0 0 0 14.223 5.028 1 1 0 0 1 1.554 1.258A9.983 9.983 0 0 1 12 22C6.477 22 2 17.523 2 12Zm9-5a1 1 0 1 1 2 0v4.465l2.555 1.703a1 1 0 1 1-1.11 1.664l-3-2A1 1 0 0 1 11 12V7Z"/></symbol><symbol id="ic-clipboard" viewBox="0 0 24 24"><path fill="currentColor" d="M19 8c0-.994-.009-1.295-.068-1.518a2 2 0 0 0-1.414-1.414 2.338 2.338 0 0 0-.53-.058c-.002.044-.001.087-.005.129a2.023 2.023 0 0 1-.2.77 2 2 0 0 1-.875.873 2.023 2.023 0 0 1-.77.201c-.216.018-.474.017-.738.017H9.6c-.264 0-.522.001-.739-.017a2.022 2.022 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.023 2.023 0 0 1-.201-.77c-.004-.04-.004-.084-.006-.128a2.36 2.36 0 0 0-.529.058 2 2 0 0 0-1.414 1.414C5.008 6.705 5 7.006 5 8v9.2c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C7.361 21 7.942 21 8.8 21h6.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8Zm-4.207 3.793a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 15.586l3.793-3.793ZM9.6 3a8.1 8.1 0 0 0-.576.01l-.012.002-.001.012C9 3.141 9 3.304 9 3.6v.8c0 .297.001.46.01.576l.002.011.012.002C9.141 5 9.304 5 9.6 5h4.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C15 4.859 15 4.696 15 4.4v-.8c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.1 8.1 0 0 0 14.4 3H9.6ZM21 17.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H8.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C2.999 18.702 3 18.024 3 17.2V8c0-.866-.008-1.494.137-2.035a4 4 0 0 1 2.828-2.828c.31-.083.649-.115 1.045-.127.002-.051.003-.101.007-.149.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201C9.077.999 9.335 1 9.6 1h4.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.004.048.004.098.006.149.397.012.736.044 1.046.127a4 4 0 0 1 2.828 2.828c.145.54.137 1.17.137 2.035v9.2Z"/></symbol><symbol id="ic-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M4.1 2.878a3 3 0 0 1 2.708 0c.464.235.863.65 1.338 1.126l.195.195c.313.314.585.577.77.862a3 3 0 0 1 0 3.271c-.185.286-.457.549-.77.862l-.108.109-.002.011.014.03.037.076a13.603 13.603 0 0 0 2.652 3.736 13.602 13.602 0 0 0 3.735 2.652l.076.037c.013.005.022.01.03.012h.006l.005-.002.11-.106c.313-.314.576-.585.862-.77a3 3 0 0 1 3.27 0c.286.185.55.457.863.77l.539.54c.329.334.606.645.782.993a3 3 0 0 1 0 2.708c-.235.464-.651.862-1.127 1.338l-.157.158c-.5.5-.867.878-1.372 1.161a4.35 4.35 0 0 1-1.971.513c-.572-.002-.983-.124-1.53-.28a20.04 20.04 0 0 1-8.717-5.128 20.04 20.04 0 0 1-5.129-8.718c-.155-.546-.278-.958-.28-1.53-.001-.63.205-1.42.513-1.97.284-.505.663-.873 1.162-1.372l.501-.502c.335-.329.647-.606.995-.782Zm1.805 1.784a1.001 1.001 0 0 0-.903 0c-.107.054-.24.17-.826.757l-.158.157c-.56.56-.712.723-.832.938a2.4 2.4 0 0 0-.256.985c0 .254.038.407.203.99a18.04 18.04 0 0 0 4.619 7.849 18.037 18.037 0 0 0 7.85 4.618c.582.165.735.203.989.204.285.001.736-.117.985-.257.215-.12.378-.27.938-.83l.157-.159c.587-.587.703-.72.757-.827a1 1 0 0 0 0-.902c-.054-.107-.17-.24-.757-.828l-.194-.194c-.386-.386-.473-.465-.538-.508a1.001 1.001 0 0 0-1.091 0c-.066.043-.153.122-.538.508-.093.093-.215.219-.364.325a2.045 2.045 0 0 1-1.723.294c-.173-.05-.314-.12-.42-.17A15.606 15.606 0 0 1 9.52 14.57a15.603 15.603 0 0 1-3.041-4.284c-.051-.106-.12-.246-.171-.419a2.044 2.044 0 0 1 .294-1.723c.106-.149.232-.27.325-.364.385-.385.465-.472.508-.538.215-.331.215-.76 0-1.09-.043-.066-.123-.153-.508-.539L6.73 5.42c-.586-.587-.719-.703-.826-.757Zm7.163 1.147a1 1 0 0 1 1.173-.79 6 6 0 0 1 4.74 4.74 1 1 0 0 1-1.962.383 4.001 4.001 0 0 0-3.16-3.16 1 1 0 0 1-.79-1.173Zm1.092-4.803a10.001 10.001 0 0 1 8.833 8.822 1 1 0 0 1-1.987.224 8.002 8.002 0 0 0-7.066-7.058 1 1 0 0 1 .22-1.988Z"/></symbol><symbol id="ic-mail" viewBox="0 0 24 24"><path fill="currentColor" d="m21 8.92-6.592 4.615c-.593.415-1.1.79-1.682.935a3 3 0 0 1-1.452 0c-.582-.146-1.089-.52-1.682-.935L3 8.92v6.28c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C5.361 19 5.942 19 6.8 19h10.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8.92ZM6.8 5c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875 1.536 1.536 0 0 0-.134.446l7.654 5.358c.729.51.883.6 1.02.633.159.04.325.04.484 0 .136-.034.291-.123 1.02-.633l7.653-5.358a1.54 1.54 0 0 0-.133-.446 2 2 0 0 0-.874-.874c-.156-.08-.38-.145-.82-.18C18.639 5 18.058 5 17.2 5H6.8ZM23 15.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H6.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C.999 16.702 1 16.024 1 15.2V8.8c0-.618 0-1.153.019-1.614a.997.997 0 0 1 .033-.5c.048-.538.145-1.035.384-1.502a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C5.298 2.999 5.976 3 6.8 3h10.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.238.467.336.964.384 1.502a.996.996 0 0 1 .033.5c.02.46.019.996.019 1.614v6.4Z"/></symbol><symbol id="ic-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M19 10a7 7 0 1 0-14 0c0 1.892.853 3.678 2.292 5.547 1.28 1.662 2.937 3.285 4.708 5.043 1.77-1.758 3.428-3.381 4.708-5.043C18.148 13.678 19 11.892 19 10Zm-5 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm5 0c0 2.526-1.147 4.74-2.708 6.767-1.551 2.014-3.618 3.973-5.585 5.94a1 1 0 0 1-1.414 0c-1.967-1.967-4.034-3.926-5.585-5.94C4.148 14.74 3 12.527 3 10a9 9 0 0 1 18 0Z"/></symbol><symbol id="ic-arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0V9.414l-8.293 8.293a1 1 0 1 1-1.414-1.414L14.586 8H7a1 1 0 0 1 0-2h10a1 1 0 0 1 1 1v10Z"/></symbol><symbol id="ic-arrow-r" viewBox="0 0 24 24"><path fill="currentColor" d="M13.293 4.293a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 1 1-1.414-1.414L18.586 13H3a1 1 0 1 1 0-2h15.586l-5.293-5.293a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="ic-users" viewBox="0 0 24 24"><path fill="currentColor" d="M16 21c0-.945-.001-1.604-.036-2.12-.035-.507-.1-.803-.193-1.028a3 3 0 0 0-1.623-1.623c-.225-.094-.521-.158-1.028-.193C12.604 16.001 11.945 16 11 16H8c-.945 0-1.604.001-2.12.036-.507.035-.803.1-1.028.192a3 3 0 0 0-1.623 1.624c-.094.225-.158.521-.193 1.028C3.001 19.396 3 20.055 3 21a1 1 0 1 1-2 0c0-.918 0-1.657.04-2.257.042-.608.13-1.146.34-1.656a5 5 0 0 1 2.707-2.706c.51-.211 1.048-.3 1.656-.341C6.343 14 7.082 14 8 14h3c.918 0 1.657 0 2.257.04.609.042 1.146.13 1.656.34a5 5 0 0 1 2.706 2.707c.211.51.3 1.047.341 1.656.04.6.04 1.339.04 2.257a1 1 0 1 1-2 0Zm5 0v-2a3.002 3.002 0 0 0-2.249-2.905 1 1 0 0 1 .498-1.938A5.002 5.002 0 0 1 23 19v2a1 1 0 1 1-2 0ZM12.5 7a3 3 0 1 0-6 0 3 3 0 0 0 6 0ZM17 7a3.001 3.001 0 0 0-1.875-2.782 1 1 0 0 1 .75-1.854 5 5 0 0 1 0 9.272 1 1 0 1 1-.75-1.854A3.001 3.001 0 0 0 17 7Zm-2.5 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/></symbol><symbol id="ic-building" viewBox="0 0 24 24"><path fill="currentColor" d="M14 15.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 13.4 15h-2.8c-.297 0-.459.001-.576.01l-.012.002-.001.012c-.01.117-.011.28-.011.576V20h4v-4.4ZM6.2 4c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C4.001 5.25 4 5.624 4 6.2V7a2 2 0 1 0 4 0 1 1 0 0 1 2 0 2 2 0 1 0 4 0 1 1 0 1 1 2 0 2 2 0 1 0 4 0v-.8c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 17.8 4H6.2ZM22 17.8c0 .543.001 1.012-.03 1.395-.033.396-.104.789-.297 1.167a3 3 0 0 1-1.31 1.31c-.379.194-.772.265-1.168.298-.383.031-.852.03-1.395.03H6.2c-.543 0-1.012.001-1.395-.03-.396-.033-.789-.104-1.167-.297a3 3 0 0 1-1.31-1.31c-.194-.379-.265-.772-.298-1.168C2 18.812 2 18.343 2 17.8V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C5.188 2 5.657 2 6.2 2h11.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395v11.6ZM16 20h1.8c.576 0 .949-.001 1.232-.024.272-.023.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.656.024-1.232v-7.337a3.989 3.989 0 0 1-5-.82A3.989 3.989 0 0 1 12 11a3.989 3.989 0 0 1-3-1.356 3.989 3.989 0 0 1-5 .819V17.8c0 .576.001.949.024 1.232.023.272.06.373.085.422.096.188.249.34.437.437.05.025.15.062.422.085.283.023.656.024 1.232.024H8v-4.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20Z"/></symbol><symbol id="ic-play" viewBox="0 0 24 24"><path fill="currentColor" d="M6.049 1.871c.384.018.714.17.964.305.293.16.642.392 1.029.65l10.516 7.011c.317.212.613.407.838.589.227.183.495.437.649.807a2 2 0 0 1 0 1.533c-.154.37-.422.625-.649.808-.225.182-.52.377-.838.59l-10.516 7.01c-.387.258-.736.491-1.03.65-.284.155-.675.331-1.131.304a2 2 0 0 1-1.476-.79c-.276-.365-.346-.788-.376-1.11C4 19.895 4 19.476 4 19.01V4.989c0-.465-.001-.884.03-1.216.029-.323.1-.746.375-1.11a2 2 0 0 1 1.476-.79l.168-.002ZM6 19.011c0 .505.001.814.021 1.034l.005.036.035-.015c.193-.106.452-.276.872-.556l10.515-7.01c.35-.234.555-.372.693-.483l.018-.018-.018-.017a10.9 10.9 0 0 0-.693-.48L6.933 4.49c-.42-.28-.678-.451-.872-.556-.012-.007-.024-.012-.035-.017 0 .012-.003.025-.005.038-.02.22-.021.53-.021 1.034v14.022Z"/></symbol></defs></svg>
+<a class="skip" href="#anfrage">Direkt zum Anfrageformular</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#top">
+        <span class="mk" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none" stroke="#FBFBFB" stroke-width="20" stroke-linejoin="miter">
+            <polygon points="100,14 174,57 174,143 100,186 26,143 26,57"/>
+            <polyline points="148,54 74,54 74,100 126,100 126,146 52,146"/>
+          </svg>
+        </span>
+        <span class="wm">RUND UMS HAUS</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a>
+        <a href="#preise">Preise</a><a href="#fragen">Fragen</a>
+      </nav>
+      <div class="bar-actions">
+        <a href="#anfrage" class="btn header-btn">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+          <span class="lbl-l">Angebot anfragen</span><span class="lbl-s">Anfragen</span>
+        </a>
+        <button type="button" class="burger" id="burger" aria-expanded="false"
+                aria-controls="site-menu" aria-label="Menü öffnen">
+          <span class="lines" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="site-menu" id="site-menu" aria-label="Menü" hidden>
+      <a href="#leistungen"><svg class="i" aria-hidden="true"><use href="#ic-brush"/></svg>Leistungen</a>
+      <a href="#ablauf"><svg class="i" aria-hidden="true"><use href="#ic-clipboard"/></svg>Ablauf</a>
+      <a href="#preise"><svg class="i" aria-hidden="true"><use href="#ic-clock"/></svg>Preise</a>
+      <a href="#fragen"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Fragen</a>
+      <a class="mi-kontakt" href="tel:+4917866721580">
+        <svg class="i" aria-hidden="true"><use href="#ic-phone"/></svg>
+        <span><b>0178 667 2158</b><small>Mobil, auch Festnetz 09402 9880947</small></span>
+      </a>
+      <a href="mailto:info.ums.haus@web.de">
+        <svg class="i" aria-hidden="true"><use href="#ic-mail"/></svg>
+        <span><b>info.ums.haus@web.de</b><small>Antwort meist am selben Tag</small></span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="stage">
+    <div class="sky" aria-hidden="true"></div>
+    <div class="subject" role="img" aria-label="Transporter von RUND UMS HAUS vor einem Wohnhaus in Regensburg"></div>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="inner">
+      <div class="wrap">
+        <div class="hero-grid">
+
+          <div class="hero-copy">
+            <h1>Alles rund ums Haus, aus einer Hand</h1>
+            <p class="sub">Gebäudereinigung, Entrümpelung, Umzug, Gartenarbeit und Kleinarbeiten in Regensburg und Umgebung. Ein Ansprechpartner für Hausverwaltungen, Vermieter, Eigentümer und Mieter.</p>
+            <div class="btn-row">
+              <a href="#anfrage" class="btn">
+                <span class="ic" aria-hidden="true"><svg class="i " aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+                Kostenloses Angebot anfragen
+              </a>
+              <a href="tel:+4917866721580" class="btn ghost plain">0178 667 2158</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Leistungen auf einen Blick">
+          <div class="prow"><svg class="i pi" aria-hidden="true"><use href="#ic-brush"/></svg><span class="pl">Gebäudereinigung</span><span class="pv">im festen Turnus</span></div>
+          <div class="prow"><svg class="i pi" aria-hidden="true"><use href="#ic-trash"/></svg><span class="pl">Entrümpelung</span><span class="pv">Festpreis nach Besichtigung</span></div>
+          <div class="prow"><svg class="i pi" aria-hidden="true"><use href="#ic-truck"/></svg><span class="pl">Umzug</span><span class="pv">inklusive Endreinigung</span></div>
+          <div class="prow"><svg class="i pi" aria-hidden="true"><use href="#ic-scissors"/></svg><span class="pl">Gartenarbeit</span><span class="pv">Grünschnitt inklusive</span></div>
+          <div class="prow"><svg class="i pi" aria-hidden="true"><use href="#ic-tool"/></svg><span class="pl">Kleinarbeiten</span><span class="pv">nach Aufwand</span></div>
+            <p class="pnote">Wir sehen uns Ihr Objekt kostenlos an und nennen Ihnen danach einen schriftlichen Festpreis, an den wir uns halten.</p>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-status">
+      <span class="road" aria-hidden="true"><svg class="i van"><use href="#ic-truck"/></svg></span>
+      <b>Wir gehen ran</b>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÜBER / PROBLEM ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Warum Kunden anrufen</span>
+        <h2>Ein Ansprechpartner statt fünf Dienstleister</h2>
+      </div>
+      <p class="side">Der Reinigungsdienst kommt, wann er will. Für den Garten ist ein anderer zuständig, für die Kleinreparatur ein dritter. Koordinieren dürfen Sie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS mit Linienraster ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="stats">
+      <div class="grid">
+        <div class="video has-photo">
+          <img class="ph" src="bilder/gebaeudereinigung-regensburg-treppenhaus.webp" alt="Treppenhaus einer Wohnanlage in Regensburg" width="1600" height="1066" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;border-radius:var(--r-card)">
+          <span class="play" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-play"/></svg></span>
+        </div>
+        <div class="counters">
+          <div class="counter-i"><div class="n">5</div><div class="l">Leistungen aus einer Hand, ein Zuständiger</div></div>
+          <div class="counter-i open"><div class="n"><span class="slot"></span></div><div class="l">Jahre am Markt <span class="todo">Angabe folgt</span></div></div>
+          <div class="counter-i open"><div class="n"><span class="slot"></span></div><div class="l">Objekte in Betreuung <span class="todo">Angabe folgt</span></div></div>
+        </div>
+      </div>
+      <p class="foot">Ein Anruf, ein Termin, eine Rechnung. Wir sehen uns Ihr Objekt kostenlos an und nennen Ihnen danach einen schriftlichen Festpreis, an den wir uns halten.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEISTUNGEN ===== -->
+<section class="sec band-grey" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Leistungen</span>
+        <h2>Fünf Bereiche, ein Betrieb</h2>
+      </div>
+      <div>
+        <p class="side">Sie können einzelne Leistungen beauftragen oder mehrere zusammen. Häufig hängen Entrümpelung, Umzug und Endreinigung ohnehin zusammen.</p>
+        <a href="#anfrage" class="btn" style="margin-top:20px">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+          Alle Leistungen
+        </a>
+      </div>
+    </div>
+    <div class="cards3">
+      <article class="svc">
+        <img class="ph" src="bilder/gebaeudereinigung-regensburg-teppich.webp" alt="Staubsauger bei der Unterhaltsreinigung eines Bodens" width="900" height="675" loading="lazy" decoding="async" style="height:190px;border-radius:var(--r-img);margin-bottom:20px">
+        <span class="num"><svg class="i sn" aria-hidden="true"><use href="#ic-brush"/></svg>01</span>
+        <h3>Gebäudereinigung</h3>
+        <p>Treppenhaus und Aufgang, Büro und Praxis im festen Turnus, Endreinigung nach Auszug bis besenrein, Fenster und Bauendreinigung.</p>
+        <a href="#anfrage" class="more">Angebot anfragen <span class="ic"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span></a>
+      </article>
+      <article class="svc">
+        <img class="ph" src="bilder/entruempelung-regensburg-abtransport.webp" alt="Beladener Transporter mit Kartons und Sackkarre bei einer Entrümpelung" width="900" height="600" loading="lazy" decoding="async" style="height:190px;border-radius:var(--r-img);margin-bottom:20px">
+        <span class="num"><svg class="i sn" aria-hidden="true"><use href="#ic-trash"/></svg>02</span>
+        <h3>Entrümpelung</h3>
+        <p>Keller, Dachboden, Garage, Wohnung, ganzes Haus. Auch nach einem Todesfall. Wir sortieren statt zu kippen und rechnen an, was noch Wert hat. Diskret.</p>
+        <a href="#anfrage" class="more">Angebot anfragen <span class="ic"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span></a>
+      </article>
+      <article class="svc">
+        <img class="ph" src="bilder/umzug-regensburg-moebeltransport.webp" alt="Möbeltransport bei einem Umzug in Regensburg" width="900" height="600" loading="lazy" decoding="async" style="height:190px;border-radius:var(--r-img);margin-bottom:20px">
+        <span class="num"><svg class="i sn" aria-hidden="true"><use href="#ic-truck"/></svg>03</span>
+        <h3>Umzug</h3>
+        <p>Privat, Büro und Praxis. Ab- und Aufbau der Möbel, sicher verpackter Transport, Beiladung für kleine Mengen, Endreinigung aus derselben Hand.</p>
+        <a href="#anfrage" class="more">Angebot anfragen <span class="ic"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span></a>
+      </article>
+      <article class="svc">
+        <img class="ph" src="bilder/gartenarbeit-regensburg-rasenpflege.webp" alt="Rasenmäher auf einer gepflegten Grünfläche" width="900" height="600" loading="lazy" decoding="async" style="height:190px;border-radius:var(--r-img);margin-bottom:20px">
+        <span class="num"><svg class="i sn" aria-hidden="true"><use href="#ic-scissors"/></svg>04</span>
+        <h3>Gartenarbeit</h3>
+        <p>Rasen mähen und vertikutieren, Hecken und Sträucher schneiden, Laub räumen, Beete pflegen. Den Grünschnitt nehmen wir mit.</p>
+        <a href="#anfrage" class="more">Angebot anfragen <span class="ic"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span></a>
+      </article>
+      <article class="svc">
+        <img class="ph" src="bilder/kleinarbeiten-regensburg-werkzeug.webp" alt="Werkzeug und Sortimentskasten für Kleinreparaturen rund ums Haus" width="900" height="601" loading="lazy" decoding="async" style="height:190px;border-radius:var(--r-img);margin-bottom:20px">
+        <span class="num"><svg class="i sn" aria-hidden="true"><use href="#ic-tool"/></svg>05</span>
+        <h3>Kleinarbeiten</h3>
+        <p>Möbel aufbauen und umstellen, Lampen und Regale montieren, Türen und Fenster einstellen, Mülltonnenservice.</p>
+        <p style="margin-top:12px"><span class="todo">Grenzen benennen: Elektro, Gas, Wasser?</span></p>
+        <a href="#anfrage" class="more">Angebot anfragen <span class="ic"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WARUM WIR ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="why">
+      <div class="imgs">
+        <div class="ph a"><div><p class="ph-t">Foto: Inhaber in Arbeitskleidung</p><p class="ph-s">Handyfoto vor dem Fahrzeug genügt</p></div></div>
+        <img class="ph b" src="bilder/gartenarbeit-regensburg-heckenschnitt.webp" alt="Heckenschnitt an einer Außenanlage" width="900" height="600" loading="lazy" decoding="async" style="height:178px;border-radius:var(--r-card)">
+      </div>
+      <div>
+        <span class="tag h-tag"><i></i>Warum wir</span>
+        <h2 style="font-size:clamp(28px,4.4vw,56px);max-width:16ch">Weil zuverlässig sein die halbe Arbeit ist</h2>
+        <p style="color:var(--muted);font-size:16.5px;margin-top:18px;max-width:52ch">Sauberkeit erwartet jeder. Was wirklich zählt, ist dass jemand kommt, sich meldet und die Sache erledigt, ohne dass Sie hinterhertelefonieren.</p>
+        <div class="why-list">
+          <div class="why-row"><span class="k"><svg class="i wk" aria-hidden="true"><use href="#ic-phone"/></svg>Eine Person am Telefon</span><span class="v">Mobil und Festnetz gehen an denselben Ansprechpartner. Kein Callcenter, keine wechselnden Gesichter.</span></div>
+          <div class="why-row"><span class="k"><svg class="i wk" aria-hidden="true"><use href="#ic-clipboard"/></svg>Preis steht vorher</span><span class="v">Kostenlose Besichtigung, danach ein schriftliches Angebot zum Festpreis. Keine Nachforderung.</span></div>
+          <div class="why-row"><span class="k"><svg class="i wk" aria-hidden="true"><use href="#ic-brush"/></svg>Fünf Leistungen</span><span class="v">Kein Abschieben zwischen Gewerken, keine Terminketten, die aneinander hängen.</span></div>
+          <div class="why-row open"><span class="k"><svg class="i wk" aria-hidden="true"><use href="#ic-shield"/></svg>Betriebshaftpflicht</span><span class="v">Bei Hausverwaltungen Ausschlusskriterium, nicht Verhandlungspunkt. <span class="todo">Deckungssumme folgt</span></span></div>
+        </div>
+        <div class="btn-row" style="margin-top:30px">
+          <a href="#anfrage" class="btn">
+            <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+            Angebot anfragen
+          </a>
+          <a href="tel:+4917866721580" class="btn ghost plain">0178 667 2158</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GROSSE AUSSAGE ===== -->
+<section class="statement band-blue">
+  <div class="wrap">
+    <h2>Wir kümmern uns<span class="loz blue" aria-hidden="true"></span>zuverlässig um<img class="ph inline-img" src="bilder/umzug-regensburg-umzugskartons.webp" alt="" width="900" height="600" loading="lazy" decoding="async">alles,<span class="loz grey" aria-hidden="true"></span>rund ums Haus</h2>
+    <a href="#leistungen" class="btn">
+      <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+      Leistungen ansehen
+    </a>
+    <p class="hint">Die beiden Formen und das kleine Feld in der Aussage sind Bild- und Farbflächen aus der Vorlage. Das Feld nimmt später ein kleines Foto auf.</p>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section class="sec" id="ablauf">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Ablauf</span>
+        <h2>So läuft es ab</h2>
+      </div>
+      <p class="side">Von der Anfrage bis zum fertigen Auftrag. Jeder Schritt mit einer Zeitangabe, damit Sie wissen, woran Sie sind.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="tag solid">Schritt 1</span>
+        <div class="ph"><div><p class="ph-t">Foto: Anruf oder Formular</p></div></div>
+        <h3>Sie melden sich</h3>
+        <p>Formular oder Anruf, beides geht. <span class="todo">Antwort in unter X Stunden</span></p>
+      </div>
+      <div class="step">
+        <span class="tag solid">Schritt 2</span>
+        <div class="ph"><div><p class="ph-t">Foto: Besichtigung</p></div></div>
+        <h3>Wir sehen es uns an</h3>
+        <p>Kostenlos und unverbindlich vor Ort. <span class="todo">rund X Minuten</span></p>
+      </div>
+      <div class="step">
+        <span class="tag solid">Schritt 3</span>
+        <div class="ph"><div><p class="ph-t">Foto: Angebot</p></div></div>
+        <h3>Preis schriftlich</h3>
+        <p>Festpreis. Was drin ist, steht drin. <span class="todo">in X Werktagen</span></p>
+      </div>
+      <div class="step">
+        <span class="tag solid">Schritt 4</span>
+        <img class="ph" src="bilder/gebaeudereinigung-regensburg-wischen.webp" alt="Reinigungskraft wischt den Boden bei der Ausführung eines Auftrags" width="900" height="600" loading="lazy" decoding="async" style="height:210px;border-radius:var(--r-img);margin-bottom:18px">
+        <h3>Wir erledigen es</h3>
+        <p>Zum vereinbarten Termin. Sie müssen nicht dabei sein.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ZIELGRUPPEN ===== -->
+<section class="sec band-grey">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Zwei Wege</span>
+        <h2>Wofür brauchen Sie uns</h2>
+      </div>
+      <p class="side">Gewerbe und Privat werden gleichwertig bedient. Beide bekommen denselben Ansprechpartner.</p>
+    </div>
+    <div class="fork">
+      <div class="f accent">
+        <h3><svg class="i fh" aria-hidden="true"><use href="#ic-building"/></svg>Hausverwaltungen, WEG und Vermieter</h3>
+        <p>Sie haben Objekte zu betreuen und wenig Lust, jeder Kleinigkeit hinterherzutelefonieren.</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Fester Turnus, feste Ansprechperson</li>
+          <li><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Ein Ansprechpartner für mehrere Objekte</li>
+          <li><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Reinigung nach Auszug bis besenrein</li>
+        </ul>
+        <a href="#anfrage" class="btn light">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+          Angebot für Ihr Objekt
+        </a>
+      </div>
+      <div class="f">
+        <h3><svg class="i fh" aria-hidden="true"><use href="#ic-users"/></svg>Private Eigentümer und Mieter</h3>
+        <p>Ob Auszug, Haushaltsauflösung, ein Garten, der zu viel geworden ist, oder der Schrank, der nicht allein die Treppe hochkommt.</p>
+        <ul>
+          <li><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Kostenlose Besichtigung vor Ort</li>
+          <li><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Fester Preis, keine Nachforderung</li>
+          <li><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg>Auch kurzfristig, wenn eine Frist drückt</li>
+        </ul>
+        <a href="#anfrage" class="btn">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+          Angebot für mein Zuhause
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA-BLOCK ===== -->
+<section class="sec">
+<div class="wrap">
+  <div class="cta">
+    <div>
+      <span class="tag on-dark h-tag"><i></i>Kostenlos und unverbindlich</span>
+      <h2>Wir sehen uns Ihr Objekt an und nennen Ihnen den Preis</h2>
+      <p>Kein Vertreterbesuch, kein Abo, keine Nachforderung. Nach der Besichtigung bekommen Sie ein schriftliches Angebot zum Festpreis.</p>
+      <div class="btn-row">
+        <a href="#anfrage" class="btn light">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+          Angebot anfragen
+        </a>
+        <a href="tel:+4917866721580" class="btn plain" style="background:transparent;border-color:rgba(251,251,251,.5);color:#FBFBFB">0178 667 2158</a>
+      </div>
+    </div>
+    <div class="art">
+      <img class="ph on-dark" src="bilder/entruempelung-regensburg-kartons.webp" alt="Kartons werden bei einer Entrümpelung gepackt und beschriftet" width="900" height="600" loading="lazy" decoding="async" style="height:300px;border-radius:var(--r-img)">
+      <div class="spinner" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 159 159">
+          <defs><path id="circ" d="M79.5,79.5 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+          <text><textPath href="#circ" startOffset="0">Jetzt anfragen · Jetzt anfragen · </textPath></text>
+        </svg>
+        <span class="core"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== BEWEISE ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Zeigen statt behaupten</span>
+        <h2>Vorher und nachher</h2>
+      </div>
+      <p class="side">Die Bilder kommen von echten Aufträgen, sobald die ersten dokumentiert sind. In Regensburg zeigt das bisher praktisch kein Anbieter.</p>
+    </div>
+    <div class="bw" role="group" aria-roledescription="Karussell" aria-label="Vorher und nachher">
+      <div class="bw-viewport">
+        <div class="bw-track" id="bw-track">
+        <article class="bw-slide" id="bw-slide-0" role="tabpanel"
+                 aria-roledescription="Beispiel" aria-label="1 von 3: Kellerentrümpelung">
+          <div class="bw-pair">
+            <figure class="bw-half">
+              <span class="bw-badge">Vorher</span>
+              <div class="ph"><div><p class="ph-t">Foto: Keller vorher</p><p class="ph-s">vollgestellt, gleicher Standpunkt</p></div></div>
+            </figure>
+            <figure class="bw-half">
+              <span class="bw-badge is-after">Nachher</span>
+              <div class="ph"><div><p class="ph-t">Foto: Keller nachher</p><p class="ph-s">besenrein, gleicher Standpunkt</p></div></div>
+            </figure>
+          </div>
+          <div class="bw-overlay">
+            <div class="bw-card">
+              <span class="tag"><i></i>Entrümpelung</span>
+              <h3>Kellerentrümpelung</h3>
+              <p>Vom vollgestellten Keller bis besenrein, inklusive fachgerechter Entsorgung und Entsorgungsnachweis auf Wunsch.</p>
+              <div class="bw-meta">
+                <span><svg class="i" aria-hidden="true"><use href="#ic-pin"/></svg>Regensburg</span>
+                <span><svg class="i" aria-hidden="true"><use href="#ic-clock"/></svg>Termin nach Besichtigung</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="bw-slide" id="bw-slide-1" role="tabpanel"
+                 aria-roledescription="Beispiel" aria-label="2 von 3: Treppenhausreinigung">
+          <div class="bw-pair">
+            <figure class="bw-half">
+              <span class="bw-badge">Vorher</span>
+              <div class="ph"><div><p class="ph-t">Foto: Treppenhaus vorher</p><p class="ph-s">gleicher Ausschnitt</p></div></div>
+            </figure>
+            <figure class="bw-half">
+              <span class="bw-badge is-after">Nachher</span>
+              <div class="ph"><div><p class="ph-t">Foto: Treppenhaus nachher</p><p class="ph-s">gleicher Ausschnitt</p></div></div>
+            </figure>
+          </div>
+          <div class="bw-overlay">
+            <div class="bw-card">
+              <span class="tag"><i></i>Gebäudereinigung</span>
+              <h3>Treppenhausreinigung</h3>
+              <p>Wohnanlage in Regensburg, im festen Turnus betreut. Ein Ansprechpartner für alle Objekte der Verwaltung.</p>
+              <div class="bw-meta">
+                <span><svg class="i" aria-hidden="true"><use href="#ic-pin"/></svg>Regensburg</span>
+                <span><svg class="i" aria-hidden="true"><use href="#ic-clock"/></svg>Fester Turnus</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="bw-slide" id="bw-slide-2" role="tabpanel"
+                 aria-roledescription="Beispiel" aria-label="3 von 3: Heckenschnitt">
+          <div class="bw-pair">
+            <figure class="bw-half">
+              <span class="bw-badge">Vorher</span>
+              <div class="ph"><div><p class="ph-t">Foto: Hecke vorher</p><p class="ph-s">gleicher Standpunkt</p></div></div>
+            </figure>
+            <figure class="bw-half">
+              <span class="bw-badge is-after">Nachher</span>
+              <div class="ph"><div><p class="ph-t">Foto: Hecke nachher</p><p class="ph-s">gleicher Standpunkt</p></div></div>
+            </figure>
+          </div>
+          <div class="bw-overlay">
+            <div class="bw-card">
+              <span class="tag"><i></i>Gartenarbeit</span>
+              <h3>Heckenschnitt</h3>
+              <p>Inklusive Grünschnittentsorgung, ohne dass Sie etwas wegbringen müssen. Auf Wunsch im festen Turnus.</p>
+              <div class="bw-meta">
+                <span><svg class="i" aria-hidden="true"><use href="#ic-pin"/></svg>Umgebung Regensburg</span>
+                <span><svg class="i" aria-hidden="true"><use href="#ic-clock"/></svg>Ein Arbeitstag</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="bw-ctrl">
+        <button type="button" class="bw-btn" id="bw-prev" aria-label="Vorheriges Beispiel" aria-controls="bw-track">
+          <svg class="i prev-i" aria-hidden="true"><use href="#ic-arrow-r"/></svg>
+        </button>
+        <button type="button" class="bw-btn" id="bw-next" aria-label="Nächstes Beispiel" aria-controls="bw-track">
+          <svg class="i" aria-hidden="true"><use href="#ic-arrow-r"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="bw-tabs" role="tablist" aria-label="Beispiel wählen">
+        <button type="button" class="bw-tab" role="tab" id="bw-tab-0"
+                aria-controls="bw-slide-0" aria-selected="true"><i aria-hidden="true"></i>Kellerentrümpelung</button>
+        <button type="button" class="bw-tab" role="tab" id="bw-tab-1"
+                aria-controls="bw-slide-1" aria-selected="false"><i aria-hidden="true"></i>Treppenhausreinigung</button>
+        <button type="button" class="bw-tab" role="tab" id="bw-tab-2"
+                aria-controls="bw-slide-2" aria-selected="false"><i aria-hidden="true"></i>Heckenschnitt</button>
+      <span class="bw-count" id="bw-count">01 von 03</span>
+    </div>
+    <p class="bw-note"><span class="todo">Bildpaare fehlen noch</span> Jedes Paar wird vom selben Standpunkt aufgenommen, vorher und nachher, damit der Unterschied nachvollziehbar bleibt.</p>
+    <div class="voices">
+      <div class="voice"><p>„Platzhalter für eine echte Kundenstimme im Wortlaut."</p><div class="who"><span class="av"></span><span><b>Name folgt</b><small>Rolle und Objekttyp</small></span></div></div>
+      <div class="voice"><p>„Platzhalter für eine Stimme aus dem Gewerbebereich."</p><div class="who"><span class="av"></span><span><b>Name folgt</b><small>Hausverwaltung, Regensburg</small></span></div></div>
+      <div class="voice"><p>„Platzhalter für eine Stimme aus dem Privatbereich."</p><div class="who"><span class="av"></span><span><b>Name folgt</b><small>Haushaltsauflösung, Regensburg</small></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREISE ===== -->
+<section class="sec band-grey" id="preise">
+  <div class="pr-bg" aria-hidden="true">
+    <div class="pr-img is-on" data-cat="reinigung" data-src="bilder/gebaeudereinigung-regensburg-treppenhaus.webp" style="background-image:url(&quot;bilder/gebaeudereinigung-regensburg-treppenhaus.webp&quot;)"></div>
+    <div class="pr-img" data-cat="entruempelung" data-src="bilder/entruempelung-regensburg-abtransport.webp"></div>
+    <div class="pr-img" data-cat="umzug" data-src="bilder/umzug-regensburg-moebeltransport.webp"></div>
+    <div class="pr-img" data-cat="garten" data-src="bilder/gartenarbeit-regensburg-rasenpflege.webp"></div>
+    <div class="pr-img" data-cat="kleinarbeiten" data-src="bilder/kleinarbeiten-regensburg-werkzeug.webp"></div>
+  </div>
+  <div class="pr-glass" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Offen gesagt</span>
+        <h2>Was kostet das</h2>
+      </div>
+      <p class="side">Pauschale Preise wären unseriös, weil kein Keller wie der andere ist. Was den Preis bestimmt, sagen wir Ihnen aber offen.</p>
+    </div>
+    <div class="calc-wrap">
+
+      <div class="calc" id="calc-panel" role="tabpanel" aria-labelledby="ctab-reinigung">
+        <div class="calc-top">
+          <span class="tag"><i></i>Preisrechner</span>
+          <span class="todo" id="calc-flag">Preise noch offen</span>
+        </div>
+        <h3 class="calc-title" id="calc-title">Gebäudereinigung</h3>
+        <p class="calc-lead" id="calc-lead">Sagen Sie uns die drei Angaben, die den Preis bestimmen. Sie bekommen sofort einen Richtwert und danach einen schriftlichen Festpreis.</p>
+
+        <div class="calc-fields" id="calc-fields">
+          <label class="field wide"><span>Was soll gereinigt werden</span>
+            <select name="objekt"><option>Treppenhaus und Aufgang</option><option>Büro</option><option>Praxis</option><option>Endreinigung nach Auszug</option><option>Fenster</option><option>Bauendreinigung</option></select></label>
+          <label class="field"><span>Fläche in Quadratmetern</span>
+            <input type="number" min="0" inputmode="numeric" name="flaeche" placeholder="zum Beispiel 120"></label>
+          <label class="field"><span>Wie oft</span>
+            <select name="turnus"><option>wöchentlich</option><option>alle zwei Wochen</option><option>monatlich</option><option>einmalig</option></select></label>
+        </div>
+
+        <div class="calc-out">
+          <span class="k">Ihr Richtwert<small id="calc-basis">nach Ihren Angaben</small></span>
+          <span class="v" id="calc-value">
+            <span class="pre">ab</span><span class="slot" aria-hidden="true"></span><span class="sr">Preis steht noch nicht fest</span><span class="pre">Euro je Einsatz<span class="star" aria-hidden="true">*</span></span>
+          </span>
+        </div>
+
+        <div class="calc-cta">
+          <a href="#anfrage" class="btn" id="calc-cta">
+            <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+            Festpreis anfragen
+          </a>
+          <a href="tel:+4917866721580" class="btn ghost">
+            <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-phone"/></svg></span>
+            0178 667 2158
+          </a>
+        </div>
+
+        <p class="calc-note">* Ab-Preis, also der niedrigste Preis für diese Leistung, keine Pauschale. Die Ab-Preise werden eingetragen, sobald sie feststehen. Verbindlich wird es nach der kostenlosen Besichtigung: schriftlicher Festpreis, an den wir uns halten, ohne Nachforderung.</p>
+        <p class="calc-factors" id="calc-factors"><b>Was den Preis bestimmt:</b> Fläche, Turnus, Ausstattung, Verschmutzungsgrad</p>
+      </div>
+
+      <div class="calc-tabs" role="tablist" aria-label="Leistung wählen">
+        <button type="button" class="ctab" role="tab" id="ctab-reinigung" data-cat="reinigung"
+                aria-controls="calc-panel" aria-selected="true"><svg class="i" aria-hidden="true"><use href="#ic-brush"/></svg>Gebäudereinigung</button>
+        <button type="button" class="ctab" role="tab" id="ctab-entruempelung" data-cat="entruempelung"
+                aria-controls="calc-panel" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#ic-trash"/></svg>Entrümpelung</button>
+        <button type="button" class="ctab" role="tab" id="ctab-umzug" data-cat="umzug"
+                aria-controls="calc-panel" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#ic-truck"/></svg>Umzug</button>
+        <button type="button" class="ctab" role="tab" id="ctab-garten" data-cat="garten"
+                aria-controls="calc-panel" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#ic-scissors"/></svg>Gartenarbeit</button>
+        <button type="button" class="ctab" role="tab" id="ctab-kleinarbeiten" data-cat="kleinarbeiten"
+                aria-controls="calc-panel" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#ic-tool"/></svg>Kleinarbeiten</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EINSATZGEBIET ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Lokal unterwegs</span>
+        <h2><svg class="i gh" aria-hidden="true"><use href="#ic-pin"/></svg>Regensburg und Landkreis</h2>
+      </div>
+      <p class="side">Es werden nur Orte genannt, die auch wirklich bedient werden. Die Orte mit Fragezeichen muss der Betrieb bestätigen.</p>
+    </div>
+    <div class="area">
+      <span>Regensburg</span><span>Altstadt</span><span>Stadtamhof</span><span>Kumpfmühl</span>
+      <span>Königswiesen</span><span>Burgweinting</span><span>Reinhausen</span>
+      <span class="open">Barbing?</span><span class="open">Neutraubling?</span><span class="open">Obertraubling?</span>
+      <span class="open">Tegernheim?</span><span class="open">Donaustauf?</span><span class="open">Sünching?</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="fragen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Häufige Fragen</span>
+        <h2>Das werden wir oft gefragt</h2>
+      </div>
+      <p class="side">Antworten, die auch dann helfen, wenn Sie am Ende einen anderen beauftragen.</p>
+    </div>
+    <div class="panel">
+    <div class="faq faq-in-panel">
+      <details open>
+        <summary>Was kostet eine Entrümpelung in Regensburg?</summary>
+        <div class="a">Der Preis einer Entrümpelung richtet sich nach Menge, Zugang, Etage, Anteil an Sondermüll und danach, wie viel sich noch verwerten lässt. Wir sehen uns das kostenlos vor Ort an und nennen Ihnen danach einen schriftlichen Festpreis, an den wir uns halten.</div>
+      </details>
+      <details>
+        <summary>Was bedeutet besenrein?</summary>
+        <div class="a">Besenrein bedeutet, dass die Wohnung geräumt und grob gereinigt übergeben wird: Böden gekehrt, keine losen Gegenstände, keine Abfälle. Eine Endreinigung mit Bad, Küche und Fenstern geht darüber hinaus und wird gesondert vereinbart.</div>
+      </details>
+      <details>
+        <summary>Wohin kommt der Müll?</summary>
+        <div class="a">Wir entsorgen fachgerecht und trennen dabei. In der Stadt Regensburg nimmt der Recyclinghof in der Markomannenstraße 3 Sperrmüll und Problemabfälle von Bürgern der Stadt kostenlos an, dazu kommt die Müllumladestation in der Hofer Straße 30. Im Landkreis Regensburg lässt sich die Sperrmüllabholung online oder über die Gemeindeverwaltung buchen, dazu gibt es Wertstoffhöfe unter anderem in Neutraubling. Einen Entsorgungsnachweis bekommen Sie auf Wunsch.</div>
+      </details>
+      <details>
+        <summary>Brauche ich für den Umzug eine Halteverbotszone?</summary>
+        <div class="a">Für einen Umzug in Regensburg beantragen Sie das Haltverbot beim Amt für öffentliche Ordnung, Johann-Hösl-Straße 11, Zimmer 119, Telefon 0941 507-3323. Die Stadt berechnet 20 Euro für ein bis drei Tage, 30 Euro ab einer Woche und 60 Euro ab einem Monat, dazu 25 Euro Park-Ausnahmegenehmigung je Umzug. Rechnen Sie mit rund 14 Tagen Bearbeitungszeit. Dazu kommen Aufstellung und Miete der Schilder. Wir sagen Ihnen rechtzeitig Bescheid, damit der Vorlauf reicht.</div>
+      </details>
+      <details>
+        <summary>Arbeiten Sie auch für Hausverwaltungen?</summary>
+        <div class="a">Ja. Wir übernehmen Treppenhausreinigung, Außenanlagen, Reinigung nach Mieterwechsel, Entrümpelung von Keller und Dachboden und Kleinreparaturen, im festen Turnus oder auf Abruf. Sie haben dabei einen Ansprechpartner für alle Objekte.</div>
+      </details>
+      <details>
+        <summary>Muss ich bei der Entrümpelung dabei sein?</summary>
+        <div class="a">Nein. Wenn Sie möchten, übernehmen wir nach Schlüsselübergabe alles allein und melden uns, wenn es fertig ist. Persönliche Dinge, Fotos und Papiere legen wir zur Seite, statt sie mit zu entsorgen. Auf Wunsch arbeiten wir so, dass im Haus möglichst wenig davon mitbekommt.</div>
+      </details>
+      <details>
+        <summary>Kann ich mehrere Leistungen zusammen beauftragen?</summary>
+        <div class="a">Ja, das ist der Normalfall. Häufig hängen Entrümpelung, Umzug und Endreinigung zusammen. Sie bekommen dafür einen Termin, einen Ansprechpartner und eine Rechnung.</div>
+      </details>
+      <details>
+        <summary>Was ist, wenn beim Arbeiten etwas beschädigt wird?</summary>
+        <div class="a"><span class="todo">Antwort fehlt noch. Betriebshaftpflicht und Deckungssumme. Ohne diese Antwort kommt kein Auftrag von einer Hausverwaltung zustande.</span></div>
+      </details>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANFRAGE ===== -->
+<section class="sec band-tint" id="anfrage">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag h-tag"><i></i>Anfrage</span>
+        <h2 style="font-size:clamp(38px,9vw,128px);letter-spacing:-.05em">Angebot anfragen</h2>
+      </div>
+      <p class="side">Ein Satz reicht. Wir melden uns, sehen es uns kostenlos an und nennen Ihnen einen Festpreis.</p>
+    </div>
+    <div class="book">
+      <div class="visual">
+        <div class="ph"><div><p class="ph-t">Foto: Inhaber</p><p class="ph-s">dasselbe Bild wie oben</p></div></div>
+        <div class="callbox">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-phone"/></svg></span>
+          <span><b>0178 667 2158</b><small>Oder Festnetz 09402 9880947</small></span>
+        </div>
+      </div>
+      <form action="#" method="post" novalidate>
+        <div class="two">
+          <label class="field"><span>Name</span><input type="text" name="name" autocomplete="name" placeholder="Vor- und Nachname" required></label>
+          <label class="field"><span>Telefon oder E-Mail</span><input type="text" name="kontakt" autocomplete="tel" placeholder="Damit wir zurückkommen können" required></label>
+        </div>
+        <label class="field"><span>Um welche Leistung geht es</span>
+          <select name="leistung">
+            <option>Gebäudereinigung</option><option>Entrümpelung oder Haushaltsauflösung</option>
+            <option>Umzug</option><option>Gartenarbeit</option><option>Kleinarbeiten</option>
+            <option>Mehreres zusammen</option>
+          </select>
+        </label>
+        <label class="field"><span>Wo ist das Objekt</span><input type="text" name="ort" autocomplete="postal-code" placeholder="Ort oder Postleitzahl" required></label>
+        <label class="field"><span>Worum geht es (optional)</span><textarea name="nachricht" placeholder="Ein Satz reicht"></textarea></label>
+        <button type="submit" class="btn" style="border:none;cursor:pointer">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-arrow"/></svg></span>
+          Kostenloses Angebot anfragen
+        </button>
+        <p style="margin-top:14px;font-size:14.5px;color:var(--muted)">Unverbindlich. Kein Vertreterbesuch, kein Abo. <span class="todo">Antwort meist in unter X Stunden</span></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="block">
+      <div class="newsletter">
+        <div>
+          <h3>Ein Anruf, und die Sache ist vom Tisch</h3>
+          <p>Erreichbar unter Mobil und Festnetz. Wir melden uns zurück, auch wenn wir gerade auf der Leiter stehen.</p>
+        </div>
+        <a href="tel:+4917866721580" class="btn light">
+          <span class="ic" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#ic-phone"/></svg></span>
+          0178 667 2158
+        </a>
+      </div>
+      <div class="f-grid">
+        <div class="f-brand">
+          <span class="wm">RUND UMS HAUS</span>
+          <p>Gebäudereinigung, Entrümpelung, Umzug, Gartenarbeit und Kleinarbeiten in Regensburg, im Landkreis und in der Umgebung.</p>
+          <p style="margin-top:14px"><span class="todo on-dark">Anschrift fürs Impressum</span></p>
+        </div>
+        <div class="f-col">
+          <h4>Leistungen</h4>
+          <a href="#leistungen">Gebäudereinigung</a><a href="#leistungen">Entrümpelung</a>
+          <a href="#leistungen">Umzug</a><a href="#leistungen">Gartenarbeit</a><a href="#leistungen">Kleinarbeiten</a>
+        </div>
+        <div class="f-col">
+          <h4>Kontakt</h4>
+          <a href="tel:+4917866721580"><svg class="i fo" aria-hidden="true"><use href="#ic-phone"/></svg>0178 667 2158</a>
+          <a href="tel:+4994029880947">09402 9880947</a>
+          <a href="mailto:info.ums.haus@web.de"><svg class="i fo" aria-hidden="true"><use href="#ic-mail"/></svg>info.ums.haus@web.de</a>
+          <a href="#">Impressum</a><a href="#">Datenschutz</a>
+        </div>
+      </div>
+      <div class="f-bot"><span>© 2026 RUND UMS HAUS</span><span>Stand: 10.09.2026</span></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"RUND UMS HAUS",
+"description":"Gebäudereinigung, Entrümpelung, Umzug, Gartenarbeit und Kleinarbeiten in Regensburg und Umgebung. Ein Ansprechpartner für Gewerbe und Privatkunden.",
+"telephone":["+49 178 6672158","+49 9402 9880947"],"email":"info.ums.haus@web.de",
+"areaServed":[{"@type":"City","name":"Regensburg"},{"@type":"AdministrativeArea","name":"Landkreis Regensburg"}],
+"knowsLanguage":"de",
+"makesOffer":[
+{"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Gebäudereinigung","areaServed":"Regensburg"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Entrümpelung und Haushaltsauflösung","areaServed":"Regensburg"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Umzug","areaServed":"Regensburg"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Gartenarbeit und Grünpflege","areaServed":"Regensburg"}},
+{"@type":"Offer","itemOffered":{"@type":"Service","serviceType":"Kleinarbeiten im und ums Haus","areaServed":"Regensburg"}}]}
+</script>
+<!-- address und aggregateRating fehlen bewusst: Anschrift liegt nicht vor, Bewertungen existieren noch nicht. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet eine Entrümpelung in Regensburg?","acceptedAnswer":{"@type":"Answer","text":"Der Preis einer Entrümpelung richtet sich nach Menge, Zugang, Etage, Anteil an Sondermüll und danach, wie viel sich noch verwerten lässt. Wir sehen uns das kostenlos vor Ort an und nennen Ihnen danach einen schriftlichen Festpreis, an den wir uns halten."}},
+{"@type":"Question","name":"Was bedeutet besenrein?","acceptedAnswer":{"@type":"Answer","text":"Besenrein bedeutet, dass die Wohnung geräumt und grob gereinigt übergeben wird: Böden gekehrt, keine losen Gegenstände, keine Abfälle. Eine Endreinigung mit Bad, Küche und Fenstern geht darüber hinaus und wird gesondert vereinbart."}},
+{"@type":"Question","name":"Wohin kommt der Müll?","acceptedAnswer":{"@type":"Answer","text":"Wir entsorgen fachgerecht und trennen dabei. In der Stadt Regensburg nimmt der Recyclinghof in der Markomannenstraße 3 Sperrmüll und Problemabfälle von Bürgern der Stadt kostenlos an, dazu kommt die Müllumladestation in der Hofer Straße 30. Im Landkreis Regensburg lässt sich die Sperrmüllabholung online oder über die Gemeindeverwaltung buchen, dazu gibt es Wertstoffhöfe unter anderem in Neutraubling. Einen Entsorgungsnachweis bekommen Sie auf Wunsch."}},
+{"@type":"Question","name":"Brauche ich für den Umzug eine Halteverbotszone?","acceptedAnswer":{"@type":"Answer","text":"Für einen Umzug in Regensburg beantragen Sie das Haltverbot beim Amt für öffentliche Ordnung, Johann-Hösl-Straße 11, Zimmer 119, Telefon 0941 507-3323. Die Stadt berechnet 20 Euro für ein bis drei Tage, 30 Euro ab einer Woche und 60 Euro ab einem Monat, dazu 25 Euro Park-Ausnahmegenehmigung je Umzug. Rechnen Sie mit rund 14 Tagen Bearbeitungszeit."}},
+{"@type":"Question","name":"Arbeiten Sie auch für Hausverwaltungen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Wir übernehmen Treppenhausreinigung, Außenanlagen, Reinigung nach Mieterwechsel, Entrümpelung von Keller und Dachboden und Kleinreparaturen, im festen Turnus oder auf Abruf. Sie haben dabei einen Ansprechpartner für alle Objekte."}},
+{"@type":"Question","name":"Muss ich bei der Entrümpelung dabei sein?","acceptedAnswer":{"@type":"Answer","text":"Nein. Wenn Sie möchten, übernehmen wir nach Schlüsselübergabe alles allein und melden uns, wenn es fertig ist. Persönliche Dinge, Fotos und Papiere legen wir zur Seite, statt sie mit zu entsorgen."}},
+{"@type":"Question","name":"Kann ich mehrere Leistungen zusammen beauftragen?","acceptedAnswer":{"@type":"Answer","text":"Ja, das ist der Normalfall. Häufig hängen Entrümpelung, Umzug und Endreinigung zusammen. Sie bekommen dafür einen Termin, einen Ansprechpartner und eine Rechnung."}}]}
+</script>
+
+<script>
+/* ===========================================================================
+   Zwei kleine Bausteine, kein Framework.
+   1. Karussell "Vorher und nachher": Pfeile, Umschalter, Zaehler.
+   2. Preisrechner: Felder je Leistung, Richtwert, Uebergabe ins Formular.
+
+   Wichtig zu den Preisen: In PREISE steht bewusst ueberall null. Solange kein
+   Wert eingetragen ist, zeigt die Karte einen gestrichelten Platzhalter statt
+   einer Zahl. Erfundene Preise waeren hier das groesste Risiko. Sobald die
+   Ab-Preise feststehen, nur die Zahl bei "ab" eintragen, der Rest laeuft.
+   =========================================================================== */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia &&
+               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ------------------------------------------------------------------ 0. Menue */
+  (function () {
+    var knopf = document.getElementById('burger');
+    var menue = document.getElementById('site-menu');
+    if (!knopf || !menue) return;
+    var breit = window.matchMedia('(min-width: 1000px)');
+
+    function auf() {
+      menue.hidden = false;
+      knopf.setAttribute('aria-expanded', 'true');
+      knopf.setAttribute('aria-label', 'Menü schließen');
+    }
+    function zu(zurueck) {
+      menue.hidden = true;
+      knopf.setAttribute('aria-expanded', 'false');
+      knopf.setAttribute('aria-label', 'Menü öffnen');
+      if (zurueck) knopf.focus();
+    }
+    function offen() { return knopf.getAttribute('aria-expanded') === 'true'; }
+
+    knopf.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (offen()) { zu(false); } else { auf(); }
+    });
+
+    /* Ein Klick auf einen Link springt zum Abschnitt, das Menue geht zu. */
+    Array.prototype.forEach.call(menue.querySelectorAll('a'), function (a) {
+      a.addEventListener('click', function () { zu(false); });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (offen() && !menue.contains(e.target) && e.target !== knopf) zu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && offen()) zu(true);
+    });
+
+    /* Wird das Fenster breit, uebernehmen wieder die Links in der Leiste. */
+    function pruefe() { if (breit.matches && offen()) zu(false); }
+    if (breit.addEventListener) { breit.addEventListener('change', pruefe); }
+    else if (breit.addListener) { breit.addListener(pruefe); }
+    window.addEventListener('resize', pruefe);
+  }());
+
+  /* ---------------------------------------------------------------- 1. Karussell */
+  (function () {
+    var track = document.getElementById('bw-track');
+    if (!track) return;
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.bw-slide'));
+    var tabs   = Array.prototype.slice.call(document.querySelectorAll('.bw-tab'));
+    var prev   = document.getElementById('bw-prev');
+    var next   = document.getElementById('bw-next');
+    var count  = document.getElementById('bw-count');
+    var at = 0;
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    function go(i, smooth) {
+      at = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({
+        left: slides[at].offsetLeft - track.offsetLeft,
+        behavior: (smooth && !reduce) ? 'smooth' : 'auto'
+      });
+      paint();
+    }
+
+    function paint() {
+      tabs.forEach(function (t, i) { t.setAttribute('aria-selected', i === at ? 'true' : 'false'); });
+      if (count) count.textContent = pad(at + 1) + ' von ' + pad(slides.length);
+      if (prev) prev.disabled = (at === 0);
+      if (next) next.disabled = (at === slides.length - 1);
+    }
+
+    /* Beim Wischen mitzaehlen: die naechstgelegene Folie gewinnt. */
+    var t = null;
+    track.addEventListener('scroll', function () {
+      window.clearTimeout(t);
+      t = window.setTimeout(function () {
+        var x = track.scrollLeft + track.offsetLeft, best = 0, d = Infinity;
+        slides.forEach(function (sl, i) {
+          var dd = Math.abs(sl.offsetLeft - x);
+          if (dd < d) { d = dd; best = i; }
+        });
+        at = best; paint();
+      }, 90);
+    }, { passive: true });
+
+    if (prev) prev.addEventListener('click', function () { go(at - 1, true); });
+    if (next) next.addEventListener('click', function () { go(at + 1, true); });
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { go(i, true); });
+      tab.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null;
+        if (n === null) return;
+        e.preventDefault();
+        n = (n + tabs.length) % tabs.length;
+        tabs[n].focus(); go(n, true);
+      });
+    });
+
+    paint();
+  }());
+
+  /* ------------------------------------------------------------- 2. Preisrechner */
+  (function () {
+    var panel = document.getElementById('calc-panel');
+    if (!panel) return;
+
+    /* Ab-Preise: null heisst "steht noch nicht fest" und zeigt den Platzhalter. */
+    var PREISE = {
+      reinigung:     { ab: null, einheit: 'je Einsatz' },
+      entruempelung: { ab: null, einheit: 'je Auftrag' },
+      umzug:         { ab: null, einheit: 'je Umzug' },
+      garten:        { ab: null, einheit: 'je Einsatz' },
+      kleinarbeiten: { ab: null, einheit: 'je Stunde' }
+    };
+
+    var DATEN = {
+      reinigung: {
+        titel: 'Gebäudereinigung',
+        lead: 'Drei Angaben genügen. Sie bekommen einen Richtwert und danach einen schriftlichen Festpreis.',
+        formular: 'Gebäudereinigung',
+        faktoren: 'Fläche, Turnus, Ausstattung, Verschmutzungsgrad',
+        felder: [
+          { id: 'objekt', label: 'Was soll gereinigt werden', wide: true, opt:
+            ['Treppenhaus und Aufgang', 'Büro', 'Praxis', 'Endreinigung nach Auszug', 'Fenster', 'Bauendreinigung'] },
+          { id: 'flaeche', label: 'Fläche in Quadratmetern', typ: 'zahl', platzhalter: 'zum Beispiel 120' },
+          { id: 'turnus', label: 'Wie oft', opt:
+            ['wöchentlich', 'alle zwei Wochen', 'monatlich', 'einmalig'] }
+        ]
+      },
+      entruempelung: {
+        titel: 'Entrümpelung',
+        lead: 'Menge und Zugang bestimmen den Preis. Was noch Wert hat, rechnen wir an.',
+        formular: 'Entrümpelung oder Haushaltsauflösung',
+        faktoren: 'Menge, Zugang, Etage, Sondermüll und das, was sich noch verwerten lässt',
+        felder: [
+          { id: 'objekt', label: 'Was wird geräumt', opt:
+            ['Keller', 'Dachboden', 'Garage', 'Wohnung', 'ganzes Haus'] },
+          { id: 'menge', label: 'Wie viel steht drin', opt:
+            ['einzelne Gegenstände', 'ein Raum', 'mehrere Räume', 'komplett vollgestellt'] },
+          { id: 'etage', label: 'In welcher Etage', opt:
+            ['Erdgeschoss', 'erstes bis zweites Obergeschoss', 'ab drittem Obergeschoss'] },
+          { id: 'aufzug', label: 'Aufzug vorhanden', opt: ['ja', 'nein'] }
+        ]
+      },
+      umzug: {
+        titel: 'Umzug',
+        lead: 'Menge, Etage und Entfernung bestimmen den Preis. Endreinigung kommt aus derselben Hand.',
+        formular: 'Umzug',
+        faktoren: 'Menge, Etage, Aufzug, Entfernung, Ab- und Aufbau',
+        felder: [
+          { id: 'groesse', label: 'Wie groß ist die Wohnung', opt:
+            ['ein bis zwei Zimmer', 'drei Zimmer', 'vier Zimmer und mehr', 'Haus', 'Büro oder Praxis'] },
+          { id: 'etage', label: 'Etage, von und nach', opt:
+            ['beides Erdgeschoss', 'eine Seite mit Treppe', 'beide Seiten mit Treppe'] },
+          { id: 'strecke', label: 'Wie weit', opt:
+            ['innerhalb Regensburg', 'Umkreis bis 50 Kilometer', 'weiter weg'] },
+          { id: 'aufbau', label: 'Möbel ab- und aufbauen', opt: ['ja', 'nein', 'nur teilweise'] }
+        ]
+      },
+      garten: {
+        titel: 'Gartenarbeit',
+        lead: 'Fläche und Zustand bestimmen den Preis. Den Grünschnitt nehmen wir mit.',
+        formular: 'Gartenarbeit',
+        faktoren: 'Fläche, Zustand, Turnus, Menge Grünschnitt',
+        felder: [
+          { id: 'arbeit', label: 'Worum geht es', wide: true, opt:
+            ['Rasen mähen', 'Hecke oder Sträucher schneiden', 'Laub räumen', 'Beete pflegen', 'Komplettpflege'] },
+          { id: 'flaeche', label: 'Fläche in Quadratmetern', typ: 'zahl', platzhalter: 'zum Beispiel 300' },
+          { id: 'turnus', label: 'Wie oft', opt:
+            ['einmalig', 'alle zwei Wochen', 'monatlich', 'nach Bedarf'] }
+        ]
+      },
+      kleinarbeiten: {
+        titel: 'Kleinarbeiten',
+        lead: 'Abgerechnet wird nach Aufwand. Sagen Sie uns, was ansteht.',
+        formular: 'Kleinarbeiten',
+        faktoren: 'Aufwand in Stunden, Material',
+        felder: [
+          { id: 'arbeit', label: 'Was steht an', wide: true, opt:
+            ['Möbel aufbauen oder umstellen', 'Lampe oder Regal montieren', 'Tür oder Fenster einstellen',
+             'Mülltonnenservice', 'mehrere Kleinigkeiten'] },
+          { id: 'aufwand', label: 'Geschätzter Aufwand', opt:
+            ['unter einer Stunde', 'ein halber Tag', 'ein ganzer Tag', 'weiß ich nicht'] },
+          { id: 'material', label: 'Material', opt: ['ist vorhanden', 'bitte mitbringen'] }
+        ]
+      }
+    };
+
+    var elFelder   = document.getElementById('calc-fields');
+    var elTitel    = document.getElementById('calc-title');
+    var elLead     = document.getElementById('calc-lead');
+    var elFaktoren = document.getElementById('calc-factors');
+    var elWert     = document.getElementById('calc-value');
+    var elBasis    = document.getElementById('calc-basis');
+    var elFlag     = document.getElementById('calc-flag');
+    var cta        = document.getElementById('calc-cta');
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.ctab'));
+    var aktuell = 'reinigung';
+
+    /* Hintergrundfotos: erst laden, wenn die Sektion in Sichtweite kommt.
+       Sie stehen weit unten auf der Seite, vorher waeren es 400 KB umsonst. */
+    var lagen = Array.prototype.slice.call(document.querySelectorAll('.pr-img'));
+    var geladen = false;
+    function fotosLaden() {
+      if (geladen) return;
+      geladen = true;
+      lagen.forEach(function (l) {
+        var src = l.getAttribute('data-src');
+        if (src && !l.style.backgroundImage) l.style.backgroundImage = 'url("' + src + '")';
+      });
+    }
+    if (lagen.length) {
+      if ('IntersectionObserver' in window) {
+        var beob = new IntersectionObserver(function (eintraege) {
+          eintraege.forEach(function (e) { if (e.isIntersecting) { fotosLaden(); beob.disconnect(); } });
+        }, { rootMargin: '400px' });
+        beob.observe(panel);
+      } else {
+        fotosLaden();
+      }
+    }
+    function grundZeigen(cat) {
+      fotosLaden();
+      lagen.forEach(function (l) {
+        var an = l.getAttribute('data-cat') === cat;
+        l.classList.toggle('is-on', an);
+      });
+    }
+
+    function esc(v) {
+      return String(v).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+
+    function felderBauen(cat) {
+      var d = DATEN[cat];
+      elFelder.innerHTML = d.felder.map(function (f) {
+        var inner;
+        if (f.typ === 'zahl') {
+          inner = '<input type="number" min="0" inputmode="numeric" name="' + esc(f.id) +
+                  '" placeholder="' + esc(f.platzhalter || '') + '">';
+        } else {
+          inner = '<select name="' + esc(f.id) + '">' +
+                  f.opt.map(function (o) { return '<option>' + esc(o) + '</option>'; }).join('') +
+                  '</select>';
+        }
+        return '<label class="field' + (f.wide ? ' wide' : '') + '"><span>' +
+               esc(f.label) + '</span>' + inner + '</label>';
+      }).join('');
+      Array.prototype.forEach.call(elFelder.querySelectorAll('input,select'), function (el) {
+        el.addEventListener('change', function () { beruehrt = true; wertZeigen(); });
+        el.addEventListener('input', function () { beruehrt = true; wertZeigen(); });
+      });
+    }
+
+    var beruehrt = false;
+
+    /* Kurzfassung fuer die Zeile unter "Ihr Richtwert". */
+    function werte() {
+      var out = [];
+      Array.prototype.forEach.call(elFelder.querySelectorAll('input,select'), function (f) {
+        var v = String(f.value).trim();
+        if (v) out.push(v);
+      });
+      return out;
+    }
+
+    function auswahl() {
+      var out = [];
+      Array.prototype.forEach.call(elFelder.querySelectorAll('label.field'), function (l) {
+        var k = l.querySelector('span').textContent;
+        var f = l.querySelector('input,select');
+        var v = f ? String(f.value).trim() : '';
+        if (v) out.push(k + ': ' + v);
+      });
+      return out;
+    }
+
+    function wertZeigen() {
+      var preis = PREISE[aktuell] || {};
+      var kurz = werte();
+      elBasis.textContent = (beruehrt && kurz.length) ? kurz.join(', ') : 'nach Ihren Angaben';
+
+      if (preis.ab === null || typeof preis.ab === 'undefined') {
+        elWert.className = 'v';
+        elWert.innerHTML = '<span class="pre">ab</span><span class="slot" aria-hidden="true"></span>' +
+                           '<span class="sr">Preis steht noch nicht fest</span>' +
+                           '<span class="pre">Euro ' + esc(preis.einheit || '') +
+                           '<span class="star" aria-hidden="true">*</span></span>';
+        if (elFlag) elFlag.hidden = false;
+      } else {
+        elWert.className = 'v has-value';
+        elWert.innerHTML = '<span class="pre">ab</span>' + esc(preis.ab) + ' Euro ' +
+                           '<span class="pre">' + esc(preis.einheit || '') +
+                           '<span class="star" aria-hidden="true">*</span></span>';
+        if (elFlag) elFlag.hidden = true;
+      }
+    }
+
+    function wechseln(cat) {
+      if (!DATEN[cat]) return;
+      aktuell = cat;
+      var d = DATEN[cat];
+      elTitel.textContent = d.titel;
+      elLead.textContent = d.lead;
+      elFaktoren.innerHTML = '<b>Was den Preis bestimmt:</b> ' + esc(d.faktoren);
+      panel.setAttribute('aria-labelledby', 'ctab-' + cat);
+      tabs.forEach(function (t) {
+        t.setAttribute('aria-selected', t.getAttribute('data-cat') === cat ? 'true' : 'false');
+      });
+      beruehrt = false;
+      grundZeigen(cat);
+      felderBauen(cat);
+      wertZeigen();
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { wechseln(t.getAttribute('data-cat')); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null;
+        if (n === null) return;
+        e.preventDefault();
+        n = (n + tabs.length) % tabs.length;
+        tabs[n].focus(); wechseln(tabs[n].getAttribute('data-cat'));
+      });
+    });
+
+    /* Die Angaben wandern ins Anfrageformular, damit niemand zweimal tippt. */
+    if (cta) {
+      cta.addEventListener('click', function () {
+        var d = DATEN[aktuell];
+        var sel = document.querySelector('#anfrage select[name="leistung"]');
+        var txt = document.querySelector('#anfrage textarea[name="nachricht"]');
+        if (sel) {
+          Array.prototype.forEach.call(sel.options, function (o) {
+            if (o.text === d.formular) sel.value = o.value || o.text;
+          });
+        }
+        if (txt && !txt.value.trim()) {
+          txt.value = d.titel + '. ' + auswahl().join('. ') + '.';
+        }
+      });
+    }
+
+    wechseln('reinigung');
+  }());
+}());
+</script>
+</body>
+</html>
