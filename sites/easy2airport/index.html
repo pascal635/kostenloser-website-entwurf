@@ -297,9 +297,6 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
 .foot .brandmark img{height:108px}
 
 /* ---------- mobile Aktionsleiste ---------- */
-.actionbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(241,241,239,.98),rgba(241,241,239,.72))}
-.actionbar .in{display:flex;gap:8px;background:var(--surface);border-radius:var(--r-md);padding:7px;box-shadow:var(--e-float)}
-.actionbar .btn{flex:1 1 0;justify-content:center;padding:12px 8px;font-size:14px}
 
 
 /* ---------- Highlight-Karten, Layout nach Screenshot 1 ---------- */
@@ -473,6 +470,23 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
   .gc-rows .v{font-size:11.5px}
 }
 
+/* Textmass: Desktop begrenzt, mobil volle Breite (siehe Media Query unten) */
+.measure{max-width:var(--mw)}
+
+/* ---------- Kopfleiste mobil: Burger und Menue ---------- */
+.only-sm{display:none}
+.burger{display:none;width:44px;height:44px;padding:0;border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);backdrop-filter:blur(10px);cursor:pointer;place-content:center;justify-items:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;border-radius:2px;background:#fff;transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.head.menu-offen{background:var(--brand);padding-bottom:0}
+.menue{background:var(--brand);border-top:1px solid rgba(255,255,255,.16);box-shadow:var(--e-elev);max-height:calc(100dvh - 84px);overflow-y:auto}
+.menue .wrap{display:grid;padding-top:var(--s3);padding-bottom:var(--s5)}
+.menue a{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:17px;color:#fff;text-decoration:none;padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.14)}
+.menue a:last-child{border-bottom:none}
+.menue a .ic{width:18px;height:18px;flex:0 0 auto;opacity:.8}
+
 @media (max-width:1080px){
   .plans{grid-template-columns:1fr}
   .gets{border-left:none;border-top:1px solid var(--line);padding:var(--s6) 0 0}
@@ -514,9 +528,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
   .fields{grid-template-columns:1fr}
   .f{padding:0;border-left:none}
   .mosaic{grid-template-columns:1fr}
-  .actionbar{display:block}
-  body{padding-bottom:84px}
-  .head .tel{display:none}
+  .head .bar .tel{display:none}
   .brandmark img{height:40px}
   .foot .brandmark img{height:78px}
   .hide-sm{display:none}
@@ -531,6 +543,45 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
   .ctaduo .card,.floatcard{padding:var(--s6) var(--s5)}
   .foot .cols{grid-template-columns:1fr}
 }
+/* ---------- Mobil: Menue statt Pillen, volle Textbreite, zentrierte Texte ---------- */
+@media (max-width:1080px){
+  .head .bar{display:flex;justify-content:space-between;align-items:center;gap:var(--s4)}
+  .burger{display:grid}
+}
+
+@media (max-width:900px){
+  .measure{max-width:none}
+  .hero h1,.hero .lead,.hiw-lead,.hiw-big p,.plan .txt,.plan .cap,
+  .gauge-band h2,.gauge-side p,.gauge-side .szen,.ctaduo .card h2,details.q .a{max-width:none}
+  .side{display:none}
+}
+
+@media (max-width:760px){
+  .only-sm{display:inline}
+  .hero{min-height:88vh}
+  .hero .inner{padding-bottom:var(--s7)}
+  .hero h1{font-size:clamp(33px,8.8vw,56px)}
+  .hero .lead{font-size:16.5px;margin-top:var(--s4)}
+
+  .hero .inner{text-align:center}
+  .hero .cta{justify-content:center}
+  .hero .cta .btn{flex:0 1 auto;white-space:nowrap}
+
+  .sechead,.hiw-head,.hiw-big > div:not(.visual),.hiw-dark .txt,.hiw-light,
+  .storytop > div,#faqgrid > div:first-child,
+  .gauge-grid > div:first-child,.gauge-side,.contact > div:first-child,.contact address,.ctaduo .card,
+  .floatcard > div,.area .inner,.foot .brandcol,.foot .cols > div{text-align:center}
+  .sechead .arrows,.area .inner .row,.floatcard .row{justify-content:center}
+  .foot .news{margin-left:auto;margin-right:auto}
+  .area{min-height:0;padding:var(--s6) var(--s5) var(--s7)}
+  .sechead > *{width:100%}
+  .row[style*="space-between"]{justify-content:center}
+  .sechead .row,.hiw-head .row,.hiw-big .row,.storytop .row,#faqgrid .row,
+  .gauge-side .row,.contact .row,.ctaduo .row,.hiw-dark .row,.hiw-light .row{justify-content:center}
+  .gauge-band h2{margin-left:auto;margin-right:auto}
+  .brace{letter-spacing:.02em}
+}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 </style>
 </head>
@@ -569,9 +620,24 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
     </nav>
     <div class="right">
       <a class="tel" href="tel:+4961757982266"><svg class="ic" aria-hidden="true"><use href="#ic-phone"/></svg>06175 798 2266</a>
-      <a class="btn btn-light btn-sm" href="#anfrage"><span class="hide-sm">Festpreis</span> anfragen</a>
+      <a class="btn btn-light btn-sm" href="#anfrage"><span class="hide-sm">Festpreis anfragen</span><span class="only-sm">Anfragen</span></a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menue" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+  <nav class="menue" id="menue" aria-label="Menü" hidden>
+    <div class="wrap">
+      <a href="#preise">Preise</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#rechnen">Kostenvergleich</a>
+      <a href="#fahrzeuge">Fahrzeuge</a>
+      <a href="#servicegebiet">Servicegebiet</a>
+      <a href="#fragen">Fragen</a>
+      <a class="tel" href="tel:+4961757982266"><svg class="ic" aria-hidden="true"><use href="#ic-phone"/></svg>06175 798 2266</a>
+      <a class="wa" href="https://wa.me/4961757982266"><svg class="ic" aria-hidden="true"><use href="#ic-chat"/></svg>Per WhatsApp</a>
+    </div>
+  </nav>
 </header>
 
 <main id="main">
@@ -660,7 +726,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
   <div class="wrap">
     <div style="text-align:center;margin-bottom:var(--s7)">
       <p class="brace">Was Sie bekommen</p>
-      <h2 class="d1" style="margin-top:var(--s3);max-width:26ch;margin-left:auto;margin-right:auto">Ein Preis, zwei Wege, alles vorher geklärt</h2>
+      <h2 class="measure d1" style="margin-top:var(--s3);--mw:26ch;margin-left:auto;margin-right:auto">Ein Preis, zwei Wege, alles vorher geklärt</h2>
     </div>
 
     <div class="plans">
@@ -731,12 +797,12 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
 <!-- ==================== STRECKENFINDER ==================== -->
 <section id="preise">
   <div class="wrap">
-          <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
+          <div class="row sechead" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
       <div>
         <p class="brace">Beliebte Strecken</p>
-        <h2 class="d1" style="margin-top:var(--s3);max-width:22ch">Vier Strecken, vier feste Preise</h2>
+        <h2 class="measure d1" style="margin-top:var(--s3);--mw:22ch">Vier Strecken, vier feste Preise</h2>
       </div>
-      <p class="lead" style="max-width:36ch">Der Preis gilt pro Fahrzeug, nicht pro Person. Ihre Strecke ist nicht dabei? Wir rechnen sie unverbindlich aus.</p>
+      <p class="measure lead" style="--mw:36ch">Der Preis gilt pro Fahrzeug, nicht pro Person. Ihre Strecke ist nicht dabei? Wir rechnen sie unverbindlich aus.</p>
     </div>
 
     <div class="showcase">
@@ -755,7 +821,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
           <li><span class="r">Friedberg <span>zum Flughafen Frankfurt, rund 45 Minuten</span></span><span class="price">ab 70 €</span><a class="go" href="#anfrage" aria-label="Strecke Friedberg anfragen"><svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg></a></li>
         </ul>
         <div class="showfoot">
-          <p class="sub" style="font-size:13.5px;max-width:40ch">Preise Stand 2026. Kartenzahlung und Barzahlung möglich, Geschäftskunden erhalten eine Rechnung mit ausgewiesener Umsatzsteuer.</p>
+          <p class="measure sub" style="font-size:13.5px;--mw:40ch">Preise Stand 2026. Kartenzahlung und Barzahlung möglich, Geschäftskunden erhalten eine Rechnung mit ausgewiesener Umsatzsteuer.</p>
           <span class="arrows">
             <span class="counter">1 / 4</span>
             <button class="circ" type="button" aria-label="vorherige Strecke"><svg class="ic" aria-hidden="true"><use href="#ic-arrow-left"/></svg></button>
@@ -774,7 +840,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
     <div class="storytop">
       <div>
         <p class="brace">Über uns</p>
-        <h2 class="d1" style="margin-top:var(--s3);max-width:20ch">Wir sind kein Taxi, wir sind ein Fahrservice</h2>
+        <h2 class="measure d1" style="margin-top:var(--s3);--mw:20ch">Wir sind kein Taxi, wir sind ein Fahrservice</h2>
       </div>
       <div>
         <p class="lead">Jede Fahrt wird vorher geplant, der Preis vorher zugesagt. Wir fahren als Mietwagenverkehr nach § 49 PBefG, genehmigt von der Stadtverwaltung Friedrichsdorf. Genau deshalb können wir einen Festpreis geben statt eines Taxameters.</p>
@@ -862,7 +928,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
         <div class="txt">
           <p class="brace" style="color:rgba(255,255,255,.7)">Schritt 03</p>
           <h3 style="margin-top:var(--s3);font-size:22px;font-weight:700">Abholung und Ankunft</h3>
-          <p style="margin-top:var(--s3);max-width:40ch">Wir sind vor der Haustür, wenn es losgeht, nehmen das Gepäck ab und fahren direkt vors Terminal. Auf dem Rückweg richtet sich die Abholung nach der Landung. Bezahlt wird zum zugesagten Preis.</p>
+          <p class="measure" style="margin-top:var(--s3);--mw:40ch">Wir sind vor der Haustür, wenn es losgeht, nehmen das Gepäck ab und fahren direkt vors Terminal. Auf dem Rückweg richtet sich die Abholung nach der Landung. Bezahlt wird zum zugesagten Preis.</p>
         </div>
       </article>
     </div>
@@ -872,12 +938,12 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
 <!-- ==================== FAHRZEUGE ==================== -->
 <section id="fahrzeuge" class="tight">
   <div class="wrap">
-    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
+    <div class="row sechead" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
       <div>
         <p class="brace">Fahrzeuge</p>
-        <h2 class="d1" style="margin-top:var(--s3);max-width:18ch">Drei Klassen, ein Anspruch</h2>
+        <h2 class="measure d1" style="margin-top:var(--s3);--mw:18ch">Drei Klassen, ein Anspruch</h2>
       </div>
-      <p class="lead" style="max-width:34ch">Gepflegt und geprüft, mit Platz für Ihr Gepäck. Sagen Sie uns Personen und Koffer, wir stellen das passende Fahrzeug.</p>
+      <p class="measure lead" style="--mw:34ch">Gepflegt und geprüft, mit Platz für Ihr Gepäck. Sagen Sie uns Personen und Koffer, wir stellen das passende Fahrzeug.</p>
     </div>
     <div class="cars">
       <article class="car">
@@ -920,10 +986,10 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
 <!-- ==================== LEISTUNGEN ==================== -->
 <section id="leistungen" class="tight">
   <div class="wrap">
-    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
+    <div class="row sechead" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
       <div>
         <p class="brace">Leistungen</p>
-        <h2 class="d1" style="margin-top:var(--s3);max-width:22ch">Mehr als nur der Weg zum Terminal</h2>
+        <h2 class="measure d1" style="margin-top:var(--s3);--mw:22ch">Mehr als nur der Weg zum Terminal</h2>
       </div>
       <span class="arrows">
         <button class="circ" type="button" aria-label="zurück"><svg class="ic" aria-hidden="true"><use href="#ic-arrow-left"/></svg></button>
@@ -1074,7 +1140,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
     </figure>
     <div>
       <p class="brace">Wer fährt</p>
-      <h2 class="d1" style="margin-top:var(--s3);max-width:20ch">Bei uns wissen Sie, wer kommt</h2>
+      <h2 class="measure d1" style="margin-top:var(--s3);--mw:20ch">Bei uns wissen Sie, wer kommt</h2>
       <p class="lead" style="margin-top:var(--s4)">Keine App, kein Callcenter. Sie sprechen mit dem Inhaber, und der fährt selbst. Deshalb gilt auch, was am Telefon gesagt wurde.</p>
       <div class="row" style="margin-top:var(--s5)">
         <a class="btn btn-brand" href="tel:+4961757982266"><svg class="ic" aria-hidden="true"><use href="#ic-phone"/></svg>06175 798 2266</a>
@@ -1087,10 +1153,10 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
 <!-- ==================== BEWERTUNGEN ==================== -->
 <section class="tight">
   <div class="wrap">
-    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
+    <div class="row sechead" style="justify-content:space-between;align-items:flex-end;gap:var(--s5);margin-bottom:var(--s6)">
       <div>
         <p class="brace">Kundenstimmen</p>
-        <h2 class="d1" style="margin-top:var(--s3);max-width:20ch">Was Fahrgäste geschrieben haben</h2>
+        <h2 class="measure d1" style="margin-top:var(--s3);--mw:20ch">Was Fahrgäste geschrieben haben</h2>
       </div>
       <span class="badge"><span class="faces" aria-hidden="true"><i></i><i></i><i></i></span><b>Kunden, die wiederkommen</b></span>
     </div>
@@ -1123,7 +1189,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
       </figure>
       <div class="inner">
         <p class="brace" style="color:rgba(255,255,255,.7)">Servicegebiet</p>
-        <h2 class="d1" style="color:#fff;margin-top:var(--s3);max-width:22ch">Im Taunus und im Rhein-Main-Gebiet</h2>
+        <h2 class="measure d1" style="color:#fff;margin-top:var(--s3);--mw:22ch">Im Taunus und im Rhein-Main-Gebiet</h2>
         <div class="row" style="margin-top:var(--s5)">
           <span class="pill glass">Bad Homburg</span>
           <span class="pill glass">Friedrichsdorf</span>
@@ -1136,7 +1202,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
           <span class="pill glass">Bad Nauheim</span>
         </div>
         <div class="row" style="margin-top:var(--s5);justify-content:space-between">
-          <p class="sub" style="color:rgba(255,255,255,.84);max-width:44ch">Schwerpunkt ist der Flughafen Frankfurt. Weitere Flughäfen und Fernfahrten planen wir auf Anfrage, mit demselben Festpreis-Prinzip.</p>
+          <p class="measure sub" style="color:rgba(255,255,255,.84);--mw:44ch">Schwerpunkt ist der Flughafen Frankfurt. Weitere Flughäfen und Fernfahrten planen wir auf Anfrage, mit demselben Festpreis-Prinzip.</p>
           <a class="btn btn-light" href="#anfrage">Meine Strecke anfragen</a>
         </div>
       </div>
@@ -1150,8 +1216,8 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
           <div class="grid" style="grid-template-columns:.8fr 1.2fr;gap:var(--s7);align-items:start" id="faqgrid">
       <div>
         <p class="brace">Fragen</p>
-        <h2 class="d1" style="margin-top:var(--s3);max-width:16ch">Vor der Buchung wichtig</h2>
-        <p class="lead" style="margin-top:var(--s4);max-width:30ch">Etwas nicht dabei? Rufen Sie an, wir klären das in zwei Minuten.</p>
+        <h2 class="measure d1" style="margin-top:var(--s3);--mw:16ch">Vor der Buchung wichtig</h2>
+        <p class="measure lead" style="margin-top:var(--s4);--mw:30ch">Etwas nicht dabei? Rufen Sie an, wir klären das in zwei Minuten.</p>
         <div class="row" style="margin-top:var(--s5)">
           <a class="btn btn-dark" href="tel:+4961757982266">06175 798 2266</a>
           <a class="btn btn-wa" href="https://wa.me/4961757982266">Per WhatsApp</a>
@@ -1217,7 +1283,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
             <a class="btn btn-light" href="#anfrage">Festpreis anfragen</a>
             <a class="circ circ-glass" href="tel:+4961757982266" aria-label="Anrufen"><svg class="ic" aria-hidden="true"><use href="#ic-phone"/></svg></a>
           </div>
-          <p class="sub" style="max-width:26ch">Sagen Sie uns Strecke und Uhrzeit, wir sagen Ihnen den Preis.</p>
+          <p class="measure sub" style="--mw:26ch">Sagen Sie uns Strecke und Uhrzeit, wir sagen Ihnen den Preis.</p>
         </div>
       </div>
     </div>
@@ -1229,7 +1295,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
   <div class="wrap contact">
     <div>
       <h2 class="d0" style="font-size:clamp(30px,4.4vw,52px)">Fragen? Schreiben Sie uns.</h2>
-      <p class="lead" style="margin-top:var(--s4);max-width:34ch">Gruppe, Sondergepäck, Rückfahrt zu ungewöhnlicher Zeit. Wir antworten, auch nachts.</p>
+      <p class="measure lead" style="margin-top:var(--s4);--mw:34ch">Gruppe, Sondergepäck, Rückfahrt zu ungewöhnlicher Zeit. Wir antworten, auch nachts.</p>
       <form class="pillinput" style="margin-top:var(--s5)" onsubmit="event.preventDefault();window.location.href='mailto:info@easy2airport.de?subject=Anfrage%20Flughafentransfer'">
         <label class="sr" for="mail">Ihre E-Mail-Adresse</label>
         <input id="mail" type="email" placeholder="Ihre E-Mail-Adresse" autocomplete="email">
@@ -1256,7 +1322,7 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
         <a class="brandmark" href="/" aria-label="easy2airport, zur Startseite">
           <img src="bilder/logo-easy2airport.webp" alt="easy2airport" width="240" height="135">
         </a>
-        <p style="color:rgba(255,255,255,.84);margin-top:var(--s4);max-width:34ch;font-size:15px">Ihr Fahrservice zum Flughafen Frankfurt, aus Friedrichsdorf für den Taunus und das Rhein-Main-Gebiet.</p>
+        <p class="measure" style="color:rgba(255,255,255,.84);margin-top:var(--s4);--mw:34ch;font-size:15px">Ihr Fahrservice zum Flughafen Frankfurt, aus Friedrichsdorf für den Taunus und das Rhein-Main-Gebiet.</p>
         <form class="news" onsubmit="event.preventDefault();window.location.href='mailto:info@easy2airport.de?subject=Anfrage%20Flughafentransfer'">
           <label class="sr" for="mail2">Ihre E-Mail-Adresse</label>
           <input id="mail2" type="email" placeholder="Ihre E-Mail-Adresse" autocomplete="email">
@@ -1305,14 +1371,6 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
     </div>
   </div>
 </footer>
-
-<div class="actionbar">
-  <div class="in">
-    <a class="btn btn-light" href="tel:+4961757982266">Anrufen</a>
-    <a class="btn btn-wa" href="https://wa.me/4961757982266">WhatsApp</a>
-    <a class="btn btn-brand" href="#anfrage">Festpreis</a>
-  </div>
-</div>
 
 <script type="application/ld+json">
 {
@@ -1491,6 +1549,18 @@ details.q .a{padding:0 0 var(--s5);color:var(--muted);font-size:15.5px;max-width
     if(el) el.addEventListener('change', function(){ blaettern(id); });
   });
   setze('v1');
+})();
+
+/* Menue auf kleinen Breiten: Burger auf und zu */
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('menue'), h=document.getElementById('head');
+  if(!b||!m||!h) return;
+  function zu(){ b.setAttribute('aria-expanded','false'); b.setAttribute('aria-label','Menü öffnen'); m.hidden=true; h.classList.remove('menu-offen'); }
+  function auf(){ b.setAttribute('aria-expanded','true'); b.setAttribute('aria-label','Menü schließen'); m.hidden=false; h.classList.add('menu-offen'); }
+  b.addEventListener('click', function(){ b.getAttribute('aria-expanded')==='true' ? zu() : auf(); });
+  m.addEventListener('click', function(e){ if(e.target.closest('a')) zu(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') zu(); });
+  window.addEventListener('resize', function(){ if(window.innerWidth>1080) zu(); });
 })();
 
 /* Anfrage ohne Backend: Eingaben zusammenfassen und E-Mail öffnen.
