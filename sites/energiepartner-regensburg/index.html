@@ -33,6 +33,8 @@
   --container:1220px; --gutter:26px; --bar:0px; --kopf-h:124px;
   /* Panelbreite so, dass die linke Kante 14px vor der Menü-Pille endet */
   --panel-breite:calc(50vw - 108px);
+  /* Höhe des Footer-Bildbands, der Innenabstand oben leitet sich davon ab */
+  --fuss-bild:clamp(190px,17vw,280px);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -462,7 +464,7 @@ details[open] .plus::after{transform:rotate(90deg)}
 /* Footer */
 .fuss{position:relative;overflow:hidden;background:var(--gruen-900);color:#fff;
   padding:var(--s24) 0 var(--s10);margin-top:var(--s24)}
-.fuss.hat-stadtfoto{padding-top:clamp(var(--s24),16vw,260px)}
+.fuss.hat-stadtfoto{padding-top:calc(var(--fuss-bild) + var(--s14))}
 /* Regensburg als Zeichnung: Steinerne Brücke, Brückturm, Dom St. Peter.
    Liegt als Wasserzeichen unten in der Ansprechpartner-Sektion. */
 .stadt-band{position:absolute;left:0;right:0;bottom:0;height:clamp(150px,19vw,290px);
@@ -473,7 +475,7 @@ details[open] .plus::after{transform:rotate(90deg)}
 #ueber-mich{position:relative;overflow:hidden;padding-bottom:clamp(var(--s20),13vw,190px)}
 #ueber-mich > .wrap{position:relative;z-index:1}
 /* Regensburg als Foto im Footer */
-.stadt{position:absolute;left:0;right:0;top:0;height:clamp(180px,24vw,340px);
+.stadt{position:absolute;left:0;right:0;top:0;height:var(--fuss-bild);
   color:var(--gruen-200);opacity:.5;pointer-events:none;overflow:hidden}
 .stadt svg{width:100%;height:100%;display:block}
 /* Echtes Foto, in die Palette gezogen: entsättigt, abgedunkelt, grün überlagert */
@@ -481,23 +483,23 @@ details[open] .plus::after{transform:rotate(90deg)}
   filter:grayscale(.5) brightness(.64) contrast(1.08)}
 .stadt{opacity:1}
 .stadt::before{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to bottom,rgba(31,67,23,.46) 0%,rgba(31,67,23,.74) 52%,var(--gruen-900) 94%),
+  background:linear-gradient(to bottom,rgba(31,67,23,.40) 0%,rgba(31,67,23,.72) 46%,var(--gruen-900) 88%),
              radial-gradient(900px 320px at 50% 0%,rgba(62,133,35,.34),transparent 70%)}
 .stadt::after{content:"";position:absolute;inset:0;z-index:2;
-  background:linear-gradient(to bottom,rgba(31,67,23,.15) 0%,rgba(31,67,23,.55) 62%,var(--gruen-900) 100%)}
+  background:linear-gradient(to bottom,rgba(31,67,23,.12) 0%,rgba(31,67,23,.52) 58%,var(--gruen-900) 96%)}
 .fuss .wrap{position:relative;z-index:1}
 .fuss-grid{display:grid;grid-template-columns:5fr 4fr 3fr;gap:var(--s12)}
 .fuss h3{color:#fff;margin-bottom:var(--s4)}
-.fuss-logo{height:clamp(40px,3.4vw,52px);width:auto;display:block;margin-bottom:var(--s5);opacity:.95}
-.fuss p,.fuss li{color:rgba(255,255,255,.70);font-size:14.5px;line-height:1.7}
-.fuss a{color:rgba(255,255,255,.88);text-decoration:none}
+.fuss-logo{height:clamp(44px,3.8vw,58px);width:auto;display:block;margin-bottom:var(--s5)}
+.fuss p,.fuss li{color:rgba(255,255,255,.84);font-size:14.5px;line-height:1.7}
+.fuss a{color:#fff;text-decoration:none}
 .fuss a:hover{color:#fff;text-decoration:underline}
 .fuss ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s2)}
-.fuss-unten{margin-top:var(--s14);padding-top:var(--s6);border-top:1px solid rgba(255,255,255,.14);
-  display:flex;flex-wrap:wrap;gap:var(--s5);justify-content:space-between;font-size:13px;color:rgba(255,255,255,.55)}
+.fuss-unten{margin-top:var(--s14);padding-top:var(--s6);border-top:1px solid rgba(255,255,255,.18);
+  display:flex;flex-wrap:wrap;gap:var(--s5);justify-content:space-between;font-size:13px;color:rgba(255,255,255,.70)}
 .fuss-unten nav{display:flex;gap:var(--s5)}
-.credit{display:inline-block;margin-top:6px;font-size:12px;color:rgba(255,255,255,.42)}
-.credit a{color:rgba(255,255,255,.62);text-decoration:underline}
+.credit{display:inline-block;margin-top:6px;font-size:12px;color:rgba(255,255,255,.58)}
+.credit a{color:rgba(255,255,255,.78);text-decoration:underline}
 
 /* Bild-Slots: echtes <img>, das bei fehlender Datei zum beschrifteten Platzhalter wird */
 .bild-slot{position:relative;margin:0;overflow:hidden;background:var(--flaeche-2);display:block}
@@ -538,6 +540,41 @@ details[open] .plus::after{transform:rotate(90deg)}
 .ph span{position:relative;z-index:1;line-height:1.5}
 
 /* Reveal */
+/* ---------- Partnerband: statisch gedecktes Grün, farbig beim Überfahren ----------
+   Zwei Dateien je Logo statt eines CSS-Filters: die grüne Silhouette ist vorgerendert,
+   dadurch wiegen Blau (REWAG) und Schwarz (SIGNAL IDUNA, infra) optisch gleich schwer,
+   was ein grayscale-Filter nicht leisten kann. Und es funktioniert auch beim direkten
+   Öffnen der Datei, im Gegensatz zu einer CSS-Maske mit externer Bildquelle. */
+.partner-band{margin-top:clamp(var(--s10),5vw,var(--s16));display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:var(--s5) clamp(var(--s8),4.5vw,var(--s14))}
+.partner-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-400);flex:0 0 auto}
+.partner-liste{--logo-h:clamp(30px,3.1vw,44px);
+  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;gap:var(--s6) clamp(var(--s8),4.5vw,var(--s14))}
+/* optischer Ausgleich: breite Wortmarken brauchen weniger Höhe als kompakte Blöcke */
+.partner{position:relative;display:block;line-height:0;
+  height:calc(var(--logo-f,1) * var(--logo-h))}
+.partner img{display:block;width:auto;height:100%}
+.partner .farbig{position:absolute;inset:0;opacity:0;transition:opacity 320ms var(--ease)}
+.partner .gedeckt{opacity:.42;transition:opacity 320ms var(--ease)}
+.partner:hover .farbig,.partner:focus-visible .farbig{opacity:1}
+.partner:hover .gedeckt,.partner:focus-visible .gedeckt{opacity:0}
+.partner:focus-visible{outline:2px solid var(--gruen-500);outline-offset:8px;border-radius:var(--r-sm)}
+/* Ohne echten Hover, also auf Touch, gibt es keinen zweiten Zustand: dort direkt farbig */
+@media(hover:none){
+  .partner .farbig{opacity:1}
+  .partner .gedeckt{opacity:0}
+}
+/* Alle drei sollen bis 320px in einer Zeile bleiben, sonst steht eines allein */
+@media(max-width:640px){
+  .partner-band{gap:var(--s5)}
+  .partner-liste{--logo-h:26px;gap:var(--s5)}
+}
+@media(max-width:380px){
+  .partner-liste{--logo-h:22px;gap:var(--s4)}
+}
+
 .reveal{opacity:0;transform:translateY(18px);
   transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease)}
 .reveal.an{opacity:1;transform:none}
@@ -807,6 +844,25 @@ details[open] .plus::after{transform:rotate(90deg)}
           <figure class="panel-slot" data-datei="energieberatung-regensburg-haushalt.jpg" style="--platzhalter-icon:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231F4317'%3E%3Cpath d='M20 10.565c0-.63-.009-.755-.037-.857a1.002 1.002 0 0 0-.16-.325c-.062-.084-.155-.168-.653-.555l-6.782-5.275a7.113 7.113 0 0 0-.361-.271L12 3.277l-.007.005c-.075.05-.174.126-.361.271L4.85 8.828c-.498.387-.591.47-.654.555a1.003 1.003 0 0 0-.159.325C4.01 9.81 4 9.934 4 10.565V17.8c0 .577.001.95.024 1.232.023.272.06.373.085.422a1 1 0 0 0 .437.437c.05.025.15.063.422.085.283.023.656.024 1.232.024h11.6c.576 0 .949-.001 1.232-.024.272-.022.373-.06.422-.085a1 1 0 0 0 .437-.437c.025-.049.062-.15.085-.422.023-.283.024-.655.024-1.232v-7.235ZM7.877 13.032a1 1 0 0 1 1.218.718 3.002 3.002 0 0 0 5.81 0 1 1 0 0 1 1.938.5 5.002 5.002 0 0 1-9.686 0 1 1 0 0 1 .72-1.218ZM22 17.8c0 .543.001 1.011-.03 1.395-.033.395-.104.788-.297 1.167a3.001 3.001 0 0 1-1.31 1.311c-.379.193-.772.264-1.168.296-.383.031-.852.031-1.395.031H6.2c-.543 0-1.012 0-1.395-.03-.396-.033-.789-.104-1.167-.297a3.001 3.001 0 0 1-1.31-1.311c-.194-.379-.265-.772-.298-1.167C2 18.81 2 18.343 2 17.8v-7.235c0-.518-.008-.968.111-1.396a3 3 0 0 1 .477-.974c.264-.357.625-.627 1.033-.945l6.782-5.275c.279-.217.64-.52 1.074-.639a2 2 0 0 1 .917-.03l.129.03.16.053c.364.14.67.397.914.586l6.782 5.275c.408.318.77.588 1.033.945.217.293.378.623.477.974.12.428.111.878.111 1.396V17.8Z'/%3E%3C/svg%3E&quot;)"><img src="bilder/energieberatung-regensburg-haushalt.jpg" alt="Jahresabrechnung eines Privathaushalts" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
         </div>
       </div>
+    </div>
+
+    <!-- ---------- Partner. Reihenfolge: Grundversorger, Regionalversorger, Versicherer ---------- -->
+    <div class="partner-band reveal">
+      <span class="partner-label">Unsere Partner</span>
+      <ul class="partner-liste">
+        <li class="partner" tabindex="0" style="--logo-f:1">
+          <img class="gedeckt" src="bilder/partner-rewag-gruen.png" alt="REWAG" width="358" height="138" loading="lazy" decoding="async">
+          <img class="farbig" src="bilder/partner-rewag.png" alt="" aria-hidden="true" width="358" height="138" loading="lazy" decoding="async">
+        </li>
+        <li class="partner" tabindex="0" style="--logo-f:.94">
+          <img class="gedeckt" src="bilder/partner-infra-gruppe-gruen.png" alt="infra Gruppe" width="506" height="138" loading="lazy" decoding="async">
+          <img class="farbig" src="bilder/partner-infra-gruppe.png" alt="" aria-hidden="true" width="506" height="138" loading="lazy" decoding="async">
+        </li>
+        <li class="partner" tabindex="0" style="--logo-f:.72">
+          <img class="gedeckt" src="bilder/partner-signal-iduna-gruen.png" alt="SIGNAL IDUNA" width="728" height="138" loading="lazy" decoding="async">
+          <img class="farbig" src="bilder/partner-signal-iduna.png" alt="" aria-hidden="true" width="728" height="138" loading="lazy" decoding="async">
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1098,7 +1154,7 @@ details[open] .plus::after{transform:rotate(90deg)}
              onerror="this.remove()">
         <h3>Energiepartner Regensburg</h3>
         <p>Inhaber Emrullah Gök<br>
-        <span style="color:rgba(255,255,255,.42)">Anschrift folgt, Pflichtangabe</span><br>
+        <span style="color:rgba(255,255,255,.58)">Anschrift folgt, Pflichtangabe</span><br>
         <a href="tel:+4916096807368">0160 96807368</a><br>
         <a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a></p>
         <p style="margin-top:var(--s5)">Mo bis Fr 8 bis 20 Uhr<br>Sa 8 bis 20 Uhr<br>So geschlossen</p>
