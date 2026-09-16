@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energieberatung Regensburg | Strom- und Gastarife prüfen lassen | Energiepartner Regensburg</title>
+<meta name="description" content="Energieberatung Regensburg: Emrullah Gök prüft Ihre Strom- und Gasverträge, vergleicht über 50 Anbieter und übernimmt den Wechsel. Drei Regensburger Betriebe sparen 4.500 bis 10.000 Euro im Jahr. Für Sie kostenfrei.">
+<!-- Entwurf auf dev.likovo.de: nicht indexieren. Beim Livegang entfernen. -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://www.energiepartner-regensburg.de/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   Energiepartner Regensburg · Entwurf B
+   Näher an der Moodboard-Referenz: überlagernde Navigation mit
+   zentraler Menü-Pille, Vollbild-Overlay, zentrierte Sektionsköpfe,
+   Bildkarten, Laufband, Statement-Enthüllung.
+   =========================================================== */
+:root{
+  --gruen-900:#1F4317; --gruen-700:#2C6320; --gruen-500:#3E8523;
+  --gruen-200:#A1D583; --gruen-100:#D5FEB7;
+  --weiss:#fff; --flaeche-1:#F8F8F8; --flaeche-2:#E8E9ED;
+  --text-900:#1A1A1A; --text-600:#5A5A5A; --text-400:#8A8A8A; --text-300:#C1C1C1; --text-100:#E1E1E1;
+  --linie:#ECECEC;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s8:32px;--s10:40px;
+  --s12:48px;--s14:56px;--s16:64px;--s20:80px;--s24:96px;--s32:128px;--s40:160px;
+  --r-sm:10px;--r-md:18px;--r-lg:26px;--r-xl:34px;--r-pill:999px;
+  --e-2:0 1px 2px rgba(31,67,23,.04),0 8px 24px -12px rgba(31,67,23,.10);
+  --e-3:0 2px 6px rgba(31,67,23,.06),0 18px 48px -18px rgba(31,67,23,.18);
+  --ease:cubic-bezier(.22,1,.36,1); --t-state:240ms; --t-reveal:600ms;
+  --container:1220px; --gutter:26px; --bar:0px; --kopf-h:124px;
+  /* Panelbreite so, dass die linke Kante 14px vor der Menü-Pille endet */
+  --panel-breite:calc(50vw - 108px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--text-900);background:var(--weiss);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:var(--bar)}
+body.gesperrt{overflow:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(1200px 780px at 6% 4%,rgba(213,254,183,.30),transparent 60%),
+             radial-gradient(880px 600px at 96% 34%,rgba(161,213,131,.14),transparent 58%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+
+.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+.wrap-breit{max-width:1580px;margin:0 auto;padding:0 var(--s10)}
+.statement-karte{position:relative;overflow:hidden;border-radius:var(--r-xl);isolation:isolate;
+  padding:clamp(var(--s24),13vw,220px) var(--s10) clamp(var(--s16),7vw,var(--s24));
+  min-height:clamp(520px,46vw,760px);justify-content:center;
+  background:linear-gradient(158deg,#2A5A1E 0%,#1D4115 48%,#122B0D 100%);
+  display:flex;flex-direction:column;align-items:center}
+.statement-karte::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(780px 340px at 50% 44%,rgba(9,24,6,.86) 0%,rgba(9,24,6,.62) 45%,transparent 74%)}
+.statement-karte::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:radial-gradient(980px 560px at 50% 36%,transparent 42%,rgba(8,22,5,.5) 100%)}
+.globus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  height:min(1100px,124%);width:auto;aspect-ratio:1;z-index:0;pointer-events:none;opacity:.86}
+.globus svg{width:100%;height:100%;display:block}
+.orbits{transform-origin:300px 300px;animation:kreisen 64s linear infinite}
+@keyframes kreisen{to{transform:rotate(360deg)}}
+.statement-karte .statement{position:relative;z-index:3;max-width:22ch;
+  text-shadow:0 2px 24px rgba(8,22,5,.55)}
+.statement-karte .statement .w{color:rgba(233,255,216,.24)}
+.statement-karte .statement.an .w{color:#fff}
+.statement-karte .inline-ico.solid{background:var(--gruen-100);color:var(--gruen-900)}
+.statement-karte .inline-ico.mint{background:#fff;color:var(--gruen-900)}
+/* Stimmenleiste unter dem Text */
+.stimmen{position:relative;z-index:3;margin-top:clamp(var(--s16),6vw,var(--s24));
+  display:inline-flex;align-items:center;gap:var(--s4);
+  background:rgba(12,28,8,.62);border:1px solid rgba(213,254,183,.20);backdrop-filter:blur(10px);
+  border-radius:var(--r-pill);padding:10px 24px 10px 12px}
+.stimmen .avatare i{border-color:#1D4115}
+.stimmen .chiptext{display:block}
+.stimmen .chiptext b{display:block;font-size:14.5px;color:#fff}
+.stimmen .chiptext span{display:block;font-size:12.5px;color:rgba(233,255,216,.62)}
+section{scroll-margin-top:100px}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.026em}
+h1{font-size:clamp(33px,4.3vw,54px);line-height:1.08;letter-spacing:-.033em}
+.hero h1{font-size:clamp(31px,3.5vw,45px);line-height:1.1}
+h2{font-size:clamp(28px,3.5vw,46px);line-height:1.13;letter-spacing:-.03em}
+h3{font-size:clamp(19px,1.6vw,23px);line-height:1.3;letter-spacing:-.016em}
+h4{font-size:17px;line-height:1.4;letter-spacing:-.01em}
+p{margin:0}
+.lead{font-size:clamp(17px,1.35vw,19px);line-height:1.7;color:var(--text-600)}
+.txt{color:var(--text-600)}
+.sm{font-size:14.5px;line-height:1.62;color:var(--text-600)}
+.xs{font-size:13px;line-height:1.55;color:var(--text-400)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-400)}
+.measure{max-width:60ch}
+.hl{color:var(--gruen-500)}
+.statement-karte .hl,.person-panel .hl,.tun-ja .hl{color:var(--gruen-200)}
+.stack{display:flex;flex-direction:column;gap:var(--s5);align-items:flex-start}
+.stack > p,.stack > h1,.stack > h2,.stack > h3,.stack > div,.stack > ul{align-self:stretch}
+
+/* ---------- Buttons und Pillen ---------- */
+.btn{display:inline-flex;align-items:center;gap:var(--s2);font:inherit;font-size:15px;font-weight:600;
+  letter-spacing:-.01em;padding:14px 26px;border-radius:var(--r-pill);border:1px solid transparent;
+  cursor:pointer;text-decoration:none;white-space:nowrap;
+  transition:transform var(--t-state) var(--ease),background-color var(--t-state) var(--ease),
+             border-color var(--t-state) var(--ease),color var(--t-state) var(--ease)}
+.btn:focus-visible{outline:2px solid var(--gruen-500);outline-offset:3px}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-primary{background:var(--gruen-500);color:#fff}
+.btn-primary:hover{background:var(--gruen-700);transform:translateY(-1px)}
+.btn-dark{background:var(--gruen-900);color:#fff}
+.btn-dark:hover{background:#17330F;transform:translateY(-1px)}
+.btn-weiss{background:#fff;color:var(--text-900);box-shadow:var(--e-2)}
+.btn-weiss:hover{transform:translateY(-1px);box-shadow:var(--e-3)}
+.btn-mint{background:var(--gruen-100);color:var(--gruen-900)}
+.btn-mint:hover{background:#C7F5A4;transform:translateY(-1px)}
+.btn .arr{transition:transform var(--t-state) var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.tlink{color:var(--text-900);text-decoration:none;font-weight:500;font-size:15px;
+  border-bottom:1px solid var(--text-300);padding-bottom:2px;
+  transition:border-color var(--t-state) var(--ease),color var(--t-state) var(--ease)}
+.tlink:hover{border-color:var(--gruen-500);color:var(--gruen-700)}
+.micro{display:flex;flex-direction:column;gap:3px;font-size:13px;line-height:1.5;color:var(--text-600)}
+.pill{display:inline-flex;align-items:center;gap:var(--s2);padding:7px 16px;border-radius:var(--r-pill);
+  font-size:13px;font-weight:600}
+.pill-mint{background:var(--gruen-100);color:var(--gruen-900)}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;flex:0 0 auto}
+.ico svg{width:18px;height:18px;fill:currentColor;stroke:none}
+.i{fill:currentColor;stroke:none;display:block}
+.ico-solid{background:var(--gruen-500);color:#fff}
+.ico-mint{background:var(--gruen-100);color:var(--gruen-900)}
+.ico-weiss{background:#fff;color:var(--text-900);box-shadow:var(--e-2)}
+.ico-sm{width:24px;height:24px}.ico-sm svg{width:13px;height:13px}
+
+/* =========================================================
+   NAVIGATION: überlagernd, drei Zonen, zentrale Menü-Pille
+   ========================================================= */
+.kopf{position:absolute;top:0;left:0;right:0;z-index:90;height:var(--kopf-h);pointer-events:none}
+.kopf-in{position:relative;height:100%;max-width:none;margin:0;padding:0 var(--s16) 0 var(--s10);
+  display:flex;align-items:center;justify-content:space-between}
+.kopf-in > *{pointer-events:auto}
+.zone-links{display:flex;align-items:center;gap:var(--s8)}
+.logo{display:flex;align-items:center;gap:var(--s3);text-decoration:none;color:var(--text-900)}
+.logo-bild{height:clamp(42px,3.8vw,58px);width:auto;display:block}
+.logo.hat-bild .logo-mark,.logo.hat-bild .logo-txt{display:none}
+.logo-mark{width:52px;height:52px;border-radius:14px;background:var(--gruen-900);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;letter-spacing:-.04em}
+.logo-txt{display:flex;flex-direction:column;line-height:1.08}
+.logo-txt b{font-size:19px;font-weight:700;letter-spacing:-.028em}
+.logo-txt span{font-size:11px;color:var(--text-400);font-weight:700;letter-spacing:.16em}
+.punktlink{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;
+  color:var(--text-900);text-decoration:none;transition:color var(--t-state) var(--ease)}
+.punktlink::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gruen-500);
+  transition:transform var(--t-state) var(--ease)}
+.punktlink:hover{color:var(--gruen-700)}
+.punktlink:hover::before{transform:scale(1.5)}
+
+/* zentrale Menü-Pille */
+.menue-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:14px;font-weight:600;
+  color:#fff;background:var(--gruen-900);border:0;border-radius:var(--r-pill);padding:11px 20px;
+  cursor:pointer;pointer-events:auto;
+  transition:background-color var(--t-state) var(--ease),transform var(--t-state) var(--ease)}
+.menue-btn:hover{background:var(--gruen-700);transform:translate(-50%,-50%) scale(1.02)}
+.menue-btn:focus-visible{outline:2px solid var(--gruen-500);outline-offset:4px}
+.mb-ikon{position:relative;width:15px;height:11px;display:block}
+.mb-ikon i{position:absolute;left:0;width:15px;height:1.7px;background:#fff;border-radius:2px;
+  transition:transform var(--t-state) var(--ease),opacity var(--t-state) var(--ease)}
+.mb-ikon i:nth-child(1){top:1px}
+.mb-ikon i:nth-child(2){top:8px;width:10px}
+.offen .mb-ikon i:nth-child(1){top:4.5px;transform:rotate(45deg)}
+.offen .mb-ikon i:nth-child(2){top:4.5px;width:15px;transform:rotate(-45deg)}
+.menue-btn .wort-auf{display:inline-block}
+.menue-btn .wort-zu{display:none}
+.offen .menue-btn .wort-auf{display:none}
+.offen .menue-btn .wort-zu{display:inline-block}
+
+/* Die rechte Zone liegt auf dem dunklen Hero-Panel, deshalb hell gesetzt */
+.zone-rechts{display:flex;align-items:center;gap:var(--s6)}
+.zone-rechts .punktlink{color:#fff}
+.zone-rechts .punktlink::before{background:var(--gruen-100)}
+.zone-rechts .punktlink:hover{color:var(--gruen-100)}
+.kopf-btn{padding:12px 22px;font-size:14.5px;background:#fff;color:var(--gruen-900);box-shadow:var(--e-3)}
+.kopf-btn:hover{background:var(--gruen-100);color:var(--gruen-900);transform:translateY(-1px)}
+.pille-weiss{display:inline-flex;align-items:center;gap:var(--s2);background:#fff;border-radius:var(--r-pill);
+  padding:11px 20px;font-size:14px;font-weight:600;color:var(--text-900);text-decoration:none;
+  box-shadow:var(--e-2);transition:transform var(--t-state) var(--ease),box-shadow var(--t-state) var(--ease)}
+.pille-weiss:hover{transform:translateY(-1px);box-shadow:var(--e-3)}
+.pille-weiss .arr{transition:transform var(--t-state) var(--ease)}
+.pille-weiss:hover .arr{transform:translateX(3px)}
+
+/* Vollbild-Overlay */
+.overlay{position:fixed;inset:0;z-index:85;background:var(--flaeche-1);
+  opacity:0;visibility:hidden;transition:opacity 380ms var(--ease),visibility 380ms}
+.overlay::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(760px 620px at 16% 46%,rgba(213,254,183,.34),transparent 62%)}
+.offen .overlay{opacity:1;visibility:visible}
+.offen .kopf{position:fixed}
+.ov-links{position:absolute;top:50%;left:min(42%,calc(50% - 120px));transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:var(--s2)}
+.ov-links a{position:relative;display:inline-flex;align-items:center;font-size:clamp(24px,2.8vw,34px);
+  font-weight:600;letter-spacing:-.028em;color:var(--text-900);text-decoration:none;padding:9px 0 9px 46px;
+  opacity:0;transform:translateY(14px);
+  transition:color var(--t-state) var(--ease)}
+.offen .ov-links a{animation:ovIn 480ms var(--ease) forwards}
+@keyframes ovIn{to{opacity:1;transform:none}}
+.ov-links a .pfeil{position:absolute;left:0;opacity:0;transform:translateX(-10px);color:var(--gruen-500);
+  transition:opacity var(--t-state) var(--ease),transform var(--t-state) var(--ease)}
+.ov-links a:hover{color:var(--gruen-500)}
+.ov-links a:hover .pfeil,.ov-links a:focus-visible .pfeil{opacity:1;transform:none}
+.ov-unten-l{position:absolute;left:var(--s10);bottom:var(--s10);display:flex;align-items:center;gap:var(--s4);
+  font-size:14px;font-weight:600;color:var(--text-900);text-decoration:none}
+.ov-unten-l .hell{color:var(--text-300);font-weight:500}
+.ov-text{display:block}
+.ov-unten-l .kreis{width:34px;height:34px;border-radius:50%;border:1px solid var(--gruen-200);
+  display:flex;align-items:center;justify-content:center;color:var(--gruen-500);
+  transition:transform var(--t-state) var(--ease),background-color var(--t-state) var(--ease)}
+.ov-unten-l:hover .kreis{transform:translateY(3px);background:var(--gruen-100)}
+.ov-unten-r{position:absolute;right:var(--s10);bottom:var(--s10);display:flex;align-items:center;gap:var(--s4);
+  background:#fff;border-radius:var(--r-pill);padding:10px 22px 10px 12px;box-shadow:var(--e-3)}
+.avatare{display:flex}
+.avatare i{width:34px;height:34px;border-radius:50%;border:2px solid #fff;margin-left:-11px;
+  display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;font-weight:700;color:#fff}
+.avatare i:first-child{margin-left:0}
+.avatare i:nth-child(1){background:var(--gruen-900)}
+.avatare i:nth-child(2){background:var(--gruen-500)}
+.avatare i:nth-child(3){background:var(--gruen-200);color:var(--gruen-900)}
+.ov-unten-r b{display:block;font-size:14px}
+.ov-unten-r .chiptext,.ov-unten-r .chiptext span{display:block}
+.ov-unten-r .chiptext span{font-size:12.5px;color:var(--text-400)}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(320px,1fr) minmax(0,var(--panel-breite));gap:var(--s12);
+  align-items:center;padding-left:max(var(--gutter),calc((100% - var(--container))/2 + var(--gutter)));
+  padding-right:var(--s10);min-height:100vh;min-height:100svh}
+.hero-text{padding:calc(var(--kopf-h) + var(--s8)) 0 var(--s14)}
+.hero-text .lead{font-size:17px}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(16px) scale(.985);
+  animation:heroIn 720ms var(--ease) forwards}
+@keyframes heroIn{to{opacity:1;transform:none}}
+.hero-punkte{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s3)}
+.hero-punkte li{display:flex;gap:var(--s3);align-items:flex-start;font-size:15.5px;color:var(--text-600)}
+.hero-punkte li b{color:var(--text-900);font-weight:700}
+.hero-punkte svg{width:16px;height:16px;flex:0 0 auto;margin-top:5px;fill:var(--gruen-500);stroke:none}
+/* dunkles Panel: startet oben am Seitenrand, läuft nach rechts aus */
+.hero-panel{position:relative;align-self:stretch;margin:var(--s3) 0 var(--s10);background:var(--gruen-900);
+  border-radius:var(--r-xl);overflow:hidden;display:flex;align-items:flex-end;padding:var(--s8)}
+.hero-panel::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(620px 460px at 58% 14%,rgba(62,133,35,.30),transparent 72%),
+             linear-gradient(to top,rgba(10,26,7,.72) 0%,rgba(10,26,7,.18) 38%,rgba(10,26,7,.34) 100%)}
+.hero-panel .ph-txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  text-align:center;color:rgba(255,255,255,.32);font-size:12.5px;font-weight:600;letter-spacing:.04em;padding:var(--s8)}
+.hero-chip{position:relative;z-index:2;display:inline-flex;align-items:center;gap:var(--s3);
+  background:#fff;border-radius:var(--r-pill);padding:10px 20px 10px 10px;box-shadow:var(--e-3);
+  font-size:14px;font-weight:600}
+.hero-chip small{display:block;font-size:12px;font-weight:500;color:var(--text-600)}
+.scroll-hinweis{position:absolute;left:max(var(--gutter),calc((100% - var(--container))/2 + var(--gutter)));
+  bottom:var(--s8);display:flex;align-items:center;gap:var(--s3);font-size:13px;font-weight:600;
+  color:var(--text-900);text-decoration:none}
+.scroll-hinweis span.hell{color:var(--text-300);font-weight:500}
+.scroll-hinweis .kreis{width:30px;height:30px;border-radius:50%;border:1px solid var(--gruen-200);
+  display:flex;align-items:center;justify-content:center;color:var(--gruen-500);
+  animation:tupf 2.4s var(--ease) infinite}
+@keyframes tupf{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* =========================================================
+   LAUFBAND
+   ========================================================= */
+.laufband{overflow:hidden;position:relative;padding:var(--s10) 0;border-top:1px solid var(--linie);
+  border-bottom:1px solid var(--linie)}
+.laufband::before,.laufband::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.laufband::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+.laufband::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+.lb-spur{display:flex;gap:var(--s14);width:max-content;animation:lauf 32s linear infinite}
+.lb-el{display:flex;align-items:center;gap:var(--s3);font-size:15px;font-weight:600;letter-spacing:.03em;
+  color:var(--text-400);white-space:nowrap;text-transform:uppercase}
+@keyframes lauf{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* =========================================================
+   SEKTIONEN
+   ========================================================= */
+.sec{padding:var(--s24) 0}
+.sec-luft{padding:var(--s32) 0}
+.sec-flaeche{background:var(--flaeche-1)}
+.kopfblock{text-align:center;max-width:62ch;margin:0 auto var(--s14)}
+.kopfblock .eyebrow{display:block;margin-bottom:var(--s4)}
+.kopfblock p{margin-top:var(--s5);color:var(--text-600)}
+.kopf-links{text-align:left;margin-left:0}
+
+/* Statement */
+.statement{font-size:clamp(28px,4.3vw,54px);line-height:1.24;letter-spacing:-.032em;font-weight:600;
+  text-align:center;max-width:21ch;margin:0 auto}
+.statement .w{color:var(--text-300);transition:color var(--t-reveal) var(--ease)}
+.statement.an .w{color:var(--text-900)}
+.nobr{white-space:nowrap}
+.inline-ico{display:inline-flex;align-items:center;justify-content:center;width:.84em;height:.84em;
+  border-radius:50%;vertical-align:baseline;margin:0 .16em}
+.inline-ico.solid{background:var(--gruen-500);color:#fff}
+.inline-ico.mint{background:var(--gruen-100);color:var(--gruen-900)}
+.inline-ico.grau{background:var(--flaeche-2);color:var(--text-600)}
+.inline-ico svg{width:.46em;height:.46em;fill:currentColor;stroke:none}
+
+/* Kundenband */
+.kunden{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.kunde{background:#fff;border-radius:var(--r-lg);padding:var(--s8);box-shadow:var(--e-2);
+  display:flex;flex-direction:column;gap:var(--s3);
+  transition:transform var(--t-state) var(--ease),box-shadow var(--t-state) var(--ease)}
+.kunde:hover{transform:translateY(-3px);box-shadow:var(--e-3)}
+.kunde .zahl{font-size:clamp(36px,3.8vw,50px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gruen-900)}
+
+/* Tab-Sektion */
+.tabpanel-box{background:var(--flaeche-1);border-radius:var(--r-xl);padding:var(--s12)}
+.tabs{display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:center;margin-bottom:var(--s12)}
+.tab{font:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:11px 22px;border-radius:var(--r-pill);
+  background:#fff;color:var(--text-600);border:1px solid var(--linie);
+  transition:background-color var(--t-state) var(--ease),color var(--t-state) var(--ease),
+             border-color var(--t-state) var(--ease),transform var(--t-state) var(--ease)}
+.tab:hover{border-color:var(--gruen-200);transform:translateY(-1px)}
+.tab[aria-selected=true]{background:var(--gruen-900);color:#fff;border-color:var(--gruen-900)}
+.tab:focus-visible{outline:2px solid var(--gruen-500);outline-offset:3px}
+.tabpanel[hidden]{display:none}
+.tabpanel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s14);align-items:center;
+  animation:blendAuf var(--t-state) var(--ease) both}
+@keyframes blendAuf{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.tp-visual{position:relative;border-radius:var(--r-lg);min-height:300px;
+  background:linear-gradient(150deg,var(--gruen-100),var(--gruen-200));overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
+.tp-visual .ph-in{color:rgba(31,67,23,.42);font-size:12.5px;font-weight:700;text-align:center;padding:var(--s6)}
+.schwebe-chip{position:absolute;display:inline-flex;align-items:center;gap:var(--s2);background:#fff;
+  border-radius:var(--r-pill);padding:9px 16px;font-size:12.5px;font-weight:600;box-shadow:var(--e-3);z-index:2}
+
+/* Annotierte Liste */
+.annot-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s16);align-items:center}
+.annot{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.annot li{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid var(--linie);
+  color:var(--text-300);font-size:17px;font-weight:600;letter-spacing:-.014em;cursor:pointer;
+  transition:color var(--t-state) var(--ease)}
+.annot li .pfeil{width:0;height:1px;background:var(--text-900);flex:0 0 auto;
+  transition:width var(--t-state) var(--ease)}
+.annot li[data-aktiv=true]{color:var(--text-900)}
+.annot li[data-aktiv=true] .pfeil{width:40px}
+.annot li:hover{color:var(--text-600)}
+.annot-ziel{background:#fff;border-radius:var(--r-lg);padding:var(--s10);box-shadow:var(--e-2);min-height:230px}
+
+/* Bildkarten */
+.bildkarten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6)}
+.bk{background:var(--flaeche-1);border-radius:var(--r-xl);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s6);
+  transition:transform var(--t-state) var(--ease),box-shadow var(--t-state) var(--ease)}
+.bk:hover{transform:translateY(-3px);box-shadow:var(--e-2)}
+.bk .bild{height:clamp(240px,24vw,340px);border-radius:var(--r-md)}
+.bk .inhalt{padding:0 var(--s4) var(--s4);display:flex;flex-direction:column;gap:var(--s3);flex:1}
+.bk .werte{margin-top:auto;padding-top:var(--s4);border-top:1px solid var(--linie);display:flex;
+  justify-content:space-between;gap:var(--s4);font-size:13.5px}
+.bk .werte b{font-weight:700}
+.zentriert-cta{display:flex;justify-content:center;margin-top:var(--s12)}
+
+/* Nummerierte Reiter */
+.schritte{display:flex;flex-wrap:wrap;gap:var(--s10);justify-content:center;
+  border-bottom:1px solid var(--linie);padding-bottom:var(--s5)}
+.schritt{display:flex;align-items:flex-start;gap:var(--s3);background:none;border:0;padding:0;font:inherit;
+  cursor:pointer;color:var(--text-300);text-align:left;transition:color var(--t-state) var(--ease)}
+.schritt .num{font-size:10px;font-weight:800;letter-spacing:.06em;margin-top:4px}
+.schritt .lbl{font-size:16px;font-weight:600;letter-spacing:-.012em}
+.schritt .haken{opacity:0;transform:scale(.5);transition:opacity var(--t-state) var(--ease),transform var(--t-state) var(--ease)}
+.schritt[aria-selected=true]{color:var(--text-900)}
+.schritt[aria-selected=true] .haken{opacity:1;transform:none}
+.schritt:hover{color:var(--text-600)}
+.schritt:focus-visible{outline:2px solid var(--gruen-500);outline-offset:4px;border-radius:var(--r-sm)}
+.schritt-inhalt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s14);
+  align-items:center;margin-top:var(--s12)}
+.schritt-inhalt .stack{padding:var(--s12) 0;justify-content:center}
+.schritt-inhalt .tp-visual{min-height:clamp(300px,34vw,440px)}
+
+/* Rechner */
+.rechner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s14);align-items:center;
+  border-radius:var(--r-xl);padding:clamp(var(--s8),3.4vw,var(--s16));box-shadow:var(--e-2);
+  background:linear-gradient(140deg,#E4FFCB 0%,#B6E49B 58%,#9BD37F 100%);position:relative;overflow:hidden}
+.rechner::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(680px 420px at 12% 6%,rgba(255,255,255,.5),transparent 60%)}
+.rechner > *{position:relative;z-index:1}
+.rechner label{color:var(--gruen-900)}
+.rechner label b{color:var(--gruen-700)}
+.rechner .sm{color:rgba(31,67,23,.78)}
+.rechner .xs{color:rgba(31,67,23,.58)}
+.rechner input[type=range]{background:rgba(31,67,23,.20)}
+.regler{display:flex;flex-direction:column;gap:var(--s2)}
+.regler label{font-size:14.5px;font-weight:600}
+.regler label b{color:var(--gruen-700)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;background:var(--flaeche-2);
+  border-radius:var(--r-pill);outline:0;margin:8px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--gruen-500);border:3px solid #fff;box-shadow:var(--e-2);cursor:pointer;
+  transition:transform var(--t-state) var(--ease)}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.12)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--gruen-500);
+  border:3px solid #fff;cursor:pointer}
+input[type=range]:focus-visible{outline:2px solid var(--gruen-500);outline-offset:6px}
+.ergebnis{background:#fff;border-radius:var(--r-lg);padding:clamp(var(--s8),2.6vw,var(--s12));text-align:center;box-shadow:var(--e-2)}
+.ergebnis .sm{color:var(--text-600)}
+.ergebnis .xs{color:var(--text-400)}
+.ergebnis .zahl{font-size:clamp(46px,6.2vw,74px);font-weight:700;letter-spacing:-.045em;line-height:1;
+  color:var(--gruen-900);margin:var(--s5) 0}
+
+/* Person */
+.person{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s16);align-items:stretch}
+.person-panel{position:relative;background:var(--gruen-900);border-radius:var(--r-xl);min-height:380px;
+  overflow:hidden;display:flex;align-items:flex-end;padding:0}
+.person-panel .panel-slot{position:absolute;inset:0}
+.person-panel .hero-chip{position:absolute;left:var(--s6);bottom:var(--s6);right:auto;z-index:3;max-width:calc(100% - var(--s12))}
+.person .stack{justify-content:center;padding:var(--s6) 0}
+.person-panel::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,rgba(10,26,7,.62) 0%,rgba(10,26,7,.10) 34%,transparent 62%)}
+.person-panel .ph-txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  text-align:center;color:rgba(255,255,255,.32);font-size:12.5px;font-weight:600;padding:var(--s8)}
+.person-daten{display:flex;flex-direction:column;gap:var(--s2);margin-top:var(--s4);padding-top:var(--s6);
+  border-top:1px solid var(--linie);font-size:15px}
+.person-daten a{color:var(--text-900);text-decoration:none;font-weight:600}
+
+/* Akkordeon */
+.akk{background:#fff;border-radius:var(--r-xl);padding:var(--s10);box-shadow:var(--e-2)}
+.akk details{border-bottom:1px solid var(--linie)}
+.akk details:last-of-type{border-bottom:0}
+.faq-sum{list-style:none;cursor:pointer;padding:var(--s5) 0;display:flex;align-items:center;
+  justify-content:space-between;gap:var(--s5);font-size:16.5px;font-weight:600;letter-spacing:-.012em;
+  transition:color var(--t-state) var(--ease)}
+.faq-sum::-webkit-details-marker{display:none}
+.faq-sum:hover{color:var(--gruen-700)}
+.faq-sum:focus-visible{outline:2px solid var(--gruen-500);outline-offset:3px;border-radius:var(--r-sm)}
+.plus{position:relative;width:16px;height:16px;flex:0 0 auto}
+.plus::before,.plus::after{content:"";position:absolute;background:var(--text-900);transition:transform var(--t-state) var(--ease)}
+.plus::before{left:0;top:7px;width:16px;height:1.6px}
+.plus::after{top:0;left:7px;width:1.6px;height:16px}
+details[open] .plus::after{transform:rotate(90deg)}
+.faq-txt{margin:0 0 var(--s5);color:var(--text-600);max-width:64ch;font-size:15.5px}
+.stand{font-size:12px;color:var(--text-400);margin-top:var(--s6)}
+
+/* Geister-Typo */
+.ghost-wrap{overflow:hidden;padding:var(--s12) 0 0;position:relative}
+.ghost{font-size:clamp(54px,13vw,190px);font-weight:700;letter-spacing:-.05em;color:var(--text-100);
+  line-height:.86;white-space:nowrap;user-select:none;margin:0;text-align:center;
+  will-change:transform}
+
+/* Kontakt */
+.kontakt{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--s14);align-items:start}
+.formkarte{background:var(--flaeche-1);border-radius:var(--r-xl);padding:var(--s12)}
+.felder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s8) var(--s6)}
+.feld{display:flex;flex-direction:column;gap:var(--s2)}
+.feld.voll{grid-column:1/-1}
+.feld label{font-size:14px;font-weight:600}
+.feld input,.feld select{font:inherit;font-size:15px;color:var(--text-900);background:transparent;border:0;
+  border-bottom:1px solid var(--text-300);padding:9px 2px;border-radius:0;
+  transition:border-color var(--t-state) var(--ease)}
+.feld input::placeholder{color:var(--text-300)}
+.feld input:focus,.feld select:focus{outline:0;border-color:var(--gruen-500)}
+.feld .hint{font-size:12px;color:var(--text-400)}
+.upload{border:1px dashed var(--text-300);border-radius:var(--r-md);padding:var(--s6);text-align:center;
+  font-size:14px;color:var(--text-600);cursor:pointer;background:#fff;
+  transition:border-color var(--t-state) var(--ease),background-color var(--t-state) var(--ease)}
+.upload:hover{border-color:var(--gruen-500)}
+
+/* Footer */
+.fuss{position:relative;overflow:hidden;background:var(--gruen-900);color:#fff;
+  padding:var(--s24) 0 var(--s10);margin-top:var(--s24)}
+.fuss.hat-stadtfoto{padding-top:clamp(var(--s24),16vw,260px)}
+/* Regensburg als Zeichnung: Steinerne Brücke, Brückturm, Dom St. Peter.
+   Liegt als Wasserzeichen unten in der Ansprechpartner-Sektion. */
+.stadt-band{position:absolute;left:0;right:0;bottom:0;height:clamp(150px,19vw,290px);
+  color:var(--gruen-700);opacity:.2;pointer-events:none;z-index:0;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 13%,#000 100%);
+          mask-image:linear-gradient(to bottom,transparent 0%,#000 13%,#000 100%)}
+.stadt-band svg{width:100%;height:100%;display:block}
+#ueber-mich{position:relative;overflow:hidden;padding-bottom:clamp(var(--s20),13vw,190px)}
+#ueber-mich > .wrap{position:relative;z-index:1}
+/* Regensburg als Foto im Footer */
+.stadt{position:absolute;left:0;right:0;top:0;height:clamp(180px,24vw,340px);
+  color:var(--gruen-200);opacity:.5;pointer-events:none;overflow:hidden}
+.stadt svg{width:100%;height:100%;display:block}
+/* Echtes Foto, in die Palette gezogen: entsättigt, abgedunkelt, grün überlagert */
+.stadt-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;
+  filter:grayscale(.5) brightness(.64) contrast(1.08)}
+.stadt{opacity:1}
+.stadt::before{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to bottom,rgba(31,67,23,.46) 0%,rgba(31,67,23,.74) 52%,var(--gruen-900) 94%),
+             radial-gradient(900px 320px at 50% 0%,rgba(62,133,35,.34),transparent 70%)}
+.stadt::after{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(to bottom,rgba(31,67,23,.15) 0%,rgba(31,67,23,.55) 62%,var(--gruen-900) 100%)}
+.fuss .wrap{position:relative;z-index:1}
+.fuss-grid{display:grid;grid-template-columns:5fr 4fr 3fr;gap:var(--s12)}
+.fuss h3{color:#fff;margin-bottom:var(--s4)}
+.fuss-logo{height:clamp(40px,3.4vw,52px);width:auto;display:block;margin-bottom:var(--s5);opacity:.95}
+.fuss p,.fuss li{color:rgba(255,255,255,.70);font-size:14.5px;line-height:1.7}
+.fuss a{color:rgba(255,255,255,.88);text-decoration:none}
+.fuss a:hover{color:#fff;text-decoration:underline}
+.fuss ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s2)}
+.fuss-unten{margin-top:var(--s14);padding-top:var(--s6);border-top:1px solid rgba(255,255,255,.14);
+  display:flex;flex-wrap:wrap;gap:var(--s5);justify-content:space-between;font-size:13px;color:rgba(255,255,255,.55)}
+.fuss-unten nav{display:flex;gap:var(--s5)}
+.credit{display:inline-block;margin-top:6px;font-size:12px;color:rgba(255,255,255,.42)}
+.credit a{color:rgba(255,255,255,.62);text-decoration:underline}
+
+/* Bild-Slots: echtes <img>, das bei fehlender Datei zum beschrifteten Platzhalter wird */
+.bild-slot{position:relative;margin:0;overflow:hidden;background:var(--flaeche-2);display:block}
+.bild-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.bild-slot::after{content:"";position:absolute;inset:auto 0 0 0;height:42%;pointer-events:none;
+  background:linear-gradient(to top,rgba(31,67,23,.20),transparent)}
+.bild-slot.leer::before{content:"Bild fehlt: " attr(data-datei);position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--s5);
+  color:var(--text-400);font-size:12.5px;font-weight:600;line-height:1.5}
+.panel-slot{position:absolute;inset:0;margin:0;background:transparent}
+.panel-slot img{width:100%;height:100%;object-fit:cover}
+.panel-slot.leer::before{content:"Bild fehlt: " attr(data-datei);position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--s8);
+  color:rgba(255,255,255,.34);font-size:12.5px;font-weight:600;line-height:1.6}
+.panel-slot::after{display:none}
+/* Hero-Video, Marken-Grün ist in die Datei gerechnet, hier nur noch Feinschliff */
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
+  filter:saturate(1.04) contrast(1.02)}
+.hero-panel .hero-video + *{position:relative}
+.hero-panel::before{z-index:1}
+.tp-visual .panel-slot img,.schritt-inhalt .panel-slot img{object-position:50% 45%}
+.tp-visual .panel-slot:not(.leer)::after{content:"";display:block;position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(10,26,7,.30) 0%,transparent 34%,rgba(10,26,7,.34) 100%)}
+.tp-visual .panel-slot.leer::before{color:rgba(31,67,23,.50);font-size:11.5px;
+  align-items:flex-end;justify-content:flex-start;padding:var(--s5) var(--s6)}
+/* Ohne Foto trägt ein großes Icon die Fläche, das wirkt gewollt statt kaputt */
+.tp-visual .panel-slot.leer::after{content:"";display:block;position:absolute;inset:0;
+  background-image:var(--platzhalter-icon);background-repeat:no-repeat;
+  background-position:center 44%;background-size:clamp(74px,16%,128px);opacity:.26}
+.tp-visual{overflow:hidden}
+
+/* Platzhalter */
+.ph{position:relative;border-radius:var(--r-md);background:var(--flaeche-2);display:flex;align-items:center;
+  justify-content:center;text-align:center;color:var(--text-400);font-size:12.5px;font-weight:600;
+  overflow:hidden;padding:var(--s5)}
+.ph::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;
+  background:linear-gradient(to top,rgba(31,67,23,.13),transparent)}
+.ph span{position:relative;z-index:1;line-height:1.5}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(18px);
+  transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease)}
+.reveal.an{opacity:1;transform:none}
+
+/* Aktionen im Overlay-Menü, ersetzt die feste Leiste auf Mobil */
+.ov-aktionen{display:none;flex-direction:column;gap:var(--s3);margin-top:var(--s8)}
+.ov-aktionen .btn{justify-content:center;width:100%}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1100px){
+  .zone-rechts .punktlink{color:var(--text-900)}
+  .zone-rechts .punktlink::before{background:var(--gruen-500)}
+  .zone-rechts .punktlink:hover{color:var(--gruen-700)}
+  .kopf-btn{background:var(--gruen-500);color:#fff}
+  .kopf-btn:hover{background:var(--gruen-700);color:#fff}
+  .hero-text{padding-top:calc(var(--kopf-h) + var(--s8))}
+  .hero-grid{grid-template-columns:1fr;gap:var(--s10);padding-right:var(--gutter);min-height:0}
+  .hero-panel{margin-top:0;border-radius:var(--r-xl);min-height:340px}
+  .scroll-hinweis{display:none}
+  .tabpanel,.annot-grid,.schritt-inhalt,.rechner,.person,.kontakt{grid-template-columns:1fr;gap:var(--s10)}
+  .kunden,.bildkarten{grid-template-columns:1fr}
+  .fuss-grid{grid-template-columns:1fr;gap:var(--s10)}
+  .tabpanel-box,.rechner,.akk,.formkarte{padding:var(--s8)}
+}
+@media(max-width:860px){
+  :root{--bar:0px;--gutter:20px;--kopf-h:72px}
+  .kopf-in{padding:0 var(--gutter)}
+  .punktlink,.zone-rechts{display:none}
+  .menue-btn{left:auto;right:var(--gutter);top:50%;transform:translateY(-50%)}
+  .menue-btn:hover{transform:translateY(-50%) scale(1.02)}
+  .ov-links{position:static;transform:none;padding:calc(var(--kopf-h) + var(--s10)) var(--gutter) 0}
+  .overlay{overflow-y:auto}
+  .ov-unten-l,.ov-unten-r{position:static;margin:var(--s10) var(--gutter) 0}
+  .ov-unten-r{display:inline-flex;margin-bottom:var(--s16)}
+  .ov-aktionen{display:flex}
+  .sec{padding:var(--s16) 0}
+  .sec-luft{padding:var(--s20) 0}
+  .statement{max-width:none}
+  .schritte{gap:var(--s6);justify-content:flex-start}
+  .tabs{justify-content:flex-start}
+  .felder{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .btn{white-space:normal;text-align:center;justify-content:center;padding:13px 20px}
+  .formkarte .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+  .statement .w{color:var(--text-900)}
+  .statement-karte .statement .w{color:#fff}
+  .orbits{animation:none}
+  .hero h1 .w{opacity:1;transform:none}
+  .offen .ov-links a{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top">
+
+<svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="i-check" viewBox="0 0 24 24"><path d="M19.293 5.293a1 1 0 1 1 1.414 1.414l-11 11a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L9 15.586 19.293 5.293Z"/></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M12.232 1.36a1 1 0 0 1 1.76.764L13.132 9h6.16c.252 0 .51-.001.72.018.188.017.55.062.863.315.359.29.565.729.558 1.19-.006.402-.203.709-.31.865-.12.172-.287.37-.448.564l-8.906 10.689a1 1 0 0 1-1.761-.765l.86-6.876h-6.16c-.252 0-.511.001-.72-.018-.19-.017-.55-.062-.863-.315a1.501 1.501 0 0 1-.557-1.19l.01-.146c.043-.33.206-.582.3-.719.12-.172.286-.37.447-.564l8.907-10.689ZM5.135 13H12a1 1 0 0 1 .992 1.124l-.577 4.614L18.865 11H12a1 1 0 0 1-.992-1.124l.576-4.615L5.134 13Z"/></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M14 15.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 13.4 15h-2.8c-.297 0-.459.001-.576.01l-.012.002-.001.012c-.01.117-.011.28-.011.576V20h4v-4.4ZM6.2 4c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C4.001 5.25 4 5.624 4 6.2V7a2 2 0 1 0 4 0 1 1 0 0 1 2 0 2 2 0 1 0 4 0 1 1 0 1 1 2 0 2 2 0 1 0 4 0v-.8c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 17.8 4H6.2ZM22 17.8c0 .543.001 1.012-.03 1.395-.033.396-.104.789-.297 1.167a3 3 0 0 1-1.31 1.31c-.379.194-.772.265-1.168.298-.383.031-.852.03-1.395.03H6.2c-.543 0-1.012.001-1.395-.03-.396-.033-.789-.104-1.167-.297a3 3 0 0 1-1.31-1.31c-.194-.379-.265-.772-.298-1.168C2 18.812 2 18.343 2 17.8V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C5.188 2 5.657 2 6.2 2h11.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395v11.6ZM16 20h1.8c.576 0 .949-.001 1.232-.024.272-.023.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.656.024-1.232v-7.337a3.989 3.989 0 0 1-5-.82A3.989 3.989 0 0 1 12 11a3.989 3.989 0 0 1-3-1.356 3.989 3.989 0 0 1-5 .819V17.8c0 .576.001.949.024 1.232.023.272.06.373.085.422.096.188.249.34.437.437.05.025.15.062.422.085.283.023.656.024 1.232.024H8v-4.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20Z"/></symbol><symbol id="i-building-hv" viewBox="0 0 24 24"><path d="M20 12.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 19.4 12h-1.9v8H20v-7.4ZM13 14a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm0-4a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm0-4a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2ZM4 20h2.5v-8H4.6c-.297 0-.459.001-.576.01l-.012.002-.001.012C4 12.141 4 12.304 4 12.6V20ZM15.5 6.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 13.3 4h-2.6c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422-.023.283-.024.656-.024 1.232V20h7V6.2Zm2 3.8h1.9c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2v-7.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h1.9V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C9.688 2 10.157 2 10.7 2h2.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395V10Z"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="M20 10.565c0-.63-.009-.755-.037-.857a1.002 1.002 0 0 0-.16-.325c-.062-.084-.155-.168-.653-.555l-6.782-5.275a7.113 7.113 0 0 0-.361-.271L12 3.277l-.007.005c-.075.05-.174.126-.361.271L4.85 8.828c-.498.387-.591.47-.654.555a1.003 1.003 0 0 0-.159.325C4.01 9.81 4 9.934 4 10.565V17.8c0 .577.001.95.024 1.232.023.272.06.373.085.422a1 1 0 0 0 .437.437c.05.025.15.063.422.085.283.023.656.024 1.232.024h11.6c.576 0 .949-.001 1.232-.024.272-.022.373-.06.422-.085a1 1 0 0 0 .437-.437c.025-.049.062-.15.085-.422.023-.283.024-.655.024-1.232v-7.235ZM7.877 13.032a1 1 0 0 1 1.218.718 3.002 3.002 0 0 0 5.81 0 1 1 0 0 1 1.938.5 5.002 5.002 0 0 1-9.686 0 1 1 0 0 1 .72-1.218ZM22 17.8c0 .543.001 1.011-.03 1.395-.033.395-.104.788-.297 1.167a3.001 3.001 0 0 1-1.31 1.311c-.379.193-.772.264-1.168.296-.383.031-.852.031-1.395.031H6.2c-.543 0-1.012 0-1.395-.03-.396-.033-.789-.104-1.167-.297a3.001 3.001 0 0 1-1.31-1.311c-.194-.379-.265-.772-.298-1.167C2 18.81 2 18.343 2 17.8v-7.235c0-.518-.008-.968.111-1.396a3 3 0 0 1 .477-.974c.264-.357.625-.627 1.033-.945l6.782-5.275c.279-.217.64-.52 1.074-.639a2 2 0 0 1 .917-.03l.129.03.16.053c.364.14.67.397.914.586l6.782 5.275c.408.318.77.588 1.033.945.217.293.378.623.477.974.12.428.111.878.111 1.396V17.8Z"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M4 12c0-.338.018-.671.053-1H3a1 1 0 1 1 0-2h1.486C5.743 5.224 9.302 2.5 13.5 2.5c2.344 0 4.491.85 6.148 2.257a1 1 0 0 1-1.296 1.524A7.5 7.5 0 0 0 6.625 9H13a1 1 0 1 1 0 2H6.068c-.043.327-.068.66-.068 1 0 .34.025.673.068 1H13a1 1 0 1 1 0 2H6.626a7.5 7.5 0 0 0 11.726 2.719 1 1 0 0 1 1.296 1.524A9.467 9.467 0 0 1 13.5 21.5c-4.198 0-7.757-2.724-9.014-6.5H3a1 1 0 1 1 0-2h1.053A9.608 9.608 0 0 1 4 12Z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><path d="M18 11a7 7 0 1 0-2.137 5.032.995.995 0 0 1 .17-.169A6.975 6.975 0 0 0 18 11Zm2 0a8.96 8.96 0 0 1-1.97 5.616l3.677 3.677a1 1 0 1 1-1.414 1.414l-3.677-3.677A9 9 0 1 1 20 11Z"/></symbol><symbol id="i-switch" viewBox="0 0 24 24"><path d="M7.293 12.293a1 1 0 1 1 1.414 1.414L6.414 16H20a1 1 0 1 1 0 2H6.414l2.293 2.293a1 1 0 1 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4Zm8-10a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 1 1-1.414-1.414L17.586 8H4a1 1 0 0 1 0-2h13.586l-2.293-2.293a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M20.701 10.5c.265 0 .52.105.707.293l2 2a1 1 0 0 1-1.415 1.414l-.196-.196C20.867 18.57 16.834 22 12 22 6.477 22 2 17.523 2 12S6.477 2 12 2a9.996 9.996 0 0 1 8.615 4.92 1 1 0 1 1-1.721 1.018 8 8 0 1 0 .895 5.888l-.382.381a1 1 0 0 1-1.414-1.414l2-2 .074-.066a1 1 0 0 1 .634-.227ZM11 7a1 1 0 1 1 2 0v4.465l2.555 1.703a1 1 0 1 1-1.11 1.664l-3-2A1 1 0 0 1 11 12V7Z"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M17.293 5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 1 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 1 1-1.414-1.414L10.586 12 5.293 6.707a1 1 0 1 1 1.414-1.414L12 10.586l5.293-5.293Z"/></symbol><symbol id="i-edit" viewBox="0 0 24 24"><path d="M1 17.2V8.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.079.392-1.564a4.002 4.002 0 0 1 1.748-1.748c.485-.247 1.002-.346 1.564-.392C5.298 2.999 5.976 3 6.8 3H11a1 1 0 0 1 0 2H6.8c-.857 0-1.44 0-1.89.038-.438.036-.663.1-.82.18a2 2 0 0 0-.873.874c-.08.156-.145.38-.18.819C3 7.36 3 7.943 3 8.8v8.4c0 .856 0 1.439.037 1.889.036.438.101.663.18.819.192.376.499.682.875.874.156.08.38.145.82.18C5.361 21 5.942 21 6.8 21h8.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.181.375-.192.681-.498.873-.874.08-.156.145-.381.18-.82.038-.45.038-1.032.038-1.888V13a1 1 0 0 1 2 0v4.2c0 .823.001 1.501-.044 2.052-.046.562-.144 1.079-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.247-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H6.8c-.824 0-1.502 0-2.052-.044-.562-.046-1.08-.145-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C.999 18.702 1 18.023 1 17.2ZM17.793 1.793a3.121 3.121 0 0 1 4.414 4.414l-9.563 9.563c-.312.313-.579.588-.905.788a3.002 3.002 0 0 1-.867.359c-.372.09-.756.083-1.197.083H8a1 1 0 0 1-1-1v-1.674c0-.442-.006-.826.083-1.198.074-.306.195-.6.36-.867.2-.326.475-.594.787-.906l9.563-9.562ZM9 15h.675c.536 0 .642-.006.73-.028a.994.994 0 0 0 .29-.12c.077-.047.156-.118.535-.497l9.563-9.562a1.122 1.122 0 0 0-1.586-1.586L9.645 12.77c-.38.38-.45.459-.498.536a1 1 0 0 0-.12.289c-.02.088-.027.194-.027.73V15Z"/></symbol><symbol id="i-msg" viewBox="0 0 24 24"><path d="M20 13.2V7.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.819-.18C17.639 4 17.057 4 16.2 4H7.8c-.856 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 6.361 4 6.942 4 7.8V14c0 .994.009 1.295.068 1.518a2 2 0 0 0 1.415 1.414c.222.06.523.068 1.517.068a1 1 0 0 1 1 1v1.919l2.06-1.649c.457-.364.79-.637 1.172-.832a3.984 3.984 0 0 1 1.016-.356c.421-.086.852-.082 1.436-.082H16.2c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.181-.82.037-.45.037-1.031.037-1.888Zm-5.207-5.907a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 11.086l3.793-3.793ZM22 13.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.001 4.001 0 0 1-1.747 1.748c-.486.248-1.003.346-1.565.392-.55.045-1.228.044-2.052.044h-2.516c-.664 0-.858.005-1.034.041a1.997 1.997 0 0 0-.507.178c-.16.081-.315.2-.833.614l-2.385 1.908c-.193.154-.39.314-.564.428-.157.104-.462.29-.859.291a1.5 1.5 0 0 1-1.174-.565c-.247-.31-.293-.664-.31-.852-.02-.206-.018-.46-.018-.707v-1.347c-.392-.013-.728-.043-1.035-.126a4 4 0 0 1-2.828-2.828C1.992 15.495 2 14.865 2 14V7.8c0-.824 0-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C6.298 1.999 6.976 2 7.8 2h8.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.565.392a4 4 0 0 1 1.747 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v5.4Z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20.558 11.899a1 1 0 0 1 .89 1.1 9.49 9.49 0 0 1-4.7 7.229c-4.128 2.383-9.302 1.315-12.18-2.309l-.11.406a1 1 0 1 1-1.93-.518l.732-2.731.03-.098a1 1 0 0 1 1.194-.61l2.732.732a1 1 0 0 1-.518 1.932l-.343-.092a7.501 7.501 0 0 0 13.104-4.153 1 1 0 0 1 1.1-.888ZM7.25 3.773c4.129-2.384 9.303-1.316 12.181 2.307l.11-.405a1 1 0 0 1 1.932.518l-.733 2.732a1 1 0 0 1-1.224.707L16.782 8.9a1 1 0 0 1 .518-1.932l.343.092A7.502 7.502 0 0 0 4.54 11.213a1 1 0 0 1-1.988-.212A9.489 9.489 0 0 1 7.25 3.773Z"/></symbol><symbol id="i-calc" viewBox="0 0 24 24"><path d="M20 7.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C17.639 4 17.058 4 16.2 4H7.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 6.361 4 6.942 4 7.8v8.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C6.361 20 6.942 20 7.8 20h8.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V7.8Zm-3.207-2.007a1 1 0 1 1 1.414 1.414l-11 11a1 1 0 1 1-1.414-1.414l11-11ZM17.5 14.5a1 1 0 1 1 0 2h-4a1 1 0 1 1 0-2h4Zm-10-4v-1h-1a1 1 0 1 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0ZM22 16.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H7.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C1.999 17.702 2 17.024 2 16.2V7.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C6.298 1.999 6.976 2 7.8 2h8.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v8.4Z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="m21 8.92-6.592 4.615c-.593.415-1.1.79-1.682.935a3 3 0 0 1-1.452 0c-.582-.146-1.089-.52-1.682-.935L3 8.92v6.28c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C5.361 19 5.942 19 6.8 19h10.4c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.18-.82.038-.45.038-1.031.038-1.888V8.92ZM6.8 5c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875 1.536 1.536 0 0 0-.134.446l7.654 5.358c.729.51.883.6 1.02.633.159.04.325.04.484 0 .136-.034.291-.123 1.02-.633l7.653-5.358a1.54 1.54 0 0 0-.133-.446 2 2 0 0 0-.874-.874c-.156-.08-.38-.145-.82-.18C18.639 5 18.058 5 17.2 5H6.8ZM23 15.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.002 4.002 0 0 1-1.748 1.748c-.485.248-1.002.346-1.564.392-.55.045-1.228.044-2.052.044H6.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C.999 16.702 1 16.024 1 15.2V8.8c0-.618 0-1.153.019-1.614a.997.997 0 0 1 .033-.5c.048-.538.145-1.035.384-1.502a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C5.298 2.999 5.976 3 6.8 3h10.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.238.467.336.964.384 1.502a.996.996 0 0 1 .033.5c.02.46.019.996.019 1.614v6.4Z"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M18 5.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 15.8 3H8.2c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C6.001 4.25 6 4.624 6 5.2v13.6c0 .576.001.949.024 1.232.023.272.06.373.085.422.096.188.249.34.437.437.05.025.15.062.422.085.283.023.656.024 1.232.024h7.6c.576 0 .949-.001 1.232-.024.272-.023.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.656.024-1.232V5.2ZM12 16a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm8 2.8c0 .543.001 1.012-.03 1.395-.033.396-.104.789-.297 1.167a3 3 0 0 1-1.31 1.31c-.379.194-.772.265-1.168.298-.383.031-.852.03-1.395.03H8.2c-.543 0-1.012.001-1.395-.03-.396-.033-.789-.104-1.167-.297a3 3 0 0 1-1.31-1.31c-.194-.379-.265-.772-.298-1.168C4 19.812 4 19.343 4 18.8V5.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C7.188 1 7.657 1 8.2 1h7.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395v13.6Z"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10a7 7 0 1 0-14 0c0 1.892.853 3.678 2.292 5.547 1.28 1.662 2.937 3.285 4.708 5.043 1.77-1.758 3.428-3.381 4.708-5.043C18.148 13.678 19 11.892 19 10Zm-5 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm5 0c0 2.526-1.147 4.74-2.708 6.767-1.551 2.014-3.618 3.973-5.585 5.94a1 1 0 0 1-1.414 0c-1.967-1.967-4.034-3.926-5.585-5.94C4.148 14.74 3 12.527 3 10a9 9 0 0 1 18 0Z"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M19 7.218c0-.882-.016-1.058-.065-1.188a1.001 1.001 0 0 0-.274-.395c-.105-.092-.264-.168-1.089-.477l-5.361-2.01a3.997 3.997 0 0 0-.208-.077L12 3.07l-.003.001c-.04.013-.097.034-.208.076l-5.361 2.01c-.825.31-.984.386-1.09.478a1.002 1.002 0 0 0-.273.395C5.015 6.16 5 6.336 5 7.218V12c0 2.082 1.14 3.965 2.642 5.53 1.49 1.553 3.228 2.676 4.164 3.222l.134.077.06.032.06-.032a8.97 8.97 0 0 0 .134-.077c.936-.546 2.673-1.669 4.164-3.222C17.861 15.965 19 14.081 19 12V7.218Zm-4.207 1.075a1 1 0 0 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L11 12.086l3.793-3.793ZM21 12c0 2.826-1.537 5.184-3.2 6.915-1.672 1.742-3.586 2.973-4.598 3.563-.19.111-.442.269-.783.342-.26.056-.579.056-.838 0-.341-.073-.593-.231-.783-.342-1.012-.59-2.926-1.82-4.599-3.563C4.537 17.184 3 14.826 3 12V7.218c0-.718-.016-1.342.196-1.899a3 3 0 0 1 .82-1.184c.448-.393 1.038-.598 1.71-.85l5.36-2.01c.169-.064.39-.152.628-.186a2 2 0 0 1 .43-.016l.142.016.175.035c.17.042.326.103.452.15l5.361 2.01c.672.253 1.262.458 1.71.851a3 3 0 0 1 .82 1.184c.212.557.196 1.18.196 1.899V12Z"/></symbol><symbol id="i-trend" viewBox="0 0 24 24"><path d="M6.293 6.293a1 1 0 0 1 1.414 0L16 14.586V7a1 1 0 1 1 2 0v10a1 1 0 0 1-1 1H7a1 1 0 1 1 0-2h7.586L6.293 7.707a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 1 1-1.414-1.414L17.586 13H4a1 1 0 1 1 0-2h13.586l-4.293-4.293a1 1 0 0 1 0-1.414Z"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M11 4a1 1 0 1 1 2 0v13.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-6-6a1 1 0 1 1 1.414-1.414L11 17.586V4Z"/></symbol><symbol id="i-coins" viewBox="0 0 24 24"><path d="M4.4 12c.264 0 .522-.001.739.017.228.018.498.063.77.2a2 2 0 0 1 .796.737l.077.138.087.203c.03.086.051.17.069.253l1.608-.672.06-.026.228-.098c.19-.08.455-.187.754-.294.553-.198 1.38-.458 2.056-.458.479 0 .955.057 1.42.17l2.386.58-.472 1.943-2.385-.58a4.026 4.026 0 0 0-.95-.113c-.289 0-.819.14-1.38.34a13.598 13.598 0 0 0-.852.34l-.05.022-.011.005-.002.001-.03.014L7 15.69v3.397h1.61c.42 0 .838.05 1.246.15l2.757.67.173.037c.405.076.82.074 1.227-.005l3.048-.592a3.205 3.205 0 0 0 1.622-.843l2.158-2.099a.505.505 0 0 0 0-.735.61.61 0 0 0-.775-.052l-1.178-1.616a2.61 2.61 0 0 1 3.347.234 2.502 2.502 0 0 1 0 3.602l-2.158 2.1a5.205 5.205 0 0 1-2.633 1.372l-3.05.593a5.28 5.28 0 0 1-1.975.007l-.278-.06-2.758-.67H9.38a3.232 3.232 0 0 0-.77-.093H6.984c0 .017 0 .035-.002.052a2.023 2.023 0 0 1-.2.77 2 2 0 0 1-.875.873 2.023 2.023 0 0 1-.77.201c-.216.018-.474.017-.738.017h-.8c-.264 0-.522.001-.739-.017a2.023 2.023 0 0 1-.77-.2 2 2 0 0 1-.873-.875 2.022 2.022 0 0 1-.201-.77C.999 20.923 1 20.665 1 20.4v-5.8c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h.8Zm11.05.75a2.542 2.542 0 0 1 1.952 2.336l1.486-1.084 1.178 1.616-2.514 1.835a3.116 3.116 0 0 1-1.838.597h-2.429a1 1 0 0 1 0-2h1.546c.345 0 .577-.265.577-.534v-.307a.543.543 0 0 0-.43-.516l.472-1.943ZM19 6.5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0ZM3 20.4c0 .297.001.46.01.576l.002.011.012.002c.117.01.28.011.576.011h.8c.297 0 .46-.001.576-.01l.011-.003.002-.011C5 20.859 5 20.696 5 20.4v-5.8c0-.297-.001-.46-.01-.576l-.003-.012-.011-.001A8.123 8.123 0 0 0 4.4 14h-.8c-.297 0-.459.001-.576.01l-.012.002-.001.012A8.1 8.1 0 0 0 3 14.6v5.8ZM21 6.5a4.5 4.5 0 0 1-7.727 3.134 4.5 4.5 0 1 1 1.451-7.27A4.5 4.5 0 0 1 21 6.5Zm-12-1a2.5 2.5 0 0 0 3.22 2.393 4.496 4.496 0 0 1 .867-4.325A2.5 2.5 0 0 0 9 5.5Z"/></symbol><symbol id="i-receipt" viewBox="0 0 24 24"><path d="M19 7.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C16.639 4 16.058 4 15.2 4H8.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C5 6.361 5 6.942 5 7.8v11.236l1.162-.845.142-.086a1.001 1.001 0 0 1 1.071.114l1.904 1.523 2.133-1.55.137-.085a1 1 0 0 1 1.039.084l2.132 1.551 1.905-1.523a1 1 0 0 1 1.213-.028l1.162.845V7.8ZM21 21a1 1 0 0 1-1.588.809l-2.133-1.552-1.904 1.524a1 1 0 0 1-1.213.028L12 20.235 9.838 21.81a1 1 0 0 1-1.213-.028L6.72 20.257l-2.132 1.552A1 1 0 0 1 3 21V7.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C7.298 1.999 7.976 2 8.8 2h6.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052V21Z"/></symbol><symbol id="i-percent" viewBox="0 0 24 24"><path d="M18.293 4.293a1 1 0 1 1 1.414 1.414l-14 14a1 1 0 1 1-1.414-1.414l14-14ZM18 17a1 1 0 1 0-2 0 1 1 0 0 0 2 0ZM8 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm12 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM10 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M20.293 15.793a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414l1.293 1.293 3.793-3.793ZM10 14a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h2Zm9-1.5V6.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.82-.18C16.639 3 16.058 3 15.2 3H8.8c-.857 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C5 5.361 5 5.942 5 6.8v10.4c0 .857 0 1.439.037 1.889.036.438.101.663.18.82a2 2 0 0 0 .875.873c.156.08.38.145.82.18C7.361 21 7.942 21 8.8 21H12a1 1 0 1 1 0 2H8.8c-.824 0-1.502.001-2.052-.044-.562-.046-1.08-.144-1.564-.392a4.001 4.001 0 0 1-1.748-1.748c-.248-.485-.346-1.002-.392-1.564C2.999 18.702 3 18.024 3 17.2V6.8c0-.824-.001-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C7.298.999 7.976 1 8.8 1h6.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.564.392a4.001 4.001 0 0 1 1.748 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v5.7a1 1 0 1 1-2 0ZM14 10a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h6Zm2-4a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h8Z"/></symbol></defs></svg>
+
+
+<!-- ================= NAVIGATION ================= -->
+<header class="kopf">
+  <div class="kopf-in">
+    <div class="zone-links">
+      <a class="logo" href="#top">
+        <img class="logo-bild" src="logo.png" alt="Energiepartner Regensburg"
+             onload="this.closest('.logo').classList.add('hat-bild')" onerror="this.remove()">
+        <span class="logo-mark">EP</span>
+        <span class="logo-txt"><b>Energiepartner</b><span>REGENSBURG</span></span>
+      </a>
+    </div>
+
+    <button class="menue-btn" id="menue" aria-expanded="false" aria-controls="overlay">
+      <span class="wort-auf">Menü</span><span class="wort-zu">Menü</span>
+      <span class="mb-ikon"><i></i><i></i></span>
+    </button>
+
+    <div class="zone-rechts">
+      <a class="punktlink" href="#tarifcheck">Kontakt</a>
+      <a class="btn btn-primary kopf-btn" href="#tarifcheck">Tarifcheck starten <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay">
+  <nav class="ov-links">
+    <a href="#kunden" style="animation-delay:60ms"><span class="pfeil">→</span>Unsere Kunden</a>
+    <a href="#leistungen" style="animation-delay:120ms"><span class="pfeil">→</span>Für wen ich arbeite</a>
+    <a href="#arbeitsweise" style="animation-delay:180ms"><span class="pfeil">→</span>Wie ich arbeite</a>
+    <a href="#ablauf" style="animation-delay:240ms"><span class="pfeil">→</span>Ablauf</a>
+    <a href="#ueber-mich" style="animation-delay:300ms"><span class="pfeil">→</span>Über mich</a>
+    <a href="#fragen" style="animation-delay:360ms"><span class="pfeil">→</span>Fragen und Fakten</a>
+    <a href="#tarifcheck" style="animation-delay:420ms"><span class="pfeil">→</span>Tarifcheck starten</a>
+    <div class="ov-aktionen">
+      <a class="btn btn-primary" href="#tarifcheck">Tarifcheck starten <span class="arr">→</span></a>
+      <a class="btn btn-weiss" href="tel:+4916096807368"><svg class="i" style="width:16px;height:16px"><use href="#i-phone"/></svg> 0160 96807368</a>
+    </div>
+  </nav>
+  <a class="ov-unten-l" href="#rechnen">
+    <span class="kreis"><svg class="i" style="width:14px;height:14px"><use href="#i-arrow-down"/></svg></span>
+    <span class="ov-text">Sehen Sie, was ein Wechsel <span class="hell">bei Ihnen bringt</span></span>
+  </a>
+  <div class="ov-unten-r">
+    <span class="avatare"><i>MV</i><i>PS</i><i>PR</i></span>
+    <span class="chiptext"><b>Drei Regensburger Betriebe</b><span>sparen 4.500 bis 10.000 Euro im Jahr</span></span>
+  </div>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text stack">
+      <span class="pill pill-mint">Regensburg und Umland</span>
+      <h1 data-hero>Energieberatung Regensburg: <span class="hl">4.500 bis 10.000 Euro</span> weniger Energiekosten im Jahr</h1>
+      <p class="lead measure">Ich prüfe Ihre Strom- und Gasverträge, vergleiche über 50 Anbieter und übernehme
+        den Wechsel. Für Sie kostet das nichts.</p>
+      <ul class="hero-punkte">
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Über 50 Anbieter</b> im Vergleich, Strom und Gas</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Unter 30 Minuten</b> Beratungsdauer</span></li>
+        <li><svg class="i"><use href="#i-check"/></svg><span><b>Kostenfrei</b>, die Vergütung zahlt der Anbieter</span></li>
+      </ul>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--s5);align-items:center">
+        <a class="btn btn-primary" href="#tarifcheck">Tarifcheck starten <span class="arr">→</span></a>
+        <a class="tlink" href="#tarifcheck">Letzte Jahresabrechnung prüfen lassen</a>
+      </div>
+      <div class="micro">
+        <span>Kostenlos und unverbindlich.</span>
+        <span>Kein Wechsel ohne Ihre ausdrückliche Freigabe.</span>
+        <span>Ihre Daten gehen an keinen Anbieter, solange Sie nicht zustimmen.</span>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+             poster="bilder/hero-energiekern.jpg" aria-hidden="true">
+        <source src="bilder/hero-energiekern.mp4" type="video/mp4">
+      </video>
+      <span class="hero-chip">
+        <span class="ico ico-mint"><svg class="i"><use href="#i-check"/></svg></span>
+        Emrullah Gök, Inhaber<small>Erreichbar bis 20 Uhr, auch samstags</small>
+      </span>
+    </div>
+  </div>
+  <a class="scroll-hinweis" href="#kunden">
+    <span class="kreis"><svg class="i" style="width:13px;height:13px"><use href="#i-arrow-down"/></svg></span>
+    <span class="ov-text">Was drei Betriebe sparen<span class="hell">, sehen Sie hier</span></span>
+  </a>
+</section>
+
+<!-- ================= LAUFBAND ================= -->
+<div class="laufband" aria-hidden="true">
+  <div class="lb-spur">
+    <span class="lb-el"><span class="ico ico-solid ico-sm"></span>Über 50 Anbieter</span>
+    <span class="lb-el"><span class="ico ico-mint ico-sm"></span>Strom und Gas</span>
+    <span class="lb-el"><span class="ico ico-solid ico-sm"></span>Gewerbe</span>
+    <span class="lb-el"><span class="ico ico-mint ico-sm"></span>Hausverwaltungen</span>
+    <span class="lb-el"><span class="ico ico-solid ico-sm"></span>Privathaushalte</span>
+    <span class="lb-el"><span class="ico ico-mint ico-sm"></span>Regionale Versorger</span>
+    <span class="lb-el"><span class="ico ico-solid ico-sm"></span>Über 50 Anbieter</span>
+    <span class="lb-el"><span class="ico ico-mint ico-sm"></span>Strom und Gas</span>
+    <span class="lb-el"><span class="ico ico-solid ico-sm"></span>Gewerbe</span>
+    <span class="lb-el"><span class="ico ico-mint ico-sm"></span>Hausverwaltungen</span>
+    <span class="lb-el"><span class="ico ico-solid ico-sm"></span>Privathaushalte</span>
+    <span class="lb-el"><span class="ico ico-mint ico-sm"></span>Regionale Versorger</span>
+  </div>
+</div>
+
+<!-- ================= KUNDEN ================= -->
+<section class="sec" id="kunden">
+  <div class="wrap">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Kunden</span>
+      <h2>Was drei <span class="hl">Regensburger Betriebe</span> seit dem Wechsel sparen</h2>
+      <p>Belegte Fälle aus der Regensburger Gastronomie, keine Durchschnittswerte und keine Prozentangaben.</p>
+    </div>
+    <div class="kunden">
+      <article class="kunde reveal">
+        <span class="eyebrow">Gastronomie, Regensburg</span>
+        <span class="zahl">10.000 €</span>
+        <h3>Meat &amp; Veggie Kebab</h3>
+        <p class="sm">Küche und Kühlung im Dauerbetrieb, entsprechend hoher Verbrauch.</p>
+      </article>
+      <article class="kunde reveal">
+        <span class="eyebrow">Partyservice und Catering</span>
+        <span class="zahl">10.000 €</span>
+        <h3>Partyservice Schöll</h3>
+        <p class="sm">Produktionsküche mit stark schwankender Auslastung.</p>
+      </article>
+      <article class="kunde reveal">
+        <span class="eyebrow">Gastronomie, Regensburg</span>
+        <span class="zahl">4.500 €</span>
+        <h3>Puro Regensburg</h3>
+        <p class="sm">Lange Öffnungszeiten, Kühlung und Beleuchtung als Haupttreiber.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATEMENT 1 ================= -->
+<section class="sec-luft" style="padding-top:var(--s16);padding-bottom:var(--s16)">
+  <div class="wrap-breit">
+    <div class="statement-karte">
+    <div class="globus" aria-hidden="true"><svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" role="presentation"><defs><radialGradient id="gg" cx="50%" cy="40%" r="58%"><stop offset="0" stop-color="#9BEE72" stop-opacity=".46"/><stop offset=".55" stop-color="#5FA83E" stop-opacity=".16"/><stop offset="1" stop-color="#5FA83E" stop-opacity="0"/></radialGradient><linearGradient id="go" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7FFD6" stop-opacity=".55"/><stop offset=".5" stop-color="#E7FFD6" stop-opacity=".12"/><stop offset="1" stop-color="#E7FFD6" stop-opacity=".42"/></linearGradient></defs><circle cx="300" cy="292" r="296" fill="url(#gg)"/><circle cx="300" cy="300" r="253" fill="none" stroke="#E9FFD8" stroke-opacity=".13" stroke-width="1"/><g fill="#E9FFD8"><path opacity="0.13" d="M279.5 550.3h2.0v2.0h-2.0zM320.5 550.3h2.0v2.0h-2.0zM254.8 547.2h2.0v2.0h-2.0zM345.2 547.2h2.0v2.0h-2.0zM234.2 542.5h2.0v2.0h-2.0zM365.8 542.5h2.0v2.0h-2.0zM214.4 536.2h2.0v2.0h-2.0zM385.6 536.2h2.0v2.0h-2.0zM195.3 528.4h2.0v2.0h-2.0zM404.7 528.4h2.0v2.0h-2.0zM177.2 519.1h2.0v2.0h-2.0zM422.8 519.1h2.0v2.0h-2.0zM159.8 508.4h2.0v2.0h-2.0zM440.2 508.4h2.0v2.0h-2.0zM143.3 496.4h2.0v2.0h-2.0zM456.7 496.4h2.0v2.0h-2.0zM128.0 483.1h2.0v2.0h-2.0zM472.0 483.1h2.0v2.0h-2.0zM113.8 468.6h2.0v2.0h-2.0zM486.2 468.6h2.0v2.0h-2.0zM100.8 453.1h2.0v2.0h-2.0zM499.2 453.1h2.0v2.0h-2.0zM89.1 436.5h2.0v2.0h-2.0zM510.9 436.5h2.0v2.0h-2.0zM78.9 419.1h2.0v2.0h-2.0zM521.1 419.1h2.0v2.0h-2.0zM70.0 400.9h2.0v2.0h-2.0zM530.0 400.9h2.0v2.0h-2.0zM62.6 382.0h2.0v2.0h-2.0zM537.4 382.0h2.0v2.0h-2.0zM56.8 362.7h2.0v2.0h-2.0zM543.2 362.7h2.0v2.0h-2.0zM52.5 342.9h2.0v2.0h-2.0zM547.5 342.9h2.0v2.0h-2.0zM49.9 322.8h2.0v2.0h-2.0zM550.1 322.8h2.0v2.0h-2.0zM48.8 302.6h2.0v2.0h-2.0zM551.2 302.6h2.0v2.0h-2.0zM49.4 282.4h2.0v2.0h-2.0zM550.6 282.4h2.0v2.0h-2.0zM51.6 262.3h2.0v2.0h-2.0zM548.4 262.3h2.0v2.0h-2.0zM55.5 242.5h2.0v2.0h-2.0zM544.5 242.5h2.0v2.0h-2.0zM60.9 223.0h2.0v2.0h-2.0zM539.1 223.0h2.0v2.0h-2.0zM67.9 204.0h2.0v2.0h-2.0zM532.1 204.0h2.0v2.0h-2.0zM76.4 185.6h2.0v2.0h-2.0zM523.6 185.6h2.0v2.0h-2.0zM86.3 168.0h2.0v2.0h-2.0zM513.7 168.0h2.0v2.0h-2.0zM97.6 151.2h2.0v2.0h-2.0zM502.4 151.2h2.0v2.0h-2.0zM110.3 135.3h2.0v2.0h-2.0zM489.7 135.3h2.0v2.0h-2.0zM124.3 120.6h2.0v2.0h-2.0zM475.7 120.6h2.0v2.0h-2.0zM139.3 107.0h2.0v2.0h-2.0zM460.7 107.0h2.0v2.0h-2.0zM155.4 94.6h2.0v2.0h-2.0zM444.6 94.6h2.0v2.0h-2.0zM172.6 83.5h2.0v2.0h-2.0zM427.4 83.5h2.0v2.0h-2.0zM190.6 73.9h2.0v2.0h-2.0zM409.4 73.9h2.0v2.0h-2.0zM209.6 65.7h2.0v2.0h-2.0zM390.4 65.7h2.0v2.0h-2.0zM229.3 59.0h2.0v2.0h-2.0zM370.7 59.0h2.0v2.0h-2.0zM250.0 53.9h2.0v2.0h-2.0zM350.0 53.9h2.0v2.0h-2.0zM272.3 50.3h2.0v2.0h-2.0zM327.7 50.3h2.0v2.0h-2.0z"/><path opacity="0.24" d="M300.0 550.3h2.2v2.2h-2.2zM265.4 547.2h2.2v2.2h-2.2zM281.3 547.2h2.2v2.2h-2.2zM300.0 547.2h2.2v2.2h-2.2zM318.7 547.2h2.2v2.2h-2.2zM334.6 547.2h2.2v2.2h-2.2zM242.3 542.5h2.2v2.2h-2.2zM255.1 542.5h2.2v2.2h-2.2zM344.9 542.5h2.2v2.2h-2.2zM357.7 542.5h2.2v2.2h-2.2zM220.9 536.2h2.2v2.2h-2.2zM231.3 536.2h2.2v2.2h-2.2zM368.7 536.2h2.2v2.2h-2.2zM379.1 536.2h2.2v2.2h-2.2zM200.7 528.4h2.2v2.2h-2.2zM209.5 528.4h2.2v2.2h-2.2zM390.5 528.4h2.2v2.2h-2.2zM399.3 528.4h2.2v2.2h-2.2zM182.3 519.1h2.2v2.2h-2.2zM190.5 519.1h2.2v2.2h-2.2zM409.5 519.1h2.2v2.2h-2.2zM417.7 519.1h2.2v2.2h-2.2zM164.1 508.4h2.2v2.2h-2.2zM171.2 508.4h2.2v2.2h-2.2zM428.8 508.4h2.2v2.2h-2.2zM435.9 508.4h2.2v2.2h-2.2zM147.1 496.4h2.2v2.2h-2.2zM153.2 496.4h2.2v2.2h-2.2zM446.8 496.4h2.2v2.2h-2.2zM452.9 496.4h2.2v2.2h-2.2zM131.5 483.1h2.2v2.2h-2.2zM137.3 483.1h2.2v2.2h-2.2zM462.7 483.1h2.2v2.2h-2.2zM468.5 483.1h2.2v2.2h-2.2zM117.1 468.6h2.2v2.2h-2.2zM122.5 468.6h2.2v2.2h-2.2zM477.5 468.6h2.2v2.2h-2.2zM482.9 468.6h2.2v2.2h-2.2zM103.9 453.1h2.2v2.2h-2.2zM109.0 453.1h2.2v2.2h-2.2zM491.0 453.1h2.2v2.2h-2.2zM496.1 453.1h2.2v2.2h-2.2zM92.0 436.5h2.2v2.2h-2.2zM96.8 436.5h2.2v2.2h-2.2zM503.2 436.5h2.2v2.2h-2.2zM508.0 436.5h2.2v2.2h-2.2zM81.7 419.1h2.2v2.2h-2.2zM86.4 419.1h2.2v2.2h-2.2zM513.6 419.1h2.2v2.2h-2.2zM518.3 419.1h2.2v2.2h-2.2zM72.6 400.9h2.2v2.2h-2.2zM76.9 400.9h2.2v2.2h-2.2zM523.1 400.9h2.2v2.2h-2.2zM527.4 400.9h2.2v2.2h-2.2zM65.2 382.0h2.2v2.2h-2.2zM69.4 382.0h2.2v2.2h-2.2zM530.6 382.0h2.2v2.2h-2.2zM534.8 382.0h2.2v2.2h-2.2zM59.2 362.7h2.2v2.2h-2.2zM63.4 362.7h2.2v2.2h-2.2zM536.6 362.7h2.2v2.2h-2.2zM540.8 362.7h2.2v2.2h-2.2zM54.9 342.9h2.2v2.2h-2.2zM58.9 342.9h2.2v2.2h-2.2zM541.1 342.9h2.2v2.2h-2.2zM545.1 342.9h2.2v2.2h-2.2zM52.3 322.8h2.2v2.2h-2.2zM56.3 322.8h2.2v2.2h-2.2zM543.7 322.8h2.2v2.2h-2.2zM547.7 322.8h2.2v2.2h-2.2zM51.3 302.6h2.2v2.2h-2.2zM55.3 302.6h2.2v2.2h-2.2zM544.7 302.6h2.2v2.2h-2.2zM548.7 302.6h2.2v2.2h-2.2zM51.9 282.4h2.2v2.2h-2.2zM55.9 282.4h2.2v2.2h-2.2zM544.1 282.4h2.2v2.2h-2.2zM548.1 282.4h2.2v2.2h-2.2zM54.1 262.3h2.2v2.2h-2.2zM58.1 262.3h2.2v2.2h-2.2zM541.9 262.3h2.2v2.2h-2.2zM545.9 262.3h2.2v2.2h-2.2zM58.0 242.5h2.2v2.2h-2.2zM62.2 242.5h2.2v2.2h-2.2zM537.8 242.5h2.2v2.2h-2.2zM542.0 242.5h2.2v2.2h-2.2zM63.5 223.0h2.2v2.2h-2.2zM67.8 223.0h2.2v2.2h-2.2zM532.2 223.0h2.2v2.2h-2.2zM536.5 223.0h2.2v2.2h-2.2zM70.6 204.0h2.2v2.2h-2.2zM75.0 204.0h2.2v2.2h-2.2zM525.0 204.0h2.2v2.2h-2.2zM529.4 204.0h2.2v2.2h-2.2zM79.1 185.6h2.2v2.2h-2.2zM83.6 185.6h2.2v2.2h-2.2zM516.4 185.6h2.2v2.2h-2.2zM520.9 185.6h2.2v2.2h-2.2zM89.2 168.0h2.2v2.2h-2.2zM94.1 168.0h2.2v2.2h-2.2zM505.9 168.0h2.2v2.2h-2.2zM510.8 168.0h2.2v2.2h-2.2zM100.6 151.2h2.2v2.2h-2.2zM105.4 151.2h2.2v2.2h-2.2zM494.6 151.2h2.2v2.2h-2.2zM499.4 151.2h2.2v2.2h-2.2zM113.4 135.3h2.2v2.2h-2.2zM118.6 135.3h2.2v2.2h-2.2zM481.4 135.3h2.2v2.2h-2.2zM486.6 135.3h2.2v2.2h-2.2zM127.8 120.6h2.2v2.2h-2.2zM133.7 120.6h2.2v2.2h-2.2zM466.3 120.6h2.2v2.2h-2.2zM472.2 120.6h2.2v2.2h-2.2zM143.1 107.0h2.2v2.2h-2.2zM149.4 107.0h2.2v2.2h-2.2zM450.6 107.0h2.2v2.2h-2.2zM456.9 107.0h2.2v2.2h-2.2zM159.4 94.6h2.2v2.2h-2.2zM166.1 94.6h2.2v2.2h-2.2zM433.9 94.6h2.2v2.2h-2.2zM440.6 94.6h2.2v2.2h-2.2zM177.3 83.5h2.2v2.2h-2.2zM185.0 83.5h2.2v2.2h-2.2zM415.0 83.5h2.2v2.2h-2.2zM422.7 83.5h2.2v2.2h-2.2zM196.3 73.9h2.2v2.2h-2.2zM205.4 73.9h2.2v2.2h-2.2zM394.6 73.9h2.2v2.2h-2.2zM403.7 73.9h2.2v2.2h-2.2zM216.4 65.7h2.2v2.2h-2.2zM227.5 65.7h2.2v2.2h-2.2zM372.5 65.7h2.2v2.2h-2.2zM383.6 65.7h2.2v2.2h-2.2zM238.0 59.0h2.2v2.2h-2.2zM251.8 59.0h2.2v2.2h-2.2zM348.2 59.0h2.2v2.2h-2.2zM362.0 59.0h2.2v2.2h-2.2zM261.7 53.9h2.2v2.2h-2.2zM279.3 53.9h2.2v2.2h-2.2zM300.0 53.9h2.2v2.2h-2.2zM320.7 53.9h2.2v2.2h-2.2zM338.3 53.9h2.2v2.2h-2.2zM289.4 50.3h2.2v2.2h-2.2zM310.6 50.3h2.2v2.2h-2.2z"/><path opacity="0.4" d="M271.5 542.5h2.5v2.5h-2.5zM290.2 542.5h2.5v2.5h-2.5zM309.8 542.5h2.5v2.5h-2.5zM328.5 542.5h2.5v2.5h-2.5zM245.2 536.2h2.5v2.5h-2.5zM261.9 536.2h2.5v2.5h-2.5zM280.5 536.2h2.5v2.5h-2.5zM300.0 536.2h2.5v2.5h-2.5zM319.5 536.2h2.5v2.5h-2.5zM338.1 536.2h2.5v2.5h-2.5zM354.8 536.2h2.5v2.5h-2.5zM221.3 528.4h2.5v2.5h-2.5zM235.8 528.4h2.5v2.5h-2.5zM252.5 528.4h2.5v2.5h-2.5zM270.9 528.4h2.5v2.5h-2.5zM290.2 528.4h2.5v2.5h-2.5zM309.8 528.4h2.5v2.5h-2.5zM329.1 528.4h2.5v2.5h-2.5zM347.5 528.4h2.5v2.5h-2.5zM364.2 528.4h2.5v2.5h-2.5zM378.7 528.4h2.5v2.5h-2.5zM201.8 519.1h2.5v2.5h-2.5zM215.7 519.1h2.5v2.5h-2.5zM231.9 519.1h2.5v2.5h-2.5zM250.0 519.1h2.5v2.5h-2.5zM350.0 519.1h2.5v2.5h-2.5zM368.1 519.1h2.5v2.5h-2.5zM384.3 519.1h2.5v2.5h-2.5zM398.2 519.1h2.5v2.5h-2.5zM180.8 508.4h2.5v2.5h-2.5zM193.0 508.4h2.5v2.5h-2.5zM207.2 508.4h2.5v2.5h-2.5zM392.8 508.4h2.5v2.5h-2.5zM407.0 508.4h2.5v2.5h-2.5zM419.2 508.4h2.5v2.5h-2.5zM161.6 496.4h2.5v2.5h-2.5zM172.3 496.4h2.5v2.5h-2.5zM184.9 496.4h2.5v2.5h-2.5zM415.1 496.4h2.5v2.5h-2.5zM427.7 496.4h2.5v2.5h-2.5zM438.4 496.4h2.5v2.5h-2.5zM145.3 483.1h2.5v2.5h-2.5zM155.3 483.1h2.5v2.5h-2.5zM167.4 483.1h2.5v2.5h-2.5zM432.6 483.1h2.5v2.5h-2.5zM444.7 483.1h2.5v2.5h-2.5zM454.7 483.1h2.5v2.5h-2.5zM130.0 468.6h2.5v2.5h-2.5zM139.5 468.6h2.5v2.5h-2.5zM150.9 468.6h2.5v2.5h-2.5zM449.1 468.6h2.5v2.5h-2.5zM460.5 468.6h2.5v2.5h-2.5zM470.0 468.6h2.5v2.5h-2.5zM116.0 453.1h2.5v2.5h-2.5zM125.0 453.1h2.5v2.5h-2.5zM135.7 453.1h2.5v2.5h-2.5zM464.3 453.1h2.5v2.5h-2.5zM475.0 453.1h2.5v2.5h-2.5zM484.0 453.1h2.5v2.5h-2.5zM103.4 436.5h2.5v2.5h-2.5zM111.7 436.5h2.5v2.5h-2.5zM121.8 436.5h2.5v2.5h-2.5zM478.2 436.5h2.5v2.5h-2.5zM488.3 436.5h2.5v2.5h-2.5zM496.6 436.5h2.5v2.5h-2.5zM92.9 419.1h2.5v2.5h-2.5zM101.2 419.1h2.5v2.5h-2.5zM498.8 419.1h2.5v2.5h-2.5zM507.1 419.1h2.5v2.5h-2.5zM83.0 400.9h2.5v2.5h-2.5zM90.7 400.9h2.5v2.5h-2.5zM509.3 400.9h2.5v2.5h-2.5zM517.0 400.9h2.5v2.5h-2.5zM75.3 382.0h2.5v2.5h-2.5zM82.9 382.0h2.5v2.5h-2.5zM517.1 382.0h2.5v2.5h-2.5zM524.7 382.0h2.5v2.5h-2.5zM69.1 362.7h2.5v2.5h-2.5zM76.5 362.7h2.5v2.5h-2.5zM523.5 362.7h2.5v2.5h-2.5zM530.9 362.7h2.5v2.5h-2.5zM64.5 342.9h2.5v2.5h-2.5zM71.5 342.9h2.5v2.5h-2.5zM528.5 342.9h2.5v2.5h-2.5zM535.5 342.9h2.5v2.5h-2.5zM62.0 322.8h2.5v2.5h-2.5zM69.1 322.8h2.5v2.5h-2.5zM530.9 322.8h2.5v2.5h-2.5zM538.0 322.8h2.5v2.5h-2.5zM61.0 302.6h2.5v2.5h-2.5zM68.2 302.6h2.5v2.5h-2.5zM531.8 302.6h2.5v2.5h-2.5zM539.0 302.6h2.5v2.5h-2.5zM61.6 282.4h2.5v2.5h-2.5zM68.7 282.4h2.5v2.5h-2.5zM531.3 282.4h2.5v2.5h-2.5zM538.4 282.4h2.5v2.5h-2.5zM63.7 262.3h2.5v2.5h-2.5zM70.8 262.3h2.5v2.5h-2.5zM529.2 262.3h2.5v2.5h-2.5zM536.3 262.3h2.5v2.5h-2.5zM68.0 242.5h2.5v2.5h-2.5zM75.3 242.5h2.5v2.5h-2.5zM524.7 242.5h2.5v2.5h-2.5zM532.0 242.5h2.5v2.5h-2.5zM73.8 223.0h2.5v2.5h-2.5zM81.4 223.0h2.5v2.5h-2.5zM518.6 223.0h2.5v2.5h-2.5zM526.2 223.0h2.5v2.5h-2.5zM81.1 204.0h2.5v2.5h-2.5zM88.8 204.0h2.5v2.5h-2.5zM511.2 204.0h2.5v2.5h-2.5zM518.9 204.0h2.5v2.5h-2.5zM89.8 185.6h2.5v2.5h-2.5zM97.7 185.6h2.5v2.5h-2.5zM502.3 185.6h2.5v2.5h-2.5zM510.2 185.6h2.5v2.5h-2.5zM100.7 168.0h2.5v2.5h-2.5zM109.2 168.0h2.5v2.5h-2.5zM490.8 168.0h2.5v2.5h-2.5zM499.3 168.0h2.5v2.5h-2.5zM112.1 151.2h2.5v2.5h-2.5zM120.7 151.2h2.5v2.5h-2.5zM130.9 151.2h2.5v2.5h-2.5zM469.1 151.2h2.5v2.5h-2.5zM479.3 151.2h2.5v2.5h-2.5zM487.9 151.2h2.5v2.5h-2.5zM125.7 135.3h2.5v2.5h-2.5zM134.8 135.3h2.5v2.5h-2.5zM145.7 135.3h2.5v2.5h-2.5zM454.3 135.3h2.5v2.5h-2.5zM465.2 135.3h2.5v2.5h-2.5zM474.3 135.3h2.5v2.5h-2.5zM141.9 120.6h2.5v2.5h-2.5zM152.2 120.6h2.5v2.5h-2.5zM164.5 120.6h2.5v2.5h-2.5zM435.5 120.6h2.5v2.5h-2.5zM447.8 120.6h2.5v2.5h-2.5zM458.1 120.6h2.5v2.5h-2.5zM158.1 107.0h2.5v2.5h-2.5zM169.0 107.0h2.5v2.5h-2.5zM181.9 107.0h2.5v2.5h-2.5zM418.1 107.0h2.5v2.5h-2.5zM431.0 107.0h2.5v2.5h-2.5zM441.9 107.0h2.5v2.5h-2.5zM175.3 94.6h2.5v2.5h-2.5zM186.8 94.6h2.5v2.5h-2.5zM200.4 94.6h2.5v2.5h-2.5zM399.6 94.6h2.5v2.5h-2.5zM413.2 94.6h2.5v2.5h-2.5zM424.7 94.6h2.5v2.5h-2.5zM195.6 83.5h2.5v2.5h-2.5zM208.8 83.5h2.5v2.5h-2.5zM224.2 83.5h2.5v2.5h-2.5zM375.8 83.5h2.5v2.5h-2.5zM391.2 83.5h2.5v2.5h-2.5zM404.4 83.5h2.5v2.5h-2.5zM217.8 73.9h2.5v2.5h-2.5zM233.0 73.9h2.5v2.5h-2.5zM250.4 73.9h2.5v2.5h-2.5zM269.6 73.9h2.5v2.5h-2.5zM289.7 73.9h2.5v2.5h-2.5zM310.3 73.9h2.5v2.5h-2.5zM330.4 73.9h2.5v2.5h-2.5zM349.6 73.9h2.5v2.5h-2.5zM367.0 73.9h2.5v2.5h-2.5zM382.2 73.9h2.5v2.5h-2.5zM242.2 65.7h2.5v2.5h-2.5zM259.7 65.7h2.5v2.5h-2.5zM279.4 65.7h2.5v2.5h-2.5zM300.0 65.7h2.5v2.5h-2.5zM320.6 65.7h2.5v2.5h-2.5zM340.3 65.7h2.5v2.5h-2.5zM357.8 65.7h2.5v2.5h-2.5zM269.4 59.0h2.5v2.5h-2.5zM289.5 59.0h2.5v2.5h-2.5zM310.5 59.0h2.5v2.5h-2.5zM330.6 59.0h2.5v2.5h-2.5z"/><path opacity="0.6" d="M269.4 519.1h2.7v2.7h-2.7zM289.7 519.1h2.7v2.7h-2.7zM310.3 519.1h2.7v2.7h-2.7zM330.6 519.1h2.7v2.7h-2.7zM223.4 508.4h2.7v2.7h-2.7zM241.2 508.4h2.7v2.7h-2.7zM260.1 508.4h2.7v2.7h-2.7zM279.8 508.4h2.7v2.7h-2.7zM300.0 508.4h2.7v2.7h-2.7zM320.2 508.4h2.7v2.7h-2.7zM339.9 508.4h2.7v2.7h-2.7zM358.8 508.4h2.7v2.7h-2.7zM376.6 508.4h2.7v2.7h-2.7zM199.3 496.4h2.7v2.7h-2.7zM215.4 496.4h2.7v2.7h-2.7zM232.8 496.4h2.7v2.7h-2.7zM251.2 496.4h2.7v2.7h-2.7zM270.4 496.4h2.7v2.7h-2.7zM290.1 496.4h2.7v2.7h-2.7zM309.9 496.4h2.7v2.7h-2.7zM329.6 496.4h2.7v2.7h-2.7zM348.8 496.4h2.7v2.7h-2.7zM367.2 496.4h2.7v2.7h-2.7zM384.6 496.4h2.7v2.7h-2.7zM400.7 496.4h2.7v2.7h-2.7zM181.2 483.1h2.7v2.7h-2.7zM196.6 483.1h2.7v2.7h-2.7zM213.4 483.1h2.7v2.7h-2.7zM231.4 483.1h2.7v2.7h-2.7zM250.3 483.1h2.7v2.7h-2.7zM269.9 483.1h2.7v2.7h-2.7zM289.9 483.1h2.7v2.7h-2.7zM310.1 483.1h2.7v2.7h-2.7zM330.1 483.1h2.7v2.7h-2.7zM349.7 483.1h2.7v2.7h-2.7zM368.6 483.1h2.7v2.7h-2.7zM386.6 483.1h2.7v2.7h-2.7zM403.4 483.1h2.7v2.7h-2.7zM418.8 483.1h2.7v2.7h-2.7zM164.0 468.6h2.7v2.7h-2.7zM178.8 468.6h2.7v2.7h-2.7zM194.9 468.6h2.7v2.7h-2.7zM212.3 468.6h2.7v2.7h-2.7zM230.7 468.6h2.7v2.7h-2.7zM369.3 468.6h2.7v2.7h-2.7zM387.7 468.6h2.7v2.7h-2.7zM405.1 468.6h2.7v2.7h-2.7zM421.2 468.6h2.7v2.7h-2.7zM436.0 468.6h2.7v2.7h-2.7zM148.1 453.1h2.7v2.7h-2.7zM162.1 453.1h2.7v2.7h-2.7zM177.5 453.1h2.7v2.7h-2.7zM194.1 453.1h2.7v2.7h-2.7zM405.9 453.1h2.7v2.7h-2.7zM422.5 453.1h2.7v2.7h-2.7zM437.9 453.1h2.7v2.7h-2.7zM451.9 453.1h2.7v2.7h-2.7zM133.5 436.5h2.7v2.7h-2.7zM146.7 436.5h2.7v2.7h-2.7zM161.3 436.5h2.7v2.7h-2.7zM177.1 436.5h2.7v2.7h-2.7zM422.9 436.5h2.7v2.7h-2.7zM438.7 436.5h2.7v2.7h-2.7zM453.3 436.5h2.7v2.7h-2.7zM466.5 436.5h2.7v2.7h-2.7zM111.2 419.1h2.7v2.7h-2.7zM122.8 419.1h2.7v2.7h-2.7zM135.9 419.1h2.7v2.7h-2.7zM150.4 419.1h2.7v2.7h-2.7zM166.2 419.1h2.7v2.7h-2.7zM433.8 419.1h2.7v2.7h-2.7zM449.6 419.1h2.7v2.7h-2.7zM464.1 419.1h2.7v2.7h-2.7zM477.2 419.1h2.7v2.7h-2.7zM488.8 419.1h2.7v2.7h-2.7zM100.0 400.9h2.7v2.7h-2.7zM110.8 400.9h2.7v2.7h-2.7zM123.1 400.9h2.7v2.7h-2.7zM136.7 400.9h2.7v2.7h-2.7zM151.6 400.9h2.7v2.7h-2.7zM448.4 400.9h2.7v2.7h-2.7zM463.3 400.9h2.7v2.7h-2.7zM476.9 400.9h2.7v2.7h-2.7zM489.2 400.9h2.7v2.7h-2.7zM500.0 400.9h2.7v2.7h-2.7zM92.0 382.0h2.7v2.7h-2.7zM102.6 382.0h2.7v2.7h-2.7zM114.6 382.0h2.7v2.7h-2.7zM128.0 382.0h2.7v2.7h-2.7zM472.0 382.0h2.7v2.7h-2.7zM485.4 382.0h2.7v2.7h-2.7zM497.4 382.0h2.7v2.7h-2.7zM508.0 382.0h2.7v2.7h-2.7zM85.3 362.7h2.7v2.7h-2.7zM95.7 362.7h2.7v2.7h-2.7zM107.4 362.7h2.7v2.7h-2.7zM120.4 362.7h2.7v2.7h-2.7zM479.6 362.7h2.7v2.7h-2.7zM492.6 362.7h2.7v2.7h-2.7zM504.3 362.7h2.7v2.7h-2.7zM514.7 362.7h2.7v2.7h-2.7zM80.1 342.9h2.7v2.7h-2.7zM90.1 342.9h2.7v2.7h-2.7zM101.5 342.9h2.7v2.7h-2.7zM114.1 342.9h2.7v2.7h-2.7zM485.9 342.9h2.7v2.7h-2.7zM498.5 342.9h2.7v2.7h-2.7zM509.9 342.9h2.7v2.7h-2.7zM519.9 342.9h2.7v2.7h-2.7zM77.8 322.8h2.7v2.7h-2.7zM87.9 322.8h2.7v2.7h-2.7zM99.4 322.8h2.7v2.7h-2.7zM112.2 322.8h2.7v2.7h-2.7zM487.8 322.8h2.7v2.7h-2.7zM500.6 322.8h2.7v2.7h-2.7zM512.1 322.8h2.7v2.7h-2.7zM522.2 322.8h2.7v2.7h-2.7zM76.9 302.6h2.7v2.7h-2.7zM87.0 302.6h2.7v2.7h-2.7zM98.6 302.6h2.7v2.7h-2.7zM111.4 302.6h2.7v2.7h-2.7zM488.6 302.6h2.7v2.7h-2.7zM501.4 302.6h2.7v2.7h-2.7zM513.0 302.6h2.7v2.7h-2.7zM523.1 302.6h2.7v2.7h-2.7zM77.4 282.4h2.7v2.7h-2.7zM87.5 282.4h2.7v2.7h-2.7zM99.0 282.4h2.7v2.7h-2.7zM111.8 282.4h2.7v2.7h-2.7zM488.2 282.4h2.7v2.7h-2.7zM501.0 282.4h2.7v2.7h-2.7zM512.5 282.4h2.7v2.7h-2.7zM522.6 282.4h2.7v2.7h-2.7zM79.4 262.3h2.7v2.7h-2.7zM89.4 262.3h2.7v2.7h-2.7zM100.8 262.3h2.7v2.7h-2.7zM113.5 262.3h2.7v2.7h-2.7zM486.5 262.3h2.7v2.7h-2.7zM499.2 262.3h2.7v2.7h-2.7zM510.6 262.3h2.7v2.7h-2.7zM520.6 262.3h2.7v2.7h-2.7zM84.2 242.5h2.7v2.7h-2.7zM94.6 242.5h2.7v2.7h-2.7zM106.4 242.5h2.7v2.7h-2.7zM119.5 242.5h2.7v2.7h-2.7zM480.5 242.5h2.7v2.7h-2.7zM493.6 242.5h2.7v2.7h-2.7zM505.4 242.5h2.7v2.7h-2.7zM515.8 242.5h2.7v2.7h-2.7zM90.5 223.0h2.7v2.7h-2.7zM101.2 223.0h2.7v2.7h-2.7zM113.3 223.0h2.7v2.7h-2.7zM126.8 223.0h2.7v2.7h-2.7zM473.2 223.0h2.7v2.7h-2.7zM486.7 223.0h2.7v2.7h-2.7zM498.8 223.0h2.7v2.7h-2.7zM509.5 223.0h2.7v2.7h-2.7zM98.2 204.0h2.7v2.7h-2.7zM109.1 204.0h2.7v2.7h-2.7zM121.5 204.0h2.7v2.7h-2.7zM135.3 204.0h2.7v2.7h-2.7zM150.2 204.0h2.7v2.7h-2.7zM449.8 204.0h2.7v2.7h-2.7zM464.7 204.0h2.7v2.7h-2.7zM478.5 204.0h2.7v2.7h-2.7zM490.9 204.0h2.7v2.7h-2.7zM501.8 204.0h2.7v2.7h-2.7zM107.2 185.6h2.7v2.7h-2.7zM118.3 185.6h2.7v2.7h-2.7zM130.9 185.6h2.7v2.7h-2.7zM144.8 185.6h2.7v2.7h-2.7zM160.0 185.6h2.7v2.7h-2.7zM440.0 185.6h2.7v2.7h-2.7zM455.2 185.6h2.7v2.7h-2.7zM469.1 185.6h2.7v2.7h-2.7zM481.7 185.6h2.7v2.7h-2.7zM492.8 185.6h2.7v2.7h-2.7zM119.4 168.0h2.7v2.7h-2.7zM131.3 168.0h2.7v2.7h-2.7zM144.7 168.0h2.7v2.7h-2.7zM159.4 168.0h2.7v2.7h-2.7zM175.5 168.0h2.7v2.7h-2.7zM424.5 168.0h2.7v2.7h-2.7zM440.6 168.0h2.7v2.7h-2.7zM455.3 168.0h2.7v2.7h-2.7zM468.7 168.0h2.7v2.7h-2.7zM480.6 168.0h2.7v2.7h-2.7zM142.8 151.2h2.7v2.7h-2.7zM156.2 151.2h2.7v2.7h-2.7zM171.0 151.2h2.7v2.7h-2.7zM187.0 151.2h2.7v2.7h-2.7zM413.0 151.2h2.7v2.7h-2.7zM429.0 151.2h2.7v2.7h-2.7zM443.8 151.2h2.7v2.7h-2.7zM457.2 151.2h2.7v2.7h-2.7zM158.2 135.3h2.7v2.7h-2.7zM172.4 135.3h2.7v2.7h-2.7zM187.9 135.3h2.7v2.7h-2.7zM204.6 135.3h2.7v2.7h-2.7zM222.4 135.3h2.7v2.7h-2.7zM377.6 135.3h2.7v2.7h-2.7zM395.4 135.3h2.7v2.7h-2.7zM412.1 135.3h2.7v2.7h-2.7zM427.6 135.3h2.7v2.7h-2.7zM441.8 135.3h2.7v2.7h-2.7zM178.6 120.6h2.7v2.7h-2.7zM194.3 120.6h2.7v2.7h-2.7zM211.5 120.6h2.7v2.7h-2.7zM229.9 120.6h2.7v2.7h-2.7zM249.3 120.6h2.7v2.7h-2.7zM269.3 120.6h2.7v2.7h-2.7zM289.7 120.6h2.7v2.7h-2.7zM310.3 120.6h2.7v2.7h-2.7zM330.7 120.6h2.7v2.7h-2.7zM350.7 120.6h2.7v2.7h-2.7zM370.1 120.6h2.7v2.7h-2.7zM388.5 120.6h2.7v2.7h-2.7zM405.7 120.6h2.7v2.7h-2.7zM421.4 120.6h2.7v2.7h-2.7zM196.7 107.0h2.7v2.7h-2.7zM213.2 107.0h2.7v2.7h-2.7zM231.0 107.0h2.7v2.7h-2.7zM249.9 107.0h2.7v2.7h-2.7zM269.6 107.0h2.7v2.7h-2.7zM289.8 107.0h2.7v2.7h-2.7zM310.2 107.0h2.7v2.7h-2.7zM330.4 107.0h2.7v2.7h-2.7zM350.1 107.0h2.7v2.7h-2.7zM369.0 107.0h2.7v2.7h-2.7zM386.8 107.0h2.7v2.7h-2.7zM403.3 107.0h2.7v2.7h-2.7zM215.8 94.6h2.7v2.7h-2.7zM232.8 94.6h2.7v2.7h-2.7zM251.1 94.6h2.7v2.7h-2.7zM270.3 94.6h2.7v2.7h-2.7zM290.0 94.6h2.7v2.7h-2.7zM310.0 94.6h2.7v2.7h-2.7zM329.7 94.6h2.7v2.7h-2.7zM348.9 94.6h2.7v2.7h-2.7zM367.2 94.6h2.7v2.7h-2.7zM384.2 94.6h2.7v2.7h-2.7zM241.4 83.5h2.7v2.7h-2.7zM260.1 83.5h2.7v2.7h-2.7zM279.8 83.5h2.7v2.7h-2.7zM300.0 83.5h2.7v2.7h-2.7zM320.2 83.5h2.7v2.7h-2.7zM339.9 83.5h2.7v2.7h-2.7zM358.6 83.5h2.7v2.7h-2.7z"/><path opacity="0.88" d="M249.9 468.6h2.9v2.9h-2.9zM269.7 468.6h2.9v2.9h-2.9zM289.9 468.6h2.9v2.9h-2.9zM310.1 468.6h2.9v2.9h-2.9zM330.3 468.6h2.9v2.9h-2.9zM350.1 468.6h2.9v2.9h-2.9zM211.8 453.1h2.9v2.9h-2.9zM230.5 453.1h2.9v2.9h-2.9zM249.8 453.1h2.9v2.9h-2.9zM269.7 453.1h2.9v2.9h-2.9zM289.9 453.1h2.9v2.9h-2.9zM310.1 453.1h2.9v2.9h-2.9zM330.3 453.1h2.9v2.9h-2.9zM350.2 453.1h2.9v2.9h-2.9zM369.5 453.1h2.9v2.9h-2.9zM388.2 453.1h2.9v2.9h-2.9zM194.1 436.5h2.9v2.9h-2.9zM212.0 436.5h2.9v2.9h-2.9zM230.7 436.5h2.9v2.9h-2.9zM250.1 436.5h2.9v2.9h-2.9zM269.9 436.5h2.9v2.9h-2.9zM289.9 436.5h2.9v2.9h-2.9zM310.1 436.5h2.9v2.9h-2.9zM330.1 436.5h2.9v2.9h-2.9zM349.9 436.5h2.9v2.9h-2.9zM369.3 436.5h2.9v2.9h-2.9zM388.0 436.5h2.9v2.9h-2.9zM405.9 436.5h2.9v2.9h-2.9zM183.1 419.1h2.9v2.9h-2.9zM201.0 419.1h2.9v2.9h-2.9zM219.8 419.1h2.9v2.9h-2.9zM239.2 419.1h2.9v2.9h-2.9zM259.2 419.1h2.9v2.9h-2.9zM279.5 419.1h2.9v2.9h-2.9zM300.0 419.1h2.9v2.9h-2.9zM320.5 419.1h2.9v2.9h-2.9zM340.8 419.1h2.9v2.9h-2.9zM360.8 419.1h2.9v2.9h-2.9zM380.2 419.1h2.9v2.9h-2.9zM399.0 419.1h2.9v2.9h-2.9zM416.9 419.1h2.9v2.9h-2.9zM167.5 400.9h2.9v2.9h-2.9zM184.5 400.9h2.9v2.9h-2.9zM202.4 400.9h2.9v2.9h-2.9zM221.0 400.9h2.9v2.9h-2.9zM240.2 400.9h2.9v2.9h-2.9zM259.9 400.9h2.9v2.9h-2.9zM279.9 400.9h2.9v2.9h-2.9zM300.0 400.9h2.9v2.9h-2.9zM320.1 400.9h2.9v2.9h-2.9zM340.1 400.9h2.9v2.9h-2.9zM359.8 400.9h2.9v2.9h-2.9zM379.0 400.9h2.9v2.9h-2.9zM397.6 400.9h2.9v2.9h-2.9zM415.5 400.9h2.9v2.9h-2.9zM432.5 400.9h2.9v2.9h-2.9zM142.6 382.0h2.9v2.9h-2.9zM158.3 382.0h2.9v2.9h-2.9zM175.1 382.0h2.9v2.9h-2.9zM192.7 382.0h2.9v2.9h-2.9zM211.2 382.0h2.9v2.9h-2.9zM230.2 382.0h2.9v2.9h-2.9zM249.8 382.0h2.9v2.9h-2.9zM269.7 382.0h2.9v2.9h-2.9zM289.9 382.0h2.9v2.9h-2.9zM310.1 382.0h2.9v2.9h-2.9zM330.3 382.0h2.9v2.9h-2.9zM350.2 382.0h2.9v2.9h-2.9zM369.8 382.0h2.9v2.9h-2.9zM388.8 382.0h2.9v2.9h-2.9zM407.3 382.0h2.9v2.9h-2.9zM424.9 382.0h2.9v2.9h-2.9zM441.7 382.0h2.9v2.9h-2.9zM457.4 382.0h2.9v2.9h-2.9zM134.7 362.7h2.9v2.9h-2.9zM150.1 362.7h2.9v2.9h-2.9zM166.5 362.7h2.9v2.9h-2.9zM183.8 362.7h2.9v2.9h-2.9zM202.0 362.7h2.9v2.9h-2.9zM220.7 362.7h2.9v2.9h-2.9zM240.1 362.7h2.9v2.9h-2.9zM259.8 362.7h2.9v2.9h-2.9zM279.8 362.7h2.9v2.9h-2.9zM300.0 362.7h2.9v2.9h-2.9zM320.2 362.7h2.9v2.9h-2.9zM340.2 362.7h2.9v2.9h-2.9zM359.9 362.7h2.9v2.9h-2.9zM379.3 362.7h2.9v2.9h-2.9zM398.0 362.7h2.9v2.9h-2.9zM416.2 362.7h2.9v2.9h-2.9zM433.5 362.7h2.9v2.9h-2.9zM449.9 362.7h2.9v2.9h-2.9zM465.3 362.7h2.9v2.9h-2.9zM128.0 342.9h2.9v2.9h-2.9zM142.9 342.9h2.9v2.9h-2.9zM158.9 342.9h2.9v2.9h-2.9zM175.8 342.9h2.9v2.9h-2.9zM193.5 342.9h2.9v2.9h-2.9zM211.9 342.9h2.9v2.9h-2.9zM230.9 342.9h2.9v2.9h-2.9zM250.3 342.9h2.9v2.9h-2.9zM270.1 342.9h2.9v2.9h-2.9zM290.0 342.9h2.9v2.9h-2.9zM310.0 342.9h2.9v2.9h-2.9zM329.9 342.9h2.9v2.9h-2.9zM349.7 342.9h2.9v2.9h-2.9zM369.1 342.9h2.9v2.9h-2.9zM388.1 342.9h2.9v2.9h-2.9zM406.5 342.9h2.9v2.9h-2.9zM424.2 342.9h2.9v2.9h-2.9zM441.1 342.9h2.9v2.9h-2.9zM457.1 342.9h2.9v2.9h-2.9zM472.0 342.9h2.9v2.9h-2.9zM126.2 322.8h2.9v2.9h-2.9zM141.3 322.8h2.9v2.9h-2.9zM157.4 322.8h2.9v2.9h-2.9zM174.5 322.8h2.9v2.9h-2.9zM192.4 322.8h2.9v2.9h-2.9zM211.0 322.8h2.9v2.9h-2.9zM230.2 322.8h2.9v2.9h-2.9zM249.8 322.8h2.9v2.9h-2.9zM269.7 322.8h2.9v2.9h-2.9zM289.9 322.8h2.9v2.9h-2.9zM310.1 322.8h2.9v2.9h-2.9zM330.3 322.8h2.9v2.9h-2.9zM350.2 322.8h2.9v2.9h-2.9zM369.8 322.8h2.9v2.9h-2.9zM389.0 322.8h2.9v2.9h-2.9zM407.6 322.8h2.9v2.9h-2.9zM425.5 322.8h2.9v2.9h-2.9zM442.6 322.8h2.9v2.9h-2.9zM458.7 322.8h2.9v2.9h-2.9zM473.8 322.8h2.9v2.9h-2.9zM125.4 302.6h2.9v2.9h-2.9zM140.6 302.6h2.9v2.9h-2.9zM156.9 302.6h2.9v2.9h-2.9zM174.0 302.6h2.9v2.9h-2.9zM192.0 302.6h2.9v2.9h-2.9zM210.6 302.6h2.9v2.9h-2.9zM229.9 302.6h2.9v2.9h-2.9zM249.6 302.6h2.9v2.9h-2.9zM269.6 302.6h2.9v2.9h-2.9zM289.9 302.6h2.9v2.9h-2.9zM310.1 302.6h2.9v2.9h-2.9zM330.4 302.6h2.9v2.9h-2.9zM350.4 302.6h2.9v2.9h-2.9zM370.1 302.6h2.9v2.9h-2.9zM389.4 302.6h2.9v2.9h-2.9zM408.0 302.6h2.9v2.9h-2.9zM426.0 302.6h2.9v2.9h-2.9zM443.1 302.6h2.9v2.9h-2.9zM459.4 302.6h2.9v2.9h-2.9zM474.6 302.6h2.9v2.9h-2.9zM125.9 282.4h2.9v2.9h-2.9zM141.0 282.4h2.9v2.9h-2.9zM157.2 282.4h2.9v2.9h-2.9zM174.3 282.4h2.9v2.9h-2.9zM192.2 282.4h2.9v2.9h-2.9zM210.9 282.4h2.9v2.9h-2.9zM230.1 282.4h2.9v2.9h-2.9zM249.7 282.4h2.9v2.9h-2.9zM269.7 282.4h2.9v2.9h-2.9zM289.9 282.4h2.9v2.9h-2.9zM310.1 282.4h2.9v2.9h-2.9zM330.3 282.4h2.9v2.9h-2.9zM350.3 282.4h2.9v2.9h-2.9zM369.9 282.4h2.9v2.9h-2.9zM389.1 282.4h2.9v2.9h-2.9zM407.8 282.4h2.9v2.9h-2.9zM425.7 282.4h2.9v2.9h-2.9zM442.8 282.4h2.9v2.9h-2.9zM459.0 282.4h2.9v2.9h-2.9zM474.1 282.4h2.9v2.9h-2.9zM127.4 262.3h2.9v2.9h-2.9zM142.4 262.3h2.9v2.9h-2.9zM158.5 262.3h2.9v2.9h-2.9zM175.4 262.3h2.9v2.9h-2.9zM193.2 262.3h2.9v2.9h-2.9zM211.6 262.3h2.9v2.9h-2.9zM230.7 262.3h2.9v2.9h-2.9zM250.2 262.3h2.9v2.9h-2.9zM270.0 262.3h2.9v2.9h-2.9zM290.0 262.3h2.9v2.9h-2.9zM310.0 262.3h2.9v2.9h-2.9zM330.0 262.3h2.9v2.9h-2.9zM349.8 262.3h2.9v2.9h-2.9zM369.3 262.3h2.9v2.9h-2.9zM388.4 262.3h2.9v2.9h-2.9zM406.8 262.3h2.9v2.9h-2.9zM424.6 262.3h2.9v2.9h-2.9zM441.5 262.3h2.9v2.9h-2.9zM457.6 262.3h2.9v2.9h-2.9zM472.6 262.3h2.9v2.9h-2.9zM133.8 242.5h2.9v2.9h-2.9zM149.3 242.5h2.9v2.9h-2.9zM165.8 242.5h2.9v2.9h-2.9zM183.2 242.5h2.9v2.9h-2.9zM201.4 242.5h2.9v2.9h-2.9zM220.3 242.5h2.9v2.9h-2.9zM239.8 242.5h2.9v2.9h-2.9zM259.6 242.5h2.9v2.9h-2.9zM279.7 242.5h2.9v2.9h-2.9zM300.0 242.5h2.9v2.9h-2.9zM320.3 242.5h2.9v2.9h-2.9zM340.4 242.5h2.9v2.9h-2.9zM360.2 242.5h2.9v2.9h-2.9zM379.7 242.5h2.9v2.9h-2.9zM398.6 242.5h2.9v2.9h-2.9zM416.8 242.5h2.9v2.9h-2.9zM434.2 242.5h2.9v2.9h-2.9zM450.7 242.5h2.9v2.9h-2.9zM466.2 242.5h2.9v2.9h-2.9zM141.5 223.0h2.9v2.9h-2.9zM157.3 223.0h2.9v2.9h-2.9zM174.2 223.0h2.9v2.9h-2.9zM192.0 223.0h2.9v2.9h-2.9zM210.5 223.0h2.9v2.9h-2.9zM229.7 223.0h2.9v2.9h-2.9zM249.5 223.0h2.9v2.9h-2.9zM269.5 223.0h2.9v2.9h-2.9zM289.8 223.0h2.9v2.9h-2.9zM310.2 223.0h2.9v2.9h-2.9zM330.5 223.0h2.9v2.9h-2.9zM350.5 223.0h2.9v2.9h-2.9zM370.3 223.0h2.9v2.9h-2.9zM389.5 223.0h2.9v2.9h-2.9zM408.0 223.0h2.9v2.9h-2.9zM425.8 223.0h2.9v2.9h-2.9zM442.7 223.0h2.9v2.9h-2.9zM458.5 223.0h2.9v2.9h-2.9zM166.4 204.0h2.9v2.9h-2.9zM183.5 204.0h2.9v2.9h-2.9zM201.5 204.0h2.9v2.9h-2.9zM220.3 204.0h2.9v2.9h-2.9zM239.7 204.0h2.9v2.9h-2.9zM259.5 204.0h2.9v2.9h-2.9zM279.7 204.0h2.9v2.9h-2.9zM300.0 204.0h2.9v2.9h-2.9zM320.3 204.0h2.9v2.9h-2.9zM340.5 204.0h2.9v2.9h-2.9zM360.3 204.0h2.9v2.9h-2.9zM379.7 204.0h2.9v2.9h-2.9zM398.5 204.0h2.9v2.9h-2.9zM416.5 204.0h2.9v2.9h-2.9zM433.6 204.0h2.9v2.9h-2.9zM176.3 185.6h2.9v2.9h-2.9zM193.6 185.6h2.9v2.9h-2.9zM211.8 185.6h2.9v2.9h-2.9zM230.6 185.6h2.9v2.9h-2.9zM250.0 185.6h2.9v2.9h-2.9zM269.9 185.6h2.9v2.9h-2.9zM289.9 185.6h2.9v2.9h-2.9zM310.1 185.6h2.9v2.9h-2.9zM330.1 185.6h2.9v2.9h-2.9zM350.0 185.6h2.9v2.9h-2.9zM369.4 185.6h2.9v2.9h-2.9zM388.2 185.6h2.9v2.9h-2.9zM406.4 185.6h2.9v2.9h-2.9zM423.7 185.6h2.9v2.9h-2.9zM192.7 168.0h2.9v2.9h-2.9zM210.8 168.0h2.9v2.9h-2.9zM229.8 168.0h2.9v2.9h-2.9zM249.4 168.0h2.9v2.9h-2.9zM269.5 168.0h2.9v2.9h-2.9zM289.8 168.0h2.9v2.9h-2.9zM310.2 168.0h2.9v2.9h-2.9zM330.5 168.0h2.9v2.9h-2.9zM350.6 168.0h2.9v2.9h-2.9zM370.2 168.0h2.9v2.9h-2.9zM389.2 168.0h2.9v2.9h-2.9zM407.3 168.0h2.9v2.9h-2.9zM204.1 151.2h2.9v2.9h-2.9zM222.2 151.2h2.9v2.9h-2.9zM241.0 151.2h2.9v2.9h-2.9zM260.3 151.2h2.9v2.9h-2.9zM280.1 151.2h2.9v2.9h-2.9zM300.0 151.2h2.9v2.9h-2.9zM319.9 151.2h2.9v2.9h-2.9zM339.7 151.2h2.9v2.9h-2.9zM359.0 151.2h2.9v2.9h-2.9zM377.8 151.2h2.9v2.9h-2.9zM395.9 151.2h2.9v2.9h-2.9zM241.1 135.3h2.9v2.9h-2.9zM260.3 135.3h2.9v2.9h-2.9zM280.1 135.3h2.9v2.9h-2.9zM300.0 135.3h2.9v2.9h-2.9zM319.9 135.3h2.9v2.9h-2.9zM339.7 135.3h2.9v2.9h-2.9zM358.9 135.3h2.9v2.9h-2.9z"/></g><g class="orbits" fill="none" stroke="url(#go)" stroke-width="1.3"><ellipse cx="300" cy="300" rx="292" ry="98" transform="rotate(-24 300 300)"/><ellipse cx="300" cy="300" rx="292" ry="128" transform="rotate(16 300 300)"/><ellipse cx="300" cy="300" rx="292" ry="66" transform="rotate(48 300 300)"/></g><g class="knoten"><g transform="translate(118 196)"><circle r="25" fill="#16340F" fill-opacity=".9" stroke="#D5FEB7" stroke-opacity=".9" stroke-width="1.5"/><use href="#i-zap" x="-11" y="-11" width="22" height="22" fill="#D5FEB7"/></g><g transform="translate(470 350)"><circle r="25" fill="#16340F" fill-opacity=".9" stroke="#D5FEB7" stroke-opacity=".9" stroke-width="1.5"/><use href="#i-zap" x="-11" y="-11" width="22" height="22" fill="#D5FEB7"/></g><g transform="translate(300 476)"><circle r="21" fill="#16340F" fill-opacity=".9" stroke="#D5FEB7" stroke-opacity=".7" stroke-width="1.3"/><use href="#i-receipt" x="-9" y="-9" width="18" height="18" fill="#D5FEB7"/></g><g transform="translate(372 132)"><circle r="21" fill="#16340F" fill-opacity=".9" stroke="#D5FEB7" stroke-opacity=".7" stroke-width="1.3"/><use href="#i-euro" x="-9" y="-9" width="18" height="18" fill="#D5FEB7"/></g></g></svg></div>
+    <p class="statement" data-statement>Strom hat keine Qualität<span class="inline-ico solid"><svg class="i"><use href="#i-zap"/></svg></span>aber Beratung schon<span class="inline-ico mint"><svg class="i"><use href="#i-check"/></svg></span></p>
+      <div class="stimmen">
+        <span class="avatare"><i>MV</i><i>PS</i><i>PR</i></span>
+        <span class="chiptext"><b>Drei Regensburger Betriebe</b><span>sparen 4.500 bis 10.000 Euro im Jahr</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DREI-WEGE-WEICHE ALS TABS ================= -->
+<section class="sec sec-flaeche" id="leistungen">
+  <div class="wrap">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Für wen ich arbeite</span>
+      <h2>Drei Ausgangslagen, drei Rechnungen, <span class="hl">ein Ansprechpartner</span></h2>
+    </div>
+    <div class="tabpanel-box" style="background:#fff">
+      <div class="tabs" role="tablist" id="weiche">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="w-firmen">Firmen und Gewerbe</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="w-hv">Hausverwaltungen</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="w-priv">Privathaushalte</button>
+      </div>
+
+      <div class="tabpanel" id="w-firmen" role="tabpanel">
+        <div class="stack">
+          <h3 style="font-size:clamp(24px,2.6vw,34px);line-height:1.2">Ihr Betrieb läuft, <span class="hl">die Energiekosten laufen mit</span></h3>
+          <p class="txt">Küche, Kühlung, lange Öffnungszeiten. Wo viel Strom durchgeht, ist der Hebel am größten.
+            Drei Regensburger Betriebe sparen seit dem Wechsel zwischen 4.500 und 10.000 Euro im Jahr.</p>
+          <div><a class="btn btn-primary" href="#tarifcheck">Gewerbetarif prüfen lassen <span class="arr">→</span></a></div>
+        </div>
+        <div class="tp-visual">
+          <span class="schwebe-chip" style="top:22px;left:22px">Vorher: Grundversorgung</span>
+          <figure class="panel-slot" data-datei="energieberatung-regensburg-gewerbe-kueche.jpg" style="--platzhalter-icon:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231F4317'%3E%3Cpath d='M14 15.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 13.4 15h-2.8c-.297 0-.459.001-.576.01l-.012.002-.001.012c-.01.117-.011.28-.011.576V20h4v-4.4ZM6.2 4c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422C4.001 5.25 4 5.624 4 6.2V7a2 2 0 1 0 4 0 1 1 0 0 1 2 0 2 2 0 1 0 4 0 1 1 0 1 1 2 0 2 2 0 1 0 4 0v-.8c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 17.8 4H6.2ZM22 17.8c0 .543.001 1.012-.03 1.395-.033.396-.104.789-.297 1.167a3 3 0 0 1-1.31 1.31c-.379.194-.772.265-1.168.298-.383.031-.852.03-1.395.03H6.2c-.543 0-1.012.001-1.395-.03-.396-.033-.789-.104-1.167-.297a3 3 0 0 1-1.31-1.31c-.194-.379-.265-.772-.298-1.168C2 18.812 2 18.343 2 17.8V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C5.188 2 5.657 2 6.2 2h11.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395v11.6ZM16 20h1.8c.576 0 .949-.001 1.232-.024.272-.023.373-.06.422-.085a.999.999 0 0 0 .437-.437c.025-.05.062-.15.085-.422.023-.283.024-.656.024-1.232v-7.337a3.989 3.989 0 0 1-5-.82A3.989 3.989 0 0 1 12 11a3.989 3.989 0 0 1-3-1.356 3.989 3.989 0 0 1-5 .819V17.8c0 .576.001.949.024 1.232.023.272.06.373.085.422.096.188.249.34.437.437.05.025.15.062.422.085.283.023.656.024 1.232.024H8v-4.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h2.8c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20Z'/%3E%3C/svg%3E&quot;)"><img src="bilder/energieberatung-regensburg-gewerbe-kueche.jpg" alt="Gastronomiebetrieb in Regensburg" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+          <span class="schwebe-chip" style="bottom:22px;right:22px">Nachher: 10.000 € weniger im Jahr</span>
+        </div>
+      </div>
+
+      <div class="tabpanel" id="w-hv" role="tabpanel" hidden>
+        <div class="stack">
+          <h3 style="font-size:clamp(24px,2.6vw,34px);line-height:1.2"><span class="hl">Allgemeinstrom und Heizgas</span> über mehrere Objekte</h3>
+          <p class="txt">Ein Vergleich für alle Objekte, ein Ansprechpartner, eine Aufstellung, die Sie der
+            Eigentümerversammlung vorlegen können. Die Fristen behalte ich im Blick, nicht Sie.</p>
+          <div><a class="btn btn-primary" href="#tarifcheck">Objekte prüfen lassen <span class="arr">→</span></a></div>
+        </div>
+        <div class="tp-visual">
+          <span class="schwebe-chip" style="top:22px;right:22px">Ein Ansprechpartner</span>
+          <figure class="panel-slot" data-datei="energieberatung-regensburg-hausverwaltung.jpg" style="--platzhalter-icon:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231F4317'%3E%3Cpath d='M20 12.6c0-.297-.001-.459-.01-.576l-.003-.012-.011-.001A8.122 8.122 0 0 0 19.4 12h-1.9v8H20v-7.4ZM13 14a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm0-4a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2Zm0-4a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2h2ZM4 20h2.5v-8H4.6c-.297 0-.459.001-.576.01l-.012.002-.001.012C4 12.141 4 12.304 4 12.6V20ZM15.5 6.2c0-.576-.001-.949-.024-1.232-.023-.272-.06-.373-.085-.422a.999.999 0 0 0-.437-.437c-.05-.025-.15-.062-.422-.085A16.942 16.942 0 0 0 13.3 4h-2.6c-.576 0-.949.001-1.232.024-.272.023-.373.06-.422.085a1 1 0 0 0-.437.437c-.025.05-.062.15-.085.422-.023.283-.024.656-.024 1.232V20h7V6.2Zm2 3.8h1.9c.264 0 .522-.001.739.017.228.018.498.063.77.2.328.169.604.424.796.737l.077.138.087.203c.072.2.1.395.114.566.018.217.017.475.017.739V20a1 1 0 1 1 0 2H2a1 1 0 1 1 0-2v-7.4c0-.264-.001-.522.017-.739.018-.228.063-.498.2-.77a2 2 0 0 1 .875-.873c.271-.138.54-.183.77-.201.216-.018.474-.017.738-.017h1.9V6.2c0-.543-.001-1.012.03-1.395.033-.396.104-.789.297-1.167a3 3 0 0 1 1.31-1.31c.379-.194.772-.265 1.168-.298C9.688 2 10.157 2 10.7 2h2.6c.543 0 1.012-.001 1.395.03.396.033.789.104 1.167.297a3 3 0 0 1 1.31 1.31c.194.379.265.772.298 1.168.031.383.03.852.03 1.395V10Z'/%3E%3C/svg%3E&quot;)"><img src="bilder/energieberatung-regensburg-hausverwaltung.jpg" alt="Wohnanlage einer Hausverwaltung in Regensburg" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+        </div>
+      </div>
+
+      <div class="tabpanel" id="w-priv" role="tabpanel" hidden>
+        <div class="stack">
+          <h3 style="font-size:clamp(24px,2.6vw,34px);line-height:1.2">Abschlag zu hoch, <span class="hl">Nachzahlung zu hoch</span></h3>
+          <p class="txt">Wenn die Jahresabrechnung weh tut, liegt das selten am Verbrauch und meistens am Tarif.
+            Ich sage Ihnen ehrlich, ob sich der Wechsel bei Ihrem Verbrauch überhaupt lohnt.</p>
+          <div><a class="btn btn-primary" href="#tarifcheck">Haushaltstarif prüfen lassen <span class="arr">→</span></a></div>
+        </div>
+        <div class="tp-visual">
+          <span class="schwebe-chip" style="bottom:22px;left:22px">Auch ein Nein ist eine Antwort</span>
+          <figure class="panel-slot" data-datei="energieberatung-regensburg-haushalt.jpg" style="--platzhalter-icon:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231F4317'%3E%3Cpath d='M20 10.565c0-.63-.009-.755-.037-.857a1.002 1.002 0 0 0-.16-.325c-.062-.084-.155-.168-.653-.555l-6.782-5.275a7.113 7.113 0 0 0-.361-.271L12 3.277l-.007.005c-.075.05-.174.126-.361.271L4.85 8.828c-.498.387-.591.47-.654.555a1.003 1.003 0 0 0-.159.325C4.01 9.81 4 9.934 4 10.565V17.8c0 .577.001.95.024 1.232.023.272.06.373.085.422a1 1 0 0 0 .437.437c.05.025.15.063.422.085.283.023.656.024 1.232.024h11.6c.576 0 .949-.001 1.232-.024.272-.022.373-.06.422-.085a1 1 0 0 0 .437-.437c.025-.049.062-.15.085-.422.023-.283.024-.655.024-1.232v-7.235ZM7.877 13.032a1 1 0 0 1 1.218.718 3.002 3.002 0 0 0 5.81 0 1 1 0 0 1 1.938.5 5.002 5.002 0 0 1-9.686 0 1 1 0 0 1 .72-1.218ZM22 17.8c0 .543.001 1.011-.03 1.395-.033.395-.104.788-.297 1.167a3.001 3.001 0 0 1-1.31 1.311c-.379.193-.772.264-1.168.296-.383.031-.852.031-1.395.031H6.2c-.543 0-1.012 0-1.395-.03-.396-.033-.789-.104-1.167-.297a3.001 3.001 0 0 1-1.31-1.311c-.194-.379-.265-.772-.298-1.167C2 18.81 2 18.343 2 17.8v-7.235c0-.518-.008-.968.111-1.396a3 3 0 0 1 .477-.974c.264-.357.625-.627 1.033-.945l6.782-5.275c.279-.217.64-.52 1.074-.639a2 2 0 0 1 .917-.03l.129.03.16.053c.364.14.67.397.914.586l6.782 5.275c.408.318.77.588 1.033.945.217.293.378.623.477.974.12.428.111.878.111 1.396V17.8Z'/%3E%3C/svg%3E&quot;)"><img src="bilder/energieberatung-regensburg-haushalt.jpg" alt="Jahresabrechnung eines Privathaushalts" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARBEITSWEISE, ANNOTIERTE LISTE ================= -->
+<section class="sec" id="arbeitsweise">
+  <div class="wrap">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Wie ich arbeite</span>
+      <h2>Was ich mache, und <span class="hl">was ich nicht mache</span></h2>
+    </div>
+    <div class="annot-grid">
+      <ul class="annot reveal" id="annot">
+        <li data-aktiv="true"><span class="pfeil"></span><span>Vergleichen und prüfen</span></li>
+        <li data-aktiv="false"><span class="pfeil"></span><span>Wechsel und Formalitäten</span></li>
+        <li data-aktiv="false"><span class="pfeil"></span><span>Fristen überwachen</span></li>
+        <li data-aktiv="false"><span class="pfeil"></span><span>Was ich nicht mache</span></li>
+      </ul>
+      <div class="annot-ziel reveal" id="annot-ziel">
+        <h3 style="margin-bottom:var(--s4)">Vergleichen und prüfen</h3>
+        <p class="txt">Ich sehe mir Ihre laufenden Verträge und Ihren Verbrauch an und vergleiche über 50
+          geprüfte Anbieter, Strom und Gas. Sie bekommen den Vergleich offen, nicht nur das Ergebnis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATEMENT 2 ================= -->
+<section class="sec-luft sec-flaeche">
+  <div class="wrap">
+    <p class="statement" data-statement>Die Beratung kostet Sie nichts<span class="inline-ico mint"><svg class="i"><use href="#i-euro"/></svg></span>vergütet werde ich vom Anbieter<span class="inline-ico grau"><svg class="i"><use href="#i-receipt"/></svg></span>bei dem Sie unterschreiben</p>
+    <p class="sm" style="text-align:center;max-width:56ch;margin:var(--s10) auto 0">
+      Auf Ihre Rechnung kommt dadurch kein Aufschlag. Sie zahlen weder für die Beratung noch für den Wechsel,
+      und ich wechsle nichts ohne Ihre ausdrückliche Freigabe.</p>
+  </div>
+</section>
+
+<!-- ================= REFERENZEN ALS BILDKARTEN ================= -->
+<section class="sec" id="referenzen">
+  <div class="wrap-breit">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Referenzen</span>
+      <h2><span class="hl">Regensburger Betriebe</span>, die gewechselt haben</h2>
+      <p>Gleiche Branche, gleiche Stadt, nachvollziehbare Zahlen. Der Gastronom glaubt dem Gastronomen.</p>
+    </div>
+    <div class="bildkarten">
+      <article class="bk reveal">
+        <figure class="bild-slot bild" data-datei="energieberatung-regensburg-kunde-meat-veggie-kebab.jpg"><img src="bilder/energieberatung-regensburg-kunde-meat-veggie-kebab.jpg" alt="Meat and Veggie Kebab in Regensburg" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+        <div class="inhalt">
+          <h3>Meat &amp; Veggie Kebab</h3>
+          <p class="sm">Gastronomie in Regensburg. Nach dem Vergleich Wechsel weg vom Bestandstarif.</p>
+          <div class="werte"><span class="txt">Ersparnis pro Jahr</span><b>10.000 €</b></div>
+        </div>
+      </article>
+      <article class="bk reveal">
+        <figure class="bild-slot bild" data-datei="energieberatung-regensburg-kunde-partyservice-schoell.jpg"><img src="bilder/energieberatung-regensburg-kunde-partyservice-schoell.jpg" alt="Partyservice Schöll aus Regensburg" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+        <div class="inhalt">
+          <h3>Partyservice Schöll</h3>
+          <p class="sm">Partyservice und Catering. Produktionsküche mit schwankender Auslastung.</p>
+          <div class="werte"><span class="txt">Ersparnis pro Jahr</span><b>10.000 €</b></div>
+        </div>
+      </article>
+      <article class="bk reveal">
+        <figure class="bild-slot bild" data-datei="energieberatung-regensburg-kunde-puro.jpg"><img src="bilder/energieberatung-regensburg-kunde-puro.jpg" alt="Puro Regensburg" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+        <div class="inhalt">
+          <h3>Puro Regensburg</h3>
+          <p class="sm">Gastronomie in Regensburg. Lange Öffnungszeiten, hoher Kühl- und Lichtbedarf.</p>
+          <div class="werte"><span class="txt">Ersparnis pro Jahr</span><b>4.500 €</b></div>
+        </div>
+      </article>
+    </div>
+    <div class="zentriert-cta"><a class="btn btn-mint" href="#tarifcheck">Eigene Ersparnis prüfen lassen</a></div>
+  </div>
+</section>
+
+<!-- ================= ABLAUF ================= -->
+<section class="sec sec-flaeche" id="ablauf">
+  <div class="wrap">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Der Weg</span>
+      <h2>In <span class="hl">vier Schritten</span> zum neuen Tarif</h2>
+    </div>
+    <div class="schritte" role="tablist" id="schritte">
+      <button class="schritt" role="tab" aria-selected="true"><span class="num">01</span><span class="lbl">Sie tragen sich ein</span><span class="haken ico ico-solid ico-sm"><svg class="i"><use href="#i-check"/></svg></span></button>
+      <button class="schritt" role="tab" aria-selected="false"><span class="num">02</span><span class="lbl">Ich prüfe und vergleiche</span><span class="haken ico ico-solid ico-sm"><svg class="i"><use href="#i-check"/></svg></span></button>
+      <button class="schritt" role="tab" aria-selected="false"><span class="num">03</span><span class="lbl">Wir gehen es gemeinsam durch</span><span class="haken ico ico-solid ico-sm"><svg class="i"><use href="#i-check"/></svg></span></button>
+      <button class="schritt" role="tab" aria-selected="false"><span class="num">04</span><span class="lbl">Ich übernehme den Wechsel</span><span class="haken ico ico-solid ico-sm"><svg class="i"><use href="#i-check"/></svg></span></button>
+    </div>
+    <div class="schritt-inhalt">
+      <div class="stack">
+        <span class="eyebrow" id="ab-dauer">Dauer: zwei Minuten</span>
+        <h3 id="ab-titel" style="font-size:clamp(24px,2.6vw,34px);line-height:1.2">Sie tragen sich ein</h3>
+        <p class="txt" id="ab-text">Gewerbe oder privat, Postleitzahl, aktueller Anbieter, Verbrauch. Oder Sie
+          laden einfach Ihre letzte Jahresabrechnung hoch, dann steht alles drin.</p>
+      </div>
+      <div class="tp-visual">
+        <span class="schwebe-chip" style="top:22px;left:22px" id="ab-chip">Aufwand für Sie: zwei Minuten</span>
+        <figure class="panel-slot" data-datei="energieberatung-regensburg-beratung-am-tisch.jpg" style="--platzhalter-icon:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231F4317'%3E%3Cpath d='M20 13.2V7.8c0-.857 0-1.439-.037-1.889-.036-.438-.101-.663-.18-.82a2 2 0 0 0-.875-.873c-.156-.08-.38-.145-.819-.18C17.639 4 17.057 4 16.2 4H7.8c-.856 0-1.439 0-1.889.037-.438.036-.663.101-.82.18a2 2 0 0 0-.873.875c-.08.156-.145.38-.18.82C4 6.361 4 6.942 4 7.8V14c0 .994.009 1.295.068 1.518a2 2 0 0 0 1.415 1.414c.222.06.523.068 1.517.068a1 1 0 0 1 1 1v1.919l2.06-1.649c.457-.364.79-.637 1.172-.832a3.984 3.984 0 0 1 1.016-.356c.421-.086.852-.082 1.436-.082H16.2c.857 0 1.439 0 1.889-.037.438-.036.663-.101.82-.18a2 2 0 0 0 .873-.875c.08-.156.145-.38.181-.82.037-.45.037-1.031.037-1.888Zm-5.207-5.907a1 1 0 1 1 1.414 1.414l-4.5 4.5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L11 11.086l3.793-3.793ZM22 13.2c0 .824.001 1.502-.044 2.052-.046.562-.144 1.08-.392 1.564a4.001 4.001 0 0 1-1.747 1.748c-.486.248-1.003.346-1.565.392-.55.045-1.228.044-2.052.044h-2.516c-.664 0-.858.005-1.034.041a1.997 1.997 0 0 0-.507.178c-.16.081-.315.2-.833.614l-2.385 1.908c-.193.154-.39.314-.564.428-.157.104-.462.29-.859.291a1.5 1.5 0 0 1-1.174-.565c-.247-.31-.293-.664-.31-.852-.02-.206-.018-.46-.018-.707v-1.347c-.392-.013-.728-.043-1.035-.126a4 4 0 0 1-2.828-2.828C1.992 15.495 2 14.865 2 14V7.8c0-.824 0-1.502.044-2.052.046-.562.144-1.08.392-1.564a4.001 4.001 0 0 1 1.748-1.748c.485-.248 1.002-.346 1.564-.392C6.298 1.999 6.976 2 7.8 2h8.4c.824 0 1.502-.001 2.052.044.562.046 1.08.144 1.565.392a4 4 0 0 1 1.747 1.748c.248.485.346 1.002.392 1.564.045.55.044 1.228.044 2.052v5.4Z'/%3E%3C/svg%3E&quot;)"><img src="bilder/energieberatung-regensburg-beratung-am-tisch.jpg" alt="Beratungsgespräch am Tisch" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+      </div>
+    </div>
+    <p class="sm" style="margin-top:var(--s10);padding-top:var(--s6);border-top:1px solid var(--linie)">
+      Ihre Versorgung läuft während des Wechsels ununterbrochen weiter. Es wird kein Zähler getauscht und
+      nichts abgestellt, es ändert sich nur, wer Ihnen die Rechnung schreibt.</p>
+  </div>
+</section>
+
+<!-- ================= RECHNER ================= -->
+<section class="sec" id="rechnen">
+  <div class="wrap">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Offen gerechnet</span>
+      <h2>Was ein Wechsel <span class="hl">konkret</span> bringt</h2>
+      <p>Prozentangaben helfen niemandem, weil niemand einen Durchschnittsverbrauch hat. Deshalb eine
+        Rechnung, deren Annahmen offenliegen.</p>
+    </div>
+    <div class="rechner reveal">
+      <div class="stack" style="gap:var(--s8)">
+        <div class="regler">
+          <label for="r-kwh">Jahresverbrauch: <b id="v-kwh">38.000</b> kWh</label>
+          <input type="range" id="r-kwh" min="2000" max="150000" step="1000" value="38000">
+          <span class="xs">Steht auf Ihrer letzten Jahresabrechnung</span>
+        </div>
+        <div class="regler">
+          <label for="r-diff">Preisdifferenz: <b id="v-diff">4,5</b> Cent pro kWh</label>
+          <input type="range" id="r-diff" min="0.5" max="12" step="0.1" value="4.5">
+          <span class="xs">Abstand zwischen Ihrem Tarif und dem besseren Angebot</span>
+        </div>
+        <p class="sm">Netzentgelte, Steuern und Abgaben fallen in jedem Tarif gleich an. Verhandelbar ist nur
+          der Beschaffungsanteil, und genau den vergleiche ich.</p>
+      </div>
+      <div class="ergebnis">
+        <span class="eyebrow">Ersparnis pro Jahr</span>
+        <p class="zahl" id="v-erg">1.710 €</p>
+        <p class="sm" style="max-width:44ch;margin:0 auto var(--s8)">Rechenweg: Jahresverbrauch mal
+          Preisdifferenz. Keine versteckten Annahmen, keine Hochrechnung über mehrere Jahre.</p>
+        <a class="btn btn-primary" href="#tarifcheck">Tarifcheck starten <span class="arr">→</span></a>
+        <p class="xs" style="margin-top:var(--s5)">Und damit es ehrlich bleibt: Bei kleinen Verbräuchen liegt
+          die Ersparnis im zweistelligen Bereich pro Monat. Ob Ihnen das den Aufwand wert ist, entscheiden
+          Sie, nicht ich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PERSON ================= -->
+<section class="sec sec-flaeche" id="ueber-mich">
+  <div class="wrap">
+    <div class="person">
+      <div class="person-panel">
+        <figure class="panel-slot" data-datei="energieberatung-regensburg-inhaber-emrullah-goek.jpg"><img src="bilder/energieberatung-regensburg-inhaber-emrullah-goek.jpg" alt="Emrullah Gök, Inhaber von Energiepartner Regensburg" loading="lazy" decoding="async" onerror="this.closest('figure').classList.add('leer');this.remove()"></figure>
+        <span class="hero-chip"><span class="ico ico-mint"><svg class="i"><use href="#i-check"/></svg></span>Emrullah Gök<small>Inhaber, Energiepartner Regensburg</small></span>
+      </div>
+      <div class="stack reveal">
+        <span class="eyebrow">Ihr Ansprechpartner</span>
+        <h2><span class="hl">Ein Mensch aus Regensburg</span> statt ein Vergleichsportal aus dem Internet</h2>
+        <p class="lead">Zwei Anbieter liefern denselben Strom über dasselbe Netz. Der Unterschied liegt nicht
+          im Produkt, er liegt darin, ob jemand nachrechnet, ob jemand die Fristen im Blick behält und ob
+          jemand abhebt, wenn die Abrechnung nicht stimmt.</p>
+        <p class="txt">Mir ist wichtig, dass Sie verstehen, was Sie bezahlen und warum Sie sparen. Deshalb
+          bekommen Sie von mir einen offenen Kostenvergleich und keine Hochglanzbroschüre.</p>
+        <div class="person-daten">
+          <span><a href="tel:+4916096807368">0160 96807368</a></span>
+          <span><a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a></span>
+          <span class="sm">Mo bis Fr 8 bis 20 Uhr, Sa 8 bis 20 Uhr</span>
+        </div>
+        <div><a class="btn btn-dark" href="tel:+4916096807368">Anrufen <span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="stadt-band" aria-hidden="true"><svg viewBox="0 0 1600 290" fill="none" preserveAspectRatio="xMidYMax meet" role="presentation"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M40 196 H1560 V214 H40 Z"/><path d="M66 252 A64 64 0 0 1 194 252 M224 252 A64 64 0 0 1 352 252 M382 252 A64 64 0 0 1 510 252 M540 252 A64 64 0 0 1 668 252 M698 252 A64 64 0 0 1 826 252 M856 252 A64 64 0 0 1 984 252 M1014 252 A64 64 0 0 1 1142 252 M1172 252 A64 64 0 0 1 1300 252 M1330 252 A64 64 0 0 1 1458 252"/><path opacity=".55" d="M188 252 V214 M72 252 V214 M346 252 V214 M230 252 V214 M504 252 V214 M388 252 V214 M662 252 V214 M546 252 V214 M820 252 V214 M704 252 V214 M978 252 V214 M862 252 V214 M1136 252 V214 M1020 252 V214 M1294 252 V214 M1178 252 V214 M1452 252 V214 M1336 252 V214"/><path d="M214 196 V96 H286 V196 M206 96 H294 M250 26 L206 96 M250 26 L294 96 M232 120 V150 M268 120 V150 M250 26 V10"/><path d="M628 196 V84 H690 V196 M622 84 H696 M659 8 L622 84 M659 8 L696 84 M644 108 V150 M674 108 V150 M659 108 V150 M748 196 V84 H810 V196 M742 84 H816 M779 8 L742 84 M779 8 L816 84 M764 108 V150 M794 108 V150 M779 108 V150 M690 196 V126 H748 V196 M690 126 L719 104 L748 126 M706 146 V178 M732 146 V178"/><path opacity=".8" d="M360 196 V150 L386.0 128 L412 150 V196 M375.6 166 V190 M396.4 166 V190 M430 196 V158 L456.0 136 L482 158 V196 M445.6 174 V198 M466.4 174 V198 M500 196 V144 L526.0 122 L552 144 V196 M515.6 160 V184 M536.4 160 V184 M900 196 V152 L926.0 130 L952 152 V196 M915.6 168 V192 M936.4 168 V192 M972 196 V142 L998.0 120 L1024 142 V196 M987.6 158 V182 M1008.4 158 V182 M1040 196 V156 L1066.0 134 L1092 156 V196 M1055.6 172 V196 M1076.4 172 V196 M1110 196 V148 L1136.0 126 L1162 148 V196 M1125.6 164 V188 M1146.4 164 V188 M1240 196 V154 L1266.0 132 L1292 154 V196 M1255.6 170 V194 M1276.4 170 V194 M1320 196 V146 L1346.0 124 L1372 146 V196 M1335.6 162 V186 M1356.4 162 V186"/><path opacity=".45" d="M20 258 H1580 M60 268 H520 M600 268 H980 M1060 268 H1540 M120 278 H460 M700 278 H1180"/></g></svg></div>
+</section>
+
+<!-- ================= FRAGEN UND FAKTEN ================= -->
+<section class="sec" id="fragen">
+  <div class="wrap">
+    <div class="kopfblock reveal">
+      <span class="eyebrow">Fragen und Fakten</span>
+      <h2>Fragen, die mir <span class="hl">wirklich</span> gestellt werden</h2>
+    </div>
+    <div class="akk reveal">
+      <details open>
+        <summary class="faq-sum">Was kostet mich die Beratung?<span class="plus"></span></summary>
+        <p class="faq-txt">Nichts. Vergütet werde ich vom Anbieter, bei dem Sie unterschreiben. Auf Ihre
+          Rechnung kommt kein Aufschlag.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Ruft mich danach ein halbes Dutzend Firmen an?<span class="plus"></span></summary>
+        <p class="faq-txt">Nein. Ich gebe Ihre Daten an keinen Anbieter weiter, solange Sie nicht ausdrücklich
+          zustimmen. Melden tue ich mich, sonst niemand.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Ich bin noch im Vertrag. Bringt das jetzt überhaupt etwas?<span class="plus"></span></summary>
+        <p class="faq-txt">Ja. Ich notiere Ihr Laufzeitende und melde mich rechtzeitig vorher. Sie
+          unterschreiben heute nichts.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Wird beim Wechsel der Strom abgestellt?<span class="plus"></span></summary>
+        <p class="faq-txt">Nein. Die Versorgung läuft ununterbrochen weiter. Es ändert sich nur, wer Ihnen die
+          Rechnung schreibt.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Warum nicht einfach ein Vergleichsportal?<span class="plus"></span></summary>
+        <p class="faq-txt">Können Sie machen. Das Portal optimiert das erste Jahr, danach meldet es sich nicht
+          mehr. Gewerbliche Verbräuche bildet es schlecht ab, und anrufen können Sie dort niemanden.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Wir sind in Pacht und ziehen vielleicht um. Was passiert dann mit dem Stromvertrag?<span class="plus"></span></summary>
+        <p class="faq-txt">Antwort folgt nach der Rechtsprüfung. Kurz gefasst geht es darum, ob der Vertrag
+          mitgenommen oder beendet werden kann, und welche Fristen dabei gelten.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Wie lange läuft mein Stromvertrag, und wann kann ich kündigen?<span class="plus"></span></summary>
+        <p class="faq-txt">Antwort folgt nach der Rechtsprüfung. Maßgeblich sind die Regeln des
+          Energiewirtschaftsgesetzes zu Laufzeit, stillschweigender Verlängerung und Kündigungsfrist.
+          Für Gewerbekunden gelten teilweise andere Regeln als für Haushaltskunden.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Woraus besteht mein Strompreis eigentlich?<span class="plus"></span></summary>
+        <p class="faq-txt">Antwort folgt nach der Rechtsprüfung. Aufteilung in Beschaffung, Netzentgelte,
+          Steuern, Abgaben und Umlagen, mit den aktuellen Anteilen.</p>
+      </details>
+      <details>
+        <summary class="faq-sum">Wer beliefert in Regensburg in der Grundversorgung, und wer betreibt das Netz?<span class="plus"></span></summary>
+        <p class="faq-txt">Antwort folgt nach der Prüfung. Grundversorger und Verteilnetzbetreiber gehören
+          hier namentlich hinein, im Klartext.</p>
+      </details>
+      <p class="stand">Stand: noch offen. Die mit "Antwort folgt" markierten Angaben sind vor der
+        Veröffentlichung an der Primärquelle zu prüfen und mit Datum und Quelle zu versehen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<div class="ghost-wrap"><p class="ghost" id="ghost">Noch Fragen? Rufen Sie an.</p></div>
+
+<section class="sec" id="tarifcheck" style="padding-top:var(--s12)">
+  <div class="wrap">
+    <div class="kontakt">
+      <div class="stack reveal">
+        <span class="ico ico-weiss"><svg class="i"><use href="#i-mail"/></svg></span>
+        <h2><span class="hl">Tarifcheck</span> starten</h2>
+        <p class="lead">Zwei Minuten, dann weiß ich, ob sich bei Ihnen etwas holen lässt. Wenn nicht, sage ich
+          Ihnen das auch.</p>
+        <div class="person-daten" style="border-top:0;padding-top:0">
+          <span class="eyebrow">Telefon</span>
+          <span><a href="tel:+4916096807368">0160 96807368</a></span>
+          <span class="eyebrow" style="margin-top:var(--s4)">E-Mail</span>
+          <span><a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a></span>
+          <span class="eyebrow" style="margin-top:var(--s4)">Erreichbar</span>
+          <span class="sm">Mo bis Fr 8 bis 20 Uhr, Sa 8 bis 20 Uhr, So geschlossen</span>
+        </div>
+      </div>
+      <form class="formkarte reveal" onsubmit="return false">
+        <div class="felder">
+          <div class="feld">
+            <label for="a1">Gewerbe oder privat</label>
+            <select id="a1"><option>Bitte wählen</option><option>Firma oder Gewerbe</option><option>Hausverwaltung</option><option>Privathaushalt</option></select>
+          </div>
+          <div class="feld"><label for="a2">Postleitzahl</label><input id="a2" placeholder="93047" inputmode="numeric"></div>
+          <div class="feld"><label for="a3">Aktueller Anbieter</label><input id="a3" placeholder="z. B. Grundversorgung"></div>
+          <div class="feld"><label for="a4">Jahresverbrauch in kWh</label><input id="a4" placeholder="z. B. 38.000" inputmode="numeric"><span class="hint">Steht auf der letzten Jahresabrechnung</span></div>
+          <div class="feld voll"><div class="upload">Oder letzte Jahresabrechnung hochladen, dann steht alles drin</div></div>
+          <div class="feld"><label for="a5">Name</label><input id="a5" placeholder="Vor- und Nachname"></div>
+          <div class="feld"><label for="a6">Telefon oder E-Mail</label><input id="a6" placeholder="So erreiche ich Sie"></div>
+        </div>
+        <div class="micro" style="margin-top:var(--s8)">
+          <span>Kostenlos und unverbindlich.</span>
+          <span>Kein Wechsel ohne Ihre ausdrückliche Freigabe.</span>
+          <span>Ihre Daten gehen an keinen Anbieter, solange Sie nicht zustimmen.</span>
+        </div>
+        <div style="margin-top:var(--s8)"><button class="btn btn-primary" type="submit">Tarifcheck starten <span class="arr">→</span></button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="fuss">
+  <div class="stadt" aria-hidden="true"><img class="stadt-foto"
+       src="bilder/energieberatung-regensburg-stadt.jpg" alt="Regensburg mit Steinerner Brücke und Dom St. Peter"
+       loading="lazy" decoding="async"
+       onload="this.closest('.fuss').classList.add('hat-stadtfoto')"
+       onerror="this.closest('.stadt').remove()"></div>
+  <div class="wrap">
+    <div class="fuss-grid">
+      <div>
+        <img class="fuss-logo" src="logo-hell.png" alt="" width="423" height="180"
+             onerror="this.remove()">
+        <h3>Energiepartner Regensburg</h3>
+        <p>Inhaber Emrullah Gök<br>
+        <span style="color:rgba(255,255,255,.42)">Anschrift folgt, Pflichtangabe</span><br>
+        <a href="tel:+4916096807368">0160 96807368</a><br>
+        <a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a></p>
+        <p style="margin-top:var(--s5)">Mo bis Fr 8 bis 20 Uhr<br>Sa 8 bis 20 Uhr<br>So geschlossen</p>
+      </div>
+      <div>
+        <h3>Einzugsgebiet</h3>
+        <p>Ich arbeite für Betriebe, Hausverwaltungen und Haushalte in Regensburg und im Umland, unter anderem
+          in der Innenstadt, Stadtamhof, Burgweinting, Königswiesen, Kumpfmühl, Reinhausen und Weichs sowie in
+          Neutraubling, Lappersdorf, Pentling, Bad Abbach, Regenstauf, Nittendorf und Obertraubling.</p>
+      </div>
+      <div>
+        <h3>Leistungen</h3>
+        <ul>
+          <li><a href="#leistungen">Gewerbestrom Regensburg</a></li>
+          <li><a href="#leistungen">Allgemeinstrom für Hausverwaltungen</a></li>
+          <li><a href="#leistungen">Strom und Gas für Privathaushalte</a></li>
+          <li><a href="#ablauf">Anbieterwechsel</a></li>
+          <li><a href="#rechnen">Ersparnis berechnen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fuss-unten">
+      <span>© 2026 Energiepartner Regensburg<br>
+        <span class="credit">Foto Regensburg: Rolf Kranz,
+        <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a></span>
+      </span>
+      <nav><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Energiepartner Regensburg",
+"description":"Unabhängige Energieberatung und Vermittlung von Strom- und Gasverträgen für Betriebe, Hausverwaltungen und Privathaushalte in Regensburg und Umland.",
+"url":"https://www.energiepartner-regensburg.de/","telephone":"+49 160 96807368",
+"email":"kontakt@energiepartner-regensburg.de","founder":{"@type":"Person","name":"Emrullah Gök"},
+"areaServed":[{"@type":"City","name":"Regensburg"},{"@type":"AdministrativeArea","name":"Landkreis Regensburg"}],
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"20:00"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet mich die Beratung?","acceptedAnswer":{"@type":"Answer","text":"Nichts. Vergütet werde ich vom Anbieter, bei dem Sie unterschreiben. Auf Ihre Rechnung kommt kein Aufschlag."}},
+{"@type":"Question","name":"Ruft mich danach ein halbes Dutzend Firmen an?","acceptedAnswer":{"@type":"Answer","text":"Nein. Ihre Daten gehen an keinen Anbieter weiter, solange Sie nicht ausdrücklich zustimmen."}},
+{"@type":"Question","name":"Ich bin noch im Vertrag. Bringt das jetzt überhaupt etwas?","acceptedAnswer":{"@type":"Answer","text":"Ja. Das Laufzeitende wird notiert, die Meldung erfolgt rechtzeitig vorher. Sie unterschreiben heute nichts."}},
+{"@type":"Question","name":"Wird beim Wechsel der Strom abgestellt?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Versorgung läuft ununterbrochen weiter. Es ändert sich nur, wer die Rechnung schreibt."}},
+{"@type":"Question","name":"Warum nicht einfach ein Vergleichsportal?","acceptedAnswer":{"@type":"Answer","text":"Ein Portal optimiert das erste Jahr und meldet sich danach nicht wieder. Gewerbliche Verbräuche bildet es schlecht ab, und es gibt dort keinen persönlichen Ansprechpartner."}}]}
+</script>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Menü-Overlay ---- */
+  var mb=document.getElementById('menue');
+  mb.addEventListener('click',function(){
+    var offen=document.body.classList.toggle('offen');
+    document.body.classList.toggle('gesperrt',offen);
+    mb.setAttribute('aria-expanded',offen?'true':'false');
+  });
+  document.getElementById('overlay').addEventListener('click',function(e){
+    if(e.target.closest('a')){ document.body.classList.remove('offen','gesperrt'); mb.setAttribute('aria-expanded','false'); }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && document.body.classList.contains('offen')){
+      document.body.classList.remove('offen','gesperrt'); mb.setAttribute('aria-expanded','false'); mb.focus();
+    }
+  });
+
+  /* ---- Hero: Wörter gestaffelt, Hervorhebungen bleiben erhalten ---- */
+  function inWoerter(el, machen){
+    var out=[];
+    (function lauf(knoten){
+      Array.prototype.slice.call(knoten.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          n.textContent.split(/(\s+)/).forEach(function(t){
+            if(!t.trim()){ out.push(document.createTextNode(t)); return; }
+            var w=document.createElement('span'); w.className='w'; w.textContent=t;
+            if(n.parentNode!==el && n.parentNode.className) w.className+=' '+n.parentNode.className;
+            out.push(w);
+          });
+        } else if(n.nodeType===1 && n.classList.contains('inline-ico')){
+          out.push(n.cloneNode(true));
+        } else if(n.nodeType===1){
+          lauf(n);
+        }
+      });
+    })(el);
+    el.innerHTML=''; out.forEach(function(n){ el.appendChild(n); });
+    machen(el.querySelectorAll('.w'));
+  }
+  document.querySelectorAll('[data-hero]').forEach(function(el){
+    inWoerter(el,function(ws){ ws.forEach(function(w,i){ w.style.animationDelay=(i*55)+'ms'; }); });
+  });
+
+  /* ---- Statement: Wörter zerlegen, Inline-Icons erhalten ---- */
+  document.querySelectorAll('[data-statement]').forEach(function(el){
+    inWoerter(el,function(ws){ ws.forEach(function(w,i){ w.style.transitionDelay=(i*70)+'ms'; }); });
+    Array.prototype.slice.call(el.querySelectorAll('.inline-ico')).forEach(function(ic){
+      var vor=ic.previousSibling;
+      while(vor && vor.nodeType===3 && !vor.textContent.trim()) vor=vor.previousSibling;
+      if(vor && vor.nodeType===1 && vor.classList.contains('w')){
+        var huelle=document.createElement('span'); huelle.className='nobr';
+        el.insertBefore(huelle,vor); huelle.appendChild(vor); huelle.appendChild(ic);
+      }
+    });
+  });
+
+  /* ---- Scroll-Reveals ---- */
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('an'); io.unobserve(e.target); } });
+    },{threshold:.2,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(e){ io.observe(e); });
+    document.querySelectorAll('.kunden .reveal, .bildkarten .reveal')
+      .forEach(function(e,i){ e.style.transitionDelay=((i%3)*90)+'ms'; });
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('an'); io2.unobserve(e.target); } });
+    },{threshold:.4});
+    document.querySelectorAll('[data-statement]').forEach(function(e){ io2.observe(e); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(e){ e.classList.add('an'); });
+    document.querySelectorAll('[data-statement]').forEach(function(e){ e.classList.add('an'); });
+  }
+
+  /* ---- Tabs ---- */
+  var tb=document.getElementById('weiche');
+  if(tb) tb.addEventListener('click',function(ev){
+    var t=ev.target.closest('.tab'); if(!t) return;
+    tb.querySelectorAll('.tab').forEach(function(x){
+      var on=(x===t); x.setAttribute('aria-selected',on?'true':'false');
+      var p=document.getElementById(x.getAttribute('aria-controls'));
+      if(p) p.hidden=!on;
+    });
+  });
+
+  /* ---- Annotierte Liste ---- */
+  var ai=[
+    ['Vergleichen und prüfen','Ich sehe mir Ihre laufenden Verträge und Ihren Verbrauch an und vergleiche über 50 geprüfte Anbieter, Strom und Gas. Sie bekommen den Vergleich offen, nicht nur das Ergebnis.'],
+    ['Wechsel und Formalitäten','Kündigung, Anmeldung, Papierkram. Ihr Aufwand beträgt: einmal die Abrechnung heraussuchen und einmal unterschreiben. Die Versorgung läuft dabei ununterbrochen weiter.'],
+    ['Fristen überwachen','Ich notiere das Laufzeitende und melde mich rechtzeitig, damit Sie nicht wieder in den Folgetarif rutschen. Genau das macht ein Vergleichsportal nicht.'],
+    ['Was ich nicht mache','Ich verkaufe keinen Strom, ich vermittle den Vertrag. Ich betreibe kein Netz, für Störungen ist Ihr Netzbetreiber zuständig. Ich gebe keine Rechtsberatung und unterschreibe nichts in Ihrem Namen.']
+  ];
+  var an=document.getElementById('annot');
+  if(an) an.addEventListener('click',function(ev){
+    var li=ev.target.closest('li'); if(!li) return;
+    var alle=Array.prototype.slice.call(an.querySelectorAll('li')), i=alle.indexOf(li);
+    alle.forEach(function(x,j){ x.setAttribute('data-aktiv', j===i?'true':'false'); });
+    var z=document.getElementById('annot-ziel');
+    z.innerHTML='<h3 style="margin-bottom:var(--s4)">'+ai[i][0]+'</h3><p class="txt">'+ai[i][1]+'</p>';
+  });
+
+  /* ---- Ablauf-Reiter ---- */
+  var si=[
+    ['Dauer: zwei Minuten','Sie tragen sich ein','Gewerbe oder privat, Postleitzahl, aktueller Anbieter, Verbrauch. Oder Sie laden einfach Ihre letzte Jahresabrechnung hoch, dann steht alles drin.','Aufwand für Sie: zwei Minuten'],
+    ['Dauer: Angabe folgt','Ich prüfe und vergleiche','Ich sehe mir Ihre laufenden Verträge und Ihren Verbrauch an und vergleiche über 50 geprüfte Anbieter, um das beste Angebot für Sie zu finden.','Über 50 Anbieter im Vergleich'],
+    ['Dauer: unter 30 Minuten','Wir gehen es gemeinsam durch','Sie bekommen eine klare Empfehlung mit offenem Kostenvergleich. Gemeinsam wählen wir den Tarif, der zu Ihnen passt. Ich sage Ihnen auch, wenn sich der Wechsel nicht lohnt.','Offener Kostenvergleich'],
+    ['Danach bleibe ich Ihr Ansprechpartner','Ich übernehme den Wechsel','Kündigung, Anmeldung, Formalitäten, Fristen. Danach melde ich mich, bevor der nächste Vertrag ausläuft.','Versorgung läuft ununterbrochen weiter']
+  ];
+  var sb=document.getElementById('schritte');
+  if(sb) sb.addEventListener('click',function(ev){
+    var s=ev.target.closest('.schritt'); if(!s) return;
+    var alle=Array.prototype.slice.call(sb.querySelectorAll('.schritt')), i=alle.indexOf(s);
+    alle.forEach(function(x,j){ x.setAttribute('aria-selected', j===i?'true':'false'); });
+    document.getElementById('ab-dauer').textContent=si[i][0];
+    document.getElementById('ab-titel').textContent=si[i][1];
+    document.getElementById('ab-text').textContent=si[i][2];
+    document.getElementById('ab-chip').textContent=si[i][3];
+  });
+
+  /* ---- Rechner ---- */
+  var kwh=document.getElementById('r-kwh'), diff=document.getElementById('r-diff');
+  function rechne(){
+    var k=+kwh.value, d=+diff.value;
+    document.getElementById('v-kwh').textContent=k.toLocaleString('de-DE');
+    document.getElementById('v-diff').textContent=d.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+    document.getElementById('v-erg').textContent=Math.round(k*d/100).toLocaleString('de-DE')+' €';
+  }
+  if(kwh&&diff){ kwh.addEventListener('input',rechne); diff.addEventListener('input',rechne); rechne(); }
+
+  /* ---- Geister-Typo: sehr langsamer Versatz beim Scrollen ---- */
+  var g=document.getElementById('ghost');
+  if(g && !reduce){
+    var tick=false;
+    window.addEventListener('scroll',function(){
+      if(tick) return; tick=true;
+      requestAnimationFrame(function(){
+        var r=g.getBoundingClientRect();
+        if(r.bottom>0 && r.top<window.innerHeight){
+          var p=(window.innerHeight-r.top)/(window.innerHeight+r.height);
+          g.style.transform='translateX('+((0.5-p)*160).toFixed(1)+'px)';
+        }
+        tick=false;
+      });
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
