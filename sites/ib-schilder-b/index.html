@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="de">
+<!-- LIKOVO Entwurf, Entwurf B fuer ImmobilienBUERO Andrea Schilder, Frankenthal.
+     Deploy: sites/ib-schilder-b/ -> https://dev.likovo.de/ib-schilder-b/  ·  Stand 17.09.2026 -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immobilienmaklerin Frankenthal: kaufen und verkaufen mit Andrea Schilder</title>
+<meta name="description" content="Seit 2001 Maklerin in Frankenthal und Ludwigshafen. Aktuelle Objekte ansehen oder Ihre Immobilie kostenlos bewerten lassen. Persönlich, erreichbar, ohne Konzern.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" sizes="512x512" href="bilder/ib-schilder-favicon.png">
+<link rel="apple-touch-icon" href="bilder/ib-schilder-apple-touch-icon.png">
+<meta name="theme-color" content="#0A3F4A">
+<link rel="canonical" href="https://dev.likovo.de/ib-schilder-b/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dev.likovo.de/ib-schilder-b/">
+<meta property="og:title" content="Immobilienmaklerin Frankenthal: Andrea Schilder">
+<meta property="og:description" content="Seit 2001 vermittle ich Häuser, Wohnungen und Kapitalanlagen zwischen Frankenthal, Ludwigshafen und Mannheim.">
+<meta property="og:image" content="https://dev.likovo.de/ib-schilder-b/bilder/og-ib-schilder.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Andrea Schilder, Immobilienmaklerin in Frankenthal">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Selbst gehostete Schriften, kein Request an Google. Variable Fonts, Gewichte 300 bis 800. */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url(fonts/figtree-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url(fonts/figtree-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(fonts/schibsted-grotesk-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<style>
+/* ===== TOKENS ===== */
+:root{
+  --petrol-900:#062E36; --petrol-800:#0A3F4A; --petrol-700:#0D5E68;
+  --teal-600:#10A7B2; --teal-500:#3BBAC2;
+  --mint-300:#A9CFD1; --mint-200:#CFE4E5; --mint-100:#E7F1F1; --mint-050:#F4F9F9;
+  --paper:#FDFDFD; --white:#fff;
+  --ink-900:#141A1C; --ink-700:#373736; --ink-500:#5F6B6C; --ink-300:#9AA7A8;
+  --line:#E3EBEB;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:128px;
+  --r-md:12px;--r-lg:16px;--r-xl:24px;--r-2xl:28px;--r-pill:999px;
+  --e-raised:0 1px 2px rgba(6,46,54,.05),0 4px 12px rgba(13,94,104,.07),0 0 0 1px rgba(13,94,104,.05);
+  --e-float:0 2px 4px rgba(6,46,54,.06),0 10px 28px rgba(13,94,104,.12),0 28px 60px rgba(13,94,104,.10);
+  --e-nav:0 2px 6px rgba(6,46,54,.10),0 12px 30px rgba(6,46,54,.14);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-spring:cubic-bezier(.34,1.42,.64,1);
+  --t-fast:180ms;--t-base:280ms;--t-slow:620ms;
+  --dots:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1px);
+  --gutter:14px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink-700);
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Schibsted Grotesk","Figtree",system-ui,sans-serif;color:var(--ink-900);
+  font-weight:500;letter-spacing:-.026em;line-height:1.1;margin:0}
+p{margin:0} img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none} button{font:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+@media(min-width:900px){.wrap{padding:0 40px}}
+.sec{padding:var(--s9) 0}
+.sec--tight{padding:var(--s8) 0}
+
+/* ===== TYPO ===== */
+.t-d1{font-size:clamp(34px,4vw,54px);letter-spacing:-.032em;line-height:1.08}
+.t-d2{font-size:clamp(30px,3.4vw,44px);letter-spacing:-.028em;line-height:1.1}
+.t-h2{font-size:clamp(25px,2.4vw,34px);letter-spacing:-.025em;line-height:1.16}
+.t-h3{font-size:clamp(19px,1.6vw,22px);letter-spacing:-.02em;line-height:1.28}
+.t-h4{font-family:"Figtree",sans-serif;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+.t-lead{font-size:16.5px;line-height:1.62;color:var(--ink-500)}
+.t-sm{font-size:15px;line-height:1.58}
+.t-xs{font-size:13px;line-height:1.5}
+.muted{color:var(--ink-500)}
+.tint{color:var(--mint-300)}
+.t-stat{font-family:"Schibsted Grotesk",sans-serif;font-size:clamp(34px,4vw,50px);font-weight:500;
+  letter-spacing:-.035em;line-height:1;color:var(--ink-900);font-variant-numeric:tabular-nums;display:block}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--teal-600)}
+.eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;flex:none}
+.eyebrow--light{color:rgba(255,255,255,.72)}
+
+/* ===== BUTTONS ===== */
+.btn{--bg:var(--petrol-800);--fg:#fff;--bd:transparent;
+  display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
+  font-size:14.5px;font-weight:600;padding:13px 22px;border-radius:var(--r-pill);
+  border:1px solid var(--bd);background:var(--bg);color:var(--fg);cursor:pointer;
+  transition:transform var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out),
+    box-shadow var(--t-fast) var(--ease-out),border-color var(--t-fast) var(--ease-out)}
+.btn .arw{transition:transform var(--t-base) var(--ease-out);flex:none}
+.btn:hover{transform:translateY(-2px);background:var(--petrol-700)}
+.btn:hover .arw{transform:translateX(3px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn:focus-visible{outline:2px solid var(--teal-600);outline-offset:3px}
+.btn--teal{--bg:var(--teal-600)}
+.btn--teal:hover{background:var(--teal-500)}
+.btn--white{--bg:#fff;--fg:var(--petrol-800)}
+.btn--white:hover{background:#fff;box-shadow:0 10px 26px rgba(6,46,54,.24)}
+.btn--glass{--bg:rgba(255,255,255,.16);--fg:#fff;--bd:rgba(255,255,255,.26);backdrop-filter:blur(6px)}
+.btn--glass:hover{background:rgba(255,255,255,.26)}
+.btn--outline{--bg:transparent;--fg:var(--petrol-800);--bd:var(--line)}
+.btn--outline:hover{background:var(--mint-050);border-color:var(--mint-200)}
+.btn--sm{padding:10px 17px;font-size:13.5px}
+.rnd{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;padding:0;flex:none;
+  border:1px solid var(--line);background:#fff;color:var(--petrol-800);cursor:pointer;
+  transition:background-color var(--t-fast) var(--ease-out),border-color var(--t-fast) var(--ease-out),
+    color var(--t-fast) var(--ease-out),transform var(--t-fast) var(--ease-out)}
+.rnd:hover{background:var(--mint-050);border-color:var(--mint-200);transform:translateY(-1px)}
+.rnd--solid{background:var(--petrol-800);border-color:var(--petrol-800);color:#fff}
+.rnd--solid:hover{background:var(--petrol-700);border-color:var(--petrol-700)}
+.rnd:focus-visible{outline:2px solid var(--teal-600);outline-offset:3px}
+
+/* ===== HERO-PANEL (eingerückt, rund) ===== */
+.hero{position:relative;margin:var(--gutter);border-radius:var(--r-2xl);overflow:hidden;
+  min-height:min(92vh,880px);display:flex;flex-direction:column;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
+  transform:scale(1.14);transition:transform 2600ms var(--ease-out)}
+.hero.is-in .hero-bg img{transform:scale(1)}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(6,46,54,.86) 0%,rgba(6,46,54,.70) 34%,rgba(6,46,54,.95) 100%),
+             linear-gradient(115deg,rgba(10,63,74,.72),rgba(16,167,178,.18) 72%);
+  opacity:.6;transition:opacity 2200ms var(--ease-out)}
+.hero-bg img{filter:saturate(.72) contrast(1.04)}
+.hero.is-in .hero-bg::after{opacity:1}
+.hero-dots{position:absolute;inset:0;z-index:1;background:var(--dots) 0 0/17px 17px;opacity:.5;pointer-events:none}
+.hero-body{position:relative;z-index:3;margin-top:auto;padding:0 clamp(24px,4vw,56px) clamp(28px,4vw,52px)}
+.hero h1{color:#fff;max-width:30ch}
+.hero-sub{color:rgba(255,255,255,.8);margin-top:18px;max-width:52ch;font-size:16.5px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.scrollhint{display:none;align-items:center;gap:9px;color:rgba(255,255,255,.6);font-size:13.5px}
+.scrollhint .a{animation:bob 1.9s var(--ease-out) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(min-width:900px){.scrollhint{display:flex}}
+
+/* Kennzahl-Badge im Hero */
+.hero-badge{position:absolute;z-index:3;right:clamp(24px,4vw,56px);top:clamp(110px,16vh,190px);
+  background:rgba(8,40,47,.62);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);
+  border-radius:var(--r-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;
+  max-width:340px;overflow:hidden;
+  width:0;opacity:0;transition:width 900ms var(--ease-out),opacity 500ms var(--ease-out)}
+.hero.is-in .hero-badge{width:min(340px,62vw);opacity:1}
+.hero-badge img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none;
+  border:1px solid rgba(255,255,255,.3)}
+.hero-badge .n{display:block;font-family:"Schibsted Grotesk",sans-serif;font-size:30px;font-weight:600;
+  color:#fff;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hero-badge .l{display:block;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.35;margin-top:5px}
+@media(max-width:899px){
+  .hero-badge{position:static;margin:clamp(92px,13vh,116px) clamp(24px,4vw,56px) 0;max-width:none;
+    width:auto!important;opacity:1!important}
+  .hero{min-height:auto}
+  .hero-body{padding-top:var(--s7)}
+}
+
+/* ===== NAV (schwebende Kapsel) ===== */
+.nav{position:absolute;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:clamp(18px,2.4vw,26px) clamp(24px,4vw,56px)}
+.nav-logo{display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(-6px);
+  transition:opacity 500ms var(--ease-out),transform 500ms var(--ease-out);transition-delay:420ms}
+.hero.is-in .nav-logo{opacity:1;transform:none}
+.nav-logo img{height:46px;width:auto;filter:brightness(0) invert(1)}
+.nav-cap{position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:2px;background:#fff;border-radius:var(--r-pill);
+  padding:5px;box-shadow:var(--e-nav);
+  max-width:0;overflow:hidden;
+  transition:max-width 820ms var(--ease-out)}
+.hero.is-in .nav-cap{max-width:760px;transition-delay:520ms}
+.nav-cap a{display:block;padding:11px 18px;border-radius:var(--r-pill);font-size:14.5px;font-weight:500;
+  color:var(--ink-700);white-space:nowrap;transition:color var(--t-fast) var(--ease-out),background-color var(--t-fast) var(--ease-out)}
+.nav-cap a:hover{color:var(--petrol-800);background:var(--mint-050)}
+.nav-cap a.is-active{background:var(--petrol-800);color:#fff}
+.nav-cap a.is-active:hover{background:var(--petrol-700)}
+.nav-cta{max-width:54px;overflow:hidden;transition:max-width 760ms var(--ease-out);
+  display:flex;justify-content:flex-end}
+.hero.is-in .nav-cta{max-width:320px;transition-delay:600ms}
+.nav-cta .btn{padding-left:20px;padding-right:20px}
+.nav-burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.14);backdrop-filter:blur(6px);color:#fff;cursor:pointer;
+  place-items:center}
+.nav-burger svg{width:20px;height:20px}
+@media(max-width:1060px){
+  .nav-cap{display:none}
+  .nav-burger{display:grid}
+  .nav-cta{max-width:none!important;display:none}
+}
+/* Mobil-Menü */
+.menu{position:fixed;inset:0;z-index:90;background:rgba(6,46,54,.97);backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;justify-content:center;gap:6px;padding:32px;
+  opacity:0;pointer-events:none;transition:opacity var(--t-base) var(--ease-out)}
+.menu.is-open{opacity:1;pointer-events:auto}
+.menu a{color:#fff;font-family:"Schibsted Grotesk",sans-serif;font-size:30px;letter-spacing:-.02em;padding:10px 0}
+.menu .close{position:absolute;top:24px;right:24px;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:22px;cursor:pointer}
+
+/* Kapsel, die nach dem Hero wieder auftaucht */
+.nav-float{position:fixed;top:14px;left:50%;transform:translateX(-50%) translateY(-140%);z-index:80;
+  display:flex;align-items:center;gap:6px;background:#fff;border-radius:var(--r-pill);padding:6px;
+  box-shadow:var(--e-nav);transition:transform 420ms var(--ease-out)}
+.nav-float.is-on{transform:translateX(-50%) translateY(0)}
+.nav-float .tel{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:14px;font-weight:600;
+  color:var(--petrol-800)}
+.nav-float .tel svg{width:16px;height:16px}
+@media(max-width:700px){.nav-float{display:none}}
+
+/* ===== FLÄCHEN ===== */
+.surface-soft{background:var(--mint-050)}
+.panel{margin:0 var(--gutter);border-radius:var(--r-2xl);overflow:hidden;position:relative}
+.gradient{background:var(--dots) 0 0/17px 17px,
+  linear-gradient(215deg,var(--petrol-900) 0%,var(--petrol-700) 46%,#2F9AA1 100%);color:#fff}
+.gradient h2,.gradient h3,.gradient h4{color:#fff}
+.deep{background:var(--dots) 0 0/17px 17px,var(--petrol-900);color:#fff}
+.wm{position:relative}
+.wm::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(135deg,rgba(16,167,178,.055) 0 50%,transparent 50%),
+                   linear-gradient(135deg,rgba(16,167,178,.04) 0 50%,transparent 50%);
+  background-size:320px 320px,200px 200px;background-position:-90px -120px,92% -60px;background-repeat:no-repeat}
+.wm>*{position:relative;z-index:1}
+
+/* ===== SEKTIONSKOPF (links Titel, rechts Text + Button) ===== */
+.head{display:grid;gap:var(--s5);margin-bottom:var(--s7)}
+@media(min-width:900px){.head{grid-template-columns:1.1fr .9fr;gap:var(--s8);align-items:start}}
+.head h2{max-width:18ch}
+.head-right{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+
+/* ===== KARTEN ===== */
+.card{background:#fff;border-radius:var(--r-lg);box-shadow:var(--e-raised);padding:var(--s5)}
+.card--soft{background:var(--mint-100);box-shadow:none;border:1px solid rgba(13,94,104,.06)}
+.card--glass{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);
+  border-radius:var(--r-lg);backdrop-filter:blur(8px);padding:var(--s5);color:#fff}
+.card--glass p{color:rgba(255,255,255,.78)}
+.ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;
+  border:1px solid var(--mint-200);color:var(--teal-600);background:#fff;
+  transition:border-radius var(--t-base) var(--ease-out),background-color var(--t-base) var(--ease-out),
+    color var(--t-base) var(--ease-out),border-color var(--t-base) var(--ease-out)}
+.ico svg{width:21px;height:21px}
+.card--glass .ico{border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.14);color:#fff}
+.media{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--mint-100);
+  aspect-ratio:4/3}
+.media img{width:100%;height:100%;object-fit:cover;display:block}
+.media--wide{aspect-ratio:16/10}
+.media--tall{aspect-ratio:4/4.4}
+.media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,46,54,.5),rgba(6,46,54,.02) 58%),
+             linear-gradient(210deg,rgba(16,167,178,.14),transparent 56%);mix-blend-mode:multiply}
+.media-inset{position:absolute;left:18px;bottom:18px;z-index:2;background:rgba(8,40,47,.72);
+  backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16);border-radius:var(--r-md);
+  padding:14px 18px;color:#fff}
+.media-inset .n{display:block;font-family:"Schibsted Grotesk",sans-serif;font-size:24px;font-weight:600;
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.media-inset .l{display:block;font-size:12.5px;color:rgba(255,255,255,.75);margin-top:4px;max-width:26ch}
+
+/* Ortsraster als Ersatz für die Punktkarte */
+.dotmap{display:flex;flex-wrap:wrap;gap:7px}
+.dotmap span{padding:6px 12px;border-radius:var(--r-pill);background:#fff;border:1px solid var(--line);
+  font-size:13.5px;color:var(--ink-500)}
+.dotmap span.hot{background:var(--petrol-800);border-color:var(--petrol-800);color:#fff;font-weight:600}
+
+/* Balken */
+.bars{display:flex;align-items:flex-end;gap:9px;height:130px;margin-top:20px}
+.bar{flex:1;background:var(--mint-200);border-radius:5px 5px 0 0;position:relative;
+  transform:scaleY(0);transform-origin:bottom;transition:transform var(--t-slow) var(--ease-out)}
+.bar.is-in{transform:scaleY(1)}
+.bar--accent{background:var(--petrol-800)}
+.bar span{position:absolute;bottom:-22px;left:0;right:0;text-align:center;font-size:11.5px;color:var(--ink-500)}
+
+/* ===== ANSATZ-LISTE mit wanderndem Aktiv-Element ===== */
+.travel{position:relative;border-top:1px solid var(--line)}
+.travel .ind{position:absolute;left:0;right:0;border-radius:var(--r-md);z-index:0;pointer-events:none;
+  background:var(--dots) 0 0/14px 14px,var(--petrol-800);
+  transition:transform var(--t-base) var(--ease-spring),height var(--t-base) var(--ease-spring)}
+.trow{position:relative;z-index:1;display:flex;align-items:center;gap:var(--s4);padding:18px var(--s4);
+  border-bottom:1px solid var(--line);cursor:pointer}
+.trow h3{font-family:"Figtree",sans-serif;font-size:17px;font-weight:600;letter-spacing:-.01em;
+  transition:color var(--t-base) var(--ease-out)}
+.trow.is-active h3{color:#fff}
+.trow.is-active .ico{background:transparent;border-color:rgba(255,255,255,.55);color:#fff;border-radius:var(--r-md)}
+
+/* Vertrauens-Zeile (wie die Logo-Reihe im Video) */
+.marks{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;
+  padding-top:var(--s7);margin-top:var(--s7);border-top:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:9px;color:var(--ink-300);font-weight:600;font-size:14.5px;
+  letter-spacing:.01em;transition:color var(--t-base) var(--ease-out)}
+.mark:hover{color:var(--ink-500)}
+.mark svg{width:19px;height:19px;flex:none}
+
+/* ===== KARUSSELL ===== */
+.rail-wrap{position:relative;overflow:hidden}
+.rail{display:flex;gap:16px;will-change:transform;
+  transition:transform 700ms var(--ease-out)}
+.rail>*{flex:none}
+.rcard{width:clamp(250px,26vw,330px);border-radius:var(--r-lg);padding:22px;display:flex;flex-direction:column;
+  min-height:330px;position:relative;overflow:hidden}
+.rcard--petrol{background:var(--petrol-800);color:#fff}
+.rcard--teal{background:#4E96A2;color:#fff}
+.rcard--mint{background:var(--mint-100);color:var(--ink-900)}
+.rcard .tag{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.72}
+.rcard .price{font-family:"Schibsted Grotesk",sans-serif;font-size:30px;font-weight:600;letter-spacing:-.03em;
+  margin-top:auto;font-variant-numeric:tabular-nums;line-height:1.05}
+.rcard .place{font-size:15px;margin-top:6px;opacity:.85}
+.rcard .facts{font-size:13.5px;opacity:.72;margin-top:12px;padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.2);display:flex;flex-wrap:wrap;gap:4px 12px}
+.rcard--mint .facts{border-top-color:rgba(13,94,104,.14)}
+.rcard .chev{position:absolute;top:-10px;right:-10px;width:120px;height:120px;opacity:.14}
+.rphoto{width:clamp(280px,32vw,430px);border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:330px}
+.rphoto img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.rail-foot{display:flex;align-items:center;gap:24px;margin-top:var(--s6)}
+.track{flex:1;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.track i{display:block;height:100%;width:30%;background:var(--petrol-800);border-radius:2px;
+  transition:width 700ms var(--ease-out),margin-left 700ms var(--ease-out)}
+.rail-btns{display:flex;gap:10px}
+
+/* ===== STICKY-VERLAUFSSEKTION ===== */
+@media(min-width:960px){
+  .sticky-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:var(--s8);align-items:start}
+  .sticky-col{position:sticky;top:96px}
+}
+
+/* ===== CTA-BAND ===== */
+.band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
+  padding:clamp(28px,3.6vw,44px) clamp(24px,4vw,52px)}
+
+/* ===== RATGEBER-KARTEN ===== */
+.post{display:flex;flex-direction:column;gap:14px}
+.post .media{aspect-ratio:16/10}
+.post h3{font-family:"Figtree",sans-serif;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+.post .meta{font-size:13px;color:var(--ink-300);display:flex;gap:8px;align-items:center}
+
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  padding:19px 0;cursor:pointer;font-size:16.5px;font-weight:600;color:var(--ink-900);
+  transition:color var(--t-fast) var(--ease-out)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--teal-600)}
+.sign{position:relative;width:19px;height:19px;flex:none;margin-top:4px}
+.sign::before,.sign::after{content:"";position:absolute;background:var(--petrol-800);border-radius:2px;
+  transition:transform var(--t-base) var(--ease-out),opacity var(--t-base) var(--ease-out)}
+.sign::before{top:8.5px;left:0;width:19px;height:2px}
+.sign::after{left:8.5px;top:0;width:2px;height:19px}
+.faq-item[open] .sign::after{transform:scaleY(0);opacity:0}
+.faq-a{overflow:hidden;max-height:0;transition:max-height var(--t-base) var(--ease-out)}
+.faq-item[open] .faq-a{max-height:420px}
+.faq-a p{padding-bottom:22px;color:var(--ink-500);max-width:62ch}
+
+/* ===== FORMULAR ===== */
+.input,.select{font-family:inherit;font-size:15.5px;color:var(--ink-900);background:#fff;
+  border:1px solid var(--line);border-radius:var(--r-md);padding:13px 15px;width:100%;min-width:0;
+  transition:border-color var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+.input::placeholder{color:var(--ink-300)}
+.input:focus,.select:focus{outline:none;border-color:var(--teal-600);box-shadow:0 0 0 4px rgba(16,167,178,.14)}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-size:13px;font-weight:600;color:var(--ink-700)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-500)}
+.check input{margin-top:3px;accent-color:var(--teal-600);width:16px;height:16px;flex:none}
+.check>span{min-width:0}
+
+/* ===== FOOTER ===== */
+.foot-grid{display:grid;gap:var(--s6)}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr 1.1fr}}
+.foot h4{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:rgba(255,255,255,.46);margin-bottom:12px;font-family:"Figtree",sans-serif}
+.foot li{margin-bottom:7px;font-size:15px;color:rgba(255,255,255,.76)}
+.foot a:hover{color:#fff}
+.foot-legal{margin-top:var(--s7);padding-top:var(--s5);border-top:1px solid rgba(255,255,255,.13);
+  display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;
+  font-size:13.5px;color:rgba(255,255,255,.55)}
+.totop{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.7)}
+.totop:hover{color:#fff}
+
+/* ===== ANRUF-LEISTE MOBIL ===== */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:85;display:flex;gap:8px;padding:10px 14px;
+  background:rgba(253,253,253,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+.callbar .btn{flex:1;justify-content:center}
+@media(min-width:700px){.callbar{display:none}}
+@media(max-width:699px){body{padding-bottom:72px}}
+
+/* ===== GRID ===== */
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4)}
+.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+@media(min-width:900px){.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+@media(max-width:560px){.grid[style*="1fr 1fr"]{grid-template-columns:1fr!important}}
+
+/* ===== MOTION ===== */
+.reveal{opacity:0;transform:translateY(24px);
+  transition:opacity var(--t-slow) var(--ease-out),transform var(--t-slow) var(--ease-out)}
+.reveal.is-in{opacity:1;transform:none}
+.stag>*{opacity:0;transform:translateY(24px);
+  transition:opacity var(--t-slow) var(--ease-out),transform var(--t-slow) var(--ease-out)}
+.stag.is-in>*{opacity:1;transform:none}
+.stag.is-in>*:nth-child(1){transition-delay:0ms}
+.stag.is-in>*:nth-child(2){transition-delay:70ms}
+.stag.is-in>*:nth-child(3){transition-delay:140ms}
+.stag.is-in>*:nth-child(4){transition-delay:210ms}
+.stag.is-in>*:nth-child(5){transition-delay:280ms}
+.stag.is-in>*:nth-child(6){transition-delay:350ms}
+.mline{display:block}
+.mw{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.mw>i{display:inline-block;font-style:normal;transform:translateY(106%);
+  transition:transform 640ms var(--ease-out)}
+.mask.is-in .mw>i{transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal,.stag>*{opacity:1!important;transform:none!important}
+  .mw>i,.bar{transform:none!important}
+  .hero-bg img{transform:none!important}
+  .hero-bg::after{opacity:1!important}
+  .nav-cap{max-width:760px!important}.nav-cta{max-width:320px!important}
+  .nav-logo{opacity:1!important;transform:none!important}
+  .hero-badge{width:min(340px,62vw)!important;opacity:1!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#main">Zum Inhalt springen</a>
+
+<!-- ======= HERO mit schwebender Kapsel-Nav ======= -->
+<header class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="bilder/immobilienmakler-frankenthal-stadtansicht-1600.webp"
+         srcset="bilder/immobilienmakler-frankenthal-stadtansicht-800.webp 800w, bilder/immobilienmakler-frankenthal-stadtansicht-1600.webp 1600w"
+         sizes="100vw" alt="Rathausplatz in Frankenthal in der Pfalz"
+         width="1600" height="1143" fetchpriority="high">
+  </div>
+  <div class="hero-dots"></div>
+
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="nav-logo" href="#main" aria-label="ImmobilienBÜRO Andrea Schilder, Startseite">
+      <img src="bilder/logo.png" alt="ImmobilienBÜRO Andrea Schilder" width="171" height="76">
+    </a>
+    <div class="nav-cap">
+      <a href="#main" class="is-active">Start</a>
+      <a href="#objekte">Objekte</a>
+      <a href="#verkaufen">Verkaufen</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#faq">Fragen</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn--teal" href="#verkaufen">Bewertung anfordern <span class="arw">&#8594;</span></a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+
+  <div class="hero-badge">
+    <img src="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-800.webp" alt="Andrea Schilder" width="800" height="522" loading="eager">
+    <div>
+      <span class="n" data-count="25" data-suffix="+">0</span>
+      <span class="l">Jahre Erfahrung im Maklergeschäft, seit 2001 in der Region</span>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <h1 class="t-d1 mask" id="heroMask">
+      <span class="mline"><span class="mw"><i>Immobilien</i></span> <span class="mw"><i>in</i></span> <span class="mw"><i>Frankenthal,</i></span></span>
+      <span class="mline"><span class="mw"><i>mit</i></span> <span class="mw"><i>einer</i></span> <span class="mw"><i>Ansprechpartnerin</i></span></span>
+    </h1>
+    <p class="hero-sub reveal">Seit 2001 vermittle ich Häuser, Wohnungen und Kapitalanlagen zwischen
+      Frankenthal, Ludwigshafen und Mannheim. Sie rufen an, Sie bekommen mich. Nicht eine Hotline.</p>
+    <div class="hero-foot">
+      <div class="hero-actions reveal">
+        <a class="btn btn--white" href="#verkaufen">Immobilie bewerten lassen <span class="arw">&#8594;</span></a>
+        <a class="btn btn--glass" href="#objekte">Objekte ansehen</a>
+      </div>
+      <span class="scrollhint">Mehr sehen <span class="a">&#8595;</span></span>
+    </div>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Mobile Navigation">
+  <button class="close" id="menuClose" aria-label="Menü schließen">&#10005;</button>
+  <a href="#objekte">Objekte</a>
+  <a href="#verkaufen">Verkaufen</a>
+  <a href="#ansatz">Mein Ansatz</a>
+  <a href="#ueber-mich">Über mich</a>
+  <a href="#faq">Fragen</a>
+  <a href="tel:+4962331703146">06233 170 31 46</a>
+</nav>
+
+<div class="nav-float" id="navFloat">
+  <a class="tel" href="tel:+4962331703146">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+    06233 170 31 46
+  </a>
+  <a class="btn btn--teal btn--sm" href="#verkaufen">Bewertung <span class="arw">&#8594;</span></a>
+</div>
+
+<main id="main">
+
+<!-- ======= EINSICHT: zweifarbige Headline, Karten-Raster ======= -->
+<section class="sec wm">
+  <div class="wrap">
+    <div class="reveal" style="max-width:56ch">
+      <h2 class="t-d2">Jeder Verkauf beginnt<br><span class="tint">mit einer ehrlichen Zahl</span></h2>
+      <p class="t-lead" style="margin-top:18px">Ich arbeite seit 2001 in dieser Region. Was eine Immobilie
+        hier wirklich wert ist, sagt kein Rechner, sondern ein Termin vor Ort.</p>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr;gap:16px;margin-top:var(--s7)">
+      <div class="grid g2" style="gap:16px">
+        <div class="media media--tall reveal">
+          <img src="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp"
+               srcset="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-800.webp 800w, bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp 1600w"
+               sizes="(min-width:900px) 46vw, 100vw"
+               alt="Andrea Schilder in ihrem Büro in Frankenthal" width="1600" height="1044" loading="lazy">
+          <div class="media-inset">
+            <span class="n">Seit 2001</span>
+            <span class="l">in Frankenthal und Umgebung als Maklerin tätig</span>
+          </div>
+        </div>
+        <div class="grid" style="gap:16px">
+          <div class="card card--soft reveal">
+            <h3 class="t-h3">Wo ich arbeite</h3>
+            <p class="t-sm muted" style="margin-top:8px">Vermittelt habe ich zuletzt hier. Alles selbst
+              vor Ort gesehen.</p>
+            <div class="dotmap" style="margin-top:18px">
+              <span class="hot">Frankenthal</span><span class="hot">Ludwigshafen</span><span class="hot">Mannheim</span>
+              <span>Limburgerhof</span><span>Mutterstadt</span><span>Dirmstein</span><span>Obrigheim</span>
+              <span>Bobenheim-Roxheim</span><span>Lambsheim</span><span>Bad Dürkheim</span><span>Neustadt</span>
+            </div>
+          </div>
+          <div class="card card--soft reveal">
+            <h3 class="t-h3">Zuletzt vermittelt</h3>
+            <p class="t-sm muted" style="margin-top:8px">Kaufpreise der Objekte, die zuletzt über mich
+              den Eigentümer gewechselt haben.</p>
+            <div class="bars" id="bars">
+              <div class="bar" style="height:40%"><span>160</span></div>
+              <div class="bar" style="height:58%"><span>250</span></div>
+              <div class="bar" style="height:62%"><span>260</span></div>
+              <div class="bar" style="height:78%"><span>340</span></div>
+              <div class="bar" style="height:88%"><span>385</span></div>
+              <div class="bar bar--accent" style="height:100%"><span>395</span></div>
+            </div>
+            <p class="t-xs muted" style="margin-top:32px">Angaben in Tausend Euro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g4 stag" style="margin-top:var(--s8)" id="kpis">
+      <div><span class="t-stat" data-count="25" data-suffix="+">0</span>
+        <span class="t-sm muted" style="display:block;margin-top:6px;max-width:22ch">Jahre Erfahrung im Maklergeschäft</span></div>
+      <div><span class="t-stat" data-count="10" data-suffix="">0</span>
+        <span class="t-sm muted" style="display:block;margin-top:6px;max-width:22ch">vermittelte Objekte in der Region, nachweisbar</span></div>
+      <div><span class="t-stat" data-count="12" data-suffix="">0</span>
+        <span class="t-sm muted" style="display:block;margin-top:6px;max-width:22ch">Objekte aktuell im Angebot</span></div>
+      <div><span class="t-stat" data-count="8512" data-suffix="">0</span>
+        <span class="t-sm muted" style="display:block;margin-top:6px;max-width:22ch">Aufrufe ihrer Exposés auf ImmoScout24</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MEIN ANSATZ: Liste mit wanderndem Aktiv-Element ======= -->
+<section class="sec--tight wm" id="ansatz" style="padding-bottom:var(--s9)">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="t-h2">Mein Ansatz<br>in vier Punkten</h2>
+      <div class="head-right">
+        <p class="t-lead">Kein Höchstpreisversprechen, keine Warteschleife. Was ich stattdessen mache,
+          steht hier in vier Sätzen.</p>
+        <a class="btn" href="#verkaufen">Mehr erfahren <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+
+    <div class="travel reveal" id="travel">
+      <div class="ind" aria-hidden="true"></div>
+      <div class="trow is-active" tabindex="0">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3>Ich komme vorbei, bevor ich eine Zahl nenne</h3></div>
+      <div class="trow" tabindex="0">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+        <h3>Sie erreichen mich, auch nach der Beauftragung</h3></div>
+      <div class="trow" tabindex="0">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 3h10v18H7z"/><path d="M10 8h4M10 12h4M10 16h2"/></svg></span>
+        <h3>Den Papierkram übernehme ich, vollständig</h3></div>
+      <div class="trow" tabindex="0">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 7a4 4 0 11-6 3.5"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg></span>
+        <h3>Eine Ansprechpartnerin bis zur Schlüsselübergabe</h3></div>
+    </div>
+
+    <div class="marks stag">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg> 5,0 bei Google</span>
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16v13H4z"/><path d="M8 7V4h8v3"/></svg> Immobilienmaklerin (IHK)</span>
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v6c0 5-3.4 8-8 8s-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg> §34c GewO</span>
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg> ImmoScout24</span>
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H8l-4 4z"/></svg> 100 % Empfehlung auf Facebook</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= OBJEKT-KARUSSELL ======= -->
+<section class="sec--tight" id="objekte" style="padding-bottom:var(--s9)">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="t-h2">Zuletzt vermittelt<br>zwischen Rhein und Pfalz</h2>
+      <div class="head-right">
+        <p class="t-lead">Häuser, Wohnungen und Grundstücke aus den letzten Monaten. Kein Portalauszug,
+          sondern Objekte, die ich selbst begleitet habe.</p>
+        <a class="btn" href="#suchprofil">Aktuelle Angebote <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="rail-wrap reveal" id="railWrap">
+    <div class="wrap" style="padding-right:0">
+      <div class="rail" id="rail">
+        <article class="rcard rcard--petrol">
+          <span class="tag">Vermittelt</span>
+          <svg class="chev" viewBox="0 0 100 100" fill="currentColor"><path d="M20 20h60L50 55z"/><path d="M35 58h40L55 80z"/></svg>
+          <span class="price">385.000 €</span>
+          <span class="place">Haus in Frankenthal (Pfalz)</span>
+          <div class="facts"><span>4 Zimmer</span><span>105 m²</span><span>3.667 € / m²</span></div>
+        </article>
+        <div class="rphoto">
+          <img src="bilder/immobilienmakler-frankenthal-stadtansicht-1600.webp"
+               srcset="bilder/immobilienmakler-frankenthal-stadtansicht-800.webp 800w, bilder/immobilienmakler-frankenthal-stadtansicht-1600.webp 1600w"
+               sizes="430px" alt="Rathausplatz Frankenthal" width="1600" height="1143" loading="lazy">
+        </div>
+        <article class="rcard rcard--teal">
+          <span class="tag">Vermittelt</span>
+          <svg class="chev" viewBox="0 0 100 100" fill="currentColor"><path d="M20 20h60L50 55z"/><path d="M35 58h40L55 80z"/></svg>
+          <span class="price">395.000 €</span>
+          <span class="place">Haus in Obrigheim</span>
+          <div class="facts"><span>7 Zimmer</span><span>209 m²</span><span>1.890 € / m²</span></div>
+        </article>
+        <article class="rcard rcard--mint">
+          <span class="tag" style="color:var(--petrol-700)">Vermittelt</span>
+          <span class="price">260.000 €</span>
+          <span class="place">Wohnung in Mannheim</span>
+          <div class="facts"><span>3 Zimmer</span><span>75 m²</span><span>3.467 € / m²</span></div>
+        </article>
+        <div class="rphoto">
+          <img src="bilder/immobilienmakler-frankenthal-beratungsgespraech-1600.webp"
+               srcset="bilder/immobilienmakler-frankenthal-beratungsgespraech-800.webp 800w, bilder/immobilienmakler-frankenthal-beratungsgespraech-1600.webp 1600w"
+               sizes="430px" alt="Andrea Schilder im Beratungsgespräch" width="1600" height="1066" loading="lazy">
+        </div>
+        <article class="rcard rcard--petrol">
+          <span class="tag">Vermittelt</span>
+          <svg class="chev" viewBox="0 0 100 100" fill="currentColor"><path d="M20 20h60L50 55z"/><path d="M35 58h40L55 80z"/></svg>
+          <span class="price">340.000 €</span>
+          <span class="place">Haus in Mutterstadt</span>
+          <div class="facts"><span>4 Zimmer</span><span>110 m²</span><span>3.091 € / m²</span></div>
+        </article>
+        <article class="rcard rcard--mint">
+          <span class="tag" style="color:var(--petrol-700)">Vermittelt</span>
+          <span class="price">250.000 €</span>
+          <span class="place">Wohnung in Limburgerhof</span>
+          <div class="facts"><span>4 Zimmer</span><span>88 m²</span><span>2.841 € / m²</span></div>
+        </article>
+        <article class="rcard rcard--teal">
+          <span class="tag">Vermittelt</span>
+          <svg class="chev" viewBox="0 0 100 100" fill="currentColor"><path d="M20 20h60L50 55z"/><path d="M35 58h40L55 80z"/></svg>
+          <span class="price">160.000 €</span>
+          <span class="place">Grundstück in Bobenheim-Roxheim</span>
+          <div class="facts"><span>380 m²</span><span>421 € / m²</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="rail-foot">
+      <div class="track"><i id="railTrack"></i></div>
+      <div class="rail-btns">
+        <button class="rnd" id="railPrev" aria-label="Vorheriges Objekt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M14 5l-7 7 7 7"/></svg></button>
+        <button class="rnd rnd--solid" id="railNext" aria-label="Nächstes Objekt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M10 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SUCHPROFIL ======= -->
+<section class="sec--tight" id="suchprofil" style="padding-top:0;padding-bottom:var(--s9)">
+  <div class="wrap">
+    <div class="card reveal" style="padding:clamp(24px,4vw,44px)">
+      <div class="grid g2" style="gap:var(--s7);align-items:center">
+        <div>
+          <span class="eyebrow">Für Suchende</span>
+          <h2 class="t-h2" style="margin-top:14px">Nichts Passendes dabei? Dann merke ich Sie vor.</h2>
+          <p class="t-lead" style="margin-top:14px">Viele Objekte sind vergeben, bevor sie lange online
+            stehen. Sagen Sie mir, was Sie suchen. Wenn etwas reinkommt, das passt, melde ich mich.
+            Persönlich, nicht per Serienmail.</p>
+        </div>
+        <form onsubmit="return false" style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px">
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+            <div class="field"><label for="sp1">Ort oder Umkreis</label><input class="input" id="sp1" placeholder="Frankenthal"></div>
+            <div class="field"><label for="sp2">Budget bis</label><input class="input" id="sp2" placeholder="350.000 €"></div>
+          </div>
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+            <div class="field"><label for="sp3">Name</label><input class="input" id="sp3" placeholder="Vor- und Nachname"></div>
+            <div class="field"><label for="sp4">Telefon</label><input class="input" id="sp4" placeholder="Für den Rückruf"></div>
+          </div>
+          <label class="check"><input type="checkbox"><span>Ich habe die Datenschutzerklärung gelesen.</span></label>
+          <button class="btn btn--teal" type="submit" style="justify-self:start">Suchprofil anlegen <span class="arw">&#8594;</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= VERLAUFSSEKTION mit Sticky-Spalte ======= -->
+<section class="panel gradient" id="verkaufen" style="padding:var(--s9) 0">
+  <div class="wrap sticky-grid">
+    <div class="sticky-col reveal">
+      <span class="eyebrow eyebrow--light">Für Eigentümer</span>
+      <h2 class="t-d2" style="margin-top:14px;max-width:15ch">Was ist Ihre Immobilie in Frankenthal wert?</h2>
+      <p class="t-lead" style="color:rgba(255,255,255,.8);margin-top:16px;max-width:42ch">
+        Ich sage es Ihnen vor Ort, kostenlos und unverbindlich. Auch dann, wenn Sie am Ende gar
+        nicht verkaufen.</p>
+      <a class="btn btn--white" href="#kontakt" style="margin-top:24px">Kostenlose Bewertung <span class="arw">&#8594;</span></a>
+      <p class="t-xs" style="color:rgba(255,255,255,.78);margin-top:14px;max-width:36ch">
+        Kostenlos, unverbindlich, keine Beauftragung. Sie bekommen eine Einschätzung, keine Rechnung.</p>
+    </div>
+    <div class="grid stag" style="gap:14px">
+      <div class="card--glass">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3 class="t-h4" style="margin-top:16px">Vor Ort statt Online-Schätzung</h3>
+        <p class="t-sm" style="margin-top:6px">Ein Rechner kennt Ihre Lage, Ihren Grundriss und Ihren
+          Zustand nicht. Ich schon. Der Termin dauert etwa eine Stunde.</p></div>
+      <div class="card--glass">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3"/><path d="M3 12h18"/></svg></span>
+        <h3 class="t-h4" style="margin-top:16px">Erbe, Ruhestand, Trennung</h3>
+        <p class="t-sm" style="margin-top:6px">Ein Verkauf hat fast immer einen Anlass. Manche sind schön,
+          manche nicht. Ich gehe mit beiden um.</p></div>
+      <div class="card--glass">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 7l9-4 9 4"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg></span>
+        <h3 class="t-h4" style="margin-top:16px">Verkauf aus der Ferne</h3>
+        <p class="t-sm" style="margin-top:6px">Sie wohnen nicht mehr hier, die Immobilie schon.
+          Eine Eigentümerin aus Schleswig-Holstein hat ihre Wohnung in Limburgerhof so verkauft.</p></div>
+      <div class="card--glass">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 7a4 4 0 11-6 3.5"/><path d="M4 21c1.5-4 5-6 8-6s6.5 2 8 6"/></svg></span>
+        <h3 class="t-h4" style="margin-top:16px">Interessenten, die ich schon kenne</h3>
+        <p class="t-sm" style="margin-top:6px">Nach 25 Jahren in dieser Region kenne ich Suchende persönlich.
+          Manches Objekt findet seinen Käufer, bevor ein Portal nötig wird.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= BEWERTUNGS-KARUSSELL ======= -->
+<section class="sec" id="bewertungen">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="t-h2">Sechsmal fünf Sterne,<br>und jedes Mal mit Begründung</h2>
+      <div class="head-right">
+        <p class="t-lead">Was Kundinnen und Kunden über die Zusammenarbeit schreiben.
+          Nachzulesen bei Google und auf Facebook.</p>
+      </div>
+    </div>
+  </div>
+  <div class="rail-wrap reveal">
+    <div class="wrap" style="padding-right:0">
+      <div class="rail" id="qrail">
+        <article class="rcard rcard--mint" style="min-height:290px">
+          <span class="tag" style="color:var(--teal-600)">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="t-sm" style="margin-top:14px">„Frau Schilder ist nicht nur eine hochqualifizierte
+            Fachfrau, sondern eine extrem herzliche und dabei emotional sehr intelligente und positive
+            Begleitung im gesamten Veränderungsprozess.“</p>
+          <span class="place" style="margin-top:auto;font-size:13.5px;opacity:.7">Susann B., Mannheim</span>
+        </article>
+        <article class="rcard rcard--petrol" style="min-height:290px">
+          <span class="tag">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="t-sm" style="margin-top:14px">„Alles lief zu unserer Zufriedenheit ab, völlig
+            problemlos, zügig, jederzeit war sie für uns erreichbar. Wir können einfach nur positiv
+            berichten, waren bei ihr in den besten Händen.“</p>
+          <span class="place" style="margin-top:auto;font-size:13.5px;opacity:.75">Silke L., Frankenthal</span>
+        </article>
+        <article class="rcard rcard--mint" style="min-height:290px">
+          <span class="tag" style="color:var(--teal-600)">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="t-sm" style="margin-top:14px">„Frau Schilder hat uns auf dem Weg zu unserem neuen
+            Zuhause hervorragend begleitet. Mit ihrer freundlichen, kompetenten und engagierten Art
+            war sie jederzeit für uns da.“</p>
+          <span class="place" style="margin-top:auto;font-size:13.5px;opacity:.7">Megi M., Kauf</span>
+        </article>
+        <article class="rcard rcard--teal" style="min-height:290px">
+          <span class="tag">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="t-sm" style="margin-top:14px">„Besonders beeindruckt hat uns auch der professionelle
+            Ablauf und die dezidierten Kenntnisse und Einschätzungen zur aktuellen Marktlage auf
+            lokaler Ebene.“</p>
+          <span class="place" style="margin-top:auto;font-size:13.5px;opacity:.75">Jochen H., Lambsheim</span>
+        </article>
+        <article class="rcard rcard--mint" style="min-height:290px">
+          <span class="tag" style="color:var(--teal-600)">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="t-sm" style="margin-top:14px">„Bei ihrer sympathischen Art fühlt man sich sehr gut
+            aufgehoben, sowohl was ihr Fachwissen angeht, als auch was die menschliche Seite angeht.“</p>
+          <span class="place" style="margin-top:auto;font-size:13.5px;opacity:.7">Steffi K., Frankenthal</span>
+        </article>
+        <article class="rcard rcard--petrol" style="min-height:290px">
+          <span class="tag">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="t-sm" style="margin-top:14px">„Ihre Professionalität und ihr Engagement haben den
+            gesamten Prozess reibungslos und stressfrei gestaltet.“</p>
+          <span class="place" style="margin-top:auto;font-size:13.5px;opacity:.75">Sabine G., Limburgerhof</span>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="rail-foot">
+      <div class="track"><i id="qTrack"></i></div>
+      <div class="rail-btns">
+        <button class="rnd" id="qPrev" aria-label="Vorherige Bewertung"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M14 5l-7 7 7 7"/></svg></button>
+        <button class="rnd rnd--solid" id="qNext" aria-label="Nächste Bewertung"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M10 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CTA-BAND ======= -->
+<section class="sec--tight" style="padding-top:0">
+  <div class="panel gradient band reveal">
+    <h2 class="t-h3" style="max-width:24ch">Sie wollen wissen, was Ihre Immobilie heute wert ist?</h2>
+    <a class="btn btn--white" href="#kontakt">Termin vereinbaren <span class="arw">&#8594;</span></a>
+  </div>
+</section>
+
+<!-- ======= ÜBER MICH ======= -->
+<section class="sec wm" id="ueber-mich">
+  <div class="wrap">
+    <div class="grid g2" style="gap:var(--s8);align-items:center">
+      <div class="media reveal">
+        <img src="bilder/immobilienmakler-frankenthal-wohnungsuebergabe-1600.webp"
+             srcset="bilder/immobilienmakler-frankenthal-wohnungsuebergabe-800.webp 800w, bilder/immobilienmakler-frankenthal-wohnungsuebergabe-1600.webp 1600w"
+             sizes="(min-width:900px) 46vw, 100vw"
+             alt="Andrea Schilder begrüßt Besucher an der Tür einer Immobilie" width="1600" height="1066" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Über mich</span>
+        <h2 class="t-h2" style="margin-top:14px">25 Jahre Immobilien.<br><span class="tint">Davon 20 im Konzern.</span></h2>
+        <p class="t-lead" style="margin-top:16px">Ich habe 18 Jahre bei der BASF gearbeitet, bevor ich 2001
+          in die Immobilienbranche gewechselt bin. Was als Quereinstieg anfing, ist mein Beruf geworden:
+          11 Jahre LBS Rheinland-Pfalz, 9 Jahre Postbank Immobilien. Anfang 2021 habe ich mein eigenes
+          Büro in der Schmiedgasse aufgemacht.</p>
+        <p style="margin-top:16px">Warum das für Sie zählt: Ich habe gelernt, wie große Häuser Immobilien
+          abwickeln, sauber, mit Struktur, mit Unterlagen, die vor jedem Notar bestehen. Und ich habe
+          gesehen, was dabei verloren geht. Heute bekommen Sie beides: dieselbe Sorgfalt, aber eine
+          Nummer, unter der ich rangehe.</p>
+        <div class="card card--soft" style="margin-top:22px;padding:18px">
+          <blockquote style="margin:0;font-size:16px;line-height:1.6;color:var(--ink-900)">
+            „Wir haben uns bewusst für ein kleines Unternehmen entschieden und sind nicht
+            enttäuscht worden.“</blockquote>
+          <p class="t-xs muted" style="margin-top:10px">Clarissa D., Frankenthal</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= RATGEBER-KARTEN ======= -->
+<section class="sec--tight" style="padding-bottom:var(--s9)">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="t-h2">Gut zu wissen,<br>bevor Sie sich entscheiden</h2>
+      <div class="head-right">
+        <p class="t-lead">Die drei Fragen, die mir Eigentümer am häufigsten stellen, ausführlich beantwortet.</p>
+        <a class="btn btn--outline" href="#faq">Alle Fragen <span class="arw">&#8594;</span></a>
+      </div>
+    </div>
+    <div class="grid g3 stag">
+      <article class="post">
+        <div class="media"><img src="bilder/immobilienmakler-frankenthal-beratungsgespraech-1600.webp"
+          srcset="bilder/immobilienmakler-frankenthal-beratungsgespraech-800.webp 800w, bilder/immobilienmakler-frankenthal-beratungsgespraech-1600.webp 1600w"
+          sizes="(min-width:900px) 30vw, 100vw" alt="Beratungsgespräch" width="1600" height="1066" loading="lazy"></div>
+        <h3>Wie ich den Wert Ihrer Immobilie ermittle</h3>
+        <p class="t-sm muted">Vergleichswert, Ertragswert, Sachwert. Welches Verfahren wann greift, und
+          warum ein Online-Rechner nur eine Spanne liefert.</p>
+        <span class="meta">Wertermittlung <span>·</span> Vor Ort etwa eine Stunde</span>
+      </article>
+      <article class="post">
+        <div class="media"><img src="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp"
+          srcset="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-800.webp 800w, bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp 1600w"
+          sizes="(min-width:900px) 30vw, 100vw" alt="Andrea Schilder" width="1600" height="1044" loading="lazy"></div>
+        <h3>Was der Verkauf kostet, und wer was zahlt</h3>
+        <p class="t-sm muted">Seit Dezember 2020 teilen sich Käufer und Verkäufer die Provision hälftig.
+          Was das für Sie bedeutet, und was schriftlich geregelt gehört.</p>
+        <span class="meta">Provision <span>·</span> Vor jeder Besichtigung schriftlich</span>
+      </article>
+      <article class="post">
+        <div class="media"><img src="bilder/immobilienmakler-frankenthal-stadtansicht-1600.webp"
+          srcset="bilder/immobilienmakler-frankenthal-stadtansicht-800.webp 800w, bilder/immobilienmakler-frankenthal-stadtansicht-1600.webp 1600w"
+          sizes="(min-width:900px) 30vw, 100vw" alt="Frankenthal" width="1600" height="1143" loading="lazy"></div>
+        <h3>Verkaufen, wenn Sie nicht mehr vor Ort wohnen</h3>
+        <p class="t-sm muted">Besichtigungen, Unterlagen, Abstimmung mit dem Notar. Was ich übernehme
+          und worüber Sie trotzdem jederzeit Bescheid wissen.</p>
+        <span class="meta">Fernverkauf <span>·</span> Belegt bis Schleswig-Holstein</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section class="sec--tight surface-soft" id="faq" style="padding-top:var(--s9);padding-bottom:var(--s9)">
+  <div class="wrap">
+    <div class="grid g2" style="gap:var(--s8);align-items:start">
+      <div class="reveal">
+        <span class="eyebrow">Häufige Fragen</span>
+        <h2 class="t-h2" style="margin-top:14px">Was Eigentümer und Käufer am häufigsten fragen</h2>
+        <p class="t-lead" style="margin-top:16px">Ihre Frage ist nicht dabei? Rufen Sie an, das geht
+          schneller als jedes Formular.</p>
+        <a class="btn" href="tel:+4962331703146" style="margin-top:20px">06233 170 31 46 <span class="arw">&#8594;</span></a>
+      </div>
+      <div class="reveal">
+        <details class="faq-item" open><summary>Was kostet eine Immobilienbewertung?<span class="sign"></span></summary>
+          <div class="faq-a"><p>Nichts. Die Bewertung ist kostenlos und unverbindlich, auch wenn Sie danach nicht verkaufen oder sich für jemand anderen entscheiden.</p></div></details>
+        <details class="faq-item"><summary>Wer zahlt die Maklerprovision beim Kauf einer Immobilie?<span class="sign"></span></summary>
+          <div class="faq-a"><p>Bei Wohnungen und Einfamilienhäusern teilen sich Käufer und Verkäufer die Provision seit Dezember 2020 hälftig, wenn der Verkäufer den Makler beauftragt hat. Die Höhe nenne ich Ihnen vor jeder Besichtigung, schriftlich.</p></div></details>
+        <details class="faq-item"><summary>Wie genau ist eine Online-Bewertung im Vergleich zum Termin vor Ort?<span class="sign"></span></summary>
+          <div class="faq-a"><p>Ein Online-Rechner liefert eine grobe Spanne auf Basis von Lage und Größe. Zustand, Grundriss, Sanierungen und Lärm kennt er nicht. Für eine Zahl, mit der Sie in Verhandlungen gehen können, braucht es den Termin vor Ort.</p></div></details>
+        <details class="faq-item"><summary>Wie schnell bekomme ich nach einer Anfrage eine Antwort?<span class="sign"></span></summary>
+          <div class="faq-a"><p>In der Regel noch am selben Werktag. Wenn Sie lieber telefonieren, geben Sie im Formular eine Wunschzeit an, dann rufe ich in diesem Fenster an.</p></div></details>
+        <details class="faq-item"><summary>Wir sind eine Erbengemeinschaft. Müssen alle zustimmen?<span class="sign"></span></summary>
+          <div class="faq-a"><p>Für den Verkauf ja, alle Miterben müssen zustimmen. Für eine Bewertung nicht. Oft ist eine belastbare Zahl genau das, was eine festgefahrene Erbengemeinschaft wieder ins Gespräch bringt.</p></div></details>
+        <details class="faq-item"><summary>Brauche ich einen Energieausweis?<span class="sign"></span></summary>
+          <div class="faq-a"><p>Ja, bei Verkauf und bei Neuvermietung ist der Energieausweis gesetzlich vorgeschrieben. Ausnahmen gelten für Baudenkmäler und Gebäude unter 50 Quadratmetern Nutzfläche. Fehlen die Pflichtangaben in der Anzeige, drohen Bußgelder bis zu 10.000 Euro. Ich kümmere mich darum.</p></div></details>
+        <details class="faq-item"><summary>Wie lange binde ich mich vertraglich?<span class="sign"></span></summary>
+          <div class="faq-a"><p>Das bespreche ich vorher mit Ihnen und es steht schriftlich im Vertrag, bevor Sie unterschreiben. Wenn Ihnen eine Laufzeit zu lang ist, sagen Sie es. Ich habe kein Interesse an Kunden, die sich gefangen fühlen.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ABSCHLUSS-CTA ======= -->
+<section class="sec--tight" id="kontakt" style="padding-bottom:var(--s7)">
+  <div class="panel gradient reveal" style="padding:clamp(44px,7vw,96px) clamp(24px,5vw,64px);text-align:center">
+    <span class="eyebrow eyebrow--light" style="justify-content:center">Sprechen wir darüber</span>
+    <h2 class="t-d2" style="margin-top:16px">Der erste Schritt kostet nichts</h2>
+    <p class="t-lead" style="color:rgba(255,255,255,.8);margin:16px auto 0;max-width:46ch">
+      Ob Sie kaufen, anlegen oder verkaufen wollen. Rufen Sie an oder fordern Sie die Bewertung an,
+      den Rest bespreche ich mit Ihnen persönlich.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px">
+      <a class="btn btn--white" href="tel:+4962331703146">06233 170 31 46</a>
+      <a class="btn btn--glass" href="#suchprofil">Suchprofil anlegen <span class="arw">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="panel deep foot" style="margin-bottom:var(--gutter);padding:var(--s8) 0 var(--s7)">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="bilder/logo.png" alt="ImmobilienBÜRO Andrea Schilder" width="171" height="76"
+             style="height:44px;width:auto;filter:brightness(0) invert(1);opacity:.92">
+        <p style="color:rgba(255,255,255,.76);margin-top:16px;font-size:15px">
+          Schmiedgasse 35<br>67227 Frankenthal</p>
+        <a class="btn btn--white btn--sm" href="#kontakt" style="margin-top:18px">Bewertung anfordern <span class="arw">&#8594;</span></a>
+      </div>
+      <div><h4>Seite</h4>
+        <ul><li><a href="#objekte">Objekte</a></li><li><a href="#verkaufen">Verkaufen</a></li>
+          <li><a href="#ansatz">Mein Ansatz</a></li><li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#faq">Fragen</a></li></ul></div>
+      <div><h4>Kontakt</h4>
+        <ul><li><a href="tel:+4962331703146">06233 170 31 46</a></li>
+          <li><a href="tel:+491705551116">0170 555 111 6</a></li>
+          <li><a href="mailto:info@ib-schilder.de">info@ib-schilder.de</a></li></ul></div>
+      <div><h4>Rechtliches</h4>
+        <ul><li>Immobilienmaklerin (IHK)</li><li>Erlaubnis nach §34c GewO,<br>Stadt Frankenthal</li>
+          <li>USt-IdNr. DE 341471979</li></ul></div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 ImmobilienBÜRO Andrea Schilder</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">Widerrufsbelehrung</a></span>
+      <a class="totop" href="#main">Nach oben <span>&#8593;</span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn--outline" href="tel:+4962331703146">Anrufen</a>
+  <a class="btn btn--teal" href="#verkaufen">Bewertung <span class="arw">&#8594;</span></a>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent",
+"name":"ImmobilienBÜRO ANDREA SCHILDER","image":"bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp",
+"founder":{"@type":"Person","name":"Andrea Schilder","jobTitle":"Immobilienmaklerin (IHK)"},
+"foundingDate":"2021","email":"info@ib-schilder.de","telephone":"+49 6233 1703146",
+"address":{"@type":"PostalAddress","streetAddress":"Schmiedgasse 35","postalCode":"67227","addressLocality":"Frankenthal","addressRegion":"Rheinland-Pfalz","addressCountry":"DE"},
+"areaServed":["Frankenthal","Ludwigshafen am Rhein","Mannheim","Limburgerhof","Mutterstadt","Bobenheim-Roxheim","Bad Dürkheim","Neustadt an der Weinstraße","Rhein-Pfalz-Kreis"],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"6","bestRating":"5"},
+"vatID":"DE341471979"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet eine Immobilienbewertung?","acceptedAnswer":{"@type":"Answer","text":"Nichts. Die Bewertung ist kostenlos und unverbindlich, auch wenn Sie danach nicht verkaufen oder sich für jemand anderen entscheiden."}},
+{"@type":"Question","name":"Wer zahlt die Maklerprovision beim Kauf einer Immobilie?","acceptedAnswer":{"@type":"Answer","text":"Bei Wohnungen und Einfamilienhäusern teilen sich Käufer und Verkäufer die Provision seit Dezember 2020 hälftig, wenn der Verkäufer den Makler beauftragt hat."}},
+{"@type":"Question","name":"Brauche ich einen Energieausweis?","acceptedAnswer":{"@type":"Answer","text":"Ja, bei Verkauf und bei Neuvermietung ist der Energieausweis gesetzlich vorgeschrieben. Ausnahmen gelten für Baudenkmäler und Gebäude unter 50 Quadratmetern Nutzfläche."}}]}
+</script>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Hero-Einlauf sofort starten */
+  var hero = document.getElementById('hero');
+  requestAnimationFrame(function(){ setTimeout(function(){ hero.classList.add('is-in'); }, 120); });
+  setTimeout(function(){
+    document.getElementById('heroMask').classList.add('is-in');
+    hero.querySelectorAll('.reveal').forEach(function(el,i){
+      setTimeout(function(){ el.classList.add('is-in'); }, 260 + i*140);
+    });
+    countUp(hero.querySelector('[data-count]'));
+  }, reduce ? 0 : 420);
+
+  /* Scroll-Einläufe */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      if(e.target.matches('[data-count]')) countUp(e.target);
+      if(e.target.id === 'bars') e.target.querySelectorAll('.bar').forEach(function(b,i){
+        setTimeout(function(){ b.classList.add('is-in'); }, reduce?0:i*70);
+      });
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  document.querySelectorAll('main .reveal, main .stag, .mask, #bars, main [data-count]')
+    .forEach(function(el){ io.observe(el); });
+
+  function countUp(el){
+    if(!el || el.dataset.done) return; el.dataset.done='1';
+    var target=parseFloat(el.dataset.count), suf=el.dataset.suffix||'', dur=1200, t0=performance.now();
+    function fmt(n){ return n.toLocaleString('de-DE'); }
+    if(reduce){ el.textContent=fmt(target)+suf; return; }
+    (function step(now){
+      var p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3);
+      el.textContent=fmt(Math.round(target*e))+suf;
+      if(p<1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  /* Headline Wort für Wort */
+  document.querySelectorAll('.mask').forEach(function(m){
+    m.querySelectorAll('.mw>i').forEach(function(w,i){ w.style.transitionDelay=(i*55)+'ms'; });
+  });
+
+  /* Schwebende Kapsel nach dem Hero */
+  var navFloat=document.getElementById('navFloat');
+  addEventListener('scroll',function(){
+    var past = window.scrollY > hero.offsetHeight - 80;
+    navFloat.classList.toggle('is-on', past);
+  },{passive:true});
+
+  /* Mobil-Menü */
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  function setMenu(open){
+    menu.classList.toggle('is-open',open);
+    burger.setAttribute('aria-expanded',open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click',function(){ setMenu(!menu.classList.contains('is-open')); });
+  document.getElementById('menuClose').addEventListener('click',function(){ setMenu(false); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+
+  /* Wanderndes Aktiv-Element */
+  document.querySelectorAll('.travel').forEach(function(list){
+    var ind=list.querySelector('.ind'), rows=list.querySelectorAll('.trow');
+    function moveTo(row,collapse){
+      var t=row.offsetTop,h=row.offsetHeight;
+      if(collapse && !reduce){
+        ind.style.height='3px'; ind.style.transform='translateY('+(t+h/2)+'px)';
+        setTimeout(function(){ ind.style.height=h+'px'; ind.style.transform='translateY('+t+'px)'; },140);
+      } else { ind.style.height=h+'px'; ind.style.transform='translateY('+t+'px)'; }
+      rows.forEach(function(r){ r.classList.remove('is-active'); });
+      row.classList.add('is-active');
+    }
+    requestAnimationFrame(function(){ moveTo(rows[0],false); });
+    rows.forEach(function(r){
+      r.addEventListener('mouseenter',function(){ moveTo(r,true); });
+      r.addEventListener('focus',function(){ moveTo(r,false); });
+    });
+    addEventListener('resize',function(){
+      var a=list.querySelector('.trow.is-active'); if(a) moveTo(a,false);
+    });
+  });
+
+  /* Karussell */
+  function carousel(railId, trackId, prevId, nextId, autoMs){
+    var rail=document.getElementById(railId); if(!rail) return;
+    var track=document.getElementById(trackId),
+        prev=document.getElementById(prevId), next=document.getElementById(nextId);
+    var pos=0, timer=null;
+    function maxScroll(){ return Math.max(0, rail.scrollWidth - rail.parentElement.clientWidth); }
+    function step(){ return Math.min(rail.children[0].offsetWidth + 16, rail.parentElement.clientWidth*0.8); }
+    function apply(){
+      var m=maxScroll();
+      pos=Math.max(0,Math.min(pos,m));
+      rail.style.transform='translateX('+(-pos)+'px)';
+      var total = rail.scrollWidth || 1;
+      var visPct = Math.min(100, (rail.parentElement.clientWidth / total) * 100);
+      track.style.width = Math.max(14, visPct) + '%';
+      track.style.marginLeft = ((pos / total) * 100) + '%';
+    }
+    function go(dir){ pos += dir*step(); if(pos>maxScroll()+4) pos=0; apply(); }
+    next.addEventListener('click',function(){ go(1); restart(); });
+    prev.addEventListener('click',function(){ go(-1); restart(); });
+    function restart(){ if(timer){ clearInterval(timer); start(); } }
+    function start(){ if(reduce||!autoMs) return; timer=setInterval(function(){ go(1); }, autoMs); }
+    rail.parentElement.addEventListener('mouseenter',function(){ if(timer) clearInterval(timer); });
+    rail.parentElement.addEventListener('mouseleave',function(){ if(!timer) return; start(); });
+    addEventListener('resize',apply);
+    requestAnimationFrame(apply);
+    start();
+  }
+  carousel('rail','railTrack','railPrev','railNext',4200);
+  carousel('qrail','qTrack','qPrev','qNext',5200);
+})();
+</script>
+</body>
+</html>
