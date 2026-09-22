@@ -6,8 +6,8 @@
    HIER EINTRAGEN, sonst laedt kein Tag:
    ============================================================ */
 window.ESY = {
-  ADS_ID:        "AW-792272931",           // Google-Ads-Conversion-ID
-  ADS_LABEL:     "4-lKCOCI2ewcEKPA5PkC",   // Conversion "lp-likovo-form-send"
+  ADS_ID:        "AW-937493231",           // Google-Ads-Conversion-ID
+  ADS_LABEL:     "D3g3CMzTo4EdEO-FhL8D",   // Conversion "Lead-Formular senden"
   GA4_ID:        "",                       // optional, z. B. "G-XXXXXXXXXX". Leer = GA4 aus.
   LEAD_ENDPOINT: "https://api.web3forms.com/submit",
   W3F_KEY:       "31267008-8b4b-486f-8cbd-e9713e405544", // Web3Forms, oeffentlich per Design
