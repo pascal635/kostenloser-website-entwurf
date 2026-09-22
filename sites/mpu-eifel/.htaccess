@@ -1,0 +1,11 @@
+# Entwurf zurueckgezogen am 22.09.2026, Kunde hat abgesagt.
+# Sperrt den gesamten Ordner inklusive aller Bilder.
+
+# 410 Gone fuer alles unter /mpu-eifel/, damit Suchmaschinen zuegig deindexieren.
+RedirectMatch 410 ^/mpu-eifel(/.*)?$
+
+# Falls mod_alias nicht greift: nichts indexieren, kein Verzeichnislisting.
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+</IfModule>
+Options -Indexes
