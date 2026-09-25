@@ -9,10 +9,18 @@
 <meta property="og:title" content="Fliesenleger Hannover | Sandro Bartels Fliesenlegerhandwerk">
 <meta property="og:description" content="35 Jahre Fliesenlegerhandwerk in Hannover. Alles aus einer Hand, von der Beratung bis zur letzten Fuge.">
 <meta property="og:locale" content="de_DE">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="schriften/playfair-display-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="schriften/archivo-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Schriften liegen lokal. Kein Aufruf an Google, damit geht keine Besucher-IP an Dritte
+   und die Seite kommt ohne Einwilligung fuer externe Dienste aus. Latin-Subset, Lizenz OFL. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url('schriften/archivo-400.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url('schriften/archivo-500.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url('schriften/archivo-600.woff2') format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url('schriften/archivo-700.woff2') format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:600;font-display:swap;src:url('schriften/playfair-display-600.woff2') format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url('schriften/playfair-display-700.woff2') format('woff2')}
+
 :root{
   --schwarz:#111111; --anthrazit:#2B2E31; --anthrazit-hoch:#3A3D40;
   --grau:#8A8A8A; --grau-text:#57595B; --grau-invers:#B9B9B6; --grau-tint:#EDEDEB;
@@ -805,7 +813,7 @@ footer li{margin-bottom:6px}
     </div>
     <div class="f-linie"></div>
     <p class="entitaet">Das Fliesenlegerhandwerk Sandro Bartels ist ein Fliesenlegerfachbetrieb aus Hannover mit 35 Jahren Erfahrung. Der Betrieb übernimmt Fliesen- und Plattenarbeiten, Badsanierungen, bodengleiche Duschen, Großformat- und Feinsteinzeugverlegung, Dünnbett- und Dickbett-Sanierung im Altbau sowie Fugen- und Silikonarbeiten in Hannover und der Region Hannover.</p>
-    <p style="font-size:13px;color:#7E7E7B;margin-top:var(--s5)">Impressum · Datenschutz · Entwurf, noch nicht veröffentlicht. Alle Abbildungen zeigen eigene Arbeiten.</p>
+    <p style="font-size:13px;color:#8E8E8B;margin-top:var(--s5)"><a href="impressum.html" style="color:var(--grau-invers);text-underline-offset:3px">Impressum</a> · <a href="datenschutz.html" style="color:var(--grau-invers);text-underline-offset:3px">Datenschutzerklärung</a> · Entwurf, noch nicht veröffentlicht. Alle Abbildungen zeigen eigene Arbeiten.</p>
   </div>
 </footer>
 
