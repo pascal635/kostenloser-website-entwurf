@@ -149,8 +149,6 @@ figure.shot figcaption b{display:block;font-family:var(--display);font-size:19px
 figure.shot figcaption small{font-size:13px;color:#DEDEDB;text-shadow:0 1px 3px rgba(0,0,0,.55)}
 .macro img{filter:saturate(.62) contrast(1.04)}
 .r169{aspect-ratio:16/9}.r32{aspect-ratio:3/2}.r11{aspect-ratio:1/1}.r34{aspect-ratio:3/4}
-.hinweis-badge{position:absolute;top:var(--s3);left:var(--s3);z-index:2;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  background:rgba(17,17,17,.72);color:#fff;padding:5px 9px;border-radius:var(--r1);backdrop-filter:blur(4px)}
 
 /* Vertrauensband, dichte Sektion */
 .trust{padding:var(--s7) 0}
@@ -193,9 +191,23 @@ figure.shot figcaption small{font-size:13px;color:#DEDEDB;text-shadow:0 1px 3px 
 .card-link:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
 /* Partner-Karte: die Keramundo-Wortmarke ist schwarz, sie braucht eine helle Flaeche */
-.partner-karte{background:var(--weiss);border:1px solid var(--fuge-soft);border-radius:var(--r3);
-  box-shadow:var(--e2);padding:var(--s7) var(--s6);display:flex;flex-direction:column;gap:var(--s5);align-items:flex-start}
-.partner-karte img{width:min(340px,100%);height:auto}
+/* Partner-Kacheln. Alle drei auf Anthrazit: das PCI-Logo traegt weisse Schrift und ist nur auf
+   dunklem Grund lesbar, Schlueter bringt seine eigene helle Flaeche mit, Keramundo laeuft als
+   Negativ-Variante (Signet bleibt rot und weiss, nur die Wortmarke wird hell). */
+.partner-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s6)}
+.plogo{background:var(--anthrazit);border:1px solid var(--anthrazit);border-radius:var(--r3);
+  box-shadow:var(--e2);padding:var(--s5) var(--s4);display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:var(--s4);text-align:center;min-height:128px;
+  transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+.plogo:hover{transform:translateY(-2px);box-shadow:var(--e3)}
+.plogo img{width:auto;max-width:100%;object-fit:contain}
+/* die drei Marken haben sehr unterschiedliche Seitenverhaeltnisse (6:1, 2,4:1, 1,6:1),
+   feste Hoehe wuerde Schlueter winzig machen. Optisch ausgleichen statt mathematisch. */
+.plogo.k img{height:24px}
+.plogo.p img{height:40px}
+.plogo.s img{height:48px}
+.plogo small{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grau-invers)}
+@media(max-width:560px){.partner-logos{grid-template-columns:1fr}.plogo{min-height:104px}}
 .partner-text{font-size:15px;color:#3C3E40;margin:0;max-width:38ch}
 
 /* Split-Block */
@@ -348,7 +360,7 @@ footer li{margin-bottom:6px}
         <a class="btn btn-1" href="#anfrage">Anfrage in 60 Sekunden</a>
         <a class="btn btn-tel" href="tel:+4915142112494">01514 2112494</a>
       </div>
-      <p class="btn-fine">Kostenlos und unverbindlich. Antwort am selben Werktag.</p>
+      <p class="btn-fine">Kostenlos und unverbindlich. Wir melden uns persönlich zurück.</p>
       <div class="hero-chips">
         <span class="chip">35 Jahre Erfahrung</span>
         <span class="chip">Alles aus einer Hand</span>
@@ -358,10 +370,10 @@ footer li{margin-bottom:6px}
     </div>
     <div class="hero-shot">
       <figure class="shot">
-        <img src="bilder/fliesenleger-hannover-bad-grossformat-anthrazit.webp" alt="Fertig saniertes Badezimmer in Hannover mit anthrazitfarbenen Großformatfliesen und bodengleicher Dusche" width="1920" height="1072" fetchpriority="high">
+        <img src="bilder/fliesenleger-hannover-hero-altbau-ornamentboden.webp" alt="Ornamentboden aus Fliesen im Altbau-Flur in Hannover, Rautenfeld mit dunkler Bordüre und heller Einlegelinie" width="1600" height="1336" fetchpriority="high">
       </figure>
       <div class="hero-makro">
-        <img src="bilder/fliesenleger-hannover-detail-fugenkreuz.webp" alt="Makroaufnahme eines präzise gesetzten Fugenkreuzes" width="1100" height="1100" fetchpriority="high">
+        <img src="bilder/fliesenleger-hannover-detail-bordure-einlegelinie.webp" alt="Detail der Bordüre mit heller Einlegelinie im Ornamentboden" width="560" height="512" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -385,7 +397,7 @@ footer li{margin-bottom:6px}
     <h2>Warum Fliesen legen lassen so oft Nerven kostet</h2>
     <p class="lead h2-sub">Wir hören es seit 35 Jahren, und es ändert sich nichts. Nicht die Fliese ist das Problem, sondern alles drumherum.</p>
     <div class="pz" style="margin-top:var(--s6)">
-      <div class="pz-row"><div class="l">Man schreibt drei Betriebe an und keiner antwortet.</div><div class="r">Sie bekommen am selben Werktag eine Antwort, auch wenn es ein Nein ist.</div></div>
+      <div class="pz-row"><div class="l">Man schreibt drei Betriebe an und keiner antwortet.</div><div class="r">Sie bekommen eine Antwort. Auch wenn sie lautet, dass gerade kein Termin frei ist.</div></div>
       <div class="pz-row"><div class="l">Der Termin platzt und keiner sagt Bescheid.</div><div class="r">Sie bekommen ein festes Zeitfenster. Verschiebt sich etwas, hören Sie es vorher von uns.</div></div>
       <div class="pz-row"><div class="l">Nach der Arbeit sieht die Wohnung aus wie eine Baustelle.</div><div class="r">Wege werden abgedeckt, Staub wird abgesaugt, abends ist besenrein.</div></div>
       <div class="pz-row"><div class="l">Ein Jahr später reißen die Fugen und niemand ist erreichbar.</div><div class="r">Untergrund prüfen, Abdichtung nach DIN 18534, Fugen und Silikon sauber ausgeführt. Und Sie erreichen mich weiterhin.</div></div>
@@ -454,10 +466,9 @@ footer li{margin-bottom:6px}
 <!-- 5 · ALTBAU -->
 <section class="s-papier" id="altbau">
   <div class="wrap split">
-    <figure class="shot r32">
-      <span class="hinweis-badge">Beispielumsetzung</span>
-      <img src="bilder/fliesenleger-hannover-altbau-dickbett-sanierung.webp" alt="Altbau-Bad in Hannover zurückgebaut, altes Dickbett entfernt, Abdichtung angesetzt" loading="lazy" width="1600" height="1073">
-      <figcaption><b>Altbau zurückgebaut</b><small>Dickbett entfernt, Abdichtung angesetzt</small></figcaption>
+    <figure class="shot r34">
+      <img src="bilder/fliesenleger-hannover-altbau-entkopplungsmatte.webp" alt="Entkopplungsmatte und Abdichtband auf altem Dielenboden in Hannover, vorbereitet für die Fliesenverlegung im Altbau" loading="lazy" width="1000" height="1333">
+      <figcaption><b>Untergrund im Altbau</b><small>Entkopplung und Abdichtband, bevor die erste Fliese liegt</small></figcaption>
     </figure>
     <div>
       <p class="micro">Unsere Spezialität</p>
@@ -486,37 +497,40 @@ footer li{margin-bottom:6px}
       <button class="tab" role="tab" aria-selected="true" data-filter="alle">Alle</button>
       <button class="tab" role="tab" aria-selected="false" data-filter="bad">Bad</button>
       <button class="tab" role="tab" aria-selected="false" data-filter="dusche">Dusche</button>
-      <button class="tab" role="tab" aria-selected="false" data-filter="boden">Boden</button>
-      <button class="tab" role="tab" aria-selected="false" data-filter="detail">Detail</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="boden">Boden und Altbau</button>
     </div>
     <div class="gal">
       <figure class="shot r32" data-kat="bad">
-        <span class="hinweis-badge">Beispielumsetzung</span>
-        <img src="bilder/fliesenleger-hannover-bad-grossformat-anthrazit.webp" alt="Badezimmer in Hannover mit Großformatfliesen in Anthrazit" loading="lazy" width="1920" height="1072">
-        <figcaption><b>Bad komplett, Großformat</b><small>Anthrazit, bodengleiche Dusche</small></figcaption>
+        <img src="bilder/fliesenleger-hannover-galerie-bad-grossformat.webp" alt="Badezimmer in Hannover mit grauen Großformatfliesen an Wand und Boden, Vorwandinstallation verkleidet" loading="lazy" width="900" height="1200">
+        <figcaption><b>Bad in Großformat</b><small>Wand und Boden gefliest, Vorwand verkleidet</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="dusche">
-        <span class="hinweis-badge">Beispielumsetzung</span>
-        <img src="bilder/fliesenleger-hannover-bodengleiche-dusche.webp" alt="Bodengleiche Dusche mit Linienentwässerung und dunklen Großformatfliesen" loading="lazy" width="1200" height="1607">
-        <figcaption><b>Bodengleiche Dusche</b><small>Linienentwässerung, Abdichtung im Verbund</small></figcaption>
+        <img src="bilder/fliesenleger-hannover-galerie-bad-linienentwaesserung.webp" alt="Bodengleiche Dusche mit Linienentwässerung, Gefälle eingearbeitet, Rinne bündig eingebaut" loading="lazy" width="900" height="1190">
+        <figcaption><b>Bodengleiche Dusche</b><small>Gefälle eingearbeitet, Rinne bündig</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="boden">
-        <span class="hinweis-badge">Beispielumsetzung</span>
-        <img src="bilder/fliesenleger-hannover-grossformat-boden-flur.webp" alt="Großformat-Fliesenboden im Flur eines Hauses in Hannover" loading="lazy" width="1600" height="1073">
-        <figcaption><b>Großformat im Flur</b><small>120 x 120 cm, schmale Fuge</small></figcaption>
+        <img src="bilder/fliesenleger-hannover-galerie-boden-holzoptik-raute.webp" alt="Fliesen in Holzoptik im Rautenmuster verlegt, jede Platte einzeln eingepasst" loading="lazy" width="860" height="1147">
+        <figcaption><b>Holzoptik im Rautenmuster</b><small>Jede Platte einzeln eingepasst</small></figcaption>
+      </figure>
+      <figure class="shot r32" data-kat="dusche">
+        <img src="bilder/fliesenleger-hannover-galerie-dusche-dachschraege.webp" alt="Bodengleiche Dusche unter der Dachschräge, hell gefliest, Armaturanschlüsse gesetzt" loading="lazy" width="900" height="1200">
+        <figcaption><b>Dusche unter der Dachschräge</b><small>Bodengleich, Anschlüsse gesetzt</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="boden">
-        <span class="hinweis-badge">Beispielumsetzung</span>
-        <img src="bilder/fliesenleger-hannover-kueche-fliesenspiegel.webp" alt="Küchen-Fliesenspiegel in dunklem Grau im Stapelverband" loading="lazy" width="1600" height="1073">
-        <figcaption><b>Fliesenspiegel Küche</b><small>Stapelverband, dunkle Fuge</small></figcaption>
+        <img src="bilder/fliesenleger-hannover-galerie-altbau-musterboden.webp" alt="Musterboden aus Fliesen im Altbau, Rautenfeld mit Bordüre und dunkler Umrandung" loading="lazy" width="900" height="669">
+        <figcaption><b>Musterboden im Altbau</b><small>Rautenfeld mit Bordüre und Umrandung</small></figcaption>
       </figure>
-      <figure class="shot r32 macro" data-kat="detail">
-        <img src="bilder/fliesenleger-hannover-detail-fugenkreuz.webp" alt="Makroaufnahme eines präzisen Fugenkreuzes zwischen vier Fliesen" loading="lazy" width="1100" height="1100">
-        <figcaption><b>Fugenkreuz</b><small>Vier Kanten, ein Punkt</small></figcaption>
+      <figure class="shot r32" data-kat="bad">
+        <img src="bilder/fliesenleger-hannover-galerie-bad-dachfenster.webp" alt="Helles Badezimmer unter dem Dach in Hannover, frisch gefliest, Anschlüsse noch frei" loading="lazy" width="900" height="1210">
+        <figcaption><b>Bad unter dem Dach</b><small>Hell gefliest, Anschlüsse frei</small></figcaption>
       </figure>
-      <figure class="shot r32 macro" data-kat="detail">
-        <img src="bilder/fliesenleger-hannover-detail-silikonfuge.webp" alt="Silikonfuge wird mit dem Spachtel sauber gezogen" loading="lazy" width="1100" height="1100">
-        <figcaption><b>Silikonfuge</b><small>Der Teil, den Sie täglich sehen</small></figcaption>
+      <figure class="shot r32" data-kat="dusche">
+        <img src="bilder/fliesenleger-hannover-galerie-dusche-nische.webp" alt="Bodengleiche Dusche mit eingefliester Wandnische, saubere Kanten und Anschlüsse" loading="lazy" width="900" height="1200">
+        <figcaption><b>Dusche mit Wandnische</b><small>Nische eingefliest, Kanten sauber</small></figcaption>
+      </figure>
+      <figure class="shot r32" data-kat="bad">
+        <img src="bilder/fliesenleger-hannover-galerie-bad-fenster.webp" alt="Badezimmer mit gefliester Fensterlaibung, Heizungsanschluss ausgespart" loading="lazy" width="900" height="1219">
+        <figcaption><b>Bad mit Fensterlaibung</b><small>Laibung gefliest, Anschlüsse ausgespart</small></figcaption>
       </figure>
     </div>
   </div>
@@ -530,9 +544,9 @@ footer li{margin-bottom:6px}
       <h2 style="margin-top:var(--s3)">So läuft Ihr Projekt ab</h2>
       <p class="lead h2-sub">Fünf Schritte, keine Überraschungen.</p>
       <div style="margin-top:var(--s5)">
-        <div class="step"><div class="step-n">1</div><div><h3>Anfrage</h3><p>Sie schildern in 60 Sekunden, was gemacht werden soll.</p><div class="when">Antwort am selben Werktag</div></div></div>
-        <div class="step"><div class="step-n">2</div><div><h3>Besichtigung und Aufmaß</h3><p>Kostenlos und bei Ihnen vor Ort. Wir sehen den Untergrund an, messen auf und sprechen über Material und Format.</p><div class="when">In der Regel innerhalb einer Woche</div></div></div>
-        <div class="step"><div class="step-n">3</div><div><h3>Festangebot</h3><p>Sie bekommen ein schriftliches Angebot mit klaren Positionen.</p><div class="when">Innerhalb von 3 Werktagen nach der Besichtigung</div></div></div>
+        <div class="step"><div class="step-n">1</div><div><h3>Anfrage</h3><p>Sie schildern in 60 Sekunden, was gemacht werden soll.</p><div class="when">Bestätigung sofort auf dem Bildschirm</div></div></div>
+        <div class="step"><div class="step-n">2</div><div><h3>Besichtigung und Aufmaß</h3><p>Kostenlos und bei Ihnen vor Ort. Wir sehen den Untergrund an, messen auf und sprechen über Material und Format.</p><div class="when">Termin nach Absprache</div></div></div>
+        <div class="step"><div class="step-n">3</div><div><h3>Festangebot</h3><p>Sie bekommen ein schriftliches Angebot mit klaren Positionen.</p><div class="when">Schriftlich, mit festen Positionen</div></div></div>
         <div class="step"><div class="step-n">4</div><div><h3>Ausführung</h3><p>Fester Termin, festes Zeitfenster. Wege abgedeckt, Staub abgesaugt, abends besenrein.</p><div class="when">Zeitfenster steht vor dem Start</div></div></div>
         <div class="step"><div class="step-n">5</div><div><h3>Abnahme</h3><p>Wir gehen gemeinsam durch, Sie prüfen Fugen, Kanten und Silikon. Dazu bekommen Sie die Pflegehinweise für Ihr Material.</p></div></div>
       </div>
@@ -541,9 +555,8 @@ footer li{margin-bottom:6px}
       </div>
     </div>
     <figure class="shot r34">
-      <span class="hinweis-badge">Beispielumsetzung</span>
-      <img src="bilder/fliesenleger-hannover-fliesen-verlegen-kleber.webp" alt="Fliesenleger trägt Fliesenkleber mit der Zahnkelle in gleichmäßigen Rippen auf" loading="lazy" width="1600" height="1073">
-      <figcaption><b>Kleberauftrag mit der Zahnkelle</b><small>Gleichmäßige Rippen, volle Auflage</small></figcaption>
+      <img src="bilder/fliesenleger-hannover-ablauf-badsanierung-rohbau.webp" alt="Badsanierung in Hannover während der Ausführung, Wandfliesen gesetzt, Anschlüsse für Armaturen vorbereitet" loading="lazy" width="1100" height="1467">
+      <figcaption><b>Mitten in der Ausführung</b><small>Wand gefliest, Anschlüsse vorbereitet</small></figcaption>
     </figure>
   </div>
 </section>
@@ -559,17 +572,22 @@ footer li{margin-bottom:6px}
       <div class="card"><h3>Alles aus einer Hand</h3><p>Verlegung, Abdichtung, Fugen und Silikon. Kein Zuständigkeits-Streit darüber, wer die Silikonfuge macht.</p></div>
       <div class="card"><h3>Die Fuge ist der Beweis</h3><p>Die Abdichtung sehen Sie nie wieder, die Fuge jeden Morgen. Deshalb wird sie hier so behandelt, wie es sich gehört, und nicht am Ende schnell hingeschmiert.</p></div>
       <div class="card"><h3>Ihre Wohnung bleibt bewohnbar</h3><p>Wege abgedeckt, Staub abgesaugt, abends besenrein. Ganz ohne Staub geht es nicht, aber er bleibt im Arbeitsbereich.</p></div>
-      <div class="card"><h3>Material vom Fachhandel</h3><p>Als Partner von Keramundo, Welt der Fliesen, und über unsere Bauchemie-Partner. Sie suchen im Studio in Ruhe aus, wir bringen es mit.</p></div>
+      <div class="card"><h3>Material vom Fachhandel</h3><p>Fliesen über Keramundo, Bauchemie von PCI, Profile und Entkopplung von Schlüter-Systems. Sie suchen im Studio in Ruhe aus, wir bringen es mit.</p></div>
     </div>
     <div class="split" style="margin-top:var(--s8);align-items:center">
-      <div class="partner-karte">
-        <p class="micro">Unser Partner im Fachhandel</p>
-        <img src="bilder/keramundo_rgb.svg" alt="Keramundo, Welt der Fliesen" width="380" height="62" loading="lazy">
-        <p class="partner-text">Fliesen, Kleber und Abdichtung kommen aus dem Fachhandel. Sie sehen die Ware vorher in echt.</p>
-      </div>
+      <figure class="shot r34">
+        <img src="bilder/fliesenleger-hannover-partner-schlueter-ditra-verlegt.webp" alt="Verlegte Entkopplungsmatte von Schlüter-Systems mit Abdichtband auf dem Untergrund" loading="lazy" width="860" height="1146">
+        <figcaption><b>Entkopplung und Abdichtung</b><small>Systemmaterial, kein Baumarktregal</small></figcaption>
+      </figure>
       <div>
-        <h3 style="font-size:26px;margin-bottom:var(--s4)">Sie suchen aus, wir bringen es mit</h3>
-        <p class="lead">Im Studio sehen Sie Format, Farbe und Oberfläche in echt, nicht im Katalog. Wir sagen Ihnen vorher, welche Formate zu Ihrem Raum und Ihrem Untergrund passen, kümmern uns um Bestellung und Anlieferung und arbeiten mit Kleber und Abdichtung aus dem Fachhandel, nicht aus dem Baumarktregal.</p>
+        <p class="micro">Material</p>
+        <h3 style="font-size:26px;margin:var(--s3) 0 var(--s4)">Sie suchen aus, wir bringen es mit</h3>
+        <p class="lead">Im Studio sehen Sie Format, Farbe und Oberfläche in echt, nicht im Katalog. Wir sagen Ihnen vorher, welche Formate zu Ihrem Raum und Ihrem Untergrund passen, kümmern uns um Bestellung und Anlieferung und arbeiten mit Fliesen, Bauchemie und Profilen von Marktführern, nicht aus dem Baumarktregal.</p>
+        <div class="partner-logos">
+          <div class="plogo k"><img src="bilder/keramundo-invers.svg" alt="Keramundo, Welt der Fliesen" width="190" height="31" loading="lazy"><small>Fliesen</small></div>
+          <div class="plogo p"><img src="bilder/pci-logo.svg" alt="PCI, Bauchemie von Sika" width="120" height="49" loading="lazy"><small>Bauchemie</small></div>
+          <div class="plogo s"><img src="bilder/schlueter-systems-logo.svg" alt="Schlüter-Systems" width="90" height="55" loading="lazy"><small>Profile und Entkopplung</small></div>
+        </div>
       </div>
     </div>
   </div>
@@ -712,7 +730,7 @@ footer li{margin-bottom:6px}
       <div class="f-danke" id="fDanke" hidden>
         <div class="haken" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
         <h3>Danke, Ihre Anfrage ist da</h3>
-        <p style="font-size:16px;color:#3C3E40">Sie hören am selben Werktag von uns, meistens per Telefon. Wenn es schneller gehen soll: <a href="tel:+4915142112494" style="font-weight:600">01514 2112494</a>.</p>
+        <p style="font-size:16px;color:#3C3E40">Ihre Anfrage liegt jetzt bei Sandro Bartels, wir melden uns persönlich bei Ihnen. Wenn es schneller gehen soll: <a href="tel:+4915142112494" style="font-weight:600">01514 2112494</a>.</p>
         <div class="zusammenfassung"><dl id="fZusammen"></dl></div>
       </div>
     </form>
@@ -736,7 +754,7 @@ footer li{margin-bottom:6px}
       <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Übernehmen Sie auch kleine Aufträge, zum Beispiel nur die Silikonfugen?</h3></summary>
         <p>Ja. Fugen erneuern und Silikonarbeiten sind Teil unseres Leistungsumfangs, ohne Mindestauftragswert. Fugen werden herausgenommen und neu gesetzt, nicht überschmiert.</p></details>
       <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Kann ich meine Fliesen selbst aussuchen?</h3></summary>
-        <p>Ja. Als Partner von Keramundo, Welt der Fliesen, gehen Sie im Studio in Ruhe schauen und entscheiden. Wir sagen Ihnen vorher, welche Formate für Ihren Raum und Ihren Untergrund sinnvoll sind, und bringen das Material mit.</p></details>
+        <p>Ja. Über Keramundo, Welt der Fliesen, gehen Sie im Studio in Ruhe schauen und entscheiden. Wir sagen Ihnen vorher, welche Formate für Ihren Raum und Ihren Untergrund sinnvoll sind, und bringen das Material mit. Bauchemie kommt von PCI, Profile und Entkopplung von Schlüter-Systems.</p></details>
       <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">Wer macht die Abdichtung?</h3></summary>
         <p>Wir. Die Abdichtung im Verbund nach DIN 18534 gehört zu unserer Leistung, genauso wie Fugen und Silikon. Damit gibt es keine Diskussion darüber, wer für welchen Teil zuständig ist.</p></details>
       <details class="faq"><summary><h3 style="font:inherit;letter-spacing:inherit">In welchem Gebiet arbeiten Sie?</h3></summary>
@@ -787,7 +805,7 @@ footer li{margin-bottom:6px}
     </div>
     <div class="f-linie"></div>
     <p class="entitaet">Das Fliesenlegerhandwerk Sandro Bartels ist ein Fliesenlegerfachbetrieb aus Hannover mit 35 Jahren Erfahrung. Der Betrieb übernimmt Fliesen- und Plattenarbeiten, Badsanierungen, bodengleiche Duschen, Großformat- und Feinsteinzeugverlegung, Dünnbett- und Dickbett-Sanierung im Altbau sowie Fugen- und Silikonarbeiten in Hannover und der Region Hannover.</p>
-    <p style="font-size:13px;color:#7E7E7B;margin-top:var(--s5)">Impressum · Datenschutz · Entwurf, noch nicht veröffentlicht. Abbildungen sind Beispielumsetzungen.</p>
+    <p style="font-size:13px;color:#7E7E7B;margin-top:var(--s5)">Impressum · Datenschutz · Entwurf, noch nicht veröffentlicht. Alle Abbildungen zeigen eigene Arbeiten.</p>
   </div>
 </footer>
 
