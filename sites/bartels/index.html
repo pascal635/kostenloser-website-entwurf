@@ -218,6 +218,13 @@ figure.shot figcaption small{font-size:13px;color:#DEDEDB;text-shadow:0 1px 3px 
 @media(max-width:560px){.partner-logos{grid-template-columns:1fr}.plogo{min-height:104px}}
 .partner-text{font-size:15px;color:#3C3E40;margin:0;max-width:38ch}
 
+/* Detail-Band: drei Nahaufnahmen zu den Handwerks-Argumenten.
+   Das sind Beispielaufnahmen, keine Projektfotos. Steht so im Footer. */
+.detailband{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s7)}
+.detailband figure{margin:0}
+.detailband .quelle{grid-column:1/-1;font-size:13px;color:var(--grau-text);margin:var(--s3) 0 0}
+@media(max-width:760px){.detailband{grid-template-columns:1fr}}
+
 /* Split-Block */
 .split{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:var(--s7);align-items:center}
 .split.rev{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
@@ -378,10 +385,10 @@ footer li{margin-bottom:6px}
     </div>
     <div class="hero-shot">
       <figure class="shot">
-        <img src="bilder/fliesenleger-hannover-hero-altbau-ornamentboden.webp" alt="Ornamentboden aus Fliesen im Altbau-Flur in Hannover, Rautenfeld mit dunkler Bordüre und heller Einlegelinie" width="1600" height="1336" fetchpriority="high">
+        <img src="bilder/fliesenleger-hannover-hero-altbau-ornamentboden.webp" alt="Ornamentboden aus Fliesen im Altbau-Flur in Hannover, Rautenfeld mit dunkler Bordüre und heller Einlegelinie" width="1600" height="1298" fetchpriority="high">
       </figure>
       <div class="hero-makro">
-        <img src="bilder/fliesenleger-hannover-detail-bordure-einlegelinie.webp" alt="Detail der Bordüre mit heller Einlegelinie im Ornamentboden" width="560" height="512" fetchpriority="high">
+        <img src="bilder/fliesenleger-hannover-detail-bordure-einlegelinie.webp" alt="Detail der Bordüre mit heller Einlegelinie im Ornamentboden" width="560" height="627" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -475,7 +482,7 @@ footer li{margin-bottom:6px}
 <section class="s-papier" id="altbau">
   <div class="wrap split">
     <figure class="shot r34">
-      <img src="bilder/fliesenleger-hannover-altbau-entkopplungsmatte.webp" alt="Entkopplungsmatte und Abdichtband auf altem Dielenboden in Hannover, vorbereitet für die Fliesenverlegung im Altbau" loading="lazy" width="1000" height="1333">
+      <img src="bilder/fliesenleger-hannover-altbau-entkopplungsmatte.webp" alt="Entkopplungsmatte und Abdichtband auf altem Dielenboden in Hannover, vorbereitet für die Fliesenverlegung im Altbau" loading="lazy" width="780" height="1040">
       <figcaption><b>Untergrund im Altbau</b><small>Entkopplung und Abdichtband, bevor die erste Fliese liegt</small></figcaption>
     </figure>
     <div>
@@ -509,35 +516,35 @@ footer li{margin-bottom:6px}
     </div>
     <div class="gal">
       <figure class="shot r32" data-kat="bad">
-        <img src="bilder/fliesenleger-hannover-galerie-bad-grossformat.webp" alt="Badezimmer in Hannover mit grauen Großformatfliesen an Wand und Boden, Vorwandinstallation verkleidet" loading="lazy" width="900" height="1200">
+        <img src="bilder/fliesenleger-hannover-galerie-bad-grossformat.webp" alt="Badezimmer in Hannover mit grauen Großformatfliesen an Wand und Boden, Vorwandinstallation verkleidet" loading="lazy" width="760" height="1013">
         <figcaption><b>Bad in Großformat</b><small>Wand und Boden gefliest, Vorwand verkleidet</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="dusche">
-        <img src="bilder/fliesenleger-hannover-galerie-bad-linienentwaesserung.webp" alt="Bodengleiche Dusche mit Linienentwässerung, Gefälle eingearbeitet, Rinne bündig eingebaut" loading="lazy" width="900" height="1190">
+        <img src="bilder/fliesenleger-hannover-galerie-bad-linienentwaesserung.webp" alt="Bodengleiche Dusche mit Linienentwässerung, Gefälle eingearbeitet, Rinne bündig eingebaut" loading="lazy" width="760" height="1005">
         <figcaption><b>Bodengleiche Dusche</b><small>Gefälle eingearbeitet, Rinne bündig</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="boden">
-        <img src="bilder/fliesenleger-hannover-galerie-boden-holzoptik-raute.webp" alt="Fliesen in Holzoptik im Rautenmuster verlegt, jede Platte einzeln eingepasst" loading="lazy" width="860" height="1147">
+        <img src="bilder/fliesenleger-hannover-galerie-boden-holzoptik-raute.webp" alt="Fliesen in Holzoptik im Rautenmuster verlegt, jede Platte einzeln eingepasst" loading="lazy" width="760" height="1014">
         <figcaption><b>Holzoptik im Rautenmuster</b><small>Jede Platte einzeln eingepasst</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="dusche">
-        <img src="bilder/fliesenleger-hannover-galerie-dusche-dachschraege.webp" alt="Bodengleiche Dusche unter der Dachschräge, hell gefliest, Armaturanschlüsse gesetzt" loading="lazy" width="900" height="1200">
+        <img src="bilder/fliesenleger-hannover-galerie-dusche-dachschraege.webp" alt="Bodengleiche Dusche unter der Dachschräge, hell gefliest, Armaturanschlüsse gesetzt" loading="lazy" width="760" height="1013">
         <figcaption><b>Dusche unter der Dachschräge</b><small>Bodengleich, Anschlüsse gesetzt</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="boden">
-        <img src="bilder/fliesenleger-hannover-galerie-altbau-musterboden.webp" alt="Musterboden aus Fliesen im Altbau, Rautenfeld mit Bordüre und dunkler Umrandung" loading="lazy" width="900" height="669">
+        <img src="bilder/fliesenleger-hannover-galerie-altbau-musterboden.webp" alt="Musterboden aus Fliesen im Altbau, Rautenfeld mit Bordüre und dunkler Umrandung" loading="lazy" width="800" height="669">
         <figcaption><b>Musterboden im Altbau</b><small>Rautenfeld mit Bordüre und Umrandung</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="bad">
-        <img src="bilder/fliesenleger-hannover-galerie-bad-dachfenster.webp" alt="Helles Badezimmer unter dem Dach in Hannover, frisch gefliest, Anschlüsse noch frei" loading="lazy" width="900" height="1210">
+        <img src="bilder/fliesenleger-hannover-galerie-bad-dachfenster.webp" alt="Helles Badezimmer unter dem Dach in Hannover, frisch gefliest, Anschlüsse noch frei" loading="lazy" width="760" height="1022">
         <figcaption><b>Bad unter dem Dach</b><small>Hell gefliest, Anschlüsse frei</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="dusche">
-        <img src="bilder/fliesenleger-hannover-galerie-dusche-nische.webp" alt="Bodengleiche Dusche mit eingefliester Wandnische, saubere Kanten und Anschlüsse" loading="lazy" width="900" height="1200">
+        <img src="bilder/fliesenleger-hannover-galerie-dusche-nische.webp" alt="Bodengleiche Dusche mit eingefliester Wandnische, saubere Kanten und Anschlüsse" loading="lazy" width="760" height="1013">
         <figcaption><b>Dusche mit Wandnische</b><small>Nische eingefliest, Kanten sauber</small></figcaption>
       </figure>
       <figure class="shot r32" data-kat="bad">
-        <img src="bilder/fliesenleger-hannover-galerie-bad-fenster.webp" alt="Badezimmer mit gefliester Fensterlaibung, Heizungsanschluss ausgespart" loading="lazy" width="900" height="1219">
+        <img src="bilder/fliesenleger-hannover-galerie-bad-fenster.webp" alt="Badezimmer mit gefliester Fensterlaibung, Heizungsanschluss ausgespart" loading="lazy" width="760" height="1029">
         <figcaption><b>Bad mit Fensterlaibung</b><small>Laibung gefliest, Anschlüsse ausgespart</small></figcaption>
       </figure>
     </div>
@@ -563,7 +570,7 @@ footer li{margin-bottom:6px}
       </div>
     </div>
     <figure class="shot r34">
-      <img src="bilder/fliesenleger-hannover-ablauf-badsanierung-rohbau.webp" alt="Badsanierung in Hannover während der Ausführung, Wandfliesen gesetzt, Anschlüsse für Armaturen vorbereitet" loading="lazy" width="1100" height="1467">
+      <img src="bilder/fliesenleger-hannover-ablauf-badsanierung-rohbau.webp" alt="Badsanierung in Hannover während der Ausführung, Wandfliesen gesetzt, Anschlüsse für Armaturen vorbereitet" loading="lazy" width="950" height="1267">
       <figcaption><b>Mitten in der Ausführung</b><small>Wand gefliest, Anschlüsse vorbereitet</small></figcaption>
     </figure>
   </div>
@@ -582,9 +589,25 @@ footer li{margin-bottom:6px}
       <div class="card"><h3>Ihre Wohnung bleibt bewohnbar</h3><p>Wege abgedeckt, Staub abgesaugt, abends besenrein. Ganz ohne Staub geht es nicht, aber er bleibt im Arbeitsbereich.</p></div>
       <div class="card"><h3>Material vom Fachhandel</h3><p>Fliesen über Keramundo, Bauchemie von PCI, Profile und Entkopplung von Schlüter-Systems. Sie suchen im Studio in Ruhe aus, wir bringen es mit.</p></div>
     </div>
+    <div class="detailband">
+      <figure class="shot r11">
+        <img src="bilder/fliesenleger-hannover-detail-kleberbett.webp" alt="Fliesenkleber in gleichmäßigen Rippen mit der Zahnkelle aufgezogen" loading="lazy" width="760" height="760">
+        <figcaption><b>Volle Auflage</b><small>Gleichmäßige Rippen, keine Hohlstellen</small></figcaption>
+      </figure>
+      <figure class="shot r11">
+        <img src="bilder/fliesenleger-hannover-detail-fugenkreuz.webp" alt="Präzises Fugenkreuz zwischen vier Fliesen" loading="lazy" width="760" height="760">
+        <figcaption><b>Vier Kanten, ein Punkt</b><small>Gleiche Fugenbreite über die ganze Fläche</small></figcaption>
+      </figure>
+      <figure class="shot r11">
+        <img src="bilder/fliesenleger-hannover-detail-silikonfuge.webp" alt="Silikonfuge wird mit dem Spachtel sauber gezogen" loading="lazy" width="760" height="760">
+        <figcaption><b>Die Fuge, die Sie sehen</b><small>Gezogen, nicht geschmiert</small></figcaption>
+      </figure>
+      <p class="quelle">Diese drei Nahaufnahmen sind Beispielbilder und zeigen die Arbeitsschritte. Alle Projektbilder auf dieser Seite sind eigene Aufnahmen.</p>
+    </div>
+
     <div class="split" style="margin-top:var(--s8);align-items:center">
       <figure class="shot r34">
-        <img src="bilder/fliesenleger-hannover-partner-schlueter-ditra-verlegt.webp" alt="Verlegte Entkopplungsmatte von Schlüter-Systems mit Abdichtband auf dem Untergrund" loading="lazy" width="860" height="1146">
+        <img src="bilder/fliesenleger-hannover-partner-schlueter-ditra-verlegt.webp" alt="Verlegte Entkopplungsmatte von Schlüter-Systems mit Abdichtband auf dem Untergrund" loading="lazy" width="720" height="959">
         <figcaption><b>Entkopplung und Abdichtung</b><small>Systemmaterial, kein Baumarktregal</small></figcaption>
       </figure>
       <div>
@@ -813,7 +836,7 @@ footer li{margin-bottom:6px}
     </div>
     <div class="f-linie"></div>
     <p class="entitaet">Das Fliesenlegerhandwerk Sandro Bartels ist ein Fliesenlegerfachbetrieb aus Hannover mit 35 Jahren Erfahrung. Der Betrieb übernimmt Fliesen- und Plattenarbeiten, Badsanierungen, bodengleiche Duschen, Großformat- und Feinsteinzeugverlegung, Dünnbett- und Dickbett-Sanierung im Altbau sowie Fugen- und Silikonarbeiten in Hannover und der Region Hannover.</p>
-    <p style="font-size:13px;color:#8E8E8B;margin-top:var(--s5)"><a href="impressum.html" style="color:var(--grau-invers);text-underline-offset:3px">Impressum</a> · <a href="datenschutz.html" style="color:var(--grau-invers);text-underline-offset:3px">Datenschutzerklärung</a> · Entwurf, noch nicht veröffentlicht. Alle Abbildungen zeigen eigene Arbeiten.</p>
+    <p style="font-size:13px;color:#8E8E8B;margin-top:var(--s5)"><a href="impressum.html" style="color:var(--grau-invers);text-underline-offset:3px">Impressum</a> · <a href="datenschutz.html" style="color:var(--grau-invers);text-underline-offset:3px">Datenschutzerklärung</a> · Entwurf, noch nicht veröffentlicht. Projektbilder zeigen eigene Arbeiten, drei Detailaufnahmen sind Beispielbilder.</p>
   </div>
 </footer>
 
