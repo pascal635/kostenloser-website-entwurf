@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asbestsanierung Berlin | Floor-Flex und AZ-Rohre im bewohnten Bestand | D.I.M.O UG</title>
+<meta name="description" content="Asbestsanierung in Berlin: Floor-Flex-Platten samt Kleber und Asbestzementrohre fachgerecht entfernt, auch im bewohnten Zustand und bei laufender Strangsanierung. Kostenloses Angebot anfordern.">
+<link rel="canonical" href="https://dev.likovo.de/service-dimo/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#E3000F">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="D.I.M.O UG">
+<meta property="og:title" content="Asbestsanierung Berlin im bewohnten Bestand | D.I.M.O UG">
+<meta property="og:description" content="Floor-Flex-Platten samt Kleber und AZ-Rohre fachgerecht entfernt, auch im bewohnten Zustand. Ein Ansprechpartner, ein Festpreis. Kostenloses Angebot anfordern.">
+<meta property="og:url" content="https://dev.likovo.de/service-dimo/">
+<meta property="og:image" content="https://dev.likovo.de/service-dimo/bilder/schadstoffsanierung-schutzanzug.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   Nachbau der Moodboard-Vorlage. Referenz-Artboard 1367 px.
+   Farben: Akzent #FFBB13 der Vorlage -> D.I.M.O-Rot #E3000F.
+   Alles fluid: Breiten und Typo in vw, gedeckelt fuer sehr breite Screens.
+   ===================================================================== */
+:root{
+  --red:#E3000F; --red-deep:#B8000C; --red-ink:#B00610;
+  --ink:#0D0D0D; --ink-2:#1A1A1A; --txt:#1C1C1C; --g1:#4D4D4D; --g2:#8A8A8A; --g3:#A6A6A6;
+  --chip:#F2F2F2; --soft:#F5F5F5; --line:#EAEAEA; --white:#fff;
+  /* Raender: Breitbloecke 1,6 %, Textcontainer 4 % (Vorlage: 15 bzw. 55 px bei 1367) */
+  --edge:clamp(12px,1.6vw,44px);
+  --pad:clamp(18px,4vw,120px);
+  /* Abstaende aus der Vorlage (50 / 75 / 110 px bei 1367) */
+  --gap-s:clamp(18px,2.2vw,48px);
+  --gap-m:clamp(28px,3.7vw,80px);
+  --gap-l:clamp(44px,5.5vw,120px);
+  --gap-xl:clamp(60px,8vw,170px);
+  --r:clamp(14px,1.3vw,26px);
+  --r-sm:8px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --fs:clamp(14px,.62vw + 6.6px,21px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;color:var(--txt);font-family:Poppins,system-ui,sans-serif;font-size:var(--fs);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;background-color:#fff;
+  background-image:linear-gradient(to right,rgba(20,24,40,.035) 1px,transparent 1px),linear-gradient(to bottom,rgba(20,24,40,.035) 1px,transparent 1px);
+  background-size:clamp(90px,8.8vw,180px) clamp(90px,8.8vw,180px)}
+img{display:block;max-width:100%}a{color:inherit}p{margin:0}
+p,.hnote,small,.ds,q,.ans{text-wrap:pretty}
+h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.02em;line-height:1.15}
+.acc{color:var(--red)}
+.sb{font-weight:600}
+.w{padding-inline:var(--pad)}
+.e{padding-inline:var(--edge)}
+.center{text-align:center}
+.h2{font-size:clamp(28px,3.25vw,68px)}
+.sub{color:var(--g3);font-size:.9em;line-height:1.65;max-width:44ch;margin:clamp(10px,1vw,20px) auto 0}
+.rule{height:1px;background:var(--line)}
+
+/* ---------- Buttons: abgerundete Rechtecke wie in der Vorlage ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:Poppins,sans-serif;font-weight:500;
+  font-size:clamp(12.5px,.95vw,17px);line-height:1;padding:clamp(13px,1.05vw,20px) clamp(18px,1.7vw,32px);border-radius:var(--r-sm);
+  border:0;text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:transform .2s var(--ease),background-color .2s var(--ease),box-shadow .2s var(--ease)}
+.btn:focus-visible{outline:3px solid rgba(227,0,15,.4);outline-offset:3px}
+.btn:active{transform:translateY(1px)}
+.btn-1{background:var(--red);color:#fff}
+.btn-1:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 8px 22px rgba(227,0,15,.25)}
+.btn-2{background:#EDEDED;color:var(--txt)}
+.btn-2:hover{background:#E4E4E4;transform:translateY(-2px)}
+.chip{display:inline-block;background:var(--chip);border-radius:5px;padding:.42em .95em;font-size:.82em;color:var(--g1);line-height:1.4}
+
+/* ---------- Header ---------- */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:clamp(12px,1.5vw,28px) calc(var(--edge) + 6px) clamp(10px,1vw,18px)}
+.hbar{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{display:inline-flex;align-items:center;gap:clamp(9px,.8vw,14px);background:var(--chip);border-radius:8px;color:var(--txt);
+  padding:clamp(6px,.5vw,9px) clamp(14px,1.4vw,26px) clamp(6px,.5vw,9px) clamp(8px,.7vw,12px);text-decoration:none;
+  font-weight:700;font-size:clamp(15px,1.2vw,22px);letter-spacing:-.01em;flex:0 0 auto}
+.logo img{height:clamp(38px,3.1vw,58px);width:auto;display:block}
+.nav{display:flex;gap:clamp(18px,2.4vw,52px);background:var(--chip);border-radius:8px;padding:clamp(10px,.85vw,16px) clamp(18px,1.8vw,34px)}
+.nav a{font-size:clamp(12.5px,.95vw,17px);color:var(--g1);text-decoration:none;transition:color .2s var(--ease)}
+.nav a:hover{color:var(--red-ink)}
+.nav a[aria-current]{color:var(--txt);font-weight:600}
+.hact{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.burger{display:none;position:relative;width:46px;height:46px;border:0;border-radius:8px;background:var(--chip);cursor:pointer;flex:0 0 auto}
+.burger span{position:absolute;left:14px;right:14px;height:2px;border-radius:2px;background:var(--txt);transition:transform .3s var(--ease),opacity .2s var(--ease)}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.burger:focus-visible{outline:3px solid rgba(227,0,15,.4);outline-offset:2px}
+.mnav{display:none}
+@media(max-width:980px){
+  .nav{display:none}
+  .burger{display:block}
+  .mnav{display:block;position:absolute;left:calc(var(--edge) + 6px);right:calc(var(--edge) + 6px);top:calc(100% + 4px);background:#fff;
+    border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,.16);padding:10px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility 0s linear .25s}
+  .mnav.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+  .mnav nav{display:grid}
+  .mnav nav a{display:flex;justify-content:space-between;align-items:center;padding:15px 12px;border-radius:8px;text-decoration:none;color:var(--txt);font-size:17px;font-weight:500}
+  .mnav nav a+a{border-top:1px solid #F1F1F1}
+  .mnav nav a:hover{background:var(--chip)}
+  .mnav nav a svg{width:16px;height:16px;stroke:var(--g2);stroke-width:1.6;fill:none}
+  .mnav-f{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .mnav-f .btn{padding-inline:10px}
+}
+@media(max-width:520px){.hcta{font-size:13px;padding:11px 14px}.mnav-f{grid-template-columns:1fr}}
+@media(max-width:430px){.logo span{display:none}.logo{padding:6px 10px}}
+
+/* ---------- Hero-Text: zentrierter Block, Zeile 2 nach rechts versetzt ---------- */
+.hero{padding-top:clamp(24px,4.7vw,104px)}
+.h1{font-size:clamp(40px,6.2vw,136px);line-height:1.28;letter-spacing:-.025em}
+.hl{display:flex;align-items:center;justify-content:center;gap:clamp(12px,1.2vw,26px)}
+.hl2{padding-left:11%}
+.kick{font-size:clamp(14px,1.65vw,36px);line-height:1.3;letter-spacing:-.01em;text-align:right;color:var(--g1);flex:0 0 auto}
+.kick b{font-weight:600;color:var(--txt)}
+.hnote{font-size:clamp(12px,.95vw,19px);line-height:1.55;color:var(--g1);max-width:22ch;letter-spacing:0;flex:0 0 auto}
+@media(max-width:860px){
+  .hl{flex-direction:column;align-items:flex-start;gap:6px}
+  .hl2{padding-left:0}
+  .kick{text-align:left;order:0}
+  .hero .ht{text-align:left}
+}
+
+/* ---------- Hero-Band: V-Oberkante, Buttons in der Senke, Lasche unten mittig ---------- */
+.hband{position:relative;margin-top:clamp(28px,3.7vw,80px)}
+.hfig{margin:0;position:relative;width:100%;aspect-ratio:1/.364;max-height:820px;border-radius:var(--r);overflow:hidden;background:#cfc8bc}
+.hfig img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:sepia(.22) saturate(.8) contrast(1.04)}
+.hfig::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(227,0,15,.10),rgba(227,0,15,0) 40%,rgba(227,0,15,.08))}
+.hbtns{position:absolute;left:50%;top:0;transform:translate(-50%,-1px);z-index:3;display:flex;gap:clamp(8px,.8vw,16px)}
+.hchip{position:absolute;left:0;width:26.5%;bottom:0;height:var(--tabD,70px);display:flex;align-items:center;justify-content:center;gap:clamp(12px,1.4vw,26px);z-index:2}
+.hchip .k{font-size:.68em;color:var(--g2);line-height:1.2}
+.hchip .v{font-size:.95em;font-weight:500;display:flex;align-items:center;gap:6px;line-height:1.3}
+.hchip .v::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+.avs{display:flex}
+.avs img{width:clamp(28px,2.3vw,48px);height:clamp(28px,2.3vw,48px);border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-9px}
+.avs img:first-child{margin-left:0}
+@media(max-width:860px){
+  .hfig{aspect-ratio:1/.62}
+  .hbtns{position:static;transform:none;justify-content:flex-start;margin:0 0 18px}
+  .hchip{position:static;height:auto;width:auto;margin-top:14px;justify-content:flex-start;padding-left:4px}
+  .hchip .v{white-space:nowrap}
+}
+
+/* ---------- Ueber uns ---------- */
+.about{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:clamp(18px,1.6vw,40px);align-items:stretch;padding-block:var(--gap-l) var(--gap-m)}
+.about .l{align-self:center}
+.about h2{font-size:clamp(28px,2.95vw,62px);margin:clamp(12px,1.1vw,22px) 0 clamp(14px,1.4vw,28px)}
+.about .txt{color:var(--g3);font-size:.93em;line-height:1.75}
+.about .txt b{color:var(--g1);font-weight:600}
+.who{display:flex;align-items:center;gap:12px;margin-top:clamp(22px,2.4vw,48px)}
+.who .av{width:clamp(40px,3.4vw,66px);height:clamp(40px,3.4vw,66px);border-radius:50%;background:var(--chip);display:grid;place-items:center;font-weight:600;font-size:.85em;color:var(--g1)}
+.who b{display:block;font-weight:500;font-size:.9em;line-height:1.3}
+.who span{font-size:.78em;color:var(--g2)}
+.aimg{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:430/514}
+.aimg img{width:100%;height:100%;object-fit:cover;object-position:46% 50%;filter:sepia(.18) saturate(.8)}
+.about .r{display:flex;flex-direction:column}
+.badge{width:clamp(120px,13vw,280px);aspect-ratio:1;margin:0 auto;position:relative;display:grid;place-items:center}
+.badge svg{position:absolute;inset:0;animation:spin 40s linear infinite}
+.badge img{width:26%;opacity:.55;filter:grayscale(1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mv{margin-top:auto}
+.mv h3{font-size:clamp(17px,1.5vw,30px);margin-bottom:6px}
+.mv p{color:var(--g3);font-size:.9em;line-height:1.7}
+.mv .rule{margin:clamp(14px,1.6vw,30px) 0}
+@media(max-width:980px){.about{grid-template-columns:1fr 1fr}.about .r{grid-column:1/-1}.mv{margin-top:24px}}
+@media(max-width:640px){.about{grid-template-columns:1fr}}
+
+/* ---------- Leistungen: zentrierter Streifen, blutet beidseitig aus ---------- */
+.svc{padding-block:var(--gap-l) 0}
+.strip-wrap{position:relative;margin-top:clamp(24px,3vw,64px)}
+.strip{position:relative;display:flex;gap:clamp(14px,2.8vw,58px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  padding:0 0 var(--stag) 0;--stag:clamp(22px,3.1vw,64px);--cw:clamp(210px,20.3vw,440px)}
+.strip::-webkit-scrollbar{display:none}
+.strip::before,.strip::after{content:"";flex:0 0 calc(50vw - var(--cw)/2 - clamp(14px,2.8vw,58px))}
+.sc{flex:0 0 var(--cw);aspect-ratio:277/297;position:relative;border-radius:clamp(12px,1.25vw,24px);overflow:hidden;scroll-snap-align:center;
+  background:var(--ink-2);transition:transform .6s var(--ease)}
+.sc.lo{transform:translateY(var(--stag))}
+.strip.nt .sc,.strip.nt .sc *{transition:none!important}
+.sc img{width:100%;height:100%;object-fit:cover;filter:sepia(.2) saturate(.82)}
+.sc .ic{position:absolute;inset:0;display:grid;place-items:center;padding-bottom:18%}
+.sc .ic svg{width:26%;height:auto;stroke:var(--red);stroke-width:1.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.sc .ic::before{content:"";position:absolute;inset:0;opacity:.5;background:
+  repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 1px,transparent 1px 16px)}
+.sc img{transition:transform .8s var(--ease)}
+.sc::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .35s var(--ease);
+  background:linear-gradient(180deg,rgba(14,14,16,.38) 0%,rgba(14,14,16,.62) 45%,rgba(14,14,16,.86) 100%)}
+.sc .cap{position:absolute;left:clamp(8px,.75vw,14px);right:clamp(8px,.75vw,14px);bottom:clamp(8px,.75vw,14px);z-index:2;display:flex;flex-direction:column;gap:clamp(10px,1vw,18px)}
+.sc .ds{margin:0;padding:0 clamp(6px,.6vw,12px);color:#fff;font-family:Inter,sans-serif;font-size:clamp(12.5px,.98vw,18px);line-height:1.45;
+  opacity:0;transform:translateY(10px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.sc .lb{background:#fff;border-radius:clamp(8px,.75vw,14px);padding:clamp(9px,.85vw,16px) 10px;text-align:center;
+  font-family:Poppins,sans-serif;font-weight:400;font-size:clamp(12px,1vw,19px);line-height:1.3;letter-spacing:0;margin:0}
+@media(hover:hover){
+  .sc:hover::after{opacity:1}.sc:hover .ds{opacity:1;transform:none}.sc:hover img{transform:scale(1.05)}
+}
+.sc:focus-within::after{opacity:1}.sc:focus-within .ds{opacity:1;transform:none}
+@media(hover:none){.sc.is-active::after{opacity:1}.sc.is-active .ds{opacity:1;transform:none}}
+.ill-c{background:#EFE9DE}
+.ill{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pc.ill-c{text-decoration:none;color:var(--txt);display:block}
+.pc.ill-c:hover .go{background:var(--red);color:#fff}
+.svc-cta{text-align:center;margin-top:clamp(22px,2.2vw,44px);position:relative;z-index:2}
+.sctl{display:flex;justify-content:center;gap:10px;margin-top:clamp(18px,1.8vw,36px)}
+.sctl .i-play{display:none}
+.sctl #sPlay[aria-pressed="true"] .i-play{display:block}.sctl #sPlay[aria-pressed="true"] .i-pause{display:none}
+.sctl .i-play path{fill:currentColor;stroke:none}
+.sprog{display:flex;align-items:center;justify-content:center;gap:clamp(12px,1.1vw,20px);margin-top:clamp(10px,1vw,22px);
+  font-family:Poppins,sans-serif;font-size:clamp(13px,.95vw,18px);font-variant-numeric:tabular-nums}
+.sprog .n{font-weight:600;color:var(--txt);min-width:2ch;text-align:center}
+.sprog .n.t{color:var(--g2);font-weight:400}
+.sprog .track{position:relative;width:clamp(160px,17vw,340px);height:2px;background:#E2E2E2;border-radius:2px;overflow:hidden}
+.sprog .track i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--red);border-radius:2px;transition:width .6s var(--ease)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.svc .rule{margin-top:var(--gap-m)}
+@media(max-width:860px){.strip{--cw:min(64vw,320px)}}
+
+/* ---------- Formen fuer die dunklen Bloecke (Pfad wird per JS berechnet) ---------- */
+.dk{position:relative;color:#fff}
+.dk>.shape{position:absolute;inset:0;background:var(--ink);border-radius:var(--r);overflow:hidden}
+.dk>.shape::before{content:"";position:absolute;inset:0;opacity:.9;background:
+  linear-gradient(118deg,transparent 52%,rgba(255,255,255,.035) 52% 58%,transparent 58%),
+  linear-gradient(28deg,transparent 60%,rgba(255,255,255,.03) 60% 64%,transparent 64%),
+  linear-gradient(152deg,transparent 70%,rgba(255,255,255,.028) 70% 74%,transparent 74%)}
+.dk>.inner{position:relative;z-index:1}
+
+/* ---------- Warum-Block ---------- */
+.why{margin-top:var(--gap-m)}
+.why .inner{padding:clamp(40px,3.8vw,82px) clamp(20px,3.1vw,66px) clamp(58px,6vw,130px)}
+.why h2{font-size:clamp(28px,3.4vw,72px)}
+.why .sub{color:#8C8C8C}
+.wgrid{--wg:clamp(14px,1.9vw,40px);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--wg);margin:clamp(28px,4vw,86px) auto 0;max-width:1680px}
+.wc{flex:0 0 calc((100% - 2*var(--wg))/3);background:rgba(255,255,255,.1);border-radius:clamp(12px,1.1vw,22px);
+  padding:clamp(20px,1.9vw,40px);min-height:clamp(190px,15vw,330px);display:flex;flex-direction:column;transition:background-color .25s var(--ease)}
+.wc:hover{background:rgba(255,255,255,.14)}
+@media(max-width:980px){.wc{flex-basis:calc((100% - var(--wg))/2)}}
+@media(max-width:600px){.wc{flex-basis:100%;min-height:0}}
+.wc .no{font-weight:300;font-size:clamp(28px,2.9vw,62px);line-height:1;color:rgba(255,255,255,.3);margin-bottom:clamp(20px,2.6vw,56px)}
+.wc h3{font-weight:500;font-size:clamp(15px,1.3vw,27px);margin-bottom:clamp(10px,1vw,20px);letter-spacing:-.01em}
+.wc p{font-size:.86em;color:#8C8C8C;line-height:1.7}
+
+/* ---------- Projekte ---------- */
+.proj{padding-top:var(--gap-l)}
+.proj h2,.tst h2{font-weight:600}
+.pgrid{display:grid;grid-template-columns:30.9fr 20.8fr 20.8fr 20.8fr;gap:2.2%;margin-top:clamp(28px,4.3vw,92px)}
+.pc{position:relative;border-radius:clamp(12px,1.25vw,24px);overflow:hidden;aspect-ratio:auto;height:clamp(300px,30.5vw,660px);background:var(--soft)}
+.pc img{width:100%;height:100%;object-fit:cover;filter:sepia(.2) saturate(.82)}
+.pc .go{position:absolute;right:clamp(10px,1vw,20px);top:clamp(10px,1vw,20px);width:clamp(40px,3.9vw,80px);aspect-ratio:1;border-radius:50%;
+  background:rgba(255,255,255,.82);display:grid;place-items:center;color:var(--txt)}
+.pc .go svg{width:32%;stroke:currentColor;stroke-width:1.6;fill:none}
+.pc .ov{position:absolute;left:clamp(8px,.75vw,14px);right:clamp(8px,.75vw,14px);bottom:clamp(8px,.75vw,14px);background:#fff;border-radius:clamp(8px,.8vw,14px);
+  padding:clamp(12px,1.15vw,22px) clamp(14px,1.2vw,24px)}
+.pc .ov b{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:clamp(15px,1.3vw,26px);margin-bottom:6px;letter-spacing:-.01em}
+.pc .ov span{display:block;font-family:Inter,sans-serif;font-size:.78em;color:var(--g1);line-height:1.45}
+.pc.empty{display:grid;place-items:center;text-align:center;padding:24px;border:1px dashed #D5D5D5;color:var(--g2);font-size:.82em}
+.proj-cta{text-align:center;margin-top:var(--gap-m)}
+@media(max-width:980px){.pgrid{grid-template-columns:1fr 1fr;gap:14px}.pc{height:clamp(240px,48vw,420px)}}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+
+/* ---------- Karten-Reihe in Testimonial-Geometrie ---------- */
+.tst{padding-top:var(--gap-m)}
+.tst .rule{margin-bottom:var(--gap-m)}
+.tst h2{max-width:22ch;margin-inline:auto}
+.trow{--tw:clamp(250px,20.6vw,440px);--tg:clamp(14px,2.8vw,58px);--fade:clamp(28px,7vw,160px);position:relative;display:flex;gap:var(--tg);
+  overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;margin:clamp(28px,4.3vw,92px) calc(-1*var(--pad)) 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 var(--fade),#000 calc(100% - var(--fade)),transparent 100%)}
+.trow::before,.trow::after{content:"";flex:0 0 calc(50% - var(--tw)/2 - var(--tg))}
+.trow .tc{scroll-snap-align:center;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.trow .tc:not(.on){opacity:.55}
+.tfoot{display:flex;flex-direction:column;align-items:center;gap:clamp(12px,1.2vw,22px);margin-top:clamp(18px,1.8vw,34px);text-align:center}
+.tfoot .tnote{margin:0}
+.tctl{display:flex;gap:10px;flex:0 0 auto}
+.cbtn{width:clamp(44px,3.4vw,64px);aspect-ratio:1;border:0;border-radius:8px;background:var(--soft);color:var(--txt);display:grid;place-items:center;cursor:pointer;
+  transition:background-color .2s var(--ease),color .2s var(--ease),opacity .2s var(--ease)}
+.cbtn svg{width:38%;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cbtn:hover:not(:disabled){background:var(--red);color:#fff}
+.cbtn:focus-visible{outline:3px solid rgba(227,0,15,.4);outline-offset:2px}
+.cbtn:disabled{opacity:.35;cursor:default}
+.trow::-webkit-scrollbar{display:none}
+.tc{flex:0 0 var(--tw,clamp(250px,20.6vw,440px));min-height:clamp(230px,20.6vw,440px);background:var(--soft);border-radius:clamp(12px,1.2vw,24px);
+  padding:clamp(20px,1.6vw,34px);display:flex;flex-direction:column;scroll-snap-align:start;position:relative}
+.tc.wide{flex-basis:clamp(320px,29.8vw,640px)}
+.tc q{quotes:none;font-family:Inter,sans-serif;font-size:clamp(16px,1.5vw,31px);line-height:1.38;color:var(--g1);letter-spacing:-.01em}
+.tc .bt{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:18px}
+.tc .tag{font-family:Inter,sans-serif}
+.tc .tag i{display:block;font-style:normal;font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:6px}
+.tc .tag b{font-weight:600;font-size:.86em}
+.tc .rb{width:clamp(38px,3.4vw,70px);aspect-ratio:1;border-radius:50% 50% 50% 14%;background:var(--red);color:#fff;display:grid;place-items:center;flex:0 0 auto}
+.tc .rb svg{width:36%;stroke:currentColor;stroke-width:1.8;fill:none}
+.tc .th{position:relative;width:clamp(110px,9.1vw,200px);aspect-ratio:118/88;border-radius:10px;overflow:hidden;flex:0 0 auto}
+.tc .th img{width:100%;height:100%;object-fit:cover}
+.tc .th .rb{position:absolute;right:6px;bottom:6px;width:clamp(32px,2.6vw,54px)}
+.tnote{font-size:.78em;color:var(--g2)}
+
+/* ---------- FAQ ---------- */
+.faqb{margin-top:var(--gap-xl)}
+.faqb .inner{display:grid;grid-template-columns:30fr 34fr;gap:clamp(24px,3.4vw,80px);align-items:center;
+  padding:clamp(56px,6.9vw,150px) 15.5% clamp(44px,5vw,110px) 15%}
+.faqb .chip{background:#EDEDED;color:var(--txt);border:1px solid #fff}
+.faqb h2{font-weight:600;font-size:clamp(28px,3.25vw,70px);margin:clamp(12px,1.3vw,26px) 0 clamp(14px,1.4vw,28px);line-height:1.18}
+.faqb .l p{color:#8C8C8C;font-size:.9em;line-height:1.7;max-width:38ch;margin-bottom:clamp(24px,3vw,60px)}
+.acc-i{background:rgba(255,255,255,.1);border-radius:clamp(8px,.8vw,14px);margin-bottom:clamp(8px,.9vw,16px);overflow:hidden}
+.acc-i summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:clamp(12px,1.1vw,22px);padding:clamp(9px,.8vw,16px);
+  font-family:Inter,sans-serif;font-weight:600;font-size:clamp(13px,1.06vw,21px);line-height:1.35;color:#F2F2F2;transition:background-color .2s var(--ease)}
+.acc-i summary::-webkit-details-marker{display:none}
+.acc-i summary:hover{background:rgba(255,255,255,.05)}
+.acc-i summary:focus-visible{outline:3px solid rgba(227,0,15,.5);outline-offset:-3px}
+.acc-i .pm{flex:0 0 auto;width:clamp(30px,2.6vw,54px);aspect-ratio:1;border-radius:6px;background:rgba(255,255,255,.1);display:grid;place-items:center;
+  font-size:1.35em;font-weight:300;transition:transform .25s var(--ease),background-color .25s var(--ease)}
+.acc-i[open] .ans{animation:ansIn .35s var(--ease)}
+@keyframes ansIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.acc-i[open]{background:rgba(255,255,255,.14)}
+.acc-i[open] .pm{transform:rotate(45deg);background:var(--red)}
+.acc-i .ans{padding:0 clamp(14px,1.2vw,24px) clamp(14px,1.2vw,24px) calc(clamp(30px,2.6vw,54px) + clamp(9px,.8vw,16px) + clamp(12px,1.1vw,22px));
+  font-family:Inter,sans-serif;font-size:clamp(12.5px,.95vw,18px);line-height:1.7;color:#A0A0A0}
+.topo{position:absolute;right:0;top:0;width:62%;height:100%;opacity:.14;pointer-events:none}
+.cubes{position:absolute;left:0;bottom:0;width:22%;opacity:.16;pointer-events:none}
+@media(max-width:980px){.faqb .inner{grid-template-columns:1fr;padding:clamp(64px,10vw,110px) 22px 34px}}
+
+/* ---------- Kontakt (nach der Kontaktseite der Vorlage) ---------- */
+.ct{padding-top:var(--gap-xl)}
+.ct-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(18px,2.8vw,60px);align-items:start}
+.ct .badge{width:clamp(110px,12.4vw,260px);margin:0}
+.ct h2{font-size:clamp(44px,6.6vw,146px);line-height:.98;letter-spacing:-.02em}
+.ct h2 .big{font-weight:700;color:var(--red);display:block}
+.ct h2 .row2{display:flex;align-items:center;gap:clamp(12px,1.3vw,28px);flex-wrap:wrap}
+.ct h2 .row2 span{color:#444;font-weight:400}
+.ct h2 small{font-size:clamp(12.5px,1.03vw,21px);line-height:1.5;color:var(--g2);letter-spacing:0;flex:1 1 20ch;max-width:36ch;font-weight:400}
+.form{width:clamp(300px,27.7vw,580px);background:var(--soft);border-radius:clamp(8px,.8vw,14px);padding:clamp(18px,1.55vw,32px);
+  box-shadow:0 2px 12px rgba(0,0,0,.05);position:relative;z-index:3}
+.form h3{font-family:Inter,sans-serif;font-weight:600;font-size:clamp(18px,1.6vw,32px);margin-bottom:clamp(14px,1.3vw,26px);letter-spacing:-.01em}
+.form .seg{display:flex;background:#fff;border-radius:8px;padding:4px;margin-bottom:10px}
+.form .seg button{flex:1;font:inherit;font-family:Inter,sans-serif;font-size:.86em;border:0;background:transparent;color:var(--g1);padding:9px;border-radius:6px;cursor:pointer;transition:background-color .2s var(--ease)}
+.form .seg button[aria-pressed="true"]{background:var(--txt);color:#fff}
+.form .seg button:focus-visible{outline:3px solid rgba(227,0,15,.4);outline-offset:2px}
+.form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.inp{display:block;width:100%;font-family:Inter,sans-serif;font-size:clamp(14px,1.1vw,21px);color:var(--txt);background:#fff;border:1px solid #fff;border-radius:7px;
+  padding:clamp(11px,.95vw,18px) clamp(12px,1vw,18px);margin-bottom:clamp(8px,.75vw,14px);transition:border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.inp::placeholder{color:#555}
+.inp:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(227,0,15,.1)}
+textarea.inp{min-height:clamp(64px,5.5vw,120px);resize:vertical}
+.form .btn{width:100%;font-weight:600;font-size:clamp(14px,1.15vw,22px);padding-block:clamp(13px,1.1vw,22px)}
+.form .fn{font-size:.72em;color:var(--g2);margin-top:10px;font-family:Inter,sans-serif}
+.cband{position:relative;margin-top:clamp(-260px,-16.8vw,-120px)}
+.cfig{margin:0;border-radius:clamp(14px,1.5vw,28px);overflow:hidden;aspect-ratio:1297/450;position:relative;background:#d8d1c3}
+.cfig img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;filter:sepia(.4) saturate(.55) contrast(.86) brightness(1.1)}
+.cfig::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(242,236,224,.55),rgba(242,236,224,.3) 60%,rgba(242,236,224,.2))}
+.cfig .ghost{position:absolute;left:18%;top:2%;font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(60px,15vw,330px);line-height:1;
+  color:rgba(78,72,64,.5);letter-spacing:-.02em;mix-blend-mode:multiply;pointer-events:none;z-index:2}
+.ct-line{display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,1.4vw,28px);flex-wrap:wrap;margin-top:clamp(40px,5.6vw,120px)}
+.ct-line .btn{margin-left:auto;flex:0 0 auto}
+.ct-line p{font-size:clamp(22px,2.6vw,56px);line-height:1.3;letter-spacing:-.02em;color:#8C8C8C}
+.ct-line p b{font-weight:500;color:var(--txt)}
+.ct-boxes{display:flex;justify-content:flex-end;gap:clamp(12px,1.4vw,28px);margin-top:clamp(28px,3.4vw,70px);flex-wrap:wrap}
+.cbx{display:flex;align-items:center;gap:12px;background:var(--soft);border-radius:clamp(10px,1vw,18px);padding:clamp(12px,1.1vw,22px) clamp(16px,1.5vw,30px);text-decoration:none}
+.cbx small{display:block;font-family:Inter,sans-serif;font-size:.74em;color:var(--g1)}
+.cbx span{display:block;font-family:Inter,sans-serif;font-size:clamp(15px,1.55vw,32px);line-height:1.25;letter-spacing:-.01em}
+.cbx:hover{background:#EFEFEF}
+.cbx.icons{gap:10px}
+.cbx.icons a{width:clamp(34px,3.1vw,64px);aspect-ratio:1;border-radius:8px;background:#fff;display:grid;place-items:center;color:var(--g1)}
+.cbx.icons a:hover{color:var(--red)}
+.ico{width:46%;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:980px){
+  .ct-top{grid-template-columns:1fr;gap:26px}
+  .ct .badge{display:none}
+  .form{width:100%}
+  .cband{margin-top:26px}
+  .ct-boxes{justify-content:flex-start}
+}
+
+/* ---------- Footer ---------- */
+.foot{padding-top:var(--gap-xl);padding-bottom:clamp(16px,1.6vw,32px);font-family:Inter,sans-serif}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2vw,40px)}
+.fgrid .c1{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.fgrid .logo{font-family:Poppins,sans-serif;align-self:flex-start;font-size:clamp(17px,1.5vw,28px);gap:clamp(12px,1vw,18px);padding:clamp(8px,.7vw,12px) clamp(18px,1.7vw,32px) clamp(8px,.7vw,12px) clamp(10px,.9vw,16px)}
+.fgrid .logo img{height:clamp(56px,4.6vw,88px)}
+.fgrid h4{font-family:Inter,sans-serif;font-weight:600;font-size:clamp(15px,1.25vw,24px);margin-bottom:clamp(18px,2.3vw,48px);letter-spacing:-.01em}
+.fgrid nav{display:grid;gap:clamp(12px,1.7vw,36px)}
+.fgrid nav a,.fgrid nav span{font-size:clamp(12.5px,.95vw,18px);color:var(--g2);text-decoration:none;line-height:1.3}
+.fgrid nav a:hover{color:var(--red-ink)}
+.soc{display:flex;gap:clamp(10px,1.1vw,22px)}
+.soc a{width:clamp(38px,3.3vw,68px);aspect-ratio:1;border-radius:7px;background:var(--soft);display:grid;place-items:center;color:var(--g1)}
+.soc a:hover{color:var(--red)}
+.fbar{margin-top:clamp(28px,4vw,84px);background:var(--soft);border-radius:7px;padding:clamp(11px,1vw,20px) clamp(16px,1.6vw,32px);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:clamp(12px,.92vw,17px);color:var(--g1)}
+.fbar b{color:var(--txt);font-weight:600}
+.fbar a{color:var(--g1);text-decoration:none}.fbar a:hover{color:var(--red-ink)}
+@media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.fgrid{grid-template-columns:1fr}}
+
+/* ---------- Mobil ---------- */
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:100;background:#fff;padding:10px 16px;border-radius:8px}
+section[id]{scroll-margin-top:clamp(84px,7.4vw,140px)}
+
+/* ---------- Kleine Screens: Texte nutzen die volle Breite oder teilen sie sich mit einem Nachbarn ---------- */
+@media(max-width:980px){
+  br.dbr{display:none}
+  .faqb .l p{max-width:none}
+  .faqb .l h2{max-width:none}
+  .ct h2 .row2{align-items:flex-end}
+  .ct h2 small{flex:1 1 240px;max-width:none}
+  .ct-line p{flex:1 1 300px}
+}
+@media(max-width:860px){
+  .h1{font-size:clamp(30px,calc((100vw - 2*var(--pad))/9.3),76px);line-height:1.2}
+  .hl{width:100%}
+  .kick{font-size:clamp(14px,2.2vw,19px)}
+  .hnote{max-width:none;font-size:clamp(14px,2vw,17px);margin-top:4px}
+}
+
+/* ---------- Sehr breite Screens: Raster bleibt, Luft waechst mit ---------- */
+@media(min-width:1440px){ .why .inner{padding-inline:clamp(40px,3.6vw,90px)} }
+@media(min-width:1920px){ .hnote{max-width:24ch} .faqb .inner{padding-inline:17%} }
+@media(min-width:2400px){ :root{--pad:clamp(120px,8vw,300px);--edge:clamp(44px,2.4vw,90px)} }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="site">
+  <div class="hbar">
+    <a class="logo" href="#top" aria-label="D.I.M.O, zum Seitenanfang"><img src="logo.png" alt="" width="108" height="128"><span>D.I.M.O</span></a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#top" aria-current="page">Start</a><a href="#leistungen">Leistungen</a><a href="#ueber">Über uns</a><a href="#projekte">Projekte</a><a href="#fragen">Fragen</a>
+    </nav>
+    <div class="hact">
+      <a class="btn btn-1 hcta" href="#kontakt">Angebot anfordern</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mnav" id="mnav">
+    <nav aria-label="Menü">
+      <a href="#top">Start<svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></a>
+      <a href="#leistungen">Leistungen<svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></a>
+      <a href="#ueber">Über uns<svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></a>
+      <a href="#projekte">Projekte<svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></a>
+      <a href="#fragen">Fragen<svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></a>
+      <a href="#kontakt">Kontakt<svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></svg></a>
+    </nav>
+    <div class="mnav-f"><a class="btn btn-1" href="#kontakt">Kostenloses Angebot</a><a class="btn btn-2" href="tel:+4930921060949">030 921 060 949</a></div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="w">
+    <h1 class="h1">
+      <span class="hl"><span class="kick">Asbestsanierung im<br class="dbr"> Bestand in <b>Berlin</b></span><span class="ht"><span class="acc">Asbest</span> sicher raus,</span></span>
+      <span class="hl hl2"><span class="ht">Bau läuft <span class="acc">weiter.</span></span><span class="hnote">Floor-Flex-Platten samt Kleber und AZ-Rohre fachgerecht entfernt, auch im bewohnten Zustand.</span></span>
+    </h1>
+  </div>
+  <div class="e">
+    <div class="hband" data-shape="hero">
+      <div class="hbtns">
+        <a class="btn btn-1" href="#kontakt">Kostenloses Angebot</a>
+        <a class="btn btn-2" href="#leistungen">Unsere Leistungen</a>
+      </div>
+      <figure class="hfig">
+        <img src="bilder/schadstoffsanierung-schutzanzug.webp" alt="Fachkraft im Schutzanzug bindet Staub mit Sprühnebel" width="2000" height="1333" fetchpriority="high">
+      </figure>
+      <div class="hchip">
+        <div><div class="k">Einsatzgebiet</div><div class="v">Berlin und Umland</div></div>
+        <div class="avs" aria-hidden="true">
+          <img src="bilder/sanierung-berlin-fassade-abbruch.webp" alt=""><img src="bilder/bausanierung-berlin-wohnung-bezugsfertig.webp" alt=""><img src="bilder/galabau-berlin-hofbegruenung.webp" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UEBER UNS ================= -->
+<section id="ueber" class="w">
+  <div class="about">
+    <div class="l">
+      <span class="chip">Über D.I.M.O</span>
+      <h2>Worauf wir stehen</h2>
+      <p class="txt">Bei D.I.M.O kommen <b>Schadstoffsanierung, Abbruch, Gewerkekoordination, Baureinigung und SiGeKo</b> aus einer Hand. Wir holen Asbest aus dem Berliner Bestand, auch während Mieter wohnen, und übergeben das Objekt bezugsfertig.</p>
+      <div class="who"><span class="av">PS</span><div><b>Phillip Schmidt</b><span>Geschäftsführer</span></div></div>
+    </div>
+    <figure class="aimg"><img src="bilder/asbestsanierung-atemschutz.webp" alt="Fachkraft mit Atemschutzmaske und Schutzanzug bei der Arbeit" width="1200" height="797" loading="lazy"></figure>
+    <div class="r">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="bc1" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+          <text font-family="Poppins" font-size="15" letter-spacing="3.1" fill="#A6A6A6"><textPath href="#bc1">MEHR ÜBER UNS · MEHR ÜBER UNS · MEHR ÜBER UNS ·</textPath></text></svg>
+        <img src="logo.png" alt="">
+      </div>
+      <div class="mv">
+        <h3>Unser Auftrag</h3>
+        <p>Schadstoffe aus dem Bestand holen, ohne dass Mieter ausziehen und ohne dass der Bauablauf stehen bleibt.</p>
+        <div class="rule"></div>
+        <h3>Unser Anspruch</h3>
+        <p>Ein Ansprechpartner, ein Festpreis und am Ende Freimessungsprotokoll und Entsorgungsnachweis in Ihrer Hand.</p>
+      </div>
+    </div>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<!-- ================= LEISTUNGEN ================= -->
+<section id="leistungen" class="svc">
+  <div class="w center">
+    <h2 class="h2"><span class="acc">Unsere</span> Leistungen</h2>
+    <p class="sub">Von der Schadstoffsanierung über Abbruch und Gewerkekoordination bis zur bezugsfertigen Übergabe.</p>
+    <div class="sctl" role="group" aria-label="Leistungen steuern">
+      <button class="cbtn" type="button" id="sPrev" aria-controls="strip" aria-label="Vorherige Leistung"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="cbtn" type="button" id="sPlay" aria-controls="strip" aria-pressed="false" aria-label="Automatischen Lauf anhalten"><svg viewBox="0 0 24 24" class="i-pause"><path d="M9 5v14M15 5v14"/></svg><svg viewBox="0 0 24 24" class="i-play"><path d="M8 5l11 7-11 7z"/></svg></button>
+      <button class="cbtn" type="button" id="sNext" aria-controls="strip" aria-label="Nächste Leistung"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="strip-wrap">
+    <div class="strip" id="strip" tabindex="0" aria-label="Leistungen, läuft automatisch, pausiert bei Mauskontakt" aria-roledescription="Karussell">
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><g fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"><path d="M36 170c0-40 24-66 58-66s58 26 58 66"/><path d="M26 170h136v10H26z"/><path d="M94 104v66M70 112l6 58M118 112l-6 58"/><rect x="152" y="72" width="92" height="124" rx="6"/><path d="M180 72v-8h36v8"/><rect x="164" y="96" width="11" height="11" rx="2"/><path d="M182 102h44"/><rect x="164" y="122" width="11" height="11" rx="2"/><path d="M182 128h44"/><rect x="164" y="148" width="11" height="11" rx="2"/><path d="M182 154h44"/><rect x="164" y="174" width="11" height="11" rx="2"/><path d="M182 180h44"/></g><g fill="none" stroke-linecap="round"><path d="M166 101l3 3 6-7" stroke="#E3000F" stroke-width="1.8"/><path d="M166 127l3 3 6-7" stroke="#E3000F" stroke-width="1.8"/><path d="M166 153l3 3 6-7" stroke="#E3000F" stroke-width="1.8"/></g><text x="26" y="42" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A3A3A" letter-spacing="1">BAUSTELLV</text><text x="26" y="56" font-family="Inter, Arial, sans-serif" font-size="10" fill="#E3000F" letter-spacing="1">ANHANG II</text></svg><div class="cap"><p class="ds">Koordination von Sicherheit und Gesundheitsschutz nach Baustellenverordnung.</p><h3 class="lb">SiGeKo</h3></div></article>
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><g fill="none" stroke="#3A3A3A" stroke-width="1.3"><rect x="46" y="134" width="20" height="56"/><rect x="80" y="112" width="20" height="78"/><rect x="114" y="126" width="20" height="64"/><rect x="148" y="94" width="20" height="96"/><rect x="182" y="106" width="20" height="84"/><rect x="216" y="120" width="20" height="70"/><path d="M34 190H246M34 70V190"/></g><path d="M34 86H246" stroke="#E3000F" stroke-width="1.6" stroke-dasharray="6 4"/><text x="178" y="80" font-family="Inter, Arial, sans-serif" font-size="10" fill="#E3000F" letter-spacing="1">BUDGET</text><text x="34" y="44" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A3A3A" letter-spacing="1">ANGEBOT · RECHNUNG</text></svg><div class="cap"><p class="ds">Angebote prüfen, Nachträge bewerten, Rechnungen gegen den Auftrag halten.</p><h3 class="lb">Kostenüberwachung</h3></div></article>
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><g fill="none" stroke="#3A3A3A" stroke-width="1"><path d="M42 78.0H236"/><path d="M72.0 78.0V91.6"/><path d="M102.0 78.0V91.6"/><path d="M132.0 78.0V91.6"/><path d="M162.0 78.0V91.6"/><path d="M192.0 78.0V91.6"/><path d="M222.0 78.0V91.6"/><path d="M42 91.6H236"/><path d="M57.0 91.6V105.2"/><path d="M87.0 91.6V105.2"/><path d="M117.0 91.6V105.2"/><path d="M147.0 91.6V105.2"/><path d="M177.0 91.6V105.2"/><path d="M207.0 91.6V105.2"/><path d="M42 105.2H236"/><path d="M72.0 105.2V118.8"/><path d="M102.0 105.2V118.8"/><path d="M132.0 105.2V118.8"/><path d="M162.0 105.2V118.8"/><path d="M192.0 105.2V118.8"/><path d="M222.0 105.2V118.8"/><path d="M42 118.8H236"/><path d="M57.0 118.8V132.4"/><path d="M87.0 118.8V132.4"/><path d="M117.0 118.8V132.4"/><path d="M147.0 118.8V132.4"/><path d="M177.0 118.8V132.4"/><path d="M207.0 118.8V132.4"/><path d="M42 132.4H236"/><path d="M72.0 132.4V146.0"/><path d="M102.0 132.4V146.0"/><path d="M132.0 132.4V146.0"/><path d="M162.0 132.4V146.0"/><path d="M192.0 132.4V146.0"/><path d="M222.0 132.4V146.0"/><path d="M42 146.0H236"/><path d="M57.0 146.0V159.6"/><path d="M87.0 146.0V159.6"/><path d="M117.0 146.0V159.6"/><path d="M147.0 146.0V159.6"/><path d="M177.0 146.0V159.6"/><path d="M207.0 146.0V159.6"/><path d="M42 159.6H236"/><path d="M72.0 159.6V173.2"/><path d="M102.0 159.6V173.2"/><path d="M132.0 159.6V173.2"/><path d="M162.0 159.6V173.2"/><path d="M192.0 159.6V173.2"/><path d="M222.0 159.6V173.2"/><path d="M42 173.2H236"/><path d="M57.0 173.2V186.8"/><path d="M87.0 173.2V186.8"/><path d="M117.0 173.2V186.8"/><path d="M147.0 173.2V186.8"/><path d="M177.0 173.2V186.8"/><path d="M207.0 173.2V186.8"/><path d="M42 186.8H236"/><path d="M72.0 186.8V200.4"/><path d="M102.0 186.8V200.4"/><path d="M132.0 186.8V200.4"/><path d="M162.0 186.8V200.4"/><path d="M192.0 186.8V200.4"/><path d="M222.0 186.8V200.4"/><path d="M42 200.4H236"/><path d="M57.0 200.4V214.0"/><path d="M87.0 200.4V214.0"/><path d="M117.0 200.4V214.0"/><path d="M147.0 200.4V214.0"/><path d="M177.0 200.4V214.0"/><path d="M207.0 200.4V214.0"/></g><rect x="42" y="78" width="194" height="136" fill="none" stroke="#3A3A3A" stroke-width="1.3"/><path d="M104 112 L122 100 L146 106 L168 98 L184 116 L178 138 L188 160 L172 182 L150 176 L128 186 L110 170 L100 148 L108 130 Z" fill="#2B2B2B" stroke="#3A3A3A" stroke-width="1.3" stroke-linejoin="round"/><path d="M94 92 H196 V194 H94 Z" fill="none" stroke="#E3000F" stroke-width="1.5" stroke-dasharray="6 4"/><g fill="#EFE9DE" stroke="#3A3A3A" stroke-width="1.2" stroke-linejoin="round"><path d="M104 254 l7 -3 l5 5 l-6 3 Z"/><path d="M126 256 l5 -4 l2 6 l-6 1 Z"/><path d="M150 253 l8 -5 l2 6 l-6 3 Z"/><path d="M176 256 l8 -2 l2 6 l-10 1 Z"/><path d="M198 254 l9 -5 l2 6 l-6 3 Z"/><path d="M86 257 l6 -4 l5 6 l-10 1 Z"/><path d="M214 257 l9 -4 l3 5 l-10 3 Z"/></g><path d="M34 262H244" stroke="#3A3A3A" stroke-width="1.3"/><text x="24" y="40" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="1" fill="#3A3A3A">RÜCKBAU</text><text x="24" y="54" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="1" fill="#E3000F">BIS ROHBAU</text></svg><div class="cap"><p class="ds">Rückbau im Bestand bis auf den Rohbau, danach Aufbau bis zur Übergabe.</p><h3 class="lb">Sanierung und Abbruch</h3></div></article>
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><g fill="none" stroke="#3A3A3A" stroke-width="1.2" stroke-linejoin="round"><path d="M138.0 62.0L44.5 116.0"/><path d="M138.0 62.0L231.5 116.0"/><path d="M161.4 75.5L67.9 129.5"/><path d="M114.6 75.5L208.1 129.5"/><path d="M184.8 89.0L91.2 143.0"/><path d="M91.2 89.0L184.8 143.0"/><path d="M208.1 102.5L114.6 156.5"/><path d="M67.9 102.5L161.4 156.5"/><path d="M231.5 116.0L138.0 170.0"/><path d="M44.5 116.0L138.0 170.0"/></g><path d="M161.4 102.5 L184.8 116.0 L161.4 129.5 L138.0 116.0 Z" fill="#2B2B2B" opacity=".85"/><g stroke="#E3000F" stroke-width="1.2" stroke-dasharray="3 3" fill="none"><path d="M161.4 102.5L161.4 72.5"/><path d="M184.8 116.0L184.8 86.0"/><path d="M161.4 129.5L161.4 99.5"/><path d="M138.0 116.0L138.0 86.0"/></g><path d="M161.4 72.5 L184.8 86.0 L161.4 99.5 L138.0 86.0 Z" fill="#fff" stroke="#E3000F" stroke-width="1.6" stroke-linejoin="round"/><text x="20" y="34" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A3A3A" letter-spacing="1">VAT 30 x 30</text><text x="20" y="48" font-family="Inter, Arial, sans-serif" font-size="10" fill="#E3000F" letter-spacing="1">PLATTE + KLEBER</text></svg><div class="cap"><p class="ds">Vinyl-Asbest-Platten samt Kleber entfernen, auch in bewohnten Wohnungen.</p><h3 class="lb">Floor-Flex-Platten samt Kleber</h3></div></article>
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><path d="M150.0 164.0 L226.2 208.0 L150.0 252.0 L73.8 208.0 Z" fill="#fff" fill-opacity=".55" stroke="#3A3A3A" stroke-width="1.2"/><g fill="none" stroke="#3A3A3A" stroke-width=".8" stroke-dasharray="2 3"><path d="M169.1 175.0L92.8 219.0"/><path d="M130.9 175.0L207.2 219.0"/><path d="M188.1 186.0L111.9 230.0"/><path d="M111.9 186.0L188.1 230.0"/><path d="M207.2 197.0L130.9 241.0"/><path d="M92.8 197.0L169.1 241.0"/></g><g fill="#EFE9DE" stroke="#3A3A3A" stroke-width="1.3" stroke-linejoin="round"><g transform="translate(0 -22)"><rect x="46" y="118" width="60" height="96" rx="10"/><path d="M46 142H106"/><path d="M54 118v-10h44v10"/><circle cx="58" cy="222" r="8"/><circle cx="94" cy="222" r="8"/><rect x="61" y="160" width="30" height="18" rx="3"/></g><path d="M106 128c34 0 40 22 52 38s24 12 36 10" fill="none"/><path d="M190 170l18 7-4 10-18-7z"/></g><text x="76" y="151" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#E3000F">H</text><g fill="none" stroke="#E3000F" stroke-width="1.4" stroke-linejoin="round"><path d="M222 85L225.1 92.9L233 96L225.1 99.1L222 107L218.9 99.1L211 96L218.9 92.9Z"/><path d="M246 119L248.0 124.0L253 126L248.0 128.0L246 133L244.0 128.0L239 126L244.0 124.0Z"/><path d="M200 116L201.7 120.3L206 122L201.7 123.7L200 128L198.3 123.7L194 122L198.3 120.3Z"/></g><text x="24" y="40" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="1" fill="#3A3A3A">STAUBKLASSE H</text><text x="24" y="54" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="1" fill="#E3000F">BEZUGSFERTIG</text></svg><div class="cap"><p class="ds">Bauschlussreinigung nach der Sanierung, damit die Fläche bezugsfertig ist.</p><h3 class="lb">Bau- und Gebäudereinigung</h3></div></article>
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><g fill="none" stroke="#3A3A3A" stroke-width="1.3"><path d="M83.0 34V210M117.0 34V210"/><ellipse cx="100" cy="34" rx="17.0" ry="6"/><path d="M83.0 210a17.0 6 0 0 0 34 0"/><path d="M117 118H214M117 146H214"/><ellipse cx="214" cy="132" rx="6" ry="14"/><path d="M78 92h44M78 100h44M78 176h44M78 184h44"/><path d="M88 34v-8M112 34v-8"/></g><g stroke="#E3000F" stroke-width="1.6" fill="none"><path d="M64 158L136 158" stroke-dasharray="5 4"/><path d="M148 150l10 8-10 8"/></g><text x="150" y="60" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A3A3A" letter-spacing="1">AZ DN 100</text><text x="150" y="74" font-family="Inter, Arial, sans-serif" font-size="10" fill="#E3000F" letter-spacing="1">TRENNSCHNITT</text></svg><div class="cap"><p class="ds">Asbestzementrohre in Strängen und Schächten ausbauen und entsorgen.</p><h3 class="lb">AZ-Rohre demontieren</h3></div></article>
+      <article class="sc ill-c"><svg class="ill" viewBox="0 0 277 297" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="297" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V297"/><path d="M14 0V297"/><path d="M28 0V297"/><path d="M42 0V297"/><path d="M56 0V297"/><path d="M70 0V297"/><path d="M84 0V297"/><path d="M98 0V297"/><path d="M112 0V297"/><path d="M126 0V297"/><path d="M140 0V297"/><path d="M154 0V297"/><path d="M168 0V297"/><path d="M182 0V297"/><path d="M196 0V297"/><path d="M210 0V297"/><path d="M224 0V297"/><path d="M238 0V297"/><path d="M252 0V297"/><path d="M266 0V297"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/></g><path d="M138.0 120.0 L241.9 180.0 L138.0 240.0 L34.1 180.0 Z" fill="#fff" fill-opacity=".5" stroke="#3A3A3A" stroke-width="1.3"/><g fill="none" stroke="#3A3A3A" stroke-width=".8"><path d="M158.8 132.0L54.9 192.0"/><path d="M117.2 132.0L221.1 192.0"/><path d="M179.6 144.0L75.6 204.0"/><path d="M96.4 144.0L200.4 204.0"/><path d="M200.4 156.0L96.4 216.0"/><path d="M75.6 156.0L179.6 216.0"/><path d="M221.1 168.0L117.2 228.0"/><path d="M54.9 168.0L158.8 228.0"/></g><path d="M179.6 153.6 L225.3 180.0 L200.4 194.4 L154.6 168.0 Z" fill="#E3000F" fill-opacity=".1" stroke="#E3000F" stroke-width="1.5" stroke-dasharray="5 3"/><g stroke="#3A3A3A" stroke-width="1.1" fill="none"><path d="M96.4 177.6 L125.5 194.4 L117.2 199.2 L88.1 182.4 Z" fill="#fff" stroke="#3A3A3A" stroke-width="1.2"/><path d="M96.4 177.6v8M125.5 194.4v8M117.2 199.2v8"/></g><path d="M179.6 168.0V132.0" stroke="#3A3A3A" stroke-width="1.4"/><ellipse cx="179.6" cy="168.0" rx="7" ry="3.5" fill="none" stroke="#3A3A3A" stroke-width="1"/><circle cx="179.6" cy="122.0" r="20" fill="#EFE9DE" stroke="#3A3A3A" stroke-width="1.3"/><path d="M169.6 124.0q10.0 -8.0 20.0 0" fill="none" stroke="#3A3A3A" stroke-width=".9"/><path d="M202.4 181.2V149.2" stroke="#3A3A3A" stroke-width="1.4"/><ellipse cx="202.4" cy="181.2" rx="7" ry="3.5" fill="none" stroke="#3A3A3A" stroke-width="1"/><circle cx="202.4" cy="141.2" r="16" fill="#EFE9DE" stroke="#3A3A3A" stroke-width="1.3"/><path d="M194.4 143.2q8.0 -6.4 16.0 0" fill="none" stroke="#3A3A3A" stroke-width=".9"/><path d="M140.1 222.0V183.0" stroke="#3A3A3A" stroke-width="1.4"/><ellipse cx="140.1" cy="222.0" rx="7" ry="3.5" fill="none" stroke="#3A3A3A" stroke-width="1"/><circle cx="140.1" cy="172.0" r="22" fill="#EFE9DE" stroke="#3A3A3A" stroke-width="1.3"/><path d="M129.1 174.0q11.0 -8.8 22.0 0" fill="none" stroke="#3A3A3A" stroke-width=".9"/><text x="24" y="40" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="1" fill="#3A3A3A">HOF UND AUSSENANLAGE</text><text x="24" y="54" font-family="Inter, Arial, sans-serif" font-size="10" letter-spacing="1" fill="#E3000F">NEU ANGELEGT</text></svg><div class="cap"><p class="ds">Höfe, Außenanlagen und Grünflächen neu anlegen, wenn der Bau fertig ist.</p><h3 class="lb">Galabau und Außenanlagen</h3></div></article>
+    </div>
+  </div>
+  <div class="sprog" aria-hidden="true"><span class="n" id="sNum">04</span><span class="track"><i id="sBar"></i></span><span class="n t">07</span></div>
+  <p class="sr" id="sLive" aria-live="polite"></p>
+  <div class="svc-cta"><a class="btn btn-1" href="#kontakt">Kostenloses Angebot anfordern</a></div>
+  <div class="w"><div class="rule"></div></div>
+</section>
+
+<!-- ================= WARUM ================= -->
+<section class="e why">
+  <div class="dk" data-shape="why">
+    <div class="shape"></div>
+    <div class="inner">
+      <div class="center">
+        <h2>Warum <span class="acc sb">D.I.M.O</span> ?</h2>
+        <p class="sub">Fünf Gründe, die im Angebot stehen und nicht nur auf der Website.</p>
+      </div>
+      <div class="wgrid">
+        <article class="wc"><div class="no">01</div><h3>Bewohnt saniert</h3><p>Strangsanierung im belegten Haus ist unser Normalfall. Das spart Umsetzwohnungen, Mietausfall und Ärger mit den Bewohnern.</p></article>
+        <article class="wc"><div class="no">02</div><h3>Ganze Kette, eine Hand</h3><p>Schadstoff raus, Abbruch, Sanierung, Koordination aller Gewerke, Reinigung bis bezugsfertig. Eine Schnittstelle statt fünf.</p></article>
+        <article class="wc"><div class="no">03</div><h3>SiGeKo im eigenen Haus</h3><p>Asbestarbeiten verlangen nach Baustellenverordnung ohnehin einen SiGeKo. Bei uns kommt er aus demselben Haus.</p></article>
+        <article class="wc"><div class="no">04</div><h3>Nachtrag vermeiden</h3><p>Liegt im Bestand mehr als im Gutachten steht, rufen wir an. Mit Vorschlag, nicht nur mit Rechnung.</p></article>
+        <article class="wc"><div class="no">05</div><h3>Behördengang inklusive</h3><p>Anzeige, Unterlagen und Abstimmung mit der Arbeitsschutzbehörde übernehmen wir. Sie bekommen die Bestätigung zur Akte.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJEKTE ================= -->
+<section id="projekte" class="w proj">
+  <div class="center">
+    <h2 class="h2">Abgeschlossene <span class="acc">Projekte</span></h2>
+    <p class="sub">Berliner Bestand, vom freigelegten Mauerwerk bis zur bezugsfertigen Übergabe.</p>
+  </div>
+  <div class="pgrid">
+    <article class="pc">
+      <img src="bilder/sanierung-berlin-fassade-abbruch.webp" alt="Sanierung und Abbruch an einem Berliner Bestandsgebäude" loading="lazy">
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      <div class="ov"><b>Sanierung und Abbruch</b><span>Giebelwand freigelegt, alle Gewerke koordiniert, Objekt bezugsfertig übergeben.</span></div>
+    </article>
+    <article class="pc"><img src="bilder/bausanierung-berlin-wohnung-bezugsfertig.webp" alt="Bezugsfertige Wohnung nach der Bauschlussreinigung" loading="lazy"></article>
+    <article class="pc"><img src="bilder/galabau-berlin-hofbegruenung.webp" alt="Neu angelegte Außenanlage in einem Berliner Hinterhof" loading="lazy"></article>
+    <a class="pc ill-c" href="#kontakt"><svg class="ill" viewBox="0 0 277 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="277" height="440" fill="#EFE9DE"/><g stroke="#DCD3C3" stroke-width=".6"><path d="M0 0V440"/><path d="M14 0V440"/><path d="M28 0V440"/><path d="M42 0V440"/><path d="M56 0V440"/><path d="M70 0V440"/><path d="M84 0V440"/><path d="M98 0V440"/><path d="M112 0V440"/><path d="M126 0V440"/><path d="M140 0V440"/><path d="M154 0V440"/><path d="M168 0V440"/><path d="M182 0V440"/><path d="M196 0V440"/><path d="M210 0V440"/><path d="M224 0V440"/><path d="M238 0V440"/><path d="M252 0V440"/><path d="M266 0V440"/><path d="M0 0H277"/><path d="M0 14H277"/><path d="M0 28H277"/><path d="M0 42H277"/><path d="M0 56H277"/><path d="M0 70H277"/><path d="M0 84H277"/><path d="M0 98H277"/><path d="M0 112H277"/><path d="M0 126H277"/><path d="M0 140H277"/><path d="M0 154H277"/><path d="M0 168H277"/><path d="M0 182H277"/><path d="M0 196H277"/><path d="M0 210H277"/><path d="M0 224H277"/><path d="M0 238H277"/><path d="M0 252H277"/><path d="M0 266H277"/><path d="M0 280H277"/><path d="M0 294H277"/><path d="M0 308H277"/><path d="M0 322H277"/><path d="M0 336H277"/><path d="M0 350H277"/><path d="M0 364H277"/><path d="M0 378H277"/><path d="M0 392H277"/><path d="M0 406H277"/><path d="M0 420H277"/><path d="M0 434H277"/></g><g transform="translate(0 64)"><g fill="none" stroke="#3A3A3A" stroke-width="1.3" stroke-linejoin="round"><path d="M138.0 0.0 L200.4 36.0 L138.0 72.0 L75.6 36.0 Z"/><path d="M200.4 186.0L200.4 36.0"/><path d="M138.0 222.0L138.0 72.0"/><path d="M75.6 186.0L75.6 36.0"/><path d="M200.4 186.0L138.0 222.0L75.6 186.0"/><path d="M200.4 149.0L138.0 185.0L75.6 149.0" stroke-dasharray="2 3"/><path d="M200.4 111.0L138.0 147.0L75.6 111.0" stroke-dasharray="2 3"/><path d="M200.4 74.0L138.0 110.0L75.6 74.0" stroke-dasharray="2 3"/></g><g fill="none" stroke="#3A3A3A" stroke-width=".9"><path d="M195.8 174.6 L184.1 181.4 L184.1 163.4 L195.8 156.6 Z"/><path d="M175.0 186.6 L163.4 193.4 L163.4 175.4 L175.0 168.6 Z"/><path d="M154.2 198.6 L142.6 205.4 L142.6 187.4 L154.2 180.6 Z"/><path d="M195.8 136.6 L184.1 143.4 L184.1 125.4 L195.8 118.6 Z"/><path d="M175.0 148.6 L163.4 155.4 L163.4 137.4 L175.0 130.6 Z"/><path d="M154.2 160.6 L142.6 167.4 L142.6 149.4 L154.2 142.6 Z"/><path d="M195.8 98.6 L184.1 105.4 L184.1 87.4 L195.8 80.6 Z"/><path d="M175.0 110.6 L163.4 117.4 L163.4 99.4 L175.0 92.6 Z"/><path d="M154.2 122.6 L142.6 129.4 L142.6 111.4 L154.2 104.6 Z"/><path d="M195.8 61.6 L184.1 68.4 L184.1 50.4 L195.8 43.6 Z"/><path d="M175.0 73.6 L163.4 80.4 L163.4 62.4 L175.0 55.6 Z"/><path d="M154.2 85.6 L142.6 92.4 L142.6 74.4 L154.2 67.6 Z"/></g><path d="M175.0 148.6 L163.4 155.4 L163.4 137.4 L175.0 130.6 Z" fill="#E3000F" fill-opacity=".12" stroke="#E3000F" stroke-width="1.6"/><path d="M167.4 147.4L232 118H262" stroke="#E3000F" stroke-width="1.2" fill="none"/><text x="262" y="132" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="10" fill="#E3000F" letter-spacing="1">BEFUND</text></g><text x="22" y="36" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A3A3A" letter-spacing="1">BESTAND</text><text x="22" y="50" font-family="Inter, Arial, sans-serif" font-size="10" fill="#3A3A3A" letter-spacing="1">BAUJAHR 1960 BIS 1993</text></svg><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span><span class="ov"><b>Ihr Objekt?</b><span>Foto schicken, Festpreis erhalten.</span></span></a>
+  </div>
+  <div class="proj-cta"><a class="btn btn-1" href="#kontakt">Kostenloses Angebot anfordern</a></div>
+</section>
+
+<!-- ================= UNTERLAGEN ================= -->
+<section class="w tst">
+  <div class="rule"></div>
+  <h2 class="h2 center"><span class="acc">Unterlagen</span>, die Sie am Ende in der Hand halten</h2>
+  <div class="trow" id="trow" tabindex="0" aria-label="Unterlagen, seitlich blätterbar">
+    <article class="tc"><q>Freimessungsprotokoll nach jeder Sanierung, bevor wir den Bereich freigeben.</q>
+      <div class="bt"><div class="tag"><i>Freimessung</i><b>Nach jedem Projekt</b></div><span class="rb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/></svg></span></div></article>
+    <article class="tc wide"><q>Entsorgungsnachweis für jede Tonne, elektronisch geführt nach dem Verfahren, das seit 2010 für gefährliche Abfälle gilt.</q>
+      <div class="bt"><div class="tag"><i>Entsorgung</i><b>Elektronisch nachgewiesen</b></div>
+        <span class="th"><img src="bilder/rueckbau-innenraum.webp" alt="" loading="lazy"><span class="rb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/></svg></span></span></div></article>
+    <article class="tc"><q>Sachkundenachweis nach TRGS 519 für die eingesetzten Fachkräfte, auf Anfrage.</q>
+      <div class="bt"><div class="tag"><i>Sachkunde</i><b>TRGS 519</b></div><span class="rb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/></svg></span></div></article>
+    <article class="tc"><q>Festpreisangebot mit Umfang, Verfahren, Dauer und dem, was den Preis treibt.</q>
+      <div class="bt"><div class="tag"><i>Angebot</i><b>Vor dem Auftrag</b></div><span class="rb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/></svg></span></div></article>
+    <article class="tc"><q>Bestätigung der Behördenanzeige für Ihre Bauakte.</q>
+      <div class="bt"><div class="tag"><i>Behörde</i><b>Zur Akte</b></div><span class="rb" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/></svg></span></div></article>
+  </div>
+  <div class="tfoot">
+    <div class="tctl">
+      <button class="cbtn" type="button" data-dir="-1" aria-controls="trow" aria-label="Vorherige Unterlagen"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="cbtn" type="button" data-dir="1" aria-controls="trow" aria-label="Nächste Unterlagen"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <p class="tnote">Kundenstimmen werden ergänzt, sobald die Freigaben der Auftraggeber vorliegen.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="fragen" class="e faqb">
+  <div class="dk" data-shape="faq">
+    <div class="shape">
+      <svg class="topo" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.1">
+        <path d="M600 40c-60 30-110 20-160 60s-40 110-110 130-150-10-190 40-20 120-70 160"/>
+        <path d="M600 80c-55 26-95 26-140 62s-36 104-100 124-140-8-180 38-22 110-60 150"/>
+        <path d="M600 122c-48 22-82 30-122 64s-30 98-90 118-128-4-166 36-24 100-50 140"/>
+        <path d="M600 164c-42 20-70 34-104 66s-24 92-80 112-116 0-152 34-26 90-40 130"/>
+        <path d="M600 206c-36 18-58 38-86 68s-18 86-70 106-104 4-138 32-28 80-30 120"/>
+        <path d="M600 248c-30 16-46 42-68 70s-12 80-60 100-92 8-124 30-30 70-20 110"/>
+        <path d="M600 290c-24 14-34 46-50 72s-6 74-50 94-80 12-110 28"/>
+        <path d="M600 332c-18 12-22 50-32 74s0 68-40 88"/>
+        <ellipse cx="470" cy="70" rx="70" ry="34"/><ellipse cx="470" cy="70" rx="44" ry="20"/><ellipse cx="470" cy="70" rx="20" ry="8"/>
+      </svg>
+      <svg class="cubes" viewBox="0 0 300 220" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.2">
+        <path d="M40 110l60-30 60 30v70l-60 30-60-30z M40 110l60 30 60-30 M100 140v70"/>
+        <path d="M-20 60l50-25 50 25v58l-50 25-50-25z M-20 60l50 25 50-25 M30 85v58"/>
+      </svg>
+    </div>
+    <div class="inner">
+      <div class="l">
+        <span class="chip">FAQ</span>
+        <h2>Häufig gestellte<br class="dbr"> Fragen</h2>
+        <p>Sie planen eine Sanierung im Bestand? Hier die Antworten, die Auftraggeber zuerst wollen. Wenn Ihre fehlt, rufen Sie an.</p>
+        <a class="btn btn-1" href="#kontakt">Kostenloses Angebot anfordern</a>
+      </div>
+      <div>
+        <details class="acc-i" name="faq" open><summary><span class="pm" aria-hidden="true">+</span>Müssen die Mieter während der Sanierung ausziehen?</summary>
+          <div class="ans">In der Regel nicht. Wir schotten den Arbeitsbereich ab und halten ihn unter Unterdruck, damit keine Fasern in die angrenzenden Wohnungen gelangen. Ob ein Verbleib möglich ist, hängt vom Material und vom Verfahren ab. Das sagen wir nach der Erstbegehung verbindlich.</div></details>
+        <details class="acc-i" name="faq"><summary><span class="pm" aria-hidden="true">+</span>Woran erkenne ich Floor-Flex-Platten?</summary>
+          <div class="ans">Floor-Flex sind quadratische Vinyl-Asbest-Platten, meist 25 mal 25 oder 30 mal 30 Zentimeter, verlegt zwischen den 1960er und den frühen 1990er Jahren, oft unter Teppich, Laminat oder PVC. Sicherheit gibt nur eine Laborprobe.</div></details>
+        <details class="acc-i" name="faq"><summary><span class="pm" aria-hidden="true">+</span>Reicht es, den alten Kleber zu versiegeln?</summary>
+          <div class="ans">Nein. Das Verwaltungsgericht Arnsberg hat 2018 entschieden, dass asbesthaltige Klebstoffreste bei der Sanierung von Vinyl-Asbest-Fliesen nicht versiegelt, sondern saniert werden müssen (6 K 7190/17). Deshalb entfernen wir Platte und Kleber.</div></details>
+        <details class="acc-i" name="faq"><summary><span class="pm" aria-hidden="true">+</span>Muss fest gebundener Asbest immer raus?</summary>
+          <div class="ans">Nicht zwangsläufig. Fest gebundener, unbeschädigter Asbest setzt im Ruhezustand kaum Fasern frei. Gefährlich wird es, sobald jemand bohrt, schleift oder aufreißt. Steht eine Baumaßnahme an, muss der Stoff vorher raus.</div></details>
+        <details class="acc-i" name="faq"><summary><span class="pm" aria-hidden="true">+</span>Dürfen Mieter bei Asbest im Boden die Miete mindern?</summary>
+          <div class="ans">Das Landgericht Berlin hat 2015 entschieden, dass fest gebundener Asbest im Bodenbelag allein kein Minderungsrecht begründet (63 S 112/15 und 18 S 140/14). Bei einer beschädigten, faserfreisetzenden Asbestfliese sprach dasselbe Gericht 2013 zehn Prozent Minderung zu (65 S 419/10).</div></details>
+        <details class="acc-i" name="faq"><summary><span class="pm" aria-hidden="true">+</span>Brauche ich für mein Bauvorhaben einen SiGeKo?</summary>
+          <div class="ans">Sobald Beschäftigte mehrerer Unternehmen gleichzeitig auf der Baustelle arbeiten oder besonders gefährliche Arbeiten anstehen, ja. Anhang II der Baustellenverordnung nennt Asbestkontakt ausdrücklich. Wir stellen den SiGeKo und koordinieren ihn mit der Sanierung.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section id="kontakt" class="w ct">
+  <div class="ct-top">
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 200 200"><defs><path id="bc2" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+        <text font-family="Poppins" font-size="15" letter-spacing="3.1" fill="#A6A6A6"><textPath href="#bc2">MEHR ÜBER UNS · MEHR ÜBER UNS · MEHR ÜBER UNS ·</textPath></text></svg>
+      <img src="logo.png" alt="">
+    </div>
+    <h2><span class="big">KONTAKT</span><span class="row2"><span>AUFNEHMEN</span><small>Ein Foto vom Bodenbelag oder vom Rohr reicht für eine erste Einschätzung. Wir melden uns.</small></span></h2>
+    <form class="form" onsubmit="return false">
+      <h3>Schreiben Sie uns!</h3>
+      <div class="seg" role="group" aria-label="Ich frage an als"><button type="button" aria-pressed="true">Unternehmen</button><button type="button" aria-pressed="false">Privat</button></div>
+      <label for="f1">Name</label><input class="inp" id="f1" autocomplete="name" placeholder="Vor- und Nachname">
+      <label for="f2">E-Mail</label><input class="inp" id="f2" type="email" autocomplete="email" placeholder="E-Mail">
+      <label for="f3">Telefon</label><input class="inp" id="f3" type="tel" autocomplete="tel" placeholder="Telefon (optional)">
+      <label for="f4">Leistung</label>
+      <select class="inp" id="f4"><option>Leistung wählen</option><option>Floor-Flex-Platten samt Kleber</option><option>AZ-Rohre demontieren</option><option>Sanierung und Abbruch</option><option>Bau- und Gebäudereinigung</option><option>SiGeKo</option><option>Kostenüberwachung</option><option>Galabau</option></select>
+      <label for="f5">Nachricht</label><textarea class="inp" id="f5" placeholder="Objekt, Baujahr, kurze Beschreibung"></textarea>
+      <button class="btn btn-1" type="submit">Anfrage senden</button>
+      <p class="fn">Ihre Daten behandeln wir vertraulich und geben sie nicht weiter.</p>
+    </form>
+  </div>
+  <div class="cband">
+    <figure class="cfig"><img src="bilder/altbau-fassade-geruest.webp" alt="Gründerzeit-Altbau mit Gerüst während der Sanierung" width="1600" height="727" loading="lazy"><span class="ghost" aria-hidden="true">KONTAKT</span></figure>
+  </div>
+  <div class="ct-line">
+    <p>Sagen Sie uns, was Sie <b>gefunden</b> haben.<br class="dbr"> <b>Wir melden uns mit einem Festpreis.</b></p>
+    <a class="btn btn-1" href="#leistungen">Unsere Leistungen</a>
+  </div>
+  <div class="ct-boxes">
+    <div class="cbx icons">
+      <a href="tel:+4930921060949" aria-label="Anrufen"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></a>
+      <a href="tel:+4917131100051" aria-label="Mobil anrufen"><svg class="ico" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 19h2"/></svg></a>
+      <a href="mailto:info@service-dimo.de" aria-label="E-Mail schreiben"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    </div>
+    <a class="cbx" href="mailto:info@service-dimo.de"><div><small>E-Mail:</small><span>info@service-dimo.de</span></div></a>
+    <a class="cbx" href="tel:+4930921060949"><div><small>Telefon:</small><span>030 921 060 949</span></div></a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w foot">
+  <div class="fgrid">
+    <div class="c1">
+      <a class="logo" href="#top" aria-label="D.I.M.O, zum Seitenanfang"><img src="logo.png" alt="" width="108" height="128" loading="lazy"><span>D.I.M.O</span></a>
+      <div class="soc">
+        <a href="tel:+4930921060949" aria-label="Anrufen"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></a>
+        <a href="tel:+4917131100051" aria-label="Mobil anrufen"><svg class="ico" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 19h2"/></svg></a>
+        <a href="mailto:info@service-dimo.de" aria-label="E-Mail schreiben"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </div>
+    <div><h4>Schnellzugriff</h4><nav aria-label="Schnellzugriff"><a href="#ueber">Über uns</a><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#kontakt">Kontakt</a></nav></div>
+    <div><h4>Leistungen</h4><nav aria-label="Leistungen"><a href="#leistungen">Floor-Flex-Platten</a><a href="#leistungen">AZ-Rohre</a><a href="#leistungen">Sanierung und Abbruch</a><a href="#leistungen">SiGeKo</a></nav></div>
+    <div><h4>Kontakt</h4><nav aria-label="Kontakt"><a href="tel:+4930921060949">030 921 060 949</a><a href="mailto:info@service-dimo.de">info@service-dimo.de</a><span>Schnellerstraße 60, 12439 Berlin</span></nav></div>
+  </div>
+  <div class="fbar">
+    <span>Alle Rechte vorbehalten © 2026 <b>D.I.M.O UG</b> (haftungsbeschränkt) · HRB 32782 P · USt-IdNr. DE 338524264</span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+  </div>
+</footer>
+</main>
+
+
+<script>
+/* Gerundetes Polygon als SVG-Pfad (quadratische Kurven an jeder Ecke, konvex wie konkav) */
+function rpath(pts, rs){
+  var n=pts.length, d='';
+  for(var i=0;i<n;i++){
+    var p0=pts[(i-1+n)%n], p1=pts[i], p2=pts[(i+1)%n], r=Array.isArray(rs)?rs[i]:rs;
+    var v1x=p0[0]-p1[0], v1y=p0[1]-p1[1], v2x=p2[0]-p1[0], v2y=p2[1]-p1[1];
+    var l1=Math.hypot(v1x,v1y), l2=Math.hypot(v2x,v2y), t1=Math.min(r,l1/2), t2=Math.min(r,l2/2);
+    var ax=p1[0]+v1x/l1*t1, ay=p1[1]+v1y/l1*t1, bx=p1[0]+v2x/l2*t2, by=p1[1]+v2y/l2*t2;
+    d+=(i?'L':'M')+ax.toFixed(1)+' '+ay.toFixed(1)+'Q'+p1[0].toFixed(1)+' '+p1[1].toFixed(1)+' '+bx.toFixed(1)+' '+by.toFixed(1);
+  }
+  return d+'Z';
+}
+var mobile=function(){return innerWidth<=860};
+var shapes={
+  /* Hero: V-Oberkante ueber die ganze Breite, Lasche unten mittig (26,5 % bis 73,7 %) */
+  hero:function(el){
+    var f=el.querySelector('.hfig'), W=f.offsetWidth, H=f.offsetHeight;
+    var R=Math.min(26,Math.max(12,W*.02));
+    var dv=Math.min(W*.069,H*.24,128), tab=Math.min(W*.058,H*.2,96);
+    if(mobile()){dv=Math.min(W*.06,34);tab=Math.min(W*.05,22);}
+    var ys=H-tab, xl=W*.265, xr=W*.737, sl=tab*.55;
+    var p=[[0,0],[W/2,dv],[W,0],[W,ys],[xr+sl,ys],[xr,H],[xl,H],[xl-sl,ys],[0,ys]];
+    var r=[R,W*.07,R,R,R*1.35,R*1.2,R*1.2,R*1.35,R];
+    f.style.clipPath='path("'+rpath(p,r)+'")'; f.style.borderRadius='0';
+    el.style.setProperty('--tabD',tab+'px');
+  },
+  /* Warum: Lasche oben mittig (26,2 % bis 73,8 %), rechts ab 37,9 % eine Stufe tiefer */
+  why:function(el){
+    var s=el.querySelector('.shape'), W=s.offsetWidth, H=s.offsetHeight;
+    var R=Math.min(24,Math.max(12,W*.018)), t=Math.min(Math.max(W*.033,22),52), sl=t*.8;
+    var xL=W*.262, xR=W*.738, xB=W*.379;
+    if(mobile()){xL=W*.16;xR=W*.84;xB=W*.5;}
+    var p=[[0,t],[xL,t],[xL+sl,0],[xR-sl,0],[xR,t],[W,t],[W,H],[xB+sl,H],[xB,H-t],[0,H-t]];
+    s.style.clipPath='path("'+rpath(p,R)+'")'; s.style.borderRadius='0';
+    el.style.setProperty('--extH',t+'px');
+  },
+  /* FAQ: linke Haelfte hochgezogen bis 53,5 % */
+  faq:function(el){
+    var s=el.querySelector('.shape'), W=s.offsetWidth, H=s.offsetHeight;
+    var R=Math.min(24,Math.max(12,W*.018)), t=Math.min(Math.max(W*.033,22),52), sl=t*.9, xT=W*.535;
+    if(mobile()) xT=W*.6;
+    var p=[[0,0],[xT,0],[xT+sl,t],[W,t],[W,H],[0,H]];
+    s.style.clipPath='path("'+rpath(p,R)+'")'; s.style.borderRadius='0';
+  }
+};
+function draw(){document.querySelectorAll('[data-shape]').forEach(function(el){shapes[el.dataset.shape](el)});}
+if('ResizeObserver' in window){var ro=new ResizeObserver(draw);document.querySelectorAll('[data-shape]').forEach(function(el){ro.observe(el)});}
+addEventListener('load',draw); draw();
+
+/* Leistungen: Endlos-Karussell. Mittlere Karte oben, Nachbarn versetzt, laeuft automatisch, pausiert bei Maus, Fokus und Beruehrung */
+(function(){
+  var s=document.getElementById('strip'); if(!s) return;
+  var orig=[].slice.call(s.children), n=orig.length;
+  function clone(c){var k=c.cloneNode(true);k.classList.add('clone');k.setAttribute('aria-hidden','true');
+    k.querySelectorAll('img').forEach(function(im){im.alt='';});return k;}
+  orig.forEach(function(c){s.appendChild(clone(c));});
+  for(var q=n-1;q>=0;q--) s.insertBefore(clone(orig[q]),s.firstChild);
+  var cards=[].slice.call(s.children), idx=n+3, hold=0, hover=false, focus=false, seen=true, stop=false;
+  var num=document.getElementById('sNum'), bar=document.getElementById('sBar'), live=document.getElementById('sLive');
+  var names=orig.map(function(c){var h=c.querySelector('.lb');return h?h.textContent:'';});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function pos(i){var c=cards[i];return c.offsetLeft+c.offsetWidth/2-s.clientWidth/2;}
+  function mark(i){cards.forEach(function(c,j){c.classList.toggle('lo',Math.abs(j-i)%2===1);c.classList.toggle('is-active',j===i);});
+    var r=((i%n)+n)%n; if(num)num.textContent=('0'+(r+1)).slice(-2); if(bar)bar.style.width=((r+1)/n*100)+'%';}
+  function go(i,smooth){idx=i;mark(i);s.scrollTo({left:pos(i),behavior:smooth&&!reduce?'smooth':'auto'});}
+  function wrap(){ if(idx>=n&&idx<2*n) return;
+    s.classList.add('nt'); idx=idx<n?idx+n:idx-n; mark(idx); s.scrollLeft=pos(idx); void s.offsetWidth; s.classList.remove('nt'); }
+  function nearest(){var m=s.scrollLeft+s.clientWidth/2,b=0,d=1e9;
+    cards.forEach(function(c,j){var e=Math.abs(c.offsetLeft+c.offsetWidth/2-m);if(e<d){d=e;b=j;}});return b;}
+  var tEnd; function settled(){var k=nearest(); if(k!==idx){idx=k;mark(k);} wrap();}
+  s.addEventListener('scroll',function(){clearTimeout(tEnd);tEnd=setTimeout(settled,140);},{passive:true});
+  s.addEventListener('mouseenter',function(){hover=true}); s.addEventListener('mouseleave',function(){hover=false});
+  s.addEventListener('focusin',function(){focus=true}); s.addEventListener('focusout',function(){focus=false});
+  ['pointerdown','touchstart','wheel'].forEach(function(ev){s.addEventListener(ev,function(){hold=Date.now()},{passive:true});});
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){seen=e[0].isIntersecting}).observe(s);
+  window.centerStrip=function(){s.classList.add('nt');mark(idx);s.scrollLeft=pos(idx);void s.offsetWidth;s.classList.remove('nt');};
+  centerStrip(); addEventListener('load',centerStrip); if(document.fonts)document.fonts.ready.then(centerStrip);
+  var tR; addEventListener('resize',function(){clearTimeout(tR);tR=setTimeout(centerStrip,120)});
+  var pb=document.getElementById('sPlay');
+  function setStop(v){stop=v; if(pb){pb.setAttribute('aria-pressed',v?'true':'false');pb.setAttribute('aria-label',v?'Automatischen Lauf fortsetzen':'Automatischen Lauf anhalten');}}
+  if(reduce) setStop(true);
+  function step(d){hold=Date.now(); go(idx+d,true); if(live)live.textContent=names[((idx%n)+n)%n]+', '+(((idx%n)+n)%n+1)+' von '+n;}
+  var bp=document.getElementById('sPrev'), bn=document.getElementById('sNext');
+  if(bp)bp.addEventListener('click',function(){step(-1)}); if(bn)bn.addEventListener('click',function(){step(1)});
+  if(pb)pb.addEventListener('click',function(){setStop(!stop)});
+  setInterval(function(){
+    if(stop||hover||focus||!seen||document.hidden||Date.now()-hold<6000) return; go(idx+1,true);
+  },3600);
+})();
+
+/* Unterlagen: zentriertes Karussell, Vor/Zurueck springt von Karte zu Karte */
+(function(){
+  var r=document.getElementById('trow'); if(!r) return;
+  var cs=[].slice.call(r.children), bs=document.querySelectorAll('.tctl .cbtn'), cur=Math.floor(cs.length/2);
+  function pos(i){var c=cs[i];return c.offsetLeft+c.offsetWidth/2-r.clientWidth/2;}
+  function paint(){cs.forEach(function(c,j){c.classList.toggle('on',j===cur);}); bs[0].disabled=cur<=0; bs[1].disabled=cur>=cs.length-1;}
+  function go(i,sm){cur=Math.max(0,Math.min(cs.length-1,i)); paint(); r.scrollTo({left:pos(cur),behavior:sm?'smooth':'auto'});}
+  function near(){var m=r.scrollLeft+r.clientWidth/2,b=0,d=1e9;cs.forEach(function(c,j){var e=Math.abs(c.offsetLeft+c.offsetWidth/2-m);if(e<d){d=e;b=j;}});return b;}
+  var t; r.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var k=near();if(k!==cur){cur=k;paint();}},120);},{passive:true});
+  bs.forEach(function(b){b.addEventListener('click',function(){go(cur+(+b.dataset.dir),true);});});
+  cs.forEach(function(c,j){c.addEventListener('click',function(){if(j!==cur)go(j,true);});});
+  window.centerTrow=function(){go(cur,false)};
+  go(cur,false); addEventListener('load',centerTrow); if(document.fonts)document.fonts.ready.then(centerTrow);
+  var tr; addEventListener('resize',function(){clearTimeout(tr);tr=setTimeout(centerTrow,120)});
+})();
+
+/* FAQ: immer nur eine Antwort offen (Fallback fuer Browser ohne details[name]) */
+(function(){
+  var acc=[].slice.call(document.querySelectorAll('.acc-i'));
+  acc.forEach(function(d){d.addEventListener('toggle',function(){ if(d.open) acc.forEach(function(o){ if(o!==d&&o.open) o.open=false; }); });});
+})();
+
+/* Burger-Menue */
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('mnav'); if(!b||!m) return;
+  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'));});
+  m.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+  document.addEventListener('click',function(e){if(m.classList.contains('open')&&!m.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open')){set(false);b.focus();}});
+  addEventListener('resize',function(){if(innerWidth>980)set(false);});
+})();
+
+
+/* Umschalter Unternehmen / Privat */
+document.querySelectorAll('.seg').forEach(function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+  g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});});});
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"HomeAndConstructionBusiness","@id":"https://service-dimo.de/#org","name":"D.I.M.O UG (haftungsbeschränkt)",
+ "description":"Schadstoff- und Asbestsanierung im Gebäudebestand in Berlin: Floor-Flex-Platten samt Kleber, Asbestzementrohre, Sanierung und Abbruch, Bau- und Gebäudereinigung, SiGeKo, Kostenüberwachung.",
+ "url":"https://service-dimo.de/","telephone":"+49 30 921060949","email":"info@service-dimo.de","image":"https://service-dimo.de/logo.png",
+ "address":{"@type":"PostalAddress","streetAddress":"Schnellerstraße 60","postalCode":"12439","addressLocality":"Berlin","addressCountry":"DE"},
+ "areaServed":[{"@type":"City","name":"Berlin"},{"@type":"AdministrativeArea","name":"Brandenburg"}],"vatID":"DE338524264",
+ "knowsAbout":["Asbestsanierung","TRGS 519","Floor-Flex-Platten","Asbestzementrohre","Strangsanierung","SiGeKo","Baureinigung"]},
+{"@type":"FAQPage","@id":"https://service-dimo.de/#faq","mainEntity":[
+ {"@type":"Question","name":"Müssen die Mieter während der Sanierung ausziehen?","acceptedAnswer":{"@type":"Answer","text":"In der Regel nicht. Der Arbeitsbereich wird abgeschottet und unter Unterdruck gehalten. Ob ein Verbleib möglich ist, hängt vom Material und vom Verfahren ab und wird nach der Erstbegehung verbindlich festgelegt."}},
+ {"@type":"Question","name":"Woran erkenne ich Floor-Flex-Platten?","acceptedAnswer":{"@type":"Answer","text":"Floor-Flex sind quadratische Vinyl-Asbest-Platten, meist 25 mal 25 oder 30 mal 30 Zentimeter, verlegt zwischen den 1960er und den frühen 1990er Jahren. Sicherheit gibt nur eine Laborprobe."}},
+ {"@type":"Question","name":"Reicht es, den alten Kleber zu versiegeln?","acceptedAnswer":{"@type":"Answer","text":"Nein. Das Verwaltungsgericht Arnsberg entschied 2018 (6 K 7190/17), dass asbesthaltige Klebstoffreste bei der Sanierung von Vinyl-Asbest-Fliesen saniert und nicht versiegelt werden müssen."}},
+ {"@type":"Question","name":"Brauche ich für mein Bauvorhaben einen SiGeKo?","acceptedAnswer":{"@type":"Answer","text":"Ja, sobald Beschäftigte mehrerer Unternehmen gleichzeitig auf der Baustelle arbeiten oder besonders gefährliche Arbeiten anstehen. Anhang II der Baustellenverordnung nennt Asbestkontakt ausdrücklich."}}]}
+]}
+</script>
+</body>
+</html>
