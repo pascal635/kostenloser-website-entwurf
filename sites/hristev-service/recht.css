@@ -1,0 +1,61 @@
+/* Rechtsseiten Hristev-Service: Impressum, Datenschutz.
+   Farben aus der Startseite, Schriften vom System, damit nichts von Dritt-Servern geladen wird. */
+:root{
+  --bg:#FFFFFF; --mint:#EFF3EA; --mint-3:#F7F9F4;
+  --green:#2E4A2B; --green-deep:#22391C; --cream:#F0F5E9;
+  --ink:#1A1D19; --muted:#5F6660; --line:#E2E6DC;
+  --warn:#B3261E; --warn-bg:#FCEDEB;
+  --r:12px;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65}
+a{color:var(--green);text-underline-offset:3px}
+a:hover{color:var(--green-deep)}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px}
+
+.top{border-bottom:1px solid var(--line);background:var(--bg)}
+.top-in{max-width:780px;margin:0 auto;padding:18px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1.125rem;color:var(--green);text-decoration:none;letter-spacing:-.01em}
+.zurueck{font-size:.875rem;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:8px 14px}
+.zurueck:hover{background:var(--mint-3)}
+
+main{padding:48px 0 72px}
+.kopf{margin-bottom:28px}
+.micro{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+h1{font-size:clamp(2rem,5vw,2.75rem);line-height:1.1;color:var(--green);margin:0 0 12px;letter-spacing:-.02em}
+h2{font-size:1.25rem;line-height:1.3;color:var(--green);margin:40px 0 10px;letter-spacing:-.01em}
+h3{font-size:1rem;margin:24px 0 8px;color:var(--ink)}
+p{margin:0 0 12px}
+ul{margin:0 0 12px;padding-left:1.25em}
+li{margin-bottom:4px}
+
+.hinweisbox{background:var(--warn-bg);border:1px solid rgba(179,38,30,.25);border-radius:var(--r);padding:18px 20px;margin:0 0 32px}
+.hinweisbox .micro{color:var(--warn)}
+.hinweisbox p:last-child{margin-bottom:0}
+
+.daten{background:var(--mint-3);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;margin:0 0 12px}
+.daten p:last-child{margin-bottom:0}
+
+table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:.9375rem}
+th,td{text-align:left;vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid var(--line)}
+th{font-weight:700;color:var(--muted);font-size:.8125rem}
+td:first-child{width:38%;color:var(--muted)}
+
+/* rot markierte Lücke: muss vor dem Livegang gefüllt und vom Kunden freigegeben werden */
+.luecke{display:inline;background:var(--warn-bg);color:var(--warn);font-weight:600;border-radius:4px;padding:1px 6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+footer{background:var(--green-deep);color:rgba(240,245,233,.74);font-size:.875rem}
+.fzeile{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0}
+.fzeile p{margin:0}
+footer a{color:var(--cream)}
+
+@media (max-width:560px){
+  main{padding:32px 0 56px}
+  td:first-child{width:auto}
+  table,tbody,tr,td{display:block}
+  tr{border-bottom:1px solid var(--line);padding:8px 0}
+  td{border:0;padding:2px 0}
+  th{display:none}
+}
