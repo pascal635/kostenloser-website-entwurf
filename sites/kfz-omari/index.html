@@ -336,7 +336,8 @@ a[href^="tel:"]{word-spacing:.16em}
 .ok-zeile{font-size:.9375rem;color:var(--gruen)}
 
 /* Footer */
-.fuss{padding-top:clamp(64px,7vw,110px);overflow:hidden}
+.fuss{padding-top:clamp(64px,7vw,110px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + clamp(40px,5vw,64px));overflow:hidden}
+.fuss-logo{width:112px;margin-bottom:18px}
 .fuss .oben{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 .fuss .claim{font-size:clamp(2rem,1.3rem + 2.4vw,3.4rem);font-weight:300;letter-spacing:-.045em;line-height:1.06;color:var(--weiss);margin-top:22px}
 .fuss .direkt{display:grid;gap:12px;justify-items:end}
@@ -345,15 +346,13 @@ a[href^="tel:"]{word-spacing:.16em}
 .kreis{width:44px;height:44px;border-radius:50%;border:1px solid var(--linie-2);display:grid;place-items:center;color:var(--weiss);transition:background-color var(--dur) var(--ease),color var(--dur) var(--ease)}
 .kreis:hover{background:var(--gelb);color:var(--tinte);border-color:var(--gelb)}
 .kreis .ico{width:17px;height:17px}
-.fuss .spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:40px;padding-block:56px 40px;margin-top:56px;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);font-size:.875rem}
+.fuss .spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:40px;padding-top:56px;margin-top:56px;border-top:1px solid var(--linie);font-size:.875rem}
 .fuss h4{margin:0 0 14px;font-size:.875rem;font-weight:500;color:var(--weiss)}
 .fuss ul{display:grid;gap:8px}
 .fuss a:hover{color:var(--gelb)}
 .fuss .zeiten{display:grid;grid-template-columns:auto auto;column-gap:18px;row-gap:4px}
 .fuss .zeiten .heute{color:var(--weiss)}
 .fuss .recht{display:grid;gap:8px;justify-items:end;align-content:start}
-.wortmarke{display:block;width:100%;height:auto;margin-top:clamp(36px,4vw,56px);margin-bottom:-4%}
-.wortmarke{--lg1:var(--gelb);--lg2:var(--gelb)}
 
 /* Termin-Dialog */
 dialog.termin{width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 24px);border:1px solid var(--linie-2);border-radius:var(--r-l);padding:0;background:rgba(14,14,14,.92);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);color:var(--grau);overflow:auto}
@@ -937,14 +936,14 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
         <a class="btn gelb-btn" href="tel:+4970715497365"><svg class="ico"><use href="#i-tel"/></svg> 07071 5497365</a>
       </div>
       <div class="faq">
-        <details data-kat="leistung" open><summary>Bleibt meine Herstellergarantie erhalten, wenn ich nicht in die Vertragswerkstatt gehe?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Ja. Wird die Inspektion nach Herstellervorgabe und mit freigegebenen Teilen gemacht, bleibt die Garantie erhalten. Genau so arbeiten wir und tragen alles ins Serviceheft ein.</p></details>
-        <details data-kat="betrieb"><summary>Reparieren Sie alle Automarken?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Ja. Wir betreuen Fahrzeuge aller Marken, vom Kleinwagen über den VW Bus bis zum Cabrio und Oldtimer.</p></details>
-        <details data-kat="kosten"><summary>Was kostet die Reparatur?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Das hängt von Fahrzeug und Schaden ab. Vor jedem Auftrag bekommen Sie einen Kostenrahmen. Wird es teurer, rufen wir vorher an.</p></details>
-        <details data-kat="kosten"><summary>Wie schnell bekomme ich einen Termin?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Meist innerhalb weniger Tage. Bei Panne oder Warnleuchte rufen Sie am besten direkt an: 07071 5497365.</p></details>
-        <details data-kat="leistung"><summary>Machen Sie HU und AU?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Die Abgasuntersuchung machen wir selbst. Für die Hauptuntersuchung bereiten wir Ihr Auto vor, beheben Mängel vorab und kümmern uns um den Prüftermin.</p></details>
-        <details data-kat="leistung"><summary>Reparieren Sie auch Unfallschäden und Lack?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Ja. Eshaq Omari ist neben Kfz-Meister auch Karosseriebau-Meister. Beulen, Kratzer und Unfallschäden laufen bei uns über einen Ansprechpartner.</p></details>
-        <details data-kat="betrieb"><summary>Kümmern Sie sich auch um ältere Autos und Oldtimer?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Gern. Viele unserer Stammkunden fahren ältere Fahrzeuge oder Klassiker. Wir reparieren lieber, als zu tauschen, und besorgen passende Ersatzteile.</p></details>
-        <details data-kat="betrieb"><summary>Wo finde ich Sie und wann haben Sie geöffnet?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Im Landkutschersweg 2, 72072 Tübingen, in der Südstadt nahe der B28 Richtung Reutlingen. Montag bis Freitag 8 bis 17 Uhr, Samstag 9 bis 13 Uhr.</p></details>
+        <details name="faq" data-kat="leistung" open><summary>Bleibt meine Herstellergarantie erhalten, wenn ich nicht in die Vertragswerkstatt gehe?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Ja. Wird die Inspektion nach Herstellervorgabe und mit freigegebenen Teilen gemacht, bleibt die Garantie erhalten. Genau so arbeiten wir und tragen alles ins Serviceheft ein.</p></details>
+        <details name="faq" data-kat="betrieb"><summary>Reparieren Sie alle Automarken?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Ja. Wir betreuen Fahrzeuge aller Marken, vom Kleinwagen über den VW Bus bis zum Cabrio und Oldtimer.</p></details>
+        <details name="faq" data-kat="kosten"><summary>Was kostet die Reparatur?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Das hängt von Fahrzeug und Schaden ab. Vor jedem Auftrag bekommen Sie einen Kostenrahmen. Wird es teurer, rufen wir vorher an.</p></details>
+        <details name="faq" data-kat="kosten"><summary>Wie schnell bekomme ich einen Termin?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Meist innerhalb weniger Tage. Bei Panne oder Warnleuchte rufen Sie am besten direkt an: 07071 5497365.</p></details>
+        <details name="faq" data-kat="leistung"><summary>Machen Sie HU und AU?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Die Abgasuntersuchung machen wir selbst. Für die Hauptuntersuchung bereiten wir Ihr Auto vor, beheben Mängel vorab und kümmern uns um den Prüftermin.</p></details>
+        <details name="faq" data-kat="leistung"><summary>Reparieren Sie auch Unfallschäden und Lack?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Ja. Eshaq Omari ist neben Kfz-Meister auch Karosseriebau-Meister. Beulen, Kratzer und Unfallschäden laufen bei uns über einen Ansprechpartner.</p></details>
+        <details name="faq" data-kat="betrieb"><summary>Kümmern Sie sich auch um ältere Autos und Oldtimer?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Gern. Viele unserer Stammkunden fahren ältere Fahrzeuge oder Klassiker. Wir reparieren lieber, als zu tauschen, und besorgen passende Ersatzteile.</p></details>
+        <details name="faq" data-kat="betrieb"><summary>Wo finde ich Sie und wann haben Sie geöffnet?<span class="pm" aria-hidden="true"></span></summary><p class="antwort">Im Landkutschersweg 2, 72072 Tübingen, in der Südstadt nahe der B28 Richtung Reutlingen. Montag bis Freitag 8 bis 17 Uhr, Samstag 9 bis 13 Uhr.</p></details>
       </div>
     </div>
   </div>
@@ -987,13 +986,12 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
       </div>
     </div>
     <div class="spalten">
-      <div><h4>Kfz-Meisterbetrieb Omari</h4><ul><li>A.T.O. Auto-Technik-Omari</li><li>Landkutschersweg 2</li><li>72072 Tübingen</li><li><a class="tnum" href="tel:+4970715497365">07071 5497365</a></li><li><a href="mailto:info@kfz-omari.de">info@kfz-omari.de</a></li></ul></div>
+      <div><a class="logo fuss-logo" href="#top" aria-label="Kfz-Meisterbetrieb Omari, zur Startseite"><svg viewBox="0 0 3200 1032" aria-hidden="true" focusable="false"><use href="#logo"/></svg></a><h4>Kfz-Meisterbetrieb Omari</h4><ul><li>A.T.O. Auto-Technik-Omari</li><li>Landkutschersweg 2</li><li>72072 Tübingen</li><li><a class="tnum" href="tel:+4970715497365">07071 5497365</a></li><li><a href="mailto:info@kfz-omari.de">info@kfz-omari.de</a></li></ul></div>
       <div><h4>Öffnungszeiten</h4><div class="zeiten" id="zeiten"><span data-tag="1">Mo bis Fr</span><span class="tnum">8:00 bis 17:00</span><span data-tag="6">Samstag</span><span class="tnum">9:00 bis 13:00</span><span data-tag="0">Sonntag</span><span>geschlossen</span></div><p style="margin-top:14px"><span class="status" data-status>Jetzt geöffnet · bis 17:00 Uhr</span></p></div>
       <div><h4>Leistungen</h4><ul><li><a href="#leistungen">Inspektion</a></li><li><a href="#leistungen">Fehlerdiagnose</a></li><li><a href="#leistungen">HU und AU</a></li><li><a href="#leistungen">Bremsen und Fahrwerk</a></li><li><a href="#leistungen">Karosserie und Lack</a></li></ul></div>
       <div class="recht"><a href="https://www.kfz-omari.de/impressum/">Impressum</a><a href="https://www.kfz-omari.de/datenschutzerklaerung/">Datenschutz</a><span style="color:var(--grau-2);font-size:.75rem">Fotos: Unsplash (Platzhalter)</span></div>
     </div>
   </div>
-  <div class="wrap"><svg class="wortmarke" viewBox="0 0 3200 1032" aria-hidden="true" focusable="false"><use href="#logo"/></svg></div>
 </footer>
 
 
@@ -1066,6 +1064,10 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
       e.forEach(function(x){var an=x===b;x.classList.toggle('aktiv',an);x.setAttribute('aria-expanded',an?'true':'false')});
     })});
   });
+
+  // FAQ: immer nur eine Frage offen (name="faq" in neuen Browsern, hier auch für ältere)
+  var fragenAlle=[].slice.call(d.querySelectorAll('.faq details'));
+  fragenAlle.forEach(function(f){f.addEventListener('toggle',function(){if(f.open)fragenAlle.forEach(function(x){if(x!==f&&x.open)x.open=false})})});
 
   // FAQ-Tabs filtern
   var tabs=[].slice.call(d.querySelectorAll('.faq-kopf .tab')),fragen=[].slice.call(d.querySelectorAll('.faq details'));
