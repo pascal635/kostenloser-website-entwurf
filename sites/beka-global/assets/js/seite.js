@@ -24,10 +24,16 @@
   /* Hero-Szene: Straße auf die gestrichelte Linie legen (mobil über die Headline), Pause, außerhalb des Bildes anhalten */
   if(hero && hero.querySelector('.szene')){
     var h1 = hero.querySelector('.hero__h1'), unten = hero.querySelector('.hero__unten');
+    var kopf = hero.querySelector('.kopf'), van = hero.querySelector('.szene__van');
     var strasse = function(){
       var schmal = hero.offsetWidth < 1000, anker = schmal ? h1 : unten; if(!anker) return;
-      var v = hero.getBoundingClientRect().bottom - anker.getBoundingClientRect().top + (schmal ? 22 : 0);
+      var hb = hero.getBoundingClientRect().bottom, v = hb - anker.getBoundingClientRect().top + (schmal ? 22 : 0);
       hero.style.setProperty('--strasse', Math.round(v) + 'px');
+      /* mobil: Van so groß, wie zwischen Kopf und Straße Platz ist */
+      if(schmal && kopf){ var platz = (hb - v) - 16 - kopf.getBoundingClientRect().bottom - 12; hero.style.setProperty('--van-max', Math.max(180, Math.round(platz * 520 / 214)) + 'px'); }
+      else hero.style.removeProperty('--van-max');
+      /* Räder drehen so schnell, wie die Straße läuft (Markierung 400 px/s) */
+      if(van){ var w = van.getBoundingClientRect().width; if(w) hero.style.setProperty('--rad-dauer', (2 * Math.PI * 32 * w / 520 / 400).toFixed(3) + 's'); }
     };
     strasse(); window.addEventListener('resize', strasse);
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(strasse);

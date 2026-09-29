@@ -206,12 +206,17 @@ html.zeige-platzhalter .bildplatz{ display:block; }
 @keyframes szene-asphalt{ to{ transform:translateX(-800px); } }
 .szene__markierung{ position:absolute; left:0; bottom:9px; height:3px; width:calc(100% + 160px); background:repeating-linear-gradient(90deg, rgba(232,237,249,.85) 0 72px, transparent 72px 160px); will-change:transform; animation:szene-markierung .4s linear infinite; }
 @keyframes szene-markierung{ to{ transform:translateX(-160px); } }
-.szene__van{ right:clamp(16px, 4cqi, 96px); bottom:calc(var(--strasse) + 16px); width:clamp(200px, 30cqi, 500px); aspect-ratio:520 / 214; animation:van-drift 9s ease-in-out infinite; }
+.szene__van{ right:-10cqi; bottom:calc(var(--strasse) + 16px); width:min(82cqi, var(--van-max, 9999px)); aspect-ratio:520 / 214; animation:van-drift 9s ease-in-out infinite; }
+/* Desktop: groß wie im ersten Entwurf, Front läuft rechts aus dem Bild, gedimmt damit die Headline lesbar bleibt */
+@container (min-width:1000px){
+  .szene__van{ right:-5cqi; width:min(56cqi, calc(min(920px, 100svh) * 1.1)); }
+  .van{ filter:brightness(.72); }
+}
 .van{ position:relative; display:block; width:100%; height:100%; overflow:visible; }
 .van__aufbau{ animation:van-federn .9s ease-in-out infinite; }
-.van__rad{ transform-box:fill-box; transform-origin:center; animation:van-rad .42s linear infinite; }
-.van__marke{ font:600 50px/1 'Inter Tight', system-ui, sans-serif; letter-spacing:-2.5px; fill:#132a69; }
-.van__zusatz{ font:500 13px/1 'Inter Tight', system-ui, sans-serif; letter-spacing:.4px; fill:#3e5596; }
+.van__rad{ transform-box:fill-box; transform-origin:center; animation:van-rad var(--rad-dauer, .42s) linear infinite; }
+.van__marke{ font:600 44px/1 'Inter Tight', system-ui, sans-serif; letter-spacing:-2.2px; fill:#132a69; }
+.van__zusatz{ font:500 12px/1 'Inter Tight', system-ui, sans-serif; letter-spacing:.4px; fill:#3e5596; }
 .van__schatten{ position:absolute; left:3%; right:1%; bottom:-7px; height:14px; background:radial-gradient(closest-side, rgba(3,8,28,.85), rgba(3,8,28,0)); }
 .van__licht{ position:absolute; left:97%; bottom:4%; width:72%; height:46%; background:linear-gradient(90deg, rgba(236,241,255,.36), rgba(236,241,255,0) 85%); clip-path:polygon(0 42%, 100% 0, 100% 100%, 0 64%); filter:blur(3px); }
 .van__spur{ position:absolute; right:97%; top:10%; bottom:18%; width:28%; background:repeating-linear-gradient(180deg, rgba(214,222,246,.16) 0 2px, transparent 2px 12px); -webkit-mask-image:linear-gradient(90deg, transparent, #000); mask-image:linear-gradient(90deg, transparent, #000); transform-origin:right center; animation:van-spur .5s ease-in-out infinite alternate; }
