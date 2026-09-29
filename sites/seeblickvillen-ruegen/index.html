@@ -323,9 +323,20 @@ ul{padding:0;list-style:none}
 .house .loc small{display:block;font-size:.75rem;opacity:.85}
 .house .side-arr{position:absolute;z-index:2;top:50%;transform:translateY(-50%)}
 .house .side-arr.l{left:18px}.house .side-arr.r{right:18px}
-.dashes{position:absolute;z-index:2;right:22px;top:30px;display:flex;gap:8px}
-.dashes i{width:28px;height:2px;background:rgba(255,255,255,.5);border-radius:2px}
-.dashes i:first-child{background:#fff}
+.dashes{position:absolute;z-index:2;right:18px;top:18px;display:flex;gap:4px}
+/* Foto-Karussell (Häuser) und Diashow (Gastgeber): Überblendung, Pfeile, Striche, Wischen, Pfeiltasten */
+.gal{touch-action:pan-y}
+.gal .slides,.gal-bg .slides{position:absolute;inset:0;z-index:0}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease)}
+.slides img.is-on{opacity:1}
+.slides img.missing{display:none}
+.dashes button,.pdash button[data-dot]{appearance:none;-webkit-appearance:none;border:0;background:none;margin:0;padding:11px 2px;cursor:pointer;display:block;border-radius:4px}
+.dashes button i,.pdash button[data-dot] i{position:relative;display:block;overflow:hidden;width:28px;height:2px;border-radius:2px;background:rgba(255,255,255,.5)}
+.dashes button b,.pdash button[data-dot] b{position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:0 50%}
+.dashes button[aria-current="true"] b{transform:scaleX(1)}
+.dashes button:hover i,.pdash button[data-dot]:hover i{background:rgba(255,255,255,.8)}
+.dashes button:focus-visible,.pdash button:focus-visible,.gal .side-arr:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.house .side-arr{cursor:pointer}
 .house .inner{position:absolute;z-index:2;left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:12px}
 .house .inner .img{border-radius:var(--r-in);aspect-ratio:4/3;background:#C9D1DA}
 .house .inner h3{color:#fff;font-size:1rem;font-weight:600;margin-top:6px}
@@ -348,7 +359,7 @@ ul{padding:0;list-style:none}
 .mini-units div{display:flex;justify-content:space-between;gap:12px;font-size:.875rem;font-weight:600;padding:12px 14px;background:#fff;border-radius:12px;color:var(--ink)}
 .mini-units span{color:var(--ink-3);text-align:right;font-weight:400}
 @media (max-width:980px){.house{grid-template-columns:minmax(0,1fr)}.house > .img{min-height:360px}}
-@media (max-width:640px){.mini-units div{flex-direction:column;gap:2px}.mini-units span{text-align:left}.pick .tag .addr{display:none}.panel{padding:22px 18px}.house .inner{grid-template-columns:90px minmax(0,1fr);gap:12px;padding:10px}.house .inner p{display:none}.specs{gap:16px 18px}.house > .img{min-height:320px}.dashes,.house .side-arr{display:none}}
+@media (max-width:640px){.mini-units div{flex-direction:column;gap:2px}.mini-units span{text-align:left}.pick .tag .addr{display:none}.panel{padding:22px 18px}.house .inner{grid-template-columns:90px minmax(0,1fr);gap:12px;padding:10px}.house .inner p{display:none}.specs{gap:16px 18px}.house > .img{min-height:320px}.dashes{right:10px;top:10px}.house .side-arr.l{left:10px}.house .side-arr.r{right:10px}}
 
 /* ===== 5 Entscheidung (Moodboard „Only Here, Only With Us": Liste + Bild) ===== */
 .decide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,4vw,120px);align-items:stretch}
@@ -535,9 +546,17 @@ ul{padding:0;list-style:none}
 .pcard .img{border-radius:var(--r-in);aspect-ratio:4/3;margin-top:16px}
 .pcard p{color:rgba(255,255,255,.9);font-size:.875rem;line-height:1.6;margin-top:16px}
 .pcard .btn{margin-top:18px}
-.pdash{position:absolute;left:var(--gutter);bottom:40px;display:flex;gap:8px}
-.pdash i{width:26px;height:3px;border-radius:3px;background:rgba(255,255,255,.45)}
-.pdash i:first-child{background:#fff}
+.purpose{--pdur:6s}
+.pdash{position:absolute;z-index:2;left:var(--gutter);bottom:28px;display:flex;align-items:center;gap:4px}
+.pdash button[data-dot] i{width:26px;height:3px;border-radius:3px;background:rgba(255,255,255,.45)}
+.pdash button.done b{transform:scaleX(1)}
+.pdash button[aria-current="true"] b{animation:jfill var(--pdur) linear forwards}
+.purpose.paused .pdash button[aria-current="true"] b{animation-play-state:paused}
+.purpose.static .pdash button[aria-current="true"] b{animation:none;transform:scaleX(1)}
+.pdash .pplay{margin-left:10px}
+.pdash .pplay svg{width:14px;height:14px}
+.pdash .i-play,.purpose.stopped .pdash .i-pause{display:none}
+.purpose.stopped .pdash .i-play{display:block}
 @media (max-width:980px){.purpose{grid-template-columns:minmax(0,1fr);min-height:0;padding:96px var(--gutter) 72px;justify-items:center}.purpose .side{text-align:center;justify-self:center}.purpose .side.r{order:-1;text-align:center;justify-self:center}.purpose .side.r h2{margin:0 auto}}
 
 /* ===== 11 FAQ (Moodboard: links Titel + Thumbnails, rechts nummerierte Liste) ===== */
@@ -747,11 +766,12 @@ ul{padding:0;list-style:none}
   <div class="houses">
     <!-- Villa -->
     <article class="house villa reveal" id="villa" aria-labelledby="h-villa">
-      <div class="img">
-        <img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-2-1536x1064.jpg" alt="Balkon der Villa Bella-Vista mit Blick über Sassnitz auf die Ostsee" loading="lazy" onerror="this.classList.add('missing')">
+      <div class="img gal" data-gal aria-roledescription="Karussell" aria-label="Fotos Villa Bella-Vista">
+        <div class="slides"><img class="is-on" src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-2-1536x1064.jpg" alt="Balkon der Villa Bella-Vista mit Blick über Sassnitz auf die Ostsee" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-1536x1152.jpg" alt="Villa Bella-Vista in Sassnitz, weiße Villa mit Holzbalkonen" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/whng-2-1536x1152.jpg" alt="Wohnbereich der Ferienwohnung Meerblick 2" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/20200624_155857-1-1170x570.jpg" alt="Wohn- und Essbereich einer Ferienwohnung in der Villa Bella-Vista" loading="lazy" onerror="this.classList.add('missing')"></div>
         <div class="loc glass-card"><svg><use href="#i-pin"/></svg><div><b>Sassnitz</b><small>Bergstraße 19</small></div></div>
-        <div class="dashes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <span class="circle glass side-arr l" aria-hidden="true"><svg><use href="#i-left"/></svg></span><span class="circle glass side-arr r" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <div class="dashes" role="group" aria-label="Foto wählen"><button type="button" data-dot="0" aria-label="Foto 1 von 4" aria-current="true"><i><b></b></i></button><button type="button" data-dot="1" aria-label="Foto 2 von 4"><i><b></b></i></button><button type="button" data-dot="2" aria-label="Foto 3 von 4"><i><b></b></i></button><button type="button" data-dot="3" aria-label="Foto 4 von 4"><i><b></b></i></button></div>
+        <button type="button" class="circle glass side-arr l" data-prev aria-label="Vorheriges Foto Villa Bella-Vista"><svg><use href="#i-left"/></svg></button><button type="button" class="circle glass side-arr r" data-next aria-label="Nächstes Foto Villa Bella-Vista"><svg><use href="#i-arrow"/></svg></button>
+        <p class="visually-hidden" aria-live="polite" data-live></p>
         <div class="inner glass-card">
           <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/whng-2-480x360.jpg" alt="Wohnbereich der Ferienwohnung Meerblick 2" loading="lazy" onerror="this.classList.add('missing')"></div>
           <div><h3>Meerblick 1 bis 6</h3><p>Sechs Wohnungen, sechs Balkone, ein Blick. Morgens scheint die Sonne auf den Balkon, vor Ihnen liegt die Ostsee.</p></div>
@@ -788,11 +808,12 @@ ul{padding:0;list-style:none}
 
     <!-- Pension -->
     <article class="house pension reveal" id="pension" aria-labelledby="h-pension">
-      <div class="img">
-        <img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/01/Pension_aussen-4-min-1030x687-2.jpg" alt="Pension Kreidefels in Sassnitz mit Terrasse, Liegen und Rasen" loading="lazy" onerror="this.classList.add('missing')">
+      <div class="img gal" data-gal aria-roledescription="Karussell" aria-label="Fotos Pension Kreidefels">
+        <div class="slides"><img class="is-on" src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/01/Pension_aussen-4-min-1030x687-2.jpg" alt="Pension Kreidefels in Sassnitz mit Terrasse, Liegen und Rasen" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/apartment-1-5-1536x1152.jpg" alt="Apartment mit Küchenzeile in der Pension Kreidefels" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/apartment-1-9-1170x570.jpg" alt="Schlafbereich in einem Apartment der Pension Kreidefels" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4691-1536x1152.jpeg" alt="Holzsteg an der Ostsee in Sassnitz" loading="lazy" onerror="this.classList.add('missing')"></div>
         <div class="loc glass-card"><svg><use href="#i-pin"/></svg><div><b>Sassnitz</b><small>Weddingstraße 50</small></div></div>
-        <div class="dashes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <span class="circle glass side-arr l" aria-hidden="true"><svg><use href="#i-left"/></svg></span><span class="circle glass side-arr r" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+        <div class="dashes" role="group" aria-label="Foto wählen"><button type="button" data-dot="0" aria-label="Foto 1 von 4" aria-current="true"><i><b></b></i></button><button type="button" data-dot="1" aria-label="Foto 2 von 4"><i><b></b></i></button><button type="button" data-dot="2" aria-label="Foto 3 von 4"><i><b></b></i></button><button type="button" data-dot="3" aria-label="Foto 4 von 4"><i><b></b></i></button></div>
+        <button type="button" class="circle glass side-arr l" data-prev aria-label="Vorheriges Foto Pension Kreidefels"><svg><use href="#i-left"/></svg></button><button type="button" class="circle glass side-arr r" data-next aria-label="Nächstes Foto Pension Kreidefels"><svg><use href="#i-arrow"/></svg></button>
+        <p class="visually-hidden" aria-live="polite" data-live></p>
         <div class="inner glass-card">
           <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/apartment-1-5-480x360.jpg" alt="Apartment mit Küchenzeile in der Pension Kreidefels" loading="lazy" onerror="this.classList.add('missing')"></div>
           <div><h3>Apartment 1 bis 9</h3><p>Jedes Apartment mit eigener Küchenzeile und eigenem Bad. Haustiere wohnen hier nicht, das freut Allergiker.</p></div>
@@ -1077,8 +1098,8 @@ ul{padding:0;list-style:none}
 </section>
 
 <!-- ============ 10 GASTGEBER (randlos) ============ -->
-<section class="purpose" id="gastgeber" aria-labelledby="h-host">
-  <div class="img shade"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-scaled.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div>
+<section class="purpose" id="gastgeber" aria-labelledby="h-host" data-show>
+  <div class="img shade gal-bg"><div class="slides"><img class="is-on" src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-scaled.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-1536x1152.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4691-1536x1152.jpeg" alt="" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4717-1536x1152.jpeg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div></div>
   <p class="ptop">Warum direkt bei Familie Feldmann?</p>
   <p class="side">Sie buchen <strong>nicht bei einem Portal, sondern bei uns</strong>. Fragen klären Sie mit einem Anruf, vor der Anreise und während des Urlaubs.</p>
   <div class="pcard reveal">
@@ -1088,7 +1109,7 @@ ul{padding:0;list-style:none}
     <a class="btn btn-white" href="tel:+4917655863333"><svg><use href="#i-phone"/></svg>0176 558 633 33</a>
   </div>
   <div class="side r"><h2 id="h-host"><strong>Persönlich</strong> statt Portal</h2></div>
-  <div class="pdash" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="pdash" role="group" aria-label="Hintergrundfotos"><button type="button" data-dot="0" aria-label="Hintergrundfoto 1 von 4" aria-current="true"><i><b></b></i></button><button type="button" data-dot="1" aria-label="Hintergrundfoto 2 von 4"><i><b></b></i></button><button type="button" data-dot="2" aria-label="Hintergrundfoto 3 von 4"><i><b></b></i></button><button type="button" data-dot="3" aria-label="Hintergrundfoto 4 von 4"><i><b></b></i></button><button type="button" class="circle glass sm pplay" aria-label="Diashow anhalten"><svg class="i-pause"><use href="#i-pause"/></svg><svg class="i-play"><use href="#i-play"/></svg></button></div>
 </section>
 
 <div class="wrap">
@@ -1233,6 +1254,60 @@ ul{padding:0;list-style:none}
     play.addEventListener('click',function(){stopped=!stopped; sync();});
     d.addEventListener('visibilitychange',sync);
     if(!inView) new IntersectionObserver(function(es){inView=es[0].isIntersecting; sync();},{threshold:.35}).observe(jr);
+    sync();
+  })();
+
+  /* Foto-Karussells: Häuser (manuell) und Gastgeber-Diashow (automatisch, mit Pause) */
+  var reduce=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function carousel(root,opt){
+    var imgs=[].slice.call(root.querySelectorAll('.slides img')), dots=[].slice.call(root.querySelectorAll('[data-dot]')),
+        live=root.querySelector('[data-live]'), n=imgs.length, cur=0, x0=null, y0=0;
+    function go(i,announce){
+      cur=(i+n)%n;
+      imgs.forEach(function(im,k){im.classList.toggle('is-on',k===cur);});
+      dots.forEach(function(b,k){b.classList.toggle('done',k<cur); if(k===cur) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current');});
+      if(live&&announce) live.textContent='Foto '+(cur+1)+' von '+n+': '+imgs[cur].alt;
+      if(opt&&opt.onGo) opt.onGo(cur);
+    }
+    dots.forEach(function(b,k){b.addEventListener('click',function(){go(k,true);});});
+    var pv=root.querySelector('[data-prev]'), nx=root.querySelector('[data-next]');
+    if(pv) pv.addEventListener('click',function(){go(cur-1,true);});
+    if(nx) nx.addEventListener('click',function(){go(cur+1,true);});
+    root.addEventListener('keydown',function(e){
+      if(e.target.closest&&e.target.closest('a[href]')) return;
+      if(e.key==='ArrowLeft'){go(cur-1,true);e.preventDefault();}
+      else if(e.key==='ArrowRight'){go(cur+1,true);e.preventDefault();}
+    });
+    root.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse') return; x0=e.clientX; y0=e.clientY;});
+    root.addEventListener('pointerup',function(e){
+      if(x0===null) return; var dx=e.clientX-x0, dy=e.clientY-y0; x0=null;
+      if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.2) go(cur+(dx<0?1:-1),true);
+    });
+    root.addEventListener('pointercancel',function(){x0=null;});
+    return {go:go,cur:function(){return cur;},dots:dots};
+  }
+  d.querySelectorAll('[data-gal]').forEach(function(g){carousel(g);});
+
+  (function(){
+    var sec=d.querySelector('[data-show]'); if(!sec) return;
+    var play=sec.querySelector('.pplay'), hover=false, inView=!('IntersectionObserver' in window), stopped=reduce;
+    var c=carousel(sec,{auto:true});
+    function sync(){
+      sec.classList.toggle('paused',hover||stopped||!inView||d.hidden);
+      sec.classList.toggle('stopped',stopped);
+      sec.classList.toggle('static',reduce&&stopped);
+      play.setAttribute('aria-label',stopped?'Diashow starten':'Diashow anhalten');
+    }
+    c.dots.forEach(function(b,k){b.querySelector('b').addEventListener('animationend',function(){if(k===c.cur()) c.go(c.cur()+1);});});
+    c.dots.forEach(function(el){
+      el.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'){hover=true;sync();}});
+      el.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'){hover=false;sync();}});
+      el.addEventListener('focus',function(){hover=true;sync();});
+      el.addEventListener('blur',function(){hover=false;sync();});
+    });
+    play.addEventListener('click',function(){stopped=!stopped; if(!stopped) sec.classList.remove('static'); sync();});
+    d.addEventListener('visibilitychange',sync);
+    if(!inView) new IntersectionObserver(function(es){inView=es[0].isIntersecting; sync();},{threshold:.3}).observe(sec);
     sync();
   })();
 
