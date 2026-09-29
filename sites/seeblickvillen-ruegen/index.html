@@ -132,6 +132,16 @@ body{margin:0;background:var(--bg);color:var(--ink-2);font:400 1rem/1.65 var(--s
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3,h4{margin:0;color:#111;font-weight:500;letter-spacing:-.01em;line-height:1.12;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Typo-Gewichte, vier Stufen mit fester Bedeutung:
+   300 Light    Display-Text (H1, H2) rund um die Keywords, große Zahlen, Zitate
+   400 Regular  Fließtext und Beschreibungen
+   500 Medium   Bedienelemente, Werte, Fragen, Navigation
+   600 Semibold Keywords (strong), Titel (H3), Labels, Preise, Haupt-Buttons */
+h1,h2{font-weight:300;letter-spacing:-.015em}
+strong,b{font-weight:600}
+h1 strong,h2 strong,h3 strong{font-weight:600;letter-spacing:-.02em}
+.sub strong,.lead strong,.desc strong{color:var(--ink)}
+.hero strong,.journey strong,.purpose strong,.on-img strong{color:#fff}
 p,ul,ol,figure{margin:0}
 ul{padding:0;list-style:none}
 .wrap{max-width:calc(var(--wrap) + var(--gutter)*2);margin:0 auto;padding:0 var(--gutter)}
@@ -142,6 +152,7 @@ ul{padding:0;list-style:none}
 .sub{font-size:.9375rem;line-height:1.6;color:var(--ink-3)}
 .lead{font-size:1.0625rem;line-height:1.65;color:var(--ink-3)}
 .tiny{font-size:.8125rem;color:var(--ink-3);line-height:1.5}
+.tiny.kw{font-weight:600;color:var(--ink)}
 .upper{text-transform:uppercase;letter-spacing:.06em}
 .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--ink);color:#fff;padding:10px 16px;border-radius:var(--r-pill);text-decoration:none}
@@ -161,6 +172,7 @@ ul{padding:0;list-style:none}
 .btn-dark:hover{opacity:.9}
 .btn-line{background:#fff;color:var(--ink);border-color:var(--line-2)}
 .btn-white{background:#fff;color:var(--ink)}
+.btn-dark,.btn-white{font-weight:600}
 .btn-glass{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .btn-glass:focus-visible,.btn-white:focus-visible{outline-color:#fff}
 .btn-block{width:100%}
@@ -203,7 +215,7 @@ ul{padding:0;list-style:none}
 .logo b{font-weight:600;font-size:.8125rem;letter-spacing:.1em}
 .logo small{font-size:.5rem;letter-spacing:.22em;color:#3A3A3A}
 .nav{display:flex;flex-wrap:nowrap;align-items:center;gap:clamp(20px,2.4vw,48px);margin:0 auto;white-space:nowrap;min-width:0}
-.nav a{flex:none;font-size:.8125rem;text-transform:uppercase;letter-spacing:.02em;color:#3A3A3A;text-decoration:none;padding:6px 0;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;border-bottom:1px solid transparent;transition:color .2s var(--ease)}
+.nav a{flex:none;font-weight:500;font-size:.8125rem;text-transform:uppercase;letter-spacing:.02em;color:#3A3A3A;text-decoration:none;padding:6px 0;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;border-bottom:1px solid transparent;transition:color .2s var(--ease)}
 .nav a:hover{color:var(--ink)}
 .nav a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--ink)}
 .nav a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
@@ -245,12 +257,12 @@ ul{padding:0;list-style:none}
   linear-gradient(90deg,rgba(12,18,28,.55) 0%,rgba(12,18,28,.22) 45%,rgba(12,18,28,.06) 100%),
   linear-gradient(0deg,rgba(12,18,28,.42) 0%,rgba(12,18,28,0) 52%)}
 .hero-copy{max-width:clamp(420px,34vw,720px)}
-.hero-copy h1{color:#fff;font-size:var(--h1);font-weight:500;line-height:1.12;letter-spacing:-.01em;max-width:14ch}
+.hero-copy h1{color:#fff;font-size:var(--h1);font-weight:300;line-height:1.12;letter-spacing:-.01em;max-width:14ch}
 .hero-copy p{margin-top:clamp(14px,1.2vw,22px);font-size:.9375rem;line-height:1.6;color:rgba(255,255,255,.9);max-width:48ch}
 .hero-copy .btn{margin-top:clamp(22px,2.2vw,36px);min-height:48px;padding:0 26px}
 .hero-side{display:flex;align-items:flex-end;gap:clamp(10px,.9vw,16px)}
 .hero-pills{display:flex;flex-direction:column;gap:clamp(8px,.7vw,12px);width:clamp(240px,17.8vw,400px)}
-.hero-pill{display:flex;align-items:flex-start;gap:10px;padding:clamp(12px,1vw,18px) clamp(14px,1.2vw,22px);font-size:.9375rem;font-weight:500;line-height:1.35;color:#fff;text-decoration:none;border-radius:12px;transition:transform .35s var(--spring)}
+.hero-pill{display:flex;align-items:flex-start;gap:10px;padding:clamp(12px,1vw,18px) clamp(14px,1.2vw,22px);font-size:.9375rem;font-weight:400;line-height:1.35;color:#fff;text-decoration:none;border-radius:12px;transition:transform .35s var(--spring)}
 .hero-pill:hover{transform:translateY(-2px)}
 .hero-pill:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .hero-pill .dot{margin-top:6px}
@@ -259,7 +271,7 @@ ul{padding:0;list-style:none}
 .hero-card:hover{transform:translateY(-2px)}
 .hero-card:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .hero-card .img{border-radius:8px;aspect-ratio:16/10.5;background:#C9D1DA}
-.hero-card .t{display:block;font-size:1.0625rem;font-weight:500;line-height:1.35;margin-top:clamp(14px,1.2vw,22px)}
+.hero-card .t{display:block;font-size:1.0625rem;font-weight:600;line-height:1.35;margin-top:clamp(14px,1.2vw,22px)}
 .hero-card .d{display:block;font-size:.875rem;line-height:1.55;color:rgba(255,255,255,.86);margin-top:clamp(10px,1vw,16px)}
 @media (max-width:1100px){
   .hero-card{display:none}
@@ -285,11 +297,11 @@ ul{padding:0;list-style:none}
 
 /* ===== 3 Zahlen (Moodboard „Rooted in Heritage": 2x2-Bento + Bild) ===== */
 .facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(40px,4vw,120px);align-items:start}
-.facts h2{font-size:1.4375rem;font-weight:500;max-width:26ch;margin-bottom:22px}
+.facts h2{font-size:1.4375rem;font-weight:300;max-width:26ch;margin-bottom:22px}
 .bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .stat{background:var(--card);border-radius:var(--r-card);padding:22px 22px 24px;min-height:clamp(190px,12vw,280px);display:flex;flex-direction:column}
-.stat .n{font-size:clamp(2.25rem,1.8rem + 1.4vw,3rem);color:#111;letter-spacing:-.01em;line-height:1}
-.stat .k{font-size:1.0625rem;color:var(--ink);margin-top:auto;padding-top:28px;line-height:1.3}
+.stat .n{font-weight:300;font-size:clamp(2.25rem,1.8rem + 1.4vw,3rem);color:#111;letter-spacing:-.01em;line-height:1}
+.stat .k{font-weight:600;font-size:1.0625rem;color:var(--ink);margin-top:auto;padding-top:28px;line-height:1.3}
 .stat .d{font-size:.875rem;color:var(--ink-3);margin-top:8px;line-height:1.5}
 .stat.v{background:var(--slate)}.stat.v .n,.stat.v .k{color:#fff}.stat.v .d{color:rgba(255,255,255,.85)}
 .stat.p{background:var(--sage)}.stat.p .n,.stat.p .k{color:#fff}.stat.p .d{color:rgba(255,255,255,.85)}
@@ -297,7 +309,7 @@ ul{padding:0;list-style:none}
 .facts-img .tag{position:absolute;z-index:2;left:16px;bottom:16px}
 .facts-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px}
 .facts-cols p{font-size:.875rem;color:var(--ink-3);line-height:1.6}
-.facts-cols b{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:500;font-size:.9375rem;margin-bottom:6px}
+.facts-cols b{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;font-size:.9375rem;margin-bottom:6px}
 @media (max-width:980px){.facts{grid-template-columns:minmax(0,1fr);gap:32px}}
 @media (max-width:520px){.stat{min-height:160px;padding:18px}.facts-cols{grid-template-columns:minmax(0,1fr)}}
 
@@ -307,7 +319,7 @@ ul{padding:0;list-style:none}
 .house > .img{border-radius:0;min-height:420px}
 .house .loc{position:absolute;z-index:2;left:18px;top:18px;display:flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px}
 .house .loc svg{width:20px;height:20px}
-.house .loc b{display:block;font-weight:500;font-size:.9375rem;line-height:1.2}
+.house .loc b{display:block;font-weight:600;font-size:.9375rem;line-height:1.2}
 .house .loc small{display:block;font-size:.75rem;opacity:.85}
 .house .side-arr{position:absolute;z-index:2;top:50%;transform:translateY(-50%)}
 .house .side-arr.l{left:18px}.house .side-arr.r{right:18px}
@@ -316,11 +328,11 @@ ul{padding:0;list-style:none}
 .dashes i:first-child{background:#fff}
 .house .inner{position:absolute;z-index:2;left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:12px}
 .house .inner .img{border-radius:var(--r-in);aspect-ratio:4/3;background:#C9D1DA}
-.house .inner h3{color:#fff;font-size:1rem;font-weight:500;margin-top:6px}
+.house .inner h3{color:#fff;font-size:1rem;font-weight:600;margin-top:6px}
 .house .inner p{color:rgba(255,255,255,.85);font-size:.8125rem;line-height:1.5;margin-top:6px}
 .panel{padding:clamp(28px,2.6vw,56px) clamp(28px,2.6vw,56px) clamp(24px,2.2vw,48px);display:flex;flex-direction:column;gap:22px}
 .panel .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.panel h3{font-size:1.25rem;font-weight:500;letter-spacing:-.005em}
+.panel h3{font-size:1.25rem;font-weight:600;letter-spacing:-.005em}
 .panel .desc{font-size:.9375rem;color:var(--ink-3);line-height:1.65}
 .specs{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
 .specs dt{font-size:.8125rem;color:var(--ink-3)}
@@ -333,8 +345,8 @@ ul{padding:0;list-style:none}
 .house.villa .panel .accent{color:var(--slate)}
 .house.pension .panel .accent{color:var(--sage)}
 .mini-units{display:grid;gap:8px}
-.mini-units div{display:flex;justify-content:space-between;gap:12px;font-size:.875rem;padding:12px 14px;background:#fff;border-radius:12px;color:var(--ink)}
-.mini-units span{color:var(--ink-3);text-align:right}
+.mini-units div{display:flex;justify-content:space-between;gap:12px;font-size:.875rem;font-weight:600;padding:12px 14px;background:#fff;border-radius:12px;color:var(--ink)}
+.mini-units span{color:var(--ink-3);text-align:right;font-weight:400}
 @media (max-width:980px){.house{grid-template-columns:minmax(0,1fr)}.house > .img{min-height:360px}}
 @media (max-width:640px){.mini-units div{flex-direction:column;gap:2px}.mini-units span{text-align:left}.pick .tag .addr{display:none}.panel{padding:22px 18px}.house .inner{grid-template-columns:90px minmax(0,1fr);gap:12px;padding:10px}.house .inner p{display:none}.specs{gap:16px 18px}.house > .img{min-height:320px}.dashes,.house .side-arr{display:none}}
 
@@ -347,7 +359,7 @@ ul{padding:0;list-style:none}
 .drow:hover{background:#FAFAFA}
 .drow[aria-selected="true"]{background:var(--card)}
 .drow:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
-.drow b{display:block;font-weight:500;font-size:1.1875rem;color:#111}
+.drow b{display:block;font-weight:600;font-size:1.1875rem;color:#111}
 .drow small{display:block;font-size:.875rem;color:var(--ink-3);margin-top:6px;line-height:1.5}
 .drow .circle{pointer-events:none}
 .drow[aria-selected="true"][data-h="villa"] .circle{background:var(--slate);border-color:var(--slate);color:#fff}
@@ -361,7 +373,7 @@ ul{padding:0;list-style:none}
 /* ===== 6 Buchung + Details (Moodboard Resort-Detailseite) ===== */
 .detail{display:grid;grid-template-columns:minmax(0,clamp(360px,25vw,500px)) minmax(0,1fr);gap:clamp(32px,3.2vw,80px);align-items:start}
 .reserve{position:sticky;top:104px;background:var(--card);border-radius:var(--r-card);padding:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
-.reserve h2{font-size:1.375rem;font-weight:500;letter-spacing:-.01em}
+.reserve h2{font-size:1.375rem;font-weight:600;letter-spacing:-.01em}
 .seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;background:#fff;border-radius:var(--r-pill);border:1px solid var(--line)}
 .seg button{min-height:40px;border:0;border-radius:var(--r-pill);background:transparent;font:500 .875rem var(--sans);color:var(--ink-3);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
 .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
@@ -377,9 +389,9 @@ ul{padding:0;list-style:none}
 .rows{display:grid;gap:10px;font-size:.875rem}
 .rows > div{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .rows span:first-child{color:var(--ink-3)}
-.rows b{color:var(--ink);font-weight:500;text-align:right}
+.rows b{color:var(--ink);font-weight:600;text-align:right}
 .rows .total{border-top:1px solid var(--line-2);padding-top:12px}
-.rows .total span:first-child{color:var(--ink);font-weight:500}
+.rows .total span:first-child{color:var(--ink);font-weight:600}
 .switch{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--ink);cursor:pointer}
 .switch input{position:absolute;opacity:0;width:1px;height:1px}
 .switch .tr{width:44px;height:26px;border-radius:99px;background:var(--line-2);position:relative;flex:none;transition:background .2s}
@@ -388,11 +400,11 @@ ul{padding:0;list-style:none}
 .switch input:checked + .tr::after{transform:translateX(18px)}
 .switch input:focus-visible + .tr{outline:2px solid var(--ink);outline-offset:2px}
 .switch input:disabled + .tr{opacity:.4}
-.dmain h2{font-size:1.5rem;font-weight:500}
+.dmain h2{font-size:1.5rem;font-weight:300}
 .dmain .addr{font-size:.8125rem;color:var(--ink-3);margin-top:10px}
 .dmain .desc{margin-top:16px;max-width:70ch}
 .dblock{padding-top:36px}
-.dblock > h3{font-size:1.0625rem;font-weight:500;margin-bottom:18px}
+.dblock > h3{font-size:1.0625rem;font-weight:600;margin-bottom:18px}
 .feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 24px}
 .feat li{display:flex;gap:10px;align-items:center;font-size:.875rem;color:var(--ink-2)}
 .feat svg{width:18px;height:18px;flex:none;color:var(--ink)}
@@ -405,7 +417,7 @@ ul{padding:0;list-style:none}
 .scores > div{padding:4px 24px;border-left:1px solid var(--line)}
 .scores > div:first-child{padding-left:0;border-left:0}
 .scores .l{font-size:.8125rem;color:var(--ink-3)}
-.scores .n{font-size:1.875rem;color:var(--ink);letter-spacing:-.02em;margin-top:6px;display:flex;align-items:center;gap:10px}
+.scores .n{font-weight:300;font-size:1.875rem;color:var(--ink);letter-spacing:-.02em;margin-top:6px;display:flex;align-items:center;gap:10px}
 .scores .n .st{display:flex;gap:2px;color:var(--star)}
 .scores .n .st svg{width:13px;height:13px}
 .scores .s{font-size:.8125rem;color:var(--ink-3);margin-top:4px}
@@ -417,7 +429,7 @@ ul{padding:0;list-style:none}
 .map svg.base{position:absolute;inset:0;width:100%;height:100%}
 .map .info{position:absolute;z-index:2;left:18px;top:18px;background:#fff;border-radius:12px;padding:14px 16px;display:flex;gap:10px;max-width:280px}
 .map .info svg{width:18px;height:18px;flex:none;margin-top:2px}
-.map .info b{display:block;font-size:.8125rem;font-weight:500;color:var(--ink)}
+.map .info b{display:block;font-size:.8125rem;font-weight:600;color:var(--ink)}
 .map .info small{display:block;font-size:.75rem;color:var(--ink-3);line-height:1.45;margin-top:4px}
 .pin{position:absolute;z-index:2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;transform:translate(-50%,-50%);box-shadow:0 0 0 6px rgba(255,255,255,.7)}
 .pin.v{background:var(--slate)}.pin.p{background:var(--sage)}
@@ -439,7 +451,7 @@ ul{padding:0;list-style:none}
 .strip .cap{position:absolute;z-index:2;left:24px;right:24px;bottom:24px;padding:16px 18px}
 .strip .cap p{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s var(--ease)}
 .strip .img:first-child .cap p,.strip .img:hover .cap p,.strip .img:focus-visible .cap p{max-height:120px;opacity:1}
-.strip .cap h3{color:#fff;font-size:1.0625rem;font-weight:500;line-height:1.35}
+.strip .cap h3{color:#fff;font-size:1.0625rem;font-weight:600;line-height:1.35}
 .strip .cap p{color:rgba(255,255,255,.85);font-size:.8125rem;line-height:1.5;margin-top:6px}
 .strip .img:focus-visible{outline:2px solid #fff;outline-offset:-4px}
 @media (max-width:980px){.strip .cap p{max-height:none;opacity:1}.strip .cap{left:14px;right:14px;bottom:14px}.strip{grid-template-columns:1fr 1fr;height:auto}.strip .img{aspect-ratio:3/4}}
@@ -458,8 +470,8 @@ ul{padding:0;list-style:none}
 .jsteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 var(--jgap)}
 .jstep{display:flex;flex-direction:column;min-width:0}
 .jstep:not(.is-active){cursor:pointer}
-.jlabel{margin:0;color:#fff;font-size:1.0625rem;font-weight:400;line-height:1.3;letter-spacing:0;opacity:.6;transition:opacity .45s var(--ease)}
-.jlabel small{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.jlabel{margin:0;color:#fff;font-size:1.0625rem;font-weight:500;line-height:1.3;letter-spacing:0;opacity:.6;transition:opacity .45s var(--ease)}
+.jlabel small{display:block;font-weight:600;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
 .jbar{position:relative;display:block;height:1px;margin:clamp(16px,1.4vw,24px) calc(-1 * var(--jgap)) clamp(22px,1.9vw,36px) 0;background:rgba(255,255,255,.35)}
 .jstep:last-child .jbar{margin-right:0}
 .jbar i{position:absolute;left:0;right:0;top:-.5px;height:2px;border-radius:2px;background:#fff;transform:scaleX(0);transform-origin:0 50%}
@@ -496,16 +508,16 @@ ul{padding:0;list-style:none}
 .rbig{grid-column:span 8;min-height:clamp(400px,27vw,620px);padding:30px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
 .rbig > .img{position:absolute;inset:0;border-radius:0;z-index:-1}
 .rbig{position:relative;isolation:isolate;border-radius:var(--r-card);overflow:hidden}
-.rbig q{font-size:clamp(1.25rem,1rem + .8vw,1.625rem);line-height:1.4;max-width:28ch;quotes:"„" "“"}
+.rbig q{font-weight:300;font-size:clamp(1.25rem,1rem + .8vw,1.625rem);line-height:1.4;max-width:28ch;quotes:"„" "“"}
 .rbig .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.875rem}
 .rnum{grid-column:span 4;border-radius:var(--r-card);padding:26px;display:flex;flex-direction:column;color:#fff;min-height:clamp(400px,27vw,620px)}
 .rnum.p{background:var(--sage)}
 .rnum .l{font-size:.8125rem;color:rgba(255,255,255,.85)}
-.rnum .n{font-size:clamp(3.5rem,2.6rem + 3.2vw,5.75rem);letter-spacing:-.01em;line-height:1;margin-top:auto}
-.rnum .k{font-size:1.0625rem;margin-top:14px;line-height:1.35}
+.rnum .n{font-weight:300;font-size:clamp(3.5rem,2.6rem + 3.2vw,5.75rem);letter-spacing:-.01em;line-height:1;margin-top:auto}
+.rnum .k{font-weight:500;font-size:1.0625rem;margin-top:14px;line-height:1.35}
 .rstory{grid-column:span 5;border-radius:var(--r-card);padding:24px;background:var(--slate);color:#fff;display:flex;flex-direction:column;gap:14px}
 .rstory .l{font-size:.8125rem;color:rgba(255,255,255,.85)}
-.rstory h3{color:#fff;font-size:1.25rem;font-weight:400;line-height:1.35}
+.rstory h3{color:#fff;font-size:1.25rem;font-weight:300;line-height:1.35}
 .rstory .img{border-radius:var(--r-in);aspect-ratio:16/8;margin-top:auto}
 .rtext{grid-column:span 7;border-radius:var(--r-card);padding:28px;background:var(--card);display:flex;flex-direction:column;justify-content:space-between;gap:22px}
 .rtext p.q{font-size:1.1875rem;line-height:1.55;color:var(--ink);max-width:40ch}
@@ -517,9 +529,9 @@ ul{padding:0;list-style:none}
 .purpose .side{font-size:.8125rem;color:rgba(255,255,255,.9);max-width:30ch;align-self:center}
 .purpose .side.r{justify-self:end;text-align:right}
 .purpose .side.r h2{color:#fff;font-size:var(--h2);max-width:12ch;margin-left:auto}
-.purpose .ptop{position:absolute;left:var(--gutter);top:44px;font-size:.8125rem;color:rgba(255,255,255,.9)}
+.purpose .ptop{font-weight:600;position:absolute;left:var(--gutter);top:44px;font-size:.8125rem;color:rgba(255,255,255,.9)}
 .pcard{width:100%;background:var(--slate);border-radius:var(--r-card);padding:22px;text-align:center}
-.pcard h3{color:#fff;font-size:1.25rem;font-weight:400;line-height:1.35}
+.pcard h3{color:#fff;font-size:1.25rem;font-weight:300;line-height:1.35}
 .pcard .img{border-radius:var(--r-in);aspect-ratio:4/3;margin-top:16px}
 .pcard p{color:rgba(255,255,255,.9);font-size:.875rem;line-height:1.6;margin-top:16px}
 .pcard .btn{margin-top:18px}
@@ -540,14 +552,14 @@ ul{padding:0;list-style:none}
 .qa summary{list-style:none;display:grid;grid-template-columns:40px minmax(0,1fr) 34px;gap:12px;align-items:center;padding:32px 12px;cursor:pointer}
 .qa summary::-webkit-details-marker{display:none}
 .qa summary:focus-visible{outline:2px solid var(--ink);outline-offset:-2px;border-radius:8px}
-.qa .no{font-size:1rem;color:var(--ink)}
+.qa .no{font-size:1rem;font-weight:300;color:var(--ink-3)}
 .qa h3{font-size:1.1875rem;font-weight:500;line-height:1.4}
 .qa .pm{width:30px;height:30px;border-radius:50%;border:1px solid var(--ink);position:relative;justify-self:end}
 .qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.3px;background:var(--ink);transform:translate(-50%,-50%)}
 .qa .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s var(--spring)}
 .qa details[open] .pm::after{transform:translate(-50%,-50%) rotate(0)}
 .qa .a{padding:0 58px 24px 64px;font-size:.9375rem;color:var(--ink-3);line-height:1.65}
-.qa .a b{color:var(--ink);font-weight:500}
+.qa .a b{color:var(--ink);font-weight:600}
 @media (max-width:900px){.faq{grid-template-columns:minmax(0,1fr);gap:28px}.faq-l{position:static;min-height:0}.thumbs{display:none}}
 @media (max-width:640px){.qa summary{grid-template-columns:30px minmax(0,1fr) 30px;padding:18px 4px}.qa .a{padding:0 4px 20px 46px}}
 
@@ -555,22 +567,22 @@ ul{padding:0;list-style:none}
 .cta{position:relative;isolation:isolate;border-radius:var(--r-img);overflow:hidden;min-height:clamp(480px,34vw,760px);display:grid;place-items:center;text-align:center;padding:64px 24px;color:#fff}
 .cta > .img{position:absolute;inset:0;border-radius:0;z-index:-1}
 .cta > .img::after{content:"";position:absolute;inset:0;background:rgba(18,24,32,.45)}
-.cta h2{color:#fff;font-size:clamp(1.5rem,1.3rem + .6vw,1.75rem);font-weight:500;max-width:26ch;margin:0 auto;line-height:1.3}
+.cta h2{color:#fff;font-size:clamp(1.5rem,1.3rem + .6vw,1.75rem);font-weight:300;max-width:26ch;margin:0 auto;line-height:1.3}
 .cta p{color:rgba(255,255,255,.9);font-size:.9375rem;max-width:52ch;margin:16px auto 0}
 .cta > div:last-child{width:100%;max-width:760px}
 .cta .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
-.cta .btn-wide{width:min(100%,clamp(320px,22vw,480px))}
+.cta .btn-wide{width:min(100%,clamp(420px,28vw,560px))}
 @media (max-width:640px){.cta .btn-wide{width:100%}}
 
 /* ===== Footer (Moodboard) ===== */
 .foot{padding:88px 0 32px}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
 .foot-cols{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:32px}
-.foot-cols h3{font-size:.8125rem;font-weight:500;color:var(--ink);margin-bottom:10px}
+.foot-cols h3{font-size:.8125rem;font-weight:600;color:var(--ink);margin-bottom:10px}
 .foot-cols a,.foot-cols p{display:block;font-size:.875rem;color:var(--ink-2);text-decoration:none;line-height:2}
 .foot-cols a:hover{color:var(--ink);text-decoration:underline}
 .ask{margin-top:56px}
-.ask h3{font-size:1.125rem;font-weight:500}
+.ask h3{font-size:1.125rem;font-weight:600}
 .ask p{font-size:.8125rem;color:var(--ink-3);margin-top:8px;max-width:36ch}
 .mailpill{display:flex;align-items:center;gap:10px;margin-top:18px;max-width:380px;min-height:52px;padding:6px 6px 6px 18px;border:1px solid var(--line-2);border-radius:var(--r-pill);text-decoration:none;color:var(--ink-3);font-size:.875rem}
 .mailpill svg.m{width:18px;height:18px}
@@ -685,15 +697,15 @@ ul{padding:0;list-style:none}
       <img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-1536x1064.jpg" srcset="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-1170x570.jpg 1170w, https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-1536x1064.jpg 1536w, https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-scaled.jpg 2560w" sizes="100vw" alt="Blick vom Balkon der Villa Bella-Vista durch den weißen Holzbogen auf Sassnitz und die Ostsee" fetchpriority="high" onerror="this.classList.add('missing')">
     </div>
     <div class="hero-copy">
-      <h1 id="h1">Ferienwohnungen in Sassnitz auf Rügen</h1>
-      <p>Meerblick vom großen Balkon in der Villa Bella-Vista oder zwei Minuten zur Ostsee in der Pension Kreidefels. 15 Ferienwohnungen, vermietet von Familie Feldmann persönlich.</p>
+      <h1 id="h1"><strong>Ferienwohnungen in Sassnitz</strong> auf Rügen</h1>
+      <p><strong>Meerblick vom großen Balkon</strong> in der Villa Bella-Vista oder <strong>zwei Minuten zur Ostsee</strong> in der Pension Kreidefels. 15 Ferienwohnungen, vermietet von Familie Feldmann persönlich.</p>
       <a class="btn btn-white" href="#buchen">Termin prüfen</a>
     </div>
     <div class="hero-side">
       <div class="hero-pills">
-        <a class="hero-pill glass-card" href="#villa"><span class="dot v"></span><span>Villa Bella-Vista: Balkon mit Meerblick</span></a>
-        <a class="hero-pill glass-card" href="#pension"><span class="dot p"></span><span>Pension Kreidefels: 2 Minuten zur Ostsee</span></a>
-        <a class="hero-pill glass-card" href="#details"><span>Direkt beim Gastgeber, ohne Portal</span></a>
+        <a class="hero-pill glass-card" href="#villa"><span class="dot v"></span><span><strong>Villa Bella-Vista:</strong> Balkon mit Meerblick</span></a>
+        <a class="hero-pill glass-card" href="#pension"><span class="dot p"></span><span><strong>Pension Kreidefels:</strong> 2 Minuten zur Ostsee</span></a>
+        <a class="hero-pill glass-card" href="#details"><span><strong>Direkt beim Gastgeber,</strong> ohne Portal</span></a>
       </div>
       <a class="hero-card glass-card" href="#gastgeber">
         <span class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-1170x570.jpg" alt="Villa Bella-Vista in Sassnitz, weiße Villa mit Holzbalkonen" loading="lazy" onerror="this.classList.add('missing')"></span>
@@ -708,7 +720,7 @@ ul{padding:0;list-style:none}
 <section class="wrap sec" aria-labelledby="h-facts">
   <div class="facts">
     <div class="reveal">
-      <h2 id="h-facts">Direkt am Nationalpark Jasmund, persönlich vermietet</h2>
+      <h2 id="h-facts">Direkt am <strong>Nationalpark Jasmund</strong>, persönlich vermietet</h2>
       <div class="bento">
         <div class="stat"><span class="n">15</span><span class="k">Ferienwohnungen</span><span class="d">in zwei Häusern in Sassnitz, ein Ansprechpartner.</span></div>
         <div class="stat v"><span class="n">6 von 6</span><span class="k">Wohnungen mit Meerblick-Balkon</span><span class="d">Villa Bella-Vista, Süd-Ost-Lage mit Sonnenliegen.</span></div>
@@ -729,8 +741,8 @@ ul{padding:0;list-style:none}
 <!-- ============ 4 HÄUSER ============ -->
 <section class="wrap sec" id="haeuser" aria-labelledby="h-houses">
   <div class="center reveal">
-    <h2 class="h2" id="h-houses">Unsere zwei Häuser in Sassnitz</h2>
-    <p class="sub" style="margin-top:14px">Beide liegen in Sassnitz, beide vermietet Familie Feldmann selbst. Der Unterschied liegt im Blick, im Platz und beim Hund.</p>
+    <h2 class="h2" id="h-houses">Unsere <strong>zwei Häuser in Sassnitz</strong></h2>
+    <p class="sub" style="margin-top:14px">Beide liegen in Sassnitz, beide vermietet Familie Feldmann selbst. Der Unterschied liegt <strong>im Blick, im Platz und beim Hund</strong>.</p>
   </div>
   <div class="houses">
     <!-- Villa -->
@@ -746,10 +758,10 @@ ul{padding:0;list-style:none}
         </div>
       </div>
       <div class="panel">
-        <div class="top"><span class="tag"><span class="dot v"></span>Haus 1</span><span class="tiny">Ferienwohnungen mit Meerblick</span></div>
+        <div class="top"><span class="tag"><span class="dot v"></span>Haus 1</span><span class="tiny kw">Ferienwohnungen mit Meerblick</span></div>
         <div>
           <h3 id="h-villa">Villa Bella-Vista</h3>
-          <p class="desc" style="margin-top:10px">Jede Wohnung der Villa hat einen sehr großen Balkon in Süd-Ost-Lage, mit Sitzmöbeln und Sonnenliegen. WLAN, Parkplatz, Kinderbett und Hochstuhl sind kostenlos.</p>
+          <p class="desc" style="margin-top:10px">Jede Wohnung der Villa hat einen <strong>sehr großen Balkon in Süd-Ost-Lage</strong>, mit Sitzmöbeln und Sonnenliegen. WLAN, Parkplatz, Kinderbett und Hochstuhl sind kostenlos.</p>
         </div>
         <dl class="specs">
           <div><dt>Wohnungen</dt><dd>6, davon 3 mit zwei Schlafzimmern</dd></div>
@@ -787,10 +799,10 @@ ul{padding:0;list-style:none}
         </div>
       </div>
       <div class="panel">
-        <div class="top"><span class="tag"><span class="dot p"></span>Haus 2</span><span class="tiny">Apartments nah am Wasser</span></div>
+        <div class="top"><span class="tag"><span class="dot p"></span>Haus 2</span><span class="tiny kw">Apartments nah am Wasser</span></div>
         <div>
           <h3 id="h-pension">Pension Kreidefels</h3>
-          <p class="desc" style="margin-top:10px">Neun Apartments, zwei Minuten zur Ostsee. Abends sitzen Sie auf der Sonnenterrasse oder am Grillplatz. Bettwäsche, Handtücher, WLAN und Parkplatz sind inklusive.</p>
+          <p class="desc" style="margin-top:10px">Neun Apartments, <strong>zwei Minuten zur Ostsee</strong>. Abends sitzen Sie auf der Sonnenterrasse oder am Grillplatz. Bettwäsche, Handtücher, WLAN und Parkplatz sind inklusive.</p>
         </div>
         <dl class="specs">
           <div><dt>Apartments</dt><dd>9, 35 bis 45&nbsp;m²</dd></div>
@@ -821,7 +833,7 @@ ul{padding:0;list-style:none}
 <section class="wrap sec" id="passt" aria-labelledby="h-passt">
   <div class="decide">
     <div class="reveal">
-      <h2 id="h-passt">Welches Haus passt zu Ihnen?</h2>
+      <h2 id="h-passt"><strong>Welches Haus</strong> passt zu Ihnen?</h2>
       <p class="lead">Wählen Sie, was Ihnen im Urlaub wichtig ist. Rechts sehen Sie sofort, welches Haus dazu passt.</p>
       <div class="dlist" role="tablist" aria-label="Entscheidungshilfe">
         <button class="drow" role="tab" aria-selected="true" data-h="villa" data-img="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-2-1536x1064.jpg" data-alt="Balkon der Villa Bella-Vista mit Meerblick"><span><b>Das Meer vom Balkon sehen</b><small>Alle sechs Wohnungen der Villa haben einen großen Süd-Ost-Balkon mit Meerblick.</small></span><span class="circle"><svg><use href="#i-arrow"/></svg></span></button>
@@ -880,9 +892,9 @@ ul{padding:0;list-style:none}
 
     <div class="dmain">
       <div class="reveal">
-        <h2 id="h-details">Lage, Ausstattung und Preise</h2>
+        <h2 id="h-details"><strong>Lage</strong>, Ausstattung und Preise</h2>
         <p class="addr">Villa Bella-Vista, Bergstraße 19 · Pension Kreidefels, Weddingstraße 50 · 18546 Sassnitz auf Rügen</p>
-        <p class="lead desc">Sassnitz liegt auf der Halbinsel Jasmund im Nordosten Rügens. Hinter der Stadt beginnt der Nationalpark Jasmund mit den Kreidefelsen und dem Königsstuhl, unten am Wasser liegen Stadthafen, Altstadt und die lange Außenmole.</p>
+        <p class="lead desc">Sassnitz liegt auf der Halbinsel Jasmund im Nordosten Rügens. Hinter der Stadt beginnt der <strong>Nationalpark Jasmund</strong> mit den Kreidefelsen und dem Königsstuhl, unten am Wasser liegen Stadthafen, Altstadt und die lange Außenmole.</p>
       </div>
 
       <div class="dblock reveal">
@@ -971,8 +983,8 @@ ul{padding:0;list-style:none}
 <!-- ============ 7 AUSFLÜGE ============ -->
 <section class="wrap sec" id="ausfluege" aria-labelledby="h-trips">
   <div class="center reveal">
-    <h2 class="h2" id="h-trips">Rügen ab Ihrer Haustür</h2>
-    <p class="sub" style="margin-top:14px">Kreidefelsen, Buchenwald und Hafen: alles zu Fuß oder mit dem Bus ab Sassnitz erreichbar.</p>
+    <h2 class="h2" id="h-trips"><strong>Rügen</strong> ab Ihrer Haustür</h2>
+    <p class="sub" style="margin-top:14px"><strong>Kreidefelsen, Buchenwald und Hafen</strong>: alles zu Fuß oder mit dem Bus ab Sassnitz erreichbar.</p>
   </div>
   <div class="strip reveal">
     <a class="img gray" href="https://www.nationalpark-jasmund.de/" rel="noopener">
@@ -1000,8 +1012,8 @@ ul{padding:0;list-style:none}
     <div class="img tint-slate"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4719-1536x1152.jpeg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div>
     <div class="jhead">
       <div>
-        <h2 id="h-journey">So buchen Sie direkt bei uns</h2>
-        <p class="sub">Ohne Portal, ohne Umweg. Vier Schritte bis zum Balkon oder zur Terrasse.</p>
+        <h2 id="h-journey">So buchen Sie <strong>direkt bei uns</strong></h2>
+        <p class="sub"><strong>Ohne Portal, ohne Umweg.</strong> Vier Schritte bis zum Balkon oder zur Terrasse.</p>
       </div>
       <div class="jctrl" role="group" aria-label="Schritte steuern">
         <button class="circle glass" type="button" id="j-prev" aria-controls="j-steps" aria-label="Vorheriger Schritt"><svg><use href="#i-left"/></svg></button>
@@ -1015,7 +1027,7 @@ ul{padding:0;list-style:none}
         <span class="jbar" aria-hidden="true"><i></i></span>
         <div class="jcard glass-card">
           <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-480x360.jpg" srcset="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-480x360.jpg 480w, https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-1536x1152.jpg 1536w" sizes="(max-width:560px) 88px, (max-width:900px) 45vw, 23vw" alt="Villa Bella-Vista in Sassnitz" loading="lazy" onerror="this.classList.add('missing')"></div>
-          <p>Meerblick vom Balkon in der Villa Bella-Vista oder zwei Minuten zur Ostsee in der Pension Kreidefels. Beide Häuser vermietet Familie Feldmann selbst.</p>
+          <p><strong>Meerblick vom Balkon</strong> in der Villa Bella-Vista oder <strong>zwei Minuten zur Ostsee</strong> in der Pension Kreidefels. Beide Häuser vermietet Familie Feldmann selbst.</p>
         </div>
       </li>
       <li class="jstep">
@@ -1023,7 +1035,7 @@ ul{padding:0;list-style:none}
         <span class="jbar" aria-hidden="true"><i></i></span>
         <div class="jcard glass-card">
           <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/whng-2-480x360.jpg" srcset="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/whng-2-480x360.jpg 480w, https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/whng-2-1536x1152.jpg 1536w" sizes="(max-width:560px) 88px, (max-width:900px) 45vw, 23vw" alt="Wohnbereich der Ferienwohnung Meerblick 2" loading="lazy" onerror="this.classList.add('missing')"></div>
-          <p>Im Buchungskalender sehen Sie freie Termine und den Endpreis, bevor Sie sich festlegen. Endreinigung und Kurabgabe stehen vorher da.</p>
+          <p>Im Buchungskalender sehen Sie <strong>freie Termine und den Endpreis</strong>, bevor Sie sich festlegen. Endreinigung und Kurabgabe stehen vorher da.</p>
         </div>
       </li>
       <li class="jstep">
@@ -1031,7 +1043,7 @@ ul{padding:0;list-style:none}
         <span class="jbar" aria-hidden="true"><i></i></span>
         <div class="jcard glass-card">
           <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/apartment-1-5-480x360.jpg" srcset="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/apartment-1-5-480x360.jpg 480w, https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/apartment-1-5-1536x1152.jpg 1536w" sizes="(max-width:560px) 88px, (max-width:900px) 45vw, 23vw" alt="Apartment in der Pension Kreidefels mit Küchenzeile" loading="lazy" onerror="this.classList.add('missing')"></div>
-          <p>Sie buchen direkt bei uns, ohne Portal. Lieber persönlich? Rufen Sie an: 0176 558 633 33.</p>
+          <p>Sie buchen <strong>direkt bei uns, ohne Portal</strong>. Lieber persönlich? Rufen Sie an: 0176 558 633 33.</p>
         </div>
       </li>
       <li class="jstep">
@@ -1039,7 +1051,7 @@ ul{padding:0;list-style:none}
         <span class="jbar" aria-hidden="true"><i></i></span>
         <div class="jcard glass-card">
           <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4717-480x360.jpeg" srcset="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4717-480x360.jpeg 480w, https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4717-1536x1152.jpeg 1536w" sizes="(max-width:560px) 88px, (max-width:900px) 45vw, 23vw" alt="Kutter im Stadthafen Sassnitz" loading="lazy" onerror="this.classList.add('missing')"></div>
-          <p>Parkplatz direkt am Haus. Ohne Auto? Villa-Gäste holen wir nach Absprache kostenlos am Bahnhof Sassnitz ab.</p>
+          <p><strong>Parkplatz direkt am Haus</strong>. Ohne Auto? Villa-Gäste holen wir nach Absprache kostenlos am Bahnhof Sassnitz ab.</p>
         </div>
       </li>
     </ol>
@@ -1049,7 +1061,7 @@ ul{padding:0;list-style:none}
 <!-- ============ 9 GÄSTESTIMMEN ============ -->
 <section class="wrap sec" aria-labelledby="h-rev">
   <div class="center reveal">
-    <h2 class="h2" id="h-rev">Was unsere Gäste über uns sagen</h2>
+    <h2 class="h2" id="h-rev">Was unsere <strong>Gäste</strong> über uns sagen</h2>
     <p class="sub" style="margin-top:14px">Bewertungen mit Quelle. Weitere Stimmen von Google und Booking.com folgen.</p>
   </div>
   <div class="rbento">
@@ -1059,7 +1071,7 @@ ul{padding:0;list-style:none}
       <figcaption class="foot"><span>Rebecca K. · Februar 2023 · 5 von 5 Sternen</span><span class="todo">Zitat und Haus folgen</span></figcaption>
     </figure>
     <div class="rnum p reveal"><span class="l">Pension Kreidefels</span><span class="n">9,0</span><span class="k">von 10 Punkten, „Hervorragend"</span><span class="l" style="margin-top:8px">Travelmyth, Stand 09/2026</span></div>
-    <div class="rstory reveal"><span class="l">Villa Bella-Vista</span><h3>Bis 9,2 von 10 Punkten je Wohnung, am besten bewertet: Meerblick 2 und 6.</h3><div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/20200624_155857-1-1170x570.jpg" alt="Ferienwohnung in der Villa Bella-Vista" loading="lazy" onerror="this.classList.add('missing')"></div></div>
+    <div class="rstory reveal"><span class="l">Villa Bella-Vista</span><h3><strong>Bis 9,2 von 10 Punkten</strong> je Wohnung, am besten bewertet: <strong>Meerblick 2 und 6</strong>.</h3><div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/20200624_155857-1-1170x570.jpg" alt="Ferienwohnung in der Villa Bella-Vista" loading="lazy" onerror="this.classList.add('missing')"></div></div>
     <div class="rtext reveal"><p class="q">Gäste bewerten beide Häuser auch auf Google und Booking.com. Hier zeigen wir ihre Stimmen mit Vorname, Reisezeit und Quelle.</p><div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span class="tiny">Google · Booking.com</span><span class="todo">Einbindung folgt</span></div></div>
   </div>
 </section>
@@ -1068,14 +1080,14 @@ ul{padding:0;list-style:none}
 <section class="purpose" id="gastgeber" aria-labelledby="h-host">
   <div class="img shade"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-scaled.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div>
   <p class="ptop">Warum direkt bei Familie Feldmann?</p>
-  <p class="side">Sie buchen nicht bei einem Portal, sondern bei uns. Fragen klären Sie mit einem Anruf, vor der Anreise und während des Urlaubs.</p>
+  <p class="side">Sie buchen <strong>nicht bei einem Portal, sondern bei uns</strong>. Fragen klären Sie mit einem Anruf, vor der Anreise und während des Urlaubs.</p>
   <div class="pcard reveal">
-    <h3>Familie Feldmann, Ihre Gastgeber in Sassnitz</h3>
+    <h3><strong>Familie Feldmann</strong>, Ihre Gastgeber in Sassnitz</h3>
     <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/03/IMG_5044.jpg" alt="Schild am Königsstuhl mit der Aufschrift Einmal König sein" loading="lazy" onerror="this.classList.add('missing')"></div>
     <p>Welcher Weg zum Königsstuhl der schönste ist und wo es in Sassnitz gutes Essen gibt, verraten wir Ihnen gern. <span class="todo" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.6)">Foto Familie folgt</span></p>
     <a class="btn btn-white" href="tel:+4917655863333"><svg><use href="#i-phone"/></svg>0176 558 633 33</a>
   </div>
-  <div class="side r"><h2 id="h-host">Persönlich statt Portal</h2></div>
+  <div class="side r"><h2 id="h-host"><strong>Persönlich</strong> statt Portal</h2></div>
   <div class="pdash" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 </section>
 
@@ -1084,8 +1096,8 @@ ul{padding:0;list-style:none}
 <section class="sec" id="faq" aria-labelledby="h-faq">
   <div class="faq">
     <div class="faq-l reveal">
-      <h2 id="h-faq">Häufige Fragen</h2>
-      <p class="sub">Noch eine Frage? Rufen Sie uns an: <a href="tel:+4917655863333">0176 558 633 33</a>.</p>
+      <h2 id="h-faq">Häufige <strong>Fragen</strong></h2>
+      <p class="sub">Noch eine Frage? Rufen Sie uns an: <a href="tel:+4917655863333"><strong>0176 558 633 33</strong></a>.</p>
       <div class="thumbs" aria-hidden="true">
         <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-480x360.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div>
         <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/whng-2-480x360.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div>
@@ -1112,7 +1124,7 @@ ul{padding:0;list-style:none}
   <div class="cta reveal">
     <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4717-1536x1152.jpeg" alt="Stadthafen Sassnitz" loading="lazy" onerror="this.classList.add('missing')"></div>
     <div>
-      <h2 id="h-cta">Ihr Balkon am Meer oder Ihr Apartment am Wasser?</h2>
+      <h2 id="h-cta">Ihr <strong>Balkon am Meer</strong> oder Ihr <strong>Apartment am Wasser</strong>?</h2>
       <p>Wählen Sie Ihr Haus und sehen Sie sofort, welche Termine frei sind.</p>
       <div class="btns">
         <a class="btn btn-glass btn-wide" href="#buchen" data-house="villa"><span><span class="dot" style="background:#B9CBE3;margin-right:10px"></span>Villa Bella-Vista: Termin prüfen</span><svg><use href="#i-arrow"/></svg></a>
