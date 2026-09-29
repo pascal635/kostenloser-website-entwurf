@@ -21,6 +21,25 @@
   window.addEventListener('resize', function(){ sichtbar = null; zustand(); });
   zustand();
 
+  /* Hero-Szene: Straße auf die gestrichelte Linie legen (mobil über die Headline), Pause, außerhalb des Bildes anhalten */
+  if(hero && hero.querySelector('.szene')){
+    var h1 = hero.querySelector('.hero__h1'), unten = hero.querySelector('.hero__unten');
+    var strasse = function(){
+      var schmal = hero.offsetWidth < 1000, anker = schmal ? h1 : unten; if(!anker) return;
+      var v = hero.getBoundingClientRect().bottom - anker.getBoundingClientRect().top + (schmal ? 22 : 0);
+      hero.style.setProperty('--strasse', Math.round(v) + 'px');
+    };
+    strasse(); window.addEventListener('resize', strasse);
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(strasse);
+    if('ResizeObserver' in window) new ResizeObserver(strasse).observe(hero);
+    var knopf = hero.querySelector('.szene__pause');
+    if(knopf) knopf.addEventListener('click', function(){
+      var p = !hero.classList.contains('szene--pausiert'), t = p ? 'Animation abspielen' : 'Animation anhalten';
+      hero.classList.toggle('szene--pausiert', p); knopf.setAttribute('aria-pressed', p); knopf.setAttribute('aria-label', t); knopf.title = t;
+    });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ hero.classList.toggle('szene--aus', !es[0].isIntersecting); }).observe(hero);
+  }
+
   /* Mobil-Menü (Burger im Kopf und in der Scroll-Leiste) */
   var menue = document.getElementById('menue'), zu = document.getElementById('menue-zu');
   var burger = [document.getElementById('burger'), document.getElementById('burger-2')].filter(Boolean), ausloeser = null;

@@ -13,7 +13,7 @@
 <meta property="og:title" content="beka group: Pakete. Gleise. Baustellen. Aus Bochum.">
 <meta property="og:description" content="Paketzustellung für Amazon, Hermes und DPD, Dienstleistungen für den Gleisbau, Renovierung im Ruhrgebiet. Vier Firmen, eine Zentrale in Bochum.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238e9fd0'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='700' font-size='16' fill='%23132a69'%3Eb%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="assets/img/transporter-bewegung-hero.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/img/szene-hinten.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/schrift.css">
 <link rel="stylesheet" href="assets/css/stil.css">
 <script>if(/[?&]platzhalter/.test(location.search))document.documentElement.classList.add('zeige-platzhalter');</script>
@@ -83,9 +83,45 @@
 
 <!-- ================= 1 HERO ================= -->
 <section class="o hero dunkel korn" id="top" aria-label="Einstieg">
-  <!-- Bildplatz: echtes Foto, Transporter in Bewegung (Mitzieher). Alt: „Transporter der beka logistic auf Zustelltour in Bochum“ -->
-  <div class="foto"><img src="assets/img/transporter-bewegung-hero.webp" alt="" width="1920" height="1100" fetchpriority="high" style="object-position:62% 55%"></div>
-  <span class="bildplatz" style="top:110px">Kundenfoto: Transporter in Bewegung</span>
+  <!-- Animierte Szene: Transporter fährt durch Bochum bei Nacht (nur transform/opacity, bei „Bewegung reduzieren“ steht sie still).
+       Später optional durch ein echtes Video von beka ersetzbar (Mitzieher, 8 bis 10 s Schleife). -->
+  <div class="foto szene" aria-hidden="true">
+    <div class="szene__ferne"><div class="szene__hinten"></div><div class="szene__lichter"></div></div>
+    <div class="szene__strasse"><div class="szene__asphalt"></div><div class="szene__markierung"></div></div>
+    <div class="szene__van">
+      <div class="van__licht"></div><div class="van__spur"></div><div class="van__schatten"></div>
+      <svg class="van" viewBox="0 0 520 214" focusable="false">
+        <defs>
+          <linearGradient id="van-lack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f4fa"/><stop offset=".55" stop-color="#cfd5e2"/><stop offset="1" stop-color="#98a1b7"/></linearGradient>
+          <linearGradient id="van-glas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#46547a"/><stop offset=".45" stop-color="#161e3b"/><stop offset="1" stop-color="#0a0f25"/></linearGradient>
+          <radialGradient id="van-felge"><stop offset="0" stop-color="#e6ebf5"/><stop offset=".7" stop-color="#9ca7c2"/><stop offset="1" stop-color="#5a6582"/></radialGradient>
+          <clipPath id="van-form"><path d="M28 14 H386 Q404 14 414 28 L458 90 Q466 100 480 103 L498 107 Q512 110 512 124 V170 Q512 178 504 178 H462 A42 42 0 0 0 378 178 H154 A42 42 0 0 0 70 178 H26 Q14 178 14 166 V28 Q14 14 28 14 Z"/></clipPath>
+        </defs>
+        <g class="van__aufbau">
+          <path d="M72 180 A40 40 0 0 1 152 180 Z M380 180 A40 40 0 0 1 460 180 Z" fill="#050918"/>
+          <path d="M28 14 H386 Q404 14 414 28 L458 90 Q466 100 480 103 L498 107 Q512 110 512 124 V170 Q512 178 504 178 H462 A42 42 0 0 0 378 178 H154 A42 42 0 0 0 70 178 H26 Q14 178 14 166 V28 Q14 14 28 14 Z" fill="url(#van-lack)"/>
+          <g clip-path="url(#van-form)">
+            <rect x="0" y="14" width="520" height="7" fill="#fff" opacity=".55"/>
+            <rect x="0" y="118" width="520" height="9" fill="#8e9fd0"/>
+            <rect x="0" y="170" width="520" height="10" fill="#27304d"/>
+          </g>
+          <path d="M366 30 H400 Q407 30 411 36 L447 90 H366 Z" fill="url(#van-glas)"/>
+          <path d="M413 31 L458 92 L451 95 L407 35 Z" fill="#1a2240"/>
+          <g fill="none" stroke="#7f89a2" stroke-width="1.6"><path d="M360 22 V170"/><path d="M248 22 V170"/></g>
+          <rect x="372" y="104" width="14" height="4" rx="2" fill="#5d6782"/><rect x="232" y="100" width="12" height="4" rx="2" fill="#5d6782"/>
+          <path d="M451 63 h11 v17 h-11 z" fill="#27304d"/>
+          <text x="40" y="96" class="van__marke">beka</text><text x="43" y="111" class="van__zusatz">logistic</text>
+          <path d="M499 114 L512 116 V128 L499 127 Z" fill="#fff"/>
+          <rect x="14" y="36" width="5" height="44" rx="2" fill="#ff6b6b"/>
+          <rect x="490" y="158" width="26" height="20" rx="5" fill="#27304d"/><rect x="8" y="156" width="22" height="22" rx="4" fill="#27304d"/>
+        </g>
+        <g transform="translate(112 182)"><g class="van__rad"><circle r="32" fill="#0b1024"/><circle r="27.5" fill="none" stroke="#222b4a" stroke-width="3"/><circle r="19" fill="url(#van-felge)"/><g fill="#4a5574"><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(0)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(72)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(144)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(216)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(288)"/></g><circle r="5" fill="#e3e8f3"/><circle cy="-23" r="1.8" fill="#7a86a6"/></g></g>
+        <g transform="translate(420 182)"><g class="van__rad"><circle r="32" fill="#0b1024"/><circle r="27.5" fill="none" stroke="#222b4a" stroke-width="3"/><circle r="19" fill="url(#van-felge)"/><g fill="#4a5574"><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(0)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(72)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(144)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(216)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(288)"/></g><circle r="5" fill="#e3e8f3"/><circle cy="-23" r="1.8" fill="#7a86a6"/></g></g>
+      </svg>
+    </div>
+  </div>
+  <span class="bildplatz" style="top:110px">Animierte Szene. Optional später: Video vom beka-Transporter</span>
+  <button class="szene__pause klammer" type="button" aria-pressed="false" aria-label="Animation anhalten" title="Animation anhalten"><svg class="szene__icon szene__icon--pause" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1.5" width="2.6" height="9" rx=".6"/><rect x="7.4" y="1.5" width="2.6" height="9" rx=".6"/></svg><svg class="szene__icon szene__icon--play" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.6 L10.4 6 L3 10.4 Z"/></svg></button>
   <header class="kopf">
     <div class="wrap kopf__bar">
       <a href="#top" class="logo" aria-label="beka group, zur Startseite">beka<sup style="font-size:.4em;font-weight:500;align-self:flex-start">®</sup></a>
