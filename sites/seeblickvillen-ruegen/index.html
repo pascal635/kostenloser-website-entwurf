@@ -537,10 +537,13 @@ ul{padding:0;list-style:none}
 /* ===== 10 Gastgeber (Moodboard „Luxury With Purpose": randlos) ===== */
 .purpose{position:relative;isolation:isolate;min-height:clamp(640px,48vw,1080px);padding:48px var(--gutter);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,clamp(340px,26vw,520px)) minmax(0,1fr);align-items:center;gap:32px;color:#fff;margin-top:var(--sec)}
 .purpose > .img{position:absolute;inset:0;border-radius:0;z-index:-1}
-.purpose .side{font-size:.8125rem;color:rgba(255,255,255,.9);max-width:30ch;align-self:center}
+.purpose .side{font-size:.8125rem;color:rgba(255,255,255,.9);align-self:center}
 .purpose .side.r{justify-self:end;text-align:right}
 .purpose .side.r h2{color:#fff;font-size:var(--h2);max-width:12ch;margin-left:auto}
-.purpose .ptop{font-weight:600;position:absolute;left:var(--gutter);top:44px;font-size:.8125rem;color:rgba(255,255,255,.9)}
+.purpose .phead{grid-column:3;grid-row:1;max-width:clamp(300px,24vw,480px)}
+.purpose .pcard{grid-column:2;grid-row:1}
+.purpose .plead{font-size:.9375rem;line-height:1.6;color:rgba(255,255,255,.9);max-width:34ch;margin:clamp(16px,1.4vw,24px) 0 0 auto}
+.purpose .ptop{font-weight:600;font-size:.8125rem;letter-spacing:.02em;color:rgba(255,255,255,.9);margin-bottom:clamp(12px,1vw,18px)}
 .pcard{width:100%;background:var(--slate);border-radius:var(--r-card);padding:22px;text-align:center}
 .pcard h3{color:#fff;font-size:1.25rem;font-weight:300;line-height:1.35}
 .pcard .img{border-radius:var(--r-in);aspect-ratio:4/3;margin-top:16px}
@@ -557,7 +560,7 @@ ul{padding:0;list-style:none}
 .pdash .pplay svg{width:14px;height:14px}
 .pdash .i-play,.purpose.stopped .pdash .i-pause{display:none}
 .purpose.stopped .pdash .i-play{display:block}
-@media (max-width:980px){.purpose{grid-template-columns:minmax(0,1fr);min-height:0;padding:96px var(--gutter) 72px;justify-items:center}.purpose .side{text-align:center;justify-self:center}.purpose .side.r{order:-1;text-align:center;justify-self:center}.purpose .side.r h2{margin:0 auto}}
+@media (max-width:980px){.purpose{grid-template-columns:minmax(0,1fr);min-height:0;padding:72px var(--gutter) 108px;justify-items:center}.purpose .side{text-align:center;justify-self:center}.purpose .side.r{order:-1;text-align:center;justify-self:center}.purpose .side.r h2{margin:0 auto}.purpose .phead,.purpose .pcard{grid-column:auto;grid-row:auto}.purpose .phead{max-width:36rem}.purpose .plead{margin-left:auto;margin-right:auto}}
 
 /* ===== 11 FAQ (Moodboard: links Titel + Thumbnails, rechts nummerierte Liste) ===== */
 .faq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,4vw,120px)}
@@ -1100,15 +1103,17 @@ ul{padding:0;list-style:none}
 <!-- ============ 10 GASTGEBER (randlos) ============ -->
 <section class="purpose" id="gastgeber" aria-labelledby="h-host" data-show>
   <div class="img shade gal-bg"><div class="slides"><img class="is-on" src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/Boy-6e-scaled.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/1-BV-original-1-1536x1152.jpg" alt="" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4691-1536x1152.jpeg" alt="" loading="lazy" onerror="this.classList.add('missing')"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/02/IMG_4717-1536x1152.jpeg" alt="" loading="lazy" onerror="this.classList.add('missing')"></div></div>
-  <p class="ptop">Warum direkt bei Familie Feldmann?</p>
-  <p class="side">Sie buchen <strong>nicht bei einem Portal, sondern bei uns</strong>. Fragen klären Sie mit einem Anruf, vor der Anreise und während des Urlaubs.</p>
+  <div class="side r phead">
+    <p class="ptop">Warum direkt bei Familie Feldmann?</p>
+    <h2 id="h-host"><strong>Persönlich</strong> statt Portal</h2>
+    <p class="plead">Sie buchen <strong>nicht bei einem Portal, sondern bei uns</strong>. Fragen klären Sie mit einem Anruf, vor der Anreise und während des Urlaubs.</p>
+  </div>
   <div class="pcard reveal">
     <h3><strong>Familie Feldmann</strong>, Ihre Gastgeber in Sassnitz</h3>
     <div class="img"><img src="https://seeblickvillen-ruegen.de/wp-content/uploads/2023/03/IMG_5044.jpg" alt="Schild am Königsstuhl mit der Aufschrift Einmal König sein" loading="lazy" onerror="this.classList.add('missing')"></div>
     <p>Welcher Weg zum Königsstuhl der schönste ist und wo es in Sassnitz gutes Essen gibt, verraten wir Ihnen gern. <span class="todo" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.6)">Foto Familie folgt</span></p>
     <a class="btn btn-white" href="tel:+4917655863333"><svg><use href="#i-phone"/></svg>0176 558 633 33</a>
   </div>
-  <div class="side r"><h2 id="h-host"><strong>Persönlich</strong> statt Portal</h2></div>
   <div class="pdash" role="group" aria-label="Hintergrundfotos"><button type="button" data-dot="0" aria-label="Hintergrundfoto 1 von 4" aria-current="true"><i><b></b></i></button><button type="button" data-dot="1" aria-label="Hintergrundfoto 2 von 4"><i><b></b></i></button><button type="button" data-dot="2" aria-label="Hintergrundfoto 3 von 4"><i><b></b></i></button><button type="button" data-dot="3" aria-label="Hintergrundfoto 4 von 4"><i><b></b></i></button><button type="button" class="circle glass sm pplay" aria-label="Diashow anhalten"><svg class="i-pause"><use href="#i-pause"/></svg><svg class="i-play"><use href="#i-play"/></svg></button></div>
 </section>
 
