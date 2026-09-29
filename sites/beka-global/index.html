@@ -92,11 +92,21 @@
       <div class="van__licht"></div><div class="van__spur"></div><div class="van__schatten"></div>
       <svg class="van" viewBox="0 0 520 214" focusable="false">
         <defs>
-          <linearGradient id="van-lack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1f4fa"/><stop offset=".55" stop-color="#cfd5e2"/><stop offset="1" stop-color="#98a1b7"/></linearGradient>
+          <linearGradient id="van-lack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3e8f1"/><stop offset=".55" stop-color="#c2c9d8"/><stop offset="1" stop-color="#8d96ac"/></linearGradient>
           <linearGradient id="van-glas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#46547a"/><stop offset=".45" stop-color="#161e3b"/><stop offset="1" stop-color="#0a0f25"/></linearGradient>
           <radialGradient id="van-felge"><stop offset="0" stop-color="#e6ebf5"/><stop offset=".7" stop-color="#9ca7c2"/><stop offset="1" stop-color="#5a6582"/></radialGradient>
+          <!-- Bewegungsunschärfe wie bei den Fotos: lange Schliere nach hinten, Aufbau weich, Räder rund verwischt -->
+          <filter id="van-wisch" x="-30%" y="-12%" width="150%" height="124%" color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="26 .9" result="lang"/>
+            <feOffset in="lang" dx="-22" result="langHinten"/>
+            <feComponentTransfer in="langHinten" result="schliere"><feFuncA type="linear" slope=".5"/></feComponentTransfer>
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4 1.3" result="weich"/>
+            <feMerge><feMergeNode in="schliere"/><feMergeNode in="weich"/></feMerge>
+          </filter>
+          <filter id="rad-wisch" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.6"/></filter>
           <clipPath id="van-form"><path d="M28 14 H386 Q404 14 414 28 L458 90 Q466 100 480 103 L498 107 Q512 110 512 124 V170 Q512 178 504 178 H462 A42 42 0 0 0 378 178 H154 A42 42 0 0 0 70 178 H26 Q14 178 14 166 V28 Q14 14 28 14 Z"/></clipPath>
         </defs>
+        <g filter="url(#van-wisch)">
         <g class="van__aufbau">
           <path d="M72 180 A40 40 0 0 1 152 180 Z M380 180 A40 40 0 0 1 460 180 Z" fill="#050918"/>
           <path d="M28 14 H386 Q404 14 414 28 L458 90 Q466 100 480 103 L498 107 Q512 110 512 124 V170 Q512 178 504 178 H462 A42 42 0 0 0 378 178 H154 A42 42 0 0 0 70 178 H26 Q14 178 14 166 V28 Q14 14 28 14 Z" fill="url(#van-lack)"/>
@@ -115,8 +125,9 @@
           <rect x="14" y="36" width="5" height="44" rx="2" fill="#ff6b6b"/>
           <rect x="490" y="158" width="26" height="20" rx="5" fill="#27304d"/><rect x="8" y="156" width="22" height="22" rx="4" fill="#27304d"/>
         </g>
-        <g transform="translate(112 182)"><g class="van__rad"><circle r="32" fill="#0b1024"/><circle r="27.5" fill="none" stroke="#222b4a" stroke-width="3"/><circle r="19" fill="url(#van-felge)"/><g fill="#4a5574"><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(0)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(72)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(144)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(216)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(288)"/></g><circle r="5" fill="#e3e8f3"/><circle cy="-23" r="1.8" fill="#7a86a6"/></g></g>
-        <g transform="translate(420 182)"><g class="van__rad"><circle r="32" fill="#0b1024"/><circle r="27.5" fill="none" stroke="#222b4a" stroke-width="3"/><circle r="19" fill="url(#van-felge)"/><g fill="#4a5574"><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(0)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(72)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(144)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(216)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(288)"/></g><circle r="5" fill="#e3e8f3"/><circle cy="-23" r="1.8" fill="#7a86a6"/></g></g>
+        <g transform="translate(112 182)"><g class="van__rad" filter="url(#rad-wisch)"><circle r="32" fill="#0b1024"/><circle r="27.5" fill="none" stroke="#222b4a" stroke-width="3"/><circle r="19" fill="url(#van-felge)"/><g fill="#4a5574"><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(0)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(72)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(144)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(216)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(288)"/></g><circle r="5" fill="#e3e8f3"/><circle cy="-23" r="1.8" fill="#7a86a6"/></g></g>
+        <g transform="translate(420 182)"><g class="van__rad" filter="url(#rad-wisch)"><circle r="32" fill="#0b1024"/><circle r="27.5" fill="none" stroke="#222b4a" stroke-width="3"/><circle r="19" fill="url(#van-felge)"/><g fill="#4a5574"><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(0)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(72)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(144)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(216)"/><rect x="-2.6" y="-17.5" width="5.2" height="11" rx="2" transform="rotate(288)"/></g><circle r="5" fill="#e3e8f3"/><circle cy="-23" r="1.8" fill="#7a86a6"/></g></g>
+        </g>
       </svg>
     </div>
   </div>

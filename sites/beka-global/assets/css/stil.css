@@ -214,7 +214,7 @@ html.zeige-platzhalter .bildplatz{ display:block; }
 .van__zusatz{ font:500 13px/1 'Inter Tight', system-ui, sans-serif; letter-spacing:.4px; fill:#3e5596; }
 .van__schatten{ position:absolute; left:3%; right:1%; bottom:-7px; height:14px; background:radial-gradient(closest-side, rgba(3,8,28,.85), rgba(3,8,28,0)); }
 .van__licht{ position:absolute; left:97%; bottom:4%; width:72%; height:46%; background:linear-gradient(90deg, rgba(236,241,255,.36), rgba(236,241,255,0) 85%); clip-path:polygon(0 42%, 100% 0, 100% 100%, 0 64%); filter:blur(3px); }
-.van__spur{ position:absolute; right:97%; top:10%; bottom:18%; width:28%; background:repeating-linear-gradient(180deg, rgba(214,222,246,.24) 0 2px, transparent 2px 12px); -webkit-mask-image:linear-gradient(90deg, transparent, #000); mask-image:linear-gradient(90deg, transparent, #000); transform-origin:right center; animation:van-spur .5s ease-in-out infinite alternate; }
+.van__spur{ position:absolute; right:97%; top:10%; bottom:18%; width:28%; background:repeating-linear-gradient(180deg, rgba(214,222,246,.16) 0 2px, transparent 2px 12px); -webkit-mask-image:linear-gradient(90deg, transparent, #000); mask-image:linear-gradient(90deg, transparent, #000); transform-origin:right center; animation:van-spur .5s ease-in-out infinite alternate; }
 @keyframes van-rad{ to{ transform:rotate(360deg); } }
 @keyframes van-federn{ 0%,100%{ transform:translateY(0); } 30%{ transform:translateY(-1.4px); } 55%{ transform:translateY(.5px); } 80%{ transform:translateY(-.8px); } }
 @keyframes van-drift{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(-3%); } }
