@@ -626,3 +626,18 @@ strong, b{ font-weight:var(--w-stark); color:var(--ink); }
 .pille__text strong{ color:inherit; }
 .zeilen .antwort strong{ color:var(--kreide); }
 .spec td strong{ letter-spacing:-.01em; }
+
+/* Logo im Kopf und in der Leiste größer */
+.kopf .logo{ font-size:clamp(1.875rem, 1.1rem + 1.3cqi, 2.5rem); min-height:44px; }
+.leiste .logo{ font-size:1.875rem; }
+
+/* Akzentfarbe (Nebelblau) auf den hervorgehobenen Teilen der Headlines.
+   Auf Weiß die dunklere Stufe, damit große Schrift mindestens 3:1 hat. */
+:root{ --akzent:var(--nebel-600); }
+.dunkel{ --akzent:var(--nebel-500); }
+.display .fade, .h2 .fade, .h2 .kursiv, .aussage .fade{ color:var(--akzent); }
+
+/* Einsatz-Aussage: Wörter leuchten beim Scrollen nacheinander auf (nur opacity) */
+.aussage--lesen .wort{ opacity:.16; transition:opacity var(--d3) var(--ease); }
+.aussage--lesen .wort.ist-an{ opacity:1; }
+@media (prefers-reduced-motion:reduce){ .aussage--lesen .wort{ opacity:1; transition:none; } }

@@ -46,6 +46,42 @@
     if('IntersectionObserver' in window) new IntersectionObserver(function(es){ hero.classList.toggle('szene--aus', !es[0].isIntersecting); }).observe(hero);
   }
 
+  /* Einsatz-Aussage: Wort für Wort hervorheben, gekoppelt an den Scrollweg */
+  document.querySelectorAll('[data-lesen]').forEach(function(el){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var woerter = [];
+    (function teilen(knoten){
+      Array.prototype.slice.call(knoten.childNodes).forEach(function(k){
+        if(k.nodeType === 3){
+          var teile = k.textContent.split(/(\s+)/), frag = document.createDocumentFragment();
+          teile.forEach(function(t){
+            if(!t) return;
+            if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+            var w = document.createElement('span'); w.className = 'wort'; w.textContent = t; frag.appendChild(w); woerter.push(w);
+          });
+          knoten.replaceChild(frag, k);
+        } else if(k.nodeType === 1){ teilen(k); }
+      });
+    })(el);
+    el.classList.add('aussage--lesen');
+    var an = -1, geplant = false;
+    function stand(){
+      geplant = false;
+      var r = el.getBoundingClientRect(), vh = window.innerHeight || 800;
+      var p = (vh * 0.82 - r.top) / (r.height + vh * 0.3); p = Math.max(0, Math.min(1, p));
+      var n = Math.round(p * woerter.length); if(n === an) return; an = n;
+      woerter.forEach(function(w, i){ w.classList.toggle('ist-an', i < n); });
+    }
+    function anstossen(){ if(!geplant){ geplant = true; requestAnimationFrame(stand); } }
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        if(es[0].isIntersecting){ window.addEventListener('scroll', anstossen, { passive:true }); anstossen(); }
+        else { window.removeEventListener('scroll', anstossen); stand(); }
+      }, { rootMargin:'20% 0px 20% 0px' }).observe(el);
+    } else { window.addEventListener('scroll', anstossen, { passive:true }); }
+    window.addEventListener('resize', anstossen); stand();
+  });
+
   /* Mobil-Menü (Burger im Kopf und in der Scroll-Leiste) */
   var menue = document.getElementById('menue'), zu = document.getElementById('menue-zu');
   var burger = [document.getElementById('burger'), document.getElementById('burger-2')].filter(Boolean), ausloeser = null;
