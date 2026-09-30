@@ -605,3 +605,24 @@ html.zeige-platzhalter .bildplatz{ display:block; }
   .karriere__unten{ grid-template-columns:1fr 1fr; gap:28px 32px; }
   .karriere__unten > div:first-child{ grid-column:1 / -1; }
 }
+
+/* ==========================================================
+   Schriftgewichte: Bedeutung statt Einheitsgrau.
+   500 Aussage und Titel · 300 Fortsetzung und Nebenstimme ·
+   400 Fließtext · 600 Schlüsselbegriffe (<strong>, auch für SEO)
+   ========================================================== */
+:root{ --w-leicht:300; --w-normal:400; --w-buch:450; --w-mittel:500; --w-stark:600; }
+.display, .h2, .h3{ font-weight:var(--w-mittel); }
+.display .fade, .h2 .fade, .h2 .kursiv, .aussage .fade{ font-weight:var(--w-leicht); }
+.kontakt__links .display{ font-weight:var(--w-mittel); }
+.hero__h1 .label{ font-weight:var(--w-mittel); color:var(--grau-200); }
+.karte__titel, .schritt__titel, .zeilen summary, .einsatz__name .h2{ font-weight:var(--w-mittel); }
+.btn, .chip__text, .pill--hell, .spec th, .feld__titel{ font-weight:var(--w-mittel); }
+.nav a, .leiste__nav a, .menue a.menue__punkt, .fuss__rechts p, .pille__text{ font-weight:var(--w-buch); }
+.nr, .karte__nr, .zeilen summary::before, .pill--dunkel{ font-weight:var(--w-leicht); }
+strong, b{ font-weight:var(--w-stark); color:var(--ink); }
+.aussage strong{ font-weight:var(--w-mittel); }
+.karte__text strong, .jobkarte__text strong{ color:var(--weiss); }
+.pille__text strong{ color:inherit; }
+.zeilen .antwort strong{ color:var(--kreide); }
+.spec td strong{ letter-spacing:-.01em; }
