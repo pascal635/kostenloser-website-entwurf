@@ -170,7 +170,7 @@ a[href^="tel:"]{word-spacing:.16em}
 .karte{background:var(--karte);border-radius:var(--r-l);padding:1.375rem;display:grid;grid-template-rows:auto 1fr;gap:2.125rem;min-height:40rem;transition:transform 400ms var(--ease)}
 .karte:hover{transform:translateY(-0.25rem)}
 .karte .visual{position:relative;border-radius:var(--r-m);background:radial-gradient(90% 70% at 50% 100%,rgba(251,231,127,.1),transparent 70%),var(--karte-2);min-height:24.375rem;overflow:hidden;display:grid;place-items:center;padding:1.625rem 1.375rem}
-.karte .txt{display:grid;gap:0.75rem;align-content:end;padding:0 0.25rem 0.25rem}
+.karte .txt{display:grid;gap:0.75rem;align-content:start;padding:0 0.25rem 0.25rem}
 .karte h3{font-size:1.75rem;letter-spacing:-.035em;line-height:1.1}
 .karte p{font-size:.9375rem;max-width:34ch}
 /* UI-Mocks in den Karten */
@@ -540,6 +540,11 @@ dialog.termin::backdrop{background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(0
   .faq-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}
 }
 
+/* Statement: Wörter werden beim Scrollen aufgedeckt (Klasse .scrub setzt das Skript, ohne JS bleibt alles sichtbar) */
+.statement.scrub .w{color:rgba(245,245,241,.17);transition:color 420ms var(--ease)}
+.statement.scrub .w.an{color:var(--weiss)}
+.statement.scrub .gelb .w.an{color:var(--gelb)}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "AutoRepair", "@id": "https://www.kfz-omari.de/#betrieb", "name": "Kfz-Meisterbetrieb Omari", "alternateName": ["A.T.O. Auto-Technik-Omari", "Omari Car Service"], "description": "Freie Kfz-Werkstatt und Karosserie-Meisterbetrieb in Tübingen Südstadt. Inspektion, Diagnose, HU/AU, Bremsen, Karosserie und Lack für alle Marken.", "url": "https://www.kfz-omari.de/", "telephone": "+49 7071 5497365", "faxNumber": "+49 7071 5495548", "email": "info@kfz-omari.de", "address": {"@type": "PostalAddress", "streetAddress": "Landkutschersweg 2", "postalCode": "72072", "addressLocality": "Tübingen", "addressRegion": "Baden-Württemberg", "addressCountry": "DE"}, "geo": {"@type": "GeoCoordinates", "latitude": 48.50989, "longitude": 9.07975}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.0", "reviewCount": "65", "bestRating": "5"}, "founder": {"@type": "Person", "name": "Eshaq Omari", "jobTitle": "Kfz-Meister und Karosseriebau-Meister"}, "areaServed": ["Tübingen", "Reutlingen", "Rottenburg am Neckar", "Kusterdingen", "Kirchentellinsfurt", "Dußlingen", "Gomaringen"], "priceRange": "€€"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Bleibt meine Herstellergarantie erhalten, wenn ich nicht in die Vertragswerkstatt gehe?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Wird die Inspektion nach Herstellervorgabe und mit freigegebenen Teilen gemacht, bleibt die Garantie erhalten. Genau so arbeiten wir und tragen alles ins Serviceheft ein."}}, {"@type": "Question", "name": "Reparieren Sie alle Automarken?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Wir betreuen Fahrzeuge aller Marken, vom Kleinwagen über den VW Bus bis zum Cabrio und Oldtimer."}}, {"@type": "Question", "name": "Was kostet die Reparatur?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt von Fahrzeug und Schaden ab. Vor jedem Auftrag bekommen Sie einen Kostenrahmen. Wird es teurer, rufen wir vorher an."}}, {"@type": "Question", "name": "Wie schnell bekomme ich einen Termin?", "acceptedAnswer": {"@type": "Answer", "text": "Meist innerhalb weniger Tage. Bei Panne oder Warnleuchte rufen Sie am besten direkt an: 07071 5497365."}}, {"@type": "Question", "name": "Machen Sie HU und AU?", "acceptedAnswer": {"@type": "Answer", "text": "Die Abgasuntersuchung machen wir selbst. Für die Hauptuntersuchung bereiten wir Ihr Auto vor, beheben Mängel vorab und kümmern uns um den Prüftermin."}}, {"@type": "Question", "name": "Reparieren Sie auch Unfallschäden und Lack?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Eshaq Omari ist neben Kfz-Meister auch Karosseriebau-Meister. Beulen, Kratzer und Unfallschäden laufen bei uns über einen Ansprechpartner."}}, {"@type": "Question", "name": "Kümmern Sie sich auch um ältere Autos und Oldtimer?", "acceptedAnswer": {"@type": "Answer", "text": "Gern. Viele unserer Stammkunden fahren ältere Fahrzeuge oder Klassiker. Wir reparieren lieber, als zu tauschen, und besorgen passende Ersatzteile."}}, {"@type": "Question", "name": "Wo finde ich Sie und wann haben Sie geöffnet?", "acceptedAnswer": {"@type": "Answer", "text": "Im Landkutschersweg 2, 72072 Tübingen, in der Südstadt nahe der B28 Richtung Reutlingen. Montag bis Freitag 8 bis 17 Uhr, Samstag 9 bis 13 Uhr."}}]}]}</script>
 </head>
@@ -789,7 +794,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
   <div class="wrap">
     <div class="label">Über uns</div>
     <h2 class="visually-hidden" id="h-ueber">Über den Kfz-Meisterbetrieb Omari</h2>
-    <p class="statement">OMARI ist Ihre freie Kfz-Werkstatt in der Tübinger Südstadt. Seit über 26 Jahren reparieren wir Autos aller Marken, <span class="gelb">mit einem Meister, der selbst schraubt</span>, Ihnen den Schaden zeigt und vorher sagt, was es kostet.</p>
+    <p class="statement" data-scrub>OMARI ist Ihre freie Kfz-Werkstatt in der Tübinger Südstadt. Seit über 26 Jahren reparieren wir Autos aller Marken, <span class="gelb">mit einem Meister, der selbst schraubt</span>, Ihnen den Schaden zeigt und vorher sagt, was es kostet.</p>
     <div class="zeile">
       <p>Hinter OMARI steht kein Konzern, sondern eine Familie. Eshaq Omari ist Kfz-Meister und Karosseriebau-Meister und führt den Betrieb zusammen mit Kfz-Meister J. Omari.</p>
       <div class="merkmale">
@@ -808,7 +813,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
             <span class="bsp">Beispiel</span>
           </div>
         </div>
-        <div class="txt"><h3>Fehler finden statt raten</h3><p>Wir lesen den Fehlerspeicher aus und suchen die Ursache. Mit modernen Testgeräten und den Daten aus unserer BOSCH-Kooperation.</p></div>
+        <div class="txt"><h3><span class="gelb">Fehler finden</span> statt raten</h3><p>Wir lesen den Fehlerspeicher aus und suchen die Ursache. Mit modernen Testgeräten und den Daten aus unserer BOSCH-Kooperation.</p></div>
       </article>
       <article class="karte">
         <div class="visual" aria-hidden="true">
@@ -819,7 +824,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
             <span class="bsp">Beispiel</span>
           </div>
         </div>
-        <div class="txt"><h3>Preis vorher, nicht hinterher</h3><p>Vor jedem Auftrag bekommen Sie einen Kostenrahmen. Wird es mehr, rufen wir an, bevor wir weitermachen.</p></div>
+        <div class="txt"><h3><span class="gelb">Preis vorher</span>, nicht hinterher</h3><p>Vor jedem Auftrag bekommen Sie einen Kostenrahmen. Wird es mehr, rufen wir an, bevor wir weitermachen.</p></div>
       </article>
       <article class="karte">
         <div class="visual" aria-hidden="true">
@@ -834,7 +839,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
             </div>
           </div>
         </div>
-        <div class="txt"><h3>Alle Marken, jedes Baujahr</h3><p>Vom Kleinwagen über den VW Bus bis zum Porsche 993. Wir reparieren lieber, als zu tauschen, und besorgen Ersatzteile zu fairen Preisen.</p></div>
+        <div class="txt"><h3><span class="gelb">Alle Marken</span>, jedes Baujahr</h3><p>Vom Kleinwagen über den VW Bus bis zum Porsche 993. Wir reparieren lieber, als zu tauschen, und besorgen Ersatzteile zu fairen Preisen.</p></div>
       </article>
     </div>
   </div>
@@ -845,7 +850,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
   <div class="foto"><img src="bilder/kfz-meister-tuebingen-haende-schraubenschluessel-2000.webp" loading="lazy" srcset="bilder/kfz-meister-tuebingen-haende-schraubenschluessel-1100.webp 1100w, bilder/kfz-meister-tuebingen-haende-schraubenschluessel-2000.webp 2000w" sizes="100vw" alt="Hände mit Schraubenschlüssel am Motor" width="2000" height="1500"></div>
   <div class="wrap oben">
     <span class="pill"><span class="i"><svg class="ico"><use href="#i-stern"/></svg></span>Familienbetrieb seit über 26 Jahren</span>
-    <h2 id="h-band">Eine Werkstatt mit Sinn und Verstand.</h2>
+    <h2 id="h-band">Eine Werkstatt mit <span class="gelb">Sinn und Verstand</span>.</h2>
   </div>
   <div class="wrap unten">
     <div class="links">
@@ -944,7 +949,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
   <div class="wrap">
     <div class="label">Häufige Fragen</div>
     <div class="faq-kopf">
-      <h2 class="h2" id="h-faq">Antworten auf die Fragen, die am häufigsten kommen.</h2>
+      <h2 class="h2" id="h-faq">Antworten auf die Fragen, die <span class="gelb">am häufigsten</span> kommen.</h2>
       <div class="tabs" role="tablist" aria-label="Fragen filtern">
         <button class="tab" type="button" role="tab" aria-selected="true" data-kat="alle">Alle</button>
         <button class="tab" type="button" role="tab" aria-selected="false" data-kat="kosten">Kosten und Termin</button>
@@ -978,7 +983,7 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
   <div class="wrap">
     <div class="in">
       <span class="pill"><span class="i"><svg class="ico"><use href="#i-termin"/></svg></span>In 3 Schritten zum Termin</span>
-      <h2 id="h-cta">Ihr Auto in Meisterhand.</h2>
+      <h2 id="h-cta">Ihr Auto in <span class="gelb">Meisterhand</span>.</h2>
       <p class="form-label">Rückruf anfordern</p>
       <form class="rueckruf" id="f-rueckruf" novalidate>
         <label class="visually-hidden" for="r-tel">Ihre Telefonnummer</label>
@@ -1137,6 +1142,36 @@ l3 -3 87 0 c99 0 90 1 92 -9 1 -4 2 -9 4 -13 2 -4 3 -11 4 -15 0 -4 2 -9 4
     if(!i.value.trim()){i.focus();i.setAttribute('aria-invalid','true');return}
     i.removeAttribute('aria-invalid');r.hidden=true;d.getElementById('r-ok').hidden=false;
   });
+  // Statement: Wörter leuchten beim Scrollen nacheinander auf (dunkelgrau zu weiß, der markierte Teil zu gelb)
+  var st=d.querySelector('[data-scrub]');
+  if(st&&!ruhig){
+    var woerter=[];
+    (function teile(el){
+      [].slice.call(el.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          var frag=d.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(t){
+            if(!t)return;
+            if(/^\s+$/.test(t)){frag.appendChild(d.createTextNode(t));return}
+            var w=d.createElement('span');w.className='w';w.textContent=t;frag.appendChild(w);woerter.push(w);
+          });
+          el.replaceChild(frag,n);
+        }else if(n.nodeType===1){teile(n)}
+      });
+    })(st);
+    st.classList.add('scrub');
+    var zuletzt=-1,warte=false;
+    function leuchten(){
+      warte=false;
+      var r=st.getBoundingClientRect(),vh=window.innerHeight||d.documentElement.clientHeight;
+      var p=(vh*.85-r.top)/(vh*.5);p=Math.max(0,Math.min(1,p));
+      var n=Math.round(p*woerter.length);
+      if(n===zuletzt)return;zuletzt=n;
+      for(var i=0;i<woerter.length;i++){woerter[i].classList.toggle('an',i<n)}
+    }
+    function anfrage(){if(!warte){warte=true;requestAnimationFrame(leuchten)}}
+    leuchten();window.addEventListener('scroll',anfrage,{passive:true});window.addEventListener('resize',anfrage);
+  }
 })();
 
 </script>
