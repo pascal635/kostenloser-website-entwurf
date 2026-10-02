@@ -849,6 +849,30 @@ strong{font-weight:600;color:var(--ink)}
   .stat__v{margin-top:.6rem}
 }
 
+/* ==========================================================================
+   v7 (02.10.2026): Intro-Statement leuchtet beim Scrollen auf
+   ========================================================================== */
+/* Wort für Wort heller werdend, gesteuert per JS (--a von 0 bis 1) */
+.bigtext.is-hl .w{opacity:calc(.16 + .84 * var(--a,0));transition:opacity .2s linear}
+.bigtext.is-hl .ico .ic{opacity:calc(.16 + .84 * var(--a,0));transition:opacity .2s linear}
+.bigtext.is-hl .ico::before{opacity:var(--a,0);transition:opacity .2s linear}
+@media (prefers-reduced-motion:reduce){.bigtext.is-hl .w,.bigtext.is-hl .ico .ic,.bigtext.is-hl .ico::before{opacity:1}}
+
+/* ==========================================================================
+   v8 (02.10.2026): Hero-Inhalt vertikal mittig zwischen Navigation und Fußzeile
+   ========================================================================== */
+.hero__main,.hero__side{display:contents}
+@media (min-width:1100px){
+  .hero__grid{grid-template-rows:minmax(0,1fr) auto}
+  .hero__main{display:flex;flex-direction:column;align-items:flex-start;gap:1.75rem;grid-column:2/4;grid-row:1;align-self:center}
+  .hero__side{display:flex;flex-direction:column;gap:1.25rem;grid-column:4;grid-row:1;align-self:center;justify-self:end;width:100%;max-width:26rem}
+  .hf-l,.hf-c,.hf-r{grid-row:2}
+}
+@media (min-width:1100px) and (max-width:1279px){.hero__main{grid-column:1/4}}
+@media (max-width:1099px){.hero__grid{align-content:center}}
+/* Intro: zweiter Satz in Akzentfarbe (fest, damit das Aufleuchten pro Wort funktioniert) */
+.bigtext .acc-s{color:#C2560F;font-weight:500}
+
 </style>
 </head>
 <body>
@@ -883,11 +907,14 @@ strong{font-weight:600;color:var(--ink)}
   </header>
   <div class="in hero__grid">
     <i class="hl hl--1" aria-hidden="true"></i><i class="hl hl--2" aria-hidden="true"></i>
+    <div class="hero__main">
     <div class="hero__head">
       <a class="hbadge" href="#ablauf" data-r><span class="hbadge__ic"><svg class="ic" aria-hidden="true"><use href="#i-check-verified-01"/></svg></span><span>ISO-Beratung für die Gebäude&shy;reinigung<span class="hide-s"> · bundesweit</span></span></a>
       <h1 class="h1 hero__h1" id="h1" data-r style="--i:1"><b>ISO&nbsp;9001</b> <span class="w3">und</span> <b>ISO&nbsp;14001</b><br class="br-d"> <span class="w3">für</span> <span class="accent">Gebäude&shy;reinigungen</span></h1>
     </div>
     <p class="hero__sub" data-r style="--i:2">Sie bekommen das <strong>Zerti&shy;fikat</strong>, das <strong>Aus&shy;schreibungen</strong> verlangen, und ein System, das zu Ihren Objekten passt. Ohne Papierberg, neben dem Tages&shy;geschäft, mit Beratung genau dann, wenn Sie sie brauchen.</p>
+    </div>
+    <div class="hero__side">
     <aside class="glass hcard" aria-label="Zeitrahmen bis zum Zertifikat: 3 bis 6 Monate" data-r style="--i:2">
       <div class="hcard__top"><span>Bis zum Zerti&shy;fikat</span><span class="hcard__state"><i></i>Realistisch</span></div>
       <div class="hcard__row"><p class="hcard__num"><b>3&nbsp;bis&nbsp;6</b><span>Monate</span></p><span class="hcard__ic"><svg class="ic ic--s" aria-hidden="true"><use href="#i-clock"/></svg></span></div>
@@ -899,6 +926,7 @@ strong{font-weight:600;color:var(--ink)}
       <li><svg class="ic" aria-hidden="true"><use href="#i-building-08"/></svg><span><b>Spezialisiert</b> auf Gebäude&shy;reinigung</span></li>
       <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase-01"/></svg><span><b>Ab&shy;rechnung nach Bedarf</b>, ohne Paketzwang</span></li>
     </ul>
+    </div>
     <div class="hero__foot hf-l" data-r style="--i:3"><span class="nbadges" aria-hidden="true"><i>9001</i><i>14001</i></span><span>Beratung nach den neuen Norm&shy;fassungen <b>2026</b></span></div>
     <a class="hero__foot hf-c" href="#kontakt" data-r style="--i:4"><span><b>Erst&shy;gespräch vereinbaren</b><small>[30] Minuten, kostenlos und unverbindlich</small></span><span class="hf-arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></a>
     <a class="hero__foot hf-r" href="#schwerpunkt" data-r style="--i:5"><span>Weiter&shy;lesen</span><svg class="ic hf-down" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
@@ -911,7 +939,7 @@ strong{font-weight:600;color:var(--ink)}
   <div class="in sec intro">
     <div data-r>
       <span class="eyebrow eyebrow--b">ISO-Beratung für Gebäude&shy;reinigungen</span>
-      <p class="bigtext">Mein Schwerpunkt ist die <strong>Gebäude&shy;reinigung</strong>. Viele Objekte, wechselnde Teams, Angebote unter Zeitdruck: Ein System, das dafür zu kompliziert ist, <span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-file-02"/></svg></span> landet im Schrank. <span class="g">Deshalb baue ich nur, was Sie im Alltag auch nutzen.</span></p>
+      <p class="bigtext">Mein Schwerpunkt ist die <strong>Gebäude&shy;reinigung</strong>. Viele Objekte, wechselnde Teams, Angebote unter Zeitdruck: Ein System, das dafür zu kompliziert ist, <span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-file-02"/></svg></span> landet im Schrank. <span class="acc-s">Deshalb baue ich nur, was Sie im Alltag auch nutzen.</span></p>
       <div class="intro__cta"><a class="pill pill--black" href="#kontakt">Erst&shy;gespräch vereinbaren<span class="sq"></span></a></div>
     </div>
     <div class="compo" data-r style="--i:1">
@@ -1189,6 +1217,20 @@ f.addEventListener('submit',e=>{e.preventDefault();let ok=true;
   if(!ok)return;const v=n=>f.elements[n].value.trim();
   location.href='mailto:kontakt@domain.de?subject='+encodeURIComponent('Anfrage Erstgespräch: '+v('firma'))+'&body='+encodeURIComponent(`Name: ${v('name')}\nFirma: ${v('firma')}\nKontakt: ${v('kontakt')}\n\n${v('thema')}`);
   f.classList.add('is-sent')});
+const bt=d.querySelector('.bigtext');
+if(bt&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const ws=[];
+  const wrap=n=>{[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=d.createDocumentFragment();c.textContent.split(/([ \t\n\r]+)/).forEach(t=>{if(!t)return;if(/^[ \t\n\r]+$/.test(t)){f.appendChild(d.createTextNode(t))}else{const w=d.createElement('span');w.className='w';w.textContent=t;f.appendChild(w);ws.push(w)}});c.replaceWith(f)}
+    else if(c.nodeType===1){if(c.classList.contains('ico'))ws.push(c);else wrap(c)}
+  })};
+  wrap(bt);bt.classList.add('is-hl');
+  let raf=0,live=false;
+  const sec=bt.closest('section')||bt;const paint=()=>{raf=0;const r=bt.getBoundingClientRect(),sr=sec.getBoundingClientRect(),vh=innerHeight;const t0=vh*.9;let t1=sr.height<=vh-70?vh-8-(sr.bottom-r.top):vh*.7-r.height;t1=Math.min(t1,t0-vh*.25);const p=Math.min(1,Math.max(0,(t0-r.top)/(t0-t1)));const x=p*(ws.length+1);ws.forEach((w,i)=>w.style.setProperty('--a',Math.min(1,Math.max(0,x-i)).toFixed(3)))};
+  const req=()=>{if(!raf)raf=requestAnimationFrame(paint)};
+  new IntersectionObserver(([e])=>{if(e.isIntersecting&&!live){live=true;addEventListener('scroll',req,{passive:true});addEventListener('resize',req)}else if(!e.isIntersecting&&live){live=false;removeEventListener('scroll',req);removeEventListener('resize',req)}paint()},{rootMargin:'10% 0px'}).observe(bt);
+  paint();
+}
 const fit=()=>d.querySelectorAll('[data-fit]').forEach(el=>{el.style.fontSize='';const w=el.parentElement.clientWidth;el.style.fontSize=(parseFloat(getComputedStyle(el).fontSize)*w/el.scrollWidth)+'px'});
 (d.fonts?d.fonts.ready:Promise.resolve()).then(fit);let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(fit,120)});
 })();
