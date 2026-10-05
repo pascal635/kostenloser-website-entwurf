@@ -290,7 +290,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 .trow.is-active .ico{background:transparent;border-color:rgba(255,255,255,.55);color:#fff;border-radius:var(--r-md)}
 
 /* Vertrauens-Zeile (wie die Logo-Reihe im Video) */
-.marks{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;
+.marks{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;
   padding-top:var(--s7);margin-top:var(--s7);border-top:1px solid var(--line)}
 .mark{display:flex;align-items:center;gap:9px;color:var(--ink-300);font-weight:600;font-size:14.5px;
   letter-spacing:.01em;transition:color var(--t-base) var(--ease-out)}
@@ -370,7 +370,6 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 
 /* ===== FOOTER ===== */
 .foot-grid{display:grid;gap:var(--s6)}
-@media(min-width:760px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr 1.1fr}}
 .foot h4{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
   color:rgba(255,255,255,.46);margin-bottom:12px;font-family:"Figtree",sans-serif}
 .foot li{margin-bottom:7px;font-size:15px;color:rgba(255,255,255,.76)}
@@ -391,11 +390,6 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 /* ===== GRID ===== */
 .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4)}
 .grid>*{min-width:0}
-.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-@media(min-width:900px){.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
-@media(max-width:560px){.grid[style*="1fr 1fr"]{grid-template-columns:1fr!important}}
 
 /* ===== MOTION ===== */
 .reveal{opacity:0;transform:translateY(24px);
@@ -415,6 +409,90 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 .mw>i{display:inline-block;font-style:normal;transform:translateY(106%);
   transition:transform 640ms var(--ease-out)}
 .mask.is-in .mw>i{transform:none}
+
+
+/* ============================================================
+   RESPONSIVE RASTER
+   Regel: eine Zeile wird gefuellt, bevor umbrochen wird. Bleibt ein
+   Element allein uebrig, bekommt es die volle Breite statt eine halbe
+   mit Leerraum rechts. Feste Stufen statt auto-fit, damit nie eine
+   Dreier-Zeile mit einem vierten Element darunter entsteht.
+   ============================================================ */
+
+/* zwei Spalten: erst ab Tablet, dafuer ohne Zwischenstufe */
+.g2{grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g2>:last-child:nth-child(odd){grid-column:1/-1}
+}
+
+/* drei Spalten: 1 → 2 → 3 */
+.g3{grid-template-columns:minmax(0,1fr)}
+@media(min-width:560px){.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:900px){.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:560px) and (max-width:899px){
+  .g3>:last-child:nth-child(odd){grid-column:1/-1}
+}
+
+/* vier Spalten: 1 → 2 → 4, nie 3 */
+.g4{grid-template-columns:minmax(0,1fr)}
+@media(min-width:440px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:900px){.g4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:440px) and (max-width:899px){
+  .g4>:last-child:nth-child(odd){grid-column:1/-1}
+}
+
+/* Karten, die nur auf Tablet zu zweit stehen und im Sticky-Layout wieder
+   einspaltig werden (Glaskarten in der Verlaufssektion) */
+.g2t{grid-template-columns:minmax(0,1fr)}
+@media(min-width:620px) and (max-width:959px){
+  .g2t{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g2t>:last-child:nth-child(odd){grid-column:1/-1}
+}
+
+/* Vertrauens-Reihe: letzte Zeile mittig statt linksbuendig mit Loch rechts */
+.marks{justify-content:center;gap:16px 30px}
+@media(min-width:1040px){.marks{justify-content:space-between}}
+
+/* Hero-Buttons: teilen sich die Zeile, sonst beide voll breit */
+@media(max-width:519px){
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%;justify-content:center}
+}
+
+/* CTA-Band: Text und Button nebeneinander, darunter Button voll breit */
+@media(max-width:619px){
+  .band{flex-direction:column;align-items:stretch}
+  .band .btn{width:100%;justify-content:center}
+}
+
+/* Abschluss-Panel: Buttons teilen sich die Zeile oder werden voll breit */
+@media(max-width:519px){
+  .panel .btn{width:100%;justify-content:center}
+}
+
+/* Footer: 1 → 2 → 4 */
+.foot-grid{grid-template-columns:minmax(0,1fr)}
+@media(min-width:520px){.foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:900px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr 1.1fr}}
+@media(max-width:759px){
+  .foot-legal{flex-direction:column;align-items:flex-start;gap:10px}
+}
+
+/* Karussell-Fuss: Balken und Pfeile immer in einer Zeile */
+.rail-foot{flex-wrap:nowrap}
+@media(max-width:439px){.rail-foot{gap:14px}.rnd{width:42px;height:42px}}
+
+/* Formularzeilen: zwei Felder teilen sich die Zeile, sonst voll breit */
+@media(max-width:479px){
+  .grid[style*="1fr 1fr"]{grid-template-columns:minmax(0,1fr)!important}
+}
+@media(min-width:480px){
+  .grid[style*="1fr 1fr"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+/* Ortsliste: Zeilen gleichmaessig fuellen statt rechts auslaufen */
+@media(max-width:899px){.dotmap{justify-content:flex-start}}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -731,7 +809,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
       <p class="t-xs" style="color:rgba(255,255,255,.78);margin-top:14px;max-width:36ch">
         Kostenlos, unverbindlich, keine Beauftragung. Sie bekommen eine Einschätzung, keine Rechnung.</p>
     </div>
-    <div class="grid stag" style="gap:14px">
+    <div class="grid g2t stag" style="gap:14px">
       <div class="card--glass">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <h3 class="t-h4" style="margin-top:16px">Vor Ort statt Online-Schätzung</h3>
