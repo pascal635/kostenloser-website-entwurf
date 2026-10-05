@@ -164,32 +164,35 @@ p strong{color:var(--ink)}
 /* ==========================================================================
    NAV  (zentrierte Pille, links transparent, rechts getöntes Glas)
    ========================================================================== */
-.nb{position:fixed;z-index:60;top:clamp(12px,1.6vw,22px);left:50%;transform:translateX(-50%);width:calc(100% - 2 * var(--g));display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;min-height:clamp(42px,3.4vw,54px);padding:4px clamp(12px,1.4vw,22px);border-radius:7px;color:#E9E9E8;
-  background:linear-gradient(90deg,rgba(28,34,42,0) 0%,rgba(28,34,42,0) 20%,rgba(44,62,80,.5) 40%,rgba(34,48,64,.72) 62%,rgba(30,42,56,.78) 100%);
+.nb{position:fixed;z-index:60;top:clamp(12px,1.6vw,22px);left:50%;transform:translateX(-50%);width:calc(100% - 2 * var(--g));display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;min-height:clamp(48px,3.8vw,60px);padding:5px 6px 5px clamp(12px,1.2vw,20px);border-radius:8px;color:#E9E9E8;
+  background:linear-gradient(90deg,rgba(28,34,42,0) 0%,rgba(28,34,42,0) 14%,rgba(44,62,80,.5) 36%,rgba(34,48,64,.72) 62%,rgba(30,42,56,.78) 100%);
   -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
   transition:box-shadow .4s var(--ease-out)}
 .nb::before{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(18,20,23,.88);box-shadow:0 12px 30px -14px rgba(0,0,0,.5);opacity:0;transition:opacity .35s var(--ease-out);z-index:-1}
 .nb.is-solid::before{opacity:1}
-.nb__l,.nb__r{display:flex;align-items:center;gap:clamp(16px,2vw,36px)}
-.nb__r{justify-content:flex-end}
 .nb a{text-decoration:none}
-.nb__l a,.nb__r a{color:#D3D6DA;transition:color .2s}
-.nb__l a:hover,.nb__r a:hover{color:#fff}
-.nb__logo{display:inline-flex;align-items:center;gap:.55rem;font-size:clamp(1.05rem,.9rem + .45vw,1.45rem);letter-spacing:-.025em;font-weight:620;color:#F1F1F0}
-.nb__logo svg{width:clamp(22px,1.8vw,30px);height:clamp(22px,1.8vw,30px)}
-.nb__cta{display:inline-flex;align-items:center;gap:.55em;color:#fff!important}
-.nb__cta .ico{width:14px;height:14px}
+/* Links: Logo, Mitte: Bereiche, rechts: Termin-Button */
+.nb__logo{justify-self:start;display:inline-flex;align-items:center;gap:.6rem;font-size:clamp(1.15rem,.95rem + .5vw,1.6rem);letter-spacing:-.025em;font-weight:620;color:#F1F1F0}
+.nb__logo svg{width:clamp(30px,2.5vw,42px);height:clamp(30px,2.5vw,42px);flex:none}
+.nb__links{display:flex;align-items:center;justify-content:center;gap:clamp(18px,2.2vw,40px)}
+.nb__links a{color:#D3D6DA;transition:color .2s}
+.nb__links a:hover{color:#fff}
+.nb__act{justify-self:end;display:flex;align-items:center;gap:6px}
+.nb__cta{display:inline-flex;align-items:center;gap:.6em;min-height:clamp(38px,2.9vw,46px);padding:0 clamp(14px,1.2vw,20px);border-radius:5px;background:#ECECEB;color:var(--ink)!important;transition:transform .18s var(--ease),background .2s}
+.nb__cta:hover{background:#fff;transform:translateY(-1px)}
+.nb__cta .ico{width:15px;height:15px}
 .nb__tel{display:none}
 .nb__burger,.nb__menu{display:none}
-@media (min-width:900px){.nb{width:min(59vw,1240px)}}
+@media (min-width:900px){.nb{width:min(calc(100% - 2 * var(--g)),clamp(780px,64vw,1280px))}}
 @media (max-width:899px){
-  .nb{grid-template-columns:auto 1fr auto;gap:8px;background:rgba(18,20,23,.82);padding:4px 5px 4px 14px;transition:background .3s}
+  .nb{grid-template-columns:auto 1fr auto auto;gap:8px;background:rgba(18,20,23,.82);padding:4px 5px 4px 12px;transition:background .3s}
   .nb.is-open{background:rgba(18,20,23,.97)}
-  .nb__l{display:none}
-  .nb__r a:not(.nb__cta){display:none}
-  .nb__cta{min-height:36px;padding:0 14px;border-radius:5px;background:#ECECEB;color:var(--ink)!important}
+  .nb__logo svg{width:28px;height:28px}
+  .nb__links{display:none}
+  .nb__act{grid-column:3}
+  .nb__cta{min-height:36px;padding:0 14px}
   /* Burger: zwei Striche, die zum X werden */
-  .nb__burger{display:grid;place-content:center;gap:6px;width:40px;height:36px;border-radius:5px;border:1px solid rgba(236,236,235,.3);background:none;cursor:pointer;padding:0}
+  .nb__burger{grid-column:4;display:grid;place-content:center;gap:6px;width:40px;height:36px;border-radius:5px;border:1px solid rgba(236,236,235,.3);background:none;cursor:pointer;padding:0}
   .nb__burger span{display:block;width:16px;height:1.5px;background:#ECECEB;border-radius:1px;transition:transform .3s var(--ease-out)}
   .nb.is-open .nb__burger span:first-child{transform:translateY(3.75px) rotate(45deg)}
   .nb.is-open .nb__burger span:last-child{transform:translateY(-3.75px) rotate(-45deg)}
@@ -966,9 +969,9 @@ p strong{color:var(--ink)}
 
 <!-- ================= NAV ================= -->
 <header class="nb" id="top">
-  <nav class="nb__l mono" aria-label="Bereiche"><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a></nav>
   <a class="nb__logo" href="#top" aria-label="effitech, zum Seitenanfang"><svg aria-hidden="true"><use href="#signet-w"/></svg>effitech</a>
-  <nav class="nb__r mono" aria-label="Kontakt"><a href="#kosten">Kosten</a><a href="#ueber-mich">Über mich</a><a class="nb__tel" href="tel:+496163000000" aria-label="Anrufen"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></a><a class="nb__cta" href="#termin"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Termin</a></nav>
+  <nav class="nb__links mono" aria-label="Bereiche"><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a><a href="#kosten">Kosten</a><a href="#ueber-mich">Über mich</a></nav>
+  <div class="nb__act"><a class="nb__tel mono" href="tel:+496163000000" aria-label="Anrufen"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></a><a class="nb__cta mono" href="#termin"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg>Termin</a></div>
   <button class="nb__burger" type="button" aria-expanded="false" aria-controls="nb-menu" aria-label="Menü öffnen"><span></span><span></span></button>
   <div class="nb__menu" id="nb-menu" aria-hidden="true">
     <nav aria-label="Menü">
@@ -1696,9 +1699,11 @@ p strong{color:var(--ink)}
 
   /* Hero-Video: spielt nur, solange es sichtbar ist; bei reduzierter Bewegung bleibt das Standbild */
   document.querySelectorAll(".bubble__video").forEach(function(v){
-    var mqR=window.matchMedia("(prefers-reduced-motion: reduce)");
+    var mqR=window.matchMedia("(prefers-reduced-motion: reduce)"), RATE=.75;   /* ruhiger: 0,75-fache Geschwindigkeit */
     v.muted=true;
-    function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+    function rate(){ v.defaultPlaybackRate=RATE; v.playbackRate=RATE; }
+    rate(); v.addEventListener("loadedmetadata",rate); v.addEventListener("play",rate);
+    function play(){ rate(); var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
     if(mqR.matches){ v.removeAttribute("autoplay"); v.pause(); return; }
     if("IntersectionObserver" in window) new IntersectionObserver(function(es){ if(es[0].isIntersecting) play(); else v.pause(); },{threshold:.05}).observe(v);
     else play();
