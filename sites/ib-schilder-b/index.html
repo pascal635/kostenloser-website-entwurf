@@ -58,6 +58,7 @@
   --t-fast:180ms;--t-base:280ms;--t-slow:620ms;
   --dots:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1px);
   --gutter:14px;
+  --pad:24px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -70,8 +71,8 @@ p{margin:0} img{max-width:100%;display:block} a{color:inherit;text-decoration:no
 ul{margin:0;padding:0;list-style:none} button{font:inherit}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
-@media(min-width:900px){.wrap{padding:0 40px}}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+@media(min-width:900px){:root{--pad:40px}}
 .sec{padding:var(--s9) 0}
 .sec--tight{padding:var(--s8) 0}
 
@@ -136,7 +137,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 .hero-bg img{filter:saturate(.72) contrast(1.04)}
 .hero.is-in .hero-bg::after{opacity:1}
 .hero-dots{position:absolute;inset:0;z-index:1;background:var(--dots) 0 0/17px 17px;opacity:.5;pointer-events:none}
-.hero-body{position:relative;z-index:3;margin-top:auto;padding:0 clamp(24px,4vw,56px) clamp(28px,4vw,52px)}
+.hero-body{position:relative;z-index:3;margin-top:auto;padding:0 var(--pad) clamp(28px,4vw,52px)}
 .hero h1{color:#fff;max-width:30ch}
 .hero-sub{color:rgba(255,255,255,.8);margin-top:18px;max-width:52ch;font-size:16.5px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
@@ -147,7 +148,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 @media(min-width:900px){.scrollhint{display:flex}}
 
 /* Kennzahl-Badge im Hero */
-.hero-badge{position:absolute;z-index:3;right:clamp(24px,4vw,56px);top:clamp(110px,16vh,190px);
+.hero-badge{position:absolute;z-index:3;right:var(--pad);top:clamp(110px,16vh,190px);
   background:rgba(8,40,47,.62);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);
   border-radius:var(--r-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;
   max-width:340px;overflow:hidden;
@@ -159,7 +160,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
   color:#fff;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .hero-badge .l{display:block;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.35;margin-top:5px}
 @media(max-width:899px){
-  .hero-badge{position:static;margin:clamp(92px,13vh,116px) clamp(24px,4vw,56px) 0;max-width:none;
+  .hero-badge{position:static;margin:clamp(92px,13vh,116px) var(--pad) 0;max-width:none;
     width:auto!important;opacity:1!important}
   .hero{min-height:auto}
   .hero-body{padding-top:var(--s7)}
@@ -168,7 +169,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 /* ===== NAV (schwebende Kapsel) ===== */
 .nav{position:absolute;top:0;left:0;right:0;z-index:20;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:clamp(18px,2.4vw,26px) clamp(24px,4vw,56px)}
+  padding:clamp(18px,2.4vw,26px) var(--pad)}
 .nav-logo{display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(-6px);
   transition:opacity 500ms var(--ease-out),transform 500ms var(--ease-out);transition-delay:420ms}
 .hero.is-in .nav-logo{opacity:1;transform:none}
@@ -330,6 +331,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 }
 
 /* ===== CTA-BAND ===== */
+.band-h{max-width:24ch}
 .band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
   padding:clamp(28px,3.6vw,44px) clamp(24px,4vw,52px)}
 
@@ -450,9 +452,10 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
   .g2t>:last-child:nth-child(odd){grid-column:1/-1}
 }
 
-/* Vertrauens-Reihe: letzte Zeile mittig statt linksbuendig mit Loch rechts */
+/* Vertrauens-Reihe: jede Zeile wird ausgefuellt, allein stehende Marke voll breit */
 .marks{justify-content:center;gap:16px 30px}
-@media(min-width:1040px){.marks{justify-content:space-between}}
+.mark{flex:1 1 auto;justify-content:center;min-width:0;text-align:center}
+@media(min-width:1040px){.marks{gap:20px 34px}}
 
 /* Hero-Buttons: teilen sich die Zeile, sonst beide voll breit */
 @media(max-width:519px){
@@ -491,8 +494,76 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
   .grid[style*="1fr 1fr"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 
-/* Ortsliste: Zeilen gleichmaessig fuellen statt rechts auslaufen */
-@media(max-width:899px){.dotmap{justify-content:flex-start}}
+/* Ortsliste: jede Zeile fuellt die Breite, letzter Ort allein wird voll breit */
+.dotmap span{flex:1 1 auto;text-align:center;min-width:0}
+
+
+/* ================= BREITE BILDSCHIRME =================
+   Ab 1280px laeuft der Inhalt mit der Viewport-Breite mit,
+   der Seitenrand waechst proportional statt bei 1240px zu stoppen. */
+@media(min-width:1280px){
+  :root{--pad:clamp(40px,4.6vw,110px)}
+  .wrap{max-width:none}
+}
+@media(min-width:2200px){.wrap{max-width:2200px}}
+
+/* Ab 1440px: mehr Luft, groesseres Raster, groessere Schrift */
+@media(min-width:1440px){
+  :root{--gutter:18px;--s5:28px;--s6:36px;--s7:56px;--s8:76px;--s9:112px}
+  body{font-size:17px}
+  .t-d1{font-size:clamp(54px,3.8vw,66px)}
+  .t-d2{font-size:clamp(44px,3.1vw,54px)}
+  .t-h2{font-size:clamp(34px,2.3vw,41px)}
+  .t-h3{font-size:22.5px}
+  .t-lead,.hero-sub{font-size:17.5px}
+  .t-stat{font-size:clamp(50px,3.6vw,62px)}
+  .grid{gap:var(--s5)}
+  .hero{min-height:min(92vh,960px)}
+  .rail{gap:20px}
+  .rcard{width:clamp(330px,23vw,400px)}
+  .rcard .price{font-size:33px}
+  .faq-item summary{padding:22px 0;font-size:17.5px}
+  .btn{font-size:15px;padding:14px 24px}
+  .trow{padding:22px var(--s4)}
+  .trow h3{font-size:19px}
+  .head h2{max-width:22ch}
+  .band-h{max-width:40ch}
+  /* Lesbare Zeilenlaenge, auch wenn die Spalte sehr breit wird */
+  .t-lead{max-width:60ch}
+  #ueber-mich .reveal>p{max-width:60ch}
+
+  /* Schrittnummer rechts, damit die breite Zeile eine zweite Kante bekommt */
+  .travel{counter-reset:tr}
+  .trow{counter-increment:tr}
+  .trow::after{content:counter(tr,decimal-leading-zero);margin-left:auto;padding-left:var(--s5);
+    font-family:"Schibsted Grotesk",sans-serif;font-size:15px;font-weight:600;letter-spacing:.05em;
+    color:var(--ink-300);font-variant-numeric:tabular-nums;
+    transition:color var(--t-base) var(--ease-out)}
+  .trow.is-active::after{color:rgba(255,255,255,.72)}
+
+  /* Hero zweispaltig: Zeile links, Erklaerung rechts auf gleicher Grundlinie */
+  .hero-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);
+    align-items:end;column-gap:clamp(44px,4.4vw,104px);row-gap:26px}
+  .hero-body h1{max-width:none}
+  .hero-sub{grid-column:2;grid-row:1;margin-top:0;max-width:46ch;padding-bottom:8px}
+  .hero-foot{grid-column:1/-1}
+
+  /* Portraet deckeln, sonst zieht es die Karten daneben auseinander */
+  .media--tall{aspect-ratio:auto;height:clamp(620px,40vw,740px)}
+  .bars{height:clamp(130px,10vw,180px)}
+  .dotmap{gap:9px}
+  .dotmap span{padding:8px 15px;font-size:14.5px}
+
+  /* die vier Glaskarten stehen nebeneinander statt untereinander */
+  .g2t{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g2t>:last-child:nth-child(odd){grid-column:1/-1}
+}
+
+@media(min-width:1800px){
+  :root{--gutter:24px;--s9:128px}
+  .rcard{width:clamp(360px,21vw,440px)}
+  .hero{min-height:min(90vh,1020px)}
+}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -594,8 +665,8 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
         hier wirklich wert ist, sagt kein Rechner, sondern ein Termin vor Ort.</p>
     </div>
 
-    <div class="grid" style="grid-template-columns:1fr;gap:16px;margin-top:var(--s7)">
-      <div class="grid g2" style="gap:16px">
+    <div class="grid" style="grid-template-columns:1fr;margin-top:var(--s7)">
+      <div class="grid g2 insight">
         <div class="media media--tall reveal">
           <img src="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp"
                srcset="bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-800.webp 800w, bilder/immobilienmakler-frankenthal-andrea-schilder-portrait-1600.webp 1600w"
@@ -606,7 +677,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
             <span class="l">in Frankenthal und Umgebung als Maklerin tätig</span>
           </div>
         </div>
-        <div class="grid" style="gap:16px">
+        <div class="grid">
           <div class="card card--soft reveal">
             <h3 class="t-h3">Wo ich arbeite</h3>
             <p class="t-sm muted" style="margin-top:8px">Vermittelt habe ich zuletzt hier. Alles selbst
@@ -809,7 +880,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
       <p class="t-xs" style="color:rgba(255,255,255,.78);margin-top:14px;max-width:36ch">
         Kostenlos, unverbindlich, keine Beauftragung. Sie bekommen eine Einschätzung, keine Rechnung.</p>
     </div>
-    <div class="grid g2t stag" style="gap:14px">
+    <div class="grid g2t stag">
       <div class="card--glass">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <h3 class="t-h4" style="margin-top:16px">Vor Ort statt Online-Schätzung</h3>
@@ -905,7 +976,7 @@ ul{margin:0;padding:0;list-style:none} button{font:inherit}
 <!-- ======= CTA-BAND ======= -->
 <section class="sec--tight" style="padding-top:0">
   <div class="panel gradient band reveal">
-    <h2 class="t-h3" style="max-width:24ch">Sie wollen wissen, was Ihre Immobilie heute wert ist?</h2>
+    <h2 class="t-h3 band-h">Sie wollen wissen, was Ihre Immobilie heute wert ist?</h2>
     <a class="btn btn--white" href="#kontakt">Termin vereinbaren <span class="arw">&#8594;</span></a>
   </div>
 </section>
