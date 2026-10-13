@@ -8,9 +8,8 @@
 <!-- Entwurf auf dev.likovo.de: nicht indexieren. Beim Livegang entfernen. -->
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://www.energiepartner-regensburg.de/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="schrift/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="schrift/schrift.css">
 <style>
 /* ===========================================================
    Energiepartner Regensburg · Entwurf B
@@ -1111,6 +1110,9 @@ details[open] .plus::after{transform:rotate(90deg)}
           <span><a href="tel:+4916096807368">0160 96807368</a></span>
           <span class="eyebrow" style="margin-top:var(--s4)">E-Mail</span>
           <span><a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a></span>
+          <span><a href="mailto:info@energiepartner-regensburg.de">info@energiepartner-regensburg.de</a></span>
+          <span class="eyebrow" style="margin-top:var(--s4)">Anschrift</span>
+          <span>Von-Seeckt-Straße 9, 93053 Regensburg</span>
           <span class="eyebrow" style="margin-top:var(--s4)">Erreichbar</span>
           <span class="sm">Mo bis Fr 8 bis 20 Uhr, Sa 8 bis 20 Uhr, So geschlossen</span>
         </div>
@@ -1154,9 +1156,11 @@ details[open] .plus::after{transform:rotate(90deg)}
              onerror="this.remove()">
         <h3>Energiepartner Regensburg</h3>
         <p>Inhaber Emrullah Gök<br>
-        <span style="color:rgba(255,255,255,.58)">Anschrift folgt, Pflichtangabe</span><br>
+        Von-Seeckt-Straße 9<br>
+        93053 Regensburg<br>
         <a href="tel:+4916096807368">0160 96807368</a><br>
-        <a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a></p>
+        <a href="mailto:kontakt@energiepartner-regensburg.de">kontakt@energiepartner-regensburg.de</a><br>
+        <a href="mailto:info@energiepartner-regensburg.de">info@energiepartner-regensburg.de</a></p>
         <p style="margin-top:var(--s5)">Mo bis Fr 8 bis 20 Uhr<br>Sa 8 bis 20 Uhr<br>So geschlossen</p>
       </div>
       <div>
@@ -1181,7 +1185,7 @@ details[open] .plus::after{transform:rotate(90deg)}
         <span class="credit">Foto Regensburg: Rolf Kranz,
         <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="license noopener" target="_blank">CC BY-SA 4.0</a></span>
       </span>
-      <nav><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></nav>
+      <nav><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></nav>
     </div>
   </div>
 </footer>
@@ -1190,7 +1194,9 @@ details[open] .plus::after{transform:rotate(90deg)}
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Energiepartner Regensburg",
 "description":"Unabhängige Energieberatung und Vermittlung von Strom- und Gasverträgen für Betriebe, Hausverwaltungen und Privathaushalte in Regensburg und Umland.",
 "url":"https://www.energiepartner-regensburg.de/","telephone":"+49 160 96807368",
-"email":"kontakt@energiepartner-regensburg.de","founder":{"@type":"Person","name":"Emrullah Gök"},
+"email":"kontakt@energiepartner-regensburg.de",
+"address":{"@type":"PostalAddress","streetAddress":"Von-Seeckt-Straße 9","postalCode":"93053","addressLocality":"Regensburg","addressRegion":"Bayern","addressCountry":"DE"},
+"founder":{"@type":"Person","name":"Emrullah Gök"},
 "areaServed":[{"@type":"City","name":"Regensburg"},{"@type":"AdministrativeArea","name":"Landkreis Regensburg"}],
 "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"20:00"}]}
 </script>

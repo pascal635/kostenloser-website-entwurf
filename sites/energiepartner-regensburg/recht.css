@@ -1,0 +1,61 @@
+/* Rechtsseiten (Impressum, Datenschutz, AGB) · gleiche Tokens wie index.html */
+:root{
+  --gruen-900:#1F4317; --gruen-700:#2C6320; --gruen-500:#3E8523;
+  --gruen-200:#A1D583; --gruen-100:#D5FEB7;
+  --flaeche-1:#F8F8F8; --text-900:#1A1A1A; --text-600:#5A5A5A; --text-400:#8A8A8A; --linie:#ECECEC;
+  --r-md:18px; --r-xl:34px; --r-pill:999px;
+  --e-2:0 1px 2px rgba(31,67,23,.04),0 8px 24px -12px rgba(31,67,23,.10);
+  --gutter:26px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--text-900);background:#fff;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(1100px 700px at 6% 0%,rgba(213,254,183,.32),transparent 60%)}
+a{color:var(--gruen-700)}
+a:hover{color:var(--gruen-900)}
+
+.kopf{max-width:1220px;margin:0 auto;padding:28px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.kopf img{height:clamp(42px,3.8vw,56px);width:auto;display:block}
+.zurueck{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;
+  color:var(--gruen-900);text-decoration:none;background:#fff;border:1px solid var(--linie);
+  border-radius:var(--r-pill);padding:10px 18px;box-shadow:var(--e-2)}
+.zurueck:hover{border-color:var(--gruen-200)}
+
+.recht{max-width:780px;margin:0 auto;padding:clamp(32px,6vw,72px) var(--gutter) clamp(64px,9vw,112px)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-400)}
+.recht h1{margin:10px 0 clamp(28px,4vw,44px);font-size:clamp(30px,5vw,54px);line-height:1.08;
+  font-weight:600;letter-spacing:-.033em;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.recht h2{margin:clamp(40px,5vw,56px) 0 12px;font-size:clamp(21px,2.4vw,26px);line-height:1.25;
+  font-weight:600;letter-spacing:-.02em}
+.recht h3{margin:28px 0 8px;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.recht p,.recht li{color:var(--text-600)}
+.recht p{margin:0 0 14px}
+.recht ul{margin:0 0 14px;padding-left:20px}
+.recht ul ul{margin:6px 0 6px}
+.recht li{margin-bottom:6px}
+.recht strong{color:var(--text-900);font-weight:600}
+
+/* Angaben-Karte für Anschrift und Kontakt */
+.karte{background:var(--flaeche-1);border-radius:var(--r-md);padding:clamp(22px,3vw,32px);margin:0 0 18px}
+.karte p{margin:0;color:var(--text-900)}
+.karte p + p{margin-top:12px}
+.karte .eyebrow{display:block;margin-bottom:4px}
+
+.inhalt{background:var(--flaeche-1);border-radius:var(--r-md);padding:20px 26px;margin:0 0 8px}
+.inhalt ol{margin:0;padding-left:20px}
+.inhalt li{margin:3px 0}
+.inhalt a{text-decoration:none}
+.inhalt a:hover{text-decoration:underline}
+
+.stand{margin-top:48px;font-size:13.5px;color:var(--text-400)}
+
+.fuss{background:var(--gruen-900);color:rgba(255,255,255,.84);font-size:14.5px}
+.fuss-in{max-width:1220px;margin:0 auto;padding:28px var(--gutter);
+  display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.fuss a{color:#fff;text-decoration:none}
+.fuss a:hover{text-decoration:underline}
+.fuss nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.fuss a[aria-current]{text-decoration:underline;text-underline-offset:4px}
