@@ -11,8 +11,9 @@ RewriteEngine On
 # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # --- Einheitlich auf www weiterleiten (verhindert Duplicate Content) ---
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^ %{REQUEST_SCHEME}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Nur für die echte Domain, damit die Vorschau auf dev.likovo.de nicht umgeleitet wird
+RewriteCond %{HTTP_HOST} ^paninimanufaktur\.de$ [NC]
+RewriteRule ^ https://www.paninimanufaktur.de%{REQUEST_URI} [L,R=301]
 
 # /index.html -> /
 RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
