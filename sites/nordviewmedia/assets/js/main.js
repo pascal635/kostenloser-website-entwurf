@@ -45,44 +45,71 @@
     document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeSheet(); } });
   }
 
-  /* ---------- Hero: Drohnen-Sequenz ---------- */
-  var canvas = $("#droneCanvas"), stage = $("#heroStage"), hero = $("#hero");
-  var ctx = canvas ? canvas.getContext("2d") : null;
-  var imgs = [], playing = false, heroVisible = true, last = 0, idx = 0, dir = 1;
-  function draw(i){ if(!ctx || !imgs[i]) return; ctx.clearRect(0,0,canvas.width,canvas.height); ctx.drawImage(imgs[i],0,0,canvas.width,canvas.height); }
-  function loop(t){
-    if(heroVisible && t - last > 1000/24){
-      last = t; idx += dir;
-      if(idx >= imgs.length - 1){ idx = imgs.length - 1; dir = -1; }
-      if(idx <= 0){ idx = 0; dir = 1; }
-      draw(idx);
-    }
-    requestAnimationFrame(loop);
-  }
-  function startSequence(){
-    if(!canvas || reduce) return;
-    var dirName = window.innerWidth < 900 ? "hero-1000" : "hero-1400";
-    var n = 48, loaded = 0, ok = true;
-    for(var k = 0; k < n; k++){
+  /* ---------- Drohnen-Sequenzen (Alpha, Canvas, Ping-Pong 24 fps) ----------
+     Jede Sequenz lädt erst, wenn ein Element mit data-seq in die Nähe kommt,
+     und wird von allen Elementen geteilt, die dieselbe Sequenz zeigen. */
+  var hero = $("#hero");
+  var SEQ = {}, FRAMES = 48, pageLoaded = false;
+  function seqDir(name){ return name === "hero" ? (window.innerWidth < 900 ? "hero-1000" : "hero-1400") : name; }
+  $$(".seq[data-seq]").forEach(function(el){
+    var name = el.getAttribute("data-seq"), cv = $(".seq__canvas", el);
+    if(!cv) return;
+    var s = SEQ[name] || (SEQ[name] = {name:name, imgs:[], state:0, idx:0, dir:1, users:[]});
+    s.users.push({el:el, cv:cv, ctx:cv.getContext("2d"), near:false});
+  });
+  function seqLoad(s){
+    if(s.state || reduce) return;
+    s.state = 1;
+    var dir = seqDir(s.name), done = 0, ok = true;
+    for(var k = 0; k < FRAMES; k++){
       (function(k){
-        var im = new Image();
-        im.decoding = "async";
+        var im = new Image(); im.decoding = "async";
         im.onload = function(){
-          loaded++;
-          if(loaded === n && ok){ draw(0); stage.classList.add("is-live"); playing = true; requestAnimationFrame(loop); }
+          done++;
+          if(k === 0){ s.users.forEach(function(u){ if(u.cv.width !== im.naturalWidth){ u.cv.width = im.naturalWidth; u.cv.height = im.naturalHeight; } }); }
+          if(done === FRAMES && ok){ s.state = 2; s.users.forEach(function(u){ seqDraw(u, s.imgs[0]); u.el.classList.add("is-live"); }); }
         };
         im.onerror = function(){ ok = false; };
-        im.src = "assets/img/drohne/" + dirName + "/frame-" + String(k + 1).padStart(3, "0") + ".webp";
-        imgs[k] = im;
+        im.src = "assets/img/drohne/" + dir + "/frame-" + String(k + 1).padStart(3, "0") + ".webp";
+        s.imgs[k] = im;
       })(k);
     }
-    if("IntersectionObserver" in window){
-      new IntersectionObserver(function(es){ heroVisible = es[0].isIntersecting; }, {threshold:0}).observe(hero);
-    }
   }
-  window.addEventListener("load", function(){
-    if("requestIdleCallback" in window){ requestIdleCallback(startSequence, {timeout:1500}); } else { setTimeout(startSequence, 300); }
-  });
+  function seqDraw(u, im){ u.ctx.clearRect(0, 0, u.cv.width, u.cv.height); u.ctx.drawImage(im, 0, 0, u.cv.width, u.cv.height); }
+  function seqWake(){
+    pageLoaded = true;
+    Object.keys(SEQ).forEach(function(n){ var s = SEQ[n]; if(s.users.some(function(u){ return u.near; })){ seqLoad(s); } });
+  }
+  if(!reduce && "IntersectionObserver" in window){
+    var seqIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var el = e.target, s = SEQ[el.getAttribute("data-seq")]; if(!s) return;
+        s.users.forEach(function(u){ if(u.el === el){ u.near = e.isIntersecting; } });
+        if(e.isIntersecting && pageLoaded){ seqLoad(s); }
+      });
+    }, {rootMargin:"400px 0px"});
+    Object.keys(SEQ).forEach(function(n){ SEQ[n].users.forEach(function(u){ seqIO.observe(u.el); }); });
+    var lastT = 0;
+    var tick = function(t){
+      if(t - lastT > 1000 / 24){
+        lastT = t;
+        Object.keys(SEQ).forEach(function(n){
+          var s = SEQ[n]; if(s.state !== 2) return;
+          var vis = s.users.filter(function(u){ return u.near && !u.el.closest(".panel:not(.on)"); });
+          if(!vis.length) return;
+          s.idx += s.dir;
+          if(s.idx >= FRAMES - 1){ s.idx = FRAMES - 1; s.dir = -1; }
+          if(s.idx <= 0){ s.idx = 0; s.dir = 1; }
+          vis.forEach(function(u){ seqDraw(u, s.imgs[s.idx]); });
+        });
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    window.addEventListener("load", function(){
+      if("requestIdleCallback" in window){ requestIdleCallback(seqWake, {timeout:1500}); } else { setTimeout(seqWake, 300); }
+    });
+  }
 
   /* ---------- Hero: Scroll-Kopplung ---------- */
   var mark = $("#heroMark"), stageInner = $("#heroStageInner"), spots = $("#heroSpots"), rail = $("#heroRail");
@@ -188,23 +215,42 @@
     $$("[data-count]").forEach(function(el){ io.observe(el); });
   } else { $$(".fadeup").forEach(function(el){ el.classList.add("in"); }); }
 
-  /* ---------- Beispiele: ohne Kundenfotos ausblenden ----------
-     Prüft die Bilder vorab (unabhängig von lazy loading). Fehlen alle, verschwindet die Sektion. */
-  (function(){
-    var sec = $("#beispiele"); if(!sec) return;
-    var pics = $$(".gallery img", sec);
-    var checks = pics.map(function(im){
-      return new Promise(function(res){
-        var probe = new Image();
-        probe.onload = function(){ res(true); };
-        probe.onerror = function(){ res(false); };
-        probe.src = im.getAttribute("src");
-      }).then(function(ok){ if(!ok){ im.closest(".photo").classList.add("photo--ph"); im.remove(); } return ok; });
+  /* ---------- Beispiele: Parallaxe im Bildrahmen ---------- */
+  var plx = $$("[data-parallax]");
+  function plxUpdate(){
+    if(reduce) return;
+    var vh = window.innerHeight;
+    plx.forEach(function(m){
+      var r = m.parentNode.getBoundingClientRect();
+      if(r.bottom < 0 || r.top > vh) return;
+      var p = clamp((r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2), -1, 1);
+      m.style.transform = "translate3d(0," + (p * -3.2).toFixed(2) + "%,0) scale(1.08)";
     });
-    Promise.all(checks).then(function(r){
-      if(r.indexOf(true) === -1){ sec.hidden = true; setFooter(); onScroll(); }
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lb = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+  var shots = $$("#beispiele .show").map(function(f){
+    var im = $("img", f);
+    var cap = $(".t-h3", f);
+    return {src: (im.getAttribute("src") || ""), alt: im.alt, cap: (cap ? cap.textContent + ". " : "") + im.alt};
+  });
+  var lbIdx = 0, lbOpener = null;
+  function lbShow(k){ lbIdx = (k + shots.length) % shots.length; var s = shots[lbIdx]; lbImg.src = s.src; lbImg.alt = s.alt; lbCap.textContent = s.cap; }
+  if(lb && lb.showModal){
+    $$("[data-lightbox]").forEach(function(b){
+      b.addEventListener("click", function(){ lbOpener = b; lbShow(parseInt(b.getAttribute("data-lightbox"), 10)); lb.showModal(); });
     });
-  })();
+    $$("#beispiele .show__frame").forEach(function(fr){
+      fr.addEventListener("click", function(e){ if(e.target.closest("button")) return; var b = $("[data-lightbox]", fr); if(b){ b.click(); } });
+    });
+    $(".lightbox__prev", lb).addEventListener("click", function(){ lbShow(lbIdx - 1); });
+    $(".lightbox__next", lb).addEventListener("click", function(){ lbShow(lbIdx + 1); });
+    $(".lightbox__close", lb).addEventListener("click", function(){ lb.close(); });
+    lb.addEventListener("click", function(e){ if(e.target === lb){ lb.close(); } });
+    lb.addEventListener("keydown", function(e){ if(e.key === "ArrowRight"){ lbShow(lbIdx + 1); } if(e.key === "ArrowLeft"){ lbShow(lbIdx - 1); } });
+    lb.addEventListener("close", function(){ if(lbOpener){ lbOpener.focus(); } });
+  } else { $$("[data-lightbox]").forEach(function(b){ b.hidden = true; }); }
 
   /* ---------- Anfrage: öffnet vorausgefüllte E-Mail ----------
      Für den Livegang an den Formular-Dienst des Kunden anbinden (data-mailto ersetzen). */
@@ -237,7 +283,7 @@
 
   /* ---------- Scroll-Schleife ---------- */
   var ticking = false;
-  function onScroll(){ if(ticking) return; ticking = true; requestAnimationFrame(function(){ navUpdate(); heroUpdate(); rvUpdate(); tlUpdate(); ticking = false; }); }
+  function onScroll(){ if(ticking) return; ticking = true; requestAnimationFrame(function(){ navUpdate(); heroUpdate(); rvUpdate(); tlUpdate(); plxUpdate(); ticking = false; }); }
   window.addEventListener("scroll", onScroll, {passive:true});
   window.addEventListener("resize", onScroll);
   onScroll();
