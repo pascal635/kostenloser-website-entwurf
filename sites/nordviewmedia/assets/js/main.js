@@ -126,14 +126,21 @@
   }
 
   /* ---------- Text-Reveal wortweise ---------- */
+  /* Akzent-Wörter (span.ac) behalten ihre Farbe, Satzzeichen bleiben am Wort. */
   function splitWords(el){
-    var text = el.textContent.trim(), words = text.split(/\s+/);
+    var text = el.textContent.replace(/\s+/g, " ").trim(), nodes = Array.prototype.slice.call(el.childNodes);
     el.textContent = "";
     var sr = document.createElement("span"); sr.className = "sr-only"; sr.textContent = text; el.appendChild(sr);
     var vis = document.createElement("span"); vis.setAttribute("aria-hidden","true"); el.appendChild(vis);
-    words.forEach(function(w, i){
-      var s = document.createElement("span"); s.className = "w"; s.textContent = w;
-      vis.appendChild(s); if(i < words.length - 1){ vis.appendChild(document.createTextNode(" ")); }
+    var started = false;
+    nodes.forEach(function(n){
+      var ac = n.nodeType === 1 && n.classList.contains("ac");
+      (n.textContent || "").split(/(\s+)/).forEach(function(chunk){
+        if(!chunk) return;
+        if(/^\s+$/.test(chunk)){ if(started){ vis.appendChild(document.createTextNode(" ")); } return; }
+        var s = document.createElement("span"); s.className = ac ? "w ac" : "w"; s.textContent = chunk;
+        vis.appendChild(s); started = true;
+      });
     });
     return $$(".w", vis);
   }
@@ -192,7 +199,8 @@
   function pkLayout(){
     if(!pk) return;
     pk.classList.add("is-pinned");
-    var need = $(".pk__sticky > .wrap", pk).offsetHeight + (window.innerWidth <= 860 ? 80 : 96);
+    var nav = window.innerWidth <= 860 ? 80 : 96 * (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--zk")) || 1);
+    var need = $(".pk__sticky > .wrap", pk).getBoundingClientRect().height + nav;
     pkPinned = !reduce && need <= window.innerHeight;
     pk.classList.toggle("is-pinned", pkPinned);
   }
@@ -235,7 +243,8 @@
     window.addEventListener("load", function(){
       var tall = window.innerWidth / window.innerHeight < 0.8;
       if(tall && hv.getAttribute("data-poster-tall")){ hv.poster = hv.getAttribute("data-poster-tall"); }
-      hv.src = hv.getAttribute(tall ? "data-tall" : "data-wide");
+      var xl = !tall && window.innerWidth > 1700 && hv.getAttribute("data-xl");
+      hv.src = hv.getAttribute(tall ? "data-tall" : (xl ? "data-xl" : "data-wide"));
       if(reduce){ heroUserPaused = true; heroSetPaused(true); return; }
       var pr = hv.play(); if(pr && pr.catch){ pr.catch(function(){ heroSetPaused(true); }); }
     });
@@ -277,6 +286,16 @@
     $$(".fadeup").forEach(function(el){ io.observe(el); });
     $$("[data-count]").forEach(function(el){ io.observe(el); });
   } else { $$(".fadeup").forEach(function(el){ el.classList.add("in"); }); }
+
+  /* ---------- FAQ: immer nur eine Antwort offen ----------
+     Moderne Browser regeln das über name="faq", hier die Absicherung für ältere. */
+  var faqs = $$(".faq__item");
+  faqs.forEach(function(d){
+    d.addEventListener("toggle", function(){
+      if(!d.open) return;
+      faqs.forEach(function(o){ if(o !== d && o.open){ o.open = false; } });
+    });
+  });
 
   /* ---------- Beispiele: Parallaxe im Bildrahmen ---------- */
   var plx = $$("[data-parallax]");

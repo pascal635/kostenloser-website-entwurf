@@ -1007,3 +1007,117 @@ h1,h2,h3,.statement__text,.finale__text{text-wrap:balance}
 @media (max-width:860px){
   .pk.is-pinned .shead{display:none}
 }
+
+/* ==========================================================
+   v4: Überschriften in Syncopate (Schrift der Wortmarke) · Schlüsselwörter in Akzentfarbe
+       FAQ als Akkordeon · große Bildschirme · Mobil
+   ========================================================== */
+:root{
+  --accent:#6F86A0;          /* Schlüsselwörter auf hellem Grund (Kontrast ab 3,3:1, nur Großschrift) */
+  --accent-on-dark:#A9C0D6;  /* Schlüsselwörter auf dunklem Grund und über dem Video */
+  --t-h1:clamp(24px,calc(1.33vw + 18.8px),38px);
+  --t-h2:clamp(24px,calc(1.1vw + 20px),36px);   /* ab 24 px gilt Großschrift: Akzentfarbe erfüllt 3:1 */
+  --zk:1;                    /* Skalierung für große Bildschirme, siehe unten */
+}
+
+/* Überschriften: Syncopate in Versalien, wie NORDVIEW im Hero */
+.t-h1,.t-h2,.finale__text{font-family:var(--font-wide);font-weight:400;text-transform:uppercase;letter-spacing:-.02em}
+.t-h1,.hero__copy .t-h1{font-size:var(--t-h1);line-height:1.14}
+.t-h2{font-size:var(--t-h2);line-height:1.17}
+.ac{color:var(--accent)}
+.on-dark .ac,.hero--video .ac,.finale .ac{color:var(--accent-on-dark)}
+.gcard__title,.show .t-h3,.panel__name h3,.matrix__who h3,.pcard__title{font-family:var(--font-wide);font-weight:400;text-transform:uppercase}
+.gcard__title{font-size:clamp(15px,calc(.5vw + 12px),19px);line-height:1.32;letter-spacing:-.005em}
+.show .t-h3{font-size:clamp(14px,calc(.3vw + 12px),16.5px);line-height:1.38;letter-spacing:0}
+.panel__name h3{font-size:clamp(26px,2.4vw,38px);line-height:1;letter-spacing:-.02em}
+.matrix__who h3{font-size:clamp(14px,1.1vw,17px);line-height:1.3;letter-spacing:0}
+.pcard__title{font-size:12px;line-height:1.45;letter-spacing:.02em}
+.finale__text{max-width:19em;font-size:clamp(26px,3.6vw,120px);line-height:1.1}
+.pk.is-pinned .shead .t-h2{font-size:clamp(20px,calc(.9vw + 16px),30px)}
+
+/* FAQ: Hover-Fläche, Versatz der Frage, Plus wird dunkel */
+.faq__item{position:relative;isolation:isolate}
+.faq__item::before{content:"";position:absolute;z-index:-1;inset:-1px -16px;border-radius:18px;background:var(--ice-50);box-shadow:inset 0 0 0 1px rgba(15,28,46,.06);opacity:0;transition:opacity var(--d-2) var(--ease-out)}
+.faq__t{transition:transform var(--d-3) var(--ease-out)}
+.faq__plus::before{left:0;top:0;width:100%;height:100%;margin:0;border-radius:50%;background:var(--ink-900);opacity:0;transition:opacity var(--d-2) var(--ease-out)}
+.faq__plus::after{display:none}
+.faq__plus i,.faq__plus b{position:absolute;inset:0;transition:opacity var(--d-2) var(--ease-out)}
+.faq__plus i::before,.faq__plus i::after,.faq__plus b::before,.faq__plus b::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;margin:-.75px 0 0 -6px;border-radius:1px;background:var(--ink-900)}
+.faq__plus b::before,.faq__plus b::after{background:#fff}
+.faq__plus i::after,.faq__plus b::after{transform:rotate(90deg)}
+.faq__plus b{opacity:0}
+.faq__item[open] .faq__plus::before,.faq__item[open] .faq__plus b{opacity:1}
+@media (hover:hover){
+  .faq__item:hover::before{opacity:1}
+  .faq__item:hover .faq__t{transform:translateX(6px)}
+  .faq__item:hover .faq__plus::before,.faq__item:hover .faq__plus b{opacity:1}
+}
+
+/* ---------- Große Bildschirme ----------
+   Inhalte wachsen proportional mit (zoom auf den Inhalts-Containern),
+   Abschnitte, Hero-Video und Wortmarke laufen ohnehin randlos. */
+@media (min-width:1680px){:root{--zk:1.1}}
+@media (min-width:1880px){:root{--zk:1.2}}
+@media (min-width:2200px){:root{--zk:1.32}}
+@media (min-width:2480px){:root{--zk:1.42}}
+@media (min-width:3000px){:root{--zk:1.75}}
+@media (min-width:1680px){
+  .wrap,.nav,.hero__copy,.hero__card,.hero__side,.hero__toggle,.finale > .eyebrow,.finale__sub,.finale__cta{zoom:var(--zk)}
+  .sec{padding-top:calc(140px * var(--zk));padding-bottom:calc(140px * var(--zk))}
+  .pk{padding-top:calc(140px * var(--zk))}
+  .pk.is-pinned{padding-top:0}
+  .pk.is-pinned .pk__sticky{padding-top:calc(76px * var(--zk))}
+  .statement{padding:calc(240px * var(--zk)) 0 calc(200px * var(--zk))}
+  section[id],footer[id]{scroll-margin-top:calc(88px * var(--zk))}
+  .hero__mark{top:clamp(104px,15vh,210px)}
+  :root{--t-mark:13.4vw}
+  .hero__drone{right:8vw;top:calc(clamp(104px,15vh,210px) + 8vw);width:22vw}
+  .hero__copy{bottom:56px;width:640px}
+  .hero__card{bottom:56px}
+  .hero__toggle{bottom:268px}
+  .hero__side{top:210px}
+  .finale{padding-top:calc(140px * var(--zk))}
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width:860px){
+  .pk .panel__name h3{font-size:26px}
+}
+@media (max-width:600px){
+  .sec{padding:68px 0}
+  .pk{padding-top:68px}
+  .statement{padding:96px 0 88px}
+  .t-h1,.t-h2,.finale__text,.gcard__title,.show .t-h3{-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:12 5 5}
+  .shead__text{gap:14px}
+  .faq__q{padding:20px 2px;gap:16px}
+  .faq__a{padding:0 4px 22px 2px}
+}
+/* Smartphone quer: Hero wächst mit dem Inhalt, Wortmarke und Drohne kollidieren nicht mit dem Text */
+@media (max-width:860px) and (max-height:520px) and (orientation:landscape){
+  .hero.hero--video{min-height:0;padding-top:calc(92px + 9vw + 36px)}
+  .hero.hero--video .hero__mark{top:84px;font-size:9vw}
+  .hero.hero--video .hero__drone{top:calc(84px + 9vw + 8px);width:24vw;right:6vw}
+  .hero.hero--video .hero__copy{max-width:62%}
+  .hero__toggle{top:auto;bottom:30px}
+}
+
+/* Hero: Pause-Knopf sitzt über der Karte, Seitenleiste endet davor */
+.hero__toggle{bottom:calc(clamp(28px,5.5vh,64px) + 234px)}
+.hero__rail{height:clamp(72px,10vh,120px)}
+@media (max-height:820px){.hero__side{display:none}}
+@media (min-width:1680px){
+  .hero__toggle{bottom:290px}
+  .hero__side{top:170px}
+  .hero__rail{height:100px}
+}
+
+/* Kleine Smartphones (iPhone SE, 360 × 740): Pakete-Strecke kompakter, damit sie gepinnt bleibt */
+@media (max-width:860px) and (max-height:780px){
+  .pk .pg{width:min(100%,224px)}
+  .pk .panel{gap:10px;padding:12px 16px 14px}
+  .pk .viewer__bar{padding:10px 12px 8px;gap:8px}
+  .pk .panel__name .badge{display:none}
+  .pk .specs__row{padding:5px 0;font-size:12.5px}
+  .pk.is-pinned .pk__sticky{padding-top:66px}
+}
+.pg-edit__head span:nth-child(2){min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
