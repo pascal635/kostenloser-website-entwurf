@@ -163,28 +163,58 @@
     steps.forEach(function(s, i){ s.classList.toggle("on", p >= (i + 0.5) / steps.length - 0.02); });
   }
 
-  /* ---------- Pakete (Tabs) ---------- */
-  var tabs = $("#tabs");
-  if(tabs){
-    var tbtn = $$("[role=tab]", tabs);
-    var select = function(k, focus){
-      tbtn.forEach(function(b, i){
-        var on = i === k;
-        b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1;
-        var p = document.getElementById(b.getAttribute("aria-controls"));
-        if(p){ p.classList.toggle("on", on); p.setAttribute("aria-hidden", String(!on)); }
-      });
-      tabs.style.setProperty("--i", k);
-      if(focus){ tbtn[k].focus(); }
-    };
+  /* ---------- Pakete: Tabs + Scrollstrecke ----------
+     Gepinnt (wenn der Viewer in den Bildschirm passt): Die Sektion bleibt stehen,
+     Scrollen schaltet Basic, Pro, Premium durch, danach geht es weiter. */
+  var tabs = $("#tabs"), pk = $("#pakete"), pkTrack = $("#pkTrack"), pkLine = $("#pkLine"), pkNum = $("#pkNum");
+  var tbtn = tabs ? $$("[role=tab]", tabs) : [], pkCur = -1, pkPinned = false;
+  function pkSelect(k, focus){
+    if(k === pkCur && !focus) return;
+    pkCur = k;
     tbtn.forEach(function(b, i){
-      b.addEventListener("click", function(){ select(i); });
+      var on = i === k;
+      b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1;
+      var p = document.getElementById(b.getAttribute("aria-controls"));
+      if(p){ p.classList.toggle("on", on); p.setAttribute("aria-hidden", String(!on)); }
+    });
+    tabs.style.setProperty("--i", k);
+    if(pkNum){ pkNum.textContent = "0" + (k + 1); }
+    if(focus){ tbtn[k].focus({preventScroll:true}); }
+  }
+  function pkTotal(){ return pkTrack.offsetHeight - window.innerHeight; }
+  function pkGo(k, focus){
+    if(pkPinned){
+      var top = pkTrack.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({top: top + ((k + 0.5) / 3) * pkTotal(), behavior: reduce ? "auto" : "smooth"});
+      pkSelect(k, focus);
+    } else { pkSelect(k, focus); }
+  }
+  function pkLayout(){
+    if(!pk) return;
+    pk.classList.add("is-pinned");
+    var need = $(".pk__sticky > .wrap", pk).offsetHeight + (window.innerWidth <= 860 ? 80 : 96);
+    pkPinned = !reduce && need <= window.innerHeight;
+    pk.classList.toggle("is-pinned", pkPinned);
+  }
+  function pkUpdate(){
+    if(!pkPinned) return;
+    var r = pkTrack.getBoundingClientRect(), t = pkTotal();
+    var p = clamp(-r.top / t, 0, 1);
+    if(pkLine){ pkLine.style.transform = "scaleX(" + p.toFixed(3) + ")"; }
+    pkSelect(Math.min(2, Math.floor(p * 3)));
+  }
+  if(tabs){
+    tbtn.forEach(function(b, i){
+      b.addEventListener("click", function(){ pkGo(i); });
       b.addEventListener("keydown", function(e){
-        if(e.key === "ArrowRight"){ e.preventDefault(); select((i + 1) % tbtn.length, true); }
-        if(e.key === "ArrowLeft"){ e.preventDefault(); select((i - 1 + tbtn.length) % tbtn.length, true); }
+        if(e.key === "ArrowRight"){ e.preventDefault(); pkGo((i + 1) % 3, true); }
+        if(e.key === "ArrowLeft"){ e.preventDefault(); pkGo((i + 2) % 3, true); }
       });
     });
-    select(1);
+    pkLayout();
+    pkSelect(pkPinned ? 0 : 1);
+    window.addEventListener("resize", function(){ pkLayout(); pkUpdate(); });
+    window.addEventListener("load", function(){ pkLayout(); pkUpdate(); });
   }
   /* Paket-Button wählt das Paket im Formular vor */
   $$("[data-paket]").forEach(function(a){
@@ -193,6 +223,39 @@
       if(r){ r.checked = true; }
     });
   });
+
+  /* ---------- Hero-Video (Luftbild) + Reel in der Leistungs-Karte ---------- */
+  var hv = $("#heroVideo"), hToggle = $("#heroToggle"), heroUserPaused = false, heroInView = true;
+  function heroSetPaused(paused){
+    hero.classList.toggle("is-paused", paused);
+    hToggle.setAttribute("aria-pressed", String(paused));
+    hToggle.setAttribute("aria-label", paused ? "Hintergrundvideo abspielen" : "Hintergrundvideo pausieren");
+  }
+  if(hv && hToggle){
+    window.addEventListener("load", function(){
+      var tall = window.innerWidth / window.innerHeight < 0.8;
+      if(tall && hv.getAttribute("data-poster-tall")){ hv.poster = hv.getAttribute("data-poster-tall"); }
+      hv.src = hv.getAttribute(tall ? "data-tall" : "data-wide");
+      if(reduce){ heroUserPaused = true; heroSetPaused(true); return; }
+      var pr = hv.play(); if(pr && pr.catch){ pr.catch(function(){ heroSetPaused(true); }); }
+    });
+    hToggle.addEventListener("click", function(){
+      if(hv.paused){ heroUserPaused = false; if(!hv.getAttribute("src")){ hv.src = hv.getAttribute("data-wide"); } hv.play(); heroSetPaused(false); }
+      else { heroUserPaused = true; hv.pause(); heroSetPaused(true); }
+    });
+    if("IntersectionObserver" in window){
+      new IntersectionObserver(function(es){
+        heroInView = es[0].isIntersecting;
+        if(!heroInView){ hv.pause(); } else if(!heroUserPaused && hv.getAttribute("src")){ hv.play(); }
+      }, {threshold:0.05}).observe(hero);
+    }
+  }
+  if("IntersectionObserver" in window && !reduce){
+    var vio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ var v = e.target; if(e.isIntersecting){ var pr = v.play(); if(pr && pr.catch){ pr.catch(function(){}); } } else { v.pause(); } });
+    }, {threshold:0.25});
+    $$("video[data-lazy-video]").forEach(function(v){ vio.observe(v); });
+  }
 
   /* ---------- Einflug + Zähler ---------- */
   function countUp(el){
@@ -283,7 +346,7 @@
 
   /* ---------- Scroll-Schleife ---------- */
   var ticking = false;
-  function onScroll(){ if(ticking) return; ticking = true; requestAnimationFrame(function(){ navUpdate(); heroUpdate(); rvUpdate(); tlUpdate(); plxUpdate(); ticking = false; }); }
+  function onScroll(){ if(ticking) return; ticking = true; requestAnimationFrame(function(){ navUpdate(); heroUpdate(); rvUpdate(); tlUpdate(); plxUpdate(); pkUpdate(); ticking = false; }); }
   window.addEventListener("scroll", onScroll, {passive:true});
   window.addEventListener("resize", onScroll);
   onScroll();

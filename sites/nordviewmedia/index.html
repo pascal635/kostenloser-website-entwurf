@@ -239,20 +239,16 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" id="hero" data-nav-theme="light" aria-labelledby="h1">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="hero__contour" aria-hidden="true"><div class="contour-layer"></div></div>
+  <section class="hero hero--video" id="hero" data-nav-theme="dark" aria-labelledby="h1">
+    <div class="hero__video" aria-hidden="true">
+      <video id="heroVideo" muted playsinline loop preload="none" poster="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-1600.webp" data-wide="assets/video/hero-landhaus-1440.mp4" data-tall="assets/video/hero-landhaus-hoch-720.mp4" data-poster-tall="assets/img/luftbilder/hero-landhaus-hoch-720.webp"></video>
+    </div>
+    <div class="hero__shade grain on-dark" aria-hidden="true"></div>
     <div class="hero__mark t-mark" aria-hidden="true" id="heroMark"><span class="mark-in">Nordview</span></div>
-    <div class="hero__stage" id="heroStage" aria-hidden="true">
+    <div class="hero__drone" id="heroStage" aria-hidden="true">
       <div class="hero__stage-inner" id="heroStageInner">
-        <div class="hero__shadow"></div>
         <div class="hero__float">
-          <div class="seq seq--hero seq--fill" data-seq="hero"><img class="seq__poster" id="heroPoster" src="assets/img/drohne/drohnenaufnahmen-immobilien-bremen-drohne.webp" alt="" width="1800" height="744" fetchpriority="high" decoding="async"><canvas class="seq__canvas" width="1400" height="578" aria-hidden="true"></canvas></div>
-        </div>
-        <div class="hero__spots" id="heroSpots">
-          <div class="hotspot hotspot--left hotspot--hide-m" style="left:36.5%;top:62%"><span class="hotspot__dot"></span>Bis 120 m<br>Flughöhe</div>
-          <div class="hotspot hotspot--hide-m" style="left:70%;top:40%"><span class="hotspot__dot"></span>Lage und Umgebung<br>im Bild</div>
-          <div class="hotspot" style="left:64%;top:76%"><span class="hotspot__dot"></span>Foto + Video<br>in einem Flug</div>
+          <div class="seq seq--hero seq--fill" data-seq="hero"><img class="seq__poster" src="assets/img/drohne/drohnenaufnahmen-immobilien-bremen-drohne.webp" alt="" width="1800" height="744" decoding="async"><canvas class="seq__canvas" width="1400" height="578" aria-hidden="true"></canvas></div>
         </div>
       </div>
     </div>
@@ -260,7 +256,7 @@
       <span class="eyebrow">Luftaufnahmen · Bremen und Umgebung</span>
       <h1 class="t-h1" id="h1">Drohnenaufnahmen für Immobilien in Bremen</h1>
       <p class="t-lead">Luftbilder und Drohnenvideos für Exposé, Portale und Social Media. Festpreis ab 149 €, Angebot in 24 Stunden, Lieferung ab 48 Stunden.</p>
-      <div><span class="capsule"><a class="btn btn--primary btn--sm" href="#anfrage">Angebot anfragen</a><a class="btn btn--text btn--sm" href="#pakete">Pakete ab 149 €</a></span></div>
+      <div><span class="capsule capsule--dark"><a class="btn btn--light btn--sm" href="#anfrage">Angebot anfragen</a><a class="btn btn--text btn--sm" href="#pakete" style="color:#fff">Pakete ab 149 €</a></span></div>
     </div>
     <div class="hero__card hero__intro">
       <a class="icard" href="#pakete" aria-label="Lieferung ab 48 Stunden, zu den Paketen">
@@ -270,6 +266,7 @@
       </a>
     </div>
     <div class="hero__side" aria-hidden="true"><span>Nordview Media · Luftaufnahmen</span><div class="hero__rail"><i id="heroRail"></i></div></div>
+    <button class="hero__toggle" id="heroToggle" type="button" aria-label="Hintergrundvideo pausieren" aria-pressed="false"><svg class="ic ic-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg><svg class="ic ic-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button>
   </section>
 
   <!-- STATEMENT -->
@@ -291,19 +288,43 @@
         <a class="gcard gcard--sky fadeup" href="#pakete">
           <h3 class="gcard__title">Luftbilder fürs Exposé</h3>
           <p class="gcard__text">5 bis 10 bearbeitete Fotos, gerade, hell, portaltauglich. Das Titelbild, auf das geklickt wird.</p>
-          <div class="gcard__media"><div class="seq" data-seq="seitlich"><img class="seq__poster" src="assets/img/drohne/seitlich/frame-001.webp" alt="" width="640" height="316" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="316" aria-hidden="true"></canvas></div></div>
+          <div class="gcard__media"><div class="mock mx" aria-hidden="true">
+            <div class="mx__page mx__page--back"></div>
+            <div class="mx__page">
+              <div class="mx__head"><span class="mx__logo">NM</span><span class="mx__tag">Exposé</span><span class="mx__pg">01 / 12</span></div>
+              <div class="mx__photo"><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-900.webp" alt="" width="900" height="506" loading="lazy" decoding="async"><span class="mx__badge"><svg class="ic"><use href="#i-camera"/></svg>Luftaufnahme</span></div>
+              <div class="mx__title">Landhaus mit Parkgrundstück</div>
+              <div class="mx__facts"><span><small>Wohnfläche</small><i></i></span><span><small>Grundstück</small><i></i></span><span><small>Zimmer</small><i></i></span></div>
+              <div class="mx__lines"><i></i><i></i><i></i></div>
+            </div>
+          </div></div>
           <div class="gcard__foot"><span>Basic · Pro · Premium</span><span class="icon-btn icon-btn--sm" aria-hidden="true"><svg class="ic"><use href="#i-arrow"/></svg></span></div>
         </a>
         <a class="gcard gcard--steel fadeup" href="#pakete">
           <h3 class="gcard__title">Drohnenvideo für Portal und Social Media</h3>
           <p class="gcard__text">Ein ruhiger Überflug, 30 bis 60 Sekunden. Auf Wunsch mit Schnitt und Hochformat-Version.</p>
-          <div class="gcard__media"><div class="seq" data-seq="front"><img class="seq__poster" src="assets/img/drohne/front/frame-001.webp" alt="" width="640" height="374" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="374" aria-hidden="true"></canvas></div></div>
+          <div class="gcard__media"><div class="mock ms" aria-hidden="true">
+            <div class="ms__phone">
+              <video class="ms__video" muted playsinline loop preload="none" poster="assets/video/reel-landhaus-poster.webp" data-lazy-video src="assets/video/reel-landhaus-432.mp4"></video>
+              <div class="ms__top"><span class="ms__bars"><i></i><i></i><i></i></span><span class="ms__label">Reels</span></div>
+              <div class="ms__side"><span><svg class="ic" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span><svg class="ic" viewBox="0 0 24 24"><path d="M5 18.5V7a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 19 7v6.5a2.5 2.5 0 0 1-2.5 2.5H9z"/></svg></span><span><svg class="ic"><use href="#i-send"/></svg></span></div>
+              <div class="ms__bottom"><div class="ms__who"><span class="ms__avatar">NM</span><b>nordview.media</b><span class="ms__follow">Folgen</span></div><p>Landhaus von oben: Park, Zufahrt, Lage.</p><span class="ms__sound"><i></i><i></i><i></i></span></div>
+            </div>
+            <span class="ms__chip">9:16 · Reels und Stories</span>
+          </div></div>
           <div class="gcard__foot"><span>Pro · Premium</span><span class="icon-btn icon-btn--sm" aria-hidden="true"><svg class="ic"><use href="#i-arrow"/></svg></span></div>
         </a>
         <a class="gcard gcard--night fadeup" href="#anfrage">
           <h3 class="gcard__title">Lage und Umgebung aus der Luft</h3>
           <p class="gcard__text">Infrastruktur, Grün, Anbindung: Was Käufer sonst erst googeln, zeigen Sie direkt im Exposé.</p>
-          <div class="gcard__media"><div class="seq" data-seq="heck"><img class="seq__poster" src="assets/img/drohne/heck/frame-001.webp" alt="" width="640" height="342" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="342" aria-hidden="true"></canvas></div></div>
+          <div class="gcard__media"><div class="mock mr" aria-hidden="true">
+            <div class="mr__bar"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><span>Haus kaufen · Bremen und Umgebung</span><span class="mr__count">128 Treffer</span></div>
+            <div class="mr__list">
+              <div class="mr__item mr__item--dim"><span class="mr__thumb mr__thumb--flat"></span><span class="mr__txt"><i></i><i></i><i></i></span></div>
+              <div class="mr__item mr__item--hit"><span class="mr__thumb"><img src="assets/img/luftbilder/luftbild-landhaus-baumbestand-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async"><em><svg class="ic"><use href="#i-camera"/></svg>Luftbild</em></span><span class="mr__txt"><b>Landhaus mit Park</b><small>Grundstück, Lage und Umgebung im Bild</small><span class="mr__tags"><span>Waldlage</span><span>Zufahrt</span></span></span><span class="mr__fav"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span></div>
+              <div class="mr__item mr__item--dim"><span class="mr__thumb mr__thumb--flat"></span><span class="mr__txt"><i></i><i></i><i></i></span></div>
+            </div>
+          </div></div>
           <div class="gcard__foot"><span>Auf Wunsch</span><span class="icon-btn icon-btn--sm" aria-hidden="true"><svg class="ic"><use href="#i-arrow"/></svg></span></div>
         </a>
       </div>
@@ -445,42 +466,72 @@
     </div>
   </section>
 
-  <!-- PAKETE -->
-  <section class="sec sec--white" id="pakete" data-nav-theme="light" aria-labelledby="h-pakete">
-    <div class="wrap">
-      <div class="shead">
-        <div class="shead__text"><span class="eyebrow">Pakete</span><h2 class="t-h2" id="h-pakete"><span class="muted">Pakete:</span> Drei Größen, ein klarer Preis.</h2></div>
-        <span class="numc" aria-hidden="true">05</span>
-      </div>
-      <div class="viewer" style="margin-top:clamp(40px,5vw,72px)">
-        <div class="viewer__bar">
-          <div class="tabs" role="tablist" aria-label="Pakete" id="tabs" style="--i:1">
-            <span class="tabs__ind" aria-hidden="true"></span>
-            <button role="tab" id="t-basic" aria-controls="p-basic" aria-selected="false" tabindex="-1">Basic</button>
-            <button role="tab" id="t-pro" aria-controls="p-pro" aria-selected="true"><i class="dot" aria-hidden="true"></i>Pro</button>
-            <button role="tab" id="t-premium" aria-controls="p-premium" aria-selected="false" tabindex="-1">Premium</button>
+  <!-- PAKETE: Sektion bleibt stehen, bis alle drei Pakete durchgescrollt sind -->
+  <section class="sec sec--white pk" id="pakete" data-nav-theme="light" aria-labelledby="h-pakete">
+    <div class="pk__track" id="pkTrack">
+      <div class="pk__sticky">
+        <div class="wrap">
+          <div class="shead">
+            <div class="shead__text"><span class="eyebrow">Pakete</span><h2 class="t-h2" id="h-pakete"><span class="muted">Pakete:</span> Drei Größen, ein klarer Preis.</h2></div>
+            <span class="numc" aria-hidden="true">05</span>
+          </div>
+          <div class="viewer">
+            <div class="viewer__bar">
+              <div class="tabs" role="tablist" aria-label="Pakete" id="tabs" style="--i:0">
+                <span class="tabs__ind" aria-hidden="true"></span>
+                <button role="tab" id="t-basic" aria-controls="p-basic" aria-selected="true">Basic</button>
+                <button role="tab" id="t-pro" aria-controls="p-pro" aria-selected="false" tabindex="-1"><i class="dot" aria-hidden="true"></i>Pro</button>
+                <button role="tab" id="t-premium" aria-controls="p-premium" aria-selected="false" tabindex="-1">Premium</button>
+              </div>
+              <div class="pk__progress" aria-hidden="true"><span class="pk__count"><b id="pkNum">01</b> / 03</span><span class="pk__line"><i id="pkLine"></i></span><span class="pk__hint">Weiterscrollen</span></div>
+            </div>
+            <div class="viewer__panels">
+              <div class="panel on" role="tabpanel" id="p-basic" aria-labelledby="t-basic">
+                <div class="panel__name"><span class="badge badge--line" style="align-self:flex-start">Für kleine Objekte</span><h3>Basic</h3><p>Das starke Titelbild für Inserat und Exposé.</p><div class="panel__price"><small>ab</small><strong>149 €</strong></div><div><a class="btn btn--primary btn--sm" href="#anfrage" data-paket="basic">Basic anfragen</a></div></div>
+                <div class="panel__stage"><div class="pg pg-basic" aria-hidden="true">
+              <div class="pg-fan"><span class="pg-fan__ph" style="--k:0"><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-weide-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:60% 50%"></span><span class="pg-fan__ph" style="--k:1"><img src="assets/img/luftbilder/luftbild-landhaus-baumbestand-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:40% 50%"></span><span class="pg-fan__ph" style="--k:2"><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-zufahrt-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:50% 40%"></span><span class="pg-fan__ph" style="--k:3"><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:30% 60%"></span><span class="pg-fan__ph" style="--k:4"><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:55% 45%"></span></div>
+              <span class="pg-chip pg-chip--a"><svg class="ic"><use href="#i-image"/></svg>5 Fotos · 1 Objekt</span>
+              <span class="pg-chip pg-chip--b pg-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15"/><circle class="pg-ring__v" cx="18" cy="18" r="15"/></svg><b>48 h</b></span>
+            </div></div>
+                <dl class="specs"><div class="specs__row"><dt>Bearbeitete Fotos</dt><dd>5</dd></div><div class="specs__row"><dt>Objekte</dt><dd>1</dd></div><div class="specs__row"><dt>Drohnenvideo</dt><dd class="no">nicht enthalten</dd></div><div class="specs__row"><dt>Social-Media-Version</dt><dd class="no">nicht enthalten</dd></div><div class="specs__row"><dt>Lieferung</dt><dd>48 h</dd></div></dl>
+              </div>
+              <div class="panel" role="tabpanel" id="p-pro" aria-labelledby="t-pro">
+                <div class="panel__name"><span class="badge" style="align-self:flex-start">Bestseller</span><h3>Pro</h3><p>Fotos plus Video: für Portal, Website und Social Media.</p><div class="panel__price"><small>ab</small><strong>249 €</strong></div><div><a class="btn btn--primary btn--sm" href="#anfrage" data-paket="pro">Pro anfragen</a></div></div>
+                <div class="panel__stage"><div class="pg pg-pro" aria-hidden="true">
+              <div class="pg-grid"><span><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:50% 50%"></span><span><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-zufahrt-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:20% 40%"></span><span><img src="assets/img/luftbilder/luftbild-landhaus-baumbestand-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:80% 60%"></span><span><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-weide-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:35% 30%"></span><span><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:65% 70%"></span><span><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-zufahrt-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:10% 50%"></span><span><img src="assets/img/luftbilder/luftbild-landhaus-baumbestand-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:90% 40%"></span><span><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-weide-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:45% 80%"></span><span><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:55% 20%"></span><span><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-zufahrt-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:30% 70%"></span></div>
+              <div class="pg-player">
+                <div class="pg-player__screen"><img src="assets/img/luftbilder/luftbild-landhaus-baumbestand-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="pg-player__play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></span></div>
+                <div class="pg-player__bar"><span class="pg-player__t">0:24</span><span class="pg-player__track"><i></i></span><span class="pg-player__t">0:45</span></div>
+              </div>
+              <span class="pg-chip pg-chip--a"><svg class="ic"><use href="#i-image"/></svg>10 Fotos</span>
+              <span class="pg-chip pg-chip--c"><svg class="ic"><use href="#i-video"/></svg>Video 30 bis 60 Sek.</span>
+            </div></div>
+                <dl class="specs"><div class="specs__row"><dt>Bearbeitete Fotos</dt><dd>10</dd></div><div class="specs__row"><dt>Objekte</dt><dd>1</dd></div><div class="specs__row"><dt>Drohnenvideo</dt><dd>30 bis 60 Sek.</dd></div><div class="specs__row"><dt>Social-Media-Version</dt><dd class="no">nicht enthalten</dd></div><div class="specs__row"><dt>Lieferung</dt><dd>schnell</dd></div></dl>
+              </div>
+              <div class="panel" role="tabpanel" id="p-premium" aria-labelledby="t-premium">
+                <div class="panel__name"><span class="badge badge--mint" style="align-self:flex-start">Priorisiert</span><h3>Premium</h3><p>Das volle Paket mit Schnitt und Hochformat für Reels und Stories.</p><div class="panel__price"><small>ab</small><strong>399 €</strong></div><div><a class="btn btn--primary btn--sm" href="#anfrage" data-paket="premium">Premium anfragen</a></div></div>
+                <div class="panel__stage"><div class="pg pg-premium" aria-hidden="true">
+              <div class="pg-edit">
+                <div class="pg-edit__head"><span class="pg-dots"><i></i><i></i><i></i></span><span>Schnitt · Landhaus_final</span><span class="pg-edit__tc">00:00:42</span></div>
+                <div class="pg-edit__tracks">
+                  <div class="pg-track pg-track--v"><span class="pg-clip" style="--w:28"><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:30% 50%"></span><span class="pg-clip" style="--w:18"><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-zufahrt-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:60% 40%"></span><span class="pg-clip" style="--w:24"><img src="assets/img/luftbilder/luftbild-landhaus-baumbestand-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:50% 60%"></span><span class="pg-clip" style="--w:30"><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-weide-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async" style="object-position:40% 30%"></span></div>
+                  <div class="pg-track pg-track--t"><span style="--w:22"></span><span style="--w:30;margin-left:12%"></span></div>
+                  <div class="pg-track pg-track--a"><svg viewBox="0 0 300 24" preserveAspectRatio="none"><path d="M0 12 Q5 2 10 12 T20 12 T30 12 Q35 4 40 12 T50 12 T60 12 Q65 6 70 12 T80 12 T90 12 Q95 1 100 12 T110 12 T120 12 Q125 5 130 12 T140 12 T150 12 Q155 3 160 12 T170 12 T180 12 Q185 7 190 12 T200 12 T210 12 Q215 2 220 12 T230 12 T240 12 Q245 6 250 12 T260 12 T270 12 Q275 3 280 12 T290 12 T300 12"/></svg></div>
+                  <span class="pg-edit__head-line"></span>
+                </div>
+              </div>
+              <div class="pg-vert"><img src="assets/video/reel-landhaus-poster.webp" alt="" width="432" height="768" loading="lazy" decoding="async"><span class="pg-vert__ui"><i></i><i></i></span></div>
+              <span class="pg-chip pg-chip--a pg-chip--mint"><svg class="ic" viewBox="0 0 24 24"><path d="M13 3.5L6 13.5h5l-1 7 7-10h-5z"/></svg>Priorisiert</span>
+              <span class="pg-chip pg-chip--c"><svg class="ic"><use href="#i-layers"/></svg>Social-Media-Version</span>
+            </div></div>
+                <dl class="specs"><div class="specs__row"><dt>Bearbeitete Fotos</dt><dd>nach Absprache</dd></div><div class="specs__row"><dt>Drohnenvideo</dt><dd>mit professionellem Schnitt</dd></div><div class="specs__row"><dt>Social-Media-Version</dt><dd class="yes"><svg class="ic" style="width:14px;height:14px" aria-hidden="true"><use href="#i-check"/></svg>enthalten</dd></div><div class="specs__row"><dt>Bearbeitung</dt><dd class="yes"><svg class="ic" style="width:14px;height:14px" aria-hidden="true"><use href="#i-check"/></svg>priorisiert</dd></div><div class="specs__row"><dt>Lieferung</dt><dd>bevorzugt</dd></div></dl>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="viewer__panels">
-          <div class="panel" role="tabpanel" id="p-basic" aria-labelledby="t-basic">
-            <div class="panel__name"><span class="badge badge--line" style="align-self:flex-start">Für kleine Objekte</span><h3>Basic</h3><p>Das starke Titelbild für Inserat und Exposé.</p><div class="panel__price"><small>ab</small><strong>149 €</strong></div><div><a class="btn btn--primary btn--sm" href="#anfrage" data-paket="basic">Basic anfragen</a></div></div>
-            <div class="panel__stage"><div class="seq" data-seq="profil"><img class="seq__poster" src="assets/img/drohne/profil/frame-001.webp" alt="" width="640" height="356" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="356" aria-hidden="true"></canvas></div></div>
-            <dl class="specs"><div class="specs__row"><dt>Bearbeitete Fotos</dt><dd>5</dd></div><div class="specs__row"><dt>Objekte</dt><dd>1</dd></div><div class="specs__row"><dt>Drohnenvideo</dt><dd class="no">nicht enthalten</dd></div><div class="specs__row"><dt>Social-Media-Version</dt><dd class="no">nicht enthalten</dd></div><div class="specs__row"><dt>Lieferung</dt><dd>48 h</dd></div></dl>
-          </div>
-          <div class="panel on" role="tabpanel" id="p-pro" aria-labelledby="t-pro">
-            <div class="panel__name"><span class="badge" style="align-self:flex-start">Bestseller</span><h3>Pro</h3><p>Fotos plus Video: für Portal, Website und Social Media.</p><div class="panel__price"><small>ab</small><strong>249 €</strong></div><div><a class="btn btn--primary btn--sm" href="#anfrage" data-paket="pro">Pro anfragen</a></div></div>
-            <div class="panel__stage"><div class="seq seq--hero" data-seq="hero"><img class="seq__poster" src="assets/img/drohne/drohnenaufnahmen-immobilien-bremen-drohne.webp" alt="" width="1800" height="744" loading="lazy" decoding="async"><canvas class="seq__canvas" width="1400" height="578" aria-hidden="true"></canvas></div></div>
-            <dl class="specs"><div class="specs__row"><dt>Bearbeitete Fotos</dt><dd>10</dd></div><div class="specs__row"><dt>Objekte</dt><dd>1</dd></div><div class="specs__row"><dt>Drohnenvideo</dt><dd>30 bis 60 Sek.</dd></div><div class="specs__row"><dt>Social-Media-Version</dt><dd class="no">nicht enthalten</dd></div><div class="specs__row"><dt>Lieferung</dt><dd>schnell</dd></div></dl>
-          </div>
-          <div class="panel" role="tabpanel" id="p-premium" aria-labelledby="t-premium">
-            <div class="panel__name"><span class="badge badge--mint" style="align-self:flex-start">Priorisiert</span><h3>Premium</h3><p>Das volle Paket mit Schnitt und Hochformat für Reels und Stories.</p><div class="panel__price"><small>ab</small><strong>399 €</strong></div><div><a class="btn btn--primary btn--sm" href="#anfrage" data-paket="premium">Premium anfragen</a></div></div>
-            <div class="panel__stage"><div class="seq" data-seq="seitlich"><img class="seq__poster" src="assets/img/drohne/seitlich/frame-001.webp" alt="" width="640" height="316" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="316" aria-hidden="true"></canvas></div></div>
-            <dl class="specs"><div class="specs__row"><dt>Bearbeitete Fotos</dt><dd>nach Absprache</dd></div><div class="specs__row"><dt>Drohnenvideo</dt><dd>mit professionellem Schnitt</dd></div><div class="specs__row"><dt>Social-Media-Version</dt><dd class="yes"><svg class="ic" style="width:14px;height:14px" aria-hidden="true"><use href="#i-check"/></svg>enthalten</dd></div><div class="specs__row"><dt>Bearbeitung</dt><dd class="yes"><svg class="ic" style="width:14px;height:14px" aria-hidden="true"><use href="#i-check"/></svg>priorisiert</dd></div><div class="specs__row"><dt>Lieferung</dt><dd>bevorzugt</dd></div></dl>
-          </div>
-        </div>
       </div>
-      <p class="t-small soft" style="margin:16px 0 0">Alle Preise sind Startpreise je Objekt. Ihr genaues Angebot bekommen Sie innerhalb von 24 Stunden.</p>
     </div>
+    <div class="wrap"><p class="t-small soft pk__note">Alle Preise sind Startpreise je Objekt. Ihr genaues Angebot bekommen Sie innerhalb von 24 Stunden.</p></div>
   </section>
 
   <!-- FÜR WEN (dunkel) -->
@@ -497,21 +548,21 @@
           <div class="matrix__who"><h3>Makler</h3><span class="conn" aria-hidden="true"><i></i></span><small>Vermarktung + Akquise</small></div>
           <div class="matrix__cells">
             <div class="mcell"><div><h4>Ziel</h4><p>Mehr Klicks im Portal, stärkeres Exposé, Eindruck beim Eigentümer-Termin.</p></div><div class="mcell__tile" aria-hidden="true"><svg class="ic"><use href="#i-home"/></svg></div></div>
-            <div class="mcell"><div><h4>Sie bekommen</h4><p>Titelbild und Lagebild, dazu ein kurzes Video für Social Media.</p></div><div class="mcell__tile" aria-hidden="true"><div class="seq" data-seq="front"><img class="seq__poster" src="assets/img/drohne/front/frame-001.webp" alt="" width="640" height="374" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="374" aria-hidden="true"></canvas></div></div></div>
+            <div class="mcell"><div><h4>Sie bekommen</h4><p>Titelbild und Lagebild, dazu ein kurzes Video für Social Media.</p></div><div class="mcell__tile mcell__tile--photo" aria-hidden="true"><img src="assets/img/luftbilder/luftbild-landhaus-parkgrundstueck-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async"></div></div>
           </div>
         </div>
         <div class="matrix__row">
           <div class="matrix__who"><h3>Bauträger</h3><span class="conn" aria-hidden="true"><i style="animation-delay:.8s"></i></span><small>Projekt + Fortschritt</small></div>
           <div class="matrix__cells">
             <div class="mcell"><div><h4>Ziel</h4><p>Grundstück, Baufortschritt und fertiges Projekt sichtbar machen.</p></div><div class="mcell__tile" aria-hidden="true"><svg class="ic"><use href="#i-crane"/></svg></div></div>
-            <div class="mcell"><div><h4>Sie bekommen</h4><p>Luftbilder von Grundstück und Projekt, auf Wunsch in mehreren Bauphasen.</p></div><div class="mcell__tile" aria-hidden="true"><div class="seq" data-seq="heck"><img class="seq__poster" src="assets/img/drohne/heck/frame-001.webp" alt="" width="640" height="342" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="342" aria-hidden="true"></canvas></div></div></div>
+            <div class="mcell"><div><h4>Sie bekommen</h4><p>Luftbilder von Grundstück und Projekt, auf Wunsch in mehreren Bauphasen.</p></div><div class="mcell__tile mcell__tile--photo" aria-hidden="true"><img src="assets/img/luftbilder/draufsicht-einfamilienhaus-garten-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async"></div></div>
           </div>
         </div>
         <div class="matrix__row">
           <div class="matrix__who"><h3>Eigentümer</h3><span class="conn" aria-hidden="true"><i style="animation-delay:1.6s"></i></span><small>Privatverkauf</small></div>
           <div class="matrix__cells">
             <div class="mcell"><div><h4>Ziel</h4><p>Ohne Makler professionell auftreten und schneller verkaufen.</p></div><div class="mcell__tile" aria-hidden="true"><svg class="ic"><use href="#i-user"/></svg></div></div>
-            <div class="mcell"><div><h4>Sie bekommen</h4><p>Basic-Paket ab 149 €, fertig fürs Inserat.</p></div><div class="mcell__tile" aria-hidden="true"><div class="seq" data-seq="profil"><img class="seq__poster" src="assets/img/drohne/profil/frame-001.webp" alt="" width="640" height="356" loading="lazy" decoding="async"><canvas class="seq__canvas" width="640" height="356" aria-hidden="true"></canvas></div></div></div>
+            <div class="mcell"><div><h4>Sie bekommen</h4><p>Basic-Paket ab 149 €, fertig fürs Inserat.</p></div><div class="mcell__tile mcell__tile--photo" aria-hidden="true"><img src="assets/img/luftbilder/drohnenaufnahme-landhaus-zufahrt-480.webp" alt="" width="480" height="270" loading="lazy" decoding="async"></div></div>
           </div>
         </div>
       </div>
