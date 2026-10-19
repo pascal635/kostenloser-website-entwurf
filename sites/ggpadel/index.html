@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Ladebildschirm nur beim ersten Aufruf pro Sitzung (mit ?intro immer) und nicht bei reduzierter Bewegung */
+(function(){var h=document.documentElement,f=/[?&]intro\b/.test(location.search);try{if(!f&&(sessionStorage.getItem('gg-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches))return;sessionStorage.setItem('gg-intro','1')}catch(e){}h.classList.add('is-intro');var r=0,reveal=function(){if(r)return;r=1;h.setAttribute('data-revealed','');document.dispatchEvent(new Event('gg:reveal'))},done=function(){reveal();h.classList.remove('is-intro')};document.addEventListener('animationstart',function(e){if(e.animationName==='intro-out')reveal()});document.addEventListener('animationend',function(e){if(e.animationName==='intro-out')done()});setTimeout(reveal,3200);setTimeout(done,4500)})();
+</script>
 <title>Padel Magdeburg: GG Padel | 4 Indoor-Courts ab 6 € pro Person</title>
 <meta name="description" content="Padel spielen in Magdeburg: 4 Indoor-Courts im Luckyfitness, ohne Mitgliedschaft, ab 6 € pro Person. Schläger vor Ort leihen, Court online buchen.">
 <!-- Variante B. Entwurf auf dev.likovo.de: nicht indexieren. Beim Livegang entfernen und canonical auf https://ggpadel.de/ setzen. -->
@@ -14,8 +18,8 @@
 <meta property="og:description" content="4 Indoor-Courts im Luckyfitness, ohne Mitgliedschaft, ab 6 € pro Person. Online buchen und heute noch spielen.">
 <meta property="og:image" content="https://dev.likovo.de/ggpadel/bilder/padel-magdeburg-hero-volley-1600.webp">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preload" as="image" href="bilder/padel-magdeburg-hero-volley.webp" imagesrcset="bilder/padel-magdeburg-hero-volley-900.webp 900w, bilder/padel-magdeburg-hero-volley-1600.webp 1600w, bilder/padel-magdeburg-hero-volley.webp 2560w" imagesizes="100vw" media="(min-width:768px)" fetchpriority="high">
-<link rel="preload" as="image" href="bilder/padel-magdeburg-hero-volley-mobil.webp" media="(max-width:767px)" fetchpriority="high">
+<link rel="preload" as="image" href="bilder/padel-magdeburg-hero-video-poster.webp" media="(min-width:768px)" fetchpriority="high">
+<link rel="preload" as="image" href="bilder/padel-magdeburg-hero-video-poster-mobil.webp" media="(max-width:767px)" fetchpriority="high">
 
 <script type="application/ld+json">
 {
@@ -229,8 +233,16 @@ button{font:inherit;color:inherit}
    HERO (Pic 1)
    ================================================================= */
 .hero{position:relative;isolation:isolate;overflow:hidden;background:var(--night-900);color:var(--mist-100);display:grid;grid-template-columns:var(--gut) minmax(0,1fr) var(--gut);grid-template-rows:auto minmax(2rem,1fr) auto auto auto;min-height:max(38rem,100svh)}
-.hero__media{position:absolute;inset:0;z-index:-3}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero__media{position:absolute;inset:0;z-index:-3;background:var(--night-900) url("bilder/padel-magdeburg-hero-video-poster-mobil.webp") 50% 50%/cover no-repeat}
+@media (min-width:768px){.hero__media{background-image:url("bilder/padel-magdeburg-hero-video-poster.webp")}}
+.hero__video{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:0;transition:opacity .8s var(--ease)}
+.hero__video.is-ready{opacity:1}
+.hero__play{grid-column:2;grid-row:2;align-self:end;justify-self:end;margin-bottom:var(--s-3);width:2.3rem;height:2.3rem;color:var(--mist-100);--bc:rgba(236,234,247,.75)}
+.hero__play::after{background:#fff}
+.hero__play .icon{width:14px;height:14px}
+.hero__play .i-play{display:none;fill:currentColor}
+.hero__play.is-paused .i-play{display:block}
+.hero__play.is-paused .i-pause{display:none}
 .hero__shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(11,6,32,.6) 0%,rgba(11,6,32,0) 20%,rgba(11,6,32,0) 42%,rgba(11,6,32,.55) 72%,rgba(11,6,32,.85) 100%)}
 .hero__top{grid-column:1/-1;grid-row:1;display:grid;grid-template-columns:var(--gut) minmax(0,1fr) auto var(--gut);align-items:center;padding-top:calc(1rem + env(safe-area-inset-top,0px))}
 .hero__logo{grid-column:2;justify-self:start}
@@ -272,6 +284,7 @@ button{font:inherit;color:inherit}
   .hero__menu .brk{--t:4px;--bc:rgba(236,234,247,.85);display:flex;width:100%;padding:.3rem .65rem;font-size:var(--t-xs)}
   .burger{display:none}
   .hero__rate{display:none}
+  .hero__play{grid-column:4;grid-row:2;margin-bottom:.9rem}
   .hero__rings{width:14rem;margin:-6.8rem 0 0 -.4rem}
   .hero__pa{padding:2.2rem 2rem 1.7rem}
   .hero__pb{padding:1.6rem 2rem 2.1rem;margin-bottom:2rem}
@@ -813,6 +826,46 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
 }
 .faq summary:focus-visible::before{opacity:1}
 
+/* =================================================================
+   LADEBILDSCHIRM: kleiner Schläger schlägt den Ball (einmal pro Sitzung, ca. 1,5 s)
+   ================================================================= */
+.intro{position:fixed;inset:0;z-index:300;display:none;place-items:center;background:#170B3B}
+html.is-intro .intro{display:grid;will-change:transform;animation:intro-out .75s cubic-bezier(.76,0,.24,1) 1.35s forwards}
+html.is-intro{overflow:hidden}
+.intro__svg{width:clamp(5.5rem,16vw,7rem);height:auto;overflow:visible}
+.intro__paddle{fill:#01BDFD;transform-origin:200px 300px;animation:ip-swing 1.2s .1s both}
+.intro__ball{fill:#DDF23A;animation:ib-squash 1.2s .1s both}
+.intro__bx{animation:ib-x 1.2s .1s both}
+.intro__by{animation:ib-y 1.2s .1s both}
+@keyframes intro-out{to{transform:translateY(-100%);visibility:hidden}}
+/* Schläger: ausholen, durchziehen, nachschwingen, auspendeln */
+@keyframes ip-swing{
+  0%{transform:rotate(0);animation-timing-function:cubic-bezier(.45,0,.4,1)}
+  30%{transform:rotate(-46deg);animation-timing-function:cubic-bezier(.6,0,.9,.5)}
+  44%{transform:rotate(6deg);animation-timing-function:cubic-bezier(.15,.6,.35,1)}
+  56%{transform:rotate(32deg);animation-timing-function:cubic-bezier(.45,0,.4,1)}
+  78%{transform:rotate(-4deg);animation-timing-function:cubic-bezier(.45,0,.4,1)}
+  100%{transform:rotate(0)}}
+/* Ball: Flugkurve aus getrennter X- und Y-Bewegung (Y beschleunigt wie im Fall) */
+@keyframes ib-x{
+  0%{transform:translateX(420px);animation-timing-function:linear}
+  44%{transform:translateX(291px);animation-timing-function:cubic-bezier(.2,.7,.4,1)}
+  64%{transform:translateX(560px)}
+  100%{transform:translateX(560px)}}
+@keyframes ib-y{
+  0%{transform:translateY(-70px);opacity:1;animation-timing-function:cubic-bezier(.45,0,.9,.6)}
+  44%{transform:translateY(112px);animation-timing-function:cubic-bezier(.2,.7,.4,1)}
+  56%{opacity:1}
+  64%{transform:translateY(-60px);opacity:0}
+  100%{transform:translateY(-60px);opacity:0}}
+/* Verformung: platt im Treffmoment, gestreckt im Abflug */
+@keyframes ib-squash{
+  0%,40%{transform:rotate(6deg) scale(1)}
+  44%{transform:rotate(6deg) scale(.55,1.36);animation-timing-function:cubic-bezier(.2,.7,.4,1)}
+  48%{transform:rotate(-33deg) scale(1.5,.72);animation-timing-function:ease-out}
+  60%,100%{transform:rotate(-33deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){html.is-intro .intro{display:none}html.is-intro{overflow:auto}}
+
 @media (max-width:767px){p,li,.row__desc,.faq__a{hyphens:auto;-webkit-hyphens:auto}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:0s!important;scroll-behavior:auto!important}
@@ -822,6 +875,13 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
 </style>
 </head>
 <body>
+<!-- Ladebildschirm (einmal pro Sitzung) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <svg class="intro__svg" viewBox="0 0 400 320" aria-hidden="true" focusable="false">
+      <path class="intro__paddle" d="M188 206 L143.0 128.3 A62 62 0 1 1 257.0 128.3 L212 206 L211 290 Q211 300 200 300 Q189 300 189 290 Z M185 167 H215 L200 193 Z" fill-rule="evenodd"/>
+      <g class="intro__bx"><g class="intro__by"><circle class="intro__ball" r="16"/></g></g>
+    </svg>
+  </div>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -829,6 +889,8 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
   <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></symbol>
   <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></symbol>
@@ -846,10 +908,12 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
 
 <!-- ============================== HERO (Pic 1) ============================== -->
 <header class="hero" id="start">
-  <picture class="hero__media">
-    <source media="(max-width:767px)" srcset="bilder/padel-magdeburg-hero-volley-mobil.webp" width="900" height="1303">
-    <img src="bilder/padel-magdeburg-hero-volley.webp" srcset="bilder/padel-magdeburg-hero-volley-900.webp 900w, bilder/padel-magdeburg-hero-volley-1600.webp 1600w, bilder/padel-magdeburg-hero-volley.webp 2560w" sizes="100vw" width="2560" height="1706" fetchpriority="high" alt="Padel Magdeburg: Spieler im GG-Padel-Shirt spielt einen Volley am Netz, in Bewegung">
-  </picture>
+  <div class="hero__media">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1">
+      <source src="bilder/padel-magdeburg-hero-video.mp4" type="video/mp4" media="(min-width:768px)">
+      <source src="bilder/padel-magdeburg-hero-video-mobil.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero__shade" aria-hidden="true"></div>
 
   <div class="hero__top">
@@ -865,6 +929,7 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
     <button class="burger js-menu-open" type="button" aria-label="Menü öffnen" aria-controls="menu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
   </div>
 
+  <button class="arrow hero__play" type="button" aria-pressed="false" aria-label="Hintergrundvideo pausieren"><svg class="icon i-pause"><use href="#i-pause"/></svg><svg class="icon i-play"><use href="#i-play"/></svg></button>
   <span class="hero__rate tick">4,7 ★ bei Google · 23 Bewertungen</span>
   <svg class="hero__rings" viewBox="0 0 240 130" fill="none" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFCBE6" stop-opacity=".42"/><stop offset=".8" stop-color="#CFCBE6" stop-opacity=".05"/></linearGradient><filter id="rb"><feGaussianBlur stdDeviation="1.4"/></filter></defs><g stroke="url(#rg)" filter="url(#rb)"><circle cx="62" cy="112" r="54" stroke-width="9"/><circle cx="150" cy="118" r="54" stroke-width="9"/><circle cx="62" cy="112" r="36" stroke-width="3" opacity=".6"/></g></svg>
 
@@ -1231,6 +1296,22 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
   var y=d.getElementById('year'); if(y) y.textContent=now.getFullYear();
   d.querySelectorAll('.hours tr[data-days]').forEach(function(tr){ if(tr.getAttribute('data-days').split(',').indexOf(String(now.getDay()))>-1) tr.classList.add('is-today'); });
 
+  /* ---------- Hero-Video: nur abspielen, wenn sichtbar; Pause-Knopf; ruhig bei reduzierter Bewegung oder Datensparmodus ---------- */
+  (function(){
+    var v=d.querySelector('.hero__video'), btn=d.querySelector('.hero__play'); if(!v||!btn) return;
+    var save=navigator.connection && navigator.connection.saveData, held=!!(reduce||save), inView=true;
+    function ui(){ var on=!v.paused; btn.classList.toggle('is-paused',!on); btn.setAttribute('aria-pressed',on?'false':'true'); btn.setAttribute('aria-label',on?'Hintergrundvideo pausieren':'Hintergrundvideo abspielen'); }
+    function go(){ if(!held && inView && !d.hidden){ var p=v.play(); if(p&&p.catch) p.catch(function(){ ui(); }); } else v.pause(); }
+    if(held){ v.removeAttribute('autoplay'); v.preload='metadata'; v.pause(); }
+    v.addEventListener('playing',function(){ v.classList.add('is-ready'); ui(); });
+    v.addEventListener('loadeddata',function(){ v.classList.add('is-ready'); });
+    v.addEventListener('pause',ui); v.addEventListener('play',ui);
+    btn.addEventListener('click',function(){ held=!v.paused; if(held) v.pause(); else { inView=true; go(); } ui(); });
+    if('IntersectionObserver' in w){ new IntersectionObserver(function(e){ inView=e[0].isIntersecting; go(); },{threshold:.05}).observe(v.closest('.hero')); }
+    d.addEventListener('visibilitychange',go);
+    ui();
+  })();
+
   /* ---------- Menü ---------- */
   var menu=d.getElementById('menu'), opener=d.querySelector('.js-menu-open'), closer=d.querySelector('.js-menu-close');
   function setOpen(o){
@@ -1407,7 +1488,9 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
     d.querySelectorAll('.kw').forEach(function(k){ k.classList.add('kw--pre'); });
     var kws=[].slice.call(d.querySelectorAll('.kw:not([data-scrub])'));
     var kio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); kio.unobserve(e.target); } }); },{threshold:.6});
-    requestAnimationFrame(function(){ kws.forEach(function(k){ kio.observe(k); }); });
+    var startKw=function(){ requestAnimationFrame(function(){ kws.forEach(function(k){ kio.observe(k); }); }); };
+    // Hero-Schlagwort erst animieren, wenn der Ladebildschirm den Blick freigibt
+    var h=d.documentElement; if(h.classList.contains('is-intro') && !h.hasAttribute('data-revealed')) d.addEventListener('gg:reveal',startKw,{once:true}); else startKw();
   }
 
   /* ---------- Coach-Text: Wort für Wort beim Scrollen hervorheben, Schlagwörter mit Bewegungsspur ---------- */
