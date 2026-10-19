@@ -474,25 +474,38 @@ button{font:inherit;color:inherit}
 .coach__panel{display:grid;align-content:space-between;gap:var(--s-6);padding:var(--s-7) var(--gut) var(--s-7)}
 .coach__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3);padding-top:var(--s-4);border-top:1px dashed var(--line-d);color:var(--mist-200)}
 .coach__foot{display:flex;flex-wrap:wrap;gap:var(--s-5);align-items:end;justify-content:space-between}
-.coach__thumb{display:none;width:min(100%,18rem);aspect-ratio:16/10;object-fit:cover}
-.coach__portrait{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:4/4.2;background:var(--night-800);order:-1}
-@media (min-width:768px) and (max-width:1023px){.coach__portrait{aspect-ratio:16/10}.coach__portrait img{object-position:50% 25%}}
-.coach__portrait img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.coach__portrait::before{content:"";position:absolute;inset:0 0 0 64%;z-index:-1;-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);background:repeating-linear-gradient(180deg,rgba(207,203,230,.08) 0 2px,rgba(11,6,32,.2) 2px 7px),linear-gradient(90deg,rgba(20,56,200,0),rgba(20,56,200,.35))}
-.coach__portrait::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,6,32,.15) 0%,rgba(11,6,32,0) 30%,rgba(11,6,32,0) 55%,rgba(11,6,32,.8) 100%)}
-.coach__cross{position:absolute;inset:0;pointer-events:none}
-.coach__cross::before{content:"";position:absolute;left:52%;top:5%;bottom:38%;border-left:1px solid rgba(236,234,247,.45)}
-.coach__cross::after{content:"";position:absolute;left:18%;right:4%;top:70%;border-top:1px dashed rgba(236,234,247,.35)}
-.coach__label{position:absolute;top:var(--s-4);left:var(--gut);color:var(--mist-100)}
-.coach__name{position:absolute;left:var(--gut);right:var(--gut);bottom:var(--s-4);display:flex;justify-content:space-between;align-items:end;gap:var(--s-4);flex-wrap:wrap}
-.coach__name b{font-weight:400;font-size:clamp(1.6rem,1.1rem + 1.4vw,2.4rem);letter-spacing:-.03em;line-height:1.1}
+.coach__thumb{display:none;width:min(100%,18rem,26cqw);aspect-ratio:16/10;object-fit:cover}
+/* Porträt nach Moodboard: Graustufen, Pixel-Stretch rechts, Hilfslinien mit hellen Segmenten, Name auf der Mittellinie */
+.coach__portrait{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:1100/1417;background:var(--night-900);order:-1;container-type:inline-size}
+.coach__portrait img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.cp{position:absolute;inset:0;z-index:0;pointer-events:none}
+.cp__v{position:absolute;left:53.2%;top:0;bottom:0;width:1px;background:repeating-linear-gradient(180deg,rgba(236,234,247,.32) 0 3px,transparent 3px 7px)}
+.cp__h{position:absolute;top:49.9%;left:0;right:0;height:1px;background:repeating-linear-gradient(90deg,rgba(236,234,247,.32) 0 3px,transparent 3px 7px)}
+.cp__s{position:absolute;width:1px;background:rgba(236,234,247,.85);transform:translateX(-.5px)}
+.cp__s--h{width:auto;height:1px;transform:translateY(-.5px)}
+.cp__d{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.coach__label{position:absolute;z-index:1;top:4.6%;left:6.2%;color:var(--mist-100)}
+.coach__nm{position:absolute;z-index:1;left:4.7%;top:calc(49.9% + 2.6cqw);font-weight:400;font-size:clamp(1.7rem,5.6cqw,4.4rem);line-height:1;letter-spacing:-.03em;color:#fff;text-shadow:0 2px 18px rgba(11,6,32,.35)}
+.coach__role{position:absolute;z-index:1;right:4.6%;top:calc(49.9% + 4.4cqw);max-width:36%;font-size:clamp(.78rem,2cqw,1.15rem);line-height:1.3;text-align:right;color:#fff}
+.coach__top,.coach__bottom{display:grid;gap:var(--s-5);align-content:start}
+/* Text wird beim Scrollen Wort für Wort hervorgehoben */
+.js-scrub.is-armed .sw{opacity:.16;transition:opacity .45s var(--ease)}
+.js-scrub.is-armed .sw.is-lit{opacity:1}
+/* Tablet/Desktop: die gestrichelte Linie über den Fakten liegt exakt auf der Mittellinie des Porträts und läuft durch */
+@media (min-width:768px){
+  .coach{grid-template-columns:50% 50%;align-items:start;container-type:inline-size}
+  .coach__portrait{order:0}
+  .coach__panel{--ph:calc(50cqw * 1417 / 1100);--line-y:calc(var(--ph) * .499);position:relative;min-height:var(--ph);grid-template-rows:var(--line-y) 1fr;align-content:stretch;gap:0;padding:0 var(--s-6) var(--s-6) var(--gut)}
+  .coach__panel::before{content:"";position:absolute;left:0;right:0;top:var(--line-y);height:1px;background:repeating-linear-gradient(90deg,rgba(236,234,247,.32) 0 3px,transparent 3px 7px);pointer-events:none}
+  .coach__panel::after{content:"";position:absolute;left:var(--gut);width:12%;top:var(--line-y);height:1px;background:rgba(236,234,247,.85);transform:translateY(-.5px);pointer-events:none}
+  .coach__top{padding-top:calc(var(--s-5) + 1.6cqw);gap:calc(var(--s-3) + .6cqw)}
+  .coach__txt{font-size:max(1.1rem,2.45cqw);line-height:1.17}
+  .coach__bottom{grid-template-rows:auto 1fr;padding-top:var(--s-4)}
+  .coach__stats{border-top:0;padding-top:0}
+  .coach__foot{align-self:end}
+}
 @media (min-width:1024px){
-  .coach{grid-template-columns:50% 50%}
-  .coach__panel{padding:var(--s-8) var(--s-7) var(--s-6) var(--gut)}
   .coach__thumb{display:block}
-  .coach__portrait{order:0;aspect-ratio:auto;min-height:clamp(36rem,50vw,56rem)}
-  .coach__label{left:var(--s-5);top:var(--s-5)}
-  .coach__name{left:var(--s-5);right:var(--s-5);bottom:var(--s-5)}
 }
 
 /* =================================================================
@@ -990,12 +1003,12 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
 <!-- ============================ COACH ============================ -->
 <section class="coach on-dark" id="training" aria-labelledby="coach-h">
   <div class="coach__panel">
-    <div style="display:grid;gap:var(--s-5)">
+    <div class="coach__top">
       <span class="tick" style="color:var(--mist-200)">Padel Training Magdeburg</span>
       <h2 class="sr-only" id="coach-h">Padel lernen mit Coach Randy</h2>
-      <p class="big">Randy hat über 20 Jahre als Badminton-, Squash- und Tennistrainer gearbeitet. <span class="mute">Heute bringt er Einsteigern Padel bei und macht Fortgeschrittene besser: Technik, Wände und die Taktik, die aus Ballwechseln Punkte macht.</span></p>
+      <p class="big coach__txt js-scrub">Randy hat über <span class="kw" data-kw="20 Jahre" data-scrub>20 Jahre</span> als Badminton-, Squash- und Tennistrainer gearbeitet. <span class="mute">Heute bringt er Einsteigern <span class="kw" data-kw="Padel" data-scrub>Padel</span> bei und macht Fortgeschrittene besser: Technik, Wände und die <span class="kw" data-kw="Taktik" data-scrub>Taktik</span>, die aus Ballwechseln Punkte macht.</span></p>
     </div>
-    <div style="display:grid;gap:var(--s-5)">
+    <div class="coach__bottom">
       <div class="coach__stats xs"><span class="tick">20+ Jahre als Trainer</span><span class="tick">Einzel und Gruppe</span><span class="tick">Für alle Level</span></div>
       <div class="coach__foot">
         <img class="coach__thumb" src="bilder/padel-magdeburg-coach-nebel.webp" width="720" height="450" loading="lazy" decoding="async" alt="Spieler wartet im Nebel mit dem Schläger auf den Ball">
@@ -1004,10 +1017,16 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
     </div>
   </div>
   <div class="coach__portrait">
-    <img src="bilder/padel-magdeburg-coach-randy.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Padel-Trainer Randy von GG Padel Magdeburg mit Schläger in der Halle">
-    <div class="coach__cross" aria-hidden="true"></div>
-    <span class="coach__label tick">Coach</span>
-    <div class="coach__name"><b>Coach Randy</b><span class="xs">Trainer bei GG Padel</span></div>
+    <img src="bilder/padel-magdeburg-coach-randy.webp" srcset="bilder/padel-magdeburg-coach-randy-700.webp 700w, bilder/padel-magdeburg-coach-randy.webp 1100w" sizes="(min-width:768px) 50vw, 100vw" width="1100" height="1417" loading="lazy" decoding="async" alt="Padel-Trainer Randy von GG Padel Magdeburg, Porträt in Schwarz-Weiß">
+    <div class="cp" aria-hidden="true">
+      <i class="cp__v"></i><i class="cp__h"></i>
+      <i class="cp__s" style="left:53.2%;top:3.2%;height:4.6%"></i><i class="cp__s" style="left:53.2%;top:36%;height:4.6%"></i><i class="cp__s" style="left:53.2%;top:54.5%;height:5.2%"></i><i class="cp__s" style="left:53.2%;top:80.9%;height:4.9%"></i>
+      <i class="cp__s cp__s--h" style="top:49.9%;left:19.4%;width:10.5%"></i><i class="cp__s cp__s--h" style="top:49.9%;left:64.3%;width:10.2%"></i><i class="cp__s cp__s--h" style="top:49.9%;left:91.5%;width:3.8%"></i>
+      <svg class="cp__d" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="53.2" y1="49.9" x2="100" y2="86" stroke="rgba(236,234,247,.38)" stroke-width="1" stroke-dasharray="3 4" vector-effect="non-scaling-stroke"/><line x1="73.4" y1="65.4" x2="76.3" y2="67.6" stroke="rgba(236,234,247,.9)" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+    </div>
+    <span class="coach__label tick">Dein Coach</span>
+    <b class="coach__nm">Coach <span class="kw" data-kw="Randy">Randy</span></b>
+    <span class="coach__role">Padel-Trainer bei GG&nbsp;Padel</span>
   </div>
 </section>
 
@@ -1385,11 +1404,44 @@ fieldset.choice{border:0;margin:0;padding:0;min-width:0}
 
   /* ---------- Schlagwörter in Überschriften: Bewegungsspur beim Erscheinen ---------- */
   if(!reduce && 'IntersectionObserver' in w){
-    var kws=[].slice.call(d.querySelectorAll('.kw'));
-    kws.forEach(function(k){ k.classList.add('kw--pre'); });
+    d.querySelectorAll('.kw').forEach(function(k){ k.classList.add('kw--pre'); });
+    var kws=[].slice.call(d.querySelectorAll('.kw:not([data-scrub])'));
     var kio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); kio.unobserve(e.target); } }); },{threshold:.6});
     requestAnimationFrame(function(){ kws.forEach(function(k){ kio.observe(k); }); });
   }
+
+  /* ---------- Coach-Text: Wort für Wort beim Scrollen hervorheben, Schlagwörter mit Bewegungsspur ---------- */
+  (function(){
+    var p=d.querySelector('.js-scrub'); if(!p || reduce) return;
+    var units=[];
+    (function walk(node){
+      [].slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          var frag=d.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(t){
+            if(!t) return;
+            if(/^\s+$/.test(t)){ frag.appendChild(d.createTextNode(t)); return; }
+            var s=d.createElement('span'); s.className='sw'; s.textContent=t; frag.appendChild(s); units.push(s);
+          });
+          n.parentNode.replaceChild(frag,n);
+        } else if(n.nodeType===1){
+          if(n.classList.contains('kw')){ n.classList.add('sw'); units.push(n); } else walk(n);
+        }
+      });
+    })(p);
+    p.classList.add('is-armed');
+    var lit=-1, tick=false;
+    function update(){
+      tick=false;
+      var r=p.getBoundingClientRect(), vh=w.innerHeight;
+      var prog=(vh*.88 - r.top)/(r.height + vh*.36);
+      var k=Math.max(0,Math.min(units.length, Math.round(prog*units.length)));
+      if(k===lit) return; lit=k;
+      units.forEach(function(u,i){ var on=i<k; u.classList.toggle('is-lit',on); if(u.classList.contains('kw')) u.classList.toggle('is-in',on); });
+    }
+    function req(){ if(!tick){ tick=true; requestAnimationFrame(update); } }
+    w.addEventListener('scroll',req,{passive:true}); w.addEventListener('resize',req); update();
+  })();
 
   /* ---------- FAQ: immer nur eine Frage offen (Fallback zu details[name]) ---------- */
   var faqs=[].slice.call(d.querySelectorAll('.faq details'));
