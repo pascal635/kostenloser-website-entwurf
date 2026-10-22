@@ -358,13 +358,36 @@
       fi = (k + fSteps.length) % fSteps.length;
       fSteps.forEach(function (s, j) { var on = j === fi; s.classList.toggle('is-on', on); if (on) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current'); });
       fCount.textContent = String(fi + 1).padStart(2, '0'); if (fNow) fNow.textContent = fSteps[fi].dataset.text;
-      /* Grafik des neuen Schritts noch einmal aufbauen (nur Desktop, wenn schon gesehen) */
-      if (!isMob() && !reduce && fSteps[fi].classList.contains('is-drawn')) restart(fSteps[fi], 'is-drawn');
       if (fBar) { if (reduce) fBar.style.transform = 'scaleX(1)'; else if (isMob()) fBar.classList.remove('is-run'); else restart(fBar, 'is-run'); }
       flowLayout();
+      updPlay();
     };
+    /* Grafik spielt nur im Fokus: Desktop der aktive Schritt, solange die Sektion im Bild ist; mobil die Karte in Bildschirmmitte.
+       Karten ohne Fokus zeigen die fertige Grafik ohne Bewegung. Noch nie gezeigte (mobil) und verlassene (Desktop) Karten warten leer. */
+    var fPlay = null, fSeen = false;
+    var setPlay = function (st) {
+      if (fPlay === st) return;
+      if (fPlay) fPlay.classList.remove('is-play');
+      fPlay = st || null;
+      if (fPlay) { fPlay.classList.remove('is-pre'); void fPlay.offsetWidth; fPlay.classList.add('is-play'); fPlay.setAttribute('data-played', ''); }
+    };
+    var pickMob = function () {
+      var vh = window.innerHeight, best = null, bd = Infinity;
+      fSteps.forEach(function (st) {
+        var r = st.getBoundingClientRect();
+        if (r.bottom < vh * 0.22 || r.top > vh * 0.78) return;
+        var d = Math.abs(r.top + r.height / 2 - vh / 2); if (d < bd) { bd = d; best = st; }
+      });
+      return best;
+    };
+    function updPlay() {
+      if (isMob()) { setPlay(pickMob()); return; }
+      if (!fSeen) { setPlay(null); fSteps.forEach(function (st, j) { st.classList.toggle('is-pre', !reduce && j === fi); }); return; }
+      setPlay(fSteps[fi]);
+    }
+    var prep = function () { fSteps.forEach(function (st) { st.classList.toggle('is-pre', !reduce && isMob() && !st.hasAttribute('data-played')); }); };
     if (fBar) fBar.addEventListener('animationend', function () { if (!isMob()) flowSel(fi + 1); });
-    onMode(function () { flowSel(fi); });
+    onMode(function () { prep(); flowSel(fi); });
     fSteps.forEach(function (s, j) {
       s.addEventListener('click', function () { if (j !== fi) flowSel(j); });
       s.addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && j !== fi) { e.preventDefault(); flowSel(j); } });
@@ -383,13 +406,13 @@
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) flowSel(fi + (dx < 0 ? 1 : -1));
       fx = null;
     });
-    /* Grafiken bauen sich auf, sobald die Karte ins Bild kommt */
-    if ('IntersectionObserver' in window && !reduce) {
-      var dio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-drawn'); dio.unobserve(e.target); } }); }, { threshold: 0.3 });
-      fSteps.forEach(function (s) { dio.observe(s); });
-    } else fSteps.forEach(function (s) { s.classList.add('is-drawn'); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { fSeen = es[0].isIntersecting; if (!isMob()) updPlay(); }, { threshold: 0.35 }).observe(fView);
+    else fSeen = true;
+    var fTick = false;
+    window.addEventListener('scroll', function () { if (!isMob() || fTick) return; fTick = true; requestAnimationFrame(function () { fTick = false; updPlay(); }); }, { passive: true });
     autoPause(flow, fView);
-    window.addEventListener('resize', flowLayout);
+    window.addEventListener('resize', function () { flowLayout(); updPlay(); });
+    prep();
     flowSel(0);
   }
 
