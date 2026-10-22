@@ -654,12 +654,7 @@ fieldset.field{border:0;padding:0;margin:0 0 14px}
 }
 @media (min-width:1024px){.flow__track{--flow-h:clamp(420px,36vw,600px)}}
 @media (max-width:719px){.flow__track{--flow-h:430px}}
-@media (max-width:1023px){
-  .how__side{grid-template-columns:1fr auto}
-  .how__side .counter{grid-row:1;grid-column:1}
-  .how__side .how__btns{grid-row:1;grid-column:2}
-  .flow__bar{grid-row:2}
-}
+
 @media (min-width:720px) and (max-width:1023px){.stage{aspect-ratio:16/11}.stage__obj{height:62%}}
 
 /* ================= Runde 6: mobil ohne Karussells, alle Karten untereinander ================= */
@@ -695,22 +690,13 @@ fieldset.field{border:0;padding:0;margin:0 0 14px}
   .pcard__price .num{font-size:2.5rem}
   .pcard .btn--lg{height:44px;font-size:.9rem}
   .pcard .btn--lg i{width:34px;height:34px}
-  /* Referenzen: kompakte Karten untereinander in der Glas-Box */
-  .refbox{padding:6px 14px}
-  .refbox__view{overflow:visible}
-  .refbox__track{display:grid;transform:none!important}
-  .rcard{grid-template-columns:88px minmax(0,1fr);gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid rgba(21,23,20,.08)}
-  .rcard:last-child{border-bottom:0}
-  .rcard__img{aspect-ratio:1;border-radius:10px}
-  .rcard__img .chip{display:none}
-  .rcard__place{display:block;font-size:.72rem;color:var(--muted);margin-bottom:2px}
-  .rcard__t{font-size:1.05rem;line-height:1.25}
-  .rcard__d{margin-top:4px;font-size:.82rem;line-height:1.45}
-  .rcard__fig{margin-top:8px;gap:2px 8px}
-  .rcard__fig .num{font-size:1.6rem}
-  .rcard__fig small{font-size:.78rem}
-  .refbox__foot{justify-content:flex-start;margin-top:0;padding:12px 0 10px}
-  .refbox__foot .uses__nav{display:none}
+  /* Referenzen: einziges Karussell auf dem Handy, eine Karte pro Seite, Wischen oder Pfeile */
+  .refbox{padding:12px}
+  .rcard{grid-template-columns:1fr;gap:14px;align-items:start}
+  .rcard__img{aspect-ratio:16/10}
+  .rcard__t{font-size:1.3rem}
+  .rcard__fig .num{font-size:2.3rem}
+  .refbox__foot{flex-wrap:wrap;gap:12px}
 }
 /* Team-Tooltips am Rand nicht über die Seite hinaus */
 .team li:nth-child(-n+2) span{left:0;transform:translate(0,4px)}
@@ -841,3 +827,43 @@ fieldset.field{border:0;padding:0;margin:0 0 14px}
 .scene__pv,.fog--region{bottom:var(--fg-b,-3%)}
 /* Rahmen mit überstehenden Ebenen dürfen nicht intern scrollen (Fokus, Anker) */
 .hero__frame,.region__frame,.end__frame,.stage,.flow__view{overflow:clip}
+
+/* ================= Runde 9 ================= */
+/* Logo als Vektor ohne Hintergrund, größer */
+.brand img{width:42px;height:42px;border-radius:0;background:none;flex:none}
+.brand--nav img{width:60px;height:60px;box-shadow:none;filter:drop-shadow(0 2px 10px rgba(8,20,6,.38))}
+.nav{height:72px}
+.foot__logo{flex:none;width:clamp(44px,3.6vw,58px);height:auto;filter:drop-shadow(0 2px 8px rgba(8,20,6,.3))}
+@media (max-width:719px){
+  .brand--nav img{width:48px;height:48px}
+  .nav{height:64px}
+  .topbar .brand img{width:38px;height:38px}
+  .foot__logo{order:-1}
+}
+/* Ablauf: Untertitel und Kurztext links, Fortschritt in der Zeile der Pfeile */
+.how__side{display:grid;grid-template-columns:1fr;grid-template-rows:none;align-content:start;gap:clamp(14px,1.6vw,22px)}
+.how__info{display:grid;gap:6px}
+.how__info.is-swap{animation:info-in .6s var(--ease) both}
+@keyframes info-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.how__tag{font-size:clamp(1.05rem,1.25vw,1.3rem);font-weight:500;letter-spacing:-.025em;line-height:1.2;color:var(--ink)}
+.how__ctrl{display:flex;align-items:center;gap:clamp(14px,1.6vw,22px)}
+.how__ctrl .flow__bar{flex:1;min-width:0;grid-column:auto;grid-row:auto}
+@media (min-width:1024px){
+  .how__side{grid-template-rows:auto 1fr auto;align-content:stretch}
+  .how__info{align-self:center;padding-top:clamp(40px,5vw,90px)}
+}
+@media (min-width:720px){.step__tag,.step__tag.glass{display:none}}
+@media (max-width:719px){.how__side{display:none}}
+@media (max-width:719px){
+  .step__tag.glass{left:2px;top:12px;padding:0;background:none;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;font-size:1.05rem;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+  .step__n,.step.is-on .step__n{right:2px;top:10px}
+}
+@media (prefers-reduced-motion:reduce){.how__info.is-swap{animation:none}}
+/* Referenzen-Szene: nur der Nebel steht, Himmel, Land und Solarmodule laufen stärker */
+/* Himmel (ohne Land) läuft am langsamsten, das Land etwas langsamer als die Seite, die Solarmodule schneller.
+   Land und Himmel bewegen sich nur nach unten, die Modulreihe hat einen verlängerten Pfosten, der Nebel steht.
+   So entsteht unten nie eine Kante. */
+.scene__sky{top:-34%}
+.scene__pv img{display:block;margin-bottom:-25.96%}
+.fog--region{transform:none!important}
+@media (max-width:719px){.refbox-wrap{padding-bottom:84vw}}

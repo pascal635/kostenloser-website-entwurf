@@ -230,7 +230,7 @@
   /* data-scene / data-par: Ebenen einer Szene, Versatz = (Fortschritt - from) * k * Viewport-Höhe.
      Fortschritt läuft von 1 (Szene kommt von unten) bis -1 (Szene verlässt oben). */
   var scenes = $$('[data-scene]').map(function (sc) {
-    return { el: sc, items: $$('[data-par]', sc).map(function (el) { return { el: el, k: parseFloat(el.dataset.par) || 0, from: parseFloat(el.dataset.parFrom || '0') }; }) };
+    return { el: sc, items: $$('[data-par]', sc).map(function (el) { return { el: el, k: parseFloat(el.dataset.par) || 0, from: parseFloat(el.dataset.parFrom || '0'), max: parseFloat(el.dataset.parMax || '0.22') }; }) };
   });
   var ticking = false;
   function frame() {
@@ -246,7 +246,7 @@
       scenes.forEach(function (sc) {
         var r = sc.el.getBoundingClientRect(); if (r.bottom < -200 || r.top > vh + 200) return;
         var pr = clamp((r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2), -1, 1);
-        sc.items.forEach(function (o) { if (!o.k) return; var ty = clamp((pr - o.from) * o.k * vh, -0.22 * vh, 0.22 * vh); o.el.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0)'; });
+        sc.items.forEach(function (o) { if (!o.k) return; var ty = clamp((pr - o.from) * o.k * vh, -o.max * vh, o.max * vh); o.el.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0)'; });
       });
       sinkers.forEach(function (o) {
         var host = o.el.parentElement.getBoundingClientRect(); if (host.bottom < -100 || host.top > vh + 100) return;
@@ -279,7 +279,7 @@
     (function loop(t) { var v = (Math.sin(t / speed) * amp).toFixed(2) + 'px'; els.forEach(function (el) { el.style.setProperty('--float', v); }); requestAnimationFrame(loop); })(0);
   }
 
-  /* Mobil (unter 720 px): keine Karussells, alle Karten stehen untereinander */
+  /* Mobil (unter 720 px): nur die Referenzen bleiben ein Karussell, alle anderen Karten stehen untereinander */
   var mqMob = window.matchMedia('(max-width: 719px)');
   var isMob = function () { return mqMob.matches; };
   var onMode = function (fn) { if (mqMob.addEventListener) mqMob.addEventListener('change', fn); else if (mqMob.addListener) mqMob.addListener(fn); };
@@ -342,7 +342,7 @@
   var flow = $('[data-flow]');
   if (flow) {
     var fView = $('.flow__view', flow), fTrack = $('[data-flow-track]', flow), fSteps = $$('.step', fTrack);
-    var fCount = $('[data-count]', flow), fNow = $('[data-now]', flow), fBar = $('[data-flow-bar]', flow), fi = 0, FDUR = 5500, GAP = 10;
+    var fCount = $('[data-count]', flow), fNow = $('[data-now]', flow), fTag = $('[data-tag]', flow), fInfo = $('[data-info]', flow), fBar = $('[data-flow-bar]', flow), fi = 0, FDUR = 5500, GAP = 10;
     flow.style.setProperty('--dur', FDUR + 'ms');
     var flowLayout = function () {
       if (isMob()) { fTrack.style.transform = ''; return; }
@@ -358,6 +358,7 @@
       fi = (k + fSteps.length) % fSteps.length;
       fSteps.forEach(function (s, j) { var on = j === fi; s.classList.toggle('is-on', on); if (on) s.setAttribute('aria-current', 'step'); else s.removeAttribute('aria-current'); });
       fCount.textContent = String(fi + 1).padStart(2, '0'); if (fNow) fNow.textContent = fSteps[fi].dataset.text;
+      var tg = $('.step__tag', fSteps[fi]); if (fTag && tg && fTag.textContent !== tg.textContent) { fTag.textContent = tg.textContent; if (fInfo && !reduce) restart(fInfo, 'is-swap'); }
       if (fBar) { if (reduce) fBar.style.transform = 'scaleX(1)'; else if (isMob()) fBar.classList.remove('is-run'); else restart(fBar, 'is-run'); }
       flowLayout();
       updPlay();
@@ -446,13 +447,12 @@
     psel(0);
   }
 
-  /* ---------- Referenzen: Karten in der Glas-Box ---------- */
+  /* ---------- Referenzen: Karten in der Glas-Box (auch mobil als Karussell mit Wischen) ---------- */
   var refs = $('[data-refs]');
   if (refs) {
     var rt = $('[data-refs-track]', refs), rslides = $$('.rcard', rt), rcount = $('[data-refs-count]', refs), ri = 0;
     var rgo = function (k) {
       ri = (k + rslides.length) % rslides.length;
-      if (isMob()) { rt.style.transform = ''; rslides.forEach(function (s) { s.removeAttribute('aria-hidden'); }); return; }
       rt.style.transform = 'translate3d(' + (-100 * ri) + '%,0,0)';
       rslides.forEach(function (s, j) { s.setAttribute('aria-hidden', j === ri ? 'false' : 'true'); });
       rcount.innerHTML = String(ri + 1).padStart(2, '0') + '<small>/' + String(rslides.length).padStart(2, '0') + '</small>';
@@ -466,7 +466,7 @@
     var rx = null, ry = null;
     rt.addEventListener('touchstart', function (e) { rx = e.touches[0].clientX; ry = e.touches[0].clientY; }, { passive: true });
     rt.addEventListener('touchend', function (e) {
-      if (rx === null || isMob()) return;
+      if (rx === null) return;
       var dx = e.changedTouches[0].clientX - rx, dy = e.changedTouches[0].clientY - ry;
       if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) rgo(ri + (dx < 0 ? 1 : -1));
       rx = null;
