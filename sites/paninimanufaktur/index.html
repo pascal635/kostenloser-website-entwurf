@@ -201,7 +201,7 @@
   .menu-cat{max-width:940px;margin:0 auto}
   .menu-cat + .menu-cat{margin-top:clamp(44px,5vw,68px)}
   .menu-cat-title{text-align:center;font-size:clamp(22px,3vw,30px);margin-bottom:8px}
-  .menu-cat-title + .menu-sub{text-align:center;color:var(--warmgray);font-size:14px;margin:0 auto 30px;font-style:italic}
+  .menu-cat-title + .menu-sub{text-align:center;color:var(--warmgray);font-size:15px;margin:0 auto 16px;font-style:italic}
   .menu-cat-rule{width:48px;height:2px;background:var(--brass);border:none;margin:0 auto 30px}
   .menu-list{display:grid;gap:26px 46px;grid-template-columns:1fr}
   @media(min-width:760px){.menu-list{grid-template-columns:1fr 1fr}}
@@ -224,6 +224,39 @@
   .menu-legend .a .lt{font-family:var(--ff-body);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--brass-deep);margin:14px 0 6px;font-weight:600}
   .menu-legend .a .cols{columns:2;column-gap:36px}
   @media(max-width:520px){.menu-legend .a .cols{columns:1}}
+
+  /* ===== Pizzabuffet (Catering) ===== */
+  .buffet-grid{display:grid;gap:clamp(40px,5vw,68px);align-items:center;position:relative}
+  @media(min-width:920px){.buffet-grid{grid-template-columns:1.05fr 1fr}}
+  .buffet-media{position:relative}
+  .buffet-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-lg);box-shadow:0 30px 70px rgba(0,0,0,.45);display:block}
+  .buffet-badge{position:absolute;right:-14px;bottom:-24px;width:128px;height:128px;border-radius:50%;background:var(--brass);color:var(--charcoal);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+  .buffet-badge b{font-family:var(--ff-display);font-size:42px;line-height:1;font-weight:700}
+  .buffet-badge span{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.25;margin-top:5px}
+  @media(max-width:640px){.buffet-badge{right:12px;bottom:-28px;width:106px;height:106px}.buffet-badge b{font-size:34px}}
+  .buffet-claim{font-family:var(--ff-display);font-size:clamp(19px,2.3vw,23px);color:#f0d9a6;line-height:1.4;margin:0 0 18px}
+  .buffet-label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--brass);font-weight:600;margin:24px 0 12px}
+  .buffet-points{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+  .buffet-points li{display:flex;gap:9px;align-items:flex-start;color:#e6dbc8;font-size:15.5px;line-height:1.45}
+  .buffet-points svg{width:18px;height:18px;color:var(--brass);flex:none;margin-top:2px}
+  @media(max-width:520px){.buffet-points{grid-template-columns:1fr}}
+  .buffet-quote{font-family:var(--ff-display);font-style:italic;font-size:clamp(20px,2.4vw,25px);color:#fff;border-left:2px solid var(--brass);padding-left:18px;margin:0 0 30px;line-height:1.35}
+
+  /* ===== Speisekarte: Catering-Hinweis + Pizza der Woche ===== */
+  a.menu-note{max-width:940px;margin:0 auto clamp(48px,5vw,64px);display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:var(--r-md);padding:16px 22px;color:var(--charcoal);box-shadow:var(--sh-sm);transition:box-shadow .25s var(--ease),transform .25s var(--ease)}
+  a.menu-note:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}
+  .menu-note-badge{flex:none;width:54px;height:54px;border-radius:50%;background:var(--charcoal);color:var(--brass);font-family:var(--ff-display);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center}
+  .menu-note-text{flex:1;font-size:15px;line-height:1.5;color:var(--warmgray)}
+  .menu-note-text strong{color:var(--charcoal)}
+  .menu-note-link{flex:none;font-weight:600;color:var(--terracotta);display:inline-flex;align-items:center;gap:6px;font-size:15px;white-space:nowrap}
+  .menu-note-link svg{width:16px;height:16px}
+  @media(max-width:640px){a.menu-note{flex-wrap:wrap}.menu-note-text{flex-basis:calc(100% - 72px)}.menu-note-link{margin-left:72px}}
+  .menu-weekly{max-width:660px;margin:0 auto clamp(48px,5vw,68px);text-align:center;background:var(--sand);border:1.5px solid var(--brass);border-radius:var(--r-lg);padding:clamp(30px,3.5vw,42px) clamp(22px,3vw,42px) clamp(26px,3vw,36px);position:relative}
+  .menu-weekly-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--tomato);color:#fff;font-size:12px;font-weight:600;letter-spacing:.05em;padding:7px 18px;border-radius:var(--r-pill);white-space:nowrap;box-shadow:0 6px 16px rgba(192,57,43,.3)}
+  .menu-weekly .menu-cat-title{margin-bottom:6px}
+  .menu-weekly h3 em{font-style:italic;font-weight:500;color:var(--terracotta)}
+  .menu-weekly-sub{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--brass-deep);font-weight:600;margin:0 0 14px}
+  .menu-weekly-text{margin:0 auto;color:var(--warmgray);font-size:16px;max-width:46ch}
 
   /* ===== Anlässe ===== */
   .occasions{display:grid;gap:26px;margin-top:clamp(30px,4vw,50px)}
@@ -406,7 +439,7 @@
     <div class="stats reveal">
       <div class="stat"><b>48 h</b><span>gereifter Teig</span></div>
       <div class="stat"><b>ab 30</b><span>Personen buchbar</span></div>
-      <div class="stat"><b>100 %</b><span>Handarbeit, kein TK</span></div>
+      <div class="stat"><b>50+</b><span>Pizzakreationen</span></div>
       <div class="stat"><b>25 km</b><span>Anfahrt inklusive</span></div>
     </div>
   </div>
@@ -438,6 +471,33 @@
             <div><p class="bt">Rundum sorglos</p><p>Vom Foodtrailer vor der Tür bis zum eingespielten Service-Team: Aufbau, Abbau und Reinigung übernehmen wir. Ihr müsst am eigenen Fest nicht Regie führen.</p></div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3b PIZZABUFFET -->
+<section class="dark" id="pizzabuffet">
+  <div class="wrap">
+    <div class="buffet-grid">
+      <div class="buffet-media">
+        <img src="bilder/pizza-catering-buergstadt-pizza-burrata-parma.jpg" alt="Pizza mit Burrata, Prosciutto, Rucola und Balsamico aus dem Pizzabuffet der Panini Manufaktur" loading="lazy">
+        <span class="buffet-badge"><b>50+</b><span>Pizza-<br>kreationen</span></span>
+      </div>
+      <div>
+        <span class="eyebrow">Catering · Pizzabuffet</span>
+        <h2>Pizza-Catering, das in <em>Erinnerung</em> bleibt.</h2>
+        <p class="buffet-claim">Über 50 Kreationen. Unzählige Möglichkeiten. Euer individuelles Pizzabuffet.</p>
+        <p>Von italienischen Klassikern bis zu außergewöhnlichen Signature-Kreationen: Wir stellen gemeinsam mit euch ein abwechslungsreiches Pizzabuffet zusammen, das zu eurem Event und euren Gästen passt. Ob Firmenfeier, Hochzeit, Geburtstag oder private Veranstaltung: Jede Auswahl wird individuell geplant.</p>
+        <p class="buffet-label">Individuell abgestimmt auf</p>
+        <ul class="buffet-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> euren Anlass</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> eure Gästezahl</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> eure Wünsche</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> die Anforderungen eurer Gäste</li>
+        </ul>
+        <p class="buffet-quote">Kein Buffet von der Stange. Sondern Pizza-Vielfalt nach eurem Geschmack.</p>
+        <a class="btn btn-primary" href="#anfrage" data-msg="Wir interessieren uns für ein individuelles Pizzabuffet.">Jetzt individuelles Pizzabuffet anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -536,36 +596,44 @@
     <div class="sec-head center narrow reveal">
       <span class="eyebrow">Speisekarte</span>
       <h2>Unsere <em>Pizza</em>-Speisekarte</h2>
-      <p class="lead">Neapolitan Style, alles frisch aus dem Steinofen. Fürs Catering stellen wir daraus euer Wunschsortiment zusammen.</p>
+      <p class="lead">Neapolitan Style, alles frisch aus dem Steinofen. Diese zehn Pizzen bekommt ihr bei unseren Streetfood-Terminen.</p>
+    </div>
+
+    <a class="menu-note reveal" href="#pizzabuffet">
+      <span class="menu-note-badge">50+</span>
+      <span class="menu-note-text"><strong>Ihr plant ein Catering?</strong> Diese Karte zeigt unsere Streetfood-Pizzen. Für euer Event haben wir über 50 Kreationen und stellen euer Pizzabuffet individuell zusammen.</span>
+      <span class="menu-note-link">Zum Pizzabuffet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <div class="menu-weekly reveal">
+      <span class="menu-weekly-tag">Nur für kurze Zeit</span>
+      <h3 class="menu-cat-title">Pizza della <em>Settimana</em></h3>
+      <p class="menu-weekly-sub">Unsere Pizza der Woche</p>
+      <p class="menu-weekly-text">Lust auf etwas Neues? Fragt uns nach unserer aktuellen Aktionspizza: eine besondere Kreation, nur für kurze Zeit.</p>
     </div>
 
     <div class="menu-cat reveal">
       <h3 class="menu-cat-title">Neapolitan Style Pizza</h3>
       <hr class="menu-cat-rule">
       <div class="menu-list">
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Margherita</span><span class="mi-dots"></span><span class="mi-price">10 €</span></div><p class="mi-desc">Nonna's Secret, Mozzarella, Parmigiano.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Speciale</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Unser Topseller, geht immer.</em> Nonna's Secret, Mozzarella, Salami, Prosciutto Cotto, frische Champignons, Parmigiano.</p><span class="mi-alg">A, G, 2</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Scharfe Biene</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Trifft sie euer Geschmackszentrum?</em> Nonna's Secret, Mozzarella, spicy Salami, kandierte Jalapeños, Chili-Honig vom Imker.</p><span class="mi-alg">A, G, 2</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Green Table</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Unser vegetarischer Evergreen.</em> Sauerrahm, Pesto alla Genovese, Mozzarella, bunter Paprika, rote Zwiebelchen, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Margherita</span><span class="mi-dots"></span><span class="mi-price">10 €</span></div><p class="mi-desc"><em>Der Klassiker, an dem sich gute Pizza messen lässt.</em> Nonna's Secret, Mozzarella, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Salami</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Würzig, herzhaft, einfach italienisch.</em> Nonna's Secret, Mozzarella, Salami, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Speciale</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Unser Topseller, geht immer.</em> Nonna's Secret, Mozzarella, Salami, Prosciutto Cotto, frische Champignons, Parmigiano.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Tina Tuna</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Ein Hauch von Meer, herzhaft verfeinert.</em> Nonna's Secret, Mozzarella, Thunfisch, rote Zwiebelchen, Parmigiano.</p><span class="mi-alg">A, D, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Piccanto</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Pikante Salami, fein abgestimmt mit mediterranen Aromen.</em> Nonna's Secret, Mozzarella, pikante Salami, frische Champignons, Knoblauch und Parmigiano.</p><span class="mi-alg">A, G</span></div>
         <div class="menu-item"><div class="mi-head"><span class="mi-name">Tom &amp; Cherry</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Die Kultserie als vegetarischer Genuss.</em> Nonna's Secret, Mozzarella, Cherrytomaten, frische Champignons, Parmigiano.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Piccanto</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Französischer Geschmack mit spanischer Seele.</em> Nonna's Secret, Mozzarella, Chorizo, frische Champignons, Knoblauch, Parmigiano.</p><span class="mi-alg">A, G, 2, 3, 7</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Amore al Formaggio</span><span class="mi-dots"></span><span class="mi-price">14 €</span></div><p class="mi-desc"><em>Für alle, die Käse lieben.</em> Sauerrahm, Mozzarella, Gorgonzola, Ziegenkäse, Parmigiano, Preiselbeer-Bussi.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Oliver Onion</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>In Erinnerung an Bud Spencer, die haut richtig rein.</em> Sauerrahm, Mozzarella, französischer Weichkäse, viele rote Zwiebelchen.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Lilly</span><span class="mi-dots"></span><span class="mi-price">14 €</span></div><p class="mi-desc"><em>Eine süße Verführung.</em> Sauerrahm, Mozzarella, Prosciutto Cotto, Datteln, ein Hauch Honig, Rucola, Parmigiano.</p><span class="mi-alg">A, G, 2</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Mama-Dog</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Hot Dog war gestern, gebacken statt warmgemacht.</em> Sauerrahm, BBQ-Soße, Käsekrainer, Cheddar, Hot-Dog-Gürkchen, Röstzwiebeln.</p><span class="mi-alg">A, G, M, O, 1, 2</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Classico</span><span class="mi-dots"></span><span class="mi-price">je 12 €</span></div><p class="mi-desc"><em>Immer dabei, immer gut.</em> Nonna's Secret, Mozzarella, Parmigiano, wahlweise mit Salami, Prosciutto Cotto oder Tina Tuna.</p><span class="mi-alg">A, G, D, 2</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Balkan-Taco</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc">Panuozzo, Ajvar, Krautsalat, Sauerrahm, gegrilltes Cevapcici, Zwiebelchen.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Knobi-Heinz</span><span class="mi-dots"></span><span class="mi-price">10 €</span></div><p class="mi-desc"><em>The godfather of garlic.</em> Sauerrahm, Mozzarella, Knoblauch, Knoblauchöl.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Green Table</span><span class="mi-dots"></span><span class="mi-price">12 €</span></div><p class="mi-desc"><em>Unser vegetarischer Evergreen.</em> Sauerrahm, Pesto alla Genovese, Mozzarella, bunter Paprika, rote Zwiebelchen, Parmigiano.</p><span class="mi-alg">A, G</span></div>
       </div>
     </div>
 
     <div class="menu-cat reveal">
       <h3 class="menu-cat-title">Signature-Line</h3>
+      <p class="menu-sub">Unsere eigenen Kreationen mit Charakter.</p>
       <hr class="menu-cat-rule">
       <div class="menu-list">
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Pistaccio</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Neapolitanischer Genuss auf höchstem Niveau.</em> Pistaziencreme, Fior di Latte, Mortadella, Burrata, Pistazien, Zitronenzeste, frisches Basilikum, Parmigiano.</p><span class="mi-alg">A, G, H, 2</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">Tartufo Suprema</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Ein Klassiker für Trüffelliebhaber.</em> Fior di Latte, gebratene Champignons, Rucola, Parmigiano, veredelt mit Trüffelöl.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Duchessa</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Italienische Eleganz mit cremiger Burrata.</em> Nonna's Secret, Fior di Latte, Prosciutto di Parma, Burrata, Parmigiano, Rucola, Crema di Aceto Balsamico.</p><span class="mi-alg">A, G, O</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Scharfe Biene</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Trifft sie euer Geschmackszentrum?</em> Nonna's Secret, Mozzarella, spicy Salami, kandierte Jalapeños, Chili-Honig vom Imker.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">Mama-Dog</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Hot Dog war gestern, gebacken statt warmgemacht.</em> Sauerrahm, BBQ-Soße, Käsekrainer, Cheddar, Hot-Dog-Gürkchen, Röstzwiebeln.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Duchessa</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Italienische Eleganz mit cremiger Burrata.</em> Nonna's Secret, Fior di Latte, Prosciutto di Parma, Burrata, Parmigiano, Rucola, Crema di Aceto Balsamico.</p><span class="mi-alg">A, G</span></div>
       </div>
     </div>
 
@@ -573,9 +641,9 @@
       <summary>Allergene &amp; Zusatzstoffe<span class="plus"></span></summary>
       <div class="a">
         <p class="lt">Allergene</p>
-        <div class="cols">A = Glutenhaltiges Getreide (Weizen), B = Krebstiere, C = Eier, D = Fisch, E = Erdnüsse, F = Soja, G = Milch (inkl. Laktose), H = Schalenfrüchte, L = Sellerie, M = Senf, N = Sesam, O = Schwefeldioxid / Sulfite, P = Lupinen, R = Weichtiere.</div>
+        <div class="cols">A = Glutenhaltiges Getreide (Weizen), B = Krebstiere, C = Eier, D = Fisch, E = Erdnüsse, F = Soja, G = Milch (einschließlich Laktose), H = Schalenfrüchte, L = Sellerie, M = Senf, N = Sesam, O = Schwefeldioxid / Sulfite, P = Lupinen, R = Weichtiere.</div>
         <p class="lt">Zusatzstoffe</p>
-        <div class="cols">1 = mit Farbstoff, 2 = mit Konservierungsstoff, 3 = mit Antioxidationsmittel, 4 = mit Geschmacksverstärker, 5 = geschwefelt, 6 = geschwärzt, 7 = mit Phosphat, 8 = mit Milcheiweiß, 9 = koffeinhaltig, 10 = chininhaltig, 11 = mit Süßungsmittel, 12 = enthält eine Phenylalaninquelle, 13 = gewachst, 14 = taurinhaltig.</div>
+        <div class="cols">1 = mit Farbstoff, 2 = mit Konservierungsstoff, 3 = mit Antioxidationsmittel, 6 = mit Phosphat.</div>
         <p style="margin-top:14px">Trotz sorgfältiger Herstellung können Spuren anderer Stoffe enthalten sein. Bitte sprecht uns bei Allergien oder Unverträglichkeiten an.</p>
       </div>
     </details>
@@ -683,6 +751,7 @@
     </div>
     <div class="faq reveal">
       <details open><summary>Was kostet Pizza Catering pro Person?<span class="ico"></span></summary><div class="a"><p>Bei der Panini Manufaktur startet das Pizza Catering ab 20,11 Euro pro Person (Paket „Jeder eine Pizza") bzw. ab 23,03 Euro pro Person beim All-you-can-eat-Paket „Signature-Event". Alle Preise netto, zzgl. 7 % MwSt.</p></div></details>
+      <details><summary>Gibt es beim Catering nur die Pizzen von der Speisekarte?<span class="ico"></span></summary><div class="a"><p>Nein. Die Speisekarte zeigt unsere zehn Streetfood-Pizzen. Fürs Catering haben wir über 50 Pizzakreationen und stellen euer Pizzabuffet individuell nach Anlass, Gästezahl und euren Wünschen zusammen.</p></div></details>
       <details><summary>Ab wie vielen Personen bucht man euch?<span class="ico"></span></summary><div class="a"><p>Ab 30 Personen, nach oben flexibel skalierbar.</p></div></details>
       <details><summary>In welchem Umkreis seid ihr im Einsatz?<span class="ico"></span></summary><div class="a"><p>In der Region Miltenberg, im Untermain und in Churfranken, ab Bürgstadt. Anfahrt bis 25 km ist inklusive.</p></div></details>
       <details><summary>Was ist im Preis inklusive?<span class="ico"></span></summary><div class="a"><p>Foodtrailer vor Ort, vegetarische Optionen, Aufbau, Abbau, Reinigung sowie 2 bis 3 Stunden Servicezeit.</p></div></details>
@@ -814,11 +883,11 @@
 
 <!-- JSON-LD: FoodEstablishment -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FoodEstablishment","@id":"https://www.paninimanufaktur.de/#business","name":"Panini Manufaktur","description":"Mobiles Pizza Catering und Streetfood aus Bürgstadt: neapolitanische Steinofen-Pizza und Panuozzo, live aus dem Foodtrailer, für Hochzeiten, Geburtstage und Firmenfeiern ab 30 Personen.","image":"https://www.paninimanufaktur.de/bilder/pizza-catering-buergstadt-steinofen-pizza.jpg","servesCuisine":["Italienisch","Neapolitanische Pizza","Streetfood"],"priceRange":"€€","telephone":"+4915170855203","email":"paninimanufaktur@gmail.com","founder":"Michael Bundschuh","address":{"@type":"PostalAddress","streetAddress":"Stormstraße 2","postalCode":"63927","addressLocality":"Bürgstadt","addressRegion":"Bayern","addressCountry":"DE"},"areaServed":["Bürgstadt","Miltenberg","Klingenberg","Amorbach","Großwallstadt","Untermain","Churfranken"],"sameAs":["https://www.instagram.com/panini.manufaktur/"],"makesOffer":[{"@type":"Offer","name":"Pizza Catering Paket Jeder eine Pizza","price":"20.11","priceCurrency":"EUR","description":"Bis zu 4 Signature-Pizzen pro Person, netto zzgl. MwSt., ab 30 Personen."},{"@type":"Offer","name":"Pizza Catering Paket Signature-Event (All you can eat)","price":"23.03","priceCurrency":"EUR","description":"Bis zu 6 Signature-Pizzen mit Nachschub pro Person, netto zzgl. MwSt., ab 30 Personen."}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"20","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Roland H."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Herausragendes Catering bei unserer Geburtstagsfeier. Pizza so lecker wie in bella Italia, super Service und ein Food-Trailer, der auch optisch etwas hermacht. Auf jeden Wunsch wird individuell eingegangen, der Preis ist ehrlich und fair."},{"@type":"Review","author":{"@type":"Person","name":"Adrian Popescu"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Die neapolitanischen Pizzen sind unglaublich lecker. Die Zutaten und der Teig sind sehr frisch und hochwertig, diese zählen zu den besten!"},{"@type":"Review","author":{"@type":"Person","name":"Judith König"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Frische und regionale Produkte, kreative Kombinationen und mit viel Liebe angerichtet und belegt, vom Chef persönlich."}]}
+{"@context":"https://schema.org","@type":"FoodEstablishment","@id":"https://www.paninimanufaktur.de/#business","name":"Panini Manufaktur","description":"Mobiles Pizza Catering und Streetfood aus Bürgstadt: neapolitanische Steinofen-Pizza und Panuozzo, live aus dem Foodtrailer, für Hochzeiten, Geburtstage und Firmenfeiern ab 30 Personen. Individuelles Pizzabuffet mit über 50 Pizzakreationen.","image":"https://www.paninimanufaktur.de/bilder/pizza-catering-buergstadt-steinofen-pizza.jpg","servesCuisine":["Italienisch","Neapolitanische Pizza","Streetfood"],"priceRange":"€€","telephone":"+4915170855203","email":"paninimanufaktur@gmail.com","founder":"Michael Bundschuh","address":{"@type":"PostalAddress","streetAddress":"Stormstraße 2","postalCode":"63927","addressLocality":"Bürgstadt","addressRegion":"Bayern","addressCountry":"DE"},"areaServed":["Bürgstadt","Miltenberg","Klingenberg","Amorbach","Großwallstadt","Untermain","Churfranken"],"sameAs":["https://www.instagram.com/panini.manufaktur/"],"makesOffer":[{"@type":"Offer","name":"Pizza Catering Paket Jeder eine Pizza","price":"20.11","priceCurrency":"EUR","description":"Bis zu 4 Signature-Pizzen pro Person, netto zzgl. MwSt., ab 30 Personen."},{"@type":"Offer","name":"Pizza Catering Paket Signature-Event (All you can eat)","price":"23.03","priceCurrency":"EUR","description":"Bis zu 6 Signature-Pizzen mit Nachschub pro Person, netto zzgl. MwSt., ab 30 Personen."}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"20","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Roland H."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Herausragendes Catering bei unserer Geburtstagsfeier. Pizza so lecker wie in bella Italia, super Service und ein Food-Trailer, der auch optisch etwas hermacht. Auf jeden Wunsch wird individuell eingegangen, der Preis ist ehrlich und fair."},{"@type":"Review","author":{"@type":"Person","name":"Adrian Popescu"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Die neapolitanischen Pizzen sind unglaublich lecker. Die Zutaten und der Teig sind sehr frisch und hochwertig, diese zählen zu den besten!"},{"@type":"Review","author":{"@type":"Person","name":"Judith König"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Frische und regionale Produkte, kreative Kombinationen und mit viel Liebe angerichtet und belegt, vom Chef persönlich."}]}
 </script>
 <!-- JSON-LD: FAQPage -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet Pizza Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Bei der Panini Manufaktur startet das Pizza Catering ab 20,11 Euro pro Person (Paket Jeder eine Pizza) bzw. ab 23,03 Euro pro Person beim All-you-can-eat-Paket Signature-Event. Alle Preise netto, zzgl. 7 % MwSt."}},{"@type":"Question","name":"Ab wie vielen Personen bucht man euch?","acceptedAnswer":{"@type":"Answer","text":"Ab 30 Personen, nach oben flexibel skalierbar."}},{"@type":"Question","name":"In welchem Umkreis seid ihr im Einsatz?","acceptedAnswer":{"@type":"Answer","text":"In der Region Miltenberg, im Untermain und in Churfranken, ab Bürgstadt. Anfahrt bis 25 km ist inklusive."}},{"@type":"Question","name":"Was ist im Preis inklusive?","acceptedAnswer":{"@type":"Answer","text":"Foodtrailer vor Ort, vegetarische Optionen, Aufbau, Abbau, Reinigung sowie 2 bis 3 Stunden Servicezeit."}},{"@type":"Question","name":"Gibt es vegetarische Optionen?","acceptedAnswer":{"@type":"Answer","text":"Ja, vegetarische Pizzen sind immer inklusive. Dazu gibt es vegetarische Panuozzo wie den Bella-Italia."}},{"@type":"Question","name":"Werden bei uns alle satt?","acceptedAnswer":{"@type":"Answer","text":"Ja. Beim Paket Signature-Event backen wir durchgehend nach, bis alle satt sind. Wir kalkulieren die Menge passend zu eurer Gästezahl."}},{"@type":"Question","name":"Wie läuft die Buchung ab?","acceptedAnswer":{"@type":"Answer","text":"Ihr fragt mit Wunschtermin und Wunschpaket an, wir schicken euch ein Angebot, ihr bestätigt. Am Eventtag kommen wir, backen live und bauen wieder ab."}},{"@type":"Question","name":"Wie schnell bekomme ich eine Antwort?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 24 Stunden auf eure unverbindliche Anfrage."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Pizza und Panuozzo?","acceptedAnswer":{"@type":"Answer","text":"Panuozzo ist ein aufgeschnittenes, gefülltes Pizzabrot aus demselben 48 Stunden gereiften Teig, in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken."}},{"@type":"Question","name":"Für welche Anlässe eignet sich das Catering?","acceptedAnswer":{"@type":"Answer","text":"Für Hochzeiten, runde Geburtstage, Jubiläen, Gartenpartys und Firmenfeiern."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet Pizza Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Bei der Panini Manufaktur startet das Pizza Catering ab 20,11 Euro pro Person (Paket Jeder eine Pizza) bzw. ab 23,03 Euro pro Person beim All-you-can-eat-Paket Signature-Event. Alle Preise netto, zzgl. 7 % MwSt."}},{"@type":"Question","name":"Gibt es beim Catering nur die Pizzen von der Speisekarte?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Speisekarte zeigt unsere zehn Streetfood-Pizzen. Fürs Catering haben wir über 50 Pizzakreationen und stellen euer Pizzabuffet individuell nach Anlass, Gästezahl und euren Wünschen zusammen."}},{"@type":"Question","name":"Ab wie vielen Personen bucht man euch?","acceptedAnswer":{"@type":"Answer","text":"Ab 30 Personen, nach oben flexibel skalierbar."}},{"@type":"Question","name":"In welchem Umkreis seid ihr im Einsatz?","acceptedAnswer":{"@type":"Answer","text":"In der Region Miltenberg, im Untermain und in Churfranken, ab Bürgstadt. Anfahrt bis 25 km ist inklusive."}},{"@type":"Question","name":"Was ist im Preis inklusive?","acceptedAnswer":{"@type":"Answer","text":"Foodtrailer vor Ort, vegetarische Optionen, Aufbau, Abbau, Reinigung sowie 2 bis 3 Stunden Servicezeit."}},{"@type":"Question","name":"Gibt es vegetarische Optionen?","acceptedAnswer":{"@type":"Answer","text":"Ja, vegetarische Pizzen sind immer inklusive. Dazu gibt es vegetarische Panuozzo wie den Bella-Italia."}},{"@type":"Question","name":"Werden bei uns alle satt?","acceptedAnswer":{"@type":"Answer","text":"Ja. Beim Paket Signature-Event backen wir durchgehend nach, bis alle satt sind. Wir kalkulieren die Menge passend zu eurer Gästezahl."}},{"@type":"Question","name":"Wie läuft die Buchung ab?","acceptedAnswer":{"@type":"Answer","text":"Ihr fragt mit Wunschtermin und Wunschpaket an, wir schicken euch ein Angebot, ihr bestätigt. Am Eventtag kommen wir, backen live und bauen wieder ab."}},{"@type":"Question","name":"Wie schnell bekomme ich eine Antwort?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 24 Stunden auf eure unverbindliche Anfrage."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Pizza und Panuozzo?","acceptedAnswer":{"@type":"Answer","text":"Panuozzo ist ein aufgeschnittenes, gefülltes Pizzabrot aus demselben 48 Stunden gereiften Teig, in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken."}},{"@type":"Question","name":"Für welche Anlässe eignet sich das Catering?","acceptedAnswer":{"@type":"Answer","text":"Für Hochzeiten, runde Geburtstage, Jubiläen, Gartenpartys und Firmenfeiern."}}]}
 </script>
 
 <script>
@@ -845,6 +914,11 @@
       if(p){var s=document.getElementById('paket'); for(var i=0;i<s.options.length;i++){if(s.options[i].text===p)s.selectedIndex=i;}}
       if(an){var t=document.getElementById('anlass'); for(var j=0;j<t.options.length;j++){if(t.options[j].text===an)t.selectedIndex=j;}}
     });
+  });
+
+  // Nachricht vorbelegen (z. B. Pizzabuffet-CTA)
+  document.querySelectorAll('a[data-msg]').forEach(function(a){
+    a.addEventListener('click',function(){ var t=document.getElementById('nachricht'); if(t && !t.value.trim()) t.value=a.getAttribute('data-msg'); });
   });
 
   // Formular-Versand über Web3Forms
