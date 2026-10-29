@@ -111,52 +111,58 @@ nav.main a:hover{color:var(--schwarz);border-color:var(--schwarz)}
 @media(max-width:1000px){nav.main{display:none}}
 @media(max-width:640px){.top-cta .btn-1{display:none}.top img{width:150px}}
 
-/* Hero ueber die volle Breite. Drei hohe Bildspalten als Flaeche, darueber ein
-   Verlauf, der von links stark abdunkelt, damit die Schrift sicher lesbar bleibt
-   und rechts trotzdem Bild sichtbar ist. Keine Bewegung, kein Slider. */
-.hero{position:relative;padding:0;min-height:clamp(560px,82vh,840px);display:flex;align-items:center;
-  overflow:hidden;background:var(--schwarz)}
-.hero-bild{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;z-index:0}
-.hero-bild figure{margin:0;overflow:hidden;background:var(--anthrazit)}
-.hero-bild img{width:100%;height:100%;object-fit:cover;display:block}
-/* Zwei Verlaeufe: einer von links fuer die Schrift, einer von unten fuer Tiefe */
-.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
-  linear-gradient(100deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.90) 24%, rgba(17,17,17,.56) 46%, rgba(17,17,17,.22) 68%, rgba(17,17,17,.14) 100%)}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
-  linear-gradient(to top, rgba(17,17,17,.78) 0%, rgba(17,17,17,.12) 38%, rgba(17,17,17,0) 62%)}
-.hero-in{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;
-  padding:var(--s9) var(--s5)}
-.hero-text{max-width:min(100%,640px)}
+/* Hero: harte Kante statt Verlauf. Links eine schwarze Flaeche fuer die Schrift,
+   rechts vier Projekte. Die Trennung ist eine Fuge, und eine zweite Fuge quert die
+   schwarze Flaeche. Wo beide sich treffen, entsteht das Fugenkreuz in Hero-Groesse.
+   Die Schrift liegt dadurch nie ueber einem Bild und braucht keinen Weichzeichner. */
+.hero{position:relative;padding:0;min-height:clamp(600px,88vh,900px);display:flex;align-items:stretch;
+  overflow:hidden;background:var(--schwarz);color:#fff}
+.hero-flaeche{position:absolute;inset:0 41% 0 0;z-index:1;background:var(--schwarz)}
+.hero-flaeche::after{content:"";position:absolute;right:0;top:0;bottom:0;width:1px;
+  background:rgba(201,201,199,.38)}
+/* querende Fuge, trifft die senkrechte exakt */
+.hero-flaeche::before{content:"";position:absolute;left:0;right:0;top:68%;height:1px;
+  background:rgba(201,201,199,.22)}
+.hero-bild{position:absolute;inset:0 0 0 59%;z-index:0;display:grid;
+  grid-template-columns:1.22fr 1fr;grid-template-rows:repeat(3,1fr);gap:3px}
+.hero-bild figure{margin:0;overflow:hidden;background:var(--anthrazit);position:relative}
+.hero-bild figure:first-child{grid-row:1/4}
+.hero-bild img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 560ms var(--ease)}
+.hero-bild figure:hover img{transform:scale(1.05)}
+.hero-bild figcaption{position:absolute;left:10px;right:10px;bottom:8px;z-index:2;color:#fff;
+  font-size:12px;font-weight:600;text-shadow:0 1px 5px rgba(0,0,0,.8)}
+.hero-bild figure::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(17,17,17,.62) 0%,rgba(17,17,17,.10) 34%,rgba(17,17,17,0) 58%)}
+
+.hero-in{position:relative;z-index:2;width:59%;display:flex;flex-direction:column;
+  justify-content:center;padding:var(--s9) clamp(28px,3.6vw,56px) var(--s9) clamp(28px,5vw,92px)}
+.hero-text{max-width:none}
 .hero .micro{color:var(--grau-invers)}
-.hero h1{font-size:clamp(40px,6.2vw,76px);letter-spacing:-.034em;color:#fff;text-wrap:balance;
-  text-shadow:0 2px 24px rgba(0,0,0,.45)}
-.hero .sub{font-size:clamp(17px,1.45vw,21px);color:#DDDBD7;max-width:48ch;margin:var(--s5) 0 var(--s6);
-  text-shadow:0 1px 12px rgba(0,0,0,.5)}
-.hero .btn-1{background:var(--weiss);color:var(--schwarz);
-  box-shadow:0 2px 8px rgba(0,0,0,.45),0 16px 40px rgba(0,0,0,.4)}
+.hero h1{font-size:clamp(38px,4.3vw,68px);letter-spacing:-.034em;line-height:1.04;color:#fff;
+  margin-top:var(--s4);max-width:14ch}
+.hero .sub{font-size:clamp(17px,1.4vw,21px);color:#C9C7C3;max-width:46ch;margin:var(--s6) 0 var(--s7)}
+.hero .btn-1{background:var(--weiss);color:var(--schwarz);box-shadow:0 2px 8px rgba(0,0,0,.5),0 16px 40px rgba(0,0,0,.45)}
 .hero .btn-1:hover{background:var(--porzellan)}
-.hero .btn-tel{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.hero .btn-tel{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
 .hero .btn-tel:hover{background:#fff;color:var(--schwarz);border-color:#fff}
-.hero .btn-fine{color:#C3C1BD;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-.hero-chips{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s6)}
-.hero .chip{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.26);color:#F2F0ED;
-  box-shadow:none;backdrop-filter:blur(6px)}
+.hero .btn-fine{color:#9B9893}
+.hero-chips{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s7)}
+.hero .chip{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.22);color:#EDEBE8;box-shadow:none}
 .hero .chip::before{background:#fff}
-/* Bildnachweis unten rechts, damit klar ist, was man sieht */
-.hero-quelle{position:absolute;right:var(--s5);bottom:var(--s5);z-index:2;font-size:12px;
-  color:rgba(255,255,255,.72);letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.7)}
-@media(max-width:1100px) and (min-width:901px){
-  /* Zwischen 901 und 1100 px reicht der Text weiter nach rechts als auf dem Desktop,
-     deshalb muss der Verlauf dort laenger dunkel bleiben. */
-  .hero::before{background:linear-gradient(100deg, rgba(17,17,17,.95) 0%, rgba(17,17,17,.92) 32%, rgba(17,17,17,.74) 58%, rgba(17,17,17,.34) 80%, rgba(17,17,17,.20) 100%)}
-}
-@media(max-width:900px){
-  .hero{min-height:clamp(500px,76vh,680px)}
-  .hero-bild{grid-template-columns:repeat(2,1fr)}
+
+@media(max-width:1000px){
+  .hero{min-height:auto;display:block}
+  .hero-flaeche{display:none}
+  .hero-bild{position:relative;inset:auto;height:clamp(240px,34vh,340px);
+    grid-template-columns:repeat(2,1fr);grid-template-rows:1fr}
   .hero-bild figure:nth-child(n+3){display:none}
-  .hero::before{background:linear-gradient(176deg, rgba(17,17,17,.58) 0%, rgba(17,17,17,.80) 34%, rgba(17,17,17,.92) 64%, rgba(17,17,17,.96) 100%)}
-  .hero-in{padding:var(--s8) var(--s5)}
-  .hero-quelle{display:none}
+  .hero-bild figure:first-child{grid-row:auto}
+  .hero-bild figcaption{display:none}
+  .hero-in{width:100%;padding:var(--s8) var(--s5)}
+  .hero h1{font-size:clamp(34px,7.6vw,52px)}
+  .hero .sub{margin:var(--s5) 0 var(--s6)}
+  .hero-chips{margin-top:var(--s6)}
 }
 /* Bild-Treatment */
 figure.shot{position:relative;overflow:hidden;border:1px solid var(--fuge);border-radius:var(--r3);box-shadow:var(--e2);background:var(--anthrazit);margin:0}
@@ -377,15 +383,16 @@ footer li{margin-bottom:6px}
 
 <!-- 1 · HERO -->
 <section class="hero" id="hero">
-  <div class="hero-bild" aria-hidden="true">
-    <figure><img src="bilder/fliesenleger-hannover-hero-voll-treppenhaus.webp" alt="Treppenhaus in Hannover mit großformatigen Fliesen an Wand und Stufen" width="460" height="979" fetchpriority="high"></figure>
-    <figure><img src="bilder/fliesenleger-hannover-hero-voll-travertin.webp" alt="Travertin-Naturstein-Boden im römischen Verband" width="460" height="979" fetchpriority="high"></figure>
-    <figure><img src="bilder/fliesenleger-hannover-hero-voll-aussentreppe.webp" alt="Gefliester Treppenaufgang zum Wintergarten" width="460" height="979" fetchpriority="high"></figure>
-    <figure><img src="bilder/fliesenleger-hannover-hero-voll-holzoptik.webp" alt="Fliesen in Holzoptik im Langformat" width="460" height="979" fetchpriority="high"></figure>
+  <div class="hero-flaeche" aria-hidden="true"></div>
+  <div class="hero-bild">
+    <figure><img src="bilder/fliesenleger-hannover-hero-hoch-treppenhaus.webp" alt="Treppenhaus in Hannover mit großformatigen Fliesen an Wand und Stufen" width="440" height="978" fetchpriority="high"><figcaption>Treppenhaus in Großformat</figcaption></figure>
+    <figure><img src="bilder/fliesenleger-hannover-hero-klein-travertin.webp" alt="Travertin-Naturstein-Boden im römischen Verband" width="400" height="354" fetchpriority="high"><figcaption>Naturstein Travertin</figcaption></figure>
+    <figure><img src="bilder/fliesenleger-hannover-hero-klein-wintergarten.webp" alt="Gefliester Treppenaufgang zum Wintergarten" width="400" height="354" fetchpriority="high"><figcaption>Treppe zum Wintergarten</figcaption></figure>
+    <figure><img src="bilder/fliesenleger-hannover-hero-klein-holzoptik.webp" alt="Fliesen in Holzoptik im Langformat" width="400" height="354" fetchpriority="high"><figcaption>Holzoptik im Wohnraum</figcaption></figure>
   </div>
   <div class="hero-in">
     <div class="hero-text">
-      <p class="micro">Fliesenlegerhandwerk Hannover</p>
+      <p class="micro">Fliesenlegerhandwerk Hannover · seit 35 Jahren</p>
       <h1>Fliesenleger in Hannover, der selbst mit anpackt</h1>
       <p class="sub">35 Jahre Fliesenlegerhandwerk, alles aus einer Hand. Beratung, Aufmaß, Verlegung, Fugen und Silikon. Ein Ansprechpartner von der ersten Idee bis zur letzten Fuge.</p>
       <div class="row">
@@ -401,7 +408,6 @@ footer li{margin-bottom:6px}
       </div>
     </div>
   </div>
-  <p class="hero-quelle">Treppenhaus · Travertin · Wintergarten · Holzoptik, eigene Arbeiten</p>
 </section>
 
 <!-- 2 · VERTRAUENSBAND -->
