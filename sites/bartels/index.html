@@ -112,17 +112,15 @@ nav.main a:hover{color:var(--schwarz);border-color:var(--schwarz)}
 @media(max-width:640px){.top-cta .btn-1{display:none}.top img{width:150px}}
 
 /* Hero: harte Kante statt Verlauf. Links eine schwarze Flaeche fuer die Schrift,
-   rechts vier Projekte. Die Trennung ist eine Fuge, und eine zweite Fuge quert die
-   schwarze Flaeche. Wo beide sich treffen, entsteht das Fugenkreuz in Hero-Groesse.
-   Die Schrift liegt dadurch nie ueber einem Bild und braucht keinen Weichzeichner. */
+   rechts vier Projekte, dazwischen eine Fuge als Trennung. Die Schrift liegt dadurch
+   nie ueber einem Bild und braucht keinen Weichzeichner.
+   Eine zweite, querende Linie stand hier mal als Fugenkreuz-Motiv. Sie las sich als
+   Darstellungsfehler und ist wieder raus. */
 .hero{position:relative;padding:0;min-height:clamp(600px,88vh,900px);display:flex;align-items:stretch;
   overflow:hidden;background:var(--schwarz);color:#fff}
 .hero-flaeche{position:absolute;inset:0 41% 0 0;z-index:1;background:var(--schwarz)}
 .hero-flaeche::after{content:"";position:absolute;right:0;top:0;bottom:0;width:1px;
   background:rgba(201,201,199,.38)}
-/* querende Fuge, trifft die senkrechte exakt */
-.hero-flaeche::before{content:"";position:absolute;left:0;right:0;top:68%;height:1px;
-  background:rgba(201,201,199,.22)}
 .hero-bild{position:absolute;inset:0 0 0 59%;z-index:0;display:grid;
   grid-template-columns:1.22fr 1fr;grid-template-rows:repeat(3,1fr);gap:3px}
 .hero-bild figure{margin:0;overflow:hidden;background:var(--anthrazit);position:relative}
