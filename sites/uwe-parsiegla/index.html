@@ -111,7 +111,7 @@ main{position:relative}
 .hero-nav a:hover{background:rgba(255,255,255,.16)}
 .hero-nav a.aktiv{background:#fff;color:var(--tanne-900);font-weight:600}
 .nav-cta{display:none;margin-left:auto;padding:11px 20px;font-size:15px;flex:none}
-.burger{display:none;width:46px;height:46px;border-radius:var(--pill);cursor:pointer;
+.burger{display:none;flex:none;width:46px;height:46px;border-radius:var(--pill);cursor:pointer;
   background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);backdrop-filter:blur(12px);
   align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
 .burger i{display:block;width:18px;height:1.6px;background:#fff;border-radius:2px;
@@ -303,7 +303,8 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 .schluss-kopf{text-align:center;padding:var(--s24) 0 var(--s16)}
 .schluss-kopf h2{font-size:clamp(26px,3.6vw,48px);color:#fff;line-height:1.12;max-width:20ch;margin:0 auto;font-weight:400}
 .schluss-kopf h2 .zwei{color:rgba(255,255,255,.6)}
-.schluss-kopf .btnrow{display:flex;gap:12px;justify-content:center;margin-top:var(--s8);flex-wrap:wrap}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap}
+.schluss-kopf .btnrow{justify-content:center;margin-top:var(--s8)}
 .fussz{display:grid;grid-template-columns:1.15fr 1fr 1fr 1.25fr;gap:0;border-top:1px solid rgba(255,255,255,.16)}
 .fussz > div{padding:var(--s8) 26px var(--s12);border-left:1px solid rgba(255,255,255,.16);font-size:13.5px;color:rgba(255,255,255,.74)}
 
@@ -318,7 +319,26 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 .klein-fuss{border-top:1px solid rgba(255,255,255,.16);padding:18px 0;font-size:11.5px;color:rgba(255,255,255,.5);display:grid;gap:6px}
 
 
+/* Ab hier kein Platz mehr fuer die waagerechte Navigation, der Rest des
+   Layouts bleibt aber noch mehrspaltig. */
 @media (max-width:1040px){
+  .merkmale{grid-template-columns:1fr 1fr}
+  .merkmale::before{width:calc(50% - var(--s8))}
+  .fussz{grid-template-columns:1fr 1fr}
+  .fussz > div:nth-child(3){border-left:0}
+  .hero-nav{display:none}
+  .nav-cta{display:inline-flex}
+  .burger{display:flex}
+  .mobilnav:not([hidden]){display:grid}
+}
+
+/* Zwei Tabellen nebeneinander brauchen je rund 500px, sonst untereinander. */
+@media (max-width:1100px){
+  .tab-duo{grid-template-columns:1fr}
+}
+
+/* Ab hier wird einspaltig gesetzt und mittig ausgerichtet. */
+@media (max-width:960px){
   .saeulen{grid-template-columns:1fr}
   .saeulen > div:nth-child(2),.saeulen > div:nth-child(3){padding-top:0}
   .panel-karten{grid-template-columns:1fr}
@@ -329,19 +349,10 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   .warum-grid{grid-template-columns:1fr;gap:var(--s8)}
   .warum-bild img{min-height:0;aspect-ratio:16/10}
   .warum-unten{padding-top:var(--s8)}
-  .merkmale{grid-template-columns:1fr 1fr}
-  .merkmale::before{width:calc(50% - var(--s8))}
   .zitat-grid{grid-template-columns:1fr;gap:var(--s8)}
   .anfrage-grid{grid-template-columns:1fr}
-  .fussz{grid-template-columns:1fr 1fr}
-  .fussz > div:nth-child(3){border-left:0}
-  .hero-nav{display:none}
-  .nav-cta{display:inline-flex}
-  .burger{display:flex}
-  .mobilnav:not([hidden]){display:grid}
-  .tab-duo{grid-template-columns:1fr}
 
-  /* ---------- Mobil: Texte und Layouts mittig ---------- */
+  /* ---------- Texte und Layouts mittig ---------- */
   .hero-body,.hero-foot,.hero-leiste,.panel-kopf,.panel-karten article,
   .schluss-kopf,.fussz > div,.klein-fuss,
   main section,main .wrap,.aussage,.saeulen > div,.schritte article,
@@ -386,10 +397,10 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   .tab,.tab th,.tab td{text-align:left}
   /* Tabellen sollen auf dem Telefon umbrechen statt seitlich zu scrollen */
   .tab table{min-width:0;font-size:13px;table-layout:fixed}
-  .tab th,.tab td{padding:10px 11px;overflow-wrap:anywhere;hyphens:auto}
-  .tab3 th:nth-child(1){width:36%}
-  .tab3 th:nth-child(2){width:19%}
-  .tab3 th:nth-child(3){width:45%}
+  .tab th,.tab td{padding:10px 11px;overflow-wrap:break-word;hyphens:auto}
+  .tab3 th:nth-child(1){width:34%}
+  .tab3 th:nth-child(2){width:22%}
+  .tab3 th:nth-child(3){width:44%}
   .feld input,.feld select,.feld textarea{text-align:left}
   .feld > label,.feld legend,.feld .hint{text-align:center}
   .check{text-align:left;justify-content:center;max-width:34ch;margin-left:auto;margin-right:auto}
@@ -439,6 +450,72 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   .hero-top .mark span{display:none}
   .nav-cta{padding:11px 17px}
 }
+/* ---- Firmenzeile im Kopf braucht Platz, darunter weicht sie in den Fuss aus ---- */
+@media (max-width:559px){
+  .hero-top .mark span b{display:none}
+}
+
+/* ---- sehr schmale Telefone: Knoepfe stapeln, Tabellen enger setzen ---- */
+@media (max-width:430px){
+  .hero-cta,.schluss-kopf .btnrow,.zitat-grid .btnrow{flex-direction:column;align-items:stretch}
+  .hero-cta .btn,.schluss-kopf .btnrow .btn,.zitat-grid .btnrow .btn{width:100%}
+  .mobilnav-cta .btn{padding:13px 14px;font-size:14.5px}
+  .tab th,.tab td{padding:9px 7px;font-size:12.5px}
+  .tab3 th:nth-child(1){width:33%}
+  .tab3 th:nth-child(2){width:25%}
+  .tab3 th:nth-child(3){width:42%}
+  .wahl span{font-size:14px;padding:10px 13px}
+  .beleg-karte .zahl{font-size:26px}
+}
+
+/* ---- breite Bildschirme: der Inhalt waechst mit, statt in der Mitte zu kleben.
+       Alle Werte sind am Umbruch 1440px stetig, es springt also nichts. ---- */
+@media (min-width:1441px){
+  :root{
+    --maxw:min(86vw,1700px);
+    --pad:min(56px,calc(3.26vw - 18.9px));
+    --s20:clamp(80px,5.6vw,108px);
+    --s24:clamp(96px,6.7vw,130px);
+    --s32:clamp(128px,8.9vw,172px);
+  }
+  .hero-in{min-height:min(88vh,980px)}
+  .hero-body h1{font-size:min(70px,calc(12.9px + 2.86vw))}
+  .gross{font-size:min(56px,calc(6px + 2.5vw))}
+  .mittel{font-size:min(38px,calc(5.9px + 1.61vw))}
+  .aussage p.gross{font-size:min(45px,calc(5.7px + 1.96vw))}
+  .zitat{font-size:min(44px,calc(4.7px + 1.96vw))}
+  .schluss-kopf h2{font-size:min(64px,calc(6.9px + 2.86vw))}
+  .balken .zahl{font-size:min(70px,calc(12.9px + 2.86vw))}
+  /* Balkenhoehen mitwachsen lassen, Staffelung bleibt */
+  .balken .h1{--bh:min(252px,calc(0.0214 * 100vw + 179px))}
+  .balken .h2{--bh:min(180px,calc(0.0154 * 100vw + 128px))}
+  .balken .h3{--bh:min(300px,calc(0.0254 * 100vw + 213px))}
+  .balken .h4{--bh:min(144px,calc(0.0123 * 100vw + 102px))}
+  .hero-top .mark img{height:min(58px,calc(13.8px + 2.1vw))}
+  .hero-top .mark span{font-size:min(24px,calc(6.1px + 0.9vw))}
+  .hero-top .mark span b{font-size:min(13px,calc(4.5px + 0.42vw))}
+  .fussz img.mark{height:min(82px,calc(25.6px + 2.81vw))}
+  .beleg-karte{max-width:min(470px,calc(166px + 16.2vw))}
+  /* Fliesstext waechst um bis zu 15 Prozent mit, sonst wirkt er im breiten
+     Satzspiegel zu klein. Basis 1440px, Endwert ab rund 2000px. */
+  body,.hero-body .sub{font-size:min(19px,calc(10.1px + .442vw))}
+  .feld input,.feld select,.feld textarea,.wahl span,.btn{font-size:min(17.8px,calc(9.5px + .415vw))}
+  .zusagen li{font-size:min(16.7px,calc(8.9px + .388vw))}
+  .tab table{font-size:min(16.1px,calc(8.6px + .375vw))}
+  .panel-karten h3,.schritte h3{font-size:min(23px,calc(12.3px + .536vw))}
+  .mini,.saeulen p,.schritte p,.panel-karten p,.fussz > div,.fussz strong,
+  .feld > label{font-size:min(15.5px,calc(8.3px + .362vw))}
+  .hero-body .mikro,.zitat-rolle,.check,.fussz .firma{font-size:min(15px,calc(8px + .348vw))}
+  .merkmale p,.balken .box p,.feld .hint{font-size:min(14.4px,calc(7.7px + .335vw))}
+  .panel-karten .kopfnum,.balken-fuss{font-size:min(13.8px,calc(7.4px + .322vw))}
+  .klein-fuss{font-size:min(13.2px,calc(7.1px + .308vw))}
+  .brow{font-size:min(12.1px,calc(6.4px + .282vw))}
+  /* Zeilenlaengen bleiben lesbar, die Spalten duerfen aber etwas breiter werden */
+  .schritte p{max-width:36ch}
+  .panel-karten article p{max-width:34ch}
+  .hero-body .sub{max-width:48ch}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
