@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wärmepumpe und Photovoltaik: mehrere Angebote, geprüft von einem Elektromeister | Uwe Parsiegla</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Uwe Parsiegla, Elektromeister und unabhängiger Energiemakler. Mehrere Angebote für Wärmepumpe und Photovoltaik, fachlich geprüft, mit ausgerechneter Förderung. Herstellerunabhängig, deutschlandweit.">
+<meta name="description" content="Uwe Parsiegla, UP Haus- und Gewerbetechnik: Elektromeister und unabhängiger Energiemakler. Mehrere Angebote für Wärmepumpe und Photovoltaik, fachlich geprüft, mit ausgerechneter Förderung. Herstellerunabhängig, für Privat und Gewerbe, deutschlandweit.">
 <link rel="icon" href="bilder/logo-uwe-parsiegla-bildmarke.svg" type="image/svg+xml">
 <!-- TODO vor Livegang: Schriften selbst hosten (woff2 lokal, preload). -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +16,10 @@
   --papier:#F8F5F0; --karte:#FFFDFA; --sand:#EFE9DF; --linie:#E2DCD0; --linie-stark:#CFC7B7;
   /* Gruen, aus dem P im Logo */
   --tanne-900:#10231A; --tanne-800:#17342A; --tanne-700:#23543F; --tanne-600:#2E6B50;
-  /* Rot, aus dem U im Logo */
-  --kupfer-700:#7E2A16; --kupfer-600:#9E3620; --kupfer-500:#B84428; --kupfer-400:#D3684A;
-  --kupfer-300:#E07B52; --kupfer-200:#EFA98D; --kupfer-100:#F8E4DC;
+  /* Orange, aus dem U im Logo. Helligkeit je Stufe wie zuvor, damit alle
+     geprueften Kontrastwerte erhalten bleiben. */
+  --orange-700:#743600; --orange-600:#904600; --orange-500:#A95600; --orange-400:#CD7016;
+  --orange-300:#DA8230; --orange-200:#E9AE7C; --orange-100:#F6E5D8;
   --grau-600:#6A6356; --grau-500:#8E8778; --hell:#CFC9BC;
   --s2:8px;--s3:12px;--s4:16px;--s6:24px;--s8:32px;--s12:48px;--s16:64px;--s20:80px;--s24:96px;--s32:128px;
   --r:16px; --r-s:10px; --pill:999px;
@@ -38,16 +39,16 @@ body::before{content:"";position:fixed;inset:0;background-image:var(--grain);opa
 h1,h2,h3,h4{font-family:var(--disp);letter-spacing:-.022em;line-height:1.1;margin:0;font-weight:400}
 p{margin:0 0 var(--s4)}
 img{max-width:100%;display:block}
-a{color:var(--kupfer-600)}
-:focus-visible{outline:2px solid var(--kupfer-500);outline-offset:3px;border-radius:4px}
+a{color:var(--orange-600)}
+:focus-visible{outline:2px solid var(--orange-500);outline-offset:3px;border-radius:4px}
 [id]{scroll-margin-top:100px}
 .skip{position:absolute;left:-9999px;background:var(--tanne-900);color:#fff;padding:12px 20px;z-index:400}
 .skip:focus{left:0;top:0}
 
 /* Platzhalter */
-.ph{border-bottom:1px dotted var(--kupfer-500);background:rgba(224,123,82,.20);padding:0 2px;border-radius:2px;
+.ph{border-bottom:1px dotted var(--orange-500);background:rgba(218,130,48,.20);padding:0 2px;border-radius:2px;
   -webkit-box-decoration-break:clone;box-decoration-break:clone}
-.auf-bild .ph,.dunkel .ph{background:rgba(224,123,82,.26);border-bottom-color:var(--kupfer-300);color:#fff}
+.auf-bild .ph,.dunkel .ph{background:rgba(218,130,48,.26);border-bottom-color:var(--orange-300);color:#fff}
 
 /* Raster */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
@@ -72,19 +73,17 @@ main{position:relative}
 .btn:hover{transform:translateY(-1px)}
 .btn:active{transform:translateY(0) scale(.985)}
 .btn-w{background:#fff;color:var(--tanne-900)}
-.btn-w:hover{background:var(--kupfer-100)}
+.btn-w:hover{background:var(--orange-100)}
 .btn-glas{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.34);backdrop-filter:blur(8px)}
 .btn-glas:hover{background:rgba(255,255,255,.24)}
-.btn-dunkel{background:var(--tanne-800);color:var(--papier)}
-.btn-dunkel:hover{background:var(--tanne-700)}
-.btn-kupfer{background:var(--kupfer-600);color:#fff}
-.btn-kupfer:hover{background:var(--kupfer-700)}
+.btn-orange{background:var(--orange-600);color:#fff}
+.btn-orange:hover{background:var(--orange-700)}
 .btn-linie{background:transparent;color:var(--tanne-800);border-color:var(--linie-stark)}
 .btn-linie:hover{background:var(--tanne-800);color:var(--papier);border-color:var(--tanne-800)}
 
-.badge{display:inline-flex;align-items:center;gap:6px;background:var(--kupfer-300);color:#2A0C05;font-size:9.5px;font-weight:700;
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--orange-300);color:#270F00;font-size:9.5px;font-weight:700;
   letter-spacing:.13em;text-transform:uppercase;padding:4px 9px;border-radius:4px}
-.badge::before{content:"";width:5px;height:5px;background:#2A0C05;border-radius:1px}
+.badge::before{content:"";width:5px;height:5px;background:#270F00;border-radius:1px}
 
 /* ---------- HERO ---------- */
 .hero{padding:0}
@@ -103,7 +102,8 @@ main{position:relative}
 .hero-top > .hin:first-child{display:flex;align-items:center;gap:var(--s6)}
 .hero-top .mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}
 .hero-top .mark img{height:44px;width:auto}
-.hero-top .mark span{font-family:var(--disp);font-size:19px;font-weight:500;letter-spacing:.02em;white-space:nowrap}
+.hero-top .mark span{display:flex;flex-direction:column;gap:2px;font-family:var(--disp);font-size:19px;font-weight:500;letter-spacing:.02em;white-space:nowrap;line-height:1.1}
+.hero-top .mark span b{font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.74)}
 .hero-nav{margin-left:auto;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
   backdrop-filter:blur(12px);border-radius:var(--pill);padding:5px}
 .hero-nav a{color:rgba(255,255,255,.9);text-decoration:none;font-size:14.5px;padding:9px 16px;border-radius:var(--pill);
@@ -163,7 +163,7 @@ main{position:relative}
 .laufband{background:var(--sand);border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);overflow:hidden;padding:18px 0;position:relative;z-index:2}
 .laufband .spur{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:lauf 44s linear infinite}
 .laufband span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grau-500);display:flex;align-items:center;gap:44px}
-.laufband span::after{content:"";width:4px;height:4px;background:var(--kupfer-400);border-radius:50%}
+.laufband span::after{content:"";width:4px;height:4px;background:var(--orange-400);border-radius:50%}
 @keyframes lauf{to{transform:translateX(-50%)}}
 
 /* ---------- Dunkles Panel ---------- */
@@ -183,7 +183,7 @@ main{position:relative}
   padding:var(--s8) 28px var(--s12)}
 .panel-karten h3{font-size:20px;color:#fff;margin-bottom:10px;font-weight:400}
 .panel-karten p{font-size:13.5px;color:rgba(255,255,255,.74);line-height:1.55;margin:0}
-.panel-karten .kopfnum{font-family:var(--disp);font-size:12px;letter-spacing:.14em;color:var(--kupfer-300);margin-bottom:var(--s6);display:block}
+.panel-karten .kopfnum{font-family:var(--disp);font-size:12px;letter-spacing:.14em;color:var(--orange-300);margin-bottom:var(--s6);display:block}
 
 /* ---------- Ablauf ---------- */
 .ablauf{padding:var(--s16) 0 var(--s20)}
@@ -195,7 +195,7 @@ main{position:relative}
 .schritte article:nth-child(n+3){border-top:1px solid var(--linie)}
 .nummer{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:var(--sand);
   color:var(--grau-500);font-size:11.5px;font-weight:700;letter-spacing:.04em;margin-bottom:var(--s6)}
-.schritte article:first-child .nummer{background:var(--kupfer-300);color:#2A0C05}
+.schritte article:first-child .nummer{background:var(--orange-300);color:#270F00}
 .schritte h3{font-size:20px;margin-bottom:8px;font-weight:400}
 .schritte p{font-size:13.5px;color:var(--grau-600);margin:0;line-height:1.55;max-width:34ch}
 .schritte .zeit{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grau-500);margin-bottom:8px}
@@ -215,9 +215,9 @@ main{position:relative}
 .js .balken .zahl{opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease) .12s,transform .6s var(--ease) .12s}
 .js .balken.an .zahl{opacity:1;transform:none}
 .balken .zahl{font-variant-numeric:tabular-nums}
-.balken figure.hi .box{background:linear-gradient(180deg,var(--kupfer-300) 0%,rgba(239,169,141,.30) 78%,rgba(255,255,255,.45) 100%);
-  border-top:3px solid var(--kupfer-500)}
-.balken figure.hi .box p{color:#2A0C05}
+.balken figure.hi .box{background:linear-gradient(180deg,var(--orange-300) 0%,rgba(233,174,124,.30) 78%,rgba(255,255,255,.45) 100%);
+  border-top:3px solid var(--orange-500)}
+.balken figure.hi .box p{color:#270F00}
 .balken-fuss{padding:var(--s8) 0 var(--s16);font-size:12px;color:var(--grau-500);max-width:92ch}
 
 /* ---------- Tabellen ---------- */
@@ -267,7 +267,7 @@ main{position:relative}
 form.karte{background:var(--karte);border-radius:var(--r);padding:var(--s12);border:1px solid var(--linie)}
 .progress{display:flex;gap:5px;margin-bottom:12px}
 .progress i{height:3px;flex:1;background:var(--linie);border-radius:2px;transition:background-color var(--dur) var(--ease)}
-.progress i.on{background:var(--kupfer-500)}
+.progress i.on{background:var(--orange-500)}
 .stepno{font-size:12.5px;color:var(--grau-600);margin-bottom:var(--s6)}
 fieldset{border:0;margin:0;padding:0}
 fieldset[hidden]{display:none}
@@ -278,7 +278,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 .feld input,.feld select,.feld textarea{width:100%;font-family:var(--sans);font-size:15.5px;padding:12px 14px;background:var(--papier);
   border:1px solid var(--linie);border-radius:var(--r-s);color:var(--tanne-900);transition:border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
 .feld input:hover,.feld select:hover{border-color:var(--linie-stark)}
-.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--kupfer-500);box-shadow:0 0 0 3px rgba(184,68,40,.18)}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--orange-500);box-shadow:0 0 0 3px rgba(169,86,0,.18)}
 .feld .hint{font-size:12.5px;color:var(--grau-600);margin-top:6px}
 .wahl{display:flex;flex-wrap:wrap;gap:9px}
 .wahl label{position:relative}
@@ -286,8 +286,8 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 .wahl span{display:inline-block;padding:10px 17px;border:1px solid var(--linie);border-radius:var(--pill);background:var(--papier);
   font-size:14.5px;cursor:pointer;transition:transform var(--dur) var(--ease)}
 .wahl span:hover{transform:translateY(-1px)}
-.wahl input:checked + span{border-color:var(--kupfer-500);background:var(--kupfer-100);color:var(--kupfer-700);font-weight:600}
-.wahl input:focus-visible + span{outline:2px solid var(--kupfer-500);outline-offset:2px}
+.wahl input:checked + span{border-color:var(--orange-500);background:var(--orange-100);color:var(--orange-700);font-weight:600}
+.wahl input:focus-visible + span{outline:2px solid var(--orange-500);outline-offset:2px}
 .zweispalt{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
 .check{display:grid;grid-template-columns:auto 1fr;gap:11px;font-size:13px;color:var(--grau-600);margin-bottom:var(--s6);line-height:1.5}
 .check input{margin-top:4px;width:auto}
@@ -309,6 +309,8 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 
 .fussz > div:first-child{border-left:0}
 .fussz img.mark{height:66px;width:auto;margin-bottom:var(--s4)}
+.fussz .firma{display:block;font-family:var(--disp);font-size:13px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-200);margin-bottom:6px}
+.fussz .anschrift{display:block;margin-top:12px}
 .fussz strong{display:block;color:#fff;font-weight:600;margin-bottom:10px;font-size:13.5px}
 .fussz ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
 .fussz a{color:rgba(255,255,255,.78);text-decoration:none}
@@ -382,6 +384,12 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 
   /* Ausnahmen: Daten und Eingaben bleiben linksbuendig lesbar */
   .tab,.tab th,.tab td{text-align:left}
+  /* Tabellen sollen auf dem Telefon umbrechen statt seitlich zu scrollen */
+  .tab table{min-width:0;font-size:13px;table-layout:fixed}
+  .tab th,.tab td{padding:10px 11px;overflow-wrap:anywhere;hyphens:auto}
+  .tab3 th:nth-child(1){width:36%}
+  .tab3 th:nth-child(2){width:19%}
+  .tab3 th:nth-child(3){width:45%}
   .feld input,.feld select,.feld textarea{text-align:left}
   .feld > label,.feld legend,.feld .hint{text-align:center}
   .check{text-align:left;justify-content:center;max-width:34ch;margin-left:auto;margin-right:auto}
@@ -452,7 +460,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 
     <div class="hero-top">
       <div class="hin">
-        <a class="mark" href="#top" aria-label="Uwe Parsiegla, Startseite"><img src="bilder/logo-uwe-parsiegla-bildmarke-weiss.svg" alt="" aria-hidden="true" width="60" height="44"><span>Uwe Parsiegla</span></a>
+        <a class="mark" href="#top" aria-label="Uwe Parsiegla, UP Haus- und Gewerbetechnik, Startseite"><img src="bilder/logo-uwe-parsiegla-bildmarke-negativ.svg" alt="" aria-hidden="true" width="60" height="44"><span>Uwe Parsiegla<b>UP Haus- und Gewerbetechnik</b></span></a>
         <nav class="hero-nav" aria-label="Hauptnavigation">
           <a href="#pruefung">Was ich prüfe</a>
           <a href="#ablauf">Ablauf</a>
@@ -503,9 +511,9 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
     </div>
 
     <div class="hero-leiste"><div class="hin"><div class="glasleiste">
-      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E8A184" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z"/></svg>Meisterbrief im Elektrohandwerk</div>
-      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E8A184" stroke-width="2" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 10h16"/></svg>Kein Vertrag mit einem Hersteller</div>
-      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#E8A184" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Deutschlandweit, Sitz in <span class="ph">[Stadt]</span></div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-200)" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z"/></svg>Meisterbrief im Elektrohandwerk</div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-200)" stroke-width="2" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 10h16"/></svg>Kein Vertrag mit einem Hersteller</div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-200)" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Privat und Gewerbe, deutschlandweit</div>
     </div></div></div>
   </div>
 </div>
@@ -518,7 +526,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
     <div class="wrap">
       <div class="kopfzeile"><p class="brow"><b>Uwe Parsiegla</b> / <span>Wer ich bin</span></p></div>
       <div class="aussage">
-        <p class="gross">Ein Elektromeister, der nichts verkaufen muss. <span class="zwei">Ich bin an keinen Hersteller gebunden, hole für Ihr Vorhaben mehrere Angebote ein und empfehle das wirtschaftlichste, nicht das mit der besten Marge.</span></p>
+        <p class="gross">Ein Elektromeister, der nichts verkaufen muss. <span class="zwei">Ich bin an keinen Hersteller gebunden, hole für Ihr Vorhaben mehrere Angebote ein und empfehle das wirtschaftlichste. Das ist fast nie das billigste und nie das mit der besten Marge.</span></p>
         <div class="saeulen">
           <div>
             <span class="badge">Unabhängig</span>
@@ -530,7 +538,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
           </div>
           <div>
             <span class="badge">Wirtschaftlich</span>
-            <p>Am Ende zählt, was Ihr Haus über die Laufzeit spart. Manchmal ist die ehrliche Antwort, noch zu warten.</p>
+            <p>Das wirtschaftlichste Angebot ist nicht das günstigste. Ich stelle Anschaffung, Förderung, Stromkosten und Wartung über 20 Jahre gegenüber und lege Ihnen diese Rechnung schriftlich vor. Manchmal ist die ehrliche Antwort, noch zu warten.</p>
           </div>
         </div>
       </div>
@@ -607,7 +615,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
             <span class="nummer">04</span>
             <div class="zeit"><span class="ph">60 Minuten</span></div>
             <h3>Vergleich und Begleitung</h3>
-            <p>Wir gehen die Angebote nebeneinander durch, Sie nehmen alles schriftlich mit. Danach kümmere ich mich um Förderantrag, Termine und Abnahme.</p>
+            <p>Wir gehen die Angebote nebeneinander durch, nach Gesamtkosten über 20 Jahre, nicht nach dem Preis unten rechts. Sie bekommen die Rechnung schriftlich, mit der Begründung, welches Angebot das wirtschaftlichste ist. Danach kümmere ich mich um Förderantrag, Termine und Abnahme.</p>
           </article>
         </div>
       </div>
@@ -636,7 +644,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
         <div class="tab-duo">
         <div>
         <h3 class="mittel">Woraus sich der Satz zusammensetzt</h3>
-        <div class="tab"><div class="tab-scroll"><table>
+        <div class="tab tab3"><div class="tab-scroll"><table>
           <thead><tr><th scope="col">Bestandteil</th><th scope="col">Höhe</th><th scope="col">Für wen</th></tr></thead>
           <tbody>
             <tr><td>Grundförderung</td><td><b>30 %</b></td><td>alle Antragsberechtigten</td></tr>
@@ -677,26 +685,26 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
           <h2 class="gross">Für Photovoltaik gibt es keinen Zuschuss. <span class="zwei">Die Vorteile sind andere.</span></h2>
           <div class="warum-unten">
             <p>Keine Umsatzsteuer auf Anlage und Speicher, keine Einkommensteuer auf die Erträge bis 30 kW, dazu die Einspeisevergütung nach dem EEG, die halbjährlich um 1 Prozent sinkt. Ob Ihr Bundesland oder Ihre Kommune zusätzlich fördert, prüfe ich für Ihre Adresse mit. Und ob sich ein Speicher bei Ihrem Verbrauch überhaupt rechnet, rechne ich Ihnen vor, statt ihn Ihnen zu verkaufen.</p>
-            <a href="#anfrage" class="btn btn-dunkel" style="margin-top:var(--s6)">Angebote vergleichen lassen</a>
+            <a href="#anfrage" class="btn btn-orange" style="margin-top:var(--s6)">Angebote vergleichen lassen</a>
           </div>
         </div>
         <figure class="warum-bild"><img src="bilder/beratung.webp" alt="" aria-hidden="true"></figure>
       </div>
       <div class="merkmale">
         <div>
-          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z"/></svg>Meisterqualifikation</h3>
+          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z"/></svg>Meisterqualifikation</h3>
           <p>Ein Meisterbrief macht aus einem Vermittler einen Prüfer. Ich sehe, was im Angebot fehlt.</p>
         </div>
         <div>
-          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Mehrere Angebote</h3>
+          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Mehrere Angebote</h3>
           <p><span class="ph">3 bis 5</span> pro Vorhaben, mit identischen Vorgaben angefragt und damit wirklich vergleichbar.</p>
         </div>
         <div>
-          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Keine Datenweitergabe</h3>
+          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Keine Datenweitergabe</h3>
           <p>Ihre Anfrage landet bei mir, nicht in einem Portal. Sie bekommen keine Anrufe von Fremden.</p>
         </div>
         <div>
-          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Feste Rückmeldung</h3>
+          <h3><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Feste Rückmeldung</h3>
           <p>Antwort auf jede Anfrage innerhalb von <span class="ph">[24 Stunden werktags]</span>, von mir persönlich.</p>
         </div>
       </div>
@@ -715,7 +723,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
           <div class="zitat-rolle">Elektromeister und unabhängiger Energiemakler, <span class="ph">[X]</span> Jahre im Elektrohandwerk</div>
           <div class="btnrow" style="margin-top:var(--s8)">
             <a href="tel:+49000000000" class="btn btn-linie">Direkt anrufen</a>
-            <a href="#anfrage" class="btn btn-kupfer">Angebote vergleichen lassen</a>
+            <a href="#anfrage" class="btn btn-orange">Angebote vergleichen lassen</a>
           </div>
         </div>
       </div>
@@ -730,9 +738,9 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
         <div>
           <h2 class="gross">Mehrere Angebote, <span class="zwei">ein Ansprechpartner</span></h2>
           <ul class="zusagen">
-            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Kostenlos und unverbindlich, Sie entscheiden am Ende allein</li>
-            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Ihre Daten gehen an keinen Dritten, bevor Sie zustimmen</li>
-            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E3620" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Antwort innerhalb von <span class="ph">[24 Stunden werktags]</span>, von mir persönlich</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Kostenlos und unverbindlich, Sie entscheiden am Ende allein</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Ihre Daten gehen an keinen Dritten, bevor Sie zustimmen</li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Antwort innerhalb von <span class="ph">[24 Stunden werktags]</span>, von mir persönlich</li>
           </ul>
           <p class="mini" style="margin-top:var(--s8)">Lieber sprechen? <a href="tel:+49000000000" style="font-weight:600"><span class="ph">[Telefonnummer]</span></a></p>
         </div>
@@ -765,7 +773,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
               <div class="hint">Damit ich Fachbetriebe in Ihrer Region anfragen kann.</div>
             </div>
             <div class="fnav">
-              <button type="button" class="btn btn-kupfer" data-next>Weiter</button>
+              <button type="button" class="btn btn-orange" data-next>Weiter</button>
               <span class="mini">Noch keine Kontaktdaten nötig.</span>
             </div>
           </fieldset>
@@ -785,7 +793,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
               <div class="hint">Wenn Sie schon ein Angebot haben, sage ich Ihnen, was fehlt.</div>
             </div>
             <div class="fnav">
-              <button type="button" class="btn btn-kupfer" data-next>Weiter</button>
+              <button type="button" class="btn btn-orange" data-next>Weiter</button>
               <button type="button" class="zurueck" data-back>Zurück</button>
             </div>
           </fieldset>
@@ -799,7 +807,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
             <div class="feld"><label for="text">Was soll ich noch wissen?</label><textarea id="text" name="text" rows="3" placeholder="Optional"></textarea></div>
             <label class="check"><input type="checkbox" name="dsgvo" required><span>Ich bin einverstanden, dass Uwe Parsiegla meine Angaben zur Bearbeitung meiner Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht ohne meine ausdrückliche Zustimmung. <a href="#datenschutz">Datenschutzhinweise</a></span></label>
             <div class="fnav">
-              <button type="submit" class="btn btn-kupfer">Angebote vergleichen lassen</button>
+              <button type="submit" class="btn btn-orange">Angebote vergleichen lassen</button>
               <button type="button" class="zurueck" data-back>Zurück</button>
             </div>
           </fieldset>
@@ -827,11 +835,13 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
     </div></div>
     <div class="hin"><div class="fussz">
       <div>
-        <img class="mark" src="bilder/logo-uwe-parsiegla-weiss.svg" alt="Uwe Parsiegla, Handwerksmeister" width="63" height="66">
+        <img class="mark" src="bilder/logo-uwe-parsiegla-negativ.svg" alt="Uwe Parsiegla, Handwerksmeister" width="63" height="66">
         <strong>Uwe Parsiegla</strong>
+        <span class="firma">UP Haus- und Gewerbetechnik</span>
         Elektromeister und unabhängiger Energiemakler<br>
-        <span class="ph">[Straße und Hausnummer]</span><br>
-        <span class="ph">[PLZ Stadt]</span>
+        Privat und Gewerbe, deutschlandweit
+        <span class="anschrift">Am Stadtwald 8<br>
+        <span class="ph">[PLZ und Ort]</span></span>
       </div>
       <div>
         <strong>Leistungen</strong>
@@ -853,20 +863,20 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
       </div>
       <div>
         <strong>Einzugsgebiet</strong>
-        Sitz in <span class="ph">[Stadt]</span>, tätig in ganz Deutschland. Die Aufnahme läuft im Umkreis von <span class="ph">[X]</span> Kilometern vor Ort, darüber hinaus digital. Die Montage übernimmt jeweils ein Fachbetrieb in Ihrer Region.
+        Sitz Am Stadtwald 8 in <span class="ph">[Ort]</span>, tätig in ganz Deutschland, für Privat und Gewerbe. Die Aufnahme läuft im Umkreis von <span class="ph">[X]</span> Kilometern vor Ort, darüber hinaus digital. Die Montage übernimmt jeweils ein Fachbetrieb in Ihrer Region.
       </div>
     </div></div>
     <div class="hin"><div class="klein-fuss">
       <span>Alle Angaben zu Förderung und Steuern: Stand 08.09.2026. Fördersätze und Rechtslage ändern sich. Die Angaben sind eine Orientierung und ersetzen keine Prüfung im Einzelfall.</span>
       <span>Die Montage und die handwerkliche Ausführung übernehmen die jeweils beauftragten Fachbetriebe. Uwe Parsiegla vermittelt, prüft und begleitet.</span>
-      <span style="color:var(--kupfer-300)">Entwurf: hervorgehobene Werte sind Platzhalter und werden durch Ihre Angaben ersetzt. Die Fotos stammen aus lizenzfreien Beständen und werden durch eigene Aufnahmen ersetzt, sobald welche vorliegen. Nachweis in bilder/BILDNACHWEIS.md.</span>
+      <span style="color:var(--orange-300)">Entwurf: hervorgehobene Werte sind Platzhalter und werden durch Ihre Angaben ersetzt. Die Fotos stammen aus lizenzfreien Beständen und werden durch eigene Aufnahmen ersetzt, sobald welche vorliegen.</span>
     </div></div>
   </div>
 </div>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"ProfessionalService","@id":"#betrieb","name":"Uwe Parsiegla, Elektromeister und Energiemakler","description":"Herstellerunabhängiger Angebotsvergleich für Wärmepumpe und Photovoltaik, geprüft von einem Elektromeister.","areaServed":{"@type":"Country","name":"Deutschland"},"knowsAbout":["Wärmepumpe","Photovoltaik","Heizungsförderung","Angebotsvergleich","Elektroinstallation"]},
+{"@type":"ProfessionalService","@id":"#betrieb","name":"UP Haus- und Gewerbetechnik, Uwe Parsiegla","legalName":"UP Haus- und Gewerbetechnik","alternateName":"Uwe Parsiegla","founder":{"@type":"Person","name":"Uwe Parsiegla","jobTitle":"Elektromeister und unabhängiger Energiemakler"},"description":"Herstellerunabhängiger Angebotsvergleich für Wärmepumpe und Photovoltaik, geprüft von einem Elektromeister. Für Privat und Gewerbe.","address":{"@type":"PostalAddress","streetAddress":"Am Stadtwald 8","addressCountry":"DE"},"areaServed":{"@type":"Country","name":"Deutschland"},"knowsAbout":["Wärmepumpe","Photovoltaik","Heizungsförderung","Angebotsvergleich","Elektroinstallation"]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Wie hoch ist die Heizungsförderung 2026?","acceptedAnswer":{"@type":"Answer","text":"30 Prozent Grundförderung, dazu 16 Prozent Klimageschwindigkeitsbonus beim Austausch einer alten Öl- oder Gasheizung, dazu je nach Haushaltseinkommen bis zu 40 Prozent Einkommensbonus. Höchstens 80 Prozent und höchstens 22.400 Euro für die erste Wohneinheit. Stand 08.09.2026."}},
 {"@type":"Question","name":"Warum soll ich den Heizungstausch nicht bis 2027 verschieben?","acceptedAnswer":{"@type":"Answer","text":"Die Grundförderung für Wärmepumpen sinkt im ersten Quartal 2027 von 30 auf 15 Prozent, der Klimageschwindigkeitsbonus ab 1. Februar 2027 von 16 auf 12 Prozent, die förderfähigen Höchstkosten um 750 Euro. Für einen typischen Haushalt ohne Einkommensbonus sind das rund 5.500 Euro Unterschied."}},
