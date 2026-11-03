@@ -338,6 +338,50 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 }
 
 
+
+/* ================= Eigener Mauszeiger ================= */
+/* Nur dort, wo es wirklich eine Maus gibt. Touch und Stift bleiben unberuehrt. */
+.zeiger,.zeigerpunkt{display:none}
+@media (hover:hover) and (pointer:fine){
+  .zeiger,.zeigerpunkt{
+    display:block;position:fixed;left:0;top:0;z-index:600;pointer-events:none;
+    opacity:0;transition:opacity .25s var(--ease);
+    will-change:transform;contain:strict}
+  html.zeiger-an .zeiger,html.zeiger-an .zeigerpunkt{opacity:1}
+  html.zeiger-an.zeiger-weg .zeiger,html.zeiger-an.zeiger-weg .zeigerpunkt{opacity:0}
+
+  .zeiger{border:2px solid var(--orange-500);border-radius:999px;
+    background:transparent;
+    transition:opacity .25s var(--ease),border-radius .3s var(--ease),
+               background-color .3s var(--ease),border-color .3s var(--ease),
+               border-width .3s var(--ease)}
+  .zeigerpunkt{width:6px;height:6px;border-radius:999px;background:var(--orange-500);
+    transition:opacity .2s var(--ease),transform .18s var(--ease)}
+
+  /* ueber dunklen Abschnitten das helle Orange, sonst verschwindet der Ring */
+  .zeiger.hell{border-color:var(--orange-300)}
+  .zeigerpunkt.hell{background:var(--orange-300)}
+
+  /* verschmilzt mit dem Element darunter */
+  .zeiger.deckt{background:rgba(169,86,0,.14)}
+  .zeiger.deckt.hell{background:rgba(218,130,48,.20)}
+  /* nur vergroessert, nicht aufgelegt: dezenter, der Text bleibt lesbar */
+  .zeiger.weit{background:rgba(169,86,0,.07)}
+  .zeiger.weit.hell{background:rgba(218,130,48,.10)}
+  html.zeiger-deckt .zeigerpunkt{opacity:0;transform:scale(.4)}
+
+  html.zeiger-druck .zeiger{border-width:3px}
+  html.zeiger-druck .zeigerpunkt{transform:scale(1.9)}
+
+  /* Systemzeiger ausblenden, aber erst wenn der eigene wirklich laeuft */
+  html.zeiger-an,html.zeiger-an *{cursor:none}
+  html.zeiger-an input:not([type=radio]):not([type=checkbox]):not([type=file]),
+  html.zeiger-an textarea{cursor:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .zeiger,.zeigerpunkt{transition:opacity .2s linear}
+}
+
 /* ================= Bewegung ================= */
 /* Abschnitte und Karten blenden beim Scrollen ein */
 .js .ein{opacity:0;transform:translateY(18px);
@@ -574,6 +618,8 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 <script>document.documentElement.classList.add('js')</script>
 <body>
 <a class="skip" href="#anfrage">Direkt zum Anfrageformular</a>
+<div class="zeiger" id="zeiger" aria-hidden="true"></div>
+<div class="zeigerpunkt" id="zeigerpunkt" aria-hidden="true"></div>
 
 <!-- ============ HERO ============ -->
 <div class="hero auf-bild">
@@ -1173,6 +1219,133 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   window.addEventListener('scroll', anstoss, {passive:true});
   window.addEventListener('resize', anstoss);
   mess();
+})();
+
+/* ---- Eigener Mauszeiger ------------------------------------------------
+   Ein orangener Kreis folgt der Maus und legt sich ueber das Element,
+   auf dem er steht. Nur bei echter Maus, nie auf Touch.              */
+(function(){
+  if(!window.matchMedia || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  var ring = document.getElementById('zeiger');
+  var punkt = document.getElementById('zeigerpunkt');
+  if(!ring || !punkt) return;
+
+  /* Wer weniger Bewegung eingestellt hat, behaelt den Systemzeiger.
+     Ein eigener Zeiger ist fuer diese Einstellung die falsche Antwort. */
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var SANFT = true;
+  var WURZEL = document.documentElement;
+
+  /* Elemente, auf die sich der Ring legt */
+  var DECKEN = 'a[href],button,summary,[role="button"],.wahl label,label.check,' +
+               '.burger,select';
+  /* Flaechen, bei denen der Ring nur groesser wird */
+  var WACHSEN = '.panel-karten article,.schritte article,.saeulen > div,.merkmale > div,' +
+                '.beleg-karte,.balken figure,.glasleiste div,.tab tbody tr,' +
+                '.ablauf-bild,.warum-bild,.zitat-grid figure';
+  /* Hier bleibt der Systemzeiger sichtbar und der Ring verschwindet */
+  var TEXTFELD = 'input:not([type=radio]):not([type=checkbox]):not([type=file]),textarea';
+
+  var GRUND = 26, GROSS = 62, LUFT = 7;
+
+  var mx = window.innerWidth/2, my = window.innerHeight/2;
+  var x = mx, y = my, w = GRUND, h = GRUND;      /* gezeichnet */
+  var zx = mx, zy = my, zw = GRUND, zh = GRUND;  /* Ziel */
+  var ziel = null, laeuft = false, aktiv = false;
+
+  function rundung(el, r){
+    var cs = getComputedStyle(el);
+    var v = parseFloat(cs.borderTopLeftRadius) || 0;
+    if(v * 2 >= Math.min(r.width, r.height) - 1) return 999;
+    return v + LUFT;
+  }
+
+  function ziele(el){
+    var deck = el && el.closest ? el.closest(DECKEN) : null;
+    var wach = (!deck && el && el.closest) ? el.closest(WACHSEN) : null;
+    var text = el && el.closest ? el.closest(TEXTFELD) : null;
+
+    WURZEL.classList.toggle('zeiger-weg', !!text);
+    if(text){ ziel = null; return; }
+
+    var dunkel = el && el.closest ? !!el.closest('.auf-bild') : false;
+    ring.classList.toggle('hell', dunkel);
+    punkt.classList.toggle('hell', dunkel);
+
+    if(deck){
+      var r = deck.getBoundingClientRect();
+      if(r.width <= 520 && r.height <= 220){
+        ziel = deck;
+        ring.classList.add('deckt'); ring.classList.remove('weit');
+        WURZEL.classList.add('zeiger-deckt');
+        ring.style.borderRadius = (rundung(deck, r) === 999 ? '999px' : rundung(deck, r) + 'px');
+        return;
+      }
+    }
+    ziel = null;
+    ring.style.borderRadius = '999px';
+    if(deck || wach){
+      ring.classList.add('deckt'); WURZEL.classList.add('zeiger-deckt');
+      ring.classList.add('weit');
+      zw = zh = GROSS;
+    } else {
+      ring.classList.remove('deckt','weit'); WURZEL.classList.remove('zeiger-deckt');
+      zw = zh = GRUND;
+    }
+  }
+
+  function setzeZiel(){
+    if(ziel){
+      if(!ziel.isConnected){ ziel = null; }
+      else {
+        var r = ziel.getBoundingClientRect();
+        zw = r.width + LUFT*2; zh = r.height + LUFT*2;
+        zx = r.left - LUFT;   zy = r.top - LUFT;
+        return;
+      }
+    }
+    zx = mx - zw/2; zy = my - zh/2;
+  }
+
+  function schritt(){
+    laeuft = false;
+    setzeZiel();
+    var k = SANFT ? (ziel ? 0.26 : 0.19) : 1;
+    x += (zx - x) * k; y += (zy - y) * k;
+    w += (zw - w) * k; h += (zh - h) * k;
+    ring.style.width = w.toFixed(1) + 'px';
+    ring.style.height = h.toFixed(1) + 'px';
+    ring.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)';
+    punkt.style.transform = 'translate3d(' + (mx-3).toFixed(1) + 'px,' + (my-3).toFixed(1) + 'px,0)';
+    if(Math.abs(zx-x) > 0.3 || Math.abs(zy-y) > 0.3 ||
+       Math.abs(zw-w) > 0.3 || Math.abs(zh-h) > 0.3 || ziel) anstoss();
+  }
+  function anstoss(){ if(!laeuft){ laeuft = true; requestAnimationFrame(schritt); } }
+
+  document.addEventListener('pointermove', function(e){
+    if(e.pointerType && e.pointerType !== 'mouse') return;
+    mx = e.clientX; my = e.clientY;
+    if(!aktiv){ aktiv = true; WURZEL.classList.add('zeiger-an'); x = mx; y = my; }
+    ziele(e.target);
+    anstoss();
+  }, {passive:true});
+
+  document.addEventListener('pointerdown', function(e){
+    if(e.pointerType && e.pointerType !== 'mouse'){
+      /* Jemand tippt doch: eigenen Zeiger abschalten */
+      WURZEL.classList.remove('zeiger-an','zeiger-deckt','zeiger-druck');
+      aktiv = false; return;
+    }
+    WURZEL.classList.add('zeiger-druck'); anstoss();
+  }, {passive:true});
+  document.addEventListener('pointerup', function(){ WURZEL.classList.remove('zeiger-druck'); }, {passive:true});
+
+  document.addEventListener('mouseleave', function(){ WURZEL.classList.add('zeiger-weg'); });
+  document.addEventListener('mouseenter', function(){ WURZEL.classList.remove('zeiger-weg'); });
+  window.addEventListener('blur', function(){ WURZEL.classList.add('zeiger-weg'); });
+  window.addEventListener('focus', function(){ WURZEL.classList.remove('zeiger-weg'); });
+  window.addEventListener('scroll', function(){ if(ziel) anstoss(); }, {passive:true});
+  window.addEventListener('resize', function(){ ziel = null; anstoss(); });
 })();
 </script>
 </body>
