@@ -62,9 +62,9 @@ main{position:relative}
 .brow{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--grau-500);font-weight:500}
 .brow b{color:var(--grau-600);font-weight:600}
 .brow span{color:var(--tanne-800);font-weight:600}
-.zwei{color:var(--grau-500)}
-.gross{font-size:clamp(25px,3.1vw,42px);font-weight:400;letter-spacing:-.024em;line-height:1.14}
-.mittel{font-size:clamp(21px,2.3vw,29px);font-weight:500;letter-spacing:-.022em}
+.zwei{color:var(--orange-600)}
+.gross{font-size:clamp(25px,3.1vw,42px);font-weight:500;letter-spacing:-.024em;line-height:1.14}
+.mittel{font-size:clamp(21px,2.3vw,29px);font-weight:600;letter-spacing:-.022em}
 .mini{font-size:13.5px;color:var(--grau-600);line-height:1.55}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:15.5px;
@@ -128,8 +128,8 @@ main{position:relative}
 .mobilnav-cta{display:grid;gap:8px;padding:12px 8px 4px;margin-top:6px;border-top:1px solid rgba(255,255,255,.16)}
 .mobilnav-cta .btn{width:100%;padding:14px 18px}
 .hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:var(--s12) 0 var(--s8);color:#fff}
-.hero-body h1{font-size:clamp(30px,4.1vw,54px);line-height:1.1;max-width:18ch;font-weight:400;letter-spacing:-.024em}
-.hero-body h1 .zwei{color:rgba(255,255,255,.62)}
+.hero-body h1{font-size:clamp(30px,4.1vw,54px);line-height:1.1;max-width:18ch;font-weight:500;letter-spacing:-.024em}
+.hero-body h1 .zwei{color:var(--orange-200)}
 .hero-body .sub{color:rgba(255,255,255,.80);max-width:46ch;margin-top:var(--s6);font-size:16.5px}
 .hero-body .mikro{color:rgba(255,255,255,.62);font-size:13px;margin-top:12px}
 .hero-cta{margin-top:var(--s8);display:flex;gap:12px;flex-wrap:wrap}
@@ -176,13 +176,18 @@ main{position:relative}
 .panel-kopf .brow{color:rgba(255,255,255,.6)}
 .panel-kopf .brow span{color:rgba(255,255,255,.9)}
 .panel-kopf h2{color:#fff;margin-top:14px;max-width:20ch}
+.zwei.hell{color:var(--orange-200)}
 .panel-karten-band{margin-bottom:var(--s16)}
 .panel-karten{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14)}
 .panel-karten{border:1px solid var(--glas-bd);border-radius:var(--r);overflow:hidden;box-shadow:var(--glas-schatten)}
 .panel-karten article{background:var(--glas-bg);backdrop-filter:var(--glas-blur);-webkit-backdrop-filter:var(--glas-blur);
   padding:var(--s8) 28px var(--s12)}
-.panel-karten h3{font-size:20px;color:#fff;margin-bottom:10px;font-weight:400}
+.panel-karten h3{font-size:20px;color:#fff;margin-bottom:10px;font-weight:500}
 .panel-karten p{font-size:13.5px;color:rgba(255,255,255,.74);line-height:1.55;margin:0}
+.kartenbild{width:clamp(56px,5.6vw,76px);height:clamp(56px,5.6vw,76px);display:block;margin:var(--s6) 0 var(--s4)}
+.kartenbild *{vector-effect:non-scaling-stroke}
+.panel-karten article:hover .kartenbild{transform:translateY(-2px)}
+.kartenbild{transition:transform .45s var(--ease)}
 .panel-karten .kopfnum{font-family:var(--disp);font-size:12px;letter-spacing:.14em;color:var(--orange-300);margin-bottom:var(--s6);display:block}
 
 /* ---------- Ablauf ---------- */
@@ -196,7 +201,7 @@ main{position:relative}
 .nummer{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:var(--sand);
   color:var(--grau-500);font-size:11.5px;font-weight:700;letter-spacing:.04em;margin-bottom:var(--s6)}
 .schritte article:first-child .nummer{background:var(--orange-300);color:#270F00}
-.schritte h3{font-size:20px;margin-bottom:8px;font-weight:400}
+.schritte h3{font-size:20px;margin-bottom:8px;font-weight:500}
 .schritte p{font-size:13.5px;color:var(--grau-600);margin:0;line-height:1.55;max-width:34ch}
 .schritte .zeit{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grau-500);margin-bottom:8px}
 
@@ -204,8 +209,8 @@ main{position:relative}
 .balken-sek{background:var(--sand);padding:var(--s16) 0 0;position:relative;z-index:2;border-top:1px solid var(--linie)}
 .balken{display:grid;grid-template-columns:repeat(4,1fr);align-items:end;margin-top:var(--s12)}
 .balken figure{margin:0;display:flex;flex-direction:column;justify-content:flex-end}
-.balken .zahl{font-family:var(--disp);font-weight:400;font-size:clamp(30px,4.4vw,54px);letter-spacing:-.03em;line-height:1;
-  padding:0 22px 18px;color:var(--tanne-900)}
+.balken .zahl{font-family:var(--disp);font-weight:500;font-size:clamp(30px,4.4vw,54px);letter-spacing:-.03em;line-height:1;
+  padding:0 22px 18px;color:var(--orange-600)}
 .balken .box{background:rgba(255,255,255,.55);border-top:1px solid var(--linie);padding:var(--s8) 22px var(--s12);display:flex;align-items:flex-end}
 .balken .box p{margin:0;font-size:12.5px;color:var(--grau-600);line-height:1.5}
 .balken .h1{--bh:210px}.balken .h2{--bh:150px}.balken .h3{--bh:250px}.balken .h4{--bh:120px}
@@ -254,7 +259,7 @@ main{position:relative}
 .zitat-grid figure{margin:0}
 .zitat-grid img{border-radius:var(--r-s);width:100%;max-width:210px;aspect-ratio:1/1;object-fit:cover;object-position:50% 22%}
 .zitat{font-family:var(--disp);font-size:clamp(21px,2.5vw,33px);font-weight:400;letter-spacing:-.02em;line-height:1.3;margin:0}
-.zitat .zwei{color:var(--grau-500)}
+.zitat .zwei{color:var(--orange-600)}
 .zitat-name{margin-top:var(--s8);font-size:14.5px;font-weight:600}
 .zitat-rolle{font-size:13px;color:var(--grau-600)}
 
@@ -301,8 +306,8 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 .schluss-bg img{width:100%;height:100%;object-fit:cover}
 .schluss-in::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,20,16,.80) 0%,rgba(10,18,15,.74) 38%,rgba(8,16,13,.92) 100%)}
 .schluss-kopf{text-align:center;padding:var(--s24) 0 var(--s16)}
-.schluss-kopf h2{font-size:clamp(26px,3.6vw,48px);color:#fff;line-height:1.12;max-width:20ch;margin:0 auto;font-weight:400}
-.schluss-kopf h2 .zwei{color:rgba(255,255,255,.6)}
+.schluss-kopf h2{font-size:clamp(26px,3.6vw,48px);color:#fff;line-height:1.12;max-width:20ch;margin:0 auto;font-weight:500}
+.schluss-kopf h2 .zwei{color:var(--orange-200)}
 .btnrow{display:flex;gap:12px;flex-wrap:wrap}
 .schluss-kopf .btnrow{justify-content:center;margin-top:var(--s8)}
 .fussz{display:grid;grid-template-columns:1.15fr 1fr 1fr 1.25fr;gap:0;border-top:1px solid rgba(255,255,255,.16)}
@@ -331,6 +336,44 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   .burger{display:flex}
   .mobilnav:not([hidden]){display:grid}
 }
+
+
+/* ================= Bewegung ================= */
+/* Abschnitte und Karten blenden beim Scrollen ein */
+.js .ein{opacity:0;transform:translateY(18px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+  transition-delay:calc(var(--k,0) * 70ms)}
+.js .ein.an{opacity:1;transform:none}
+
+/* Grosse Texte fuellen sich beim Scrollen mit Farbe */
+.js [data-fuellen].bereit .w{opacity:.3}
+.js [data-fuellen].bereit .w{
+  --t:calc(var(--p,0) * (var(--n) + 7) - var(--i));
+  opacity:clamp(.3, calc(var(--t) / 3 + .3), 1)}
+
+/* Karten reagieren auf den Zeiger */
+.panel-karten article{transition:background-color .4s var(--ease)}
+.panel-karten article:hover{background:rgba(27,48,37,.56)}
+.schritte article{transition:background-color .35s var(--ease)}
+.schritte article:hover{background:var(--sand)}
+.nummer{transition:background-color .35s var(--ease),color .35s var(--ease)}
+.schritte article:hover .nummer{background:var(--orange-300);color:#270F00}
+.saeulen > div,.merkmale > div{transition:transform .4s var(--ease)}
+.saeulen > div:hover,.merkmale > div:hover{transform:translateY(-3px)}
+.beleg-karte{transition:box-shadow .4s var(--ease),background-color .4s var(--ease)}
+.beleg-karte:hover{box-shadow:0 0 0 1px rgba(255,255,255,.26), 0 18px 40px -28px rgba(0,0,0,.7)}
+.glasleiste div{transition:background-color .35s var(--ease)}
+.glasleiste div:hover{background:rgba(255,255,255,.08)}
+.tab tbody tr{transition:background-color .25s var(--ease)}
+.tab tbody tr:hover{background:var(--orange-100)}
+.balken figure .box{transition:background-color .4s var(--ease)}
+.balken figure:hover .box{background:rgba(255,255,255,.82)}
+.ablauf-bild img,.warum-bild img,.zitat-grid figure img{transition:filter .6s var(--ease)}
+.ablauf-bild:hover img,.warum-bild:hover img,.zitat-grid figure:hover img{filter:saturate(1.07) brightness(1.03)}
+.wahl span,.btn{transition:transform .2s var(--ease),background-color var(--dur) var(--ease),color var(--dur) var(--ease),box-shadow var(--dur) var(--ease)}
+.fussz a{transition:color .25s var(--ease)}
+.merkmale h3{transition:color .35s var(--ease)}
+.merkmale > div:hover h3{color:var(--orange-600)}
 
 /* Zwei Tabellen nebeneinander brauchen je rund 500px, sonst untereinander. */
 @media (max-width:1100px){
@@ -383,6 +426,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   .zusagen li,.glasleiste div{display:block}
   .zusagen li svg,.glasleiste div svg{display:inline;vertical-align:-3px;margin-right:9px}
   .fussz img.mark{margin-left:auto;margin-right:auto}
+  .kartenbild{margin-left:auto;margin-right:auto}
   /* Balken brauchen mehr Hoehe, sonst schneidet der Text oben ab */
   .balken .box{padding:var(--s6) 14px var(--s6)}
   .balken .zahl{font-size:31px;padding-bottom:12px}
@@ -521,6 +565,8 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
   *{transition:none!important;animation:none!important}
   .js .balken .box{height:var(--bh)}
   .js .balken .zahl{opacity:1;transform:none}
+  .js .ein{opacity:1!important;transform:none!important}
+  .js [data-fuellen].bereit .w{opacity:1!important}
   .btn:hover,.wahl span:hover{transform:none}
 }
 </style>
@@ -555,7 +601,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
         <a href="#person">Wer ich bin</a>
         <div class="mobilnav-cta">
           <a href="#anfrage" class="btn btn-w">Angebote vergleichen lassen</a>
-          <a href="tel:+49000000000" class="btn btn-glas">Anrufen</a>
+          <a href="tel:+4917416996538" class="btn btn-glas">Anrufen</a>
         </div>
       </nav></div>
     </div>
@@ -603,7 +649,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
     <div class="wrap">
       <div class="kopfzeile"><p class="brow"><b>Uwe Parsiegla</b> / <span>Wer ich bin</span></p></div>
       <div class="aussage">
-        <p class="gross">Ein Elektromeister, der nichts verkaufen muss. <span class="zwei">Ich bin an keinen Hersteller gebunden, hole für Ihr Vorhaben mehrere Angebote ein und empfehle das wirtschaftlichste. Das ist fast nie das billigste und nie das mit der besten Marge.</span></p>
+        <p class="gross" data-fuellen>Ein Elektromeister, der nichts verkaufen muss. <span class="zwei">Ich bin an keinen Hersteller gebunden, hole für Ihr Vorhaben mehrere Angebote ein und empfehle das wirtschaftlichste. Das ist fast nie das billigste und nie das mit der besten Marge.</span></p>
         <div class="saeulen">
           <div>
             <span class="badge">Unabhängig</span>
@@ -636,22 +682,22 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
       <div class="panel-bg"><img src="bilder/panel.webp" alt="" aria-hidden="true"></div>
       <div class="panel-kopf"><div class="hin">
         <p class="brow"><b>Uwe Parsiegla</b> / <span>Was ich prüfe</span></p>
-        <h2 class="gross">Drei Wege, <span style="color:rgba(255,255,255,.6)">auf denen Sie zu einem geprüften Angebot kommen</span></h2>
+        <h2 class="gross">Drei Wege, <span class="zwei hell">auf denen Sie zu einem geprüften Angebot kommen</span></h2>
       </div></div>
       <div class="panel-karten-band"><div class="hin"><div class="panel-karten">
         <article>
           <span class="kopfnum">01</span>
-          <h3>Wärmepumpe</h3>
+          <svg class="kartenbild" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <g stroke="#DA8230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"> <rect x="4.8" y="13" width="31" height="26" rx="2.6"/> <path d="M4.8 19.6h10.6M4.8 24.2h10.6M4.8 28.8h10.6M4.8 33.4h10.6"/> <circle cx="26" cy="26" r="7"/> <g transform="translate(26 26)"> <path d="M0 0c.5-2.3 2-3.7 4.4-4.2.6 2.3-.1 4-2 5.1"/> <path d="M0 0c.5-2.3 2-3.7 4.4-4.2.6 2.3-.1 4-2 5.1" transform="rotate(120)"/> <path d="M0 0c.5-2.3 2-3.7 4.4-4.2.6 2.3-.1 4-2 5.1" transform="rotate(240)"/> </g> <path d="M9.6 39v3.4M31 39v3.4"/> </g> <g stroke="#E9AE7C" stroke-width="1.5" stroke-linecap="round" opacity=".85"> <path d="M40.6 19.4c2.5 1.6 2.5 4 0 5.6s-2.5 4 0 5.6"/> <path d="M46.8 17c2.9 2.2 2.9 5.8 0 8s-2.9 5.8 0 8"/> </g> </svg><h3>Wärmepumpe</h3>
           <p>Heizlast, Vorlauftemperatur, Heizkörper. Erst wenn diese drei Zahlen stimmen, frage ich Fachbetriebe an. Wenn sie gegen eine Wärmepumpe sprechen, sage ich das.</p>
         </article>
         <article>
           <span class="kopfnum">02</span>
-          <h3>Photovoltaik</h3>
+          <svg class="kartenbild" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <g stroke="#DA8230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"> <path d="M12.6 10.5h27.8l6 19.2H6.6l6-19.2Z"/> <path d="M10.7 16.9h32.2M8.8 23.3h36"/> <path d="M22.6 10.5 19.4 29.7M33.4 10.5l3.2 19.2"/> </g> <g stroke="#E9AE7C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"> <rect x="18.4" y="36.4" width="19.2" height="12.6" rx="2.2"/> <path d="M23.2 36.4v-2.6M32.8 36.4v-2.6"/> <path d="M22.6 45.4h7.2"/> </g> <path d="M26.6 39.2 23.4 43.4h3.4l-1.2 3.3 4.4-4.6h-3.4l1.4-2.9Z" fill="#DA8230"/> </svg><h3>Photovoltaik</h3>
           <p>Dach, Verbrauch, Speicherfrage. Ich rechne den Eigenverbrauch gegen die Einspeisevergütung und sage Ihnen, ab wann sich ein Speicher lohnt und ab wann nicht.</p>
         </article>
         <article>
           <span class="kopfnum">03</span>
-          <h3>Ihr vorliegendes Angebot</h3>
+          <svg class="kartenbild" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <g stroke="#DA8230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"> <path d="M10.4 6.6h19.2l9.4 9.4v26.2a2.6 2.6 0 0 1-2.6 2.6H10.4a2.6 2.6 0 0 1-2.6-2.6V9.2a2.6 2.6 0 0 1 2.6-2.6Z"/> <path d="M29.6 6.6V16h9.4"/> <path d="M14.4 22.4h11.8M14.4 28h17.6M14.4 33.6h8.2"/> </g> <g stroke="#E9AE7C" stroke-width="1.5" stroke-linecap="round" opacity=".8"> <path d="M26.6 33.6h5.8" stroke-dasharray="2.4 2.6"/> </g> <g stroke="#DA8230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"> <circle cx="38.2" cy="36.6" r="7.4" fill="#17342A"/> <path d="M43.6 42 48.4 47"/> <path d="M35.2 36.9l2.2 2.3 4.2-4.8"/> </g> </svg><h3>Ihr vorliegendes Angebot</h3>
           <p>Sie haben schon eins auf dem Tisch. Schicken Sie es mir. Ich sage Ihnen, was drin steht, was fehlt und wo das Wort "bauseits" später Geld kostet.</p>
         </article>
       </div></div></div>
@@ -795,11 +841,11 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
       <div class="zitat-grid">
         <figure><img src="bilder/uwe-parsiegla-portrait-4x5.webp" alt="Uwe Parsiegla, Elektromeister"></figure>
         <div>
-          <p class="zitat">„Manchmal ist die ehrlichste Antwort, dass sich gerade nichts rechnet. <span class="zwei">Die sage ich dann auch. Ich habe nichts zu verkaufen, ich habe nur einen Vergleich, und der stimmt entweder oder er stimmt nicht.“</span></p>
+          <p class="zitat" data-fuellen>„Manchmal ist die ehrlichste Antwort, dass sich gerade nichts rechnet. <span class="zwei">Die sage ich dann auch. Ich habe nichts zu verkaufen, ich habe nur einen Vergleich, und der stimmt entweder oder er stimmt nicht.“</span></p>
           <div class="zitat-name">Uwe Parsiegla</div>
           <div class="zitat-rolle">Elektromeister und unabhängiger Energiemakler, <span class="ph">[X]</span> Jahre im Elektrohandwerk</div>
           <div class="btnrow" style="margin-top:var(--s8)">
-            <a href="tel:+49000000000" class="btn btn-linie">Direkt anrufen</a>
+            <a href="tel:+4917416996538" class="btn btn-linie">Direkt anrufen</a>
             <a href="#anfrage" class="btn btn-orange">Angebote vergleichen lassen</a>
           </div>
         </div>
@@ -819,10 +865,10 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
             <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Ihre Daten gehen an keinen Dritten, bevor Sie zustimmen</li>
             <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--orange-600)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Antwort innerhalb von <span class="ph">[24 Stunden werktags]</span>, von mir persönlich</li>
           </ul>
-          <p class="mini" style="margin-top:var(--s8)">Lieber sprechen? <a href="tel:+49000000000" style="font-weight:600"><span class="ph">[Telefonnummer]</span></a></p>
+          <p class="mini" style="margin-top:var(--s8)">Lieber sprechen? <a href="tel:+4917416996538" style="font-weight:600">0174 16996538</a></p>
         </div>
 
-        <form class="karte" id="anfrageform" novalidate>
+        <form class="karte" id="anfrageform" novalidate data-ziel="https://formsubmit.co/ajax/cuong@gmail.com">
           <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
           <p class="stepno" id="stepno" aria-live="polite">Schritt 1 von 3</p>
 
@@ -891,6 +937,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
 
           <div id="danke" hidden>
             <h3 class="mittel">Danke, Ihre Anfrage ist da.</h3>
+            <p class="mini" id="sendefehler" hidden style="margin-top:var(--s4);color:var(--orange-700)">Hinweis fuer den Test: der Versand an die Testadresse hat nicht geklappt. Die Angaben sind damit nicht verschickt worden.</p>
             <p class="mini" style="margin-top:var(--s4)">Ich melde mich innerhalb von <span class="ph">[24 Stunden werktags]</span> persönlich bei Ihnen. Wenn es eilt, rufen Sie einfach an.</p>
           </div>
         </form>
@@ -907,7 +954,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
       <h2>Ein Angebot sagt Ihnen nichts. <span class="zwei">Drei sagen Ihnen alles.</span></h2>
       <div class="btnrow">
         <a href="#anfrage" class="btn btn-w">Angebote vergleichen lassen</a>
-        <a href="tel:+49000000000" class="btn btn-glas">Lieber sprechen</a>
+        <a href="tel:+4917416996538" class="btn btn-glas">Lieber sprechen</a>
       </div>
     </div></div>
     <div class="hin"><div class="fussz">
@@ -918,7 +965,7 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
         Elektromeister und unabhängiger Energiemakler<br>
         Privat und Gewerbe, deutschlandweit
         <span class="anschrift">Am Stadtwald 8<br>
-        <span class="ph">[PLZ und Ort]</span></span>
+        95497 Goldkronach</span>
       </div>
       <div>
         <strong>Leistungen</strong>
@@ -932,21 +979,21 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
       <div>
         <strong>Kontakt</strong>
         <ul>
-          <li><a href="tel:+49000000000"><span class="ph">[Telefonnummer]</span></a></li>
-          <li><a href="mailto:mail@example.de"><span class="ph">[E-Mail]</span></a></li>
+          <li><a href="tel:+4917416996538">0174 16996538</a></li>
+          <li><a href="mailto:uwe.parsiegla@gmx.de">uwe.parsiegla@gmx.de</a></li>
           <li><a href="#">Impressum</a></li>
           <li><a href="#">Datenschutz</a></li>
         </ul>
       </div>
       <div>
         <strong>Einzugsgebiet</strong>
-        Sitz Am Stadtwald 8 in <span class="ph">[Ort]</span>, tätig in ganz Deutschland, für Privat und Gewerbe. Die Aufnahme läuft im Umkreis von <span class="ph">[X]</span> Kilometern vor Ort, darüber hinaus digital. Die Montage übernimmt jeweils ein Fachbetrieb in Ihrer Region.
+        Sitz Am Stadtwald 8 in 95497 Goldkronach, tätig in ganz Deutschland, für Privat und Gewerbe. Der Umkreis ist Deutschland, die Aufnahme läuft vor Ort oder digital. Die Montage übernimmt jeweils ein Fachbetrieb in Ihrer Region.
       </div>
     </div></div>
     <div class="hin"><div class="klein-fuss">
       <span>Alle Angaben zu Förderung und Steuern: Stand 08.09.2026. Fördersätze und Rechtslage ändern sich. Die Angaben sind eine Orientierung und ersetzen keine Prüfung im Einzelfall.</span>
       <span>Die Montage und die handwerkliche Ausführung übernehmen die jeweils beauftragten Fachbetriebe. Uwe Parsiegla vermittelt, prüft und begleitet.</span>
-      <span style="color:var(--orange-300)">Entwurf: hervorgehobene Werte sind Platzhalter und werden durch Ihre Angaben ersetzt. Die Fotos stammen aus lizenzfreien Beständen und werden durch eigene Aufnahmen ersetzt, sobald welche vorliegen.</span>
+      <span style="color:var(--orange-300)">Entwurf: hervorgehobene Werte sind Platzhalter und werden durch Ihre Angaben ersetzt. Die Fotos stammen aus lizenzfreien Beständen und werden durch eigene Aufnahmen ersetzt, sobald welche vorliegen. Das Formular geht zum Testen über den Dienst FormSubmit an eine Adresse bei LIKOVO. Vor dem Livegang wird es auf einen eigenen Versand umgestellt und der Auftragsverarbeitungsvertrag geprüft.</span>
     </div></div>
   </div>
 </div>
@@ -1028,13 +1075,104 @@ legend{font-size:13.5px;font-weight:600;margin-bottom:9px;padding:0}
     if(t.hasAttribute('data-next')&&cur<steps.length-1) show(cur+1);
     if(t.hasAttribute('data-back')&&cur>0) show(cur-1);
   });
+  var sendeZiel=f.getAttribute('data-ziel');
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!f.checkValidity()){f.reportValidity();return}
-    steps.forEach(function(fs){fs.hidden=true});
-    f.querySelector('.progress').hidden=true; lab.hidden=true; danke.hidden=false;
+    var knopf=f.querySelector('button[type=submit]');
+    if(knopf){knopf.disabled=true; knopf.textContent='Wird gesendet';}
+    function fertig(fehler){
+      steps.forEach(function(fs){fs.hidden=true});
+      f.querySelector('.progress').hidden=true; lab.hidden=true; danke.hidden=false;
+      if(fehler){ var h=document.getElementById('sendefehler'); if(h) h.hidden=false; }
+      danke.scrollIntoView({block:'nearest',behavior:'smooth'});
+    }
+    if(!sendeZiel){ fertig(false); return; }
+    var fd=new FormData(f);
+    fd.append('_subject','Neue Anfrage ueber die Website von Uwe Parsiegla');
+    fd.append('_template','table');
+    fd.append('_captcha','false');
+    var mail=f.querySelector('#email'); if(mail) fd.append('_replyto', mail.value);
+    fetch(sendeZiel,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+      .then(function(r){ return r.ok ? r.json().catch(function(){return {}}) : Promise.reject(r.status); })
+      .then(function(){ fertig(false); })
+      .catch(function(err){ console.warn('Formularversand fehlgeschlagen:',err); fertig(true); });
   });
   show(0);
+})();
+
+/* ---- Abschnitte und Karten einblenden ---------------------------------- */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var beo;
+  try{
+    beo = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('an'); beo.unobserve(e.target); }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:0.12});
+  }catch(err){ return; }
+  var gruppen = ['.kopfzeile','.saeulen > div','.panel-karten article','.ablauf-bild',
+    '.schritte article','.merkmale > div','.tab-duo > div','.zitat-grid > *',
+    '.warum-grid > *','.anfrage-grid > *','.schluss-kopf > .hin','.fussz > div','.balken figure'];
+  var gesehen = [];
+  gruppen.forEach(function(sel){
+    var k=0, vater=null;
+    Array.prototype.forEach.call(document.querySelectorAll(sel), function(el){
+      if(el.closest('.hero-in')) return;
+      if(el.querySelector('[data-fuellen]')) return;
+      if(el.classList.contains('ein')) return;
+      if(el.parentElement!==vater){ k=0; vater=el.parentElement; }
+      el.style.setProperty('--k', String(k++));
+      el.classList.add('ein'); gesehen.push(el);
+    });
+  });
+  gesehen.forEach(function(el){ beo.observe(el); });
+  /* Notnagel: was nach 3 Sekunden noch verborgen ist, wird sichtbar gemacht */
+  setTimeout(function(){ gesehen.forEach(function(el){ el.classList.add('an'); }); }, 3000);
+})();
+
+/* ---- Grosse Texte fuellen sich beim Scrollen --------------------------- */
+(function(){
+  var ziele = document.querySelectorAll('[data-fuellen]');
+  if(!ziele.length) return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  Array.prototype.forEach.call(ziele, function(el){
+    var n = 0;
+    (function wandle(knoten){
+      Array.prototype.slice.call(knoten.childNodes).forEach(function(k){
+        if(k.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          k.textContent.split(/(\s+)/).forEach(function(t){
+            if(!t) return;
+            if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+            var sp = document.createElement('span');
+            sp.className = 'w'; sp.style.setProperty('--i', String(n++));
+            sp.textContent = t; frag.appendChild(sp);
+          });
+          k.parentNode.replaceChild(frag, k);
+        } else if(k.nodeType === 1){ wandle(k); }
+      });
+    })(el);
+    el.style.setProperty('--n', String(n));
+    el.classList.add('bereit');
+  });
+  var laeuft = false;
+  function mess(){
+    laeuft = false;
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    Array.prototype.forEach.call(ziele, function(el){
+      var r = el.getBoundingClientRect();
+      var start = vh * 0.86, ende = vh * 0.42;
+      var p = (start - r.top) / (start - ende);
+      el.style.setProperty('--p', (p < 0 ? 0 : p > 1 ? 1 : p).toFixed(3));
+    });
+  }
+  function anstoss(){ if(!laeuft){ laeuft = true; requestAnimationFrame(mess); } }
+  window.addEventListener('scroll', anstoss, {passive:true});
+  window.addEventListener('resize', anstoss);
+  mess();
 })();
 </script>
 </body>
