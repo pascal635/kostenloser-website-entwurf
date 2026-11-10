@@ -3,6 +3,8 @@
 Options -Indexes
 DirectoryIndex index.html
 AddDefaultCharset UTF-8
+AddType image/webp .webp
+ErrorDocument 404 /404.html
 
 RewriteEngine On
 
@@ -35,7 +37,7 @@ RewriteRule ^(.+?)/?$ $1.html [L]
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
   AddOutputFilterByType DEFLATE application/javascript application/xml application/xhtml+xml
-  AddOutputFilterByType DEFLATE image/svg+xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml application/rss+xml application/ld+json
 </IfModule>
 
 # Caching statischer Dateien (Performance)
@@ -44,7 +46,16 @@ RewriteRule ^(.+?)/?$ $1.html [L]
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType text/css "access plus 1 week"
   ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Sicherheits-Header
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
 </IfModule>
