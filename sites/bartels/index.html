@@ -322,7 +322,10 @@ label.f{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;text-t
 .f-felder{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
 .f-felder .voll{grid-column:1/-1}
 @media(max-width:560px){.f-felder{grid-template-columns:1fr}}
-.f-danke{text-align:left}
+.f-danke,.f-fehler{text-align:left}
+.f-fehler h3{color:var(--schwarz)}
+.f-fehler .btn{margin-top:var(--s4)}
+.f-entwurf{font-size:13px;color:#A33;border:1px dashed #A33;border-radius:var(--r1);padding:8px 10px}
 .f-danke .haken{width:52px;height:52px;border-radius:50%;background:var(--schwarz);display:grid;place-items:center;margin-bottom:var(--s5)}
 .zusammenfassung{background:var(--porzellan);border:1px solid var(--fuge);border-radius:var(--r2);padding:var(--s4);font-size:15px;margin:var(--s5) 0}
 .zusammenfassung dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px var(--s4)}
@@ -771,7 +774,14 @@ footer li{margin-bottom:6px}
       <p class="btn-fine">Montag bis Freitag, 7 bis 18 Uhr</p>
     </div>
 
-    <form class="funnel" id="funnel" novalidate>
+    <!-- Versand ueber Web3Forms, derselbe Weg wie bei ruf-pflege24 und paninimanufaktur.
+         Der Access Key wird vor dem Livegang eingetragen. Solange er fehlt, zeigt das
+         Formular einen Hinweis statt einer Bestaetigung, die niemand bekommen hat. -->
+    <form class="funnel" id="funnel" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" id="w3key" value="ACCESS-KEY-VOR-LIVEGANG-EINTRAGEN">
+      <input type="hidden" name="subject" value="Neue Anfrage über fliesenhandwerk-hannover.de">
+      <input type="hidden" name="from_name" value="Fliesenlegerhandwerk Hannover">
+      <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
       <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
       <p class="micro" id="fSchritt">Schritt 1 von 4</p>
 
@@ -835,6 +845,17 @@ footer li{margin-bottom:6px}
         <h3>Danke, Ihre Anfrage ist da</h3>
         <p style="font-size:16px;color:#3C3E40">Ihre Anfrage liegt jetzt bei Sandro Bartels, wir melden uns persönlich bei Ihnen. Wenn es schneller gehen soll: <a href="tel:+4915142112494" style="font-weight:600">01514 2112494</a>.</p>
         <div class="zusammenfassung"><dl id="fZusammen"></dl></div>
+        <p class="f-entwurf" id="fEntwurf" hidden>Entwurf: der Versand ist noch nicht
+          freigeschaltet. Auf der fertigen Seite geht die Anfrage an dieser Stelle raus.</p>
+      </div>
+
+      <div class="f-fehler" id="fFehler" hidden>
+        <h3>Das hat gerade nicht geklappt</h3>
+        <p style="font-size:16px;color:#3C3E40">Ihre Anfrage konnte technisch nicht übermittelt
+          werden. Rufen Sie uns bitte kurz an unter
+          <a href="tel:+4915142112494" style="font-weight:600">01514 2112494</a> oder schreiben Sie
+          an <a href="mailto:sandro.bartels@t-online.de" style="font-weight:600">sandro.bartels@t-online.de</a>.</p>
+        <button type="button" class="btn btn-2" id="fNochmal">Noch einmal versuchen</button>
       </div>
     </form>
   </div>
@@ -1040,14 +1061,15 @@ footer li{margin-bottom:6px}
     document.getElementById(id).addEventListener('blur', function(){ pruefe(id); });
   });
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    /* beide Felder pruefen, nicht kurzschliessen, sonst sieht der Nutzer nur einen Fehler */
-    var okName = pruefe('name');
-    var okTel  = pruefe('telefon');
-    if (!okName || !okTel) { form.querySelector('[aria-invalid="true"]').focus(); return; }
+  var fehler  = document.getElementById('fFehler');
+  var entwurf = document.getElementById('fEntwurf');
+  var key     = document.getElementById('w3key');
 
-    /* Entwurf: kein Versand-Endpunkt. Auf der echten Seite geht hier die Anfrage raus. */
+  /* Der Key steht erst kurz vor dem Livegang drin. Bis dahin soll niemand eine
+     Bestaetigung sehen, die in Wahrheit nirgendwo angekommen ist. */
+  function versandBereit(){ return key.value.indexOf('EINTRAGEN') === -1; }
+
+  function zusammenfassen(){
     var d = new FormData(form);
     var zeilen = [
       ['Anliegen', d.get('anliegen') || 'nicht angegeben'],
@@ -1057,17 +1079,60 @@ footer li{margin-bottom:6px}
       ['Telefon', d.get('telefon')]
     ];
     if (d.get('ort')) zeilen.push(['Ort', d.get('ort')]);
-    var dl = document.getElementById('fZusammen');
-    dl.innerHTML = zeilen.map(function(z){
+    document.getElementById('fZusammen').innerHTML = zeilen.map(function(z){
       return '<dt>' + z[0] + '</dt><dd>' + String(z[1]).replace(/[<>&]/g,'') + '</dd>';
     }).join('');
+  }
 
+  function formularAus(){
     steps.forEach(function(s){ s.hidden = true; });
     nav.hidden = true;
     label.hidden = true;
     form.querySelector('.prog').hidden = true;
+  }
+
+  function zeigeDanke(){
+    zusammenfassen();
+    formularAus();
+    fehler.hidden = true;
+    entwurf.hidden = versandBereit();
     danke.hidden = false;
     danke.scrollIntoView({block:'center', behavior:'smooth'});
+  }
+
+  function zeigeFehler(){
+    formularAus();
+    danke.hidden = true;
+    fehler.hidden = false;
+    fehler.scrollIntoView({block:'center', behavior:'smooth'});
+  }
+
+  document.getElementById('fNochmal').addEventListener('click', function(){
+    fehler.hidden = true;
+    nav.hidden = false;
+    label.hidden = false;
+    form.querySelector('.prog').hidden = false;
+    zeige(MAX);
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    /* beide Felder pruefen, nicht kurzschliessen, sonst sieht der Nutzer nur einen Fehler */
+    var okName = pruefe('name');
+    var okTel  = pruefe('telefon');
+    if (!okName || !okTel) { form.querySelector('[aria-invalid="true"]').focus(); return; }
+
+    if (!versandBereit()) { zeigeDanke(); return; }
+
+    var beschriftung = senden.textContent;
+    senden.disabled = true;
+    senden.textContent = 'Wird gesendet';
+
+    fetch(form.action, { method: 'POST', body: new FormData(form) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if (d && d.success) { zeigeDanke(); } else { zeigeFehler(); } })
+      .catch(function(){ zeigeFehler(); })
+      .then(function(){ senden.disabled = false; senden.textContent = beschriftung; });
   });
 
   /* Leistungskachel und Altbau-Button springen mit vorbelegtem Anliegen in den Funnel */
