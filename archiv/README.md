@@ -10,3 +10,4 @@ noch das neue Repo.
 | Ordner | Neues Repo | Umzug |
 |---|---|---|
 | `uwe-parsiegla` | [`Likovo-Agency/uwe-parsiegla`](https://github.com/Likovo-Agency/uwe-parsiegla) | 11.11.2026 |
+| `effitech` | [`Likovo-Agency/effitech`](https://github.com/Likovo-Agency/effitech) | 11.11.2026 |
