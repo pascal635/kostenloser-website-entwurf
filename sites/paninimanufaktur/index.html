@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pizza Catering Miltenberg &amp; Untermain | Panini Manufaktur</title>
-<meta name="description" content="Neapolitanische Steinofen-Pizza live aus dem Foodtrailer. Catering für Hochzeit, Geburtstag &amp; Firmenfeier ab 30 Personen, ab 20,11 € p. P. Jetzt anfragen.">
+<meta name="description" content="Neapolitanische Steinofen-Pizza live aus dem Foodtrailer. Catering für Hochzeit, Geburtstag &amp; Firmenfeier ab 30 Personen, ab 21,90 € p. P. Jetzt anfragen.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.paninimanufaktur.de/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -171,6 +171,30 @@
   .clist li svg{flex:none;width:19px;height:19px;color:var(--basil);margin-top:3px}
   .card .ex{font-size:13.5px;color:var(--warmgray);margin:0}
   .card .btn{margin-top:8px;width:100%}
+  /* ===== Pakete 2027 ===== */
+  .pkgs{display:grid;gap:26px;margin-top:clamp(30px,4vw,50px);align-items:stretch}
+  @media(min-width:960px){.pkgs{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:959px){.pkgs{max-width:560px;margin-left:auto;margin-right:auto}}
+  .pkg{background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-md);overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.04);position:relative}
+  .pkg.featured{border:1.5px solid var(--brass);box-shadow:var(--sh-lg)}
+  @media(min-width:960px){.pkg.featured{transform:translateY(-12px)}}
+  .pkg-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--sand)}
+  .pkg-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .pkg-label{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.94);color:var(--charcoal);font-size:12px;font-weight:600;letter-spacing:.04em;padding:6px 13px;border-radius:var(--r-pill)}
+  .pkg.featured .pkg-label{background:var(--tomato);color:#fff}
+  .pkg-body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .pkg h3{font-size:25px;margin:0}
+  .pkg-tagline{font-family:var(--ff-display);font-style:italic;color:var(--terracotta);font-size:17px;margin:0}
+  .pkg .clist{margin:6px 0 8px}
+  .pkg-price{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+  .pkg-price .pp{display:block;font-family:var(--ff-display);font-size:34px;color:var(--tomato);line-height:1.05;font-weight:600}
+  .pkg-price .pp.req{font-size:28px}
+  .pkg-price .pn{display:block;font-size:13.5px;color:var(--warmgray);margin-top:6px}
+  .pkg .btn{width:100%;margin-top:14px}
+  .pk-close{text-align:center;margin-top:clamp(42px,5vw,64px)}
+  .pk-claim{font-family:var(--ff-display);font-size:clamp(24px,3.2vw,34px);margin:0 0 8px;color:var(--charcoal);font-weight:600}
+  .pk-sign{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-deep);font-weight:600;margin:0}
+
   .incl-card{background:#fff;border-radius:var(--r-lg);padding:clamp(26px,3vw,34px);margin-top:26px;box-shadow:var(--sh-sm)}
   .incl-card .bt{font-size:19px;margin:0 0 20px;font-family:var(--ff-display);font-weight:600;color:var(--charcoal)}
   .incl{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
@@ -416,7 +440,7 @@
   <div class="wrap">
     <span class="eyebrow">Mobiles Event-Catering · Bürgstadt</span>
     <h1>Pizza Catering für euer Event, <em>live</em> aus dem Foodtrailer</h1>
-    <p class="sub">Original neapolitanische Steinofen-Pizza und Panuozzo, frisch vor euren Gästen gebacken. Rundum sorglos ab 30 Personen, ab 20,11 Euro pro Person, Anfahrt bis 25 km inklusive.</p>
+    <p class="sub">Original neapolitanische Steinofen-Pizza und Panuozzo, frisch vor euren Gästen gebacken. Rundum sorglos ab 30 Personen, ab 21,90 Euro pro Person, Anfahrt bis 25 km inklusive.</p>
     <ul class="microtrust">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Live vor euren Gästen gebacken</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Hochzeit, Geburtstag &amp; Firmenfeier</li>
@@ -486,7 +510,7 @@
   <div class="wrap">
     <div class="buffet-grid">
       <div class="buffet-media">
-        <img src="bilder/pizza-catering-buergstadt-pizza-burrata-parma-1600.webp" srcset="bilder/pizza-catering-buergstadt-pizza-burrata-parma-800.webp 800w, bilder/pizza-catering-buergstadt-pizza-burrata-parma-1600.webp 1600w" sizes="(min-width: 920px) 50vw, 100vw" width="1600" height="1200" alt="Pizza mit Burrata, Prosciutto, Rucola und Balsamico aus dem Pizzabuffet der Panini Manufaktur" loading="lazy">
+        <img src="bilder/pizza-catering-buergstadt-pizza-burrata-parma-1600.webp" srcset="bilder/pizza-catering-buergstadt-pizza-burrata-parma-800.webp 800w, bilder/pizza-catering-buergstadt-pizza-burrata-parma-1600.webp 1600w" sizes="(min-width: 920px) 50vw, 100vw" width="1600" height="1200" alt="Pizza mit Burrata, Rohschinken, Rucola und Balsamico aus dem Pizzabuffet der Panini Manufaktur" loading="lazy">
         <span class="buffet-badge"><b>50+</b><span>Pizza-<br>kreationen</span></span>
       </div>
       <div>
@@ -530,34 +554,66 @@
     <div class="sec-head center narrow reveal">
       <span class="eyebrow">Pakete &amp; Preise</span>
       <h2>Catering-Pakete und Preise <em>pro Person</em></h2>
-      <p class="lead">Transparente Pauschalen statt böser Überraschungen. Ihr wisst vorher, was der Abend kostet.</p>
+      <p class="lead">Zwei Pakete mit klarem Orientierungspreis. Und für alle, die mehr als Pizza wollen: eure individuelle Streetfood Experience.</p>
     </div>
-    <div class="cards">
-      <div class="card reveal">
-        <h3>Jeder eine Pizza</h3>
-        <div class="price">ab 20,11 €<small> / Person</small></div>
-        <p class="desc">Bis zu 4 Pizzasorten aus über 50 Kreationen, frisch aus dem Steinofen. Ideal, wenn jeder Gast seine Pizza bekommen soll.</p>
-        <p class="ex">Beispiel: 100 Personen für 2.011 Euro netto.</p>
-        <a class="btn btn-outline" href="#anfrage" data-paket="Jeder eine Pizza">Paket 1 anfragen</a>
+    <div class="pkgs">
+      <div class="pkg reveal">
+        <div class="pkg-img"><span class="pkg-label">Paket 1</span><img src="bilder/pizza-catering-buergstadt-streetfood-pizza-lilly-1200.webp" srcset="bilder/pizza-catering-buergstadt-streetfood-pizza-lilly-600.webp 600w, bilder/pizza-catering-buergstadt-streetfood-pizza-lilly-1200.webp 1200w" sizes="(min-width: 960px) 33vw, (min-width: 600px) 560px, 100vw" width="1200" height="900" alt="Steinofen-Pizza mit Rohschinken, Datteln, Rucola und Parmigiano der Panini Manufaktur" loading="lazy"></div>
+        <div class="pkg-body">
+          <h3>Streetfood Pizza</h3>
+          <p class="pkg-tagline">Jeder Gast bekommt seine Pizza.</p>
+          <ul class="clist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Bis zu 4 Pizzakreationen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Frische Zubereitung vor Ort</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vegetarische Varianten</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 2 bis 3 Stunden Cateringservice</li>
+          </ul>
+          <div class="pkg-price"><span class="pp">ab 21,90 €</span><span class="pn">netto pro Person, Servicepauschale inklusive</span></div>
+          <a class="btn btn-outline" href="#anfrage" data-paket="Streetfood Pizza">Streetfood Pizza anfragen</a>
+        </div>
       </div>
-      <div class="card featured reveal">
-        <span class="tag">Beliebteste Wahl</span>
-        <h3>Signature-Event</h3>
-        <div class="price">ab 23,03 €<small> / Person</small></div>
-        <p class="desc">All you can eat: bis zu 6 Pizzasorten aus über 50 Kreationen, mit durchgehendem Nachschub. Für Feiern, bei denen wirklich jeder satt werden soll, ohne Limit.</p>
-        <p class="ex">Beispiel: 100 Personen für 2.303 Euro netto.</p>
-        <a class="btn btn-primary" href="#anfrage" data-paket="Signature-Event (All you can eat)">Paket 2 anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="pkg featured reveal">
+        <div class="pkg-img"><span class="pkg-label">Unser Premium-Paket</span><img src="bilder/pizza-catering-buergstadt-signature-event-pizzabuffet-1200.webp" srcset="bilder/pizza-catering-buergstadt-signature-event-pizzabuffet-600.webp 600w, bilder/pizza-catering-buergstadt-signature-event-pizzabuffet-1200.webp 1200w" sizes="(min-width: 960px) 33vw, (min-width: 600px) 560px, 100vw" width="1200" height="900" alt="Pizzabuffet mit mehreren Signature-Pizzen vor den Pizzaöfen im Foodtrailer" loading="lazy"></div>
+        <div class="pkg-body">
+          <h3>Signature Event</h3>
+          <p class="pkg-tagline">All you can eat. Genuss ohne Limit.</p>
+          <ul class="clist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> All you can eat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Bis zu 6 Pizzakreationen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Durchgehender Nachschub</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Besondere Signature-Kreationen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 2 bis 3 Stunden Cateringservice</li>
+          </ul>
+          <div class="pkg-price"><span class="pp">ab 25,90 €</span><span class="pn">netto pro Person, Servicepauschale inklusive</span></div>
+          <a class="btn btn-primary" href="#anfrage" data-paket="Signature Event (All you can eat)">Signature Event anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="pkg reveal">
+        <div class="pkg-img"><span class="pkg-label">Individuell</span><img src="bilder/pizza-catering-buergstadt-streetfood-experience-burrata-960.webp" srcset="bilder/pizza-catering-buergstadt-streetfood-experience-burrata-600.webp 600w, bilder/pizza-catering-buergstadt-streetfood-experience-burrata-960.webp 960w" sizes="(min-width: 960px) 33vw, (min-width: 600px) 560px, 100vw" width="960" height="720" alt="Pizza Potata Burrata mit Kartoffelstampf, Speck, Burrata und Schnittlauch, daneben die Kreidetafel" loading="lazy"></div>
+        <div class="pkg-body">
+          <h3>Streetfood Experience</h3>
+          <p class="pkg-tagline">Mehr als Pizza. Ein individuelles Streetfood-Erlebnis.</p>
+          <ul class="clist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Handgemachte Panuozzo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Pulled Pork</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Parmaschinken</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Burrata-Spezialitäten</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Individuelle Streetfood-Kreationen</li>
+          </ul>
+          <div class="pkg-price"><span class="pp req">Preis auf Anfrage</span><span class="pn">Individuelle Kalkulation nach Gästezahl und Leistungsumfang</span></div>
+          <a class="btn btn-outline" href="#anfrage" data-paket="Streetfood Experience (individuell)">Individuell anfragen</a>
+        </div>
       </div>
     </div>
 
     <div class="incl-card reveal">
-      <p class="bt">Immer inklusive</p>
+      <p class="bt">Bei jedem Paket inklusive</p>
       <ul class="incl">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Foodtrailer vor Ort</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vegetarische Optionen</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Aufbau, Abbau &amp; Reinigung</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 2 bis 3 Stunden Servicezeit</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Anfahrt bis 25 km</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Mobiler Foodtrailer</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Auf- und Abbau</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Reinigung des Arbeitsbereichs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Anfahrt im vereinbarten Radius</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vegetarische Alternativen</li>
       </ul>
     </div>
 
@@ -572,7 +628,11 @@
         <li><span>Poffertjes, warme Mini-Pfannkuchen zum Nachtisch</span> <span class="amt">auf Anfrage</span></li>
       </ul>
     </div>
-    <p class="footnote">Alle Preise netto pro Person, zzgl. 7 % MwSt. Buchbar ab 30 Personen. Für kleinere oder größere Gruppen passen wir den Pro-Kopf-Preis flexibel an.</p>
+    <p class="footnote">Alle Preise sind Netto-Orientierungspreise pro Person zzgl. 7 % MwSt., die Servicepauschale ist bereits enthalten. Den endgültigen Preis kalkulieren wir individuell nach Gästezahl, Veranstaltungsort und Leistungsumfang. Buchbar ab 30 Personen.</p>
+    <div class="pk-close reveal">
+      <p class="pk-claim">Eure Feier. Euer Erlebnis. Unser Handwerk.</p>
+      <p class="pk-sign">Panini Manufaktur · Home of Authentic Food</p>
+    </div>
   </div>
 </section>
 
@@ -638,7 +698,7 @@
       <div class="menu-list">
         <div class="menu-item"><div class="mi-head"><span class="mi-name">Scharfe Biene</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Trifft sie euer Geschmackszentrum?</em> Nonna's Secret, Mozzarella, spicy Salami, kandierte Jalapeños, Chili-Honig vom Imker.</p><span class="mi-alg">A, G</span></div>
         <div class="menu-item"><div class="mi-head"><span class="mi-name">Mama-Dog</span><span class="mi-dots"></span><span class="mi-price">13 €</span></div><p class="mi-desc"><em>Hot Dog war gestern, gebacken statt warmgemacht.</em> Sauerrahm, BBQ-Soße, Käsekrainer, Cheddar, Hot-Dog-Gürkchen, Röstzwiebeln.</p><span class="mi-alg">A, G</span></div>
-        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Duchessa</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Italienische Eleganz mit cremiger Burrata.</em> Nonna's Secret, Fior di Latte, Prosciutto di Parma, Burrata, Parmigiano, Rucola, Crema di Aceto Balsamico.</p><span class="mi-alg">A, G</span></div>
+        <div class="menu-item"><div class="mi-head"><span class="mi-name">La Duchessa</span><span class="mi-dots"></span><span class="mi-price">15 €</span></div><p class="mi-desc"><em>Italienische Eleganz mit cremiger Burrata.</em> Nonna's Secret, Fior di Latte, mediterraner Rohschinken, Burrata, Parmigiano, Rucola, Crema di Aceto Balsamico.</p><span class="mi-alg">A, G</span></div>
       </div>
     </div>
 
@@ -755,14 +815,14 @@
       <h2>Häufige Fragen zum Pizza Catering</h2>
     </div>
     <div class="faq reveal">
-      <details open><summary>Was kostet Pizza Catering pro Person?<span class="ico"></span></summary><div class="a"><p>Bei der Panini Manufaktur startet das Pizza Catering ab 20,11 Euro pro Person (Paket „Jeder eine Pizza") bzw. ab 23,03 Euro pro Person beim All-you-can-eat-Paket „Signature-Event". Alle Preise netto, zzgl. 7 % MwSt.</p></div></details>
+      <details open><summary>Was kostet Pizza Catering pro Person?<span class="ico"></span></summary><div class="a"><p>Bei der Panini Manufaktur startet das Pizza Catering ab 21,90 Euro pro Person (Paket „Streetfood Pizza") bzw. ab 25,90 Euro pro Person beim All-you-can-eat-Paket „Signature Event". Das sind Netto-Orientierungspreise zzgl. 7 % MwSt., den endgültigen Preis kalkulieren wir nach Gästezahl, Ort und Leistungsumfang. Die Streetfood Experience mit Panuozzo, Pulled Pork und Burrata-Spezialitäten gibt es als individuelles Angebot.</p></div></details>
       <details><summary>Gibt es beim Catering nur die Pizzen von der Speisekarte?<span class="ico"></span></summary><div class="a"><p>Nein. Die Speisekarte zeigt unsere zehn Streetfood-Pizzen. Fürs Catering haben wir über 50 Pizzakreationen und stellen euer Pizzabuffet individuell nach Anlass, Gästezahl und euren Wünschen zusammen.</p></div></details>
       <details><summary>Ab wie vielen Personen bucht man euch?<span class="ico"></span></summary><div class="a"><p>Ab 30 Personen, nach oben flexibel skalierbar.</p></div></details>
       <details><summary>In welchem Umkreis seid ihr im Einsatz?<span class="ico"></span></summary><div class="a"><p>Ab Bürgstadt in der Region Miltenberg, im Untermain, in Churfranken und im Odenwald, zum Beispiel in Miltenberg, Amorbach, Klingenberg, Großheubach, Buchen, Walldürn und Hardheim. Bis 25 km ist die Anfahrt inklusive. Für weiter entfernte Orte fragt einfach an.</p></div></details>
       <details><summary>Kann man Panuozzo zum Paket dazubuchen?<span class="ico"></span></summary><div class="a"><p>Ja. Panuozzo in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken könnt ihr ab 30 Portionen zu jedem Paket dazubuchen, für 12 Euro netto pro Portion. Premium Panini gibt es für 10 Euro netto pro Portion.</p></div></details>
       <details><summary>Was ist im Preis inklusive?<span class="ico"></span></summary><div class="a"><p>Foodtrailer vor Ort, vegetarische Optionen, Aufbau, Abbau, Reinigung sowie 2 bis 3 Stunden Servicezeit.</p></div></details>
       <details><summary>Gibt es vegetarische Optionen?<span class="ico"></span></summary><div class="a"><p>Ja, vegetarische Pizzen sind immer inklusive. Dazu gibt es vegetarische Panuozzo wie den Bella-Italia.</p></div></details>
-      <details><summary>Werden bei uns alle satt?<span class="ico"></span></summary><div class="a"><p>Ja. Beim Paket „Signature-Event" backen wir durchgehend nach, bis alle satt sind. Wir kalkulieren die Menge passend zu eurer Gästezahl, niemand geht hungrig nach Hause.</p></div></details>
+      <details><summary>Werden bei uns alle satt?<span class="ico"></span></summary><div class="a"><p>Ja. Beim Paket „Signature Event" backen wir durchgehend nach, bis alle satt sind. Wir kalkulieren die Menge passend zu eurer Gästezahl, niemand geht hungrig nach Hause.</p></div></details>
       <details><summary>Wie läuft die Buchung ab?<span class="ico"></span></summary><div class="a"><p>Ihr fragt mit Wunschtermin und Wunschpaket an, wir schicken euch ein Angebot, ihr bestätigt. Am Eventtag kommen wir, backen live und bauen wieder ab.</p></div></details>
       <details><summary>Wie schnell bekomme ich eine Antwort?<span class="ico"></span></summary><div class="a"><p>In der Regel innerhalb von 24 Stunden auf eure unverbindliche Anfrage.</p></div></details>
       <details><summary>Was ist der Unterschied zwischen Pizza und Panuozzo?<span class="ico"></span></summary><div class="a"><p>Panuozzo ist ein aufgeschnittenes, gefülltes Pizzabrot aus demselben 48 Stunden gereiften Teig, erhältlich in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken.</p></div></details>
@@ -800,7 +860,7 @@
           <div><label for="gaeste">Anzahl Gäste</label><input id="gaeste" name="gaeste" type="number" min="30" placeholder="z. B. 80"></div>
           <div><label for="anlass">Anlass</label><select id="anlass" name="anlass"><option value="">bitte wählen</option><option>Hochzeit</option><option>Geburtstag</option><option>Jubiläum</option><option>Gartenparty</option><option>Firmenfeier</option><option>Sonstiges</option></select></div>
         </div>
-        <div><label for="paket">Wunschpaket</label><select id="paket" name="paket"><option value="">bitte wählen</option><option>Jeder eine Pizza</option><option>Signature-Event (All you can eat)</option><option>noch unsicher</option></select></div>
+        <div><label for="paket">Wunschpaket</label><select id="paket" name="paket"><option value="">bitte wählen</option><option>Streetfood Pizza</option><option>Signature Event (All you can eat)</option><option>Streetfood Experience (individuell)</option><option>noch unsicher</option></select></div>
         <div><label for="nachricht">Nachricht</label><textarea id="nachricht" name="nachricht" rows="4" placeholder="Erzählt uns kurz von eurem Event"></textarea></div>
         <label class="consent"><input type="checkbox" id="datenschutz" name="Datenschutz zugestimmt" value="Ja" required><span>Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. *</span></label>
         <button class="btn btn-primary" type="submit">Unverbindliche Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -885,11 +945,11 @@
 
 <!-- JSON-LD: FoodEstablishment -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FoodEstablishment","@id":"https://www.paninimanufaktur.de/#business","name":"Panini Manufaktur","description":"Mobiles Pizza Catering und Streetfood aus Bürgstadt: neapolitanische Steinofen-Pizza und Panuozzo, live aus dem Foodtrailer, für Hochzeiten, Geburtstage und Firmenfeiern ab 30 Personen. Individuelles Pizzabuffet mit über 50 Pizzakreationen.","image":"https://www.paninimanufaktur.de/bilder/pizza-catering-buergstadt-steinofen-pizza.jpg","servesCuisine":["Italienisch","Neapolitanische Pizza","Streetfood"],"priceRange":"€€","telephone":"+4915170855203","email":"paninimanufaktur@gmail.com","founder":"Michael Bundschuh","url":"https://www.paninimanufaktur.de/","logo":"https://www.paninimanufaktur.de/favicon-180.png","hasMenu":"https://www.paninimanufaktur.de/#speisekarte","geo":{"@type":"GeoCoordinates","latitude":49.7173,"longitude":9.2750},"address":{"@type":"PostalAddress","streetAddress":"Stormstraße 2","postalCode":"63927","addressLocality":"Bürgstadt","addressRegion":"Bayern","addressCountry":"DE"},"areaServed":["Bürgstadt","Miltenberg","Amorbach","Klingenberg","Großheubach","Kleinheubach","Großwallstadt","Buchen","Walldürn","Hardheim","Untermain","Churfranken","Odenwald"],"sameAs":["https://www.instagram.com/panini.manufaktur/"],"makesOffer":[{"@type":"Offer","name":"Pizza Catering Paket Jeder eine Pizza","price":"20.11","priceCurrency":"EUR","description":"Bis zu 4 Pizzasorten aus über 50 Kreationen pro Person, netto zzgl. MwSt., ab 30 Personen."},{"@type":"Offer","name":"Pizza Catering Paket Signature-Event (All you can eat)","price":"23.03","priceCurrency":"EUR","description":"Bis zu 6 Pizzasorten aus über 50 Kreationen mit Nachschub pro Person, netto zzgl. MwSt., ab 30 Personen."}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"20","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Roland H."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Herausragendes Catering bei unserer Geburtstagsfeier. Pizza so lecker wie in bella Italia, super Service und ein Food-Trailer, der auch optisch etwas hermacht. Auf jeden Wunsch wird individuell eingegangen, der Preis ist ehrlich und fair."},{"@type":"Review","author":{"@type":"Person","name":"Adrian Popescu"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Die neapolitanischen Pizzen sind unglaublich lecker. Die Zutaten und der Teig sind sehr frisch und hochwertig, diese zählen zu den besten!"},{"@type":"Review","author":{"@type":"Person","name":"Judith König"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Frische und regionale Produkte, kreative Kombinationen und mit viel Liebe angerichtet und belegt, vom Chef persönlich."}]}
+{"@context":"https://schema.org","@type":"FoodEstablishment","@id":"https://www.paninimanufaktur.de/#business","name":"Panini Manufaktur","description":"Mobiles Pizza Catering und Streetfood aus Bürgstadt: neapolitanische Steinofen-Pizza und Panuozzo, live aus dem Foodtrailer, für Hochzeiten, Geburtstage und Firmenfeiern ab 30 Personen. Individuelles Pizzabuffet mit über 50 Pizzakreationen.","image":"https://www.paninimanufaktur.de/bilder/pizza-catering-buergstadt-steinofen-pizza.jpg","servesCuisine":["Italienisch","Neapolitanische Pizza","Streetfood"],"priceRange":"€€","telephone":"+4915170855203","email":"paninimanufaktur@gmail.com","founder":"Michael Bundschuh","url":"https://www.paninimanufaktur.de/","logo":"https://www.paninimanufaktur.de/favicon-180.png","hasMenu":"https://www.paninimanufaktur.de/#speisekarte","geo":{"@type":"GeoCoordinates","latitude":49.7173,"longitude":9.2750},"address":{"@type":"PostalAddress","streetAddress":"Stormstraße 2","postalCode":"63927","addressLocality":"Bürgstadt","addressRegion":"Bayern","addressCountry":"DE"},"areaServed":["Bürgstadt","Miltenberg","Amorbach","Klingenberg","Großheubach","Kleinheubach","Großwallstadt","Buchen","Walldürn","Hardheim","Untermain","Churfranken","Odenwald"],"sameAs":["https://www.instagram.com/panini.manufaktur/"],"makesOffer":[{"@type":"Offer","name":"Pizza Catering Streetfood Pizza","price":"21.90","priceCurrency":"EUR","description":"Bis zu 4 Pizzakreationen, frisch vor Ort zubereitet, vegetarische Varianten, 2 bis 3 Stunden Cateringservice. Netto-Orientierungspreis pro Person zzgl. MwSt., ab 30 Personen."},{"@type":"Offer","name":"Pizza Catering Signature Event (All you can eat)","price":"25.90","priceCurrency":"EUR","description":"All you can eat mit bis zu 6 Pizzakreationen, durchgehendem Nachschub und Signature-Kreationen, 2 bis 3 Stunden Cateringservice. Netto-Orientierungspreis pro Person zzgl. MwSt., ab 30 Personen."},{"@type":"Offer","name":"Streetfood Experience","description":"Individuelles Streetfood-Catering mit handgemachten Panuozzo, Pulled Pork, Parmaschinken und Burrata-Spezialitäten. Preis auf Anfrage."}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"20","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Roland H."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Herausragendes Catering bei unserer Geburtstagsfeier. Pizza so lecker wie in bella Italia, super Service und ein Food-Trailer, der auch optisch etwas hermacht. Auf jeden Wunsch wird individuell eingegangen, der Preis ist ehrlich und fair."},{"@type":"Review","author":{"@type":"Person","name":"Adrian Popescu"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Die neapolitanischen Pizzen sind unglaublich lecker. Die Zutaten und der Teig sind sehr frisch und hochwertig, diese zählen zu den besten!"},{"@type":"Review","author":{"@type":"Person","name":"Judith König"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Frische und regionale Produkte, kreative Kombinationen und mit viel Liebe angerichtet und belegt, vom Chef persönlich."}]}
 </script>
 <!-- JSON-LD: FAQPage -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet Pizza Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Bei der Panini Manufaktur startet das Pizza Catering ab 20,11 Euro pro Person (Paket Jeder eine Pizza) bzw. ab 23,03 Euro pro Person beim All-you-can-eat-Paket Signature-Event. Alle Preise netto, zzgl. 7 % MwSt."}},{"@type":"Question","name":"Gibt es beim Catering nur die Pizzen von der Speisekarte?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Speisekarte zeigt unsere zehn Streetfood-Pizzen. Fürs Catering haben wir über 50 Pizzakreationen und stellen euer Pizzabuffet individuell nach Anlass, Gästezahl und euren Wünschen zusammen."}},{"@type":"Question","name":"Ab wie vielen Personen bucht man euch?","acceptedAnswer":{"@type":"Answer","text":"Ab 30 Personen, nach oben flexibel skalierbar."}},{"@type":"Question","name":"In welchem Umkreis seid ihr im Einsatz?","acceptedAnswer":{"@type":"Answer","text":"Ab Bürgstadt in der Region Miltenberg, im Untermain, in Churfranken und im Odenwald, zum Beispiel in Miltenberg, Amorbach, Klingenberg, Großheubach, Buchen, Walldürn und Hardheim. Bis 25 km ist die Anfahrt inklusive. Für weiter entfernte Orte fragt einfach an."}},{"@type":"Question","name":"Kann man Panuozzo zum Paket dazubuchen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Panuozzo in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken könnt ihr ab 30 Portionen zu jedem Paket dazubuchen, für 12 Euro netto pro Portion. Premium Panini gibt es für 10 Euro netto pro Portion."}},{"@type":"Question","name":"Was ist im Preis inklusive?","acceptedAnswer":{"@type":"Answer","text":"Foodtrailer vor Ort, vegetarische Optionen, Aufbau, Abbau, Reinigung sowie 2 bis 3 Stunden Servicezeit."}},{"@type":"Question","name":"Gibt es vegetarische Optionen?","acceptedAnswer":{"@type":"Answer","text":"Ja, vegetarische Pizzen sind immer inklusive. Dazu gibt es vegetarische Panuozzo wie den Bella-Italia."}},{"@type":"Question","name":"Werden bei uns alle satt?","acceptedAnswer":{"@type":"Answer","text":"Ja. Beim Paket Signature-Event backen wir durchgehend nach, bis alle satt sind. Wir kalkulieren die Menge passend zu eurer Gästezahl."}},{"@type":"Question","name":"Wie läuft die Buchung ab?","acceptedAnswer":{"@type":"Answer","text":"Ihr fragt mit Wunschtermin und Wunschpaket an, wir schicken euch ein Angebot, ihr bestätigt. Am Eventtag kommen wir, backen live und bauen wieder ab."}},{"@type":"Question","name":"Wie schnell bekomme ich eine Antwort?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 24 Stunden auf eure unverbindliche Anfrage."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Pizza und Panuozzo?","acceptedAnswer":{"@type":"Answer","text":"Panuozzo ist ein aufgeschnittenes, gefülltes Pizzabrot aus demselben 48 Stunden gereiften Teig, in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken."}},{"@type":"Question","name":"Für welche Anlässe eignet sich das Catering?","acceptedAnswer":{"@type":"Answer","text":"Für Hochzeiten, runde Geburtstage, Jubiläen, Gartenpartys und Firmenfeiern."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet Pizza Catering pro Person?","acceptedAnswer":{"@type":"Answer","text":"Bei der Panini Manufaktur startet das Pizza Catering ab 21,90 Euro pro Person (Paket Streetfood Pizza) bzw. ab 25,90 Euro pro Person beim All-you-can-eat-Paket Signature Event. Das sind Netto-Orientierungspreise zzgl. 7 % MwSt., den endgültigen Preis kalkulieren wir nach Gästezahl, Ort und Leistungsumfang. Die Streetfood Experience mit Panuozzo, Pulled Pork und Burrata-Spezialitäten gibt es als individuelles Angebot."}},{"@type":"Question","name":"Gibt es beim Catering nur die Pizzen von der Speisekarte?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Speisekarte zeigt unsere zehn Streetfood-Pizzen. Fürs Catering haben wir über 50 Pizzakreationen und stellen euer Pizzabuffet individuell nach Anlass, Gästezahl und euren Wünschen zusammen."}},{"@type":"Question","name":"Ab wie vielen Personen bucht man euch?","acceptedAnswer":{"@type":"Answer","text":"Ab 30 Personen, nach oben flexibel skalierbar."}},{"@type":"Question","name":"In welchem Umkreis seid ihr im Einsatz?","acceptedAnswer":{"@type":"Answer","text":"Ab Bürgstadt in der Region Miltenberg, im Untermain, in Churfranken und im Odenwald, zum Beispiel in Miltenberg, Amorbach, Klingenberg, Großheubach, Buchen, Walldürn und Hardheim. Bis 25 km ist die Anfahrt inklusive. Für weiter entfernte Orte fragt einfach an."}},{"@type":"Question","name":"Kann man Panuozzo zum Paket dazubuchen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Panuozzo in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken könnt ihr ab 30 Portionen zu jedem Paket dazubuchen, für 12 Euro netto pro Portion. Premium Panini gibt es für 10 Euro netto pro Portion."}},{"@type":"Question","name":"Was ist im Preis inklusive?","acceptedAnswer":{"@type":"Answer","text":"Foodtrailer vor Ort, vegetarische Optionen, Aufbau, Abbau, Reinigung sowie 2 bis 3 Stunden Servicezeit."}},{"@type":"Question","name":"Gibt es vegetarische Optionen?","acceptedAnswer":{"@type":"Answer","text":"Ja, vegetarische Pizzen sind immer inklusive. Dazu gibt es vegetarische Panuozzo wie den Bella-Italia."}},{"@type":"Question","name":"Werden bei uns alle satt?","acceptedAnswer":{"@type":"Answer","text":"Ja. Beim Paket Signature Event backen wir durchgehend nach, bis alle satt sind. Wir kalkulieren die Menge passend zu eurer Gästezahl."}},{"@type":"Question","name":"Wie läuft die Buchung ab?","acceptedAnswer":{"@type":"Answer","text":"Ihr fragt mit Wunschtermin und Wunschpaket an, wir schicken euch ein Angebot, ihr bestätigt. Am Eventtag kommen wir, backen live und bauen wieder ab."}},{"@type":"Question","name":"Wie schnell bekomme ich eine Antwort?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 24 Stunden auf eure unverbindliche Anfrage."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Pizza und Panuozzo?","acceptedAnswer":{"@type":"Answer","text":"Panuozzo ist ein aufgeschnittenes, gefülltes Pizzabrot aus demselben 48 Stunden gereiften Teig, in Sorten wie Balkan-Taco, Pulled-Pork, Bella-Italia und Crispy Chicken."}},{"@type":"Question","name":"Für welche Anlässe eignet sich das Catering?","acceptedAnswer":{"@type":"Answer","text":"Für Hochzeiten, runde Geburtstage, Jubiläen, Gartenpartys und Firmenfeiern."}}]}
 </script>
 
 <script>
